@@ -34,7 +34,7 @@ def scrape_market_feed():
     ipos = []
     url = "https://www.investorgain.com/report/live-ipo-gmp/331/"
     try:
-        res = requests.get(url, headers=HEADERS, timeout=12)
+        res = requests.get(url, headers=HEADERS, timeout=15)
         if res.status_code != 200:
             return ipos
 
@@ -90,7 +90,7 @@ def scrape_market_feed():
                 "drhpPdfUrl": "https://www.sebi.gov.in"
             })
     except Exception as e:
-        print(f"Scraper error: {e}")
+        print(f"Scraper error caught: {e}")
 
     return ipos
 
@@ -98,7 +98,7 @@ def main():
     cached = load_cached_data()
     fresh_ipos = scrape_market_feed()
 
-    # Safety Guardrail: If scraper caught fresh data, update it. If layout broke, retain cache.
+    # Use fresh items if obtained; otherwise fallback to existing records
     dataset = fresh_ipos if len(fresh_ipos) > 0 else cached
 
     # Update lifecycle
@@ -123,9 +123,7 @@ def main():
     if dataset:
         with open(FILE_PATH, "w", encoding="utf-8") as f:
             json.dump(dataset, f, indent=2, ensure_ascii=False)
-        print(f"Done. {len(dataset)} IPOs ready in {FILE_PATH}.")
-    else:
-        print("No items to save. Retaining existing file.")
+        print(f"Pipeline executed successfully: {len(dataset)} items available.")
 
 if __name__ == "__main__":
     main()
