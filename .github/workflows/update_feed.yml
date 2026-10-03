@@ -2,15 +2,15 @@ name: Auto-Update IPO Feed
 
 on:
   schedule:
-    # Runs Monday to Friday every 3 hours during Indian market activity (approx 9:30 AM to 5:30 PM IST)
+    # Runs Monday to Friday every 3 hours during market hours
     - cron: '0 4,7,10 * * 1-5'
-  workflow_dispatch: # Allows you to manually trigger it anytime with a button click
+  workflow_dispatch:
 
 jobs:
   run-scraper:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Grants permission to auto-commit updated JSON files
+      contents: write
 
     steps:
       - name: Checkout Repository
@@ -22,7 +22,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install Dependencies
-        run: pip install requests
+        run: pip install requests beautifulsoup4
 
       - name: Execute Python Scraper
         run: python scraper.py
@@ -32,5 +32,6 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add ipos.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update IPO status and feeds [skip ci]" && git push)
+          # Commit only if changes exist; never fail if there are no new changes
+          git diff --staged --quiet || (git commit -m "Auto-update IPO status and feeds [skip ci]" && git push)
           
