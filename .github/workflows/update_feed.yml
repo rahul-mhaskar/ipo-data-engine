@@ -2,7 +2,7 @@ name: Auto-Update IPO Feed
 
 on:
   schedule:
-    # Runs Monday to Friday every 3 hours during market hours
+    # Runs Mon-Fri every 3 hours during Indian market hours
     - cron: '0 4,7,10 * * 1-5'
   workflow_dispatch:
 
@@ -27,11 +27,10 @@ jobs:
       - name: Execute Python Scraper
         run: python scraper.py
 
-      - name: Commit and Push Updated Data
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add ipos.json
-          # Commit only if changes exist; never fail if there are no new changes
-          git diff --staged --quiet || (git commit -m "Auto-update IPO status and feeds [skip ci]" && git push)
+      # Automatically commits only if ipos.json changed; succeeds cleanly if no changes
+      - name: Commit and Push Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-update IPO status and feeds [skip ci]"
+          file_pattern: 'ipos.json'
           
