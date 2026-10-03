@@ -13,7 +13,7 @@ HEADERS = {
 
 FILE_PATH = "ipos.json"
 
-# Master Registry: 8 official SEBI RTAs and their allotment verification engines
+# Master Registry of 8 SEBI-Authorized RTAs and their verified allotment engines
 REGISTRAR_REGISTRY = [
     ("purva", "Purva Sharegistry", "https://www.purvashare.com/queries/"),
     ("maashitla", "Maashitla Securities", "https://maashitla.com/allotment-status"),
@@ -82,8 +82,69 @@ def determine_status(open_date_str, close_date_str, listing_date_str):
         pass
     return "UPCOMING"
 
+def resolve_official_registrar(text_content):
+    """Maps extracted registrar text directly to one of the 8 SEBI RTAs and its official portal."""
+    if not text_content:
+        return ("To Be Announced", "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1")
+    
+    t_lower = text_content.lower()
+    for key, name, portal in REGISTRAR_REGISTRY:
+        if key in t_lower:
+            return (name, portal)
+    
+    return ("To Be Announced", "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1")
+
+def fetch_master_registrar_table():
+    """
+    Downloads Chittorgarh Consolidated Report #23 for both Mainboard and SME.
+    Extracts the exact registrar assigned to each company with zero guesswork.
+    """
+    reg_map = {}
+    endpoints = [
+        "https://www.chittorgarh.com/report/ipo-allotment-status/23/",
+        "https://www.chittorgarh.com/report/ipo-allotment-status/23/sme/"
+    ]
+
+    for url in endpoints:
+        try:
+            res = requests.get(url, headers=HEADERS, timeout=12)
+            if res.status_code != 200:
+                continue
+
+            soup = BeautifulSoup(res.text, "html.parser")
+            table = soup.find("table")
+            if not table:
+                continue
+
+            header_row = table.find("tr")
+            if not header_row:
+                continue
+            headers = [th.text.strip().lower() for th in header_row.find_all(["th", "td"])]
+
+            name_idx, reg_idx = -1, -1
+            for i, h in enumerate(headers):
+                if any(k in h for k in ["company", "issuer", "ipo"]):
+                    if name_idx == -1: name_idx = i
+                elif any(k in h for k in ["registrar", "rta"]):
+                    reg_idx = i
+
+            if name_idx != -1 and reg_idx != -1:
+                for row in table.find_all("tr")[1:]:
+                    tds = [td.text.strip() for td in row.find_all("td")]
+                    if len(tds) > max(name_idx, reg_idx):
+                        raw_name = tds[name_idx]
+                        raw_reg = tds[reg_idx]
+                        key = normalize_key(raw_name)
+                        if key and raw_reg:
+                            reg_name, reg_url = resolve_official_registrar(raw_reg)
+                            reg_map[key] = (reg_name, reg_url)
+        except Exception as e:
+            print(f"Master Registrar fetch error for {url}: {e}")
+
+    return reg_map
+
 def fetch_authentic_subscriptions():
-    """Fetches exact live subscription splits (Retail, HNI, QIB, Total) from IPOWatch."""
+    """Scrapes verified live subscription multiples from IPOWatch."""
     sub_map = {}
     url = "https://ipowatch.in/ipo-subscription-status-today/"
     try:
@@ -125,57 +186,19 @@ def fetch_authentic_subscriptions():
         print(f"Subscription feed error: {e}")
     return sub_map
 
-def extract_authentic_registrar(session, company_name, detail_href):
-    """
-    Globally extracts the genuine SEBI-appointed Registrar by reading the dedicated overview page.
-    Never assumes or defaults to Bigshare or Link Intime.
-    """
-    slug = re.sub(r"[^a-zA-Z0-9]+", "-", company_name).strip("-").lower()
-    candidate_urls = [
-        f"https://ipowatch.in/{slug}-ipo/",
-        f"https://www.investorgain.com/ipo/{slug}-ipo/",
-        f"https://www.investorgain.com{detail_href}" if detail_href else None
-    ]
-
-    for url in candidate_urls:
-        if not url:
-            continue
-        try:
-            res = session.get(url, headers=HEADERS, timeout=6)
-            if res.status_code == 200:
-                soup = BeautifulSoup(res.text, "html.parser")
-                text_content = soup.get_text()
-
-                # Look for the section mentioning 'Registrar'
-                match = re.search(r"(?:IPO\s+Registrar|Registrar\s+to\s+the\s+Issue|Registrar)[:\s]+([^\n\r<]{3,80})", text_content, re.IGNORECASE)
-                if match:
-                    raw_extracted = match.group(1).lower()
-                    for key, name, portal in REGISTRAR_REGISTRY:
-                        if key in raw_extracted:
-                            return name, portal
-
-                # Fallback: scan whole page text for known registrar identifiers
-                body_lower = text_content.lower()
-                for key, name, portal in REGISTRAR_REGISTRY:
-                    if f"{key} sharegistry" in body_lower or f"{key} securities" in body_lower or f"{key} corporate" in body_lower or f"{key} technologies" in body_lower or f"{key} financial" in body_lower or f"{key} intime" in body_lower:
-                        return name, portal
-        except Exception:
-            continue
-
-    # Zero Assumption: If truly unverified, report TBA rather than a false registrar
-    return "To Be Announced", "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
-
 def run_scraper():
     ipos = []
-    session = requests.Session()
     
-    # 1. Fetch exact subscription breakdown
+    # 1. Fetch exact Registrar mappings from the official Allotment Report tables
+    master_registrars = fetch_master_registrar_table()
+
+    # 2. Fetch live subscription counts
     sub_data = fetch_authentic_subscriptions()
 
-    # 2. Fetch active market listings and GMP
+    # 3. Fetch live market listings and GMP from InvestorGain Report 331
     url = "https://www.investorgain.com/report/live-ipo-gmp/331/"
     try:
-        res = session.get(url, headers=HEADERS, timeout=15)
+        res = requests.get(url, headers=HEADERS, timeout=15)
         if res.status_code != 200:
             return ipos
 
@@ -211,7 +234,6 @@ def run_scraper():
 
             name_td = tds[name_col_idx]
             company_link = name_td.find("a")
-            detail_href = company_link.get("href", "") if company_link else ""
             raw_name = company_link.text.strip() if company_link else re.sub(r"₹\s*[\d,.]+\s*Cr\.?", "", name_td.text.strip())
 
             if not raw_name or "company" in raw_name.lower():
@@ -226,7 +248,23 @@ def run_scraper():
             norm_key = normalize_key(clean_name)
             sub_info = sub_data.get(norm_key, {})
 
+            # Exact exchange category
             category = sub_info.get("category", "SME" if "SME" in (name_td.text + raw_name).upper() else "MAINBOARD")
+
+            # Match Official Registrar from Report #23 master table
+            matched_reg = master_registrars.get(norm_key)
+            if not matched_reg:
+                # Substring match if name slightly differed
+                for k, v in master_registrars.items():
+                    if k and (k in norm_key or norm_key in k):
+                        matched_reg = v
+                        break
+            
+            if matched_reg and matched_reg[0] != "To Be Announced":
+                reg_name, reg_url = matched_reg
+            else:
+                # Check for explicit RTA keywords if present in the row
+                reg_name, reg_url = resolve_official_registrar(name_td.text)
 
             # GMP parsing
             gmp_raw = tds[col_map["gmp"]].text.strip() if "gmp" in col_map else "0"
@@ -263,13 +301,6 @@ def run_scraper():
 
             status = determine_status(open_d, close_d, list_d)
             symbol = re.sub(r"[^A-Za-z0-9]", "", clean_name)[:7].upper()
-
-            # Global Authentic Registrar Extraction (Only visits page for active/upcoming issues)
-            if status in ["OPEN", "UPCOMING"] or idx < 10:
-                reg_name, reg_url = extract_authentic_registrar(session, clean_name, detail_href)
-            else:
-                reg_name = "Link Intime India" if category == "MAINBOARD" else "Bigshare Services"
-                reg_url = "https://in.mpms.mufg.com/Initial_Offer/public-issues.html" if category == "MAINBOARD" else "https://ipo.bigshareonline.com/ipo_status.html"
 
             rhp_url = f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+RHP+file+SEBI"
             drhp_url = f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+DRHP+file+SEBI"
@@ -308,7 +339,7 @@ def main():
     if items and len(items) > 0:
         with open(FILE_PATH, "w", encoding="utf-8") as f:
             json.dump(items, f, indent=2, ensure_ascii=False)
-        print(f"Successfully scraped {len(items)} IPOs with verified registrar and subscription integrity.")
+        print(f"Pipeline executed successfully. Processed {len(items)} IPO records.")
     else:
         print("0 items fetched; cache retained.")
 
