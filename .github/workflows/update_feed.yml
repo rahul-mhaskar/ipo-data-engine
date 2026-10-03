@@ -2,7 +2,6 @@ name: Auto-Update IPO Feed
 
 on:
   schedule:
-    # Runs Mon-Fri every 3 hours during Indian market hours
     - cron: '0 4,7,10 * * 1-5'
   workflow_dispatch:
 
@@ -15,6 +14,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -27,10 +28,14 @@ jobs:
       - name: Execute Python Scraper
         run: python scraper.py
 
-      # Automatically commits only if ipos.json changed; succeeds cleanly if no changes
-      - name: Commit and Push Changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Auto-update IPO status and feeds [skip ci]"
-          file_pattern: 'ipos.json'
-          
+      - name: Commit and Push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ipos.json
+          if git diff --staged --quiet; then
+            echo "No changes detected in ipos.json."
+          else
+            git commit -m "Auto-update IPO feed [skip ci]"
+            git push
+          fi
