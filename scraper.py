@@ -3,7 +3,7 @@ import os
 import re
 import requests
 from bs4 import BeautifulSoup
-from datetime import datetime
+from datetime import datetime, timedelta
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
@@ -21,109 +21,155 @@ def clean_num(val):
     except ValueError:
         return 0.0
 
-def load_cached_data():
-    if os.path.exists(FILE_PATH):
+def parse_indian_date(date_str):
+    """Converts strings like '30-Sep-2026' or '05-Oct-2026T' into 'YYYY-MM-DD'."""
+    if not date_str:
+        return None
+    # Remove trailing characters like 'T' or time markers
+    cleaned = re.sub(r"[^\w-]", "", date_str.strip())
+    # Match pattern DD-Mon-YYYY
+    match = re.search(r"(\d{1,2})-([A-Za-z]{3})-(\d{4})", cleaned)
+    if match:
+        day, month_str, year = match.groups()
         try:
-            with open(FILE_PATH, "r", encoding="utf-8") as f:
-                return json.load(f)
+            dt = datetime.strptime(f"{int(day):02d}-{month_str.capitalize()}-{year}", "%d-%b-%Y")
+            return dt.strftime("%Y-%m-%d")
         except Exception:
-            return []
-    return []
+            return None
+    return None
 
-def scrape_market_feed():
+def calculate_lifecycle(open_date_str, close_date_str, listing_date_str):
+    """Calculates status against current calendar date."""
+    today = datetime.now().date()
+    try:
+        o_date = datetime.strptime(open_date_str, "%Y-%m-%d").date() if open_date_str else None
+        c_date = datetime.strptime(close_date_str, "%Y-%m-%d").date() if close_date_str else None
+        l_date = datetime.strptime(listing_date_str, "%Y-%m-%d").date() if listing_date_str else None
+
+        if o_date and today < o_date:
+            return "UPCOMING"
+        elif o_date and c_date and (o_date <= today <= c_date):
+            return "OPEN"
+        elif c_date and l_date and (c_date < today < l_date):
+            return "CLOSED"
+        elif l_date and today >= l_date:
+            return "LISTED"
+        elif c_date and today > c_date:
+            return "CLOSED"
+    except Exception:
+        pass
+    return "UPCOMING"
+
+def scrape_clean_chittorgarh_ipos():
     ipos = []
-    url = "https://www.investorgain.com/report/live-ipo-gmp/331/"
+    # Primary comprehensive tracking report on Chittorgarh
+    url = "https://www.chittorgarh.com/report/ipo-in-india-list-main-board-sme/82/"
+    
     try:
         res = requests.get(url, headers=HEADERS, timeout=15)
         if res.status_code != 200:
+            print(f"Fetch failed with HTTP status: {res.status_code}")
             return ipos
 
         soup = BeautifulSoup(res.text, "html.parser")
         table = soup.find("table")
         if not table:
+            print("Table not found on page.")
             return ipos
 
-        rows = table.find_all("tr")[1:]
-        today_str = datetime.now().strftime("%Y-%m-%d")
+        rows = table.find_all("tr")[1:]  # skip header row
 
         for idx, row in enumerate(rows):
-            cols = [c.text.strip() for c in row.find_all("td")]
-            if len(cols) < 5:
+            cols = [td.text.strip() for td in row.find_all("td")]
+            if len(cols) < 6:
                 continue
 
             raw_name = cols[0]
-            if not raw_name or "Close" in raw_name:
+            if not raw_name or "Company" in raw_name:
                 continue
 
-            category = "SME" if "SME" in raw_name.upper() else "MAINBOARD"
-            clean_name = re.sub(r"\b(IPO|SME|BSE|NSE)\b", "", raw_name, flags=re.IGNORECASE).strip()
+            # Determine category
+            category = "SME" if ("SME" in raw_name.upper() or (len(cols) > 7 and "SME" in cols[7].upper())) else "MAINBOARD"
 
-            gmp_val = clean_num(cols[1])
-            price_vals = re.findall(r"\d+", cols[2]) if len(cols) > 2 else []
-            price_min = float(price_vals[0]) if price_vals else 100.0
-            price_max = float(price_vals[-1]) if price_vals else price_min
-            gmp_pct = round((gmp_val / price_max * 100), 2) if price_max > 0 else 0.0
-            sub_total = clean_num(cols[4]) if len(cols) > 4 else 1.0
+            # Clean name: remove suffixes like 'Ltd.', 'IPO', 'BSE SME', etc.
+            clean_name = re.sub(r"\b(IPO|SME|BSE|NSE|FPO)\b", "", raw_name, flags=re.IGNORECASE)
+            clean_name = re.sub(r"\s+", " ", clean_name).strip()
+
+            # Parse open, close, and listing dates
+            open_date = parse_indian_date(cols[2]) if len(cols) > 2 else None
+            close_date = parse_indian_date(cols[3]) if len(cols) > 3 else None
+            listing_date = parse_indian_date(cols[4]) if len(cols) > 4 else None
+
+            # If dates couldn't be parsed, skip invalid rows
+            if not open_date or not close_date:
+                continue
+
+            # Calculate allotment date based on Indian market T+1/T+2 standard
+            c_dt = datetime.strptime(close_date, "%Y-%m-%d")
+            allotment_date = (c_dt + timedelta(days=1)).strftime("%Y-%m-%d")
+            if not listing_date:
+                listing_date = (c_dt + timedelta(days=3)).strftime("%Y-%m-%d")
+
+            # Parse Price Band
+            price_text = cols[5] if len(cols) > 5 else "0"
+            prices = [float(p) for p in re.findall(r"\d+(?:\.\d+)?", price_text)]
+            price_min = min(prices) if prices else 100.0
+            price_max = max(prices) if prices else price_min
+
+            # Calculate actual status
+            status = calculate_lifecycle(open_date, close_date, listing_date)
+
+            symbol = re.sub(r"[^A-Za-z0-9]", "", clean_name)[:7].upper()
 
             ipos.append({
                 "id": str(idx + 1),
                 "name": clean_name,
-                "symbol": clean_name[:6].upper().replace(" ", ""),
+                "symbol": symbol,
                 "category": category,
-                "status": "OPEN",
+                "status": status,
                 "issuePriceMin": price_min,
                 "issuePriceMax": price_max,
-                "lotSize": 100 if category == "SME" else 30,
-                "openDate": today_str,
-                "closeDate": today_str,
-                "allotmentDate": today_str,
-                "listingDate": today_str,
-                "gmpAmount": gmp_val,
-                "gmpPercent": gmp_pct,
-                "subscriptionTotal": sub_total,
-                "subscriptionRetail": round(sub_total * 0.4, 2),
-                "subscriptionHNI": round(sub_total * 0.3, 2),
-                "subscriptionQIB": round(sub_total * 0.3, 2),
+                "lotSize": 1000 if category == "SME" else 35,
+                "openDate": open_date,
+                "closeDate": close_date,
+                "allotmentDate": allotment_date,
+                "listingDate": listing_date,
+                "gmpAmount": 0.0,
+                "gmpPercent": 0.0,
+                "subscriptionTotal": 1.0,
+                "subscriptionRetail": 1.0,
+                "subscriptionHNI": 1.0,
+                "subscriptionQIB": 1.0,
                 "registrarName": "Link Intime / KFintech",
                 "registrarUrl": "https://linkintime.co.in/initial_offer/public-issues.html",
                 "rhpPdfUrl": "https://www.sebi.gov.in",
                 "drhpPdfUrl": "https://www.sebi.gov.in"
             })
     except Exception as e:
-        print(f"Scraper error caught: {e}")
+        print(f"Parser error: {e}")
 
     return ipos
 
 def main():
-    cached = load_cached_data()
-    fresh_ipos = scrape_market_feed()
-
-    # Use fresh items if obtained; otherwise fallback to existing records
-    dataset = fresh_ipos if len(fresh_ipos) > 0 else cached
-
-    # Update lifecycle
-    today = datetime.now().date()
-    for item in dataset:
+    existing = []
+    if os.path.exists(FILE_PATH):
         try:
-            o_date = datetime.strptime(item.get("openDate", ""), "%Y-%m-%d").date()
-            c_date = datetime.strptime(item.get("closeDate", ""), "%Y-%m-%d").date()
-            l_date = datetime.strptime(item.get("listingDate", ""), "%Y-%m-%d").date()
-
-            if today < o_date:
-                item["status"] = "UPCOMING"
-            elif o_date <= today <= c_date:
-                item["status"] = "OPEN"
-            elif c_date < today < l_date:
-                item["status"] = "CLOSED"
-            else:
-                item["status"] = "LISTED"
+            with open(FILE_PATH, "r", encoding="utf-8") as f:
+                existing = json.load(f)
         except Exception:
-            continue
+            existing = []
 
-    if dataset:
+    fresh = scrape_clean_chittorgarh_ipos()
+    
+    # Fail-safe: Only overwrite if records were successfully retrieved
+    if fresh and len(fresh) > 0:
         with open(FILE_PATH, "w", encoding="utf-8") as f:
-            json.dump(dataset, f, indent=2, ensure_ascii=False)
-        print(f"Pipeline executed successfully: {len(dataset)} items available.")
+            json.dump(fresh, f, indent=2, ensure_ascii=False)
+        print(f"Success: Parsed and saved {len(fresh)} IPOs with accurate dates and categories.")
+    elif existing:
+        print("Using cached data; scraper retrieved 0 items.")
+    else:
+        print("No data available.")
 
 if __name__ == "__main__":
     main()
