@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "name": "Bajaj Housing Finance Ltd",
+    "symbol": "BAJAJHFL",
+    "category": "MAINBOARD",
+    "status": "OPEN",
+    "issuePriceMin": 66,
+    "issuePriceMax": 70,
+    "lotSize": 214,
+    "openDate": "2026-10-05",
+    "closeDate": "2026-10-07",
+    "allotmentDate": "2026-10-08",
+    "listingDate": "2026-10-10",
+    "gmpAmount": 58.0,
+    "gmpPercent": 82.8,
+    "subscriptionTotal": 14.8,
+    "subscriptionRetail": 7.4,
+    "subscriptionHNI": 41.5,
+    "subscriptionQIB": 22.2,
+    "registrarName": "KFin Technologies",
+    "registrarUrl": "https://kosmic.kfintech.com/ipostatus/",
+    "rhpPdfUrl": "https://www.sebi.gov.in",
+    "drhpPdfUrl": "https://www.sebi.gov.in"
+  }
+]
