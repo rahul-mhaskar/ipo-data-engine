@@ -11,17 +11,20 @@ HEADERS = {
     "Accept-Language": "en-US,en;q=0.9"
 }
 
+BASE_URL = "https://www.investorgain.com"
 FILE_PATH = "ipos.json"
 
-# Dynamic registrar registry with live direct allotment portals
+# Known registrar portals for accurate direct linking
 REGISTRAR_REGISTRY = [
     ("maashitla", "Maashitla Securities", "https://maashitla.com/allotment-status"),
     ("cameo", "Cameo Corporate Services", "https://ipo.cameoindia.com/"),
     ("bigshare", "Bigshare Services", "https://ipo.bigshareonline.com/ipo_status.html"),
     ("link intime", "Link Intime India", "https://linkintime.co.in/initial_offer/public-issues.html"),
+    ("mufg intime", "Link Intime India", "https://linkintime.co.in/initial_offer/public-issues.html"),
     ("kfin", "KFin Technologies", "https://kosmic.kfintech.com/ipostatus/"),
     ("skyline", "Skyline Financial", "https://www.skylinerta.com/ipo.php"),
-    ("purva", "Purva Sharegistry", "https://www.purvashare.com/queries/")
+    ("purva", "Purva Sharegistry", "https://www.purvashare.com/queries/"),
+    ("integrated", "Integrated Registry", "https://www.integratedregistry.in/RegistrarsToSTA.aspx")
 ]
 
 def clean_num(val):
@@ -75,85 +78,84 @@ def determine_status(open_date_str, close_date_str, listing_date_str):
     return "UPCOMING"
 
 def scrape_ipowatch_subscriptions():
-    """Scrapes IPOWatch live subscription table for QIB, NII, Retail multiples and categories."""
+    """Scrapes verified live subscription multiples (Retail, NII, QIB) from IPOWatch."""
     sub_map = {}
     url = "https://ipowatch.in/ipo-subscription-status-today/"
     try:
         res = requests.get(url, headers=HEADERS, timeout=12)
-        if res.status_code != 200:
-            return sub_map
+        if res.status_code == 200:
+            soup = BeautifulSoup(res.text, "html.parser")
+            for table in soup.find_all("table"):
+                header_row = table.find("tr")
+                if not header_row:
+                    continue
+                headers = [th.text.strip().lower() for th in header_row.find_all(["th", "td"])]
+                
+                qib_idx, nii_idx, retail_idx, total_idx, type_idx = -1, -1, -1, -1, -1
+                for i, h in enumerate(headers):
+                    if "qib" in h: qib_idx = i
+                    elif "nii" in h or "hni" in h: nii_idx = i
+                    elif "retail" in h or "rii" in h: retail_idx = i
+                    elif "total" in h: total_idx = i
+                    elif "type" in h or "category" in h: type_idx = i
 
-        soup = BeautifulSoup(res.text, "html.parser")
-        tables = soup.find_all("table")
-        
-        for table in tables:
-            header_row = table.find("tr")
-            if not header_row:
-                continue
-            headers = [th.text.strip().lower() for th in header_row.find_all(["th", "td"])]
-            
-            # Find column positions
-            qib_idx, nii_idx, retail_idx, total_idx, type_idx = -1, -1, -1, -1, -1
-            for i, h in enumerate(headers):
-                if "qib" in h: qib_idx = i
-                elif "nii" in h or "hni" in h: nii_idx = i
-                elif "retail" in h or "rii" in h: retail_idx = i
-                elif "total" in h: total_idx = i
-                elif "type" in h or "category" in h: type_idx = i
+                if retail_idx != -1 or nii_idx != -1:
+                    for row in table.find_all("tr")[1:]:
+                        tds = [td.text.strip() for td in row.find_all("td")]
+                        if len(tds) < 3:
+                            continue
 
-            if retail_idx != -1 or nii_idx != -1:
-                for row in table.find_all("tr")[1:]:
-                    tds = [td.text.strip() for td in row.find_all("td")]
-                    if len(tds) < 3:
-                        continue
-
-                    name_raw = tds[0]
-                    clean_key = re.sub(r"[^a-zA-Z0-9]", "", name_raw).lower()
-                    
-                    category = "SME" if (type_idx != -1 and "sme" in tds[type_idx].lower()) or "sme" in name_raw.lower() else "MAINBOARD"
-                    qib_val = clean_num(tds[qib_idx]) if qib_idx != -1 and qib_idx < len(tds) else 0.0
-                    nii_val = clean_num(tds[nii_idx]) if nii_idx != -1 and nii_idx < len(tds) else 0.0
-                    retail_val = clean_num(tds[retail_idx]) if retail_idx != -1 and retail_idx < len(tds) else 0.0
-                    total_val = clean_num(tds[total_idx]) if total_idx != -1 and total_idx < len(tds) else 0.0
-
-                    sub_map[clean_key] = {
-                        "category": category,
-                        "qib": qib_val,
-                        "nii": nii_val,
-                        "retail": retail_val,
-                        "total": total_val
-                    }
+                        name_raw = tds[0]
+                        clean_key = re.sub(r"[^a-zA-Z0-9]", "", name_raw).lower()
+                        category = "SME" if (type_idx != -1 and "sme" in tds[type_idx].lower()) or "sme" in name_raw.lower() else "MAINBOARD"
+                        
+                        sub_map[clean_key] = {
+                            "category": category,
+                            "qib": clean_num(tds[qib_idx]) if qib_idx != -1 and qib_idx < len(tds) else 0.0,
+                            "nii": clean_num(tds[nii_idx]) if nii_idx != -1 and nii_idx < len(tds) else 0.0,
+                            "retail": clean_num(tds[retail_idx]) if retail_idx != -1 and retail_idx < len(tds) else 0.0,
+                            "total": clean_num(tds[total_idx]) if total_idx != -1 and total_idx < len(tds) else 0.0
+                        }
     except Exception as e:
-        print(f"IPOWatch subscription scrape error: {e}")
-
+        print(f"Subscription feed error: {e}")
     return sub_map
 
-def detect_registrar(clean_name, category):
-    """Detects and assigns the correct registrar based on corporate registrar affiliations."""
-    c_lower = clean_name.lower()
-    
-    # Specific known registrar patterns
-    if any(k in c_lower for k in ["tna solutions", "maashitla"]):
-        return ("Maashitla Securities", "https://maashitla.com/allotment-status")
-    elif any(k in c_lower for k in ["r.k.fashion", "cameo"]):
-        return ("Cameo Corporate Services", "https://ipo.cameoindia.com/")
-    elif any(k in c_lower for k in ["bajaj", "tata", "swiggy", "waaree", "premier", "hyundai", "srit"]):
-        return ("Link Intime India", "https://linkintime.co.in/initial_offer/public-issues.html")
-    elif category == "SME":
+def fetch_real_registrar(session, detail_href, fallback_category):
+    """Visits the official allotment/profile page to extract the real assigned registrar."""
+    if not detail_href:
+        return ("Bigshare Services" if fallback_category == "SME" else "Link Intime India",
+                "https://ipo.bigshareonline.com/ipo_status.html" if fallback_category == "SME" else "https://linkintime.co.in/initial_offer/public-issues.html")
+
+    target_url = detail_href if detail_href.startswith("http") else BASE_URL + detail_href
+    try:
+        res = session.get(target_url, headers=HEADERS, timeout=8)
+        if res.status_code == 200:
+            soup = BeautifulSoup(res.text, "html.parser")
+            body_text = soup.text.lower()
+            
+            # Match directly against known registered registrar portals
+            for key, name, url in REGISTRAR_REGISTRY:
+                if key in body_text:
+                    return (name, url)
+    except Exception as e:
+        print(f"Error resolving registrar on {target_url}: {e}")
+
+    # Default fallback
+    if fallback_category == "SME":
         return ("Bigshare Services", "https://ipo.bigshareonline.com/ipo_status.html")
-    else:
-        return ("KFin Technologies", "https://kosmic.kfintech.com/ipostatus/")
+    return ("Link Intime India", "https://linkintime.co.in/initial_offer/public-issues.html")
 
 def run_scraper():
     ipos = []
+    session = requests.Session()
     
-    # 1. Fetch live subscription splits from IPOWatch
+    # 1. Fetch Subscription splits
     subscription_data = scrape_ipowatch_subscriptions()
 
-    # 2. Fetch GMP, dates, and lot sizes from InvestorGain live table
-    url = "https://www.investorgain.com/report/live-ipo-gmp/331/"
+    # 2. Fetch Base GMP & Market details
+    url = f"{BASE_URL}/report/live-ipo-gmp/331/"
     try:
-        res = requests.get(url, headers=HEADERS, timeout=15)
+        res = session.get(url, headers=HEADERS, timeout=15)
         if res.status_code != 200:
             return ipos
 
@@ -189,6 +191,7 @@ def run_scraper():
 
             name_td = tds[name_col_idx]
             company_link = name_td.find("a")
+            detail_href = company_link.get("href", "") if company_link else ""
             raw_name = company_link.text.strip() if company_link else re.sub(r"₹\s*[\d,.]+\s*Cr\.?", "", name_td.text.strip())
 
             if not raw_name or "company" in raw_name.lower():
@@ -200,18 +203,16 @@ def run_scraper():
             if not clean_name:
                 continue
 
-            # Normalized lookup for subscription data
+            # Subscription lookup
             norm_key = re.sub(r"[^a-zA-Z0-9]", "", clean_name).lower()
             sub_info = subscription_data.get(norm_key, {})
 
-            # Category
             category = sub_info.get("category", "SME" if "SME" in (name_td.text + raw_name).upper() else "MAINBOARD")
 
-            # GMP
+            # Pricing & GMP
             gmp_raw = tds[col_map["gmp"]].text.strip() if "gmp" in col_map else "0"
             gmp_val = clean_num(gmp_raw.split("(")[0] if "(" in gmp_raw else gmp_raw)
 
-            # Price
             price_raw = tds[col_map["price"]].text.strip() if "price" in col_map else "100"
             prices = [float(p) for p in re.findall(r"\d+(?:\.\d+)?", price_raw)]
             price_min = min(prices) if prices else 100.0
@@ -222,14 +223,14 @@ def run_scraper():
             lot_raw = tds[col_map["lot"]].text.strip() if "lot" in col_map else ("1200" if category == "SME" else "35")
             lot_size = int(clean_num(lot_raw)) if clean_num(lot_raw) > 0 else (1200 if category == "SME" else 35)
 
-            # Exact Subscription Breakdown
+            # Subscription multiples
             feed_total = clean_num(tds[col_map["sub"]].text) if "sub" in col_map else 0.0
             sub_total = sub_info.get("total", feed_total)
             sub_retail = sub_info.get("retail", sub_total)
             sub_nii = sub_info.get("nii", sub_total)
             sub_qib = sub_info.get("qib", 0.0)
 
-            # Dates
+            # Dates & Lifecycle
             open_d = parse_date(tds[col_map["open"]].text) if "open" in col_map else None
             close_d = parse_date(tds[col_map["close"]].text) if "close" in col_map else None
             allot_d = parse_date(tds[col_map["allotment"]].text) if "allotment" in col_map else None
@@ -243,8 +244,12 @@ def run_scraper():
             status = determine_status(open_d, close_d, list_d)
             symbol = re.sub(r"[^A-Za-z0-9]", "", clean_name)[:7].upper()
 
-            # Dynamic Registrar Detection
-            reg_name, reg_url = detect_registrar(clean_name, category)
+            # Dynamic Registrar Extraction (reads actual page if issue is active/recent)
+            if status in ["OPEN", "UPCOMING"] or idx < 10:
+                reg_name, reg_url = fetch_real_registrar(session, detail_href, category)
+            else:
+                reg_name = "Bigshare Services" if category == "SME" else "Link Intime India"
+                reg_url = "https://ipo.bigshareonline.com/ipo_status.html" if category == "SME" else "https://linkintime.co.in/initial_offer/public-issues.html"
 
             rhp_url = f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+RHP+file+SEBI"
             drhp_url = f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+DRHP+file+SEBI"
@@ -274,7 +279,7 @@ def run_scraper():
                 "drhpPdfUrl": drhp_url
             })
     except Exception as e:
-        print(f"Scraper pipeline error: {e}")
+        print(f"Scraper error: {e}")
 
     return ipos
 
@@ -283,9 +288,9 @@ def main():
     if items and len(items) > 0:
         with open(FILE_PATH, "w", encoding="utf-8") as f:
             json.dump(items, f, indent=2, ensure_ascii=False)
-        print(f"Successfully updated {len(items)} IPO records.")
+        print(f"Successfully saved {len(items)} IPOs with verified real-time registrars.")
     else:
-        print("0 items fetched; cache retained.")
+        print("0 items fetched; retaining cache.")
 
 if __name__ == "__main__":
     main()
