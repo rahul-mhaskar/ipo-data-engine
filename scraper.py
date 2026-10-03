@@ -61,7 +61,6 @@ def determine_status(open_date_str, close_date_str, listing_date_str):
     return "UPCOMING"
 
 def get_registrar_info(name, category):
-    """Assigns the accurate primary registrar portal based on market issue classification."""
     name_lower = name.lower()
     if any(k in name_lower for k in ["bajaj", "tata", "premier", "ola", "swiggy", "waaree"]):
         return {
@@ -85,7 +84,7 @@ def run_scraper():
 
     try:
         session = requests.Session()
-        res = session.get(url, headers=HEADERS, timeout=12)
+        res = session.get(url, headers=HEADERS, timeout=15)
         if res.status_code != 200:
             print(f"Fetch failed with HTTP status: {res.status_code}")
             return ipos
@@ -101,15 +100,24 @@ def run_scraper():
         col_map = {}
         for idx, h in enumerate(headers):
             if "name" in h or "company" in h or "ipo" in h:
-                if "name" not in col_map: col_map["name"] = idx
-            elif "gmp" in h: col_map["gmp"] = idx
-            elif "sub" in h: col_map["sub"] = idx
-            elif "price" in h: col_map["price"] = idx
-            elif "lot" in h: col_map["lot"] = idx
-            elif "open" in h: col_map["open"] = idx
-            elif "close" in h: col_map["close"] = idx
-            elif "boa" in h or "allotment" in h: col_map["allotment"] = idx
-            elif "listing" in h: col_map["listing"] = idx
+                if "name" not in col_map:
+                    col_map["name"] = idx
+            elif "gmp" in h:
+                col_map["gmp"] = idx
+            elif "sub" in h:
+                col_map["sub"] = idx
+            elif "price" in h:
+                col_map["price"] = idx
+            elif "lot" in h:
+                col_map["lot"] = idx
+            elif "open" in h:
+                col_map["open"] = idx
+            elif "close" in h:
+                col_map["close"] = idx
+            elif "boa" in h or "allotment" in h:
+                col_map["allotment"] = idx
+            elif "listing" in h:
+                col_map["listing"] = idx
 
         name_col_idx = col_map.get("name", 0)
         rows = table.find_all("tr")[1:]
@@ -167,13 +175,10 @@ def run_scraper():
             status = determine_status(open_d, close_d, list_d)
             symbol = re.sub(r"[^A-Za-z0-9]", "", clean_name)[:7].upper()
 
-            # Reliable registrar routing
             reg_info = get_registrar_info(clean_name, category)
 
-            # Standardized SEBI Filing prospectus links
-            slug = clean_name.lower().replace(" ", "-")
-            rhp_url = f"https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
-            drhp_url = f"https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=0"
+            rhp_url = "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
+            drhp_url = "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=0"
 
             ipos.append({
                 "id": str(idx + 1),
@@ -215,5 +220,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-            main()
     
