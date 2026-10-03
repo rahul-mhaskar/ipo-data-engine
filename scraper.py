@@ -23,13 +23,11 @@ def clean_num(val):
         return 0.0
 
 def parse_date_with_year(date_str):
-    """Converts strings like '30-Sep', '5-Oct-26', or '05-Oct-2026' into 'YYYY-MM-DD'."""
-    if not date_str or date_str == "--" or date_str == "-":
+    if not date_str or date_str in ["--", "-", ""]:
         return None
     cleaned = date_str.strip()
     current_year = datetime.now().year
 
-    # Check for DD-Mon-YY or DD-Mon-YYYY
     match_full = re.search(r"(\d{1,2})-([A-Za-z]{3})(?:-(\d{2,4}))?", cleaned)
     if match_full:
         day, month_str, yr = match_full.groups()
@@ -73,13 +71,11 @@ def scrape_investorgain():
     try:
         res = requests.get(url, headers=HEADERS, timeout=15)
         if res.status_code != 200:
-            print(f"InvestorGain request failed with status: {res.status_code}")
             return ipos
 
         soup = BeautifulSoup(res.text, "html.parser")
         table = soup.find("table")
         if not table:
-            print("Table element not found.")
             return ipos
 
         # Locate column indexes dynamically from the header
@@ -88,9 +84,10 @@ def scrape_investorgain():
 
         col_map = {}
         for idx, h in enumerate(headers):
-            if "ipo" in h or "company" in h:
-                col_map["name"] = idx
-            elif "gmp" in h:
+            if "name" in h or "company" in h or "ipo" in h:
+                if "name" not in col_map:
+                    col_map["name"] = idx
+            if "gmp" in h:
                 col_map["gmp"] = idx
             elif "sub" in h:
                 col_map["sub"] = idx
@@ -107,6 +104,7 @@ def scrape_investorgain():
             elif "listing" in h:
                 col_map["listing"] = idx
 
+        name_col_idx = col_map.get("name", 0)
         rows = table.find_all("tr")[1:]
         today_iso = datetime.now().strftime("%Y-%m-%d")
 
@@ -115,41 +113,55 @@ def scrape_investorgain():
             if len(tds) < 6:
                 continue
 
-            # Extract Company Name & Category
-            raw_name = tds[col_map.get("name", 0)].text.strip()
+            name_td = tds[name_col_idx]
+            
+            # 1. FIX: Specifically look for the company link tag <a> first
+            company_link = name_td.find("a")
+            if company_link and company_link.text.strip():
+                raw_name = company_link.text.strip()
+            else:
+                # If no <a> tag, strip out any '₹ ... Cr' issue size strings
+                raw_text = name_td.text.strip()
+                raw_name = re.sub(r"₹\s*[\d,.]+\s*Cr\.?", "", raw_text, flags=re.IGNORECASE).strip()
+
             if not raw_name or "company" in raw_name.lower():
                 continue
 
             category = "SME" if "SME" in raw_name.upper() else "MAINBOARD"
+            
+            # Clean company name: remove prefixes/suffixes like BSE, NSE, SME, IPO, Ltd.
             clean_name = re.sub(r"\b(IPO|SME|BSE|NSE|Ltd\.?)\b", "", raw_name, flags=re.IGNORECASE)
+            clean_name = re.sub(r"₹\s*[\d,.]+\s*Cr\.?", "", clean_name, flags=re.IGNORECASE)
             clean_name = re.sub(r"\s+", " ", clean_name).strip()
 
-            # Extract GMP
+            if not clean_name:
+                continue
+
+            # GMP parsing
             gmp_raw = tds[col_map["gmp"]].text.strip() if "gmp" in col_map else "0"
             gmp_val = clean_num(gmp_raw.split("(")[0] if "(" in gmp_raw else gmp_raw)
 
-            # Extract Price Band
+            # Price parsing
             price_raw = tds[col_map["price"]].text.strip() if "price" in col_map else "100"
             prices = [float(p) for p in re.findall(r"\d+(?:\.\d+)?", price_raw)]
             price_min = min(prices) if prices else 100.0
             price_max = max(prices) if prices else price_min
             gmp_pct = round((gmp_val / price_max * 100), 2) if price_max > 0 else 0.0
 
-            # Extract Lot Size
+            # Lot size parsing
             lot_raw = tds[col_map["lot"]].text.strip() if "lot" in col_map else ("1200" if category == "SME" else "35")
             lot_size = int(clean_num(lot_raw)) if clean_num(lot_raw) > 0 else (1200 if category == "SME" else 35)
 
-            # Extract Subscription
+            # Subscription parsing
             sub_raw = tds[col_map["sub"]].text.strip() if "sub" in col_map else "1.0"
             sub_val = clean_num(sub_raw) if clean_num(sub_raw) > 0 else 1.0
 
-            # Extract Dates
+            # Date parsing
             open_d = parse_date_with_year(tds[col_map["open"]].text) if "open" in col_map else None
             close_d = parse_date_with_year(tds[col_map["close"]].text) if "close" in col_map else None
             allot_d = parse_date_with_year(tds[col_map["allotment"]].text) if "allotment" in col_map else None
             list_d = parse_date_with_year(tds[col_map["listing"]].text) if "listing" in col_map else None
 
-            # Fallbacks if dates were missing on upcoming issues
             open_d = open_d or today_iso
             close_d = close_d or open_d
             allot_d = allot_d or close_d
@@ -183,7 +195,7 @@ def scrape_investorgain():
                 "drhpPdfUrl": "https://www.sebi.gov.in"
             })
     except Exception as e:
-        print(f"Error parsing live IPOs: {e}")
+        print(f"Scraper error: {e}")
 
     return ipos
 
@@ -192,9 +204,9 @@ def main():
     if live_items and len(live_items) > 0:
         with open(FILE_PATH, "w", encoding="utf-8") as f:
             json.dump(live_items, f, indent=2, ensure_ascii=False)
-        print(f"Successfully scraped and structured {len(live_items)} live IPOs.")
+        print(f"Successfully scraped {len(live_items)} IPOs with accurate company names.")
     else:
-        print("Warning: Parser returned 0 items. Retaining previous feed.")
+        print("Scraper returned 0 items; preserving existing file.")
 
 if __name__ == "__main__":
     main()
