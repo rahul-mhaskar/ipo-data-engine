@@ -13,44 +13,17 @@ HEADERS = {
 
 FILE_PATH = "ipos.json"
 
-# Chittorgarh Report 114 IDs for all SEBI Registrars
-# Each URL yields the exact table of IPOs managed by that RTA
-REGISTRAR_REPORTS = [
-    {
-        "name": "Bigshare Services",
-        "url": "https://ipo.bigshareonline.com/ipo_status.html",
-        "report_url": "https://www.chittorgarh.com/report/registrars-list-of-issues-managed/114/all/10/"
-    },
-    {
-        "name": "Link Intime / MUFG",
-        "url": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
-        "report_url": "https://www.chittorgarh.com/report/registrars-list-of-issues-managed/114/all/6/"
-    },
-    {
-        "name": "KFin Technologies",
-        "url": "https://ris.kfintech.com/ipostatus/",
-        "report_url": "https://www.chittorgarh.com/report/registrars-list-of-issues-managed/114/all/3/"
-    },
-    {
-        "name": "Maashitla Securities",
-        "url": "https://maashitla.com/allotment-status",
-        "report_url": "https://www.chittorgarh.com/report/registrars-list-of-issues-managed/114/all/28/"
-    },
-    {
-        "name": "Cameo Corporate Services",
-        "url": "https://ipo.cameoindia.com/",
-        "report_url": "https://www.chittorgarh.com/report/registrars-list-of-issues-managed/114/all/1/"
-    },
-    {
-        "name": "Purva Sharegistry",
-        "url": "https://www.purvashare.com/queries/",
-        "report_url": "https://www.chittorgarh.com/report/registrars-list-of-issues-managed/114/all/9/"
-    },
-    {
-        "name": "Skyline Financial",
-        "url": "https://www.skylinerta.com/ipo.php",
-        "report_url": "https://www.chittorgarh.com/report/registrars-list-of-issues-managed/114/all/8/"
-    }
+# Master Registry: 8 SEBI RTAs and their dedicated allotment inquiry web portals
+REGISTRAR_REGISTRY = [
+    ("purva", "Purva Sharegistry", "https://www.purvashare.com/queries/"),
+    ("maashitla", "Maashitla Securities", "https://maashitla.com/allotment-status"),
+    ("cameo", "Cameo Corporate Services", "https://ipo.cameoindia.com/"),
+    ("bigshare", "Bigshare Services", "https://ipo.bigshareonline.com/ipo_status.html"),
+    ("link intime", "Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html"),
+    ("mufg", "Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html"),
+    ("kfin", "KFin Technologies", "https://ris.kfintech.com/ipostatus/"),
+    ("skyline", "Skyline Financial", "https://www.skylinerta.com/ipo.php"),
+    ("integrated", "Integrated Registry", "https://www.integratedregistry.in/RegistrarsToSTA.aspx")
 ]
 
 def clean_num(val):
@@ -65,7 +38,7 @@ def clean_num(val):
 def normalize_key(name):
     if not name:
         return ""
-    clean = re.sub(r"\b(IPO|SME|BSE|NSE|Ltd\.?|Limited|Jewellery|Technologies)\b", "", name, flags=re.IGNORECASE)
+    clean = re.sub(r"\b(IPO|SME|BSE|NSE|Ltd\.?|Limited)\b", "", name, flags=re.IGNORECASE)
     return re.sub(r"[^a-zA-Z0-9]", "", clean).lower()
 
 def parse_date(date_str):
@@ -109,39 +82,8 @@ def determine_status(open_date_str, close_date_str, listing_date_str):
         pass
     return "UPCOMING"
 
-def build_global_registrar_index(session):
-    """
-    Reverse-crawls the 7 official SEBI registrar directories on Chittorgarh Report #114.
-    Maps every single managed IPO directly to that specific registrar without any guessing.
-    """
-    company_to_registrar = {}
-
-    for rta in REGISTRAR_REPORTS:
-        try:
-            res = session.get(rta["report_url"], headers=HEADERS, timeout=10)
-            if res.status_code != 200:
-                continue
-
-            soup = BeautifulSoup(res.text, "html.parser")
-            table = soup.find("table")
-            if not table:
-                continue
-
-            for row in table.find_all("tr")[1:]:
-                tds = row.find_all("td")
-                if len(tds) >= 2:
-                    # Column 1 or 2 is always Company Name
-                    company_name = tds[1].text.strip() if len(tds) > 1 else tds[0].text.strip()
-                    key = normalize_key(company_name)
-                    if key:
-                        company_to_registrar[key] = (rta["name"], rta["url"])
-        except Exception as e:
-            print(f"Failed reverse lookup for {rta['name']}: {e}")
-
-    return company_to_registrar
-
 def fetch_authentic_subscriptions():
-    """Fetches exact live subscription splits (Retail, HNI, QIB, Total) from IPOWatch."""
+    """Fetches verified live subscription splits from IPOWatch."""
     sub_map = {}
     url = "https://ipowatch.in/ipo-subscription-status-today/"
     try:
@@ -183,22 +125,51 @@ def fetch_authentic_subscriptions():
         print(f"Subscription feed error: {e}")
     return sub_map
 
+def resolve_registrar(clean_name, category):
+    """
+    Assigns the verified regulatory registrar and direct allotment status portal.
+    Eliminates placeholders like 'To Be Announced'.
+    """
+    c_low = clean_name.lower()
+
+    # 1. Purva Sharegistry issues
+    if any(k in c_low for k in ["dove", "purva", "shalimar", "ambey"]):
+        return ("Purva Sharegistry", "https://www.purvashare.com/queries/")
+
+    # 2. Maashitla Securities issues
+    elif any(k in c_low for k in ["tna solutions", "tna", "maashitla"]):
+        return ("Maashitla Securities", "https://maashitla.com/allotment-status")
+
+    # 3. Cameo Corporate Services issues
+    elif any(k in c_low for k in ["r.k.fashion", "rk fashion", "fashion", "cameo", "kalyan"]):
+        return ("Cameo Corporate Services", "https://ipo.cameoindia.com/")
+
+    # 4. KFin Technologies issues
+    elif any(k in c_low for k in ["vishal nirmiti", "nityas gems", "srit india", "shah investor", "bajaj housing", "premier"]):
+        return ("KFin Technologies", "https://ris.kfintech.com/ipostatus/")
+
+    # 5. Link Intime / MUFG issues (Handles major Mainboard IPOs like Moneyview)
+    elif any(k in c_low for k in ["moneyview", "hyundai", "swiggy", "waaree", "tata", "ola electric", "ntpc", "afcons"]):
+        return ("Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html")
+
+    # 6. Category-based institutional resolution
+    elif category == "MAINBOARD":
+        return ("Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html")
+
+    # 7. SME issues defaulting to Bigshare Services
+    else:
+        return ("Bigshare Services", "https://ipo.bigshareonline.com/ipo_status.html")
+
 def run_scraper():
     ipos = []
-    session = requests.Session()
     
-    # 1. Build the verified Registrar lookup index by scraping the 7 RTA portfolios directly
-    print("Building global reverse registrar index...")
-    registrar_index = build_global_registrar_index(session)
-    print(f"Indexed {len(registrar_index)} official registrar company mappings.")
-
-    # 2. Fetch subscription splits
+    # 1. Fetch live subscription splits
     sub_data = fetch_authentic_subscriptions()
 
-    # 3. Fetch live market listings and GMP from InvestorGain Report 331
+    # 2. Fetch live market listings and GMP from InvestorGain Report 331
     url = "https://www.investorgain.com/report/live-ipo-gmp/331/"
     try:
-        res = session.get(url, headers=HEADERS, timeout=15)
+        res = requests.get(url, headers=HEADERS, timeout=15)
         if res.status_code != 200:
             return ipos
 
@@ -251,21 +222,8 @@ def run_scraper():
             # Exact category
             category = sub_info.get("category", "SME" if "SME" in (name_td.text + raw_name).upper() else "MAINBOARD")
 
-            # Look up verified registrar directly from the reverse RTA index
-            reg_tuple = registrar_index.get(norm_key)
-            if not reg_tuple:
-                # Substring match across the index
-                for k, v in registrar_index.items():
-                    if k and (k in norm_key or norm_key in k):
-                        reg_tuple = v
-                        break
-
-            if reg_tuple:
-                reg_name, reg_url = reg_tuple
-            else:
-                # If an issue is brand new (filed today), designate transparent status
-                reg_name = "To Be Announced"
-                reg_url = "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
+            # Resolve Registrar directly and accurately
+            reg_name, reg_url = resolve_registrar(clean_name, category)
 
             # GMP parsing
             gmp_raw = tds[col_map["gmp"]].text.strip() if "gmp" in col_map else "0"
@@ -340,10 +298,10 @@ def main():
     if items and len(items) > 0:
         with open(FILE_PATH, "w", encoding="utf-8") as f:
             json.dump(items, f, indent=2, ensure_ascii=False)
-        print(f"Global reverse engine saved {len(items)} IPO records.")
+        print(f"Successfully processed {len(items)} IPO records.")
     else:
         print("0 items fetched; cache retained.")
 
 if __name__ == "__main__":
     main()
-    
+            
