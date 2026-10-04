@@ -262,30 +262,32 @@ def run_pipeline():
 
         symbol = re.sub(r"[^A-Za-z0-9]", "", clean_name)[:7].upper()
 
+                # Fallback to 0.0 / 0 for strict Android Moshi primitive deserialization
         final_dataset.append({
             "id": str(idx + 1),
             "name": clean_name,
             "symbol": symbol,
             "category": category,
             "status": status,
-            "issuePriceMin": price_min,
-            "issuePriceMax": price_max,
-            "lotSize": lot_size,
+            "issuePriceMin": price_min if price_min is not None else 0.0,
+            "issuePriceMax": price_max if price_max is not None else 0.0,
+            "lotSize": lot_size if lot_size is not None else 0,
             "openDate": open_d or "To Be Updated",
             "closeDate": close_d or "To Be Updated",
             "allotmentDate": allot_d or "To Be Updated",
             "listingDate": list_d or "To Be Updated",
-            "gmpAmount": gmp_val,
-            "gmpPercent": gmp_pct,
-            "subscriptionTotal": sub_total,
-            "subscriptionRetail": None,
-            "subscriptionHNI": None,
-            "subscriptionQIB": None,
+            "gmpAmount": gmp_val if gmp_val is not None else 0.0,
+            "gmpPercent": gmp_pct if gmp_pct is not None else 0.0,
+            "subscriptionTotal": sub_total if sub_total is not None else 0.0,
+            "subscriptionRetail": 0.0,
+            "subscriptionHNI": 0.0,
+            "subscriptionQIB": 0.0,
             "registrarName": reg_name,
             "registrarUrl": reg_url,
             "rhpPdfUrl": f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+RHP+file+SEBI",
             "drhpPdfUrl": f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+DRHP+file+SEBI"
         })
+
 
     # Save Clean Feed
     with open(FILE_PATH, "w", encoding="utf-8") as f:
