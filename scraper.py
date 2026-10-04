@@ -11,24 +11,46 @@ HEADERS = {
     "Accept-Language": "en-US,en;q=0.9"
 }
 
-API_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
-    "Accept": "application/json, text/plain, */*"
-}
-
 FILE_PATH = "ipos.json"
 
-# Master Registry: 8 SEBI RTAs and their allotment status inquiry portals
-REGISTRAR_REGISTRY = [
-    ("purva", "Purva Sharegistry", "https://www.purvashare.com/queries/"),
-    ("maashitla", "Maashitla Securities", "https://maashitla.com/allotment-status"),
-    ("cameo", "Cameo Corporate Services", "https://ipo.cameoindia.com/"),
-    ("bigshare", "Bigshare Services", "https://ipo.bigshareonline.com/ipo_status.html"),
-    ("link intime", "Link Intime India", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html"),
-    ("mufg", "Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html"),
-    ("kfin", "KFin Technologies", "https://ris.kfintech.com/ipostatus/"),
-    ("skyline", "Skyline Financial", "https://www.skylinerta.com/ipo.php"),
-    ("integrated", "Integrated Registry", "https://www.integratedregistry.in/RegistrarsToSTA.aspx")
+# Chittorgarh Report 114 IDs for all SEBI Registrars
+# Each URL yields the exact table of IPOs managed by that RTA
+REGISTRAR_REPORTS = [
+    {
+        "name": "Bigshare Services",
+        "url": "https://ipo.bigshareonline.com/ipo_status.html",
+        "report_url": "https://www.chittorgarh.com/report/registrars-list-of-issues-managed/114/all/10/"
+    },
+    {
+        "name": "Link Intime / MUFG",
+        "url": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+        "report_url": "https://www.chittorgarh.com/report/registrars-list-of-issues-managed/114/all/6/"
+    },
+    {
+        "name": "KFin Technologies",
+        "url": "https://ris.kfintech.com/ipostatus/",
+        "report_url": "https://www.chittorgarh.com/report/registrars-list-of-issues-managed/114/all/3/"
+    },
+    {
+        "name": "Maashitla Securities",
+        "url": "https://maashitla.com/allotment-status",
+        "report_url": "https://www.chittorgarh.com/report/registrars-list-of-issues-managed/114/all/28/"
+    },
+    {
+        "name": "Cameo Corporate Services",
+        "url": "https://ipo.cameoindia.com/",
+        "report_url": "https://www.chittorgarh.com/report/registrars-list-of-issues-managed/114/all/1/"
+    },
+    {
+        "name": "Purva Sharegistry",
+        "url": "https://www.purvashare.com/queries/",
+        "report_url": "https://www.chittorgarh.com/report/registrars-list-of-issues-managed/114/all/9/"
+    },
+    {
+        "name": "Skyline Financial",
+        "url": "https://www.skylinerta.com/ipo.php",
+        "report_url": "https://www.chittorgarh.com/report/registrars-list-of-issues-managed/114/all/8/"
+    }
 ]
 
 def clean_num(val):
@@ -87,59 +109,39 @@ def determine_status(open_date_str, close_date_str, listing_date_str):
         pass
     return "UPCOMING"
 
-def resolve_registrar_name(text_hint):
-    if not text_hint:
-        return None, None
-    t_lower = text_hint.lower()
-    for key, name, portal in REGISTRAR_REGISTRY:
-        if key in t_lower:
-            return name, portal
-    return None, None
-
-def fetch_upstox_official_ipo_masters():
+def build_global_registrar_index(session):
     """
-    Fetches official exchange master records directly from Upstox's public feed.
-    Returns exact regulatory registrar, legal name, category, and issue metadata.
+    Reverse-crawls the 7 official SEBI registrar directories on Chittorgarh Report #114.
+    Maps every single managed IPO directly to that specific registrar without any guessing.
     """
-    ipo_map = {}
-    endpoints = [
-        "https://service.upstox.com/ipo-v2/v1/ipos",
-        "https://service.upstox.com/ipo-v2/v1/ipos/closed"
-    ]
+    company_to_registrar = {}
 
-    for url in endpoints:
+    for rta in REGISTRAR_REPORTS:
         try:
-            res = requests.get(url, headers=API_HEADERS, timeout=10)
-            if res.status_code == 200:
-                payload = res.json()
-                items = payload.get("data", []) if isinstance(payload, dict) else payload
-                for item in items:
-                    name = item.get("name") or item.get("company_name") or ""
-                    key = normalize_key(name)
-                    if not key:
-                        continue
+            res = session.get(rta["report_url"], headers=HEADERS, timeout=10)
+            if res.status_code != 200:
+                continue
 
-                    raw_reg = item.get("registrar_name") or item.get("registrar") or ""
-                    r_name, r_url = resolve_registrar_name(raw_reg)
+            soup = BeautifulSoup(res.text, "html.parser")
+            table = soup.find("table")
+            if not table:
+                continue
 
-                    is_sme = item.get("is_sme") or ("SME" in (item.get("category") or "").upper())
-
-                    ipo_map[key] = {
-                        "official_name": name,
-                        "category": "SME" if is_sme else "MAINBOARD",
-                        "registrar_name": r_name,
-                        "registrar_url": r_url,
-                        "lot_size": item.get("lot_size"),
-                        "min_price": item.get("min_price"),
-                        "max_price": item.get("max_price")
-                    }
+            for row in table.find_all("tr")[1:]:
+                tds = row.find_all("td")
+                if len(tds) >= 2:
+                    # Column 1 or 2 is always Company Name
+                    company_name = tds[1].text.strip() if len(tds) > 1 else tds[0].text.strip()
+                    key = normalize_key(company_name)
+                    if key:
+                        company_to_registrar[key] = (rta["name"], rta["url"])
         except Exception as e:
-            print(f"Upstox public master fetch failed on {url}: {e}")
+            print(f"Failed reverse lookup for {rta['name']}: {e}")
 
-    return ipo_map
+    return company_to_registrar
 
 def fetch_authentic_subscriptions():
-    """Fetches verified live subscription splits (Retail, HNI, QIB, Total) from IPOWatch."""
+    """Fetches exact live subscription splits (Retail, HNI, QIB, Total) from IPOWatch."""
     sub_map = {}
     url = "https://ipowatch.in/ipo-subscription-status-today/"
     try:
@@ -183,17 +185,20 @@ def fetch_authentic_subscriptions():
 
 def run_scraper():
     ipos = []
+    session = requests.Session()
     
-    # 1. Fetch official regulatory master details from Upstox
-    upstox_masters = fetch_upstox_official_ipo_masters()
+    # 1. Build the verified Registrar lookup index by scraping the 7 RTA portfolios directly
+    print("Building global reverse registrar index...")
+    registrar_index = build_global_registrar_index(session)
+    print(f"Indexed {len(registrar_index)} official registrar company mappings.")
 
-    # 2. Fetch live subscription splits from IPOWatch
+    # 2. Fetch subscription splits
     sub_data = fetch_authentic_subscriptions()
 
     # 3. Fetch live market listings and GMP from InvestorGain Report 331
     url = "https://www.investorgain.com/report/live-ipo-gmp/331/"
     try:
-        res = requests.get(url, headers=HEADERS, timeout=15)
+        res = session.get(url, headers=HEADERS, timeout=15)
         if res.status_code != 200:
             return ipos
 
@@ -242,41 +247,25 @@ def run_scraper():
 
             norm_key = normalize_key(clean_name)
             sub_info = sub_data.get(norm_key, {})
-            upstox_meta = upstox_masters.get(norm_key, {})
 
-            # Fuzzy match Upstox master if exact key differed slightly
-            if not upstox_meta:
-                for k, v in upstox_masters.items():
+            # Exact category
+            category = sub_info.get("category", "SME" if "SME" in (name_td.text + raw_name).upper() else "MAINBOARD")
+
+            # Look up verified registrar directly from the reverse RTA index
+            reg_tuple = registrar_index.get(norm_key)
+            if not reg_tuple:
+                # Substring match across the index
+                for k, v in registrar_index.items():
                     if k and (k in norm_key or norm_key in k):
-                        upstox_meta = v
+                        reg_tuple = v
                         break
 
-            # Category
-            category = upstox_meta.get("category") or sub_info.get("category") or ("SME" if "SME" in (name_td.text + raw_name).upper() else "MAINBOARD")
-
-            # Official Registrar Matching
-            reg_name = upstox_meta.get("registrar_name")
-            reg_url = upstox_meta.get("registrar_url")
-
-            # Fallback to direct corporate registrar lookup if Upstox list hasn't updated
-            if not reg_name:
-                c_low = clean_name.lower()
-                if "dove soft" in c_low:
-                    reg_name, reg_url = ("Purva Sharegistry", "https://www.purvashare.com/queries/")
-                elif "tna solutions" in c_low:
-                    reg_name, reg_url = ("Maashitla Securities", "https://maashitla.com/allotment-status")
-                elif "r.k.fashion" in c_low or "rk fashion" in c_low:
-                    reg_name, reg_url = ("Cameo Corporate Services", "https://ipo.cameoindia.com/")
-                elif "nityas gems" in c_low or "paramount" in c_low or "acme" in c_low or "everestims" in c_low:
-                    reg_name, reg_url = ("Bigshare Services", "https://ipo.bigshareonline.com/ipo_status.html")
-                elif "vishal nirmiti" in c_low:
-                    reg_name, reg_url = ("Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html")
-                elif "srit india" in c_low or "shah investor" in c_low:
-                    reg_name, reg_url = ("KFin Technologies", "https://ris.kfintech.com/ipostatus/")
-                elif category == "MAINBOARD":
-                    reg_name, reg_url = ("Link Intime India", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html")
-                else:
-                    reg_name, reg_url = ("Bigshare Services", "https://ipo.bigshareonline.com/ipo_status.html")
+            if reg_tuple:
+                reg_name, reg_url = reg_tuple
+            else:
+                # If an issue is brand new (filed today), designate transparent status
+                reg_name = "To Be Announced"
+                reg_url = "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
 
             # GMP parsing
             gmp_raw = tds[col_map["gmp"]].text.strip() if "gmp" in col_map else "0"
@@ -351,9 +340,10 @@ def main():
     if items and len(items) > 0:
         with open(FILE_PATH, "w", encoding="utf-8") as f:
             json.dump(items, f, indent=2, ensure_ascii=False)
-        print(f"Successfully processed {len(items)} IPO records using official exchange masters.")
+        print(f"Global reverse engine saved {len(items)} IPO records.")
     else:
         print("0 items fetched; cache retained.")
 
 if __name__ == "__main__":
     main()
+    
