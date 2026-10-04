@@ -254,9 +254,15 @@ def run_pipeline():
 
         # GMP
         gmp_raw = tds[col_map["gmp"]].text.strip() if "gmp" in col_map else ""
-        gmp_val = clean_num_or_none(gmp_raw.split("(")[0] if "(" in gmp_raw else gmp_raw)
-        gmp_pct = round((gmp_val / price_max * 100), 2) if (gmp_val is not None and price_max) else None
+    # gmp_val = clean_num_or_none(gmp_raw.split("(")[0] if "(" in gmp_raw else gmp_raw)
+       # gmp_pct = round((gmp_val / price_max * 100), 2) if (gmp_val is not None and price_max) else None
 
+# Fix: Output 0.0 instead of None to ensure Moshi deserializes cleanly:
+cleaned_gmp = clean_num_or_none(gmp_raw.split("(")[0] if "(" in gmp_raw else gmp_raw)
+gmp_val = cleaned_gmp if cleaned_gmp is not None else 0.0
+gmp_pct = round((gmp_val / price_max * 100), 2) if (gmp_val and price_max) else 0.0
+
+        
         sub_raw = tds[col_map["sub"]].text.strip() if "sub" in col_map else ""
         sub_total = clean_num_or_none(sub_raw)
 
