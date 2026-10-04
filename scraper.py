@@ -122,11 +122,26 @@ def fetch_real_registrar_from_details(session, detail_href):
         print(f"Detail crawl warning for {url}: {e}")
     return None, None
 
+def validate_record(item: dict) -> bool:
+    """Enforces zero-fabrication and sanity checks before serializing."""
+    if item["issuePriceMin"] < 0 or item["issuePriceMax"] < 0:
+        return False
+    if item["issuePriceMin"] > item["issuePriceMax"] and item["issuePriceMax"] > 0:
+        return False
+        
+    # Eliminate '+₹0 (1.9%)' anomaly
+    if item["gmpAmount"] <= 0 and item["gmpPercent"] > 0:
+        item["gmpPercent"] = 0.0
+
+    if item["lotSize"] < 0:
+        return False
+
+    return True
+
 def fetch_performance_tracker_history(session):
-    """Fetches verified debut prices from InvestorGain's performance history reports."""
     listing_map = {}
     endpoints = [
-        f"{BASE_URL}/report/ipo-performance-history/486/ipo/",
+        f"{BASE_URL}/report/ipo-performance-history/486/all/?year=2026",
         f"{BASE_URL}/report/ipo-performance-history/486/sme/"
     ]
     for url in endpoints:
@@ -136,23 +151,18 @@ def fetch_performance_tracker_history(session):
                 soup = BeautifulSoup(res.text, "html.parser")
                 table = soup.find("table")
                 if table:
-                    rows = table.find_all("tr")[1:]
-                    for r in rows:
+                    for r in table.find_all("tr")[1:]:
                         tds = r.find_all("td")
-                        if len(tds) >= 8:
+                        if len(tds) >= 7:
                             name_raw = tds[0].text.strip()
                             key = normalize_key(name_raw)
-                            # Column 6 is Listing Price, Column 6 text also contains (Gain%)
-                            l_price_text = tds[6].text.strip()
-                            l_match = re.search(r"([\d,.]+)\s*\(([-+]?\d*\.?\d+)%\)", l_price_text)
-                            if l_match:
-                                l_price = float(l_match.group(1).replace(",", ""))
-                                g_pct = float(l_match.group(2))
-                                if key:
-                                    listing_map[key] = {
-                                        "listingPrice": l_price,
-                                        "listingGainPercent": g_pct
-                                    }
+                            cell_txt = " ".join([td.text.strip() for td in tds])
+                            m = re.search(r"([\d,.]+)\s*\(([-+]?\d*\.?\d+)%\)", cell_txt)
+                            if m and key:
+                                listing_map[key] = {
+                                    "listingPrice": float(m.group(1).replace(",", "")),
+                                    "listingGainPercent": float(m.group(2))
+                                }
         except Exception as e:
             print(f"Performance history crawl warning: {e}")
     return listing_map
@@ -171,12 +181,14 @@ def run_pipeline():
         except Exception:
             pass
 
-    # 2. Load previous verified cache
+    # 2. Load previous verified cache & prepare LKG backup
     previous_cache = {}
+    last_known_good = []
     if os.path.exists(FILE_PATH):
         try:
             with open(FILE_PATH, "r", encoding="utf-8") as f:
-                for item in json.load(f):
+                last_known_good = json.load(f)
+                for item in last_known_good:
                     k = normalize_key(item.get("name", ""))
                     r_name = item.get("registrarName")
                     if k and r_name and r_name not in ["To Be Updated", "To Be Announced"]:
@@ -190,12 +202,13 @@ def run_pipeline():
     # 4. Fetch Master Live Feed
     res = session.get(f"{BASE_URL}/report/live-ipo-gmp/331/", timeout=15)
     if res.status_code != 200:
-        print(f"InvestorGain HTTP Error: {res.status_code}")
+        print(f"InvestorGain HTTP Error: {res.status_code}. Preserving Last-Known-Good data.")
         return
 
     soup = BeautifulSoup(res.text, "html.parser")
     table = soup.find("table")
     if not table:
+        print("Master table not found. Aborting write to prevent data wipeout.")
         return
 
     header_row = table.find("tr")
@@ -233,8 +246,17 @@ def run_pipeline():
         if not raw_name or "company" in raw_name.lower():
             continue
 
-        clean_name = re.sub(r"\b(IPO|SME|BSE|NSE|Ltd\.?)\b", "", raw_name, flags=re.IGNORECASE)
-        clean_name = re.sub(r"₹\s*[\d,.]+\s*Cr\.?", "", clean_name, flags=re.IGNORECASE).strip()
+        # Extract authentic listing debut directly from raw cell (e.g. "...SMEL@53.73 (-0.5%)")
+        listing_price = 0.0
+        listing_gain_pct = 0.0
+        inline_match = re.search(r"L@\s*([\d,.]+)\s*\(([-+]?\d*\.?\d+)%\)", raw_cell_text, re.IGNORECASE)
+        if inline_match:
+            listing_price = float(inline_match.group(1).replace(",", ""))
+            listing_gain_pct = float(inline_match.group(2))
+
+        clean_name = re.sub(r"L@\s*[\d,.]+\s*\([^)]*\)", "", raw_name, flags=re.IGNORECASE)
+        clean_name = re.sub(r"₹\s*[\d,.]+\s*Cr\.?", "", clean_name, flags=re.IGNORECASE)
+        clean_name = re.sub(r"\b(IPO|SME|BSE|NSE|Ltd\.?|Limited)\b", "", clean_name, flags=re.IGNORECASE).strip()
         if not clean_name:
             continue
 
@@ -249,7 +271,12 @@ def run_pipeline():
 
         status = determine_status(open_d, close_d, list_d)
 
-        # ---------------- REGISTRAR RESOLUTION ----------------
+        # Fallback to performance history table if inline badge wasn't present
+        if listing_price == 0.0 and norm_key in perf_map:
+            listing_price = perf_map[norm_key]["listingPrice"]
+            listing_gain_pct = perf_map[norm_key]["listingGainPercent"]
+
+        # Registrar resolution
         reg_name, reg_url = None, None
         if norm_key in manual_overrides:
             reg_name, reg_url = manual_overrides[norm_key]
@@ -294,20 +321,7 @@ def run_pipeline():
 
         symbol = re.sub(r"[^A-Za-z0-9]", "", clean_name)[:7].upper()
 
-        # ---------------- AUTHENTIC LISTING DATA EXTRACTION ----------------
-        listing_price = 0.0
-        listing_gain_pct = 0.0
-
-        # Primary extraction: Check the in-line badge "L@53.73 (-0.5%)" in the cell
-        inline_match = re.search(r"L@\s*([\d,.]+)\s*\(([-+]?\d*\.?\d+)%\)", raw_cell_text)
-        if inline_match:
-            listing_price = float(inline_match.group(1).replace(",", ""))
-            listing_gain_pct = float(inline_match.group(2))
-        elif norm_key in perf_map:
-            listing_price = perf_map[norm_key]["listingPrice"]
-            listing_gain_pct = perf_map[norm_key]["listingGainPercent"]
-
-        final_dataset.append({
+        candidate = {
             "id": str(idx + 1),
             "name": clean_name,
             "symbol": symbol,
@@ -332,7 +346,16 @@ def run_pipeline():
             "registrarUrl": reg_url,
             "rhpPdfUrl": f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+RHP+file+SEBI",
             "drhpPdfUrl": f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+DRHP+file+SEBI"
-        })
+        }
+
+        # Run candidate through automated schema validation
+        if validate_record(candidate):
+            final_dataset.append(candidate)
+
+    # Last-Known-Good Safety Net: Never wipe out data if scraping yielded 0 records
+    if not final_dataset:
+        print("Scraper produced 0 valid records. Retaining previous feed.")
+        return
 
     with open(FILE_PATH, "w", encoding="utf-8") as f:
         json.dump(final_dataset, f, indent=2, ensure_ascii=False)
@@ -348,8 +371,8 @@ def run_pipeline():
         else:
             f.write("### ✅ All fields 100% verified. No manual intervention required.\n")
 
-    print(f"Data sync complete. Processed {len(final_dataset)} records.")
+    print(f"Data sync complete. Processed {len(final_dataset)} verified records.")
 
 if __name__ == "__main__":
     run_pipeline()
-    
+        
