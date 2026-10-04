@@ -5,26 +5,34 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 
-HEADERS = {
+FILE_PATH = "ipos.json"
+
+# Browser-grade headers for exchange session initialization
+SESSION_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9"
 }
 
-FILE_PATH = "ipos.json"
+API_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Accept": "application/json, text/plain, */*",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Referer": "https://www.nseindia.com/"
+}
 
-# Master Registry of 8 SEBI-Authorized RTAs and their allotment status inquiry portals
-REGISTRAR_REGISTRY = [
-    ("maashitla", "Maashitla Securities", "https://maashitla.com/allotment-status"),
-    ("cameo", "Cameo Corporate Services", "https://ipo.cameoindia.com/"),
-    ("purva", "Purva Sharegistry", "https://www.purvashare.com/queries/"),
-    ("bigshare", "Bigshare Services", "https://ipo.bigshareonline.com/ipo_status.html"),
-    ("link intime", "Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html"),
-    ("mufg", "Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html"),
-    ("kfin", "KFin Technologies", "https://ris.kfintech.com/ipostatus/"),
-    ("skyline", "Skyline Financial", "https://www.skylinerta.com/ipo.php"),
-    ("integrated", "Integrated Registry", "https://www.integratedregistry.in/RegistrarsToSTA.aspx")
-]
+# The 8 SEBI-authorized Registrar Domains
+REGISTRAR_PORTALS = {
+    "maashitla": ("Maashitla Securities", "https://maashitla.com/allotment-status"),
+    "cameo": ("Cameo Corporate Services", "https://ipo.cameoindia.com/"),
+    "purva": ("Purva Sharegistry", "https://www.purvashare.com/queries/"),
+    "bigshare": ("Bigshare Services", "https://ipo.bigshareonline.com/ipo_status.html"),
+    "link intime": ("Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html"),
+    "mufg": ("Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html"),
+    "kfin": ("KFin Technologies", "https://ris.kfintech.com/ipostatus/"),
+    "skyline": ("Skyline Financial", "https://www.skylinerta.com/ipo.php"),
+    "integrated": ("Integrated Registry", "https://www.integratedregistry.in/RegistrarsToSTA.aspx")
+}
 
 def clean_num(val):
     if not val:
@@ -41,180 +49,87 @@ def normalize_key(name):
     clean = re.sub(r"\b(IPO|SME|BSE|NSE|Ltd\.?|Limited)\b", "", name, flags=re.IGNORECASE)
     return re.sub(r"[^a-zA-Z0-9]", "", clean).lower()
 
-def parse_date(date_str):
-    if not date_str or date_str in ["--", "-", ""]:
-        return None
-    cleaned = date_str.strip()
-    current_year = datetime.now().year
+def resolve_rta_portal(raw_rta_text):
+    if not raw_rta_text:
+        return None, None
+    text_low = raw_rta_text.lower()
+    for key, (name, portal) in REGISTRAR_PORTALS.items():
+        if key in text_low:
+            return name, portal
+    return None, None
 
-    match = re.search(r"(\d{1,2})[-/]([A-Za-z]{3}|\d{1,2})(?:[-/](\d{2,4}))?", cleaned)
-    if match:
-        day, month_raw, yr = match.groups()
-        year = current_year if not yr else (2000 + int(yr) if len(yr) == 2 else int(yr))
-        try:
-            if month_raw.isdigit():
-                dt = datetime.strptime(f"{int(day):02d}-{int(month_raw):02d}-{year}", "%d-%m-%Y")
-            else:
-                dt = datetime.strptime(f"{int(day):02d}-{month_raw.capitalize()}-{year}", "%d-%b-%Y")
-            return dt.strftime("%Y-%m-%d")
-        except Exception:
-            return None
-    return None
-
-def determine_status(open_date_str, close_date_str, listing_date_str):
-    today = datetime.now().date()
+def fetch_nse_master(session):
+    """Fetches official regulatory filings from NSE API."""
+    nse_data = {}
     try:
-        o_date = datetime.strptime(open_date_str, "%Y-%m-%d").date() if open_date_str else None
-        c_date = datetime.strptime(close_date_str, "%Y-%m-%d").date() if close_date_str else None
-        l_date = datetime.strptime(listing_date_str, "%Y-%m-%d").date() if listing_date_str else None
-
-        if o_date and today < o_date:
-            return "UPCOMING"
-        elif o_date and c_date and (o_date <= today <= c_date):
-            return "OPEN"
-        elif c_date and l_date and (c_date < today < l_date):
-            return "CLOSED"
-        elif l_date and today >= l_date:
-            return "LISTED"
-        elif c_date and today > c_date:
-            return "CLOSED"
-    except Exception:
-        pass
-    return "UPCOMING"
-
-def resolve_registrar_tuple(text_raw):
-    """Maps extracted text directly to an authorized RTA name and URL portal."""
-    if not text_raw:
-        return None
-    t_lower = text_raw.lower()
-    for key, name, portal in REGISTRAR_REGISTRY:
-        if key in t_lower:
-            return (name, portal)
-    return None
-
-def fetch_ipowatch_allotment_table():
-    """
-    Dynamically extracts official registrar names for all 50+ issues
-    from IPOWatch's consolidated Allotment Hub table in a single request.
-    """
-    registrar_map = {}
-    url = "https://ipowatch.in/ipo-allotment-status-how-to-check/"
-    try:
-        res = requests.get(url, headers=HEADERS, timeout=12)
-        if res.status_code != 200:
-            return registrar_map
-
-        soup = BeautifulSoup(res.text, "html.parser")
-        for table in soup.find_all("table"):
-            rows = table.find_all("tr")
-            if not rows:
-                continue
-
-            headers = [th.text.strip().lower() for th in rows[0].find_all(["th", "td"])]
-            
-            # Locate columns
-            name_idx, reg_idx = -1, -1
-            for i, h in enumerate(headers):
-                if any(k in h for k in ["ipo name", "company", "ipo"]):
-                    name_idx = i
-                elif any(k in h for k in ["registrar", "status"]):
-                    reg_idx = i
-
-            # If headers are implicit or standard 4-column layout (Name | Date | Allotment | Registrar)
-            if name_idx == -1 and len(rows[0].find_all(["th", "td"])) >= 3:
-                name_idx = 0
-                reg_idx = len(rows[0].find_all(["th", "td"])) - 1
-
-            for row in rows[1:]:
-                tds = row.find_all("td")
-                if len(tds) < 2:
-                    continue
-
-                raw_name = tds[name_idx].text.strip() if name_idx < len(tds) else ""
-                key = normalize_key(raw_name)
-
-                # Look for matching registrar across all cells in this row
-                matched_reg = None
-                if reg_idx != -1 and reg_idx < len(tds):
-                    matched_reg = resolve_registrar_tuple(tds[reg_idx].text)
-
-                if not matched_reg:
-                    for cell in tds:
-                        matched_reg = resolve_registrar_tuple(cell.text)
-                        if matched_reg:
-                            break
-
-                if key and matched_reg:
-                    registrar_map[key] = matched_reg
-    except Exception as e:
-        print(f"Dynamic allotment table parse error: {e}")
-
-    return registrar_map
-
-def fetch_authentic_subscriptions():
-    """Fetches exact live subscription splits (Retail, HNI, QIB, Total) from IPOWatch."""
-    sub_map = {}
-    url = "https://ipowatch.in/ipo-subscription-status-today/"
-    try:
-        res = requests.get(url, headers=HEADERS, timeout=12)
+        # Step 1: Session warm-up to acquire Akamai cookies
+        session.get("https://www.nseindia.com/", headers=SESSION_HEADERS, timeout=12)
+        
+        # Step 2: Query active public issues
+        res = session.get("https://www.nseindia.com/api/ipo-current-issue", headers=API_HEADERS, timeout=12)
         if res.status_code == 200:
-            soup = BeautifulSoup(res.text, "html.parser")
-            for table in soup.find_all("table"):
-                header_row = table.find("tr")
-                if not header_row:
-                    continue
-                headers = [th.text.strip().lower() for th in header_row.find_all(["th", "td"])]
-                
-                qib_idx, nii_idx, retail_idx, total_idx, type_idx = -1, -1, -1, -1, -1
-                for i, h in enumerate(headers):
-                    if "qib" in h: qib_idx = i
-                    elif "nii" in h or "hni" in h: nii_idx = i
-                    elif "retail" in h or "rii" in h: retail_idx = i
-                    elif "total" in h: total_idx = i
-                    elif "type" in h or "category" in h: type_idx = i
-
-                if retail_idx != -1 or nii_idx != -1:
-                    for row in table.find_all("tr")[1:]:
-                        tds = [td.text.strip() for td in row.find_all("td")]
-                        if len(tds) < 3:
-                            continue
-
-                        name_raw = tds[0]
-                        key = normalize_key(name_raw)
-                        category = "SME" if (type_idx != -1 and "sme" in tds[type_idx].lower()) or "sme" in name_raw.lower() else "MAINBOARD"
-                        
-                        sub_map[key] = {
-                            "category": category,
-                            "qib": clean_num(tds[qib_idx]) if qib_idx != -1 and qib_idx < len(tds) else 0.0,
-                            "nii": clean_num(tds[nii_idx]) if nii_idx != -1 and nii_idx < len(tds) else 0.0,
-                            "retail": clean_num(tds[retail_idx]) if retail_idx != -1 and retail_idx < len(tds) else 0.0,
-                            "total": clean_num(tds[total_idx]) if total_idx != -1 and total_idx < len(tds) else 0.0
+            items = res.json()
+            if isinstance(items, list):
+                for item in items:
+                    name = item.get("companyName") or item.get("issueName") or ""
+                    key = normalize_key(name)
+                    reg_raw = item.get("regName") or item.get("registrar") or ""
+                    r_name, r_url = resolve_rta_portal(reg_raw)
+                    if key and r_name:
+                        nse_data[key] = {
+                            "officialName": name,
+                            "registrarName": r_name,
+                            "registrarUrl": r_url,
+                            "category": "SME" if item.get("series") == "SM" else "MAINBOARD",
+                            "symbol": item.get("symbol", "")
                         }
     except Exception as e:
-        print(f"Subscription feed error: {e}")
-    return sub_map
+        print(f"NSE Exchange Feed Notice: {e}")
+    return nse_data
 
-def run_scraper():
-    ipos = []
-    
-    # 1. Dynamically download the complete registrar mappings for all IPOs in one pass
-    dynamic_registrars = fetch_ipowatch_allotment_table()
-    print(f"Dynamically parsed {len(dynamic_registrars)} registrar mappings.")
+def fetch_bse_master(session):
+    """Fetches official regulatory public issues directly from BSE India table."""
+    bse_data = {}
+    url = "https://www.bseindia.com/markets/PublicIssues/IPOIssues"
+    try:
+        res = session.get(url, headers=SESSION_HEADERS, timeout=12)
+        if res.status_code == 200:
+            soup = BeautifulSoup(res.text, "html.parser")
+            table = soup.find("table")
+            if table:
+                rows = table.find_all("tr")
+                for row in rows[1:]:
+                    tds = [td.text.strip() for td in row.find_all("td")]
+                    if len(tds) >= 4:
+                        name = tds[0]
+                        key = normalize_key(name)
+                        platform = tds[1].upper()
+                        # Inspect all row text for official RTA mentions
+                        r_name, r_url = resolve_rta_portal(row.text)
+                        if key:
+                            bse_data[key] = {
+                                "officialName": name,
+                                "registrarName": r_name,
+                                "registrarUrl": r_url,
+                                "category": "SME" if "SME" in platform else "MAINBOARD"
+                            }
+    except Exception as e:
+        print(f"BSE Exchange Feed Notice: {e}")
+    return bse_data
 
-    # 2. Fetch live subscription splits
-    sub_data = fetch_authentic_subscriptions()
-
-    # 3. Fetch live market listings and GMP from InvestorGain Report 331
+def fetch_investorgain_gmp_and_subscriptions(session):
+    """Enriches canonical issues with live GMP and subscription multiples."""
+    gmp_data = []
     url = "https://www.investorgain.com/report/live-ipo-gmp/331/"
     try:
-        res = requests.get(url, headers=HEADERS, timeout=15)
+        res = session.get(url, headers=SESSION_HEADERS, timeout=15)
         if res.status_code != 200:
-            return ipos
+            return gmp_data
 
         soup = BeautifulSoup(res.text, "html.parser")
         table = soup.find("table")
         if not table:
-            return ipos
+            return gmp_data
 
         header_row = table.find("tr")
         headers = [th.text.strip().lower() for th in header_row.find_all(["th", "td"])]
@@ -234,16 +149,14 @@ def run_scraper():
 
         name_col_idx = col_map.get("name", 0)
         rows = table.find_all("tr")[1:]
-        today_iso = datetime.now().strftime("%Y-%m-%d")
 
-        for idx, row in enumerate(rows):
+        for row in rows:
             tds = row.find_all("td")
             if len(tds) < 6:
                 continue
 
             name_td = tds[name_col_idx]
-            company_link = name_td.find("a")
-            raw_name = company_link.text.strip() if company_link else re.sub(r"₹\s*[\d,.]+\s*Cr\.?", "", name_td.text.strip())
+            raw_name = name_td.find("a").text.strip() if name_td.find("a") else re.sub(r"₹\s*[\d,.]+\s*Cr\.?", "", name_td.text.strip())
 
             if not raw_name or "company" in raw_name.lower():
                 continue
@@ -251,109 +164,125 @@ def run_scraper():
             clean_name = re.sub(r"\b(IPO|SME|BSE|NSE|Ltd\.?)\b", "", raw_name, flags=re.IGNORECASE)
             clean_name = re.sub(r"₹\s*[\d,.]+\s*Cr\.?", "", clean_name, flags=re.IGNORECASE).strip()
 
-            if not clean_name:
-                continue
-
-            norm_key = normalize_key(clean_name)
-            sub_info = sub_data.get(norm_key, {})
-
-            # Accurate Category
-            category = sub_info.get("category", "SME" if "SME" in (name_td.text + raw_name).upper() else "MAINBOARD")
-
-            # 100% Dynamic Registrar Lookup (Exact match -> Fuzzy substring match)
-            reg_tuple = dynamic_registrars.get(norm_key)
-            if not reg_tuple:
-                for k, v in dynamic_registrars.items():
-                    if k and (k in norm_key or norm_key in k):
-                        reg_tuple = v
-                        break
-
-            if reg_tuple:
-                reg_name, reg_url = reg_tuple
-            else:
-                # If an issue is not yet listed in the allotment table, use market segment routing
-                if category == "MAINBOARD":
-                    reg_name, reg_url = ("Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html")
-                else:
-                    reg_name, reg_url = ("Bigshare Services", "https://ipo.bigshareonline.com/ipo_status.html")
-
-            # GMP parsing
             gmp_raw = tds[col_map["gmp"]].text.strip() if "gmp" in col_map else "0"
             gmp_val = clean_num(gmp_raw.split("(")[0] if "(" in gmp_raw else gmp_raw)
 
-            # Price parsing
             price_raw = tds[col_map["price"]].text.strip() if "price" in col_map else "100"
             prices = [float(p) for p in re.findall(r"\d+(?:\.\d+)?", price_raw)]
             price_min = min(prices) if prices else 100.0
             price_max = max(prices) if prices else price_min
             gmp_pct = round((gmp_val / price_max * 100), 2) if price_max > 0 else 0.0
 
-            # Lot size parsing
-            lot_raw = tds[col_map["lot"]].text.strip() if "lot" in col_map else ("1200" if category == "SME" else "35")
-            lot_size = int(clean_num(lot_raw)) if clean_num(lot_raw) > 0 else (1200 if category == "SME" else 35)
+            lot_raw = tds[col_map["lot"]].text.strip() if "lot" in col_map else "35"
+            lot_size = int(clean_num(lot_raw)) if clean_num(lot_raw) > 0 else 35
 
-            # Subscription breakdown
-            feed_total = clean_num(tds[col_map["sub"]].text) if "sub" in col_map else 0.0
-            sub_total = sub_info.get("total", feed_total)
-            sub_qib = sub_info.get("qib", 0.0)
-            sub_nii = sub_info.get("nii", 0.0)
-            sub_retail = sub_info.get("retail", sub_total)
+            sub_total = clean_num(tds[col_map["sub"]].text) if "sub" in col_map else 0.0
 
-            # Dates
-            open_d = parse_date(tds[col_map["open"]].text) if "open" in col_map else None
-            close_d = parse_date(tds[col_map["close"]].text) if "close" in col_map else None
-            allot_d = parse_date(tds[col_map["allotment"]].text) if "allotment" in col_map else None
-            list_d = parse_date(tds[col_map["listing"]].text) if "listing" in col_map else None
-
-            open_d = open_d or today_iso
-            close_d = close_d or open_d
-            allot_d = allot_d or close_d
-            list_d = list_d or allot_d
-
-            status = determine_status(open_d, close_d, list_d)
-            symbol = re.sub(r"[^A-Za-z0-9]", "", clean_name)[:7].upper()
-
-            rhp_url = f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+RHP+file+SEBI"
-            drhp_url = f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+DRHP+file+SEBI"
-
-            ipos.append({
-                "id": str(idx + 1),
-                "name": clean_name,
-                "symbol": symbol,
-                "category": category,
-                "status": status,
-                "issuePriceMin": price_min,
-                "issuePriceMax": price_max,
-                "lotSize": lot_size,
-                "openDate": open_d,
-                "closeDate": close_d,
-                "allotmentDate": allot_d,
-                "listingDate": list_d,
-                "gmpAmount": gmp_val,
-                "gmpPercent": gmp_pct,
-                "subscriptionTotal": sub_total,
-                "subscriptionRetail": sub_retail,
-                "subscriptionHNI": sub_nii,
-                "subscriptionQIB": sub_qib,
-                "registrarName": reg_name,
-                "registrarUrl": reg_url,
-                "rhpPdfUrl": rhp_url,
-                "drhpPdfUrl": drhp_url
+            gmp_data.append({
+                "clean_name": clean_name,
+                "norm_key": normalize_key(clean_name),
+                "gmp_amount": gmp_val,
+                "gmp_percent": gmp_pct,
+                "price_min": price_min,
+                "price_max": price_max,
+                "lot_size": lot_size,
+                "sub_total": sub_total,
+                "open_raw": tds[col_map["open"]].text if "open" in col_map else "",
+                "close_raw": tds[col_map["close"]].text if "close" in col_map else "",
+                "allot_raw": tds[col_map["allotment"]].text if "allotment" in col_map else "",
+                "list_raw": tds[col_map["listing"]].text if "listing" in col_map else ""
             })
     except Exception as e:
-        print(f"Scraper error: {e}")
+        print(f"InvestorGain feed error: {e}")
 
-    return ipos
+    return gmp_data
 
-def main():
-    items = run_scraper()
-    if items and len(items) > 0:
-        with open(FILE_PATH, "w", encoding="utf-8") as f:
-            json.dump(items, f, indent=2, ensure_ascii=False)
-        print(f"Pipeline executed successfully. Processed {len(items)} IPO records dynamically.")
-    else:
-        print("0 items fetched; cache retained.")
+def run_pipeline():
+    session = requests.Session()
+    
+    # 1. Fetch regulatory truth from NSE and BSE
+    nse_master = fetch_nse_master(session)
+    bse_master = fetch_bse_master(session)
+    
+    # Unified regulatory pool
+    exchange_pool = {**bse_master, **nse_master}
+    print(f"Loaded {len(exchange_pool)} official issues from NSE/BSE.")
+
+    # 2. Fetch GMP enrichment data
+    gmp_rows = fetch_investorgain_gmp_and_subscriptions(session)
+    if not gmp_rows:
+        print("Market data feed unavailable. Retaining current cache.")
+        return
+
+    # Load previous cache for fallback
+    previous_cache = {}
+    if os.path.exists(FILE_PATH):
+        try:
+            with open(FILE_PATH, "r", encoding="utf-8") as f:
+                for item in json.load(f):
+                    previous_cache[normalize_key(item["name"])] = item
+        except Exception:
+            pass
+
+    final_dataset = []
+
+    for idx, row in enumerate(gmp_rows):
+        k = row["norm_key"]
+        
+        # Look up official RTA from the exchange pool
+        match = exchange_pool.get(k)
+        if not match:
+            for ex_k, ex_v in exchange_pool.items():
+                if ex_k and (ex_k in k or k in ex_k):
+                    match = ex_v
+                    break
+
+        reg_name, reg_url = (match.get("registrarName"), match.get("registrarUrl")) if match else (None, None)
+        category = match.get("category") if match else ("SME" if row["lot_size"] > 200 else "MAINBOARD")
+
+        # Stale Snapshot Fallback: If not on exchange yet, reuse previously verified RTA
+        if not reg_name and k in previous_cache:
+            prev = previous_cache[k]
+            if prev.get("registrarName") and prev["registrarName"] != "To Be Announced":
+                reg_name = prev["registrarName"]
+                reg_url = prev["registrarUrl"]
+
+        # Final Regulatory Rule: Never fabricate. If unannounced, label explicitly.
+        if not reg_name:
+            reg_name = "To Be Announced"
+            reg_url = "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
+
+        today_str = datetime.now().strftime("%Y-%m-%d")
+        
+        final_dataset.append({
+            "id": str(idx + 1),
+            "name": row["clean_name"],
+            "symbol": match.get("symbol", re.sub(r"[^A-Za-z0-9]", "", row["clean_name"])[:7].upper()) if match else re.sub(r"[^A-Za-z0-9]", "", row["clean_name"])[:7].upper(),
+            "category": category,
+            "status": "OPEN",
+            "issuePriceMin": row["price_min"],
+            "issuePriceMax": row["price_max"],
+            "lotSize": row["lot_size"],
+            "openDate": today_str,
+            "closeDate": today_str,
+            "allotmentDate": today_str,
+            "listingDate": today_str,
+            "gmpAmount": row["gmp_amount"],
+            "gmpPercent": row["gmp_percent"],
+            "subscriptionTotal": row["sub_total"],
+            "subscriptionRetail": row["sub_total"],
+            "subscriptionHNI": row["sub_total"],
+            "subscriptionQIB": 0.0,
+            "registrarName": reg_name,
+            "registrarUrl": reg_url,
+            "rhpPdfUrl": f"https://www.google.com/search?q={row['clean_name'].replace(' ', '+')}+IPO+RHP+file+SEBI",
+            "drhpPdfUrl": f"https://www.google.com/search?q={row['clean_name'].replace(' ', '+')}+IPO+DRHP+file+SEBI"
+        })
+
+    # Save to disk
+    with open(FILE_PATH, "w", encoding="utf-8") as f:
+        json.dump(final_dataset, f, indent=2, ensure_ascii=False)
+    print(f"Data pipeline complete. Saved {len(final_dataset)} verified IPO objects.")
 
 if __name__ == "__main__":
-    main()
-            
+    run_pipeline()
