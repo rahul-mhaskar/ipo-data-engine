@@ -122,6 +122,45 @@ def fetch_real_registrar_from_details(session, detail_href):
         print(f"Detail crawl warning for {url}: {e}")
     return None, None
 
+def fetch_authentic_listing_results(session):
+    """Fetches real exchange opening listing prices from official listing review table."""
+    listing_map = {}
+    url = f"{BASE_URL}/report/ipo-listing-review/338/"
+    try:
+        res = session.get(url, headers=HEADERS, timeout=12)
+        if res.status_code == 200:
+            soup = BeautifulSoup(res.text, "html.parser")
+            table = soup.find("table")
+            if table:
+                headers = [th.text.strip().lower() for th in table.find("tr").find_all(["th", "td"])]
+                name_idx, list_price_idx, gain_idx = -1, -1, -1
+                for i, h in enumerate(headers):
+                    if any(k in h for k in ["company", "name", "ipo"]): name_idx = i
+                    elif "listing" in h and "price" in h: list_price_idx = i
+                    elif any(k in h for k in ["gain", "loss", "percent", "%"]): gain_idx = i
+
+                for row in table.find_all("tr")[1:]:
+                    tds = row.find_all("td")
+                    if len(tds) > max(name_idx, list_price_idx):
+                        raw_n = tds[name_idx].text.strip()
+                        key = normalize_key(raw_n)
+                        l_price = clean_num_or_none(tds[list_price_idx].text) if list_price_idx != -1 else 0.0
+                        g_pct = 0.0
+                        if gain_idx != -1 and gain_idx < len(tds):
+                            txt = tds[gain_idx].text.strip().replace("%", "")
+                            try:
+                                g_pct = float(re.findall(r"[-+]?\d*\.?\d+", txt)[0])
+                            except Exception:
+                                g_pct = 0.0
+                        if key:
+                            listing_map[key] = {
+                                "listingPrice": l_price or 0.0,
+                                "listingGainPercent": g_pct
+                            }
+    except Exception as e:
+        print(f"Listing review crawl notice: {e}")
+    return listing_map
+
 def run_pipeline():
     session = requests.Session()
     session.headers.update(HEADERS)
@@ -149,7 +188,10 @@ def run_pipeline():
         except Exception:
             pass
 
-    # 3. Fetch Master Feed
+    # 3. Fetch Authentic Listing Data
+    actual_listing_data = fetch_authentic_listing_results(session)
+
+    # 4. Fetch Master GMP Feed
     res = session.get(f"{BASE_URL}/report/live-ipo-gmp/331/", timeout=15)
     if res.status_code != 200:
         print(f"InvestorGain HTTP Error: {res.status_code}")
@@ -255,13 +297,10 @@ def run_pipeline():
 
         symbol = re.sub(r"[^A-Za-z0-9]", "", clean_name)[:7].upper()
 
-        # Listing performance extraction for LISTED issues
-        listing_price = 0.0
-        listing_gain_pct = 0.0
-        if status == "LISTED" and price_max > 0:
-            # If already listed, estimated debut = issue_price + gmp closing or actual
-            listing_price = round(price_max + gmp_val, 2)
-            listing_gain_pct = round(((listing_price - price_max) / price_max) * 100, 2)
+        # Authentic Listing Data Matching (No guessing)
+        listing_info = actual_listing_data.get(norm_key, {})
+        listing_price = listing_info.get("listingPrice", 0.0)
+        listing_gain_pct = listing_info.get("listingGainPercent", 0.0)
 
         final_dataset.append({
             "id": str(idx + 1),
@@ -304,8 +343,8 @@ def run_pipeline():
         else:
             f.write("### ✅ All fields 100% verified. No manual intervention required.\n")
 
-    print(f"Data sync complete. Processed {len(final_dataset)} records.")
+    print(f"Data sync complete. Authenticated {len(actual_listing_data)} real listing reports.")
 
 if __name__ == "__main__":
     run_pipeline()
-        
+    
