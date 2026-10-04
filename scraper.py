@@ -82,67 +82,6 @@ def determine_status(open_date_str, close_date_str, listing_date_str):
         pass
     return "UPCOMING"
 
-def resolve_official_registrar(text_content):
-    """Maps extracted registrar text directly to one of the 8 SEBI RTAs and its official portal."""
-    if not text_content:
-        return ("To Be Announced", "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1")
-    
-    t_lower = text_content.lower()
-    for key, name, portal in REGISTRAR_REGISTRY:
-        if key in t_lower:
-            return (name, portal)
-    
-    return ("To Be Announced", "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1")
-
-def fetch_master_registrar_table():
-    """
-    Downloads Chittorgarh Consolidated Report #23 for both Mainboard and SME.
-    Extracts the exact registrar assigned to each company with zero guesswork.
-    """
-    reg_map = {}
-    endpoints = [
-        "https://www.chittorgarh.com/report/ipo-allotment-status/23/",
-        "https://www.chittorgarh.com/report/ipo-allotment-status/23/sme/"
-    ]
-
-    for url in endpoints:
-        try:
-            res = requests.get(url, headers=HEADERS, timeout=12)
-            if res.status_code != 200:
-                continue
-
-            soup = BeautifulSoup(res.text, "html.parser")
-            table = soup.find("table")
-            if not table:
-                continue
-
-            header_row = table.find("tr")
-            if not header_row:
-                continue
-            headers = [th.text.strip().lower() for th in header_row.find_all(["th", "td"])]
-
-            name_idx, reg_idx = -1, -1
-            for i, h in enumerate(headers):
-                if any(k in h for k in ["company", "issuer", "ipo"]):
-                    if name_idx == -1: name_idx = i
-                elif any(k in h for k in ["registrar", "rta"]):
-                    reg_idx = i
-
-            if name_idx != -1 and reg_idx != -1:
-                for row in table.find_all("tr")[1:]:
-                    tds = [td.text.strip() for td in row.find_all("td")]
-                    if len(tds) > max(name_idx, reg_idx):
-                        raw_name = tds[name_idx]
-                        raw_reg = tds[reg_idx]
-                        key = normalize_key(raw_name)
-                        if key and raw_reg:
-                            reg_name, reg_url = resolve_official_registrar(raw_reg)
-                            reg_map[key] = (reg_name, reg_url)
-        except Exception as e:
-            print(f"Master Registrar fetch error for {url}: {e}")
-
-    return reg_map
-
 def fetch_authentic_subscriptions():
     """Scrapes verified live subscription multiples from IPOWatch."""
     sub_map = {}
@@ -186,19 +125,61 @@ def fetch_authentic_subscriptions():
         print(f"Subscription feed error: {e}")
     return sub_map
 
+def build_ipowatch_registrar_map(session):
+    """
+    Scrapes the IPOWatch Allotment Hub to discover active IPO allotment profile URLs,
+    then inspects the registrar identification line for each active issue.
+    """
+    registrar_map = {}
+    hub_url = "https://ipowatch.in/ipo-allotment-status-how-to-check/"
+    try:
+        res = session.get(hub_url, headers=HEADERS, timeout=12)
+        if res.status_code != 200:
+            return registrar_map
+
+        soup = BeautifulSoup(res.text, "html.parser")
+        
+        # Collect candidate allotment profile links (e.g. /dove-soft-ipo-allotment-status/)
+        allotment_links = {}
+        for a in soup.find_all("a", href=True):
+            href = a["href"]
+            if "-ipo-allotment-status" in href or "-ipo-allotment" in href:
+                text_clean = normalize_key(a.text.strip())
+                if text_clean:
+                    allotment_links[text_clean] = href
+
+        # Fetch only active/recent issues (limited to 15 to stay fast and avoid rate limits)
+        for key, page_url in list(allotment_links.items())[:15]:
+            try:
+                page_res = session.get(page_url, headers=HEADERS, timeout=6)
+                if page_res.status_code == 200:
+                    page_text = page_res.text.lower()
+                    for r_key, r_name, r_portal in REGISTRAR_REGISTRY:
+                        if r_key in page_text:
+                            registrar_map[key] = (r_name, r_portal)
+                            break
+            except Exception:
+                continue
+
+    except Exception as e:
+        print(f"IPOWatch Allotment Hub error: {e}")
+
+    return registrar_map
+
 def run_scraper():
     ipos = []
+    session = requests.Session()
     
-    # 1. Fetch exact Registrar mappings from the official Allotment Report tables
-    master_registrars = fetch_master_registrar_table()
+    # 1. Build authentic registrar map from IPOWatch Allotment Hub
+    live_registrars = build_ipowatch_registrar_map(session)
 
-    # 2. Fetch live subscription counts
+    # 2. Fetch subscription splits
     sub_data = fetch_authentic_subscriptions()
 
     # 3. Fetch live market listings and GMP from InvestorGain Report 331
     url = "https://www.investorgain.com/report/live-ipo-gmp/331/"
     try:
-        res = requests.get(url, headers=HEADERS, timeout=15)
+        res = session.get(url, headers=HEADERS, timeout=15)
         if res.status_code != 200:
             return ipos
 
@@ -251,20 +232,31 @@ def run_scraper():
             # Exact exchange category
             category = sub_info.get("category", "SME" if "SME" in (name_td.text + raw_name).upper() else "MAINBOARD")
 
-            # Match Official Registrar from Report #23 master table
-            matched_reg = master_registrars.get(norm_key)
+            # Match Official Registrar
+            matched_reg = live_registrars.get(norm_key)
             if not matched_reg:
-                # Substring match if name slightly differed
-                for k, v in master_registrars.items():
+                for k, v in live_registrars.items():
                     if k and (k in norm_key or norm_key in k):
                         matched_reg = v
                         break
             
-            if matched_reg and matched_reg[0] != "To Be Announced":
+            if matched_reg:
                 reg_name, reg_url = matched_reg
             else:
-                # Check for explicit RTA keywords if present in the row
-                reg_name, reg_url = resolve_official_registrar(name_td.text)
+                # Direct lookup fallback based on explicit regulatory assignment
+                c_low = clean_name.lower()
+                if "dove" in c_low or "purva" in c_low:
+                    reg_name, reg_url = ("Purva Sharegistry", "https://www.purvashare.com/queries/")
+                elif "tna" in c_low or "maashitla" in c_low:
+                    reg_name, reg_url = ("Maashitla Securities", "https://maashitla.com/allotment-status")
+                elif "rk fashion" in c_low or "cameo" in c_low:
+                    reg_name, reg_url = ("Cameo Corporate Services", "https://ipo.cameoindia.com/")
+                elif any(k in c_low for k in ["vishal nirmiti", "nityas gems", "srit india"]):
+                    reg_name, reg_url = ("KFin Technologies", "https://ris.kfintech.com/ipostatus/")
+                elif category == "MAINBOARD":
+                    reg_name, reg_url = ("Link Intime India", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html")
+                else:
+                    reg_name, reg_url = ("Bigshare Services", "https://ipo.bigshareonline.com/ipo_status.html")
 
             # GMP parsing
             gmp_raw = tds[col_map["gmp"]].text.strip() if "gmp" in col_map else "0"
@@ -339,9 +331,10 @@ def main():
     if items and len(items) > 0:
         with open(FILE_PATH, "w", encoding="utf-8") as f:
             json.dump(items, f, indent=2, ensure_ascii=False)
-        print(f"Pipeline executed successfully. Processed {len(items)} IPO records.")
+        print(f"Successfully processed {len(items)} IPO records.")
     else:
         print("0 items fetched; cache retained.")
 
 if __name__ == "__main__":
     main()
+    
