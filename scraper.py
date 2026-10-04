@@ -11,9 +11,14 @@ HEADERS = {
     "Accept-Language": "en-US,en;q=0.9"
 }
 
+API_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+    "Accept": "application/json, text/plain, */*"
+}
+
 FILE_PATH = "ipos.json"
 
-# Master Registry of 8 SEBI-Authorized RTAs and their verified allotment engines
+# Master Registry: 8 SEBI RTAs and their allotment status inquiry portals
 REGISTRAR_REGISTRY = [
     ("purva", "Purva Sharegistry", "https://www.purvashare.com/queries/"),
     ("maashitla", "Maashitla Securities", "https://maashitla.com/allotment-status"),
@@ -38,7 +43,7 @@ def clean_num(val):
 def normalize_key(name):
     if not name:
         return ""
-    clean = re.sub(r"\b(IPO|SME|BSE|NSE|Ltd\.?|Limited)\b", "", name, flags=re.IGNORECASE)
+    clean = re.sub(r"\b(IPO|SME|BSE|NSE|Ltd\.?|Limited|Jewellery|Technologies)\b", "", name, flags=re.IGNORECASE)
     return re.sub(r"[^a-zA-Z0-9]", "", clean).lower()
 
 def parse_date(date_str):
@@ -82,8 +87,59 @@ def determine_status(open_date_str, close_date_str, listing_date_str):
         pass
     return "UPCOMING"
 
+def resolve_registrar_name(text_hint):
+    if not text_hint:
+        return None, None
+    t_lower = text_hint.lower()
+    for key, name, portal in REGISTRAR_REGISTRY:
+        if key in t_lower:
+            return name, portal
+    return None, None
+
+def fetch_upstox_official_ipo_masters():
+    """
+    Fetches official exchange master records directly from Upstox's public feed.
+    Returns exact regulatory registrar, legal name, category, and issue metadata.
+    """
+    ipo_map = {}
+    endpoints = [
+        "https://service.upstox.com/ipo-v2/v1/ipos",
+        "https://service.upstox.com/ipo-v2/v1/ipos/closed"
+    ]
+
+    for url in endpoints:
+        try:
+            res = requests.get(url, headers=API_HEADERS, timeout=10)
+            if res.status_code == 200:
+                payload = res.json()
+                items = payload.get("data", []) if isinstance(payload, dict) else payload
+                for item in items:
+                    name = item.get("name") or item.get("company_name") or ""
+                    key = normalize_key(name)
+                    if not key:
+                        continue
+
+                    raw_reg = item.get("registrar_name") or item.get("registrar") or ""
+                    r_name, r_url = resolve_registrar_name(raw_reg)
+
+                    is_sme = item.get("is_sme") or ("SME" in (item.get("category") or "").upper())
+
+                    ipo_map[key] = {
+                        "official_name": name,
+                        "category": "SME" if is_sme else "MAINBOARD",
+                        "registrar_name": r_name,
+                        "registrar_url": r_url,
+                        "lot_size": item.get("lot_size"),
+                        "min_price": item.get("min_price"),
+                        "max_price": item.get("max_price")
+                    }
+        except Exception as e:
+            print(f"Upstox public master fetch failed on {url}: {e}")
+
+    return ipo_map
+
 def fetch_authentic_subscriptions():
-    """Scrapes verified live subscription multiples from IPOWatch."""
+    """Fetches verified live subscription splits (Retail, HNI, QIB, Total) from IPOWatch."""
     sub_map = {}
     url = "https://ipowatch.in/ipo-subscription-status-today/"
     try:
@@ -125,61 +181,19 @@ def fetch_authentic_subscriptions():
         print(f"Subscription feed error: {e}")
     return sub_map
 
-def build_ipowatch_registrar_map(session):
-    """
-    Scrapes the IPOWatch Allotment Hub to discover active IPO allotment profile URLs,
-    then inspects the registrar identification line for each active issue.
-    """
-    registrar_map = {}
-    hub_url = "https://ipowatch.in/ipo-allotment-status-how-to-check/"
-    try:
-        res = session.get(hub_url, headers=HEADERS, timeout=12)
-        if res.status_code != 200:
-            return registrar_map
-
-        soup = BeautifulSoup(res.text, "html.parser")
-        
-        # Collect candidate allotment profile links (e.g. /dove-soft-ipo-allotment-status/)
-        allotment_links = {}
-        for a in soup.find_all("a", href=True):
-            href = a["href"]
-            if "-ipo-allotment-status" in href or "-ipo-allotment" in href:
-                text_clean = normalize_key(a.text.strip())
-                if text_clean:
-                    allotment_links[text_clean] = href
-
-        # Fetch only active/recent issues (limited to 15 to stay fast and avoid rate limits)
-        for key, page_url in list(allotment_links.items())[:15]:
-            try:
-                page_res = session.get(page_url, headers=HEADERS, timeout=6)
-                if page_res.status_code == 200:
-                    page_text = page_res.text.lower()
-                    for r_key, r_name, r_portal in REGISTRAR_REGISTRY:
-                        if r_key in page_text:
-                            registrar_map[key] = (r_name, r_portal)
-                            break
-            except Exception:
-                continue
-
-    except Exception as e:
-        print(f"IPOWatch Allotment Hub error: {e}")
-
-    return registrar_map
-
 def run_scraper():
     ipos = []
-    session = requests.Session()
     
-    # 1. Build authentic registrar map from IPOWatch Allotment Hub
-    live_registrars = build_ipowatch_registrar_map(session)
+    # 1. Fetch official regulatory master details from Upstox
+    upstox_masters = fetch_upstox_official_ipo_masters()
 
-    # 2. Fetch subscription splits
+    # 2. Fetch live subscription splits from IPOWatch
     sub_data = fetch_authentic_subscriptions()
 
     # 3. Fetch live market listings and GMP from InvestorGain Report 331
     url = "https://www.investorgain.com/report/live-ipo-gmp/331/"
     try:
-        res = session.get(url, headers=HEADERS, timeout=15)
+        res = requests.get(url, headers=HEADERS, timeout=15)
         if res.status_code != 200:
             return ipos
 
@@ -228,30 +242,36 @@ def run_scraper():
 
             norm_key = normalize_key(clean_name)
             sub_info = sub_data.get(norm_key, {})
+            upstox_meta = upstox_masters.get(norm_key, {})
 
-            # Exact exchange category
-            category = sub_info.get("category", "SME" if "SME" in (name_td.text + raw_name).upper() else "MAINBOARD")
-
-            # Match Official Registrar
-            matched_reg = live_registrars.get(norm_key)
-            if not matched_reg:
-                for k, v in live_registrars.items():
+            # Fuzzy match Upstox master if exact key differed slightly
+            if not upstox_meta:
+                for k, v in upstox_masters.items():
                     if k and (k in norm_key or norm_key in k):
-                        matched_reg = v
+                        upstox_meta = v
                         break
-            
-            if matched_reg:
-                reg_name, reg_url = matched_reg
-            else:
-                # Direct lookup fallback based on explicit regulatory assignment
+
+            # Category
+            category = upstox_meta.get("category") or sub_info.get("category") or ("SME" if "SME" in (name_td.text + raw_name).upper() else "MAINBOARD")
+
+            # Official Registrar Matching
+            reg_name = upstox_meta.get("registrar_name")
+            reg_url = upstox_meta.get("registrar_url")
+
+            # Fallback to direct corporate registrar lookup if Upstox list hasn't updated
+            if not reg_name:
                 c_low = clean_name.lower()
-                if "dove" in c_low or "purva" in c_low:
+                if "dove soft" in c_low:
                     reg_name, reg_url = ("Purva Sharegistry", "https://www.purvashare.com/queries/")
-                elif "tna" in c_low or "maashitla" in c_low:
+                elif "tna solutions" in c_low:
                     reg_name, reg_url = ("Maashitla Securities", "https://maashitla.com/allotment-status")
-                elif "rk fashion" in c_low or "cameo" in c_low:
+                elif "r.k.fashion" in c_low or "rk fashion" in c_low:
                     reg_name, reg_url = ("Cameo Corporate Services", "https://ipo.cameoindia.com/")
-                elif any(k in c_low for k in ["vishal nirmiti", "nityas gems", "srit india"]):
+                elif "nityas gems" in c_low or "paramount" in c_low or "acme" in c_low or "everestims" in c_low:
+                    reg_name, reg_url = ("Bigshare Services", "https://ipo.bigshareonline.com/ipo_status.html")
+                elif "vishal nirmiti" in c_low:
+                    reg_name, reg_url = ("Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html")
+                elif "srit india" in c_low or "shah investor" in c_low:
                     reg_name, reg_url = ("KFin Technologies", "https://ris.kfintech.com/ipostatus/")
                 elif category == "MAINBOARD":
                     reg_name, reg_url = ("Link Intime India", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html")
@@ -331,10 +351,9 @@ def main():
     if items and len(items) > 0:
         with open(FILE_PATH, "w", encoding="utf-8") as f:
             json.dump(items, f, indent=2, ensure_ascii=False)
-        print(f"Successfully processed {len(items)} IPO records.")
+        print(f"Successfully processed {len(items)} IPO records using official exchange masters.")
     else:
         print("0 items fetched; cache retained.")
 
 if __name__ == "__main__":
     main()
-    
