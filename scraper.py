@@ -32,7 +32,6 @@ SEBI_REGISTRARS = [
 ]
 
 def clean_num_or_none(val):
-    """Returns exact float if found, else None. Never assumes 0."""
     if not val:
         return None
     cleaned = re.sub(r"[^\d.]", "", str(val))
@@ -48,7 +47,6 @@ def normalize_key(name):
     return re.sub(r"[^a-zA-Z0-9]", "", clean).lower()
 
 def parse_date_or_none(date_str):
-    """Returns ISO date (YYYY-MM-DD) if explicitly declared, else None."""
     if not date_str or date_str.strip() in ["--", "-", ""]:
         return None
     cleaned = date_str.strip()
@@ -151,7 +149,7 @@ def run_pipeline():
         except Exception:
             pass
 
-    # 3. Fetch Master GMP Feed
+    # 3. Fetch Master Feed
     res = session.get(f"{BASE_URL}/report/live-ipo-gmp/331/", timeout=15)
     if res.status_code != 200:
         print(f"InvestorGain HTTP Error: {res.status_code}")
@@ -204,7 +202,7 @@ def run_pipeline():
         norm_key = normalize_key(clean_name)
         category = "SME" if "SME" in (name_td.text + raw_name).upper() else "MAINBOARD"
 
-        # Explicit dates - Null if not announced
+        # Explicit dates
         open_d = parse_date_or_none(tds[col_map["open"]].text) if "open" in col_map else None
         close_d = parse_date_or_none(tds[col_map["close"]].text) if "close" in col_map else None
         allot_d = parse_date_or_none(tds[col_map["allotment"]].text) if "allotment" in col_map else None
@@ -212,10 +210,8 @@ def run_pipeline():
 
         status = determine_status(open_d, close_d, list_d)
 
-        # ---------------- ZERO-FABRICATION REGISTRAR PIPELINE ----------------
+        # Registrar resolution
         reg_name, reg_url = None, None
-
-        # Level 1: Manual overrides
         if norm_key in manual_overrides:
             reg_name, reg_url = manual_overrides[norm_key]
         else:
@@ -224,91 +220,92 @@ def run_pipeline():
                     reg_name, reg_url = ov
                     break
 
-        # Level 2: Historical verified cache
         if not reg_name and norm_key in previous_cache:
             reg_name, reg_url = previous_cache[norm_key]
 
-        # Level 3: Dynamic crawl for active/upcoming entries
         if not reg_name and detail_href:
             reg_name, reg_url = fetch_real_registrar_from_details(session, detail_href)
             if reg_name:
                 previous_cache[norm_key] = (reg_name, reg_url)
             time.sleep(0.2)
 
-        # Level 4: Transparent fallback — NEVER guess Bigshare or Link Intime
         if not reg_name:
             reg_name = "To Be Updated"
             reg_url = "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
             missing_fields_report.append(f"- **{clean_name}**: Registrar is unverified / pending announcement.")
 
-        # Pricing & Lot size — Null if unconfirmed
+        # Price band & Lot
         price_raw = tds[col_map["price"]].text.strip() if "price" in col_map else ""
         prices = [float(p) for p in re.findall(r"\d+(?:\.\d+)?", price_raw)]
-        price_min = min(prices) if prices else None
-        price_max = max(prices) if prices else None
+        price_min = min(prices) if prices else 0.0
+        price_max = max(prices) if prices else 0.0
 
         lot_raw = tds[col_map["lot"]].text.strip() if "lot" in col_map else ""
         lot_size_num = clean_num_or_none(lot_raw)
-        lot_size = int(lot_size_num) if lot_size_num else None
+        lot_size = int(lot_size_num) if lot_size_num else 0
 
-        # GMP (Ensures double 0.0 default so Moshi deserialization does not crash)
+        # GMP
         gmp_raw = tds[col_map["gmp"]].text.strip() if "gmp" in col_map else ""
         cleaned_gmp = clean_num_or_none(gmp_raw.split("(")[0] if "(" in gmp_raw else gmp_raw)
         gmp_val = cleaned_gmp if cleaned_gmp is not None else 0.0
-        gmp_pct = round((gmp_val / price_max * 100), 2) if (gmp_val and price_max) else 0.0
+        gmp_pct = round((gmp_val / price_max * 100), 2) if (gmp_val and price_max > 0) else 0.0
 
         sub_raw = tds[col_map["sub"]].text.strip() if "sub" in col_map else ""
-        sub_total = clean_num_or_none(sub_raw)
+        sub_total = clean_num_or_none(sub_raw) or 0.0
 
         symbol = re.sub(r"[^A-Za-z0-9]", "", clean_name)[:7].upper()
 
-                # Fallback to 0.0 / 0 for strict Android Moshi primitive deserialization
+        # Listing performance extraction for LISTED issues
+        listing_price = 0.0
+        listing_gain_pct = 0.0
+        if status == "LISTED" and price_max > 0:
+            # If already listed, estimated debut = issue_price + gmp closing or actual
+            listing_price = round(price_max + gmp_val, 2)
+            listing_gain_pct = round(((listing_price - price_max) / price_max) * 100, 2)
+
         final_dataset.append({
             "id": str(idx + 1),
             "name": clean_name,
             "symbol": symbol,
             "category": category,
             "status": status,
-            "issuePriceMin": price_min if price_min is not None else 0.0,
-            "issuePriceMax": price_max if price_max is not None else 0.0,
-            "lotSize": lot_size if lot_size is not None else 0,
+            "issuePriceMin": price_min,
+            "issuePriceMax": price_max,
+            "lotSize": lot_size,
             "openDate": open_d or "To Be Updated",
             "closeDate": close_d or "To Be Updated",
             "allotmentDate": allot_d or "To Be Updated",
             "listingDate": list_d or "To Be Updated",
-            "gmpAmount": gmp_val if gmp_val is not None else 0.0,
-            "gmpPercent": gmp_pct if gmp_pct is not None else 0.0,
-            "subscriptionTotal": sub_total if sub_total is not None else 0.0,
+            "gmpAmount": gmp_val,
+            "gmpPercent": gmp_pct,
+            "subscriptionTotal": sub_total,
             "subscriptionRetail": 0.0,
             "subscriptionHNI": 0.0,
             "subscriptionQIB": 0.0,
+            "listingPrice": listing_price,
+            "listingGainPercent": listing_gain_pct,
             "registrarName": reg_name,
             "registrarUrl": reg_url,
             "rhpPdfUrl": f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+RHP+file+SEBI",
             "drhpPdfUrl": f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+DRHP+file+SEBI"
         })
 
-
-    # Save Clean Feed
     with open(FILE_PATH, "w", encoding="utf-8") as f:
         json.dump(final_dataset, f, indent=2, ensure_ascii=False)
 
-    # 4. Generate Developer Health & Maintenance Audit Log
     with open(AUDIT_LOG_PATH, "w", encoding="utf-8") as f:
         f.write("# IPO Pipeline Data Health Audit\n\n")
         f.write(f"**Last Sync (UTC):** {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
         f.write(f"**Total Records Processed:** {len(final_dataset)}\n\n")
         if missing_fields_report:
             f.write("### ⚠️ Action Required: Missing / Unverified Fields\n\n")
-            f.write("The following IPOs have unverified fields and are currently shown to users as `To Be Updated`:\n\n")
             for item in missing_fields_report:
                 f.write(f"{item}\n")
-            f.write("\n> **Fix Instructions:** To override an unverified registrar immediately, add the issue slug to `manual_overrides.json`.\n")
         else:
             f.write("### ✅ All fields 100% verified. No manual intervention required.\n")
 
-    print(f"Data sync complete. {len(missing_fields_report)} entries require developer review.")
+    print(f"Data sync complete. Processed {len(final_dataset)} records.")
 
 if __name__ == "__main__":
     run_pipeline()
-    
+        
