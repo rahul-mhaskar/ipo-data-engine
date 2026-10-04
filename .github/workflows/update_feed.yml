@@ -2,7 +2,12 @@ name: Auto-Update IPO Feed
 
 on:
   schedule:
-    - cron: '0 4,7,10 * * 1-5'
+    # 04:00 UTC = 09:30 AM IST (Market Open)
+    # 07:00 UTC = 12:30 PM IST (Midday)
+    # 10:00 UTC = 03:30 PM IST (Exchange Close)
+    # 12:30 UTC = 06:00 PM IST (Final Day Bidding / Quota Splits)
+    # 15:30 UTC = 09:00 PM IST (Late GMP & Allotment Sync)
+    - cron: '0 4,7,10,12,15 * * 1-5'
   workflow_dispatch:
 
 jobs:
@@ -23,10 +28,19 @@ jobs:
           python-version: '3.11'
 
       - name: Install Dependencies
-        run: pip install requests beautifulsoup4
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
 
       - name: Execute Python Scraper
         run: python scraper.py
+
+      - name: Validate Generated Dataset
+        run: |
+          if [ ! -s ipos.json ]; then
+            echo "Error: ipos.json is missing or empty. Halting commit to protect cache."
+            exit 1
+          fi
 
       - name: Commit and Push
         run: |
@@ -37,5 +51,7 @@ jobs:
             echo "No changes detected in ipos.json."
           else
             git commit -m "Auto-update IPO feed [skip ci]"
-            git push
+            git pull --rebase origin main
+            git push origin main
           fi
+          
