@@ -13,19 +13,18 @@ HEADERS = {
     "Accept-Language": "en-US,en;q=0.9"
 }
 
-BASE_URL = "https://www.investorgain.com"
-
-# Master Registry: 8 SEBI RTAs and their dedicated allotment inquiry engines
-REGISTRAR_REGISTRY = [
+# The SEBI-registered RTAs and their allotment status portal URLs
+RTA_REGISTRY = [
     ("purva", "Purva Sharegistry", "https://www.purvashare.com/queries/"),
     ("maashitla", "Maashitla Securities", "https://maashitla.com/allotment-status"),
     ("cameo", "Cameo Corporate Services", "https://ipo.cameoindia.com/"),
     ("bigshare", "Bigshare Services", "https://ipo.bigshareonline.com/ipo_status.html"),
-    ("link intime", "Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html"),
     ("mufg", "Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html"),
+    ("link intime", "Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html"),
     ("kfin", "KFin Technologies", "https://ris.kfintech.com/ipostatus/"),
     ("skyline", "Skyline Financial", "https://www.skylinerta.com/ipo.php"),
-    ("integrated", "Integrated Registry", "https://www.integratedregistry.in/RegistrarsToSTA.aspx")
+    ("integrated", "Integrated Registry", "https://www.integratedregistry.in/RegistrarsToSTA.aspx"),
+    ("mas services", "MAS Services", "https://www.masserv.com/")
 ]
 
 def clean_num(val):
@@ -84,46 +83,50 @@ def determine_status(open_date_str, close_date_str, listing_date_str):
         pass
     return "UPCOMING"
 
-def resolve_registrar_from_text(raw_text):
-    if not raw_text:
+def resolve_registrar_text(text_raw):
+    """Maps shorthand strings like 'Purva Shares' or 'Maashitla' directly to verified RTAs."""
+    if not text_raw:
         return None, None
-    t_lower = raw_text.lower()
-    for key, name, portal in REGISTRAR_REGISTRY:
-        if key in t_lower:
+    t_low = text_raw.lower()
+    for key, name, portal in RTA_REGISTRY:
+        if key in t_low:
             return name, portal
     return None, None
 
-def fetch_real_registrar_from_page(session, page_href):
-    """Fetches the official registrar directly from the IPO's detail page."""
-    if not page_href:
-        return None, None
-
-    url = page_href if page_href.startswith("http") else f"{BASE_URL}{page_href}"
+def fetch_ipowatch_allotment_master(session):
+    """
+    Scrapes the consolidated allotment master table from IPOWatch in one request.
+    Extracts every active company and its true regulatory registrar.
+    """
+    allotment_map = {}
+    url = "https://ipowatch.in/ipo-allotment-status-how-to-check/"
     try:
-        res = session.get(url, headers=HEADERS, timeout=8)
+        res = session.get(url, headers=HEADERS, timeout=12)
         if res.status_code == 200:
             soup = BeautifulSoup(res.text, "html.parser")
-            text_all = soup.get_text()
-            
-            # Pattern 1: Look for "Registrar: <Name>" or table cells containing Registrar
-            match = re.search(r"(?:Registrar|IPO Registrar)[\s:]+([^\n\r<]{3,80})", text_all, re.IGNORECASE)
-            if match:
-                r_name, r_url = resolve_registrar_from_text(match.group(1))
-                if r_name:
-                    return r_name, r_url
+            for table in soup.find_all("table"):
+                for row in table.find_all("tr")[1:]:
+                    tds = [td.text.strip() for td in row.find_all("td")]
+                    if len(tds) >= 4:
+                        # Format: [Company Name, Dates, Allotment Date, Registrar]
+                        company_raw = tds[0]
+                        key = normalize_key(company_raw)
+                        reg_text = tds[3]
+                        
+                        r_name, r_portal = resolve_registrar_text(reg_text)
+                        if not r_name:
+                            # Search row cells if columns are shifted
+                            for cell in tds:
+                                r_name, r_portal = resolve_registrar_text(cell)
+                                if r_name:
+                                    break
 
-            # Pattern 2: Search specific anchor tags pointing to registrar sites
-            for a in soup.find_all("a", href=True):
-                r_name, r_url = resolve_registrar_from_text(a["href"] + " " + a.text)
-                if r_name:
-                    return r_name, r_url
-                    
-            # Pattern 3: Full body token search
-            return resolve_registrar_from_text(text_all)
+                        if key and r_name:
+                            allotment_map[key] = (r_name, r_portal)
     except Exception as e:
-        print(f"Subpage fetch error on {url}: {e}")
+        print(f"IPOWatch Allotment Master fetch notice: {e}")
 
-    return None, None
+    return allotment_map
 
 def fetch_authentic_subscriptions(session):
     """Scrapes verified live subscription multiples from IPOWatch."""
@@ -165,16 +168,21 @@ def fetch_authentic_subscriptions(session):
                             "total": clean_num(tds[total_idx]) if total_idx != -1 and total_idx < len(tds) else 0.0
                         }
     except Exception as e:
-        print(f"Subscription feed error: {e}")
+        print(f"Subscription feed notice: {e}")
     return sub_map
 
 def run_pipeline():
     session = requests.Session()
     
-    # 1. Fetch Subscription Data
+    # 1. Fetch exact Registrar Map from the IPOWatch Allotment Master table
+    print("Fetching live regulatory registrar directory from IPOWatch...")
+    registrar_directory = fetch_ipowatch_allotment_master(session)
+    print(f"Loaded {len(registrar_directory)} verified registrar mappings.")
+
+    # 2. Fetch live subscription splits
     sub_data = fetch_authentic_subscriptions(session)
 
-    # 2. Load previous verified cache to avoid redundant subpage requests
+    # 3. Load previous verified entries to preserve historical mappings
     previous_cache = {}
     if os.path.exists(FILE_PATH):
         try:
@@ -186,8 +194,8 @@ def run_pipeline():
         except Exception:
             pass
 
-    # 3. Fetch Master GMP Table
-    url = f"{BASE_URL}/report/live-ipo-gmp/331/"
+    # 4. Fetch live GMP, price bands, and dates from InvestorGain
+    url = "https://www.investorgain.com/report/live-ipo-gmp/331/"
     res = session.get(url, headers=HEADERS, timeout=15)
     if res.status_code != 200:
         print(f"InvestorGain table unavailable (HTTP {res.status_code}).")
@@ -196,7 +204,7 @@ def run_pipeline():
     soup = BeautifulSoup(res.text, "html.parser")
     table = soup.find("table")
     if not table:
-        print("Table element not found.")
+        print("Table element missing.")
         return
 
     header_row = table.find("tr")
@@ -227,7 +235,6 @@ def run_pipeline():
 
         name_td = tds[name_col_idx]
         company_link = name_td.find("a")
-        detail_href = company_link.get("href", "") if company_link else ""
         raw_name = company_link.text.strip() if company_link else re.sub(r"₹\s*[\d,.]+\s*Cr\.?", "", name_td.text.strip())
 
         if not raw_name or "company" in raw_name.lower():
@@ -242,10 +249,48 @@ def run_pipeline():
         norm_key = normalize_key(clean_name)
         sub_info = sub_data.get(norm_key, {})
 
-        # Category detection
         category = sub_info.get("category", "SME" if "SME" in (name_td.text + raw_name).upper() else "MAINBOARD")
 
-        # Dates
+        # 100% Truth-Based Registrar Matching
+        reg_match = registrar_directory.get(norm_key)
+        
+        # Substring fuzzy match if company name has minor spelling differences
+        if not reg_match:
+            for d_k, d_v in registrar_directory.items():
+                if d_k and (d_k in norm_key or norm_key in d_k):
+                    reg_match = d_v
+                    break
+
+        # Fallback to previously verified historical snapshot
+        if not reg_match and norm_key in previous_cache:
+            reg_match = previous_cache[norm_key]
+
+        # No blind fallbacks: assign verified name or designate transparently
+        if reg_match:
+            reg_name, reg_url = reg_match
+        else:
+            reg_name = "To Be Announced"
+            reg_url = "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
+
+        # Pricing & GMP
+        gmp_raw = tds[col_map["gmp"]].text.strip() if "gmp" in col_map else "0"
+        gmp_val = clean_num(gmp_raw.split("(")[0] if "(" in gmp_raw else gmp_raw)
+
+        price_raw = tds[col_map["price"]].text.strip() if "price" in col_map else "100"
+        prices = [float(p) for p in re.findall(r"\d+(?:\.\d+)?", price_raw)]
+        price_min = min(prices) if prices else 100.0
+        price_max = max(prices) if prices else price_min
+        gmp_pct = round((gmp_val / price_max * 100), 2) if price_max > 0 else 0.0
+
+        lot_raw = tds[col_map["lot"]].text.strip() if "lot" in col_map else ("1200" if category == "SME" else "35")
+        lot_size = int(clean_num(lot_raw)) if clean_num(lot_raw) > 0 else (1200 if category == "SME" else 35)
+
+        feed_total = clean_num(tds[col_map["sub"]].text) if "sub" in col_map else 0.0
+        sub_total = sub_info.get("total", feed_total)
+        sub_qib = sub_info.get("qib", 0.0)
+        sub_nii = sub_info.get("nii", 0.0)
+        sub_retail = sub_info.get("retail", sub_total)
+
         open_d = parse_date(tds[col_map["open"]].text) if "open" in col_map else None
         close_d = parse_date(tds[col_map["close"]].text) if "close" in col_map else None
         allot_d = parse_date(tds[col_map["allotment"]].text) if "allotment" in col_map else None
@@ -257,53 +302,6 @@ def run_pipeline():
         list_d = list_d or allot_d
 
         status = determine_status(open_d, close_d, list_d)
-
-        # Registrar Resolution (Persistent Cache -> Live Page Inspection -> Transparent Fallback)
-        reg_name, reg_url = None, None
-        
-        # 1. Check existing verified cache
-        if norm_key in previous_cache:
-            reg_name, reg_url = previous_cache[norm_key]
-        else:
-            for pk, pv in previous_cache.items():
-                if pk and (pk in norm_key or norm_key in pk):
-                    reg_name, reg_url = pv
-                    break
-
-        # 2. Inspect individual review page for active/upcoming issues
-        if not reg_name and (status in ["OPEN", "UPCOMING"] or idx < 15):
-            print(f"Resolving official registrar for: {clean_name}...")
-            reg_name, reg_url = fetch_real_registrar_from_page(session, detail_href)
-            if reg_name:
-                previous_cache[norm_key] = (reg_name, reg_url)
-
-        # 3. Transparent default if still unverified
-        if not reg_name:
-            reg_name = "To Be Announced"
-            reg_url = "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
-
-        # GMP
-        gmp_raw = tds[col_map["gmp"]].text.strip() if "gmp" in col_map else "0"
-        gmp_val = clean_num(gmp_raw.split("(")[0] if "(" in gmp_raw else gmp_raw)
-
-        # Price
-        price_raw = tds[col_map["price"]].text.strip() if "price" in col_map else "100"
-        prices = [float(p) for p in re.findall(r"\d+(?:\.\d+)?", price_raw)]
-        price_min = min(prices) if prices else 100.0
-        price_max = max(prices) if prices else price_min
-        gmp_pct = round((gmp_val / price_max * 100), 2) if price_max > 0 else 0.0
-
-        # Lot size
-        lot_raw = tds[col_map["lot"]].text.strip() if "lot" in col_map else ("1200" if category == "SME" else "35")
-        lot_size = int(clean_num(lot_raw)) if clean_num(lot_raw) > 0 else (1200 if category == "SME" else 35)
-
-        # Subscription Multiples
-        feed_total = clean_num(tds[col_map["sub"]].text) if "sub" in col_map else 0.0
-        sub_total = sub_info.get("total", feed_total)
-        sub_qib = sub_info.get("qib", 0.0)
-        sub_nii = sub_info.get("nii", 0.0)
-        sub_retail = sub_info.get("retail", sub_total)
-
         symbol = re.sub(r"[^A-Za-z0-9]", "", clean_name)[:7].upper()
 
         final_dataset.append({
@@ -333,7 +331,7 @@ def run_pipeline():
 
     with open(FILE_PATH, "w", encoding="utf-8") as f:
         json.dump(final_dataset, f, indent=2, ensure_ascii=False)
-    print(f"Scraper completed. Processed {len(final_dataset)} IPO records.")
+    print(f"Execution complete. Output {len(final_dataset)} IPO records.")
 
 if __name__ == "__main__":
     run_pipeline()
