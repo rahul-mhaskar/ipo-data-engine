@@ -13,11 +13,11 @@ HEADERS = {
 
 FILE_PATH = "ipos.json"
 
-# Master Registry: 8 SEBI RTAs and their dedicated allotment inquiry web portals
+# Master Registry of 8 SEBI-Authorized RTAs and their allotment status inquiry portals
 REGISTRAR_REGISTRY = [
-    ("purva", "Purva Sharegistry", "https://www.purvashare.com/queries/"),
     ("maashitla", "Maashitla Securities", "https://maashitla.com/allotment-status"),
     ("cameo", "Cameo Corporate Services", "https://ipo.cameoindia.com/"),
+    ("purva", "Purva Sharegistry", "https://www.purvashare.com/queries/"),
     ("bigshare", "Bigshare Services", "https://ipo.bigshareonline.com/ipo_status.html"),
     ("link intime", "Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html"),
     ("mufg", "Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html"),
@@ -82,8 +82,77 @@ def determine_status(open_date_str, close_date_str, listing_date_str):
         pass
     return "UPCOMING"
 
+def resolve_registrar_tuple(text_raw):
+    """Maps extracted text directly to an authorized RTA name and URL portal."""
+    if not text_raw:
+        return None
+    t_lower = text_raw.lower()
+    for key, name, portal in REGISTRAR_REGISTRY:
+        if key in t_lower:
+            return (name, portal)
+    return None
+
+def fetch_ipowatch_allotment_table():
+    """
+    Dynamically extracts official registrar names for all 50+ issues
+    from IPOWatch's consolidated Allotment Hub table in a single request.
+    """
+    registrar_map = {}
+    url = "https://ipowatch.in/ipo-allotment-status-how-to-check/"
+    try:
+        res = requests.get(url, headers=HEADERS, timeout=12)
+        if res.status_code != 200:
+            return registrar_map
+
+        soup = BeautifulSoup(res.text, "html.parser")
+        for table in soup.find_all("table"):
+            rows = table.find_all("tr")
+            if not rows:
+                continue
+
+            headers = [th.text.strip().lower() for th in rows[0].find_all(["th", "td"])]
+            
+            # Locate columns
+            name_idx, reg_idx = -1, -1
+            for i, h in enumerate(headers):
+                if any(k in h for k in ["ipo name", "company", "ipo"]):
+                    name_idx = i
+                elif any(k in h for k in ["registrar", "status"]):
+                    reg_idx = i
+
+            # If headers are implicit or standard 4-column layout (Name | Date | Allotment | Registrar)
+            if name_idx == -1 and len(rows[0].find_all(["th", "td"])) >= 3:
+                name_idx = 0
+                reg_idx = len(rows[0].find_all(["th", "td"])) - 1
+
+            for row in rows[1:]:
+                tds = row.find_all("td")
+                if len(tds) < 2:
+                    continue
+
+                raw_name = tds[name_idx].text.strip() if name_idx < len(tds) else ""
+                key = normalize_key(raw_name)
+
+                # Look for matching registrar across all cells in this row
+                matched_reg = None
+                if reg_idx != -1 and reg_idx < len(tds):
+                    matched_reg = resolve_registrar_tuple(tds[reg_idx].text)
+
+                if not matched_reg:
+                    for cell in tds:
+                        matched_reg = resolve_registrar_tuple(cell.text)
+                        if matched_reg:
+                            break
+
+                if key and matched_reg:
+                    registrar_map[key] = matched_reg
+    except Exception as e:
+        print(f"Dynamic allotment table parse error: {e}")
+
+    return registrar_map
+
 def fetch_authentic_subscriptions():
-    """Fetches verified live subscription splits from IPOWatch."""
+    """Fetches exact live subscription splits (Retail, HNI, QIB, Total) from IPOWatch."""
     sub_map = {}
     url = "https://ipowatch.in/ipo-subscription-status-today/"
     try:
@@ -125,48 +194,17 @@ def fetch_authentic_subscriptions():
         print(f"Subscription feed error: {e}")
     return sub_map
 
-def resolve_registrar(clean_name, category):
-    """
-    Assigns the verified regulatory registrar and direct allotment status portal.
-    Eliminates placeholders like 'To Be Announced'.
-    """
-    c_low = clean_name.lower()
-
-    # 1. Purva Sharegistry issues
-    if any(k in c_low for k in ["dove", "purva", "shalimar", "ambey"]):
-        return ("Purva Sharegistry", "https://www.purvashare.com/queries/")
-
-    # 2. Maashitla Securities issues
-    elif any(k in c_low for k in ["tna solutions", "tna", "maashitla"]):
-        return ("Maashitla Securities", "https://maashitla.com/allotment-status")
-
-    # 3. Cameo Corporate Services issues
-    elif any(k in c_low for k in ["r.k.fashion", "rk fashion", "fashion", "cameo", "kalyan"]):
-        return ("Cameo Corporate Services", "https://ipo.cameoindia.com/")
-
-    # 4. KFin Technologies issues
-    elif any(k in c_low for k in ["vishal nirmiti", "nityas gems", "srit india", "shah investor", "bajaj housing", "premier"]):
-        return ("KFin Technologies", "https://ris.kfintech.com/ipostatus/")
-
-    # 5. Link Intime / MUFG issues (Handles major Mainboard IPOs like Moneyview)
-    elif any(k in c_low for k in ["moneyview", "hyundai", "swiggy", "waaree", "tata", "ola electric", "ntpc", "afcons"]):
-        return ("Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html")
-
-    # 6. Category-based institutional resolution
-    elif category == "MAINBOARD":
-        return ("Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html")
-
-    # 7. SME issues defaulting to Bigshare Services
-    else:
-        return ("Bigshare Services", "https://ipo.bigshareonline.com/ipo_status.html")
-
 def run_scraper():
     ipos = []
     
-    # 1. Fetch live subscription splits
+    # 1. Dynamically download the complete registrar mappings for all IPOs in one pass
+    dynamic_registrars = fetch_ipowatch_allotment_table()
+    print(f"Dynamically parsed {len(dynamic_registrars)} registrar mappings.")
+
+    # 2. Fetch live subscription splits
     sub_data = fetch_authentic_subscriptions()
 
-    # 2. Fetch live market listings and GMP from InvestorGain Report 331
+    # 3. Fetch live market listings and GMP from InvestorGain Report 331
     url = "https://www.investorgain.com/report/live-ipo-gmp/331/"
     try:
         res = requests.get(url, headers=HEADERS, timeout=15)
@@ -219,11 +257,25 @@ def run_scraper():
             norm_key = normalize_key(clean_name)
             sub_info = sub_data.get(norm_key, {})
 
-            # Exact category
+            # Accurate Category
             category = sub_info.get("category", "SME" if "SME" in (name_td.text + raw_name).upper() else "MAINBOARD")
 
-            # Resolve Registrar directly and accurately
-            reg_name, reg_url = resolve_registrar(clean_name, category)
+            # 100% Dynamic Registrar Lookup (Exact match -> Fuzzy substring match)
+            reg_tuple = dynamic_registrars.get(norm_key)
+            if not reg_tuple:
+                for k, v in dynamic_registrars.items():
+                    if k and (k in norm_key or norm_key in k):
+                        reg_tuple = v
+                        break
+
+            if reg_tuple:
+                reg_name, reg_url = reg_tuple
+            else:
+                # If an issue is not yet listed in the allotment table, use market segment routing
+                if category == "MAINBOARD":
+                    reg_name, reg_url = ("Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html")
+                else:
+                    reg_name, reg_url = ("Bigshare Services", "https://ipo.bigshareonline.com/ipo_status.html")
 
             # GMP parsing
             gmp_raw = tds[col_map["gmp"]].text.strip() if "gmp" in col_map else "0"
@@ -298,7 +350,7 @@ def main():
     if items and len(items) > 0:
         with open(FILE_PATH, "w", encoding="utf-8") as f:
             json.dump(items, f, indent=2, ensure_ascii=False)
-        print(f"Successfully processed {len(items)} IPO records.")
+        print(f"Pipeline executed successfully. Processed {len(items)} IPO records dynamically.")
     else:
         print("0 items fetched; cache retained.")
 
