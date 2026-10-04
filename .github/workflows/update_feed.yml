@@ -2,12 +2,10 @@ name: Auto-Update IPO Feed
 
 on:
   schedule:
-    # 04:00 UTC = 09:30 AM IST (Market Open)
-    # 07:00 UTC = 12:30 PM IST (Midday)
-    # 10:00 UTC = 03:30 PM IST (Exchange Close)
-    # 12:30 UTC = 06:00 PM IST (Final Day Bidding / Quota Splits)
-    # 15:30 UTC = 09:00 PM IST (Late GMP & Allotment Sync)
-    - cron: '0 4,7,10,12,15 * * 1-5'
+    # 04:00, 07:00, 10:00 UTC -> 09:30 AM, 12:30 PM, 03:30 PM IST
+    - cron: '0 4,7,10 * * 1-5'
+    # 12:30, 15:30 UTC -> 06:00 PM, 09:00 PM IST (Late subscription & Allotment sync)
+    - cron: '30 12,15 * * 1-5'
   workflow_dispatch:
 
 jobs:
@@ -42,11 +40,17 @@ jobs:
             exit 1
           fi
 
+      - name: Publish Health Audit to Summary
+        run: |
+          if [ -f data_health_audit.md ]; then
+            cat data_health_audit.md >> $GITHUB_STEP_SUMMARY
+          fi
+
       - name: Commit and Push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add ipos.json
+          git add ipos.json data_health_audit.md
           if git diff --staged --quiet; then
             echo "No changes detected in ipos.json."
           else
