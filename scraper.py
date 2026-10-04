@@ -139,7 +139,6 @@ def run_pipeline():
             pass
 
     # 2. Load previous verified cache
-    # Never re-cache "To Be Updated" or unverified values
     previous_cache = {}
     if os.path.exists(FILE_PATH):
         try:
@@ -252,17 +251,12 @@ def run_pipeline():
         lot_size_num = clean_num_or_none(lot_raw)
         lot_size = int(lot_size_num) if lot_size_num else None
 
-        # GMP
+        # GMP (Ensures double 0.0 default so Moshi deserialization does not crash)
         gmp_raw = tds[col_map["gmp"]].text.strip() if "gmp" in col_map else ""
-    # gmp_val = clean_num_or_none(gmp_raw.split("(")[0] if "(" in gmp_raw else gmp_raw)
-       # gmp_pct = round((gmp_val / price_max * 100), 2) if (gmp_val is not None and price_max) else None
+        cleaned_gmp = clean_num_or_none(gmp_raw.split("(")[0] if "(" in gmp_raw else gmp_raw)
+        gmp_val = cleaned_gmp if cleaned_gmp is not None else 0.0
+        gmp_pct = round((gmp_val / price_max * 100), 2) if (gmp_val and price_max) else 0.0
 
-# Fix: Output 0.0 instead of None to ensure Moshi deserializes cleanly:
-cleaned_gmp = clean_num_or_none(gmp_raw.split("(")[0] if "(" in gmp_raw else gmp_raw)
-gmp_val = cleaned_gmp if cleaned_gmp is not None else 0.0
-gmp_pct = round((gmp_val / price_max * 100), 2) if (gmp_val and price_max) else 0.0
-
-        
         sub_raw = tds[col_map["sub"]].text.strip() if "sub" in col_map else ""
         sub_total = clean_num_or_none(sub_raw)
 
