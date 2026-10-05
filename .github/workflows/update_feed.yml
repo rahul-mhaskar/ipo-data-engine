@@ -36,7 +36,6 @@ jobs:
           PYTHONUNBUFFERED: "1"
         run: python -u scraper.py
 
-
       - name: Validate Generated Dataset
         run: |
           if [ ! -s ipos.json ]; then
