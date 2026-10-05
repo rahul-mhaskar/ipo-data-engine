@@ -37,7 +37,7 @@ SEBI_REGISTRARS = [
 ]
 
 def clean_num_or_none(val):
-    if not val:
+    if val is None or val == "":
         return None
     cleaned = re.sub(r"[^\d.]", "", str(val))
     try:
@@ -92,15 +92,6 @@ def determine_status(open_d, close_d, list_d):
         pass
     return "UPCOMING"
 
-def resolve_registrar_from_text(text):
-    if not text:
-        return None, None
-    t_lower = text.lower()
-    for key, name, portal in SEBI_REGISTRARS:
-        if key in t_lower:
-            return name, portal
-    return None, None
-
 def validate_record(item: dict) -> bool:
     """Enforces zero-fabrication and sanity checks before serializing."""
     if item["issuePriceMin"] < 0 or item["issuePriceMax"] < 0:
@@ -128,51 +119,69 @@ def try_fetch_upstox():
     }
 
     try:
-        res = requests.get(f"{UPSTOX_BASE_URL}/ipos", headers=headers, timeout=10)
+        res = requests.get(f"{UPSTOX_BASE_URL}/ipos", headers=headers, timeout=12)
         if res.status_code == 200:
             payload = res.json()
-            data = payload.get("data", [])
-            if data:
-                print(f"DEBUG Upstox Keys: {list(data[0].keys())}")
-                print(f"DEBUG Upstox Sample: {data[0]}")
-            return data, "OK"
+            return payload.get("data", []), "OK"
         elif res.status_code in [401, 403]:
             return None, f"Upstox Auth Token Expired / Invalid (HTTP {res.status_code})."
         else:
             return None, f"Upstox HTTP {res.status_code}: {res.text}"
     except Exception as e:
         return None, f"Upstox connection failed: {e}"
-        
 
-# ----------------- TIER 2: SECONDARY SCRAPER ENGINE -----------------
+# ----------------- SECONDARY GMP & PERFORMANCE CRAWLER -----------------
+def fetch_gmp_and_performance_map(session):
+    gmp_map = {}
+    try:
+        res = session.get(f"{INVESTORGAIN_BASE_URL}/report/live-ipo-gmp/331/", timeout=15)
+        if res.status_code == 200:
+            soup = BeautifulSoup(res.text, "html.parser")
+            table = soup.find("table")
+            if table:
+                headers = [th.text.strip().lower() for th in table.find("tr").find_all(["th", "td"])]
+                name_idx, gmp_idx, lot_idx, allot_idx, list_idx = 0, -1, -1, -1, -1
+                for i, h in enumerate(headers):
+                    if any(k in h for k in ["company", "name", "ipo"]): name_idx = i
+                    elif "gmp" in h: gmp_idx = i
+                    elif "lot" in h: lot_idx = i
+                    elif any(k in h for k in ["boa", "allotment"]): allot_idx = i
+                    elif "listing" in h: list_idx = i
+
+                for row in table.find_all("tr")[1:]:
+                    tds = row.find_all("td")
+                    if len(tds) > max(name_idx, gmp_idx) and gmp_idx != -1:
+                        raw_name = tds[name_idx].text.strip()
+                        key = normalize_key(raw_name)
+                        gmp_raw = tds[gmp_idx].text.strip()
+                        cleaned_val = clean_num_or_none(gmp_raw.split("(")[0] if "(" in gmp_raw else gmp_raw) or 0.0
+
+                        lot_val = int(clean_num_or_none(tds[lot_idx].text) or 0) if lot_idx != -1 else 0
+                        allot_d = parse_date_or_none(tds[allot_idx].text) if allot_idx != -1 else None
+                        list_d = parse_date_or_none(tds[list_idx].text) if list_idx != -1 else None
+
+                        l_price, l_pct = 0.0, 0.0
+                        inline = re.search(r"L@\s*([\d,.]+)\s*\(([-+]?\d*\.?\d+)\%\)", tds[name_idx].text)
+                        if inline:
+                            l_price = float(inline.group(1).replace(",", ""))
+                            l_pct = float(inline.group(2))
+
+                        if key:
+                            gmp_map[key] = {
+                                "gmpAmount": cleaned_val,
+                                "lotSize": lot_val,
+                                "allotmentDate": allot_d,
+                                "listingDate": list_d,
+                                "listingPrice": l_price,
+                                "listingGainPercent": l_pct
+                            }
+    except Exception as e:
+        print(f"GMP scraper warning: {e}")
+    return gmp_map
+
+# ----------------- TIER 2: SECONDARY COMPLETE SCRAPER ENGINE -----------------
 def fetch_secondary_engine(session, manual_overrides, previous_cache):
-    perf_map = {}
-    endpoints = [
-        f"{INVESTORGAIN_BASE_URL}/report/ipo-performance-history/486/all/?year=2026",
-        f"{INVESTORGAIN_BASE_URL}/report/ipo-performance-history/486/sme/"
-    ]
-    for url in endpoints:
-        try:
-            res = session.get(url, headers=HEADERS, timeout=10)
-            if res.status_code == 200:
-                soup = BeautifulSoup(res.text, "html.parser")
-                table = soup.find("table")
-                if table:
-                    for r in table.find_all("tr")[1:]:
-                        tds = r.find_all("td")
-                        if len(tds) >= 7:
-                            raw_n = tds[0].text.strip()
-                            k = normalize_key(raw_n)
-                            cell_txt = " ".join([td.text.strip() for td in tds])
-                            m = re.search(r"([\d,.]+)\s*\(([-+]?\d*\.?\d+)\%\)", cell_txt)
-                            if m and k:
-                                perf_map[k] = {
-                                    "listingPrice": float(m.group(1).replace(",", "")),
-                                    "listingGainPercent": float(m.group(2))
-                                }
-        except Exception:
-            pass
-
+    gmp_data = fetch_gmp_and_performance_map(session)
     res = session.get(f"{INVESTORGAIN_BASE_URL}/report/live-ipo-gmp/331/", timeout=15)
     if res.status_code != 200:
         return []
@@ -215,13 +224,6 @@ def fetch_secondary_engine(session, manual_overrides, previous_cache):
         if not raw_name or "company" in raw_name.lower():
             continue
 
-        listing_price = 0.0
-        listing_gain_pct = 0.0
-        inline_match = re.search(r"L@\s*([\d,.]+)\s*\(([-+]?\d*\.?\d+)\%\)", raw_cell_text, re.IGNORECASE)
-        if inline_match:
-            listing_price = float(inline_match.group(1).replace(",", ""))
-            listing_gain_pct = float(inline_match.group(2))
-
         clean_name = re.sub(r"L@\s*[\d,.]+\s*\([^)]*\)", "", raw_name, flags=re.IGNORECASE)
         clean_name = re.sub(r"₹\s*[\d,.]+\s*Cr\.?", "", clean_name, flags=re.IGNORECASE)
         clean_name = re.sub(r"\b(IPO|SME|BSE|NSE|Ltd\.?|Limited)\b", "", clean_name, flags=re.IGNORECASE).strip()
@@ -238,9 +240,9 @@ def fetch_secondary_engine(session, manual_overrides, previous_cache):
 
         status = determine_status(open_d, close_d, list_d)
 
-        if listing_price == 0.0 and norm_key in perf_map:
-            listing_price = perf_map[norm_key]["listingPrice"]
-            listing_gain_pct = perf_map[norm_key]["listingGainPercent"]
+        gmp_info = gmp_data.get(norm_key, {})
+        listing_price = gmp_info.get("listingPrice", 0.0)
+        listing_gain_pct = gmp_info.get("listingGainPercent", 0.0)
 
         reg_name, reg_url = None, None
         if norm_key in manual_overrides:
@@ -331,15 +333,84 @@ def run_pipeline():
         except Exception:
             pass
 
-    # 3. Attempt Tier 1: Upstox API
+    # 3. Fetch secondary GMP map for enrichment
+    gmp_data = fetch_gmp_and_performance_map(session)
+
+    # 4. Attempt Tier 1: Upstox API
     final_dataset = []
     active_source = "None"
     upstox_data, status_msg = try_fetch_upstox()
 
     if upstox_data:
-        print(f"Tier 1 Active: Successfully fetched from Upstox API.")
+        print(f"Tier 1 Active: Ingesting {len(upstox_data)} official records from Upstox API.")
         active_source = "UPSTOX_OFFICIAL"
-        # Parse Upstox payload and merge GMP...
+
+        for idx, item in enumerate(upstox_data):
+            raw_name = item.get("name", "").strip()
+            clean_name = re.sub(r"\b(IPO|SME|BSE|NSE|Ltd\.?|Limited)\b", "", raw_name, flags=re.IGNORECASE).strip()
+            norm_key = normalize_key(clean_name)
+
+            price_min = float(item.get("minimum_price") or 0.0)
+            price_max = float(item.get("maximum_price") or 0.0)
+            
+            # Enrich from secondary map for fields not in basic Upstox listing
+            gmp_info = gmp_data.get(norm_key, {})
+            gmp_val = gmp_info.get("gmpAmount", 0.0)
+            gmp_pct = round((gmp_val / price_max * 100), 2) if (gmp_val > 0 and price_max > 0) else 0.0
+            
+            lot_size = gmp_info.get("lotSize", 0)
+            allot_d = gmp_info.get("allotmentDate") or "To Be Updated"
+            list_d = gmp_info.get("listingDate") or "To Be Updated"
+
+            # Parse subscription quotas if provided in item['investors']
+            sub_retail, sub_hni, sub_qib = 0.0, 0.0, 0.0
+            for inv in item.get("investors", []):
+                cat = inv.get("category_name", "").upper()
+                sub = float(inv.get("subscription_rate", 0.0) or 0.0)
+                if "RETAIL" in cat or "RII" in cat:
+                    sub_retail = sub
+                elif "HNI" in cat or "NII" in cat:
+                    sub_hni = sub
+                elif "QIB" in cat:
+                    sub_qib = sub
+
+            reg_name, reg_url = None, None
+            if norm_key in manual_overrides:
+                reg_name, reg_url = manual_overrides[norm_key]
+            elif norm_key in previous_cache:
+                reg_name, reg_url = previous_cache[norm_key]
+            else:
+                reg_name = "To Be Updated"
+                reg_url = "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
+
+            cand = {
+                "id": str(idx + 1),
+                "name": clean_name,
+                "symbol": item.get("symbol", re.sub(r"[^A-Za-z0-9]", "", clean_name)[:7].upper()),
+                "category": "SME" if item.get("issue_type") == "sme" else "MAINBOARD",
+                "status": item.get("status", "UPCOMING").upper(),
+                "issuePriceMin": price_min,
+                "issuePriceMax": price_max,
+                "lotSize": lot_size,
+                "openDate": item.get("bidding_start_date") or "To Be Updated",
+                "closeDate": item.get("bidding_end_date") or "To Be Updated",
+                "allotmentDate": allot_d,
+                "listingDate": list_d,
+                "gmpAmount": gmp_val,
+                "gmpPercent": gmp_pct,
+                "subscriptionTotal": float(clean_num_or_none(item.get("total_subscription")) or 0.0),
+                "subscriptionRetail": sub_retail,
+                "subscriptionHNI": sub_hni,
+                "subscriptionQIB": sub_qib,
+                "listingPrice": gmp_info.get("listingPrice", 0.0),
+                "listingGainPercent": gmp_info.get("listingGainPercent", 0.0),
+                "registrarName": reg_name,
+                "registrarUrl": reg_url,
+                "rhpPdfUrl": f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+RHP+file+SEBI",
+                "drhpPdfUrl": f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+DRHP+file+SEBI"
+            }
+            if validate_record(cand):
+                final_dataset.append(cand)
     else:
         print(f"Tier 1 Bypassed / Failed: {status_msg}")
         print("Engaging Tier 2: Running Secondary Scraper Engine...")
@@ -347,7 +418,7 @@ def run_pipeline():
         if final_dataset:
             active_source = "SECONDARY_VALIDATED"
 
-    # 4. Tier 3: Last-Known-Good Guard
+    # 5. Tier 3: Last-Known-Good Guard
     if not final_dataset:
         print("CRITICAL: Both Tier 1 and Tier 2 failed. Activating Tier 3 (LKG Fallback).")
         with open(AUDIT_LOG_PATH, "w", encoding="utf-8") as f:
@@ -371,4 +442,4 @@ def run_pipeline():
 
 if __name__ == "__main__":
     run_pipeline()
-    
+            
