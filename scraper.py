@@ -202,6 +202,14 @@ def try_fetch_upstox():
         except Exception as e:
             print(f"      Upstox query notice for {q}: {e}", flush=True)
 
+    if not all_upstox_items:
+        try:
+            res = requests.get(f"{UPSTOX_BASE_URL}/ipos", headers=headers, timeout=8)
+            if res.status_code == 200:
+                all_upstox_items = res.json().get("data", [])
+        except Exception as e:
+            print(f"      Plain /ipos notice: {e}", flush=True)
+
     deduped = {}
     for it in all_upstox_items:
         iid = it.get("id") or it.get("symbol") or it.get("name")
@@ -211,7 +219,6 @@ def try_fetch_upstox():
     upstox_list = list(deduped.values())
     print(f"      Fetched {len(upstox_list)} unique base items. Enriching via Upstox /ipos/{{id}}...", flush=True)
 
-    # Correct endpoint: /v2/ipos/{id}
     for item in upstox_list:
         ipo_id = item.get("id")
         if not ipo_id:
@@ -220,7 +227,7 @@ def try_fetch_upstox():
             d_res = requests.get(f"{UPSTOX_BASE_URL}/ipos/{ipo_id}", headers=headers, timeout=6)
             if d_res.status_code == 200:
                 details = d_res.json().get("data", {})
-                                if details:
+                if details:
                     # 1. Direct fields
                     item["lot_size"] = details.get("lot_size") or details.get("minimum_quantity")
                     item["issue_price_min"] = details.get("minimum_price")
@@ -243,7 +250,6 @@ def try_fetch_upstox():
                     item["registrar_url"] = reg_info.get("website")
 
                     # 4. Extract Category Subscriptions directly from Upstox details
-                    # Upstox returns categories under 'categories' or 'category_details' or 'investors'
                     cats = (
                         details.get("categories") or 
                         details.get("category_details") or 
@@ -255,7 +261,6 @@ def try_fetch_upstox():
                     sub_retail, sub_hni, sub_qib = 0.0, 0.0, 0.0
                     for c in cats:
                         c_name = str(c.get("category") or c.get("category_name") or c.get("name") or "").upper()
-                        # Rate can be subscription_rate, oversubscription, or subscription
                         rate_raw = (
                             c.get("subscription_rate") or 
                             c.get("oversubscription") or 
@@ -277,14 +282,13 @@ def try_fetch_upstox():
                     item["subscription_qib"] = sub_qib
 
                     print(f"      [OK-UPSTOX] {item.get('name')} | Lot: {item.get('lot_size')} | Sub (R/H/Q): {sub_retail}x/{sub_hni}x/{sub_qib}x", flush=True)
-    else:
+            else:
                 print(f"      [NOTICE] Detail failed for {ipo_id}: HTTP {d_res.status_code}", flush=True)
             time.sleep(0.08)
         except Exception as e:
             print(f"      Detail fetch error for {ipo_id}: {e}", flush=True)
 
     return upstox_list, "OK"
-
 
 # ----------------- SECONDARY GMP, SUBSCRIPTION & PERFORMANCE CRAWLER -----------------
 def fetch_gmp_and_performance_map(session):
@@ -335,28 +339,23 @@ def fetch_gmp_and_performance_map(session):
                     if not norm:
                         continue
 
-                    # GMP
                     cleaned_gmp = 0.0
                     if gmp_idx != -1 and len(tds) > gmp_idx:
                         gmp_raw = tds[gmp_idx].text.strip()
                         cleaned_gmp = clean_num_or_none(gmp_raw.split("(")[0] if "(" in gmp_raw else gmp_raw) or 0.0
 
-                    # Lot Size
                     lot_val = 0
                     if lot_idx != -1 and len(tds) > lot_idx:
                         lot_val = int(clean_num_or_none(tds[lot_idx].text) or 0)
 
-                    # Dates
                     allot_d = parse_date_or_none(tds[allot_idx].text) if (allot_idx != -1 and len(tds) > allot_idx) else None
                     list_d = parse_date_or_none(tds[list_idx].text) if (list_idx != -1 and len(tds) > list_idx) else None
 
-                    # Subscription Breakdowns
                     sub_t = clean_num_or_none(tds[sub_idx].text) if (sub_idx != -1 and len(tds) > sub_idx) else None
                     sub_q = clean_num_or_none(tds[qib_idx].text) if (qib_idx != -1 and len(tds) > qib_idx) else None
                     sub_n = clean_num_or_none(tds[nii_idx].text) if (nii_idx != -1 and len(tds) > nii_idx) else None
                     sub_r = clean_num_or_none(tds[rii_idx].text) if (rii_idx != -1 and len(tds) > rii_idx) else None
 
-                    # Listing Price & Gain
                     l_price, l_pct = 0.0, 0.0
                     inline = re.search(r"L@\s*([\d,.]+)\s*\(([-+]?\d*\.?\d+)\%\)", tds[name_idx].text)
                     if inline:
@@ -384,7 +383,6 @@ def fetch_gmp_and_performance_map(session):
 
     print(f"      Parsed {len(gmp_map)} secondary enriched entries successfully.", flush=True)
     return gmp_map
-
 
 # ----------------- MAIN PIPELINE ORCHESTRATOR -----------------
 def run_pipeline():
@@ -468,21 +466,12 @@ def run_pipeline():
             if status == "UPCOMING" and raw_status in ["OPEN", "CLOSED"]:
                 status = raw_status
 
-            # Subscription breakdown
-                        # 1. Parse Subscription Quotas from Upstox (check both category and category_name)
-            sub_retail, sub_hni, sub_qib = 0.0, 0.0, 0.0
-            investors = item.get("investors") or item.get("categories") or []
-            for inv in investors:
-                cat = str(inv.get("category_name") or inv.get("category") or "").upper()
-                sub = float(clean_num_or_none(inv.get("subscription_rate") or inv.get("subscription") or inv.get("oversubscription")) or 0.0)
-                if any(k in cat for k in ["RETAIL", "RII", "INDIVIDUAL"]):
-                    sub_retail = sub
-                elif any(k in cat for k in ["HNI", "NII", "NON-INSTITUTIONAL"]):
-                    sub_hni = sub
-                elif "QIB" in cat:
-                    sub_qib = sub
+            # Read Subscription Quotas from Upstox (assigned in try_fetch_upstox)
+            sub_retail = float(item.get("subscription_retail") or 0.0)
+            sub_hni = float(item.get("subscription_hni") or 0.0)
+            sub_qib = float(item.get("subscription_qib") or 0.0)
 
-            # 2. Fallback to Secondary Ingested Subscriptions if Upstox was empty
+            # Fallback to secondary subscription data if Upstox was 0.0
             if sub_retail == 0.0 and gmp_info.get("subscriptionRetail"):
                 sub_retail = float(gmp_info.get("subscriptionRetail", 0.0))
             if sub_hni == 0.0 and gmp_info.get("subscriptionHNI"):
@@ -492,12 +481,11 @@ def run_pipeline():
 
             total_sub = float(clean_num_or_none(item.get("total_subscription")) or gmp_info.get("subscriptionTotal") or 0.0)
 
-            # 3. Listing Price Fallback
+            # Listing Price Fallback
             l_price = float(item.get("listing_price") or gmp_info.get("listingPrice") or 0.0)
             l_gain = float(item.get("listing_gain_percent") or gmp_info.get("listingGainPercent") or 0.0)
             if l_price > 0 and l_gain == 0.0 and price_max > 0:
                 l_gain = round(((l_price - price_max) / price_max) * 100, 2)
-
 
             # Registrar mapping
             reg_name, reg_url = None, None
@@ -525,7 +513,7 @@ def run_pipeline():
             if not sym:
                 sym = "IPO"
 
-            print(f"      [PROCESSED] {clean_name[:20]} -> Status: {status} | Lot: {lot_size} | GMP: ₹{gmp_val} | Allot: {allot_d}", flush=True)
+            print(f"      [PROCESSED] {clean_name[:20]} -> Status: {status} | Lot: {lot_size} | Sub: {total_sub}x (R:{sub_retail}x, H:{sub_hni}x, Q:{sub_qib}x)", flush=True)
 
             cand = {
                 "id": str(idx_counter),
