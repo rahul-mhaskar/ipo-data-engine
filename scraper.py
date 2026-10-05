@@ -36,13 +36,6 @@ SEBI_REGISTRARS = [
     ("mas services", "MAS Services", "https://www.masserv.com/")
 ]
 
-STOP_WORDS = {
-    "ipo", "sme", "bse", "nse", "ltd", "limited", "pvt", "private", 
-    "industries", "industry", "enterprises", "enterprise", "services", 
-    "service", "accessories", "polymers", "foods", "technologies", 
-    "technology", "consultants", "consultant", "india", "international"
-}
-
 def clean_num_or_none(val):
     if val is None or val == "":
         return None
@@ -55,41 +48,44 @@ def clean_num_or_none(val):
             return None
     return None
 
-def tokenize_name(name: str):
+def clean_company_name(name: str) -> str:
+    """Strips quotes, embedded tags, and corporate suffixes for robust matching."""
     if not name:
-        return []
-    cleaned = re.sub(r"[^a-zA-Z0-9\s]", " ", name).lower()
-    return [w for w in cleaned.split() if w and w not in STOP_WORDS and len(w) > 1]
+        return ""
+    # Normalize unicode apostrophes (curly quotes)
+    s = name.replace("’", "").replace("'", "")
+    # Remove HTML fragments, badges, and inline annotations
+    s = re.sub(r"<[^>]+>", " ", s)
+    s = re.sub(r"GMP:.*", "", s, flags=re.IGNORECASE)
+    s = re.sub(r"L@.*", "", s, flags=re.IGNORECASE)
+    # Strip common noise and corporate suffixes
+    s = re.sub(
+        r"\b(IPO|SME|BSE|NSE|Ltd\.?|Limited|Pvt\.?|Private|Industries|Industry|Enterprises|Services|Home)\b",
+        "",
+        s,
+        flags=re.IGNORECASE
+    )
+    return re.sub(r"[^a-z0-9]", "", s.lower())
 
-def match_gmp_fuzzy(name: str, gmp_data: dict) -> dict:
+def match_gmp_robust(name: str, gmp_data: dict) -> dict:
     if not name or not gmp_data:
         return {}
-    
-    tokens = tokenize_name(name)
-    norm = "".join(tokens)
-    
-    if norm in gmp_data:
-        return gmp_data[norm]
 
-    best_match = {}
-    best_score = 0.0
-    tokens_set = set(tokens)
+    clean_target = clean_company_name(name)
+    if not clean_target:
+        return {}
 
-    for cand_norm, data in gmp_data.items():
-        cand_tokens = set(data.get("tokens", []))
-        if not cand_tokens or not tokens_set:
-            continue
-        common = tokens_set.intersection(cand_tokens)
-        if len(common) > 0:
-            score = len(common) / float(len(tokens_set.union(cand_tokens)))
-            if tokens and data.get("tokens") and tokens[0] == data.get("tokens")[0]:
-                score += 0.4
-            if score > best_score:
-                best_score = score
-                best_match = data
+    # 1. Exact match on cleaned string
+    if clean_target in gmp_data:
+        return gmp_data[clean_target]
 
-    if best_score >= 0.4:
-        return best_match
+    # 2. Substring & prefix overlap
+    for cand_clean, data in gmp_data.items():
+        if cand_clean and (cand_clean in clean_target or clean_target in cand_clean):
+            return data
+        min_len = min(len(cand_clean), len(clean_target))
+        if min_len >= 4 and cand_clean[:4] == clean_target[:4]:
+            return data
 
     return {}
 
@@ -214,7 +210,7 @@ def try_fetch_upstox():
     upstox_list = list(deduped.values())
     print(f"      Fetched {len(upstox_list)} unique base items. Enriching via Upstox /ipos/{{id}}...", flush=True)
 
-    # Detailed offer parameters for each IPO
+    # Detailed offer parameters directly from Upstox
     for item in upstox_list:
         ipo_id = item.get("id")
         if not ipo_id:
@@ -245,47 +241,14 @@ def try_fetch_upstox():
                     item["registrar_name"] = reg_info.get("name")
                     item["registrar_url"] = reg_info.get("website")
 
-                    # 4. Total and category-wise subscription directly from Upstox
+                    # 4. Total subscription
                     item["total_subscription"] = (
                         clean_num_or_none(details.get("total_subscription")) or 
                         clean_num_or_none(item.get("total_subscription")) or 
                         0.0
                     )
 
-                    cats = (
-                        details.get("categories") or 
-                        details.get("category_details") or 
-                        details.get("investors") or 
-                        details.get("investor_categories") or 
-                        details.get("bidding_details") or 
-                        item.get("investors") or 
-                        []
-                    )
-
-                    sub_retail, sub_hni, sub_qib = 0.0, 0.0, 0.0
-                    for c in cats:
-                        c_name = str(c.get("category") or c.get("category_name") or c.get("name") or "").upper()
-                        rate_raw = (
-                            c.get("subscription_rate") or 
-                            c.get("oversubscription") or 
-                            c.get("subscription") or 
-                            c.get("rate") or 
-                            c.get("times_subscribed")
-                        )
-                        rate = float(clean_num_or_none(rate_raw) or 0.0)
-
-                        if any(k in c_name for k in ["RETAIL", "RII", "INDIVIDUAL"]):
-                            sub_retail = rate
-                        elif any(k in c_name for k in ["HNI", "NII", "NON-INSTITUTIONAL"]):
-                            sub_hni = rate
-                        elif "QIB" in c_name:
-                            sub_qib = rate
-
-                    item["subscription_retail"] = sub_retail
-                    item["subscription_hni"] = sub_hni
-                    item["subscription_qib"] = sub_qib
-
-                    print(f"      [OK-UPSTOX] {item.get('name')} | Lot: {item.get('lot_size')} | Sub: {item['total_subscription']}x (R:{sub_retail}x, H:{sub_hni}x, Q:{sub_qib}x)", flush=True)
+                    print(f"      [OK-UPSTOX] {item.get('name')} | Lot: {item.get('lot_size')} | Sub: {item['total_subscription']}x | Allot: {item.get('allotment_date')}", flush=True)
             else:
                 print(f"      [NOTICE] Detail failed for {ipo_id}: HTTP {d_res.status_code}", flush=True)
             time.sleep(0.08)
@@ -331,23 +294,18 @@ def fetch_gmp_only_map(session):
             for row in table.find_all("tr")[1:]:
                 tds = row.find_all("td")
                 if len(tds) > max(name_idx, gmp_idx):
-                    raw_td_text = tds[name_idx].text.strip()
-                    cleaned_name = re.sub(r"GMP:.*", "", raw_td_text, flags=re.IGNORECASE)
-                    cleaned_name = re.sub(r"L@.*", "", cleaned_name, flags=re.IGNORECASE)
-                    
-                    tokens = tokenize_name(cleaned_name)
-                    norm = "".join(tokens)
-                    if not norm:
+                    raw_td_text = tds[name_idx].get_text(separator=" ", strip=True)
+                    clean_k = clean_company_name(raw_td_text)
+                    if not clean_k:
                         continue
 
-                    gmp_raw = tds[gmp_idx].text.strip()
+                    gmp_raw = tds[gmp_idx].get_text(strip=True)
                     cleaned_gmp = clean_num_or_none(gmp_raw.split("(")[0] if "(" in gmp_raw else gmp_raw) or 0.0
 
-                    existing = gmp_map.get(norm, {})
-                    gmp_map[norm] = {
-                        "tokens": tokens,
-                        "gmpAmount": cleaned_gmp if cleaned_gmp > 0 else existing.get("gmpAmount", 0.0)
-                    }
+                    if cleaned_gmp > 0:
+                        gmp_map[clean_k] = {
+                            "gmpAmount": cleaned_gmp
+                        }
 
         except Exception as e:
             print(f"      GMP scraper notice for {url}: {e}", flush=True)
@@ -368,7 +326,7 @@ def run_pipeline():
         try:
             with open(OVERRIDES_PATH, "r", encoding="utf-8") as f:
                 for k, v in json.load(f).items():
-                    manual_overrides["".join(tokenize_name(k))] = (v["registrarName"], v["registrarUrl"])
+                    manual_overrides[clean_company_name(k)] = (v["registrarName"], v["registrarUrl"])
         except Exception:
             pass
 
@@ -379,7 +337,7 @@ def run_pipeline():
             with open(FILE_PATH, "r", encoding="utf-8") as f:
                 last_known_good = json.load(f)
                 for item in last_known_good:
-                    k = "".join(tokenize_name(item.get("name", "")))
+                    k = clean_company_name(item.get("name", ""))
                     r_name = item.get("registrarName")
                     if k and r_name and r_name not in ["To Be Updated", "To Be Announced"]:
                         previous_cache[k] = (r_name, item.get("registrarUrl", ""))
@@ -406,15 +364,15 @@ def run_pipeline():
         for item in upstox_data:
             raw_name = item.get("name", "").strip()
             clean_name = re.sub(r"\b(IPO|SME|BSE|NSE|Ltd\.?|Limited)\b", "", raw_name, flags=re.IGNORECASE).strip()
-            norm_key = "".join(tokenize_name(clean_name))
+            norm_key = clean_company_name(clean_name)
             seen_keys.add(norm_key)
 
             # Pricing directly from Upstox
             price_min = float(item.get("issue_price_min") or item.get("minimum_price") or 0.0)
             price_max = float(item.get("issue_price_max") or item.get("maximum_price") or 0.0)
 
-            # GMP matching from InvestorGain
-            gmp_info = match_gmp_fuzzy(raw_name, gmp_data)
+            # Isolated GMP matching from InvestorGain
+            gmp_info = match_gmp_robust(clean_name, gmp_data)
             gmp_val = float(gmp_info.get("gmpAmount", 0.0))
             gmp_pct = round((gmp_val / price_max * 100), 2) if (gmp_val > 0 and price_max > 0) else 0.0
 
@@ -433,11 +391,8 @@ def run_pipeline():
             if status == "UPCOMING" and raw_status in ["OPEN", "CLOSED"]:
                 status = raw_status
 
-            # Subscription metrics directly from Upstox
+            # Total subscription directly from Upstox
             total_sub = float(item.get("total_subscription") or 0.0)
-            sub_retail = float(item.get("subscription_retail") or 0.0)
-            sub_hni = float(item.get("subscription_hni") or 0.0)
-            sub_qib = float(item.get("subscription_qib") or 0.0)
 
             # Registrar mapping directly from Upstox
             reg_name, reg_url = None, None
@@ -486,9 +441,9 @@ def run_pipeline():
                 "gmpAmount": gmp_val,
                 "gmpPercent": gmp_pct,
                 "subscriptionTotal": total_sub,
-                "subscriptionRetail": sub_retail,
-                "subscriptionHNI": sub_hni,
-                "subscriptionQIB": sub_qib,
+                "subscriptionRetail": 0.0,
+                "subscriptionHNI": 0.0,
+                "subscriptionQIB": 0.0,
                 "listingPrice": 0.0,
                 "listingGainPercent": 0.0,
                 "registrarName": reg_name,
@@ -502,7 +457,7 @@ def run_pipeline():
 
         # Preserve closed and listed history
         for old in last_known_good:
-            old_key = "".join(tokenize_name(old.get("name", "")))
+            old_key = clean_company_name(old.get("name", ""))
             if old_key not in seen_keys and old.get("status") in ["LISTED", "CLOSED"]:
                 old["id"] = str(idx_counter)
                 final_dataset.append(old)
@@ -525,9 +480,10 @@ def run_pipeline():
         f.write(f"**Last Sync (UTC):** {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
         f.write(f"**Primary Active Source:** {active_source}\n")
         f.write(f"**Total Records Ingested:** {len(final_dataset)}\n")
-        f.write("Status: Fully Powered by Upstox v2 API + Isolated GMP Enrichment.\n")
+        f.write("Status: Fully Powered by Upstox v2 API + Robust Isolated GMP.\n")
 
     print(f">>> Pipeline executed successfully using [{active_source}]. Processed {len(final_dataset)} records.", flush=True)
 
 if __name__ == "__main__":
     run_pipeline()
+    
