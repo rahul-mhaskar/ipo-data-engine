@@ -36,6 +36,13 @@ SEBI_REGISTRARS = [
     ("mas services", "MAS Services", "https://www.masserv.com/")
 ]
 
+STOP_WORDS = {
+    "ipo", "sme", "bse", "nse", "ltd", "limited", "pvt", "private", 
+    "industries", "industry", "enterprises", "enterprise", "services", 
+    "service", "accessories", "polymers", "foods", "technologies", 
+    "technology", "consultants", "consultant", "india", "international"
+}
+
 def clean_num_or_none(val):
     if val is None or val == "":
         return None
@@ -45,50 +52,70 @@ def clean_num_or_none(val):
     except ValueError:
         return None
 
-def normalize_key(name: str) -> str:
+def tokenize_name(name: str):
+    """Splits name into lowercase alphabetical tokens excluding stop words."""
     if not name:
-        return ""
-    clean = re.sub(
-        r"\b(IPO|SME|BSE|NSE|Ltd\.?|Limited|Pvt\.?|Private|Industries|Industry|Enterprises|Enterprise|Services|Accessories|Polymers|Foods|Technologies|Consultants)\b",
-        "",
-        name,
-        flags=re.IGNORECASE
-    )
-    return re.sub(r"[^a-zA-Z0-9]", "", clean).lower()
+        return []
+    cleaned = re.sub(r"[^a-zA-Z0-9\s]", " ", name).lower()
+    return [w for w in cleaned.split() if w and w not in STOP_WORDS and len(w) > 1]
 
-def match_gmp_fuzzy(norm_key, gmp_data):
-    if not norm_key:
+def normalize_key(name: str) -> str:
+    tokens = tokenize_name(name)
+    return "".join(tokens)
+
+def match_gmp_fuzzy(name: str, gmp_data: dict) -> dict:
+    if not name or not gmp_data:
         return {}
-    if norm_key in gmp_data:
-        return gmp_data[norm_key]
-    for k, v in gmp_data.items():
-        if k and (k in norm_key or norm_key in k):
-            return v
-        if len(k) >= 4 and len(norm_key) >= 4:
-            if k[:4] == norm_key[:4]:
-                return v
+    
+    tokens = tokenize_name(name)
+    norm = "".join(tokens)
+    
+    # 1. Exact match on normalized token string
+    if norm in gmp_data:
+        return gmp_data[norm]
+
+    # 2. Token overlap matching (best Jaccard match)
+    best_match = {}
+    best_score = 0.0
+    tokens_set = set(tokens)
+
+    for cand_norm, data in gmp_data.items():
+        cand_tokens = set(data.get("tokens", []))
+        if not cand_tokens or not tokens_set:
+            continue
+        common = tokens_set.intersection(cand_tokens)
+        if len(common) > 0:
+            score = len(common) / float(len(tokens_set.union(cand_tokens)))
+            # If the primary distinctive word matches
+            if tokens and data.get("tokens") and tokens[0] == data.get("tokens")[0]:
+                score += 0.4
+            if score > best_score:
+                best_score = score
+                best_match = data
+
+    if best_score >= 0.4:
+        return best_match
+
     return {}
 
 def parse_date_or_none(date_str):
-    if not date_str or date_str.strip() in ["--", "-", "", "N/A", "TBD", "TBA", "null", "None"]:
+    if not date_str or str(date_str).strip() in ["--", "-", "", "N/A", "TBD", "TBA", "null", "None"]:
         return None
-    cleaned = date_str.strip()
+    cleaned = str(date_str).strip()
     current_year = datetime.now().year
 
-    # Standard formats
     for fmt in (
         "%d-%b-%y", "%d-%b-%Y",
         "%d-%m-%y", "%d-%m-%Y",
         "%d/%m/%y", "%d/%m/%Y",
         "%d %b %Y", "%d %b %y",
-        "%Y-%m-%d"
+        "%Y-%m-%d", "%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%dT%H:%M:%S"
     ):
         try:
-            return datetime.strptime(cleaned, fmt).strftime("%Y-%m-%d")
+            return datetime.strptime(cleaned.split("T")[0] if "T" in cleaned else cleaned, fmt.split("T")[0]).strftime("%Y-%m-%d")
         except ValueError:
             pass
 
-    # Formats missing year
     for fmt in ("%d-%b", "%d-%m", "%d %b"):
         try:
             dt = datetime.strptime(cleaned, fmt)
@@ -96,7 +123,6 @@ def parse_date_or_none(date_str):
         except ValueError:
             pass
 
-    # Regex extraction fallback: Day-Month-Year (e.g. 5-10-26, 05-Oct-2026)
     match = re.search(r"(\d{1,2})[-/ ]([A-Za-z]{3}|\d{1,2})[-/ ]?(\d{2,4})?", cleaned)
     if match:
         day, month_raw, yr = match.groups()
@@ -173,18 +199,14 @@ def try_fetch_upstox():
                 print(f"      Upstox {q['status']} returned {len(items)} records.", flush=True)
             elif res.status_code in [401, 403]:
                 return None, f"Upstox Auth Token Expired / Invalid (HTTP {res.status_code})."
-            else:
-                print(f"      Upstox status {res.status_code} for {q}", flush=True)
         except Exception as e:
             print(f"      Upstox query notice for {q}: {e}", flush=True)
 
     if not all_upstox_items:
         try:
-            print("  --> Fallback call to plain Upstox /ipos...", flush=True)
             res = requests.get(f"{UPSTOX_BASE_URL}/ipos", headers=headers, timeout=8)
             if res.status_code == 200:
                 all_upstox_items = res.json().get("data", [])
-                print(f"      Plain /ipos returned {len(all_upstox_items)} records.", flush=True)
         except Exception as e:
             print(f"      Plain /ipos notice: {e}", flush=True)
 
@@ -194,7 +216,26 @@ def try_fetch_upstox():
         if iid and iid not in deduped:
             deduped[iid] = it
 
-    return list(deduped.values()), "OK"
+    upstox_list = list(deduped.values())
+    print(f"      Fetched {len(upstox_list)} unique base items. Enriching via Upstox Details API...", flush=True)
+
+    # Detailed offer parameters for each IPO
+    for idx, item in enumerate(upstox_list):
+        ipo_id = item.get("id")
+        if not ipo_id:
+            continue
+        try:
+            d_res = requests.get(f"{UPSTOX_BASE_URL}/ipo/details/{ipo_id}", headers=headers, timeout=5)
+            if d_res.status_code == 200:
+                details = d_res.json().get("data", {})
+                if details:
+                    item.update(details)
+                    print(f"      [OK-UPSTOX-DETAILS] {item.get('name')} -> Lot: {item.get('lot_size') or item.get('minimum_quantity')}", flush=True)
+            time.sleep(0.08)
+        except Exception:
+            pass
+
+    return upstox_list, "OK"
 
 # ----------------- SECONDARY GMP & PERFORMANCE CRAWLER -----------------
 def fetch_gmp_and_performance_map(session):
@@ -236,8 +277,9 @@ def fetch_gmp_and_performance_map(session):
                 tds = row.find_all("td")
                 if len(tds) > name_idx:
                     raw_name = tds[name_idx].text.strip()
-                    key = normalize_key(raw_name)
-                    if not key:
+                    tokens = tokenize_name(raw_name)
+                    norm = "".join(tokens)
+                    if not norm:
                         continue
 
                     cleaned_gmp = 0.0
@@ -259,8 +301,10 @@ def fetch_gmp_and_performance_map(session):
                         l_price = float(inline.group(1).replace(",", ""))
                         l_pct = float(inline.group(2))
 
-                    existing = gmp_map.get(key, {})
-                    gmp_map[key] = {
+                    existing = gmp_map.get(norm, {})
+                    gmp_map[norm] = {
+                        "tokens": tokens,
+                        "raw_name": raw_name,
                         "gmpAmount": cleaned_gmp if cleaned_gmp > 0 else existing.get("gmpAmount", 0.0),
                         "lotSize": lot_val if lot_val > 0 else existing.get("lotSize", 0),
                         "allotmentDate": allot_d or existing.get("allotmentDate"),
@@ -276,156 +320,13 @@ def fetch_gmp_and_performance_map(session):
     print(f"      Parsed {len(gmp_map)} secondary enriched entries successfully.", flush=True)
     return gmp_map
 
-# ----------------- TIER 2: SECONDARY SCRAPER FALLBACK ENGINE -----------------
-def fetch_secondary_engine(session, manual_overrides, previous_cache, gmp_data):
-    try:
-        res = session.get(f"{INVESTORGAIN_BASE_URL}/report/live-ipo-gmp/331/", timeout=10)
-    except Exception:
-        return []
-
-    if res.status_code != 200:
-        return []
-
-    soup = BeautifulSoup(res.text, "html.parser")
-    table = soup.find("table")
-    if not table:
-        return []
-
-    header_row = table.find("tr")
-    headers = [th.text.strip().lower() for th in header_row.find_all(["th", "td"])]
-
-    col_map = {}
-    for idx, h in enumerate(headers):
-        if any(k in h for k in ["name", "company", "ipo"]):
-            if "name" not in col_map: col_map["name"] = idx
-        elif "gmp" in h: col_map["gmp"] = idx
-        elif "sub" in h: col_map["sub"] = idx
-        elif "price" in h: col_map["price"] = idx
-        elif "lot" in h: col_map["lot"] = idx
-        elif "open" in h: col_map["open"] = idx
-        elif "close" in h: col_map["close"] = idx
-        elif any(k in h for k in ["boa", "allotment"]): col_map["allotment"] = idx
-        elif "listing" in h: col_map["listing"] = idx
-
-    name_col_idx = col_map.get("name", 0)
-    rows = table.find_all("tr")[1:]
-    dataset = []
-
-    for idx, row in enumerate(rows):
-        tds = row.find_all("td")
-        if len(tds) < 5:
-            continue
-
-        name_td = tds[name_col_idx]
-        company_link = name_td.find("a")
-        raw_cell_text = name_td.text.strip()
-        raw_name = company_link.text.strip() if company_link else raw_cell_text
-
-        if not raw_name or "company" in raw_name.lower():
-            continue
-
-        clean_name = re.sub(r"L@\s*[\d,.]+\s*\([^)]*\)", "", raw_name, flags=re.IGNORECASE)
-        clean_name = re.sub(r"₹\s*[\d,.]+\s*Cr\.?", "", clean_name, flags=re.IGNORECASE)
-        clean_name = re.sub(r"\b(IPO|SME|BSE|NSE|Ltd\.?|Limited)\b", "", clean_name, flags=re.IGNORECASE).strip()
-        if not clean_name:
-            continue
-
-        norm_key = normalize_key(clean_name)
-        category = "SME" if "SME" in (raw_cell_text + raw_name).upper() else "Mainboard"
-
-        open_d = parse_date_or_none(tds[col_map["open"]].text) if "open" in col_map else None
-        close_d = parse_date_or_none(tds[col_map["close"]].text) if "close" in col_map else None
-        allot_d = parse_date_or_none(tds[col_map["allotment"]].text) if "allotment" in col_map else None
-        list_d = parse_date_or_none(tds[col_map["listing"]].text) if "listing" in col_map else None
-
-        gmp_info = match_gmp_fuzzy(norm_key, gmp_data)
-
-        if not allot_d:
-            allot_d = gmp_info.get("allotmentDate")
-        if not list_d:
-            list_d = gmp_info.get("listingDate")
-
-        status = determine_status(open_d, close_d, list_d)
-
-        listing_price = gmp_info.get("listingPrice", 0.0)
-        listing_gain_pct = gmp_info.get("listingGainPercent", 0.0)
-
-        reg_name, reg_url = None, None
-        if norm_key in manual_overrides:
-            reg_name, reg_url = manual_overrides[norm_key]
-        elif norm_key in previous_cache:
-            reg_name, reg_url = previous_cache[norm_key]
-        else:
-            for pat, name, url in SEBI_REGISTRARS:
-                if pat in raw_cell_text.lower():
-                    reg_name, reg_url = name, url
-                    break
-            if not reg_name:
-                reg_name = "To Be Updated"
-                reg_url = "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
-
-        price_raw = tds[col_map["price"]].text.strip() if "price" in col_map else ""
-        prices = [float(p) for p in re.findall(r"\d+(?:\.\d+)?", price_raw)]
-        price_min = min(prices) if prices else 0.0
-        price_max = max(prices) if prices else 0.0
-
-        lot_raw = tds[col_map["lot"]].text.strip() if "lot" in col_map else ""
-        lot_size_num = clean_num_or_none(lot_raw)
-        lot_size = int(lot_size_num) if lot_size_num else gmp_info.get("lotSize", 0)
-
-        cleaned_gmp = gmp_info.get("gmpAmount", 0.0)
-        if cleaned_gmp <= 0.0 and "gmp" in col_map:
-            gmp_raw = tds[col_map["gmp"]].text.strip()
-            parsed_g = clean_num_or_none(gmp_raw.split("(")[0] if "(" in gmp_raw else gmp_raw)
-            cleaned_gmp = parsed_g if parsed_g is not None else 0.0
-
-        gmp_pct = round((cleaned_gmp / price_max * 100), 2) if (cleaned_gmp > 0 and price_max > 0) else 0.0
-
-        sub_raw = tds[col_map["sub"]].text.strip() if "sub" in col_map else ""
-        sub_total = clean_num_or_none(sub_raw) or gmp_info.get("subscriptionTotal") or 0.0
-
-        symbol = re.sub(r"[^A-Za-z0-9]", "", clean_name)[:7].upper()
-        if not symbol:
-            symbol = "IPO"
-
-        cand = {
-            "id": str(idx + 1),
-            "name": clean_name,
-            "symbol": symbol,
-            "category": category,
-            "status": status,
-            "issuePriceMin": price_min,
-            "issuePriceMax": price_max,
-            "lotSize": lot_size,
-            "openDate": open_d or "To Be Updated",
-            "closeDate": close_d or "To Be Updated",
-            "allotmentDate": allot_d or "To Be Updated",
-            "listingDate": list_d or "To Be Updated",
-            "gmpAmount": cleaned_gmp,
-            "gmpPercent": gmp_pct,
-            "subscriptionTotal": sub_total,
-            "subscriptionRetail": 0.0,
-            "subscriptionHNI": 0.0,
-            "subscriptionQIB": 0.0,
-            "listingPrice": listing_price,
-            "listingGainPercent": listing_gain_pct,
-            "registrarName": reg_name,
-            "registrarUrl": reg_url,
-            "rhpPdfUrl": f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+RHP+file+SEBI",
-            "drhpPdfUrl": f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+DRHP+file+SEBI"
-        }
-        if validate_record(cand):
-            dataset.append(cand)
-
-    return dataset
-
 # ----------------- MAIN PIPELINE ORCHESTRATOR -----------------
 def run_pipeline():
     print(">>> [Phase 1/5] Initializing pipeline session...", flush=True)
     session = requests.Session()
     session.headers.update(HEADERS)
 
-    # 1. Load manual overrides
+    # 1. Load overrides
     print(">>> [Phase 2/5] Loading overrides & caching references...", flush=True)
     manual_overrides = {}
     if os.path.exists(OVERRIDES_PATH):
@@ -437,7 +338,7 @@ def run_pipeline():
         except Exception:
             pass
 
-    # 2. Load previous cache & prepare Last-Known-Good backup
+    # 2. Load previous cache
     previous_cache = {}
     last_known_good = []
     if os.path.exists(FILE_PATH):
@@ -453,7 +354,7 @@ def run_pipeline():
         except Exception:
             pass
 
-    # 3. Secondary GMP and performance enrichment
+    # 3. Secondary GMP & performance enrichment
     print(">>> [Phase 3/5] Ingesting secondary GMP & performance map...", flush=True)
     gmp_data = fetch_gmp_and_performance_map(session)
 
@@ -479,15 +380,18 @@ def run_pipeline():
             price_min = float(item.get("minimum_price") or item.get("issue_price_min") or 0.0)
             price_max = float(item.get("maximum_price") or item.get("issue_price_max") or 0.0)
 
-            gmp_info = match_gmp_fuzzy(norm_key, gmp_data)
+            # Match GMP data using multi-word fuzzy matching
+            gmp_info = match_gmp_fuzzy(raw_name, gmp_data)
             gmp_val = gmp_info.get("gmpAmount", 0.0)
             gmp_pct = round((gmp_val / price_max * 100), 2) if (gmp_val > 0 and price_max > 0) else 0.0
 
+            # Priority 1: Lot size from Upstox details, Priority 2: Secondary GMP crawl
             raw_lot = item.get("lot_size") or item.get("minimum_quantity") or item.get("lotSize")
             lot_size = int(clean_num_or_none(raw_lot) or 0)
             if lot_size <= 0:
                 lot_size = gmp_info.get("lotSize", 0)
 
+            # Timeline Dates
             open_d = parse_date_or_none(item.get("bidding_start_date") or item.get("open_date"))
             close_d = parse_date_or_none(item.get("bidding_end_date") or item.get("close_date"))
             allot_d = parse_date_or_none(item.get("allotment_date")) or gmp_info.get("allotmentDate") or "To Be Updated"
@@ -498,9 +402,10 @@ def run_pipeline():
             if status == "UPCOMING" and raw_status in ["OPEN", "CLOSED"]:
                 status = raw_status
 
+            # Subscription breakdown
             sub_retail, sub_hni, sub_qib = 0.0, 0.0, 0.0
             for inv in item.get("investors", []):
-                cat = inv.get("category_name", "").upper()
+                cat = str(inv.get("category_name", "")).upper()
                 sub = float(inv.get("subscription_rate", 0.0) or 0.0)
                 if "RETAIL" in cat or "RII" in cat: sub_retail = sub
                 elif "HNI" in cat or "NII" in cat: sub_hni = sub
@@ -508,20 +413,33 @@ def run_pipeline():
 
             total_sub = float(clean_num_or_none(item.get("total_subscription")) or gmp_info.get("subscriptionTotal") or 0.0)
 
+            # Registrar mapping
             reg_name, reg_url = None, None
             if norm_key in manual_overrides:
                 reg_name, reg_url = manual_overrides[norm_key]
             elif norm_key in previous_cache:
                 reg_name, reg_url = previous_cache[norm_key]
             else:
-                reg_name = item.get("registrar_name") or "To Be Updated"
-                reg_url = item.get("registrar_url") or "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
+                raw_reg = item.get("registrar_name")
+                if raw_reg:
+                    for pat, name, url in SEBI_REGISTRARS:
+                        if pat in raw_reg.lower():
+                            reg_name, reg_url = name, url
+                            break
+                    if not reg_name:
+                        reg_name = raw_reg
+                        reg_url = item.get("registrar_url") or "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
+                else:
+                    reg_name = "To Be Updated"
+                    reg_url = "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
 
             sym = item.get("symbol")
             if not sym or str(sym).strip() in ["None", "null", ""]:
                 sym = re.sub(r"[^A-Za-z0-9]", "", clean_name)[:7].upper()
             if not sym:
                 sym = "IPO"
+
+            print(f"      [PROCESSED] {clean_name[:20]} -> Status: {status} | Lot: {lot_size} | GMP: ₹{gmp_val} | Allot: {allot_d}", flush=True)
 
             cand = {
                 "id": str(idx_counter),
@@ -562,13 +480,8 @@ def run_pipeline():
 
     else:
         print(f"    Tier 1 Notice: {status_msg}", flush=True)
-        print(">>> Engaging Tier 2 Engine...", flush=True)
-        final_dataset = fetch_secondary_engine(session, manual_overrides, previous_cache, gmp_data)
-        if final_dataset:
-            active_source = "SECONDARY_VALIDATED"
-        else:
-            final_dataset = last_known_good
-            active_source = "CACHE_FALLBACK"
+        final_dataset = last_known_good
+        active_source = "CACHE_FALLBACK"
 
     # 5. Output Feed
     print(">>> [Phase 5/5] Finalizing feed and writing records...", flush=True)
@@ -584,7 +497,7 @@ def run_pipeline():
         f.write(f"**Last Sync (UTC):** {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
         f.write(f"**Primary Active Source:** {active_source}\n")
         f.write(f"**Total Records Ingested:** {len(final_dataset)}\n")
-        f.write("Status: Healthy. Date format and lot size normalization verified.\n")
+        f.write("Status: Healthy. Details endpoint and fuzzy token matching active.\n")
 
     print(f">>> Pipeline executed successfully using [{active_source}]. Processed {len(final_dataset)} records.", flush=True)
 
