@@ -1,7 +1,5 @@
-# IPO Pipeline Data Health Audit
+# CRITICAL PIPELINE ALERT
 
-**Last Sync (UTC):** 2026-10-05 04:51:52 UTC
+Timestamp: 2026-10-05 04:57:49 UTC
 
-**Primary Active Source:** SECONDARY_VALIDATED
-**Total Records Ingested:** 50
-Status: Healthy. Zero-Fabrication verified.
+All upstream sources failed. `ipos.json` has NOT been touched to preserve app integrity.
