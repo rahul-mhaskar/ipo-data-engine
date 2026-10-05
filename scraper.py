@@ -136,7 +136,6 @@ def try_fetch_upstox():
         except Exception as e:
             print(f"Upstox query warning for {q}: {e}")
 
-    # Fallback to plain /ipos if parameterized query returned empty
     if not all_upstox_items:
         try:
             res = requests.get(f"{UPSTOX_BASE_URL}/ipos", headers=headers, timeout=10)
@@ -145,7 +144,6 @@ def try_fetch_upstox():
         except Exception:
             pass
 
-    # De-duplicate by unique key
     deduped = {}
     for it in all_upstox_items:
         iid = it.get("id") or it.get("symbol") or it.get("name")
@@ -464,4 +462,8 @@ def run_pipeline():
         with open(AUDIT_LOG_PATH, "w", encoding="utf-8") as f:
             f.write("# CRITICAL PIPELINE ALERT\n\n")
             f.write(f"Timestamp: {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
-            f.write("All upstream sources failed. `ipos.json`
+            f.write("All upstream sources failed. `ipos.json` has NOT been touched to preserve app integrity.\n")
+        return
+
+    # Write validated dataset
+  
