@@ -220,7 +220,7 @@ def try_fetch_upstox():
             d_res = requests.get(f"{UPSTOX_BASE_URL}/ipos/{ipo_id}", headers=headers, timeout=6)
             if d_res.status_code == 200:
                 details = d_res.json().get("data", {})
-                if details:
+                                if details:
                     # 1. Direct fields
                     item["lot_size"] = details.get("lot_size") or details.get("minimum_quantity")
                     item["issue_price_min"] = details.get("minimum_price")
@@ -231,9 +231,9 @@ def try_fetch_upstox():
                     # 2. Extract nested timeline dates
                     timeline = details.get("timeline") or {}
                     item["allotment_date"] = (
-                    timeline.get("allotment_start_date") or 
-                    timeline.get("basis_of_allotment_date") or 
-                    timeline.get("allotment_date")
+                        timeline.get("allotment_start_date") or 
+                        timeline.get("basis_of_allotment_date") or 
+                        timeline.get("allotment_date")
                     )
                     item["listing_date"] = timeline.get("listing_date")
 
@@ -242,8 +242,42 @@ def try_fetch_upstox():
                     item["registrar_name"] = reg_info.get("name")
                     item["registrar_url"] = reg_info.get("website")
 
-                    print(f"      [OK-UPSTOX] {item.get('name')} | Lot: {item.get('lot_size')} | Allot: {item.get('allotment_date')}", flush=True)
-            else:
+                    # 4. Extract Category Subscriptions directly from Upstox details
+                    # Upstox returns categories under 'categories' or 'category_details' or 'investors'
+                    cats = (
+                        details.get("categories") or 
+                        details.get("category_details") or 
+                        details.get("investors") or 
+                        item.get("investors") or 
+                        []
+                    )
+                    
+                    sub_retail, sub_hni, sub_qib = 0.0, 0.0, 0.0
+                    for c in cats:
+                        c_name = str(c.get("category") or c.get("category_name") or c.get("name") or "").upper()
+                        # Rate can be subscription_rate, oversubscription, or subscription
+                        rate_raw = (
+                            c.get("subscription_rate") or 
+                            c.get("oversubscription") or 
+                            c.get("subscription") or 
+                            c.get("rate") or 
+                            c.get("times_subscribed")
+                        )
+                        rate = float(clean_num_or_none(rate_raw) or 0.0)
+
+                        if any(k in c_name for k in ["RETAIL", "RII", "INDIVIDUAL"]):
+                            sub_retail = rate
+                        elif any(k in c_name for k in ["HNI", "NII", "NON-INSTITUTIONAL"]):
+                            sub_hni = rate
+                        elif "QIB" in c_name:
+                            sub_qib = rate
+
+                    item["subscription_retail"] = sub_retail
+                    item["subscription_hni"] = sub_hni
+                    item["subscription_qib"] = sub_qib
+
+                    print(f"      [OK-UPSTOX] {item.get('name')} | Lot: {item.get('lot_size')} | Sub (R/H/Q): {sub_retail}x/{sub_hni}x/{sub_qib}x", flush=True)
+    else:
                 print(f"      [NOTICE] Detail failed for {ipo_id}: HTTP {d_res.status_code}", flush=True)
             time.sleep(0.08)
         except Exception as e:
