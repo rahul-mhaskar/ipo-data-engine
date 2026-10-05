@@ -1,5 +1,7 @@
-# CRITICAL PIPELINE ALERT
+# IPO Pipeline Data Health Audit
 
-Timestamp: 2026-10-05 05:03:05 UTC
+**Last Sync (UTC):** 2026-10-05 05:07:11 UTC
 
-All upstream sources failed. `ipos.json` has NOT been touched to preserve app integrity.
+**Primary Active Source:** UPSTOX_OFFICIAL
+**Total Records Ingested:** 13
+Status: Healthy. Zero-Fabrication verified.
