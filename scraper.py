@@ -252,12 +252,12 @@ def try_fetch_upstox():
     return upstox_list, "OK"
 
 
-# ----------------- SECONDARY GMP & PERFORMANCE CRAWLER -----------------
+# ----------------- SECONDARY GMP, SUBSCRIPTION & PERFORMANCE CRAWLER -----------------
 def fetch_gmp_and_performance_map(session):
     gmp_map = {}
     report_urls = [
         f"{INVESTORGAIN_BASE_URL}/report/live-ipo-gmp/331/",
-        f"{INVESTORGAIN_BASE_URL}/report/live-ipo-gmp/331/ipo/",
+        f"{INVESTORGAIN_BASE_URL}/report/live-ipo-gmp/331/sme/",
         f"{INVESTORGAIN_BASE_URL}/report/ipo-subscription-live/333/"
     ]
 
@@ -278,7 +278,8 @@ def fetch_gmp_and_performance_map(session):
                 continue
 
             headers = [th.text.strip().lower() for th in header_row.find_all(["th", "td"])]
-            name_idx, gmp_idx, lot_idx, allot_idx, list_idx, sub_idx = 0, -1, -1, -1, -1, -1
+            name_idx, gmp_idx, lot_idx, allot_idx, list_idx = 0, -1, -1, -1, -1
+            sub_idx, qib_idx, nii_idx, rii_idx = -1, -1, -1, -1
 
             for i, h in enumerate(headers):
                 if any(k in h for k in ["company", "name", "ipo"]): name_idx = i
@@ -286,7 +287,10 @@ def fetch_gmp_and_performance_map(session):
                 elif "lot" in h: lot_idx = i
                 elif any(k in h for k in ["boa", "allotment"]): allot_idx = i
                 elif "listing" in h: list_idx = i
-                elif "sub" in h or "total" in h: sub_idx = i
+                elif any(k in h for k in ["total", "sub"]) and "share" not in h: sub_idx = i
+                elif "qib" in h: qib_idx = i
+                elif any(k in h for k in ["nii", "hni", "s-hni", "b-hni"]): nii_idx = i
+                elif any(k in h for k in ["retail", "rii"]): rii_idx = i
 
             for row in table.find_all("tr")[1:]:
                 tds = row.find_all("td")
@@ -297,19 +301,28 @@ def fetch_gmp_and_performance_map(session):
                     if not norm:
                         continue
 
+                    # GMP
                     cleaned_gmp = 0.0
                     if gmp_idx != -1 and len(tds) > gmp_idx:
                         gmp_raw = tds[gmp_idx].text.strip()
                         cleaned_gmp = clean_num_or_none(gmp_raw.split("(")[0] if "(" in gmp_raw else gmp_raw) or 0.0
 
+                    # Lot Size
                     lot_val = 0
                     if lot_idx != -1 and len(tds) > lot_idx:
                         lot_val = int(clean_num_or_none(tds[lot_idx].text) or 0)
 
+                    # Dates
                     allot_d = parse_date_or_none(tds[allot_idx].text) if (allot_idx != -1 and len(tds) > allot_idx) else None
                     list_d = parse_date_or_none(tds[list_idx].text) if (list_idx != -1 and len(tds) > list_idx) else None
-                    sub_t = clean_num_or_none(tds[sub_idx].text) if (sub_idx != -1 and len(tds) > sub_idx) else None
 
+                    # Subscription Breakdowns
+                    sub_t = clean_num_or_none(tds[sub_idx].text) if (sub_idx != -1 and len(tds) > sub_idx) else None
+                    sub_q = clean_num_or_none(tds[qib_idx].text) if (qib_idx != -1 and len(tds) > qib_idx) else None
+                    sub_n = clean_num_or_none(tds[nii_idx].text) if (nii_idx != -1 and len(tds) > nii_idx) else None
+                    sub_r = clean_num_or_none(tds[rii_idx].text) if (rii_idx != -1 and len(tds) > rii_idx) else None
+
+                    # Listing Price & Gain
                     l_price, l_pct = 0.0, 0.0
                     inline = re.search(r"L@\s*([\d,.]+)\s*\(([-+]?\d*\.?\d+)\%\)", tds[name_idx].text)
                     if inline:
@@ -326,7 +339,10 @@ def fetch_gmp_and_performance_map(session):
                         "listingDate": list_d or existing.get("listingDate"),
                         "listingPrice": l_price if l_price > 0 else existing.get("listingPrice", 0.0),
                         "listingGainPercent": l_pct if l_pct != 0.0 else existing.get("listingGainPercent", 0.0),
-                        "subscriptionTotal": sub_t or existing.get("subscriptionTotal")
+                        "subscriptionTotal": sub_t if sub_t is not None else existing.get("subscriptionTotal"),
+                        "subscriptionRetail": sub_r if sub_r is not None else existing.get("subscriptionRetail", 0.0),
+                        "subscriptionHNI": sub_n if sub_n is not None else existing.get("subscriptionHNI", 0.0),
+                        "subscriptionQIB": sub_q if sub_q is not None else existing.get("subscriptionQIB", 0.0)
                     }
 
         except Exception as e:
@@ -334,6 +350,7 @@ def fetch_gmp_and_performance_map(session):
 
     print(f"      Parsed {len(gmp_map)} secondary enriched entries successfully.", flush=True)
     return gmp_map
+
 
 # ----------------- MAIN PIPELINE ORCHESTRATOR -----------------
 def run_pipeline():
@@ -418,15 +435,35 @@ def run_pipeline():
                 status = raw_status
 
             # Subscription breakdown
+                        # 1. Parse Subscription Quotas from Upstox (check both category and category_name)
             sub_retail, sub_hni, sub_qib = 0.0, 0.0, 0.0
-            for inv in item.get("investors", []):
-                cat = str(inv.get("category_name", "")).upper()
-                sub = float(inv.get("subscription_rate", 0.0) or 0.0)
-                if "RETAIL" in cat or "RII" in cat: sub_retail = sub
-                elif "HNI" in cat or "NII" in cat: sub_hni = sub
-                elif "QIB" in cat: sub_qib = sub
+            investors = item.get("investors") or item.get("categories") or []
+            for inv in investors:
+                cat = str(inv.get("category_name") or inv.get("category") or "").upper()
+                sub = float(clean_num_or_none(inv.get("subscription_rate") or inv.get("subscription") or inv.get("oversubscription")) or 0.0)
+                if any(k in cat for k in ["RETAIL", "RII", "INDIVIDUAL"]):
+                    sub_retail = sub
+                elif any(k in cat for k in ["HNI", "NII", "NON-INSTITUTIONAL"]):
+                    sub_hni = sub
+                elif "QIB" in cat:
+                    sub_qib = sub
+
+            # 2. Fallback to Secondary Ingested Subscriptions if Upstox was empty
+            if sub_retail == 0.0 and gmp_info.get("subscriptionRetail"):
+                sub_retail = float(gmp_info.get("subscriptionRetail", 0.0))
+            if sub_hni == 0.0 and gmp_info.get("subscriptionHNI"):
+                sub_hni = float(gmp_info.get("subscriptionHNI", 0.0))
+            if sub_qib == 0.0 and gmp_info.get("subscriptionQIB"):
+                sub_qib = float(gmp_info.get("subscriptionQIB", 0.0))
 
             total_sub = float(clean_num_or_none(item.get("total_subscription")) or gmp_info.get("subscriptionTotal") or 0.0)
+
+            # 3. Listing Price Fallback
+            l_price = float(item.get("listing_price") or gmp_info.get("listingPrice") or 0.0)
+            l_gain = float(item.get("listing_gain_percent") or gmp_info.get("listingGainPercent") or 0.0)
+            if l_price > 0 and l_gain == 0.0 and price_max > 0:
+                l_gain = round(((l_price - price_max) / price_max) * 100, 2)
+
 
             # Registrar mapping
             reg_name, reg_url = None, None
@@ -475,8 +512,8 @@ def run_pipeline():
                 "subscriptionRetail": sub_retail,
                 "subscriptionHNI": sub_hni,
                 "subscriptionQIB": sub_qib,
-                "listingPrice": gmp_info.get("listingPrice", 0.0),
-                "listingGainPercent": gmp_info.get("listingGainPercent", 0.0),
+                "listingPrice": l_price,
+                "listingGainPercent": l_gain,
                 "registrarName": reg_name,
                 "registrarUrl": reg_url,
                 "rhpPdfUrl": f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+RHP+file+SEBI",
