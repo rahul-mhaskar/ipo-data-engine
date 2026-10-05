@@ -119,7 +119,6 @@ def try_fetch_upstox():
     }
 
     all_upstox_items = []
-    # Upstox supports filtering by status and issue_type
     queries = [
         {"status": "open"},
         {"status": "upcoming"},
@@ -146,7 +145,7 @@ def try_fetch_upstox():
         except Exception:
             pass
 
-    # De-duplicate by ID
+    # De-duplicate by unique key
     deduped = {}
     for it in all_upstox_items:
         iid = it.get("id") or it.get("symbol") or it.get("name")
@@ -328,7 +327,7 @@ def fetch_secondary_engine(session, manual_overrides, previous_cache):
 
     return dataset
 
-    # ----------------- MAIN PIPELINE ORCHESTRATOR -----------------
+# ----------------- MAIN PIPELINE ORCHESTRATOR -----------------
 def run_pipeline():
     session = requests.Session()
     session.headers.update(HEADERS)
@@ -390,7 +389,6 @@ def run_pipeline():
             allot_d = gmp_info.get("allotmentDate") or "To Be Updated"
             list_d = gmp_info.get("listingDate") or "To Be Updated"
 
-            # Re-verify lifecycle status based on dates if available
             raw_status = item.get("status", "UPCOMING").upper()
             open_d = item.get("bidding_start_date")
             close_d = item.get("bidding_end_date")
@@ -466,23 +464,4 @@ def run_pipeline():
         with open(AUDIT_LOG_PATH, "w", encoding="utf-8") as f:
             f.write("# CRITICAL PIPELINE ALERT\n\n")
             f.write(f"Timestamp: {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
-            f.write("All upstream sources failed. `ipos.json` has NOT been touched to preserve app integrity.\n")
-        return
-
-    # Write validated dataset
-    with open(FILE_PATH, "w", encoding="utf-8") as f:
-        json.dump(final_dataset, f, indent=2, ensure_ascii=False)
-
-    with open(AUDIT_LOG_PATH, "w", encoding="utf-8") as f:
-        f.write("# IPO Pipeline Data Health Audit\n\n")
-        f.write(f"**Last Sync (UTC):** {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
-        f.write(f"**Primary Active Source:** {active_source}\n")
-        f.write(f"**Total Records Ingested:** {len(final_dataset)}\n")
-        f.write("Status: Healthy. Multi-segment verified.\n")
-
-    print(f"Pipeline executed successfully using [{active_source}]. Processed {len(final_dataset)} records.")
-    
-
-if __name__ == "__main__":
-    run_pipeline()
-            
+            f.write("All upstream sources failed. `ipos.json`
