@@ -128,7 +128,8 @@ def try_fetch_upstox():
     }
 
     try:
-        res = requests.get(f"{UPSTOX_BASE_URL}/ipo", headers=headers, timeout=10)
+        # Upstox v2 uses plural /ipos
+        res = requests.get(f"{UPSTOX_BASE_URL}/ipos", headers=headers, timeout=10)
         if res.status_code == 200:
             payload = res.json()
             return payload.get("data", []), "OK"
@@ -138,6 +139,7 @@ def try_fetch_upstox():
             return None, f"Upstox HTTP {res.status_code}: {res.text}"
     except Exception as e:
         return None, f"Upstox connection failed: {e}"
+        
 
 # ----------------- TIER 2: SECONDARY SCRAPER ENGINE -----------------
 def fetch_secondary_engine(session, manual_overrides, previous_cache):
