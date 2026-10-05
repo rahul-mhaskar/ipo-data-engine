@@ -33,7 +33,9 @@ jobs:
       - name: Execute Python Scraper
         env:
           UPSTOX_ACCESS_TOKEN: ${{ secrets.UPSTOX_ACCESS_TOKEN }}
-        run: python scraper.py
+          PYTHONUNBUFFERED: "1"
+        run: python -u scraper.py
+
 
       - name: Validate Generated Dataset
         run: |
