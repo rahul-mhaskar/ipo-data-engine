@@ -202,14 +202,6 @@ def try_fetch_upstox():
         except Exception as e:
             print(f"      Upstox query notice for {q}: {e}", flush=True)
 
-    if not all_upstox_items:
-        try:
-            res = requests.get(f"{UPSTOX_BASE_URL}/ipos", headers=headers, timeout=8)
-            if res.status_code == 200:
-                all_upstox_items = res.json().get("data", [])
-        except Exception as e:
-            print(f"      Plain /ipos notice: {e}", flush=True)
-
     deduped = {}
     for it in all_upstox_items:
         iid = it.get("id") or it.get("symbol") or it.get("name")
@@ -217,25 +209,44 @@ def try_fetch_upstox():
             deduped[iid] = it
 
     upstox_list = list(deduped.values())
-    print(f"      Fetched {len(upstox_list)} unique base items. Enriching via Upstox Details API...", flush=True)
+    print(f"      Fetched {len(upstox_list)} unique base items. Enriching via Upstox /ipos/{{id}}...", flush=True)
 
-    # Detailed offer parameters for each IPO
-    for idx, item in enumerate(upstox_list):
+    # Correct endpoint: /v2/ipos/{id}
+    for item in upstox_list:
         ipo_id = item.get("id")
         if not ipo_id:
             continue
         try:
-            d_res = requests.get(f"{UPSTOX_BASE_URL}/ipo/details/{ipo_id}", headers=headers, timeout=5)
+            d_res = requests.get(f"{UPSTOX_BASE_URL}/ipos/{ipo_id}", headers=headers, timeout=6)
             if d_res.status_code == 200:
                 details = d_res.json().get("data", {})
                 if details:
-                    item.update(details)
-                    print(f"      [OK-UPSTOX-DETAILS] {item.get('name')} -> Lot: {item.get('lot_size') or item.get('minimum_quantity')}", flush=True)
+                    # 1. Direct fields
+                    item["lot_size"] = details.get("lot_size") or details.get("minimum_quantity")
+                    item["issue_price_min"] = details.get("minimum_price")
+                    item["issue_price_max"] = details.get("maximum_price")
+                    item["rhp_url"] = details.get("rhp_url")
+                    item["drhp_url"] = details.get("drhp_url")
+
+                    # 2. Extract nested timeline dates
+                    timeline = details.get("timeline") or {}
+                    item["allotment_date"] = timeline.get("allotment_date") or timeline.get("allotment_start_date")
+                    item["listing_date"] = timeline.get("listing_date")
+
+                    # 3. Extract nested registrar info
+                    reg_info = details.get("registrar_info") or {}
+                    item["registrar_name"] = reg_info.get("name")
+                    item["registrar_url"] = reg_info.get("website")
+
+                    print(f"      [OK-UPSTOX] {item.get('name')} | Lot: {item.get('lot_size')} | Allot: {item.get('allotment_date')}", flush=True)
+            else:
+                print(f"      [NOTICE] Detail failed for {ipo_id}: HTTP {d_res.status_code}", flush=True)
             time.sleep(0.08)
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"      Detail fetch error for {ipo_id}: {e}", flush=True)
 
     return upstox_list, "OK"
+
 
 # ----------------- SECONDARY GMP & PERFORMANCE CRAWLER -----------------
 def fetch_gmp_and_performance_map(session):
