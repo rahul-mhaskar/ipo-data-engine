@@ -128,11 +128,14 @@ def try_fetch_upstox():
     }
 
     try:
-        # Upstox v2 uses plural /ipos
         res = requests.get(f"{UPSTOX_BASE_URL}/ipos", headers=headers, timeout=10)
         if res.status_code == 200:
             payload = res.json()
-            return payload.get("data", []), "OK"
+            data = payload.get("data", [])
+            if data:
+                print(f"DEBUG Upstox Keys: {list(data[0].keys())}")
+                print(f"DEBUG Upstox Sample: {data[0]}")
+            return data, "OK"
         elif res.status_code in [401, 403]:
             return None, f"Upstox Auth Token Expired / Invalid (HTTP {res.status_code})."
         else:
