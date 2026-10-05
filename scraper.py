@@ -230,7 +230,13 @@ def try_fetch_upstox():
 
                     # 2. Extract nested timeline dates
                     timeline = details.get("timeline") or {}
-                    item["allotment_date"] = timeline.get("allotment_date") or timeline.get("allotment_start_date")
+                
+item["allotment_date"] = (
+    timeline.get("allotment_start_date") or 
+    timeline.get("basis_of_allotment_date") or 
+    timeline.get("allotment_date")
+)
+
                     item["listing_date"] = timeline.get("listing_date")
 
                     # 3. Extract nested registrar info
