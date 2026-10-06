@@ -241,35 +241,46 @@ def try_fetch_upstox():
                     item["drhp_url"] = details.get("drhp_url")
                     # Calculate Issue Size in ₹ Crores (divided by 10,000,000)
                     # Calculate Issue Size in ₹ Crores (Direct field check + Mathematical fallback)
-                    raw_issue_size = (
-                        details.get("issue_size") or 
+                                        # Prioritize Total Public Issue Size (Fresh Issue + Offer For Sale)
+                    raw_total_size = (
                         details.get("total_issue_size") or 
+                        details.get("issue_size") or 
                         details.get("issue_size_in_crores") or 
                         details.get("size") or 
                         item.get("issue_size")
                     )
-                    clean_size = clean_num_or_none(raw_issue_size)
+
+                    clean_size = clean_num_or_none(raw_total_size)
                     issue_size_cr = 0.0
 
                     if clean_size and clean_size > 0:
-                        # If already in Crores (typically < 100,000)
+                        # If value is already in Crores (standard market cap / issue size < 100,000)
                         if clean_size < 100000:
                             issue_size_cr = round(float(clean_size), 2)
                         else:
-                            # Raw rupees divided by 1 Crore (10,000,000)
+                            # Divide raw rupees by 1 Crore (10,000,000)
                             issue_size_cr = round(float(clean_size) / 10000000.0, 2)
                     else:
-                        # Mathematical Fallback: (shares_offered * price_max) / 10,000,000
-                        shares = clean_num_or_none(
-                            details.get("shares_offered") or 
-                            details.get("issue_shares") or 
-                            details.get("total_shares")
-                        )
-                        p_max = clean_num_or_none(details.get("maximum_price") or item.get("maximum_price"))
-                        if shares and p_max and shares > 0 and p_max > 0:
-                            issue_size_cr = round((float(shares) * float(p_max)) / 10000000.0, 2)
+                        # Fallback: Sum fresh_issue + ofs_issue if bifurcated
+                        fresh_sz = clean_num_or_none(details.get("fresh_issue_size") or details.get("fresh_issue")) or 0.0
+                        ofs_sz = clean_num_or_none(details.get("ofs_issue_size") or details.get("offer_for_sale_size")) or 0.0
+                        
+                        if (fresh_sz + ofs_sz) > 0:
+                            combined = fresh_sz + ofs_sz
+                            issue_size_cr = round(combined / 10000000.0, 2) if combined > 100000 else round(combined, 2)
+                        else:
+                            # Mathematical share fallback (Fresh shares + OFS shares)
+                            total_shares = clean_num_or_none(
+                                details.get("total_shares") or 
+                                details.get("issue_shares") or 
+                                details.get("shares_offered")
+                            )
+                            p_max = clean_num_or_none(details.get("maximum_price") or item.get("maximum_price"))
+                            if total_shares and p_max and total_shares > 0 and p_max > 0:
+                                issue_size_cr = round((float(total_shares) * float(p_max)) / 10000000.0, 2)
 
                     item["issue_size_cr"] = issue_size_cr
+
                     item["listing_price"] = details.get("listing_price")
 
                     timeline = details.get("timeline") or {}
