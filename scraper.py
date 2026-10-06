@@ -180,7 +180,6 @@ def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0
 
     return "UPCOMING"
 
-
 def validate_record(item: dict) -> bool:
     if item["issuePriceMin"] < 0 or item["issuePriceMax"] < 0:
         return False
@@ -252,9 +251,8 @@ def try_fetch_upstox():
                     item["issue_price_max"] = details.get("maximum_price") or item.get("maximum_price")
                     item["rhp_url"] = details.get("rhp_url")
                     item["drhp_url"] = details.get("drhp_url")
-                    # Calculate Issue Size in ₹ Crores (divided by 10,000,000)
-                    # Calculate Issue Size in ₹ Crores (Direct field check + Mathematical fallback)
-                                        # Prioritize Total Public Issue Size (Fresh Issue + Offer For Sale)
+
+                    # Prioritize Total Public Issue Size (Fresh Issue + Offer For Sale)
                     raw_total_size = (
                         details.get("total_issue_size") or 
                         details.get("issue_size") or 
@@ -267,14 +265,11 @@ def try_fetch_upstox():
                     issue_size_cr = 0.0
 
                     if clean_size and clean_size > 0:
-                        # If value is already in Crores (standard market cap / issue size < 100,000)
                         if clean_size < 100000:
                             issue_size_cr = round(float(clean_size), 2)
                         else:
-                            # Divide raw rupees by 1 Crore (10,000,000)
                             issue_size_cr = round(float(clean_size) / 10000000.0, 2)
                     else:
-                        # Fallback: Sum fresh_issue + ofs_issue if bifurcated
                         fresh_sz = clean_num_or_none(details.get("fresh_issue_size") or details.get("fresh_issue")) or 0.0
                         ofs_sz = clean_num_or_none(details.get("ofs_issue_size") or details.get("offer_for_sale_size")) or 0.0
                         
@@ -282,7 +277,6 @@ def try_fetch_upstox():
                             combined = fresh_sz + ofs_sz
                             issue_size_cr = round(combined / 10000000.0, 2) if combined > 100000 else round(combined, 2)
                         else:
-                            # Mathematical share fallback (Fresh shares + OFS shares)
                             total_shares = clean_num_or_none(
                                 details.get("total_shares") or 
                                 details.get("issue_shares") or 
@@ -293,7 +287,6 @@ def try_fetch_upstox():
                                 issue_size_cr = round((float(total_shares) * float(p_max)) / 10000000.0, 2)
 
                     item["issue_size_cr"] = issue_size_cr
-
                     item["listing_price"] = details.get("listing_price")
 
                     timeline = details.get("timeline") or {}
@@ -303,6 +296,13 @@ def try_fetch_upstox():
                         timeline.get("allotment_date")
                     )
                     item["listing_date"] = timeline.get("listing_date")
+
+                    # Check if registrar has finalized allotment
+                    is_allotment_finalized = bool(
+                        details.get("is_allotment_done") or 
+                        str(details.get("allotment_status", "")).upper() in ["ALLOTTED", "FINALIZED", "COMPLETED"]
+                    )
+                    item["is_allotment_done"] = is_allotment_finalized
 
                     reg_info = details.get("registrar_info") or {}
                     item["registrar_name"] = reg_info.get("name")
@@ -326,13 +326,6 @@ def try_fetch_upstox():
                             cats = val.get("categories") or val.get("distribution") or []
                             if cats:
                                 break
-                                # Inside details extraction:
-is_allotment_finalized = bool(
-    details.get("is_allotment_done") or 
-    str(details.get("allotment_status", "")).upper() in ["ALLOTTED", "FINALIZED", "COMPLETED"]
-)
-item["is_allotment_done"] = is_allotment_finalized
-
 
                     # If not present in offer root, probe sub-endpoints
                     if not cats:
@@ -453,7 +446,8 @@ def run_pipeline():
                     sub_qib = float(prev.get("subscriptionQIB", 0.0))
                 if total_sub <= 0.0:
                     total_sub = float(prev.get("subscriptionTotal", 0.0))
-# Preserve issue size from cache if current run returns 0.0
+
+            # Preserve issue size from cache if current run returns 0.0
             issue_size_cr = float(item.get("issue_size_cr") or 0.0)
             if issue_size_cr <= 0.0 and norm_key in previous_cache:
                 issue_size_cr = float(previous_cache[norm_key].get("issueSizeCr", 0.0))
@@ -489,7 +483,7 @@ def run_pipeline():
                 listing_price=listing_price
             )
 
-           # Registrar mapping (checks both name and URL strings)
+            # Registrar mapping (checks both name and URL strings)
             reg_name, reg_url = None, None
             if norm_key in manual_overrides:
                 reg_name, reg_url = manual_overrides[norm_key]
@@ -545,8 +539,8 @@ def run_pipeline():
                 "listingPrice": listing_price,
                 "listingGainPercent": listing_gain_pct,
                 "registrarName": reg_name,
-                "isAllotmentDone": bool(item.get("is_allotment_done", False)),
                 "registrarUrl": reg_url,
+                "isAllotmentDone": bool(item.get("is_allotment_done", False)),
                 "rhpPdfUrl": rhp_url,
                 "drhpPdfUrl": drhp_url
             }
