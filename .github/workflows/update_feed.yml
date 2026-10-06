@@ -2,11 +2,27 @@ name: Auto-Update IPO Feed
 
 on:
   schedule:
-    # 04:00, 07:00, 10:00 UTC -> 09:30 AM, 12:30 PM, 03:30 PM IST
-    - cron: '0 4,7,10 * * 1-5'
-    # 12:30, 15:30 UTC -> 06:00 PM, 09:00 PM IST (Late subscription & Allotment sync)
+    # 04:35 UTC -> 10:05 AM IST (Listing Debut & Open Discovery Sync)
+    - cron: '35 4 * * 1-5'
+
+    # 07:00, 10:00 UTC -> 12:30 PM, 03:30 PM IST (Mid-day & Market Close)
+    - cron: '0 7,10 * * 1-5'
+
+    # 12:30, 15:30 UTC -> 06:00 PM, 09:00 PM IST (Evening Subscriptions & Allotments)
     - cron: '30 12,15 * * 1-5'
+
+    # 18:00 UTC -> 11:30 PM IST (Late-night registrar batch allotment upload)
+    - cron: '0 18 * * 1-5'
+
+    # 01:00 UTC -> 06:30 AM IST (Dawn sync for overnight/midnight uploads)
+    - cron: '0 1 * * 2-6'
+
   workflow_dispatch:
+
+# Cancels redundant queued/running jobs on concurrent trigger to prevent runner pile-ups
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   run-scraper:
