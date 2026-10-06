@@ -240,9 +240,36 @@ def try_fetch_upstox():
                     item["rhp_url"] = details.get("rhp_url")
                     item["drhp_url"] = details.get("drhp_url")
                     # Calculate Issue Size in ₹ Crores (divided by 10,000,000)
-                    raw_issue_size = details.get("issue_size") or details.get("total_issue_size") or item.get("issue_size")
+                    # Calculate Issue Size in ₹ Crores (Direct field check + Mathematical fallback)
+                    raw_issue_size = (
+                        details.get("issue_size") or 
+                        details.get("total_issue_size") or 
+                        details.get("issue_size_in_crores") or 
+                        details.get("size") or 
+                        item.get("issue_size")
+                    )
                     clean_size = clean_num_or_none(raw_issue_size)
-                    item["issue_size_cr"] = round(float(clean_size) / 10000000.0, 2) if clean_size and clean_size > 0 else 0.0
+                    issue_size_cr = 0.0
+
+                    if clean_size and clean_size > 0:
+                        # If already in Crores (typically < 100,000)
+                        if clean_size < 100000:
+                            issue_size_cr = round(float(clean_size), 2)
+                        else:
+                            # Raw rupees divided by 1 Crore (10,000,000)
+                            issue_size_cr = round(float(clean_size) / 10000000.0, 2)
+                    else:
+                        # Mathematical Fallback: (shares_offered * price_max) / 10,000,000
+                        shares = clean_num_or_none(
+                            details.get("shares_offered") or 
+                            details.get("issue_shares") or 
+                            details.get("total_shares")
+                        )
+                        p_max = clean_num_or_none(details.get("maximum_price") or item.get("maximum_price"))
+                        if shares and p_max and shares > 0 and p_max > 0:
+                            issue_size_cr = round((float(shares) * float(p_max)) / 10000000.0, 2)
+
+                    item["issue_size_cr"] = issue_size_cr
                     item["listing_price"] = details.get("listing_price")
 
                     timeline = details.get("timeline") or {}
@@ -395,7 +422,11 @@ def run_pipeline():
                     sub_qib = float(prev.get("subscriptionQIB", 0.0))
                 if total_sub <= 0.0:
                     total_sub = float(prev.get("subscriptionTotal", 0.0))
-
+# Preserve issue size from cache if current run returns 0.0
+            issue_size_cr = float(item.get("issue_size_cr") or 0.0)
+            if issue_size_cr <= 0.0 and norm_key in previous_cache:
+                issue_size_cr = float(previous_cache[norm_key].get("issueSizeCr", 0.0))
+                
             # 1. Primary listing price from Upstox IPO endpoint
             listing_price = float(clean_num_or_none(item.get("listing_price")) or 0.0)
 
@@ -466,7 +497,7 @@ def run_pipeline():
                 "symbol": str(sym).strip(),
                 "category": "SME" if str(item.get("issue_type", "")).lower() == "sme" else "Mainboard",
                 "status": status,
-                "issueSizeCr": float(item.get("issue_size_cr") or 0.0),
+                "issueSizeCr": issue_size_cr,
                 "issuePriceMin": price_min,
                 "issuePriceMax": price_max,
                 "lotSize": lot_size,
