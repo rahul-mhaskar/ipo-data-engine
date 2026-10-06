@@ -97,16 +97,25 @@ def parse_date_or_none(date_str):
     return None
 
 def fetch_live_listing_quote(symbol: str, headers: dict) -> float:
-    """Fetches opening/listing trade price for newly listed symbols directly from exchange quotes."""
+    """Probes Mainboard and SME ticker permutations for opening trade discovery price."""
     if not symbol or symbol == "IPO":
         return 0.0
-    for prefix in [f"NSE_EQ|{symbol}", f"BSE_EQ|{symbol}"]:
+    
+    clean_sym = symbol.strip().upper()
+    keys_to_try = [
+        f"NSE_EQ|{clean_sym}",
+        f"NSE_EQ|{clean_sym}-SM",
+        f"NSE_EQ|{clean_sym}-ST",
+        f"BSE_EQ|{clean_sym}"
+    ]
+    
+    for instrument_key in keys_to_try:
         try:
-            url = f"{UPSTOX_BASE_URL}/market-quote/quotes?instrument_key={prefix}"
+            url = f"{UPSTOX_BASE_URL}/market-quote/quotes?instrument_key={instrument_key}"
             res = requests.get(url, headers=headers, timeout=4)
             if res.status_code == 200:
                 data = res.json().get("data", {})
-                for k, v in data.items():
+                for _, v in data.items():
                     ohlc = v.get("ohlc", {})
                     open_price = float(ohlc.get("open") or 0.0)
                     if open_price > 0.0:
@@ -119,9 +128,7 @@ def fetch_live_listing_quote(symbol: str, headers: dict) -> float:
     return 0.0
 
 def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0):
-    """
-    Determines true IPO lifecycle status based on IST date/time and actual listing debut price.
-    """
+    """Accurately classifies status according to IST time and confirmed debut trade price."""
     now_ist = datetime.now(IST)
     today = now_ist.date()
 
@@ -130,27 +137,27 @@ def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0
         c = datetime.strptime(close_d, "%Y-%m-%d").date() if close_d and close_d != "To Be Updated" else None
         l = datetime.strptime(list_d, "%Y-%m-%d").date() if list_d and list_d != "To Be Updated" else None
 
-        # 1. Open issue check
+        # 1. Bidding Window
         if o and today < o:
             return "UPCOMING"
         elif o and c and (o <= today <= c):
             return "OPEN"
 
-        # 2. Listing Day Validation
+        # 2. Listing Day Logic (Strictly verified against 10:00 AM IST)
         if l:
             if today < l:
                 return "CLOSED"
             elif today == l:
-                # Trading opens at 10:00 AM IST
-                is_after_market_open = (now_ist.hour > 10) or (now_ist.hour == 10 and now_ist.minute >= 0)
-                if is_after_market_open or listing_price > 0.0:
+                # Stock exchange trading begins at 10:00 AM IST
+                is_after_10am = (now_ist.hour > 10) or (now_ist.hour == 10 and now_ist.minute >= 0)
+                if is_after_10am and listing_price > 0.0:
                     return "LISTED"
                 else:
-                    return "CLOSED"
+                    return "CLOSED"  # Remains in CLOSED tab until trading begins
             elif today > l:
                 return "LISTED"
 
-        # 3. Post-close period before listing date
+        # 3. Post-Close Buffer
         if c and today > c:
             return "CLOSED"
 
@@ -260,7 +267,7 @@ def try_fetch_upstox():
 
 # ----------------- MAIN PIPELINE ORCHESTRATOR -----------------
 def run_pipeline():
-    print(">>> [Phase 1/3] Initializing pipeline...", flush=True)
+    print(">>> [Phase 1/3] Initializing pipeline session...", flush=True)
 
     manual_overrides = {}
     if os.path.exists(OVERRIDES_PATH):
@@ -279,9 +286,8 @@ def run_pipeline():
                 last_known_good = json.load(f)
                 for item in last_known_good:
                     k = clean_company_name(item.get("name", ""))
-                    r_name = item.get("registrarName")
-                    if k and r_name and r_name not in ["To Be Updated", "To Be Announced"]:
-                        previous_cache[k] = (r_name, item.get("registrarUrl", ""))
+                    if k:
+                        previous_cache[k] = item
         except Exception:
             pass
 
@@ -318,7 +324,11 @@ def run_pipeline():
             # 1. Primary listing price from Upstox IPO endpoint
             listing_price = float(clean_num_or_none(item.get("listing_price")) or 0.0)
 
-            # 2. Live Quote Fallback: If listed today or earlier and price is still 0.0, fetch from live market quote
+            # 2. Historical pin: Never lose a previously captured debut price
+            if listing_price <= 0.0 and norm_key in previous_cache:
+                listing_price = float(previous_cache[norm_key].get("listingPrice", 0.0))
+
+            # 3. Live Quote Fallback: If listed today or earlier and price is still 0.0, query live market quotes
             if listing_price <= 0.0 and item.get("symbol"):
                 parsed_list_d = parse_date_or_none(item.get("listing_date"))
                 today_ist_str = datetime.now(IST).strftime("%Y-%m-%d")
@@ -328,12 +338,12 @@ def run_pipeline():
                         headers={"Accept": "application/json", "Authorization": f"Bearer {UPSTOX_TOKEN}"}
                     )
 
-            # 3. Compute Listing Gain % against Cap Price
+            # 4. Calculate Listing Gain % against Cap Price
             listing_gain_pct = 0.0
             if listing_price > 0.0 and price_max > 0.0:
                 listing_gain_pct = round(((listing_price - price_max) / price_max) * 100.0, 2)
 
-            # 4. Accurate status based on IST clock and discovered price
+            # 5. Status determination gated by IST clock and live debut discovery
             status = determine_status(
                 open_d,
                 close_d,
@@ -342,11 +352,13 @@ def run_pipeline():
                 listing_price=listing_price
             )
 
+            # Registrar mapping
             reg_name, reg_url = None, None
             if norm_key in manual_overrides:
                 reg_name, reg_url = manual_overrides[norm_key]
-            elif norm_key in previous_cache:
-                reg_name, reg_url = previous_cache[norm_key]
+            elif norm_key in previous_cache and previous_cache[norm_key].get("registrarName") not in ["To Be Updated", "To Be Announced", None]:
+                reg_name = previous_cache[norm_key].get("registrarName")
+                reg_url = previous_cache[norm_key].get("registrarUrl")
             else:
                 raw_reg = item.get("registrar_name")
                 if raw_reg:
@@ -431,4 +443,4 @@ def run_pipeline():
 
 if __name__ == "__main__":
     run_pipeline()
-            
+                    
