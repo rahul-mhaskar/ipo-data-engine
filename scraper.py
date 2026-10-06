@@ -253,11 +253,53 @@ def try_fetch_upstox():
                     item["registrar_name"] = reg_info.get("name")
                     item["registrar_url"] = reg_info.get("website")
 
+                    # Aggregate subscription
                     item["total_subscription"] = (
                         clean_num_or_none(details.get("total_subscription")) or 
                         clean_num_or_none(item.get("total_subscription")) or 
                         0.0
                     )
+
+                    # Ingest Category Breakdown
+                    cats = (
+                        details.get("categories") or 
+                        details.get("distribution") or 
+                        details.get("investors") or 
+                        details.get("bidding_details") or 
+                        []
+                    )
+
+                    # Check dedicated subscriptions endpoint if categories are omitted from base details
+                    if not cats:
+                        try:
+                            sub_res = requests.get(f"{UPSTOX_BASE_URL}/ipos/{ipo_id}/subscriptions", headers=headers, timeout=4)
+                            if sub_res.status_code == 200:
+                                sdata = sub_res.json().get("data", {})
+                                cats = sdata.get("categories") or sdata.get("distribution") or []
+                        except Exception:
+                            pass
+
+                    sub_retail, sub_hni, sub_qib = 0.0, 0.0, 0.0
+                    for c in cats:
+                        c_name = str(c.get("category") or c.get("name") or c.get("category_name") or "").upper().strip()
+                        c_rate = float(clean_num_or_none(
+                            c.get("subscription_rate") or 
+                            c.get("rate") or 
+                            c.get("times_subscribed") or 
+                            c.get("subscription")
+                        ) or 0.0)
+
+                        if any(k in c_name for k in ["RETAIL", "RII"]):
+                            sub_retail = c_rate
+                        elif any(k in c_name for k in ["NII", "HNI", "NON-INSTITUTIONAL"]):
+                            sub_hni = c_rate
+                        elif "QIB" in c_name:
+                            sub_qib = c_rate
+
+                    item["subscription_retail"] = sub_retail
+                    item["subscription_hni"] = sub_hni
+                    item["subscription_qib"] = sub_qib
+
             time.sleep(0.05)
         except Exception:
             pass
@@ -319,6 +361,9 @@ def run_pipeline():
             raw_status = (item.get("status") or "UPCOMING").upper()
 
             total_sub = float(item.get("total_subscription") or 0.0)
+            sub_retail = float(item.get("subscription_retail", 0.0))
+            sub_hni = float(item.get("subscription_hni", 0.0))
+            sub_qib = float(item.get("subscription_qib", 0.0))
 
             # 1. Primary listing price from Upstox IPO endpoint
             listing_price = float(clean_num_or_none(item.get("listing_price")) or 0.0)
@@ -397,9 +442,9 @@ def run_pipeline():
                 "gmpAmount": 0.0,
                 "gmpPercent": 0.0,
                 "subscriptionTotal": total_sub,
-                "subscriptionRetail": 0.0,
-                "subscriptionHNI": 0.0,
-                "subscriptionQIB": 0.0,
+                "subscriptionRetail": sub_retail,
+                "subscriptionHNI": sub_hni,
+                "subscriptionQIB": sub_qib,
                 "listingPrice": listing_price,
                 "listingGainPercent": listing_gain_pct,
                 "registrarName": reg_name,
@@ -428,15 +473,12 @@ def run_pipeline():
         print("CRITICAL: Ingestion failed. Preserving existing ipos.json.", flush=True)
         return
 
-    with open(FILE_PATH, "w", encoding="utf-8") as f:
-        json.dump(final_dataset, f, indent=2, ensure_ascii=False)
-
     with open(AUDIT_LOG_PATH, "w", encoding="utf-8") as f:
         f.write("# IPO Pipeline Data Health Audit\n\n")
         f.write(f"**Last Sync (UTC):** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
         f.write(f"**Primary Active Source:** {active_source}\n")
         f.write(f"**Total Records Ingested:** {len(final_dataset)}\n")
-        f.write("Status: Direct Upstox v2 Ingestion (Open, Upcoming, Closed, Listed with Live Quote Discovery).\n")
+        f.write("Status: Direct Upstox v2 Ingestion with Category Subscription Distribution.\n")
 
     print(f">>> Pipeline completed successfully via [{active_source}]. Processed {len(final_dataset)} records.", flush=True)
 
