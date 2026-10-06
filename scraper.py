@@ -4,7 +4,7 @@ import re
 import sys
 import time
 import requests
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 FILE_PATH = "ipos.json"
 AUDIT_LOG_PATH = "data_health_audit.md"
@@ -12,6 +12,9 @@ OVERRIDES_PATH = "manual_overrides.json"
 
 UPSTOX_BASE_URL = "https://api.upstox.com/v2"
 UPSTOX_TOKEN = os.getenv("UPSTOX_ACCESS_TOKEN", "").strip()
+
+# Explicit Indian Standard Time (UTC+05:30)
+IST = timezone(timedelta(hours=5, minutes=30))
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
@@ -55,7 +58,7 @@ def parse_date_or_none(date_str):
     if not date_str or str(date_str).strip() in ["--", "-", "", "N/A", "TBD", "TBA", "null", "None"]:
         return None
     cleaned = str(date_str).strip()
-    current_year = datetime.now().year
+    current_year = datetime.now(IST).year
 
     for fmt in (
         "%d-%b-%y", "%d-%b-%Y",
@@ -93,16 +96,32 @@ def parse_date_or_none(date_str):
 
     return None
 
-from datetime import datetime, timezone, timedelta
-
-# Explicit Indian Standard Time (UTC+05:30)
-IST = timezone(timedelta(hours=5, minutes=30))
+def fetch_live_listing_quote(symbol: str, headers: dict) -> float:
+    """Fetches opening/listing trade price for newly listed symbols directly from exchange quotes."""
+    if not symbol or symbol == "IPO":
+        return 0.0
+    for prefix in [f"NSE_EQ|{symbol}", f"BSE_EQ|{symbol}"]:
+        try:
+            url = f"{UPSTOX_BASE_URL}/market-quote/quotes?instrument_key={prefix}"
+            res = requests.get(url, headers=headers, timeout=4)
+            if res.status_code == 200:
+                data = res.json().get("data", {})
+                for k, v in data.items():
+                    ohlc = v.get("ohlc", {})
+                    open_price = float(ohlc.get("open") or 0.0)
+                    if open_price > 0.0:
+                        return open_price
+                    ltp = float(v.get("last_price") or 0.0)
+                    if ltp > 0.0:
+                        return ltp
+        except Exception:
+            pass
+    return 0.0
 
 def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0):
     """
     Determines true IPO lifecycle status based on IST date/time and actual listing debut price.
     """
-    # Force evaluation in IST
     now_ist = datetime.now(IST)
     today = now_ist.date()
 
@@ -119,20 +138,15 @@ def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0
 
         # 2. Listing Day Validation
         if l:
-            # Before listing date, it remains CLOSED
             if today < l:
                 return "CLOSED"
-            
-            # On listing day: strictly wait until trading opens (10:00 AM IST) or price is discovered
             elif today == l:
+                # Trading opens at 10:00 AM IST
                 is_after_market_open = (now_ist.hour > 10) or (now_ist.hour == 10 and now_ist.minute >= 0)
                 if is_after_market_open or listing_price > 0.0:
                     return "LISTED"
                 else:
-                    # Still early morning (pre-market): keep it as CLOSED
                     return "CLOSED"
-            
-            # Past listing date
             elif today > l:
                 return "LISTED"
 
@@ -147,7 +161,6 @@ def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0
         return raw_status.upper()
 
     return "UPCOMING"
-
 
 def validate_record(item: dict) -> bool:
     if item["issuePriceMin"] < 0 or item["issuePriceMax"] < 0:
@@ -169,7 +182,6 @@ def try_fetch_upstox():
     }
 
     all_upstox_items = []
-    # Queries include listed issues
     queries = [
         {"status": "open"},
         {"status": "upcoming"},
@@ -299,13 +311,11 @@ def run_pipeline():
             close_d = parse_date_or_none(item.get("bidding_end_date") or item.get("close_date"))
             allot_d = parse_date_or_none(item.get("allotment_date")) or "To Be Updated"
             list_d = parse_date_or_none(item.get("listing_date")) or "To Be Updated"
-
             raw_status = (item.get("status") or "UPCOMING").upper()
-            status = determine_status(open_d, close_d, list_d if list_d != "To Be Updated" else None, raw_status)
 
             total_sub = float(item.get("total_subscription") or 0.0)
 
-                        # 1. Primary listing price from Upstox IPO endpoint
+            # 1. Primary listing price from Upstox IPO endpoint
             listing_price = float(clean_num_or_none(item.get("listing_price")) or 0.0)
 
             # 2. Live Quote Fallback: If listed today or earlier and price is still 0.0, fetch from live market quote
@@ -313,14 +323,17 @@ def run_pipeline():
                 parsed_list_d = parse_date_or_none(item.get("listing_date"))
                 today_ist_str = datetime.now(IST).strftime("%Y-%m-%d")
                 if parsed_list_d and parsed_list_d <= today_ist_str:
-                    listing_price = fetch_live_listing_quote(item.get("symbol"), headers={"Accept": "application/json", "Authorization": f"Bearer {UPSTOX_TOKEN}"})
+                    listing_price = fetch_live_listing_quote(
+                        item.get("symbol"),
+                        headers={"Accept": "application/json", "Authorization": f"Bearer {UPSTOX_TOKEN}"}
+                    )
 
             # 3. Compute Listing Gain % against Cap Price
             listing_gain_pct = 0.0
             if listing_price > 0.0 and price_max > 0.0:
                 listing_gain_pct = round(((listing_price - price_max) / price_max) * 100.0, 2)
 
-            # 4. Pass listing_price into status determination (keeps it CLOSED before 10 AM IST if price is 0)
+            # 4. Accurate status based on IST clock and discovered price
             status = determine_status(
                 open_d,
                 close_d,
@@ -328,7 +341,6 @@ def run_pipeline():
                 raw_status=raw_status,
                 listing_price=listing_price
             )
-
 
             reg_name, reg_url = None, None
             if norm_key in manual_overrides:
@@ -410,10 +422,10 @@ def run_pipeline():
 
     with open(AUDIT_LOG_PATH, "w", encoding="utf-8") as f:
         f.write("# IPO Pipeline Data Health Audit\n\n")
-        f.write(f"**Last Sync (UTC):** {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
+        f.write(f"**Last Sync (UTC):** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
         f.write(f"**Primary Active Source:** {active_source}\n")
         f.write(f"**Total Records Ingested:** {len(final_dataset)}\n")
-        f.write("Status: Direct Upstox v2 Ingestion (Open, Upcoming, Closed, Listed).\n")
+        f.write("Status: Direct Upstox v2 Ingestion (Open, Upcoming, Closed, Listed with Live Quote Discovery).\n")
 
     print(f">>> Pipeline completed successfully via [{active_source}]. Processed {len(final_dataset)} records.", flush=True)
 
