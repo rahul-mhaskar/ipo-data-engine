@@ -148,12 +148,11 @@ def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0
             if today < l:
                 return "CLOSED"
             elif today == l:
-                # Stock exchange trading begins at 10:00 AM IST
                 is_after_10am = (now_ist.hour > 10) or (now_ist.hour == 10 and now_ist.minute >= 0)
                 if is_after_10am and listing_price > 0.0:
                     return "LISTED"
                 else:
-                    return "CLOSED"  # Remains in CLOSED tab until trading begins
+                    return "CLOSED"
             elif today > l:
                 return "LISTED"
 
@@ -324,11 +323,11 @@ def run_pipeline():
             # 1. Primary listing price from Upstox IPO endpoint
             listing_price = float(clean_num_or_none(item.get("listing_price")) or 0.0)
 
-            # 2. Historical pin: Never lose a previously captured debut price
+            # 2. Historical pin: Preserve previously captured debut price
             if listing_price <= 0.0 and norm_key in previous_cache:
                 listing_price = float(previous_cache[norm_key].get("listingPrice", 0.0))
 
-            # 3. Live Quote Fallback: If listed today or earlier and price is still 0.0, query live market quotes
+            # 3. Live Quote Fallback: Probe live market quotes on or past listing date
             if listing_price <= 0.0 and item.get("symbol"):
                 parsed_list_d = parse_date_or_none(item.get("listing_date"))
                 today_ist_str = datetime.now(IST).strftime("%Y-%m-%d")
@@ -343,7 +342,7 @@ def run_pipeline():
             if listing_price > 0.0 and price_max > 0.0:
                 listing_gain_pct = round(((listing_price - price_max) / price_max) * 100.0, 2)
 
-            # 5. Status determination gated by IST clock and live debut discovery
+            # 5. Status determination gated by IST clock and discovered price
             status = determine_status(
                 open_d,
                 close_d,
@@ -443,4 +442,3 @@ def run_pipeline():
 
 if __name__ == "__main__":
     run_pipeline()
-                    
