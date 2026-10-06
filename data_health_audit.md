@@ -1,7 +1,7 @@
 # IPO Pipeline Data Health Audit
 
-**Last Sync (UTC):** 2026-10-06 00:14:58 UTC
+**Last Sync (UTC):** 2026-10-06 03:08:05 UTC
 
 **Primary Active Source:** UPSTOX_OFFICIAL
 **Total Records Ingested:** 62
-Status: Direct Upstox v2 Ingestion (Open, Upcoming, Closed, Listed).
+Status: Direct Upstox v2 Ingestion (Open, Upcoming, Closed, Listed with Live Quote Discovery).
