@@ -22,17 +22,22 @@ HEADERS = {
 }
 
 SEBI_REGISTRARS = [
-    ("mudra", "Mudra RTA Ventures", "https://mudrarta.com/"),
-    ("purva", "Purva Sharegistry", "https://www.purvashare.com/queries/"),
-    ("maashitla", "Maashitla Securities", "https://maashitla.com/allotment-status"),
-    ("cameo", "Cameo Corporate Services", "https://ipo.cameoindia.com/"),
-    ("bigshare", "Bigshare Services", "https://ipo.bigshareonline.com/ipo_status.html"),
+    # Top Tier Registrars (Direct Allotment Query Deep-Links)
+    ("kfin", "KFin Technologies", "https://ipostatus.kfintech.com/"),
     ("link intime", "Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html"),
     ("mufg", "Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html"),
-    ("kfin", "KFin Technologies", "https://ris.kfintech.com/ipostatus/"),
+    ("bigshare", "Bigshare Services", "https://www.bigshareonline.com/ipo_allotment.html"),
+    ("cameo", "Cameo Corporate Services", "https://ipo.cameoindia.com/"),
+    ("maashitla", "Maashitla Securities", "https://maashitla.com/allotment-status/public-issues"),
+    ("purva", "Purva Sharegistry", "https://www.purvashare.com/investor-service/ipo-query"),
     ("skyline", "Skyline Financial", "https://www.skylinerta.com/ipo.php"),
-    ("integrated", "Integrated Registry", "https://www.integratedregistry.in/RegistrarsToSTA.aspx"),
-    ("mas services", "MAS Services", "https://www.masserv.com/")
+    ("integrated", "Integrated Registry", "https://ipostatus.integratedregistry.in/RegistrarsToSTAnew.aspx?OD=2"),
+    ("mudra", "Mudra RTA Ventures", "https://www.mudrarta.com/ipo.php"),
+    ("mas services", "MAS Services", "https://www.masserv.com/opt.asp"),
+    ("accurate", "Accurate Securities", "https://accuratesecurities.com/ipo-details.html"),
+    ("ankit", "Ankit Consultancy", "https://www.ankitonline.com/"),
+    ("alankit", "Alankit Assignments", "https://www.alankit.com/"),
+    ("abhipra", "Abhipra Capital", "https://www.abhipra.com/")
 ]
 
 def clean_num_or_none(val):
@@ -419,7 +424,7 @@ def run_pipeline():
                 listing_price=listing_price
             )
 
-            # Registrar mapping
+            # Registrar mapping with dual name + URL domain matching
             reg_name, reg_url = None, None
             if norm_key in manual_overrides:
                 reg_name, reg_url = manual_overrides[norm_key]
@@ -427,15 +432,21 @@ def run_pipeline():
                 reg_name = previous_cache[norm_key].get("registrarName")
                 reg_url = previous_cache[norm_key].get("registrarUrl")
             else:
-                raw_reg = item.get("registrar_name")
-                if raw_reg:
+                raw_reg = item.get("registrar_name") or ""
+                raw_url = item.get("registrar_url") or ""
+                # Evaluate both the reported registrar name and website string
+                target_str = f"{raw_reg} {raw_url}".lower()
+
+                if raw_reg or raw_url:
                     for pat, name, url in SEBI_REGISTRARS:
-                        if pat in raw_reg.lower():
+                        if pat in target_str:
                             reg_name, reg_url = name, url
                             break
+                    
+                    # If not matched in SEBI_REGISTRARS dictionary
                     if not reg_name:
-                        reg_name = raw_reg
-                        reg_url = item.get("registrar_url") or "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
+                        reg_name = raw_reg if raw_reg else "Registrar Awaited"
+                        reg_url = raw_url if str(raw_url).startswith("http") else "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
                 else:
                     reg_name = "To Be Updated"
                     reg_url = "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
