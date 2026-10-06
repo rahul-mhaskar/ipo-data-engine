@@ -93,26 +93,53 @@ def parse_date_or_none(date_str):
 
     return None
 
-def determine_status(open_d, close_d, list_d, raw_status=None):
-    if raw_status and raw_status.upper() == "LISTED":
-        return "LISTED"
+from datetime import datetime, timezone, timedelta
 
-    today = datetime.now().date()
+# Explicit Indian Standard Time (UTC+05:30)
+IST = timezone(timedelta(hours=5, minutes=30))
+
+def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0):
+    """
+    Determines true IPO lifecycle status based on IST date/time and actual listing debut price.
+    """
+    # Force evaluation in IST
+    now_ist = datetime.now(IST)
+    today = now_ist.date()
+
     try:
         o = datetime.strptime(open_d, "%Y-%m-%d").date() if open_d and open_d != "To Be Updated" else None
         c = datetime.strptime(close_d, "%Y-%m-%d").date() if close_d and close_d != "To Be Updated" else None
         l = datetime.strptime(list_d, "%Y-%m-%d").date() if list_d and list_d != "To Be Updated" else None
 
+        # 1. Open issue check
         if o and today < o:
             return "UPCOMING"
         elif o and c and (o <= today <= c):
             return "OPEN"
-        elif c and l and (c < today < l):
+
+        # 2. Listing Day Validation
+        if l:
+            # Before listing date, it remains CLOSED
+            if today < l:
+                return "CLOSED"
+            
+            # On listing day: strictly wait until trading opens (10:00 AM IST) or price is discovered
+            elif today == l:
+                is_after_market_open = (now_ist.hour > 10) or (now_ist.hour == 10 and now_ist.minute >= 0)
+                if is_after_market_open or listing_price > 0.0:
+                    return "LISTED"
+                else:
+                    # Still early morning (pre-market): keep it as CLOSED
+                    return "CLOSED"
+            
+            # Past listing date
+            elif today > l:
+                return "LISTED"
+
+        # 3. Post-close period before listing date
+        if c and today > c:
             return "CLOSED"
-        elif l and today >= l:
-            return "LISTED"
-        elif c and today > c:
-            return "CLOSED"
+
     except Exception:
         pass
 
@@ -120,6 +147,7 @@ def determine_status(open_d, close_d, list_d, raw_status=None):
         return raw_status.upper()
 
     return "UPCOMING"
+
 
 def validate_record(item: dict) -> bool:
     if item["issuePriceMin"] < 0 or item["issuePriceMax"] < 0:
@@ -277,11 +305,30 @@ def run_pipeline():
 
             total_sub = float(item.get("total_subscription") or 0.0)
 
-            # Listing Price & Listing Return Calculation
+                        # 1. Primary listing price from Upstox IPO endpoint
             listing_price = float(clean_num_or_none(item.get("listing_price")) or 0.0)
+
+            # 2. Live Quote Fallback: If listed today or earlier and price is still 0.0, fetch from live market quote
+            if listing_price <= 0.0 and item.get("symbol"):
+                parsed_list_d = parse_date_or_none(item.get("listing_date"))
+                today_ist_str = datetime.now(IST).strftime("%Y-%m-%d")
+                if parsed_list_d and parsed_list_d <= today_ist_str:
+                    listing_price = fetch_live_listing_quote(item.get("symbol"), headers={"Accept": "application/json", "Authorization": f"Bearer {UPSTOX_TOKEN}"})
+
+            # 3. Compute Listing Gain % against Cap Price
             listing_gain_pct = 0.0
             if listing_price > 0.0 and price_max > 0.0:
                 listing_gain_pct = round(((listing_price - price_max) / price_max) * 100.0, 2)
+
+            # 4. Pass listing_price into status determination (keeps it CLOSED before 10 AM IST if price is 0)
+            status = determine_status(
+                open_d,
+                close_d,
+                list_d if list_d != "To Be Updated" else None,
+                raw_status=raw_status,
+                listing_price=listing_price
+            )
+
 
             reg_name, reg_url = None, None
             if norm_key in manual_overrides:
