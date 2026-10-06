@@ -93,7 +93,10 @@ def parse_date_or_none(date_str):
 
     return None
 
-def determine_status(open_d, close_d, list_d):
+def determine_status(open_d, close_d, list_d, raw_status=None):
+    if raw_status and raw_status.upper() == "LISTED":
+        return "LISTED"
+
     today = datetime.now().date()
     try:
         o = datetime.strptime(open_d, "%Y-%m-%d").date() if open_d and open_d != "To Be Updated" else None
@@ -112,6 +115,10 @@ def determine_status(open_d, close_d, list_d):
             return "CLOSED"
     except Exception:
         pass
+
+    if raw_status and raw_status.upper() in ["OPEN", "CLOSED", "LISTED", "UPCOMING"]:
+        return raw_status.upper()
+
     return "UPCOMING"
 
 def validate_record(item: dict) -> bool:
@@ -123,7 +130,7 @@ def validate_record(item: dict) -> bool:
         return False
     return True
 
-# ----------------- UPSTOX INGESTION -----------------
+# ----------------- UPSTOX INGESTION (ALL STAGES) -----------------
 def try_fetch_upstox():
     if not UPSTOX_TOKEN:
         return None, "No token supplied in environment."
@@ -134,10 +141,12 @@ def try_fetch_upstox():
     }
 
     all_upstox_items = []
+    # Queries include listed issues
     queries = [
         {"status": "open"},
         {"status": "upcoming"},
-        {"status": "closed"}
+        {"status": "closed"},
+        {"status": "listed"}
     ]
 
     for q in queries:
@@ -184,6 +193,7 @@ def try_fetch_upstox():
                     item["issue_price_max"] = details.get("maximum_price") or item.get("maximum_price")
                     item["rhp_url"] = details.get("rhp_url")
                     item["drhp_url"] = details.get("drhp_url")
+                    item["listing_price"] = details.get("listing_price")
 
                     timeline = details.get("timeline") or {}
                     item["allotment_date"] = (
@@ -263,11 +273,15 @@ def run_pipeline():
             list_d = parse_date_or_none(item.get("listing_date")) or "To Be Updated"
 
             raw_status = (item.get("status") or "UPCOMING").upper()
-            status = determine_status(open_d, close_d, list_d if list_d != "To Be Updated" else None)
-            if status == "UPCOMING" and raw_status in ["OPEN", "CLOSED"]:
-                status = raw_status
+            status = determine_status(open_d, close_d, list_d if list_d != "To Be Updated" else None, raw_status)
 
             total_sub = float(item.get("total_subscription") or 0.0)
+
+            # Listing Price & Listing Return Calculation
+            listing_price = float(clean_num_or_none(item.get("listing_price")) or 0.0)
+            listing_gain_pct = 0.0
+            if listing_price > 0.0 and price_max > 0.0:
+                listing_gain_pct = round(((listing_price - price_max) / price_max) * 100.0, 2)
 
             reg_name, reg_url = None, None
             if norm_key in manual_overrides:
@@ -316,8 +330,8 @@ def run_pipeline():
                 "subscriptionRetail": 0.0,
                 "subscriptionHNI": 0.0,
                 "subscriptionQIB": 0.0,
-                "listingPrice": 0.0,
-                "listingGainPercent": 0.0,
+                "listingPrice": listing_price,
+                "listingGainPercent": listing_gain_pct,
                 "registrarName": reg_name,
                 "registrarUrl": reg_url,
                 "rhpPdfUrl": rhp_url,
@@ -352,10 +366,10 @@ def run_pipeline():
         f.write(f"**Last Sync (UTC):** {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
         f.write(f"**Primary Active Source:** {active_source}\n")
         f.write(f"**Total Records Ingested:** {len(final_dataset)}\n")
-        f.write("Status: Direct Upstox v2 Ingestion.\n")
+        f.write("Status: Direct Upstox v2 Ingestion (Open, Upcoming, Closed, Listed).\n")
 
     print(f">>> Pipeline completed successfully via [{active_source}]. Processed {len(final_dataset)} records.", flush=True)
 
 if __name__ == "__main__":
     run_pipeline()
-        
+            
