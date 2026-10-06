@@ -22,7 +22,6 @@ HEADERS = {
 }
 
 SEBI_REGISTRARS = [
-    # Top Tier Registrars (Direct Allotment Query Deep-Links)
     ("kfin", "KFin Technologies", "https://ipostatus.kfintech.com/"),
     ("link intime", "Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html"),
     ("mufg", "Link Intime / MUFG", "https://in.mpms.mufg.com/Initial_Offer/public-issues.html"),
@@ -240,6 +239,10 @@ def try_fetch_upstox():
                     item["issue_price_max"] = details.get("maximum_price") or item.get("maximum_price")
                     item["rhp_url"] = details.get("rhp_url")
                     item["drhp_url"] = details.get("drhp_url")
+                    # Calculate Issue Size in ₹ Crores (divided by 10,000,000)
+                    raw_issue_size = details.get("issue_size") or details.get("total_issue_size") or item.get("issue_size")
+                    clean_size = clean_num_or_none(raw_issue_size)
+                    item["issue_size_cr"] = round(float(clean_size) / 10000000.0, 2) if clean_size and clean_size > 0 else 0.0
                     item["listing_price"] = details.get("listing_price")
 
                     timeline = details.get("timeline") or {}
@@ -424,7 +427,7 @@ def run_pipeline():
                 listing_price=listing_price
             )
 
-            # Registrar mapping with dual name + URL domain matching
+           # Registrar mapping (checks both name and URL strings)
             reg_name, reg_url = None, None
             if norm_key in manual_overrides:
                 reg_name, reg_url = manual_overrides[norm_key]
@@ -434,19 +437,16 @@ def run_pipeline():
             else:
                 raw_reg = item.get("registrar_name") or ""
                 raw_url = item.get("registrar_url") or ""
-                # Evaluate both the reported registrar name and website string
-                target_str = f"{raw_reg} {raw_url}".lower()
+                search_target = f"{raw_reg} {raw_url}".lower().strip()
 
-                if raw_reg or raw_url:
+                if search_target:
                     for pat, name, url in SEBI_REGISTRARS:
-                        if pat in target_str:
+                        if pat in search_target:
                             reg_name, reg_url = name, url
                             break
-                    
-                    # If not matched in SEBI_REGISTRARS dictionary
                     if not reg_name:
                         reg_name = raw_reg if raw_reg else "Registrar Awaited"
-                        reg_url = raw_url if str(raw_url).startswith("http") else "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
+                        reg_url = raw_url if raw_url.startswith("http") else "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
                 else:
                     reg_name = "To Be Updated"
                     reg_url = "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
@@ -466,6 +466,7 @@ def run_pipeline():
                 "symbol": str(sym).strip(),
                 "category": "SME" if str(item.get("issue_type", "")).lower() == "sme" else "Mainboard",
                 "status": status,
+                "issueSizeCr": float(item.get("issue_size_cr") or 0.0),
                 "issuePriceMin": price_min,
                 "issuePriceMax": price_max,
                 "lotSize": lot_size,
