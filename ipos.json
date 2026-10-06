@@ -14,7 +14,7 @@
     "listingDate": "2026-10-12",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 0.43,
+    "subscriptionTotal": 0.49,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -27,84 +27,6 @@
   },
   {
     "id": "2",
-    "name": "Acme India Industries",
-    "symbol": "ACMERAIL",
-    "category": "SME",
-    "status": "OPEN",
-    "issuePriceMin": 186.0,
-    "issuePriceMax": 196.0,
-    "lotSize": 600,
-    "openDate": "2026-09-30",
-    "closeDate": "2026-10-06",
-    "allotmentDate": "2026-10-07",
-    "listingDate": "2026-10-09",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "subscriptionTotal": 12.62,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Bigshare Services",
-    "registrarUrl": "https://ipo.bigshareonline.com/ipo_status.html",
-    "rhpPdfUrl": "https://hemadmin.hemsecurities.com/images/Files/offer/3205.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Acme+India+Industries+IPO+DRHP+file+SEBI"
-  },
-  {
-    "id": "3",
-    "name": "Paramount Syntex",
-    "symbol": "PARASYNTEX",
-    "category": "SME",
-    "status": "OPEN",
-    "issuePriceMin": 119.0,
-    "issuePriceMax": 127.0,
-    "lotSize": 1000,
-    "openDate": "2026-09-30",
-    "closeDate": "2026-10-06",
-    "allotmentDate": "2026-10-07",
-    "listingDate": "2026-10-09",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "subscriptionTotal": 1.69,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Bigshare Services",
-    "registrarUrl": "https://ipo.bigshareonline.com/ipo_status.html",
-    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/paramount-syntex-ipo-rhp_compressed_compressed_compressed.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Paramount+Syntex+IPO+DRHP+file+SEBI"
-  },
-  {
-    "id": "4",
-    "name": "TNA Solutions",
-    "symbol": "TNA",
-    "category": "SME",
-    "status": "OPEN",
-    "issuePriceMin": 66.0,
-    "issuePriceMax": 70.0,
-    "lotSize": 2000,
-    "openDate": "2026-09-30",
-    "closeDate": "2026-10-06",
-    "allotmentDate": "2026-10-07",
-    "listingDate": "2026-10-09",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "subscriptionTotal": 9.49,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Maashitla Securities",
-    "registrarUrl": "https://maashitla.com/allotment-status",
-    "rhpPdfUrl": "https://www.kotakneo.com/uploads/RHP_TNA_24_09_2026_6603ce008c.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=TNA+Solutions+IPO+DRHP+file+SEBI"
-  },
-  {
-    "id": "5",
     "name": "Parle Products",
     "symbol": "PARLEPR",
     "category": "Mainboard",
@@ -130,7 +52,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Parle+Products+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "6",
+    "id": "3",
     "name": "Twinkle Papers",
     "symbol": "TWINKLE",
     "category": "SME",
@@ -156,7 +78,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Twinkle+Papers+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "7",
+    "id": "4",
     "name": "Sri Priyanka Geo Commex",
     "symbol": "SPGCL",
     "category": "SME",
@@ -182,7 +104,7 @@
     "drhpPdfUrl": "https://nsearchives.nseindia.com/emerge/corporates/content/Registration_14082025195719_SriPriyankaGeoCommexLimitedDRHP.pdf"
   },
   {
-    "id": "8",
+    "id": "5",
     "name": "Reliance Jio",
     "symbol": "RELIANC",
     "category": "Mainboard",
@@ -208,7 +130,7 @@
     "drhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/jun-2026/jio-platforms-ltd-drhp_102248.html"
   },
   {
-    "id": "9",
+    "id": "6",
     "name": "Flipkart",
     "symbol": "FLIPKAR",
     "category": "Mainboard",
@@ -234,7 +156,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Flipkart+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "10",
+    "id": "7",
     "name": "Prestige Hospitality Ventures",
     "symbol": "PRESTIG",
     "category": "Mainboard",
@@ -260,7 +182,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Prestige+Hospitality+Ventures+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "11",
+    "id": "8",
     "name": "Credila Financial Services",
     "symbol": "CREDILA",
     "category": "Mainboard",
@@ -286,7 +208,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Credila+Financial+Services+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "12",
+    "id": "9",
     "name": "PhonePe",
     "symbol": "PHONEPE",
     "category": "Mainboard",
@@ -312,7 +234,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=PhonePe+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "13",
+    "id": "10",
     "name": "Zepto",
     "symbol": "ZEPTO",
     "category": "Mainboard",
@@ -338,7 +260,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Zepto+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "14",
+    "id": "11",
     "name": "Solar91 Cleantech",
     "symbol": "SOLAR91",
     "category": "SME",
@@ -364,7 +286,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Solar91+Cleantech+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "15",
+    "id": "12",
     "name": "Hero FinCorp",
     "symbol": "HEROFIN",
     "category": "Mainboard",
@@ -390,7 +312,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Hero+FinCorp+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "16",
+    "id": "13",
     "name": "Deltatech Gaming",
     "symbol": "DELTATE",
     "category": "Mainboard",
@@ -416,7 +338,7 @@
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655459382467.pdf#page=1&zoom=page-width,-16,849"
   },
   {
-    "id": "17",
+    "id": "14",
     "name": "Biba Fashions",
     "symbol": "BIBAFAS",
     "category": "Mainboard",
@@ -442,7 +364,7 @@
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jul-2022/1659005306568.pdf#page=1&zoom=page-width,-16,764"
   },
   {
-    "id": "18",
+    "id": "15",
     "name": "Droom Technology",
     "symbol": "DROOMTE",
     "category": "Mainboard",
@@ -468,7 +390,7 @@
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/may-2023/1683610115492.pdf#page=1&zoom=page-width,-16,842"
   },
   {
-    "id": "19",
+    "id": "16",
     "name": "Puranik Builders",
     "symbol": "PURANIK",
     "category": "Mainboard",
@@ -494,7 +416,7 @@
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/sep-2022/1663916527724.pdf#page=1&zoom=page-width,-16,764"
   },
   {
-    "id": "20",
+    "id": "17",
     "name": "Bharat FIH",
     "symbol": "BHARATF",
     "category": "Mainboard",
@@ -520,7 +442,7 @@
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655876827634.pdf#page=1&zoom=page-width,-16,610"
   },
   {
-    "id": "21",
+    "id": "18",
     "name": "FabIndia",
     "symbol": "FABINDI",
     "category": "Mainboard",
@@ -546,7 +468,7 @@
     "drhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/nov-2022/fabindia-limited-corrigendum-to-drhp_64776.html"
   },
   {
-    "id": "22",
+    "id": "19",
     "name": "OYO",
     "symbol": "OYO",
     "category": "Mainboard",
@@ -572,7 +494,7 @@
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/nov-2022/1669613102669.pdf#page=1&zoom=page-width,-15,842"
   },
   {
-    "id": "23",
+    "id": "20",
     "name": "EBIXCASH",
     "symbol": "EBIXCAS",
     "category": "Mainboard",
@@ -598,7 +520,7 @@
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/oct-2021/1633066313151.pdf#page=1&zoom=page-width,-16,379"
   },
   {
-    "id": "24",
+    "id": "21",
     "name": "BoAt",
     "symbol": "BOAT",
     "category": "Mainboard",
@@ -622,6 +544,84 @@
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
     "rhpPdfUrl": "https://www.google.com/search?q=BoAt+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=/sebi_data/attachdocs/jan-2022/1643353844101.PDF#page=2&zoom=page-width,-15,379"
+  },
+  {
+    "id": "22",
+    "name": "TNA Solutions",
+    "symbol": "TNA",
+    "category": "SME",
+    "status": "OPEN",
+    "issuePriceMin": 66.0,
+    "issuePriceMax": 70.0,
+    "lotSize": 2000,
+    "openDate": "2026-09-30",
+    "closeDate": "2026-10-06",
+    "allotmentDate": "2026-10-07",
+    "listingDate": "2026-10-09",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "subscriptionTotal": 54.92,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Maashitla Securities",
+    "registrarUrl": "https://maashitla.com/allotment-status",
+    "rhpPdfUrl": "https://www.kotakneo.com/uploads/RHP_TNA_24_09_2026_6603ce008c.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=TNA+Solutions+IPO+DRHP+file+SEBI"
+  },
+  {
+    "id": "23",
+    "name": "Paramount Syntex",
+    "symbol": "PARASYNTEX",
+    "category": "SME",
+    "status": "OPEN",
+    "issuePriceMin": 119.0,
+    "issuePriceMax": 127.0,
+    "lotSize": 1000,
+    "openDate": "2026-09-30",
+    "closeDate": "2026-10-06",
+    "allotmentDate": "2026-10-07",
+    "listingDate": "2026-10-09",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "subscriptionTotal": 1.93,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Bigshare Services",
+    "registrarUrl": "https://ipo.bigshareonline.com/ipo_status.html",
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/paramount-syntex-ipo-rhp_compressed_compressed_compressed.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=Paramount+Syntex+IPO+DRHP+file+SEBI"
+  },
+  {
+    "id": "24",
+    "name": "Acme India Industries",
+    "symbol": "ACMERAIL",
+    "category": "SME",
+    "status": "OPEN",
+    "issuePriceMin": 186.0,
+    "issuePriceMax": 196.0,
+    "lotSize": 600,
+    "openDate": "2026-09-30",
+    "closeDate": "2026-10-06",
+    "allotmentDate": "2026-10-07",
+    "listingDate": "2026-10-09",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "subscriptionTotal": 123.52,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Bigshare Services",
+    "registrarUrl": "https://ipo.bigshareonline.com/ipo_status.html",
+    "rhpPdfUrl": "https://hemadmin.hemsecurities.com/images/Files/offer/3205.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=Acme+India+Industries+IPO+DRHP+file+SEBI"
   },
   {
     "id": "25",
