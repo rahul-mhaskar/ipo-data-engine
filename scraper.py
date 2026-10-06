@@ -140,11 +140,22 @@ def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0
         c = datetime.strptime(close_d, "%Y-%m-%d").date() if close_d and close_d != "To Be Updated" else None
         l = datetime.strptime(list_d, "%Y-%m-%d").date() if list_d and list_d != "To Be Updated" else None
 
+        # 1. Before Open Date
         if o and today < o:
             return "UPCOMING"
-        elif o and c and (o <= today <= c):
-            return "OPEN"
 
+        # 2. Bidding Window (Strict 5:00 PM IST cutoff on Closing Date)
+        if o and c:
+            if o <= today < c:
+                return "OPEN"
+            elif today == c:
+                # Exchange bidding closes at 17:00 IST (5:00 PM)
+                if now_ist.hour < 17:
+                    return "OPEN"
+                else:
+                    return "CLOSED"
+
+        # 3. Listing Day Logic (Strictly verified after 10:00 AM IST)
         if l:
             if today < l:
                 return "CLOSED"
@@ -157,6 +168,7 @@ def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0
             elif today > l:
                 return "LISTED"
 
+        # 4. Post-Close Buffer
         if c and today > c:
             return "CLOSED"
 
@@ -167,6 +179,7 @@ def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0
         return raw_status.upper()
 
     return "UPCOMING"
+
 
 def validate_record(item: dict) -> bool:
     if item["issuePriceMin"] < 0 or item["issuePriceMax"] < 0:
