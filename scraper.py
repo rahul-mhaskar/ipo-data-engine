@@ -128,7 +128,6 @@ def fetch_live_listing_quote(symbol: str, headers: dict) -> float:
     return 0.0
 
 def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0):
-    """Accurately classifies status according to IST time and confirmed debut trade price."""
     now_ist = datetime.now(IST)
     today = now_ist.date()
 
@@ -137,13 +136,11 @@ def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0
         c = datetime.strptime(close_d, "%Y-%m-%d").date() if close_d and close_d != "To Be Updated" else None
         l = datetime.strptime(list_d, "%Y-%m-%d").date() if list_d and list_d != "To Be Updated" else None
 
-        # 1. Bidding Window
         if o and today < o:
             return "UPCOMING"
         elif o and c and (o <= today <= c):
             return "OPEN"
 
-        # 2. Listing Day Logic (Strictly verified against 10:00 AM IST)
         if l:
             if today < l:
                 return "CLOSED"
@@ -156,7 +153,6 @@ def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0
             elif today > l:
                 return "LISTED"
 
-        # 3. Post-Close Buffer
         if c and today > c:
             return "CLOSED"
 
@@ -177,7 +173,7 @@ def validate_record(item: dict) -> bool:
         return False
     return True
 
-# ----------------- UPSTOX INGESTION (ALL STAGES) -----------------
+# ----------------- UPSTOX INGESTION -----------------
 def try_fetch_upstox():
     if not UPSTOX_TOKEN:
         return None, "No token supplied in environment."
@@ -253,58 +249,67 @@ def try_fetch_upstox():
                     item["registrar_name"] = reg_info.get("name")
                     item["registrar_url"] = reg_info.get("website")
 
-                    # Aggregate subscription
+                    # Total aggregate subscription
                     item["total_subscription"] = (
                         clean_num_or_none(details.get("total_subscription")) or 
                         clean_num_or_none(item.get("total_subscription")) or 
                         0.0
                     )
 
-                                        # Ingest Category Breakdown
-                    cats = (
-                        details.get("categories") or 
-                        details.get("distribution") or 
-                        details.get("bidding_details") or 
-                        details.get("investor_categories") or 
-                        details.get("sub_categories") or 
-                        []
-                    )
+                    # Extract category subscription list
+                    cats = []
+                    for k in ["categories", "distribution", "bidding_details", "investor_categories", "sub_categories"]:
+                        val = details.get(k)
+                        if isinstance(val, list):
+                            cats = val
+                            break
+                        elif isinstance(val, dict):
+                            cats = val.get("categories") or val.get("distribution") or []
+                            if cats:
+                                break
 
-                    # Probe dedicated endpoints if missing from root details
+                    # If not present in offer root, probe sub-endpoints
                     if not cats:
                         for endpoint_suffix in ["subscriptions", "bids", "details"]:
                             try:
                                 sub_res = requests.get(f"{UPSTOX_BASE_URL}/ipos/{ipo_id}/{endpoint_suffix}", headers=headers, timeout=4)
                                 if sub_res.status_code == 200:
                                     sdata = sub_res.json().get("data", {})
-                                    cats = sdata.get("categories") or sdata.get("distribution") or sdata.get("bidding_details") or []
-                                    if cats:
+                                    if isinstance(sdata, list):
+                                        cats = sdata
                                         break
+                                    elif isinstance(sdata, dict):
+                                        cats = sdata.get("categories") or sdata.get("distribution") or sdata.get("bidding_details") or []
+                                        if cats:
+                                            break
                             except Exception:
                                 pass
 
                     sub_retail, sub_hni, sub_qib = 0.0, 0.0, 0.0
-                    for c in cats:
-                        c_name = str(c.get("category") or c.get("name") or c.get("category_name") or "").upper().strip()
-                        c_rate = float(clean_num_or_none(
-                            c.get("subscription_rate") or 
-                            c.get("rate") or 
-                            c.get("times_subscribed") or 
-                            c.get("subscription") or
-                            c.get("oversubscription")
-                        ) or 0.0)
+                    if isinstance(cats, list):
+                        for c in cats:
+                            if not isinstance(c, dict):
+                                continue
+                            c_name = str(c.get("category") or c.get("name") or c.get("category_name") or "").upper().strip()
+                            c_rate = clean_num_or_none(
+                                c.get("subscription_rate") or 
+                                c.get("rate") or 
+                                c.get("times_subscribed") or 
+                                c.get("subscription") or
+                                c.get("oversubscription") or
+                                c.get("value")
+                            ) or 0.0
 
-                        if any(k in c_name for k in ["RETAIL", "RII", "INDIVIDUAL"]):
-                            sub_retail = c_rate
-                        elif any(k in c_name for k in ["NII", "HNI", "NON-INSTITUTIONAL", "NON INSTITUTIONAL"]):
-                            sub_hni = c_rate
-                        elif "QIB" in c_name:
-                            sub_qib = c_rate
+                            if any(x in c_name for x in ["RETAIL", "RII", "INDIVIDUAL"]):
+                                sub_retail = float(c_rate)
+                            elif any(x in c_name for x in ["NII", "HNI", "NON-INSTITUTIONAL", "NON INSTITUTIONAL"]):
+                                sub_hni = float(c_rate)
+                            elif "QIB" in c_name:
+                                sub_qib = float(c_rate)
 
                     item["subscription_retail"] = sub_retail
                     item["subscription_hni"] = sub_hni
                     item["subscription_qib"] = sub_qib
-
 
             time.sleep(0.05)
         except Exception:
@@ -371,7 +376,7 @@ def run_pipeline():
             sub_hni = float(item.get("subscription_hni", 0.0))
             sub_qib = float(item.get("subscription_qib", 0.0))
 
-            # CACHE PINNING: If Upstox purged listed category breakdowns, preserve from last known good run
+            # CACHE PINNING: If Upstox purged historical category breakdowns, preserve from previous runs
             if norm_key in previous_cache:
                 prev = previous_cache[norm_key]
                 if sub_retail <= 0.0:
@@ -382,7 +387,6 @@ def run_pipeline():
                     sub_qib = float(prev.get("subscriptionQIB", 0.0))
                 if total_sub <= 0.0:
                     total_sub = float(prev.get("subscriptionTotal", 0.0))
-
 
             # 1. Primary listing price from Upstox IPO endpoint
             listing_price = float(clean_num_or_none(item.get("listing_price")) or 0.0)
@@ -487,10 +491,14 @@ def run_pipeline():
         final_dataset = last_known_good
         active_source = "CACHE_FALLBACK"
 
-    print(">>> [Phase 3/3] Saving feed...", flush=True)
+    print(">>> [Phase 3/3] Saving feed to disk...", flush=True)
     if not final_dataset:
         print("CRITICAL: Ingestion failed. Preserving existing ipos.json.", flush=True)
         return
+
+    # Write the updated records to ipos.json
+    with open(FILE_PATH, "w", encoding="utf-8") as f:
+        json.dump(final_dataset, f, indent=2, ensure_ascii=False)
 
     with open(AUDIT_LOG_PATH, "w", encoding="utf-8") as f:
         f.write("# IPO Pipeline Data Health Audit\n\n")
