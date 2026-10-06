@@ -23,6 +23,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Cameo Corporate Services",
     "registrarUrl": "https://ipo.cameoindia.com/",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://affinityglobalcap.in/wp-content/uploads/2026/10/RHP_LFINAL-1.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=R.K.Fashion+Accessories+IPO+DRHP+file+SEBI"
   },
@@ -50,6 +51,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "To Be Updated",
     "registrarUrl": "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Parle+Products+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Parle+Products+IPO+DRHP+file+SEBI"
   },
@@ -77,6 +79,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "ALANKIT ASSIGNMENTS LIMITED",
     "registrarUrl": "https://www.alankit.com/",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Twinkle+Papers+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Twinkle+Papers+IPO+DRHP+file+SEBI"
   },
@@ -104,6 +107,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Cameo Corporate Services",
     "registrarUrl": "https://ipo.cameoindia.com/",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Sri+Priyanka+Geo+Commex+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://nsearchives.nseindia.com/emerge/corporates/content/Registration_14082025195719_SriPriyankaGeoCommexLimitedDRHP.pdf"
   },
@@ -131,6 +135,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "To Be Updated",
     "registrarUrl": "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Reliance+Jio+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/jun-2026/jio-platforms-ltd-drhp_102248.html"
   },
@@ -158,6 +163,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "To Be Updated",
     "registrarUrl": "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Flipkart+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Flipkart+IPO+DRHP+file+SEBI"
   },
@@ -185,6 +191,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "KFin Technologies",
     "registrarUrl": "https://ris.kfintech.com/ipostatus/",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Prestige+Hospitality+Ventures+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Prestige+Hospitality+Ventures+IPO+DRHP+file+SEBI"
   },
@@ -212,6 +219,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "KFin Technologies",
     "registrarUrl": "https://ris.kfintech.com/ipostatus/",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Credila+Financial+Services+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Credila+Financial+Services+IPO+DRHP+file+SEBI"
   },
@@ -239,6 +247,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "To Be Updated",
     "registrarUrl": "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=PhonePe+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=PhonePe+IPO+DRHP+file+SEBI"
   },
@@ -266,6 +275,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "To Be Updated",
     "registrarUrl": "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Zepto+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Zepto+IPO+DRHP+file+SEBI"
   },
@@ -293,6 +303,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Maashitla Securities",
     "registrarUrl": "https://maashitla.com/allotment-status",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Solar91+Cleantech+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Solar91+Cleantech+IPO+DRHP+file+SEBI"
   },
@@ -320,6 +331,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Link Intime / MUFG",
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Hero+FinCorp+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Hero+FinCorp+IPO+DRHP+file+SEBI"
   },
@@ -347,6 +359,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "KFin Technologies",
     "registrarUrl": "https://ris.kfintech.com/ipostatus/",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Deltatech+Gaming+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655459382467.pdf#page=1&zoom=page-width,-16,849"
   },
@@ -374,6 +387,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Link Intime / MUFG",
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Biba+Fashions+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jul-2022/1659005306568.pdf#page=1&zoom=page-width,-16,764"
   },
@@ -401,6 +415,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "KFin Technologies",
     "registrarUrl": "https://ris.kfintech.com/ipostatus/",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Droom+Technology+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/may-2023/1683610115492.pdf#page=1&zoom=page-width,-16,842"
   },
@@ -428,6 +443,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "KFin Technologies",
     "registrarUrl": "https://ris.kfintech.com/ipostatus/",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Puranik+Builders+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/sep-2022/1663916527724.pdf#page=1&zoom=page-width,-16,764"
   },
@@ -455,6 +471,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "KFin Technologies",
     "registrarUrl": "https://ris.kfintech.com/ipostatus/",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Bharat+FIH+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655876827634.pdf#page=1&zoom=page-width,-16,610"
   },
@@ -482,6 +499,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Link Intime / MUFG",
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=FabIndia+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/nov-2022/fabindia-limited-corrigendum-to-drhp_64776.html"
   },
@@ -509,6 +527,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Link Intime / MUFG",
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=OYO+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/nov-2022/1669613102669.pdf#page=1&zoom=page-width,-15,842"
   },
@@ -536,6 +555,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Link Intime / MUFG",
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=EBIXCASH+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/oct-2021/1633066313151.pdf#page=1&zoom=page-width,-16,379"
   },
@@ -563,6 +583,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Link Intime / MUFG",
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=BoAt+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=/sebi_data/attachdocs/jan-2022/1643353844101.PDF#page=2&zoom=page-width,-15,379"
   },
@@ -590,6 +611,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Maashitla Securities",
     "registrarUrl": "https://maashitla.com/allotment-status",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.kotakneo.com/uploads/RHP_TNA_24_09_2026_6603ce008c.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=TNA+Solutions+IPO+DRHP+file+SEBI"
   },
@@ -617,6 +639,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Bigshare Services",
     "registrarUrl": "https://ipo.bigshareonline.com/ipo_status.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/paramount-syntex-ipo-rhp_compressed_compressed_compressed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Paramount+Syntex+IPO+DRHP+file+SEBI"
   },
@@ -644,6 +667,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Bigshare Services",
     "registrarUrl": "https://ipo.bigshareonline.com/ipo_status.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://hemadmin.hemsecurities.com/images/Files/offer/3205.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Acme+India+Industries+IPO+DRHP+file+SEBI"
   },
@@ -671,6 +695,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Mudra RTA Ventures",
     "registrarUrl": "https://mudrarta.com/",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://eventions.in/wp-content/uploads/2026/09/Final_RHP.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Eventions+IPO+DRHP+file+SEBI"
   },
@@ -698,6 +723,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Purva Sharegistry",
     "registrarUrl": "https://www.purvashare.com/queries/",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://dovesoft.io/images/investor/RHP.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Dove+Soft+IPO+DRHP+file+SEBI"
   },
@@ -725,6 +751,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Maashitla Securities",
     "registrarUrl": "https://maashitla.com/allotment-status",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=SJP+Ultrasonic+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.bsesme.com/download/334252/SME_IPO%20InPrinciple/DPSJP_20250929205030.pdf"
   },
@@ -752,6 +779,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Bigshare Services",
     "registrarUrl": "https://ipo.bigshareonline.com/ipo_status.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Omara_DraftProspectus_compressed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Omara+Ventures+India+IPO+DRHP+file+SEBI"
   },
@@ -779,6 +807,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "KFin Technologies",
     "registrarUrl": "https://ris.kfintech.com/ipostatus/",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Sollfege+Smart+Electronics+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://assets.upstox.com/ipo/documents/drhp/DP_Sollfege_BSE_23042026_20260423120527_compressed.pdf"
   },
@@ -806,6 +835,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Bigshare Services",
     "registrarUrl": "https://ipo.bigshareonline.com/ipo_status.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/apr-2026/nityas-gems-and-jewellery-limited-drhp_100802.html",
     "drhpPdfUrl": "https://www.google.com/search?q=Nityas+Gems+&+Jewellery+IPO+DRHP+file+SEBI"
   },
@@ -833,6 +863,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Link Intime / MUFG",
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.saffronadvisor.com/files/offer-documents/Red_Herring_Prospectus__1_.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Vishal+Nirmiti+IPO+DRHP+file+SEBI"
   },
@@ -860,6 +891,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Maashitla Securities",
     "registrarUrl": "https://maashitla.com/allotment-status",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://everestims.com/assets/docs/EverestIMS_Technologies/rhp/EverestIMS_RHP_21092026.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=EverestIMS+Technologies+IPO+DRHP+file+SEBI"
   },
@@ -887,6 +919,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Link Intime / MUFG",
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.shreetnbpolymers.in/investor-pdf/01M34R00M95SSVD0BVECEBFCCR.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Shree+TNB+Polymers+IPO+DRHP+file+SEBI"
   },
@@ -914,6 +947,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "MAS Services",
     "registrarUrl": "https://www.masserv.com/",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Papadmalji+Agro+Foods+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://assets.upstox.com/ipo/documents/drhp/Registration_27122025223037_DRHP_compressed.pdf"
   },
@@ -941,6 +975,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Bigshare Services",
     "registrarUrl": "https://ipo.bigshareonline.com/ipo_status.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/rhp_vans_electroengineering_limited.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Vans+Electroengineerings+IPO+DRHP+file+SEBI"
   },
@@ -968,6 +1003,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Bigshare Services",
     "registrarUrl": "https://ipo.bigshareonline.com/ipo_status.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/GAIL_RHP_1789799314.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Green+Asia+Impex+IPO+DRHP+file+SEBI"
   },
@@ -995,6 +1031,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Skyline Financial",
     "registrarUrl": "https://www.skylinerta.com/ipo.php",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/RHP_Black Opal Consultants Limited.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Black+Opal+Consultants+IPO+DRHP+file+SEBI"
   },
@@ -1022,6 +1059,7 @@
     "listingGainPercent": -20.0,
     "registrarName": "Bigshare Services",
     "registrarUrl": "https://ipo.bigshareonline.com/ipo_status.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/1. RHP - BSE_19.09.2026_compressed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Pind+Hospitality+IPO+DRHP+file+SEBI"
   },
@@ -1049,6 +1087,7 @@
     "listingGainPercent": 2.4,
     "registrarName": "Link Intime / MUFG",
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.chittorgarh.net/reports/ipo_notes/shah-investors-home-ltd_rhp.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Shah+Investor’s+Home+IPO+DRHP+file+SEBI"
   },
@@ -1076,6 +1115,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Maashitla Securities",
     "registrarUrl": "https://maashitla.com/allotment-status",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Red Herring Prospectus_compressed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Shivchem+Agro+IPO+DRHP+file+SEBI"
   },
@@ -1103,6 +1143,7 @@
     "listingGainPercent": 13.85,
     "registrarName": "KFin Technologies",
     "registrarUrl": "https://ris.kfintech.com/ipostatus/",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://static1.squarespace.com/static/64bf881ed10e9e2c82cb9367/t/6ab39d3507e7c86aadbbfaf8/1790156118227/Red+Herring+Prospectus%28RHP%29.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=SRIT+India+IPO+DRHP+file+SEBI"
   },
@@ -1130,6 +1171,7 @@
     "listingGainPercent": 42.25,
     "registrarName": "Maashitla Securities",
     "registrarUrl": "https://maashitla.com/allotment-status",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/1_RHP_ACME_22092026.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Acme+Universal+Safezone+9+IPO+DRHP+file+SEBI"
   },
@@ -1157,6 +1199,7 @@
     "listingGainPercent": 18.41,
     "registrarName": "Maashitla Securities",
     "registrarUrl": "https://maashitla.com/allotment-status",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Sai+Urja+Indo+Ventures+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Sai+Urja+Indo+Ventures+IPO+DRHP+file+SEBI"
   },
@@ -1184,6 +1227,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Link Intime / MUFG",
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.icicisecurities.com/console/uploads/actual/RUNWAL-ENTERPRISES-LIMITED--RED-HERRING-PROSPECTUS_1790022848_83.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Runwal+Enterprises+IPO+DRHP+file+SEBI"
   },
@@ -1211,6 +1255,7 @@
     "listingGainPercent": 2.16,
     "registrarName": "Bigshare Services",
     "registrarUrl": "https://ipo.bigshareonline.com/ipo_status.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.systematixgroup.in/wp-content/uploads/2026/09/GGSPL-RHP.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=German+Green+Steel+&+Power+IPO+DRHP+file+SEBI"
   },
@@ -1238,6 +1283,7 @@
     "listingGainPercent": 65.44,
     "registrarName": "KFin Technologies",
     "registrarUrl": "https://ris.kfintech.com/ipostatus/",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://orientcables.in/wp-content/uploads/2026/09/Red-Herring-Prospectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Orient+Cables+(India)+IPO+DRHP+file+SEBI"
   },
@@ -1265,6 +1311,7 @@
     "listingGainPercent": -11.5,
     "registrarName": "Link Intime / MUFG",
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.india.clsa.com/uploads/Ace_Vector_Limited_RHP_18515f8243.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Acevector+(Snapdeal)+IPO+DRHP+file+SEBI"
   },
@@ -1292,6 +1339,7 @@
     "listingGainPercent": -17.48,
     "registrarName": "Maashitla Securities",
     "registrarUrl": "https://maashitla.com/allotment-status",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/rhp_himalayann-1.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Himalayan+Solar+IPO+DRHP+file+SEBI"
   },
@@ -1319,6 +1367,7 @@
     "listingGainPercent": -13.79,
     "registrarName": "Maashitla Securities",
     "registrarUrl": "https://maashitla.com/allotment-status",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Dudani+Retail+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.bsesme.com/download/376098/SME_IPO%20InPrinciple/DP_Dudani_Final_20260331230446.pdf"
   },
@@ -1346,6 +1395,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "KFin Technologies",
     "registrarUrl": "https://ris.kfintech.com/ipostatus/",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/benchmark_rhp (1).pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Bench+Mark+Infotech+Services+IPO+DRHP+file+SEBI"
   },
@@ -1373,6 +1423,7 @@
     "listingGainPercent": 12.35,
     "registrarName": "Bigshare Services",
     "registrarUrl": "https://ipo.bigshareonline.com/ipo_status.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.aonesteelgroup.com/wp-content/uploads/2026/09/RHP.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=A-One+Steels+India+IPO+DRHP+file+SEBI"
   },
@@ -1400,6 +1451,7 @@
     "listingGainPercent": 61.76,
     "registrarName": "Link Intime / MUFG",
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.chittorgarh.net/reports/ipo_notes/moneyview-rhp.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Moneyview+IPO+DRHP+file+SEBI"
   },
@@ -1427,6 +1479,7 @@
     "listingGainPercent": -0.94,
     "registrarName": "Maashitla Securities",
     "registrarUrl": "https://maashitla.com/allotment-status",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/rhp-peshwa-wheat-limited_compressed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Peshwa+Wheat+IPO+DRHP+file+SEBI"
   },
@@ -1454,6 +1507,7 @@
     "listingGainPercent": 90.0,
     "registrarName": "Bigshare Services",
     "registrarUrl": "https://ipo.bigshareonline.com/ipo_status.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/roopa_screen_limited_red_herring_prospectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Roopa+Screen+IPO+DRHP+file+SEBI"
   },
@@ -1481,6 +1535,7 @@
     "listingGainPercent": 0.0,
     "registrarName": "Cameo Corporate Services",
     "registrarUrl": "https://ipo.cameoindia.com/",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.saffronadvisor.com/files/offer-documents/Red_Herring_Prospectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=ArMee+Infotech+IPO+DRHP+file+SEBI"
   },
@@ -1508,6 +1563,7 @@
     "listingGainPercent": 0.8,
     "registrarName": "Maashitla Securities",
     "registrarUrl": "https://maashitla.com/allotment-status",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/RHP.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=S.K.Offset+IPO+DRHP+file+SEBI"
   },
@@ -1535,6 +1591,7 @@
     "listingGainPercent": 2.27,
     "registrarName": "Bigshare Services",
     "registrarUrl": "https://ipo.bigshareonline.com/ipo_status.html",
+    "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/unitech-ipo-rhp.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Unitec+Fibres+IPO+DRHP+file+SEBI"
   },
