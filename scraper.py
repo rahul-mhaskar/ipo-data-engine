@@ -326,6 +326,13 @@ def try_fetch_upstox():
                             cats = val.get("categories") or val.get("distribution") or []
                             if cats:
                                 break
+                                # Inside details extraction:
+is_allotment_finalized = bool(
+    details.get("is_allotment_done") or 
+    str(details.get("allotment_status", "")).upper() in ["ALLOTTED", "FINALIZED", "COMPLETED"]
+)
+item["is_allotment_done"] = is_allotment_finalized
+
 
                     # If not present in offer root, probe sub-endpoints
                     if not cats:
@@ -538,6 +545,7 @@ def run_pipeline():
                 "listingPrice": listing_price,
                 "listingGainPercent": listing_gain_pct,
                 "registrarName": reg_name,
+                "isAllotmentDone": bool(item.get("is_allotment_done", False)),
                 "registrarUrl": reg_url,
                 "rhpPdfUrl": rhp_url,
                 "drhpPdfUrl": drhp_url
