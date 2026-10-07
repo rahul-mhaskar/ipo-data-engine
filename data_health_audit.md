@@ -1,6 +1,6 @@
 # IPO Pipeline Data Health Audit
 
-**Last Sync (UTC):** 2026-10-07 04:44:05 UTC
+**Last Sync (UTC):** 2026-10-07 06:56:46 UTC
 
 **Primary Active Source:** UPSTOX_OFFICIAL
 **Total Records Ingested:** 62
