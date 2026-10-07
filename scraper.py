@@ -430,9 +430,11 @@ def run_pipeline():
             sub_hni = float(item.get("subscription_hni", 0.0))
             sub_qib = float(item.get("subscription_qib", 0.0))
 
-            # CACHE PINNING: If Upstox purged historical category breakdowns, preserve from previous runs
+            # CACHE PINNING: Preserve subscription breakdown, critical dates, and issue size from previous runs
             if norm_key in previous_cache:
                 prev = previous_cache[norm_key]
+                
+                # 1. Preserve Subscription Breakdown
                 if sub_retail <= 0.0:
                     sub_retail = float(prev.get("subscriptionRetail", 0.0))
                 if sub_hni <= 0.0:
@@ -441,6 +443,16 @@ def run_pipeline():
                     sub_qib = float(prev.get("subscriptionQIB", 0.0))
                 if total_sub <= 0.0:
                     total_sub = float(prev.get("subscriptionTotal", 0.0))
+
+                # 2. Preserve Critical Lifecycle Dates if Upstox drops them post-close
+                if (not list_d or list_d == "To Be Updated") and prev.get("listingDate") not in [None, "To Be Updated", ""]:
+                    list_d = prev.get("listingDate")
+                if (not allot_d or allot_d == "To Be Updated") and prev.get("allotmentDate") not in [None, "To Be Updated", ""]:
+                    allot_d = prev.get("allotmentDate")
+                if (not open_d or open_d == "To Be Updated") and prev.get("openDate") not in [None, "To Be Updated", ""]:
+                    open_d = prev.get("openDate")
+                if (not close_d or close_d == "To Be Updated") and prev.get("closeDate") not in [None, "To Be Updated", ""]:
+                    close_d = prev.get("closeDate")
 
             # Preserve issue size from cache if current run returns 0.0
             issue_size_cr = float(item.get("issue_size_cr") or 0.0)
