@@ -5,6 +5,8 @@ import sys
 import time
 import requests
 from datetime import datetime, timezone, timedelta
+import firebase_admin
+from firebase_admin import credentials, messaging
 
 FILE_PATH = "ipos.json"
 AUDIT_LOG_PATH = "data_health_audit.md"
@@ -38,6 +40,42 @@ SEBI_REGISTRARS = [
     ("alankit", "Alankit Assignments", "https://www.alankit.com/"),
     ("abhipra", "Abhipra Capital", "https://www.abhipra.com/")
 ]
+
+# ----------------- FIREBASE ADMIN INITIALIZATION -----------------
+FIREBASE_CREDS_RAW = os.getenv("FIREBASE_SERVICE_ACCOUNT", "").strip()
+FIREBASE_APP_INITIALIZED = False
+
+if FIREBASE_CREDS_RAW:
+    try:
+        cred_dict = json.loads(FIREBASE_CREDS_RAW)
+        cred = credentials.Certificate(cred_dict)
+        firebase_admin.initialize_app(cred)
+        FIREBASE_APP_INITIALIZED = True
+        print(">>> [Firebase] Admin SDK initialized successfully.", flush=True)
+    except Exception as e:
+        print(f">>> [Firebase] Initialization notice: {e}", flush=True)
+
+def send_push_notification(title: str, body: str, ipo_id: str, channel_type: str = "allotment_alerts"):
+    """Dispatches a native FCM broadcast to all devices subscribed to 'ipo_alerts'."""
+    if not FIREBASE_APP_INITIALIZED:
+        return
+    try:
+        message = messaging.Message(
+            notification=messaging.Notification(
+                title=title,
+                body=body,
+            ),
+            data={
+                "ipo_id": str(ipo_id),
+                "channel_type": channel_type
+            },
+            topic="ipo_alerts"
+        )
+        response = messaging.send(message)
+        print(f"      [FCM Push Sent] {title} -> Response: {response}", flush=True)
+    except Exception as e:
+        print(f"      [FCM Push Error] Failed to send '{title}': {e}", flush=True)
+
 
 def clean_num_or_none(val):
     if val is None or val == "":
@@ -155,7 +193,6 @@ def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0
             if today < l:
                 return "CLOSED"
             elif today == l:
-                # Indian exchanges commence normal trading for new listings at 10:00 AM IST
                 is_after_10am = (now_ist.hour > 10) or (now_ist.hour == 10 and now_ist.minute >= 0)
                 if is_after_10am and listing_price > 0.0:
                     return "LISTED"
@@ -247,7 +284,6 @@ def try_fetch_upstox():
                     item["rhp_url"] = details.get("rhp_url")
                     item["drhp_url"] = details.get("drhp_url")
 
-                    # Prioritize Total Public Issue Size (Fresh Issue + Offer For Sale)
                     raw_total_size = (
                         details.get("total_issue_size") or 
                         details.get("issue_size") or 
@@ -292,7 +328,6 @@ def try_fetch_upstox():
                     )
                     item["listing_date"] = timeline.get("listing_date")
 
-                    # Check if registrar has finalized allotment
                     is_allotment_finalized = bool(
                         details.get("is_allotment_done") or 
                         str(details.get("allotment_status", "")).upper() in ["ALLOTTED", "FINALIZED", "COMPLETED"]
@@ -303,14 +338,12 @@ def try_fetch_upstox():
                     item["registrar_name"] = reg_info.get("name")
                     item["registrar_url"] = reg_info.get("website")
 
-                    # Total aggregate subscription
                     item["total_subscription"] = (
                         clean_num_or_none(details.get("total_subscription")) or 
                         clean_num_or_none(item.get("total_subscription")) or 
                         0.0
                     )
 
-                    # Extract category subscription list
                     cats = []
                     for k in ["categories", "distribution", "bidding_details", "investor_categories", "sub_categories"]:
                         val = details.get(k)
@@ -322,7 +355,6 @@ def try_fetch_upstox():
                             if cats:
                                 break
 
-                    # If not present in offer root, probe sub-endpoints
                     if not cats:
                         for endpoint_suffix in ["subscriptions", "bids", "details"]:
                             try:
@@ -349,8 +381,8 @@ def try_fetch_upstox():
                                 c.get("subscription_rate") or 
                                 c.get("rate") or 
                                 c.get("times_subscribed") or 
-                                c.get("subscription") or
-                                c.get("oversubscription") or
+                                c.get("subscription") or 
+                                c.get("oversubscription") or 
                                 c.get("value")
                             ) or 0.0
 
@@ -466,7 +498,7 @@ def run_pipeline():
             if listing_price <= 0.0 and norm_key in previous_cache:
                 listing_price = float(previous_cache[norm_key].get("listingPrice", 0.0))
 
-            # 3. # Live Quote Fallback: Probe live market quotes on or past listing date
+            # 3. Live Quote Fallback: Probe live market quotes on or past listing date
             if listing_price <= 0.0 and item.get("symbol"):
                 parsed_list_d = parse_date_or_none(item.get("listing_date"))
                 today_ist_str = datetime.now(IST).strftime("%Y-%m-%d")
@@ -490,7 +522,7 @@ def run_pipeline():
                 listing_price=listing_price
             )
 
-                        # Registrar mapping (Prioritizes standardized SEBI deep-links over stale cached URLs)
+            # Registrar mapping (Prioritizes standardized SEBI deep-links over stale cached URLs)
             reg_name, reg_url = None, None
             if norm_key in manual_overrides:
                 reg_name, reg_url = manual_overrides[norm_key]
@@ -506,7 +538,6 @@ def run_pipeline():
                 search_target = f"{raw_reg} {raw_url}".lower().strip()
 
                 if search_target:
-                    # Always match against SEBI_REGISTRARS first so updated endpoints overwrite old links
                     for pat, name, url in SEBI_REGISTRARS:
                         if pat in search_target:
                             reg_name, reg_url = name, url
@@ -517,7 +548,6 @@ def run_pipeline():
                 else:
                     reg_name = "To Be Updated"
                     reg_url = "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
-
 
             sym = item.get("symbol")
             if not sym or str(sym).strip() in ["None", "null", ""]:
@@ -556,6 +586,41 @@ def run_pipeline():
                 "rhpPdfUrl": rhp_url,
                 "drhpPdfUrl": drhp_url
             }
+
+            # ----------------- REAL-TIME PUSH NOTIFICATION BROADCASTS -----------------
+            if norm_key in previous_cache:
+                prev = previous_cache[norm_key]
+                prev_status = prev.get("status", "")
+                prev_allot = bool(prev.get("isAllotmentDone", False))
+                curr_allot = bool(cand.get("isAllotmentDone", False))
+
+                # 1. Allotment Live Alert (Highest Engagement)
+                if not prev_allot and curr_allot:
+                    send_push_notification(
+                        title=f"🎯 Allotment Out: {cand['name']}",
+                        body=f"Basis of Allotment is now live on {cand['registrarName']}. Tap to check status!",
+                        ipo_id=cand["id"],
+                        channel_type="allotment_alerts"
+                    )
+                # 2. Bidding Opens
+                elif prev_status == "UPCOMING" and cand["status"] == "OPEN":
+                    p_str = f"₹{int(cand['issuePriceMin'])}-₹{int(cand['issuePriceMax'])}" if cand['issuePriceMax'] > 0 else "Price TBA"
+                    send_push_notification(
+                        title=f"📢 Bidding Open: {cand['name']}",
+                        body=f"IPO is now open for bidding ({p_str}). Lot size: {cand['lotSize']} shares.",
+                        ipo_id=cand["id"],
+                        channel_type="market_updates"
+                    )
+                # 3. Listing Debut Discovery
+                elif prev_status in ["CLOSED", "UPCOMING"] and cand["status"] == "LISTED":
+                    gain_prefix = "+" if cand["listingGainPercent"] >= 0 else ""
+                    send_push_notification(
+                        title=f"🚀 Listed: {cand['name']}",
+                        body=f"Debut trade at ₹{cand['listingPrice']} ({gain_prefix}{cand['listingGainPercent']}% vs Issue Price).",
+                        ipo_id=cand["id"],
+                        channel_type="market_updates"
+                    )
+
             if validate_record(cand):
                 final_dataset.append(cand)
                 idx_counter += 1
@@ -577,7 +642,6 @@ def run_pipeline():
         print("CRITICAL: Ingestion failed. Preserving existing ipos.json.", flush=True)
         return
 
-    # Write the updated records to ipos.json
     with open(FILE_PATH, "w", encoding="utf-8") as f:
         json.dump(final_dataset, f, indent=2, ensure_ascii=False)
 
