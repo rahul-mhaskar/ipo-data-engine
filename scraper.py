@@ -140,26 +140,22 @@ def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0
         c = datetime.strptime(close_d, "%Y-%m-%d").date() if close_d and close_d != "To Be Updated" else None
         l = datetime.strptime(list_d, "%Y-%m-%d").date() if list_d and list_d != "To Be Updated" else None
 
-        # 1. Before Open Date
         if o and today < o:
             return "UPCOMING"
 
-        # 2. Bidding Window (Strict 5:00 PM IST cutoff on Closing Date)
+        # Bidding Window Cutoff (Strict 5:00 PM IST)
         if o and c:
             if o <= today < c:
                 return "OPEN"
             elif today == c:
-                # Exchange bidding closes at 17:00 IST (5:00 PM)
-                if now_ist.hour < 17:
-                    return "OPEN"
-                else:
-                    return "CLOSED"
+                return "OPEN" if now_ist.hour < 17 else "CLOSED"
 
-        # 3. Listing Day Logic (Strictly verified after 10:00 AM IST)
+        # Listing Day Transition Logic (10:00 AM IST)
         if l:
             if today < l:
                 return "CLOSED"
             elif today == l:
+                # Indian exchanges commence normal trading for new listings at 10:00 AM IST
                 is_after_10am = (now_ist.hour > 10) or (now_ist.hour == 10 and now_ist.minute >= 0)
                 if is_after_10am and listing_price > 0.0:
                     return "LISTED"
@@ -168,7 +164,6 @@ def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0
             elif today > l:
                 return "LISTED"
 
-        # 4. Post-Close Buffer
         if c and today > c:
             return "CLOSED"
 
@@ -459,7 +454,7 @@ def run_pipeline():
             if listing_price <= 0.0 and norm_key in previous_cache:
                 listing_price = float(previous_cache[norm_key].get("listingPrice", 0.0))
 
-            # 3. Live Quote Fallback: Probe live market quotes on or past listing date
+            # 3. # Live Quote Fallback: Probe live market quotes on or past listing date
             if listing_price <= 0.0 and item.get("symbol"):
                 parsed_list_d = parse_date_or_none(item.get("listing_date"))
                 today_ist_str = datetime.now(IST).strftime("%Y-%m-%d")
@@ -469,7 +464,7 @@ def run_pipeline():
                         headers={"Accept": "application/json", "Authorization": f"Bearer {UPSTOX_TOKEN}"}
                     )
 
-            # 4. Calculate Listing Gain % against Cap Price
+            # Calculate Listing Gain % against Cap Price
             listing_gain_pct = 0.0
             if listing_price > 0.0 and price_max > 0.0:
                 listing_gain_pct = round(((listing_price - price_max) / price_max) * 100.0, 2)
