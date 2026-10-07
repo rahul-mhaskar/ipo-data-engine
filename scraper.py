@@ -483,19 +483,23 @@ def run_pipeline():
                 listing_price=listing_price
             )
 
-            # Registrar mapping (checks both name and URL strings)
+                        # Registrar mapping (Prioritizes standardized SEBI deep-links over stale cached URLs)
             reg_name, reg_url = None, None
             if norm_key in manual_overrides:
                 reg_name, reg_url = manual_overrides[norm_key]
-            elif norm_key in previous_cache and previous_cache[norm_key].get("registrarName") not in ["To Be Updated", "To Be Announced", None]:
-                reg_name = previous_cache[norm_key].get("registrarName")
-                reg_url = previous_cache[norm_key].get("registrarUrl")
             else:
                 raw_reg = item.get("registrar_name") or ""
                 raw_url = item.get("registrar_url") or ""
+                
+                # Check previous cache for fallback text if Upstox returned blank
+                if not raw_reg and norm_key in previous_cache:
+                    raw_reg = previous_cache[norm_key].get("registrarName") or ""
+                    raw_url = previous_cache[norm_key].get("registrarUrl") or ""
+
                 search_target = f"{raw_reg} {raw_url}".lower().strip()
 
                 if search_target:
+                    # Always match against SEBI_REGISTRARS first so updated endpoints overwrite old links
                     for pat, name, url in SEBI_REGISTRARS:
                         if pat in search_target:
                             reg_name, reg_url = name, url
@@ -506,6 +510,7 @@ def run_pipeline():
                 else:
                     reg_name = "To Be Updated"
                     reg_url = "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
+
 
             sym = item.get("symbol")
             if not sym or str(sym).strip() in ["None", "null", ""]:
