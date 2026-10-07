@@ -16,10 +16,9 @@ on:
 
   workflow_dispatch:
 
-# Workflow-level permissions required for git push and keepalive runner inspection
+# Workflow permissions for committing data back to main
 permissions:
   contents: write
-  actions: write
 
 # Cancels redundant queued/running jobs on concurrent trigger
 concurrency:
@@ -41,9 +40,6 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
-      - name: Keepalive Workflow
-        uses: gautamkrishnar/keepalive-workflow@v2
 
       - name: Install Dependencies
         run: |
