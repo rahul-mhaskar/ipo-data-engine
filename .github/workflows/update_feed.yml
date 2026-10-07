@@ -16,7 +16,12 @@ on:
 
   workflow_dispatch:
 
-# Cancels redundant queued/running jobs on concurrent trigger to prevent runner pile-ups
+# Workflow-level permissions required for git push and keepalive runner inspection
+permissions:
+  contents: write
+  actions: write
+
+# Cancels redundant queued/running jobs on concurrent trigger
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -25,8 +30,6 @@ jobs:
   run-scraper:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    permissions:
-      contents: write
 
     steps:
       - name: Checkout Repository
@@ -34,15 +37,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Keepalive Workflow
-        uses: gautamkrishnar/keepalive-workflow@v2
-        with:
-          gh_token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
+      - name: Keepalive Workflow
+        uses: gautamkrishnar/keepalive-workflow@v2
 
       - name: Install Dependencies
         run: |
