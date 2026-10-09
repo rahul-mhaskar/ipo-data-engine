@@ -29,6 +29,62 @@
   },
   {
     "id": "2",
+    "name": "Ravita Engineering Services",
+    "symbol": "RAVITA",
+    "category": "SME",
+    "status": "UPCOMING",
+    "issueSizeCr": 116.0,
+    "issuePriceMin": 105.0,
+    "issuePriceMax": 112.0,
+    "lotSize": 1200,
+    "openDate": "2026-10-13",
+    "closeDate": "2026-10-15",
+    "allotmentDate": "2026-10-16",
+    "listingDate": "2026-10-21",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Link Intime / MUFG",
+    "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.vivro.net/uploads/team/1791441800230.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=Ravita+Engineering+Services+IPO+DRHP+file+SEBI"
+  },
+  {
+    "id": "3",
+    "name": "Vaibhav Vyapaar",
+    "symbol": "LOANFRONT",
+    "category": "SME",
+    "status": "UPCOMING",
+    "issueSizeCr": 42.0,
+    "issuePriceMin": 51.0,
+    "issuePriceMax": 54.0,
+    "lotSize": 2000,
+    "openDate": "2026-10-13",
+    "closeDate": "2026-10-15",
+    "allotmentDate": "2026-10-16",
+    "listingDate": "2026-10-21",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KFin Technologies",
+    "registrarUrl": "https://ipostatus.kfintech.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Red-Heering-Prospectus_VVL.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=Vaibhav+Vyapaar+IPO+DRHP+file+SEBI"
+  },
+  {
+    "id": "4",
     "name": "Fusion CX",
     "symbol": "FUSIONC",
     "category": "Mainboard",
@@ -56,7 +112,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Fusion+CX+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "3",
+    "id": "5",
     "name": "Parle Products",
     "symbol": "PARLEPR",
     "category": "Mainboard",
@@ -84,7 +140,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Parle+Products+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "4",
+    "id": "6",
     "name": "Twinkle Papers",
     "symbol": "TWINKLE",
     "category": "SME",
@@ -112,7 +168,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Twinkle+Papers+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "5",
+    "id": "7",
     "name": "Sri Priyanka Geo Commex",
     "symbol": "SPGCL",
     "category": "SME",
@@ -140,7 +196,7 @@
     "drhpPdfUrl": "https://nsearchives.nseindia.com/emerge/corporates/content/Registration_14082025195719_SriPriyankaGeoCommexLimitedDRHP.pdf"
   },
   {
-    "id": "6",
+    "id": "8",
     "name": "Reliance Jio",
     "symbol": "RELIANC",
     "category": "Mainboard",
@@ -168,7 +224,7 @@
     "drhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/jun-2026/jio-platforms-ltd-drhp_102248.html"
   },
   {
-    "id": "7",
+    "id": "9",
     "name": "Flipkart",
     "symbol": "FLIPKAR",
     "category": "Mainboard",
@@ -196,7 +252,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Flipkart+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "8",
+    "id": "10",
     "name": "Prestige Hospitality Ventures",
     "symbol": "PRESTIG",
     "category": "Mainboard",
@@ -224,7 +280,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Prestige+Hospitality+Ventures+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "9",
+    "id": "11",
     "name": "Credila Financial Services",
     "symbol": "CREDILA",
     "category": "Mainboard",
@@ -252,7 +308,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Credila+Financial+Services+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "10",
+    "id": "12",
     "name": "PhonePe",
     "symbol": "PHONEPE",
     "category": "Mainboard",
@@ -280,7 +336,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=PhonePe+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "11",
+    "id": "13",
     "name": "Zepto",
     "symbol": "ZEPTO",
     "category": "Mainboard",
@@ -308,7 +364,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Zepto+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "12",
+    "id": "14",
     "name": "Solar91 Cleantech",
     "symbol": "SOLAR91",
     "category": "SME",
@@ -336,7 +392,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Solar91+Cleantech+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "13",
+    "id": "15",
     "name": "Hero FinCorp",
     "symbol": "HEROFIN",
     "category": "Mainboard",
@@ -364,7 +420,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Hero+FinCorp+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "14",
+    "id": "16",
     "name": "Deltatech Gaming",
     "symbol": "DELTATE",
     "category": "Mainboard",
@@ -392,7 +448,7 @@
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655459382467.pdf#page=1&zoom=page-width,-16,849"
   },
   {
-    "id": "15",
+    "id": "17",
     "name": "Biba Fashions",
     "symbol": "BIBAFAS",
     "category": "Mainboard",
@@ -420,7 +476,7 @@
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jul-2022/1659005306568.pdf#page=1&zoom=page-width,-16,764"
   },
   {
-    "id": "16",
+    "id": "18",
     "name": "Droom Technology",
     "symbol": "DROOMTE",
     "category": "Mainboard",
@@ -448,7 +504,7 @@
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/may-2023/1683610115492.pdf#page=1&zoom=page-width,-16,842"
   },
   {
-    "id": "17",
+    "id": "19",
     "name": "Puranik Builders",
     "symbol": "PURANIK",
     "category": "Mainboard",
@@ -476,7 +532,7 @@
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/sep-2022/1663916527724.pdf#page=1&zoom=page-width,-16,764"
   },
   {
-    "id": "18",
+    "id": "20",
     "name": "Bharat FIH",
     "symbol": "BHARATF",
     "category": "Mainboard",
@@ -504,7 +560,7 @@
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655876827634.pdf#page=1&zoom=page-width,-16,610"
   },
   {
-    "id": "19",
+    "id": "21",
     "name": "FabIndia",
     "symbol": "FABINDI",
     "category": "Mainboard",
@@ -532,7 +588,7 @@
     "drhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/nov-2022/fabindia-limited-corrigendum-to-drhp_64776.html"
   },
   {
-    "id": "20",
+    "id": "22",
     "name": "OYO",
     "symbol": "OYO",
     "category": "Mainboard",
@@ -560,7 +616,7 @@
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/nov-2022/1669613102669.pdf#page=1&zoom=page-width,-15,842"
   },
   {
-    "id": "21",
+    "id": "23",
     "name": "EBIXCASH",
     "symbol": "EBIXCAS",
     "category": "Mainboard",
@@ -588,7 +644,7 @@
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/oct-2021/1633066313151.pdf#page=1&zoom=page-width,-16,379"
   },
   {
-    "id": "22",
+    "id": "24",
     "name": "R.K.Fashion Accessories",
     "symbol": "RKFAL",
     "category": "SME",
@@ -616,7 +672,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=R.K.Fashion+Accessories+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "23",
+    "id": "25",
     "name": "TNA Solutions",
     "symbol": "TNA",
     "category": "SME",
@@ -644,7 +700,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=TNA+Solutions+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "24",
+    "id": "26",
     "name": "Acme India Industries",
     "symbol": "ACMERAIL",
     "category": "SME",
@@ -672,7 +728,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Acme+India+Industries+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "25",
+    "id": "27",
     "name": "Paramount Syntex",
     "symbol": "PARASYNTEX",
     "category": "SME",
@@ -700,7 +756,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Paramount+Syntex+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "26",
+    "id": "28",
     "name": "Shree TNB Polymers",
     "symbol": "SHREETNB",
     "category": "SME",
@@ -728,7 +784,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Shree+TNB+Polymers+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "27",
+    "id": "29",
     "name": "EverestIMS Technologies",
     "symbol": "EIMS",
     "category": "SME",
@@ -756,7 +812,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=EverestIMS+Technologies+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "28",
+    "id": "30",
     "name": "Eventions",
     "symbol": "EVENTIONS",
     "category": "SME",
@@ -784,7 +840,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Eventions+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "29",
+    "id": "31",
     "name": "Dove Soft",
     "symbol": "DSL",
     "category": "SME",
@@ -812,7 +868,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Dove+Soft+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "30",
+    "id": "32",
     "name": "SJP Ultrasonic",
     "symbol": "SJP",
     "category": "SME",
@@ -840,7 +896,7 @@
     "drhpPdfUrl": "https://www.bsesme.com/download/334252/SME_IPO%20InPrinciple/DPSJP_20250929205030.pdf"
   },
   {
-    "id": "31",
+    "id": "33",
     "name": "Omara Ventures India",
     "symbol": "OMARA",
     "category": "SME",
@@ -868,7 +924,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Omara+Ventures+India+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "32",
+    "id": "34",
     "name": "Sollfege Smart Electronics",
     "symbol": "SOLLFEGE",
     "category": "SME",
@@ -896,7 +952,7 @@
     "drhpPdfUrl": "https://assets.upstox.com/ipo/documents/drhp/DP_Sollfege_BSE_23042026_20260423120527_compressed.pdf"
   },
   {
-    "id": "33",
+    "id": "35",
     "name": "Nityas Gems & Jewellery",
     "symbol": "NITYAS",
     "category": "Mainboard",
@@ -924,7 +980,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Nityas+Gems+&+Jewellery+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "34",
+    "id": "36",
     "name": "Vishal Nirmiti",
     "symbol": "VNL",
     "category": "Mainboard",
@@ -952,7 +1008,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Vishal+Nirmiti+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "35",
+    "id": "37",
     "name": "Green Asia Impex",
     "symbol": "GREENASIA",
     "category": "SME",
@@ -980,7 +1036,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Green+Asia+Impex+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "36",
+    "id": "38",
     "name": "Black Opal Consultants",
     "symbol": "BLACKOPAL",
     "category": "SME",
@@ -1008,7 +1064,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Black+Opal+Consultants+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "37",
+    "id": "39",
     "name": "Papadmalji Agro Foods",
     "symbol": "PAPADMALJI",
     "category": "SME",
@@ -1036,7 +1092,7 @@
     "drhpPdfUrl": "https://assets.upstox.com/ipo/documents/drhp/Registration_27122025223037_DRHP_compressed.pdf"
   },
   {
-    "id": "38",
+    "id": "40",
     "name": "Vans Electroengineerings",
     "symbol": "VANS",
     "category": "SME",
@@ -1064,7 +1120,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Vans+Electroengineerings+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "39",
+    "id": "41",
     "name": "Pind Hospitality",
     "symbol": "PIND",
     "category": "SME",
@@ -1092,7 +1148,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Pind+Hospitality+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "40",
+    "id": "42",
     "name": "Shah Investor’s Home",
     "symbol": "SHAHINVEST",
     "category": "Mainboard",
@@ -1120,7 +1176,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Shah+Investor’s+Home+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "41",
+    "id": "43",
     "name": "Shivchem Agro",
     "symbol": "SHIVCHEM",
     "category": "SME",
@@ -1148,7 +1204,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Shivchem+Agro+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "42",
+    "id": "44",
     "name": "SRIT India",
     "symbol": "SRIT",
     "category": "Mainboard",
@@ -1176,7 +1232,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=SRIT+India+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "43",
+    "id": "45",
     "name": "Acme Universal Safezone 9",
     "symbol": "ACMEUNIV",
     "category": "SME",
@@ -1204,7 +1260,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Acme+Universal+Safezone+9+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "44",
+    "id": "46",
     "name": "Sai Urja Indo Ventures",
     "symbol": "SAIURJA",
     "category": "SME",
@@ -1232,7 +1288,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Sai+Urja+Indo+Ventures+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "45",
+    "id": "47",
     "name": "Runwal Enterprises",
     "symbol": "RUNWALENTR",
     "category": "Mainboard",
@@ -1260,7 +1316,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Runwal+Enterprises+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "46",
+    "id": "48",
     "name": "German Green Steel & Power",
     "symbol": "GERMAN",
     "category": "Mainboard",
@@ -1288,7 +1344,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=German+Green+Steel+&+Power+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "47",
+    "id": "49",
     "name": "Orient Cables (India)",
     "symbol": "ORIENTCABL",
     "category": "Mainboard",
@@ -1316,7 +1372,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Orient+Cables+(India)+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "48",
+    "id": "50",
     "name": "Acevector (Snapdeal)",
     "symbol": "ACEVECTOR",
     "category": "Mainboard",
@@ -1344,7 +1400,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Acevector+(Snapdeal)+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "49",
+    "id": "51",
     "name": "Himalayan Solar",
     "symbol": "HIMALAYAN",
     "category": "SME",
@@ -1372,7 +1428,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Himalayan+Solar+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "50",
+    "id": "52",
     "name": "Dudani Retail",
     "symbol": "DUDANI",
     "category": "SME",
@@ -1400,7 +1456,7 @@
     "drhpPdfUrl": "https://www.bsesme.com/download/376098/SME_IPO%20InPrinciple/DP_Dudani_Final_20260331230446.pdf"
   },
   {
-    "id": "51",
+    "id": "53",
     "name": "Bench Mark Infotech Services",
     "symbol": "BMISL",
     "category": "SME",
@@ -1428,7 +1484,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Bench+Mark+Infotech+Services+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "52",
+    "id": "54",
     "name": "A-One Steels India",
     "symbol": "AONESTEELS",
     "category": "Mainboard",
@@ -1456,7 +1512,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=A-One+Steels+India+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "53",
+    "id": "55",
     "name": "Moneyview",
     "symbol": "MONEYVIEW",
     "category": "Mainboard",
@@ -1484,7 +1540,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Moneyview+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "54",
+    "id": "56",
     "name": "Peshwa Wheat",
     "symbol": "PESHWA",
     "category": "SME",
@@ -1512,7 +1568,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Peshwa+Wheat+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "55",
+    "id": "57",
     "name": "Roopa Screen",
     "symbol": "ROOPA",
     "category": "SME",
@@ -1540,7 +1596,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Roopa+Screen+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "56",
+    "id": "58",
     "name": "ArMee Infotech",
     "symbol": "ARMEE",
     "category": "Mainboard",
@@ -1568,7 +1624,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=ArMee+Infotech+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "57",
+    "id": "59",
     "name": "S.K.Offset",
     "symbol": "SKOFFSET",
     "category": "SME",
@@ -1596,7 +1652,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=S.K.Offset+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "58",
+    "id": "60",
     "name": "Unitec Fibres",
     "symbol": "UNITEC",
     "category": "SME",
@@ -1624,7 +1680,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Unitec+Fibres+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "59",
+    "id": "61",
     "name": "Adroit Industries (India)",
     "symbol": "ADROITIND",
     "category": "Mainboard",
@@ -1650,7 +1706,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Adroit+Industries+(India)+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "60",
+    "id": "62",
     "name": "Swastika Infra",
     "symbol": "SWASTIKAIN",
     "category": "Mainboard",
@@ -1676,7 +1732,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Swastika+Infra+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "61",
+    "id": "63",
     "name": "Liqvd Digital India",
     "symbol": "LIQVD",
     "category": "SME",
@@ -1702,7 +1758,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Liqvd+Digital+India+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "62",
+    "id": "64",
     "name": "Pooja Logistics",
     "symbol": "POOJALOGIS",
     "category": "SME",
@@ -1728,7 +1784,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Pooja+Logistics+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "63",
+    "id": "65",
     "name": "Coreintegra Consulting Services",
     "symbol": "COREIN",
     "category": "SME",
