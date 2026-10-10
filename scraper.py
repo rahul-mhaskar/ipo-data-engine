@@ -224,19 +224,24 @@ def sync_and_save_gmp(active_unlisted_ipos, existing_gmp):
     updated_gmp_map = {}
     for ipo in active_unlisted_ipos:
         norm_key = clean_company_name(ipo["name"])
-        saved = existing_gmp.get(norm_key, {})
-        val = float(saved.get("gmp", 0.0) if isinstance(saved, dict) else saved)
+        saved_entry = existing_gmp.get(norm_key, {})
         
+        # Read either 'gmp' or legacy 'gmp_in_rs' safely
+        if isinstance(saved_entry, dict):
+            manual_val = float(saved_entry.get("gmp") or saved_entry.get("gmp_in_rs") or 0.0)
+        else:
+            manual_val = float(saved_entry or 0.0)
+            
         updated_gmp_map[norm_key] = {
             "name": ipo["name"],
-            "gmp": val
+            "gmp": manual_val
         }
 
     try:
         with open(GMP_DATA_PATH, "w", encoding="utf-8") as f:
             json.dump(updated_gmp_map, f, indent=2, ensure_ascii=False)
-    except Exception:
-        pass
+    except Exception as e:
+        print(f">>> [GMP] Sync save notice: {e}", flush=True)
 
     return updated_gmp_map
 
@@ -647,13 +652,16 @@ def run_pipeline():
     # Synchronize GMP storage file
     synced_gmp_map = sync_and_save_gmp(active_unlisted_candidates, existing_gmp)
 
-    # ----------------- ATTACH GMP WITH HISTORICAL PERSISTENCE -----------------
+        # ----------------- ATTACH GMP WITH HISTORICAL PERSISTENCE -----------------
     for item in final_dataset:
         k = clean_company_name(item.get("name", ""))
+        price_max = float(item.get("issuePriceMax", 0.0))
+
         if item.get("status") != "LISTED":
             if k in synced_gmp_map:
-                item["gmpAmount"] = synced_gmp_map[k]["gmp_in_rs"]
-                item["gmpPercent"] = synced_gmp_map[k]["calculated_gmp_pct"]
+                gmp_val = float(synced_gmp_map[k].get("gmp", 0.0))
+                item["gmpAmount"] = gmp_val
+                item["gmpPercent"] = round((gmp_val / price_max * 100.0), 2) if (price_max > 0 and gmp_val > 0) else 0.0
         else:
             # Listed IPOs: Permanently pin the last recorded pre-listing GMP
             if k in previous_cache:
