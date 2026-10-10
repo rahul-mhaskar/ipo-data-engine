@@ -11,7 +11,7 @@ from firebase_admin import credentials, messaging
 FILE_PATH = "ipos.json"
 AUDIT_LOG_PATH = "data_health_audit.md"
 OVERRIDES_PATH = "manual_overrides.json"
-GMP_DATA_PATH = "gmp_data.json"  # Manual GMP file: {"cleanname": gmp_in_rupees}
+GMP_DATA_PATH = "gmp_data.json"
 
 UPSTOX_BASE_URL = "https://api.upstox.com/v2"
 UPSTOX_TOKEN = os.getenv("UPSTOX_ACCESS_TOKEN", "").strip()
@@ -82,12 +82,7 @@ def clean_num_or_none(val):
         return None
     val_str = str(val).strip().replace(",", "")
     m = re.search(r"[-+]?\d*\.?\d+", val_str)
-    if m:
-        try:
-            return float(m.group(0))
-        except ValueError:
-            return None
-    return None
+    return float(m.group(0)) if m else None
 
 def clean_company_name(name: str) -> str:
     if not name:
@@ -141,7 +136,6 @@ def parse_date_or_none(date_str):
 def fetch_live_listing_quote(symbol: str, headers: dict) -> float:
     if not symbol or symbol == "IPO":
         return 0.0
-    
     clean_sym = symbol.strip().upper()
     keys_to_try = [
         f"NSE_EQ|{clean_sym}",
@@ -149,7 +143,6 @@ def fetch_live_listing_quote(symbol: str, headers: dict) -> float:
         f"NSE_EQ|{clean_sym}-ST",
         f"BSE_EQ|{clean_sym}"
     ]
-    
     for instrument_key in keys_to_try:
         try:
             url = f"{UPSTOX_BASE_URL}/market-quote/quotes?instrument_key={instrument_key}"
@@ -180,14 +173,12 @@ def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0
         if o and today < o:
             return "UPCOMING"
 
-        # Bidding Cutoff at 5:00 PM IST
         if o and c:
             if o <= today < c:
                 return "OPEN"
             elif today == c:
                 return "OPEN" if now_ist.hour < 17 else "CLOSED"
 
-        # Listing Day Logic
         if l:
             if today < l:
                 return "CLOSED"
@@ -202,7 +193,6 @@ def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0
 
         if c and today > c:
             return "CLOSED"
-
     except Exception:
         pass
 
@@ -220,16 +210,40 @@ def validate_record(item: dict) -> bool:
         return False
     return True
 
-def load_manual_gmp():
-    """Loads manual GMP data from gmp_data.json if present."""
+# ----------------- DYNAMIC GMP DATA STORAGE -----------------
+def load_existing_gmp():
     if os.path.exists(GMP_DATA_PATH):
         try:
             with open(GMP_DATA_PATH, "r", encoding="utf-8") as f:
-                raw_map = json.load(f)
-                return {clean_company_name(k): float(v) for k, v in raw_map.items()}
-        except Exception as e:
-            print(f">>> [GMP] Notice loading gmp_data.json: {e}", flush=True)
+                return json.load(f)
+        except Exception:
+            pass
     return {}
+
+def sync_and_save_gmp(active_unlisted_ipos, existing_gmp):
+    updated_gmp_map = {}
+    for ipo in active_unlisted_ipos:
+        norm_key = clean_company_name(ipo["name"])
+        price_max = float(ipo.get("issuePriceMax", 0.0))
+        saved_entry = existing_gmp.get(norm_key, {})
+        manual_val = float(saved_entry.get("gmp_in_rs", 0.0) if isinstance(saved_entry, dict) else saved_entry)
+        pct = round((manual_val / price_max * 100.0), 2) if (price_max > 0 and manual_val > 0) else 0.0
+        
+        updated_gmp_map[norm_key] = {
+            "name": ipo["name"],
+            "status": ipo["status"],
+            "issuePriceMax": price_max,
+            "gmp_in_rs": manual_val,
+            "calculated_gmp_pct": pct
+        }
+
+    try:
+        with open(GMP_DATA_PATH, "w", encoding="utf-8") as f:
+            json.dump(updated_gmp_map, f, indent=2, ensure_ascii=False)
+    except Exception as e:
+        print(f">>> [GMP] Sync save notice: {e}", flush=True)
+
+    return updated_gmp_map
 
 # ----------------- UPSTOX INGESTION -----------------
 def try_fetch_upstox():
@@ -258,15 +272,15 @@ def try_fetch_upstox():
             elif res.status_code in [401, 403]:
                 return None, f"Upstox Auth Token Expired / Invalid (HTTP {res.status_code})."
         except Exception as e:
-            print(f"      Upstox query notice for {q}: {e}", flush=True)
+            print(f">>> Upstox query notice for {q}: {e}", flush=True)
 
     if not all_upstox_items:
         try:
             res = requests.get(f"{UPSTOX_BASE_URL}/ipos", headers=headers, timeout=6)
             if res.status_code == 200:
                 all_upstox_items = res.json().get("data", [])
-        except Exception as e:
-            print(f"      Plain /ipos notice: {e}", flush=True)
+        except Exception:
+            pass
 
     deduped = {}
     for it in all_upstox_items:
@@ -311,7 +325,6 @@ def try_fetch_upstox():
                     else:
                         fresh_sz = clean_num_or_none(details.get("fresh_issue_size") or details.get("fresh_issue")) or 0.0
                         ofs_sz = clean_num_or_none(details.get("ofs_issue_size") or details.get("offer_for_sale_size")) or 0.0
-                        
                         if (fresh_sz + ofs_sz) > 0:
                             combined = fresh_sz + ofs_sz
                             issue_size_cr = round(combined / 10000000.0, 2) if combined > 100000 else round(combined, 2)
@@ -437,16 +450,16 @@ def run_pipeline():
         except Exception:
             pass
 
-    gmp_lookup = load_manual_gmp()
+    existing_gmp = load_existing_gmp()
 
     print(">>> [Phase 2/3] Executing Upstox data ingestion...", flush=True)
     final_dataset = []
+    active_unlisted_candidates = []
     active_source = "None"
     upstox_data, status_msg = try_fetch_upstox()
 
     today_ist_str = datetime.now(IST).strftime("%Y-%m-%d")
     now_hour = datetime.now(IST).hour
-    now_minute = datetime.now(IST).minute
 
     if upstox_data:
         active_source = "UPSTOX_OFFICIAL"
@@ -476,11 +489,9 @@ def run_pipeline():
             sub_hni = float(item.get("subscription_hni", 0.0))
             sub_qib = float(item.get("subscription_qib", 0.0))
 
-            # CACHE PINNING: Preserve subscription breakdown, critical dates, and issue size from previous runs
+            # CACHE PINNING
             if norm_key in previous_cache:
                 prev = previous_cache[norm_key]
-                
-                # 1. Preserve Subscription Breakdown
                 if sub_retail <= 0.0:
                     sub_retail = float(prev.get("subscriptionRetail", 0.0))
                 if sub_hni <= 0.0:
@@ -490,7 +501,6 @@ def run_pipeline():
                 if total_sub <= 0.0:
                     total_sub = float(prev.get("subscriptionTotal", 0.0))
 
-                # 2. Preserve Critical Lifecycle Dates if Upstox drops them post-close
                 if (not list_d or list_d == "To Be Updated") and prev.get("listingDate") not in [None, "To Be Updated", ""]:
                     list_d = prev.get("listingDate")
                 if (not allot_d or allot_d == "To Be Updated") and prev.get("allotmentDate") not in [None, "To Be Updated", ""]:
@@ -500,19 +510,14 @@ def run_pipeline():
                 if (not close_d or close_d == "To Be Updated") and prev.get("closeDate") not in [None, "To Be Updated", ""]:
                     close_d = prev.get("closeDate")
 
-            # Preserve issue size from cache if current run returns 0.0
             issue_size_cr = float(item.get("issue_size_cr") or 0.0)
             if issue_size_cr <= 0.0 and norm_key in previous_cache:
                 issue_size_cr = float(previous_cache[norm_key].get("issueSizeCr", 0.0))
                 
-            # 1. Primary listing price from Upstox IPO endpoint
             listing_price = float(clean_num_or_none(item.get("listing_price")) or 0.0)
-
-            # 2. Historical pin: Preserve previously captured debut price
             if listing_price <= 0.0 and norm_key in previous_cache:
                 listing_price = float(previous_cache[norm_key].get("listingPrice", 0.0))
 
-            # 3. Live Quote Fallback: Probe live market quotes on or past listing date
             if listing_price <= 0.0 and item.get("symbol"):
                 parsed_list_d = parse_date_or_none(item.get("listing_date"))
                 if parsed_list_d and parsed_list_d <= today_ist_str:
@@ -521,12 +526,10 @@ def run_pipeline():
                         headers={"Accept": "application/json", "Authorization": f"Bearer {UPSTOX_TOKEN}"}
                     )
 
-            # Calculate Listing Gain % against Cap Price
             listing_gain_pct = 0.0
             if listing_price > 0.0 and price_max > 0.0:
                 listing_gain_pct = round(((listing_price - price_max) / price_max) * 100.0, 2)
 
-            # Status determination gated by IST clock and discovered price
             status = determine_status(
                 open_d,
                 close_d,
@@ -535,7 +538,13 @@ def run_pipeline():
                 listing_price=listing_price
             )
 
-            # Registrar mapping
+            if status in ["OPEN", "UPCOMING", "CLOSED"]:
+                active_unlisted_candidates.append({
+                    "name": clean_name,
+                    "status": status,
+                    "issuePriceMax": price_max
+                })
+
             reg_name, reg_url = None, None
             if norm_key in manual_overrides:
                 reg_name, reg_url = manual_overrides[norm_key]
@@ -570,15 +579,6 @@ def run_pipeline():
             rhp_url = item.get("rhp_url") or f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+RHP+file+SEBI"
             drhp_url = item.get("drhp_url") or f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+DRHP+file+SEBI"
 
-            # GMP Logic: Merge from gmp_lookup if available, else preserve cached value
-            gmp_amt = 0.0
-            if norm_key in gmp_lookup:
-                gmp_amt = float(gmp_lookup[norm_key])
-            elif norm_key in previous_cache:
-                gmp_amt = float(previous_cache[norm_key].get("gmpAmount", 0.0))
-
-            gmp_pct = round((gmp_amt / price_max * 100.0), 2) if (price_max > 0 and gmp_amt > 0) else 0.0
-
             cand = {
                 "id": str(idx_counter),
                 "name": clean_name,
@@ -593,8 +593,8 @@ def run_pipeline():
                 "closeDate": close_d or "To Be Updated",
                 "allotmentDate": allot_d,
                 "listingDate": list_d,
-                "gmpAmount": gmp_amt,
-                "gmpPercent": gmp_pct,
+                "gmpAmount": 0.0,
+                "gmpPercent": 0.0,
                 "subscriptionTotal": total_sub,
                 "subscriptionRetail": sub_retail,
                 "subscriptionHNI": sub_hni,
@@ -610,10 +610,8 @@ def run_pipeline():
                 "closeNotified": bool(previous_cache.get(norm_key, {}).get("closeNotified", False))
             }
 
-            # ----------------- STRICT PRODUCTION NOTIFICATION RULES -----------------
-            # 1. HARD GUARD: NEVER notify for LISTED IPOs
+            # ----------------- STRICT NOTIFICATION RULES -----------------
             if status != "LISTED":
-                # Rule A: Bidding Opens Today (Fires on open date in morning ~9:15-11:30 AM)
                 if open_d == today_ist_str and not cand["openNotified"] and now_hour >= 9:
                     p_str = f"₹{int(cand['issuePriceMin'])}-₹{int(cand['issuePriceMax'])}" if cand['issuePriceMax'] > 0 else "Price TBA"
                     send_push_notification(
@@ -624,7 +622,6 @@ def run_pipeline():
                     )
                     cand["openNotified"] = True
 
-                # Rule B: Bidding Closes Today (Urgency alert on closing date ~9:30-12:00 PM)
                 if close_d == today_ist_str and not cand["closeNotified"] and now_hour >= 9:
                     sub_str = f" (Subscribed {cand['subscriptionTotal']}x)" if cand['subscriptionTotal'] > 0 else ""
                     send_push_notification(
@@ -651,6 +648,25 @@ def run_pipeline():
         final_dataset = last_known_good
         active_source = "CACHE_FALLBACK"
 
+    # Synchronize GMP storage file
+    synced_gmp_map = sync_and_save_gmp(active_unlisted_candidates, existing_gmp)
+
+    # ----------------- ATTACH GMP WITH HISTORICAL PERSISTENCE -----------------
+    for item in final_dataset:
+        k = clean_company_name(item.get("name", ""))
+        if item.get("status") != "LISTED":
+            if k in synced_gmp_map:
+                item["gmpAmount"] = synced_gmp_map[k]["gmp_in_rs"]
+                item["gmpPercent"] = synced_gmp_map[k]["calculated_gmp_pct"]
+        else:
+            # Listed IPOs: Permanently pin the last recorded pre-listing GMP
+            if k in previous_cache:
+                prev_gmp_amt = float(previous_cache[k].get("gmpAmount", 0.0))
+                prev_gmp_pct = float(previous_cache[k].get("gmpPercent", 0.0))
+                if prev_gmp_amt > 0.0:
+                    item["gmpAmount"] = prev_gmp_amt
+                    item["gmpPercent"] = prev_gmp_pct
+
     print(">>> [Phase 3/3] Saving feed to disk...", flush=True)
     if not final_dataset:
         print("CRITICAL: Ingestion failed. Preserving existing ipos.json.", flush=True)
@@ -664,7 +680,7 @@ def run_pipeline():
         f.write(f"**Last Sync (UTC):** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
         f.write(f"**Primary Active Source:** {active_source}\n")
         f.write(f"**Total Records Ingested:** {len(final_dataset)}\n")
-        f.write("Status: Direct Upstox v2 Ingestion with Strict Notification Guards.\n")
+        f.write("Status: Direct Upstox v2 Ingestion with Dynamic GMP auto-sync & Historical Pinning.\n")
 
     print(f">>> Pipeline completed successfully via [{active_source}]. Processed {len(final_dataset)} records.", flush=True)
 
