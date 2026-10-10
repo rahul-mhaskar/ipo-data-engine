@@ -224,26 +224,22 @@ def sync_and_save_gmp(active_unlisted_ipos, existing_gmp):
     updated_gmp_map = {}
     for ipo in active_unlisted_ipos:
         norm_key = clean_company_name(ipo["name"])
-        price_max = float(ipo.get("issuePriceMax", 0.0))
-        saved_entry = existing_gmp.get(norm_key, {})
-        manual_val = float(saved_entry.get("gmp_in_rs", 0.0) if isinstance(saved_entry, dict) else saved_entry)
-        pct = round((manual_val / price_max * 100.0), 2) if (price_max > 0 and manual_val > 0) else 0.0
+        saved = existing_gmp.get(norm_key, {})
+        val = float(saved.get("gmp", 0.0) if isinstance(saved, dict) else saved)
         
         updated_gmp_map[norm_key] = {
             "name": ipo["name"],
-            "status": ipo["status"],
-            "issuePriceMax": price_max,
-            "gmp_in_rs": manual_val,
-            "calculated_gmp_pct": pct
+            "gmp": val
         }
 
     try:
         with open(GMP_DATA_PATH, "w", encoding="utf-8") as f:
             json.dump(updated_gmp_map, f, indent=2, ensure_ascii=False)
-    except Exception as e:
-        print(f">>> [GMP] Sync save notice: {e}", flush=True)
+    except Exception:
+        pass
 
     return updated_gmp_map
+
 
 # ----------------- UPSTOX INGESTION -----------------
 def try_fetch_upstox():
