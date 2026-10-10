@@ -1,11 +1,11 @@
 {
   "hdfireprotect": {
     "name": "HD Fire Protect",
-    "gmp": 0.0
+    "gmp": 75.0
   },
   "ravitaengineering": {
     "name": "Ravita Engineering Services",
-    "gmp": 0.0
+    "gmp": 12.0
   },
   "vaibhavvyapaar": {
     "name": "Vaibhav Vyapaar",
@@ -13,7 +13,7 @@
   },
   "fusioncx": {
     "name": "Fusion CX",
-    "gmp": 0.0
+    "gmp": 53.0
   },
   "parleproducts": {
     "name": "Parle Products",
@@ -29,7 +29,7 @@
   },
   "reliancejio": {
     "name": "Reliance Jio",
-    "gmp": 0.0
+    "gmp": 171.0
   },
   "flipkart": {
     "name": "Flipkart",
@@ -93,6 +93,6 @@
   },
   "rkfashionaccessories": {
     "name": "R.K.Fashion Accessories",
-    "gmp": 0.0
+    "gmp": 1.5
   }
 }
