@@ -11,6 +11,7 @@ from firebase_admin import credentials, messaging
 FILE_PATH = "ipos.json"
 AUDIT_LOG_PATH = "data_health_audit.md"
 OVERRIDES_PATH = "manual_overrides.json"
+GMP_DATA_PATH = "gmp_data.json"  # Manual GMP file: {"cleanname": gmp_in_rupees}
 
 UPSTOX_BASE_URL = "https://api.upstox.com/v2"
 UPSTOX_TOKEN = os.getenv("UPSTOX_ACCESS_TOKEN", "").strip()
@@ -55,7 +56,7 @@ if FIREBASE_CREDS_RAW:
     except Exception as e:
         print(f">>> [Firebase] Initialization notice: {e}", flush=True)
 
-def send_push_notification(title: str, body: str, ipo_id: str, channel_type: str = "allotment_alerts"):
+def send_push_notification(title: str, body: str, ipo_id: str, channel_type: str = "market_updates"):
     """Dispatches a native FCM broadcast to all devices subscribed to 'ipo_alerts'."""
     if not FIREBASE_APP_INITIALIZED:
         return
@@ -75,7 +76,6 @@ def send_push_notification(title: str, body: str, ipo_id: str, channel_type: str
         print(f"      [FCM Push Sent] {title} -> Response: {response}", flush=True)
     except Exception as e:
         print(f"      [FCM Push Error] Failed to send '{title}': {e}", flush=True)
-
 
 def clean_num_or_none(val):
     if val is None or val == "":
@@ -139,7 +139,6 @@ def parse_date_or_none(date_str):
     return None
 
 def fetch_live_listing_quote(symbol: str, headers: dict) -> float:
-    """Probes Mainboard and SME ticker permutations for opening trade discovery price."""
     if not symbol or symbol == "IPO":
         return 0.0
     
@@ -181,14 +180,14 @@ def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0
         if o and today < o:
             return "UPCOMING"
 
-        # Bidding Window Cutoff (Strict 5:00 PM IST)
+        # Bidding Cutoff at 5:00 PM IST
         if o and c:
             if o <= today < c:
                 return "OPEN"
             elif today == c:
                 return "OPEN" if now_ist.hour < 17 else "CLOSED"
 
-        # Listing Day Transition Logic (10:00 AM IST)
+        # Listing Day Logic
         if l:
             if today < l:
                 return "CLOSED"
@@ -221,6 +220,17 @@ def validate_record(item: dict) -> bool:
         return False
     return True
 
+def load_manual_gmp():
+    """Loads manual GMP data from gmp_data.json if present."""
+    if os.path.exists(GMP_DATA_PATH):
+        try:
+            with open(GMP_DATA_PATH, "r", encoding="utf-8") as f:
+                raw_map = json.load(f)
+                return {clean_company_name(k): float(v) for k, v in raw_map.items()}
+        except Exception as e:
+            print(f">>> [GMP] Notice loading gmp_data.json: {e}", flush=True)
+    return {}
+
 # ----------------- UPSTOX INGESTION -----------------
 def try_fetch_upstox():
     if not UPSTOX_TOKEN:
@@ -241,12 +251,10 @@ def try_fetch_upstox():
 
     for q in queries:
         try:
-            print(f"  --> Calling Upstox with query {q}...", flush=True)
             res = requests.get(f"{UPSTOX_BASE_URL}/ipos", headers=headers, params=q, timeout=6)
             if res.status_code == 200:
                 items = res.json().get("data", [])
                 all_upstox_items.extend(items)
-                print(f"      Upstox {q['status']} returned {len(items)} records.", flush=True)
             elif res.status_code in [401, 403]:
                 return None, f"Upstox Auth Token Expired / Invalid (HTTP {res.status_code})."
         except Exception as e:
@@ -429,10 +437,16 @@ def run_pipeline():
         except Exception:
             pass
 
+    gmp_lookup = load_manual_gmp()
+
     print(">>> [Phase 2/3] Executing Upstox data ingestion...", flush=True)
     final_dataset = []
     active_source = "None"
     upstox_data, status_msg = try_fetch_upstox()
+
+    today_ist_str = datetime.now(IST).strftime("%Y-%m-%d")
+    now_hour = datetime.now(IST).hour
+    now_minute = datetime.now(IST).minute
 
     if upstox_data:
         active_source = "UPSTOX_OFFICIAL"
@@ -501,7 +515,6 @@ def run_pipeline():
             # 3. Live Quote Fallback: Probe live market quotes on or past listing date
             if listing_price <= 0.0 and item.get("symbol"):
                 parsed_list_d = parse_date_or_none(item.get("listing_date"))
-                today_ist_str = datetime.now(IST).strftime("%Y-%m-%d")
                 if parsed_list_d and parsed_list_d <= today_ist_str:
                     listing_price = fetch_live_listing_quote(
                         item.get("symbol"),
@@ -513,7 +526,7 @@ def run_pipeline():
             if listing_price > 0.0 and price_max > 0.0:
                 listing_gain_pct = round(((listing_price - price_max) / price_max) * 100.0, 2)
 
-            # 5. Status determination gated by IST clock and discovered price
+            # Status determination gated by IST clock and discovered price
             status = determine_status(
                 open_d,
                 close_d,
@@ -522,7 +535,7 @@ def run_pipeline():
                 listing_price=listing_price
             )
 
-            # Registrar mapping (Prioritizes standardized SEBI deep-links over stale cached URLs)
+            # Registrar mapping
             reg_name, reg_url = None, None
             if norm_key in manual_overrides:
                 reg_name, reg_url = manual_overrides[norm_key]
@@ -530,7 +543,6 @@ def run_pipeline():
                 raw_reg = item.get("registrar_name") or ""
                 raw_url = item.get("registrar_url") or ""
                 
-                # Check previous cache for fallback text if Upstox returned blank
                 if not raw_reg and norm_key in previous_cache:
                     raw_reg = previous_cache[norm_key].get("registrarName") or ""
                     raw_url = previous_cache[norm_key].get("registrarUrl") or ""
@@ -558,6 +570,15 @@ def run_pipeline():
             rhp_url = item.get("rhp_url") or f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+RHP+file+SEBI"
             drhp_url = item.get("drhp_url") or f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+DRHP+file+SEBI"
 
+            # GMP Logic: Merge from gmp_lookup if available, else preserve cached value
+            gmp_amt = 0.0
+            if norm_key in gmp_lookup:
+                gmp_amt = float(gmp_lookup[norm_key])
+            elif norm_key in previous_cache:
+                gmp_amt = float(previous_cache[norm_key].get("gmpAmount", 0.0))
+
+            gmp_pct = round((gmp_amt / price_max * 100.0), 2) if (price_max > 0 and gmp_amt > 0) else 0.0
+
             cand = {
                 "id": str(idx_counter),
                 "name": clean_name,
@@ -572,8 +593,8 @@ def run_pipeline():
                 "closeDate": close_d or "To Be Updated",
                 "allotmentDate": allot_d,
                 "listingDate": list_d,
-                "gmpAmount": 0.0,
-                "gmpPercent": 0.0,
+                "gmpAmount": gmp_amt,
+                "gmpPercent": gmp_pct,
                 "subscriptionTotal": total_sub,
                 "subscriptionRetail": sub_retail,
                 "subscriptionHNI": sub_hni,
@@ -584,42 +605,35 @@ def run_pipeline():
                 "registrarUrl": reg_url,
                 "isAllotmentDone": bool(item.get("is_allotment_done", False)),
                 "rhpPdfUrl": rhp_url,
-                "drhpPdfUrl": drhp_url
+                "drhpPdfUrl": drhp_url,
+                "openNotified": bool(previous_cache.get(norm_key, {}).get("openNotified", False)),
+                "closeNotified": bool(previous_cache.get(norm_key, {}).get("closeNotified", False))
             }
 
-            # ----------------- REAL-TIME PUSH NOTIFICATION BROADCASTS -----------------
-            if norm_key in previous_cache:
-                prev = previous_cache[norm_key]
-                prev_status = prev.get("status", "")
-                prev_allot = bool(prev.get("isAllotmentDone", False))
-                curr_allot = bool(cand.get("isAllotmentDone", False))
-
-                # 1. Allotment Live Alert (Highest Engagement)
-                if not prev_allot and curr_allot:
-                    send_push_notification(
-                        title=f"🎯 Allotment Out: {cand['name']}",
-                        body=f"Basis of Allotment is now live on {cand['registrarName']}. Tap to check status!",
-                        ipo_id=cand["id"],
-                        channel_type="allotment_alerts"
-                    )
-                # 2. Bidding Opens
-                elif prev_status == "UPCOMING" and cand["status"] == "OPEN":
+            # ----------------- STRICT PRODUCTION NOTIFICATION RULES -----------------
+            # 1. HARD GUARD: NEVER notify for LISTED IPOs
+            if status != "LISTED":
+                # Rule A: Bidding Opens Today (Fires on open date in morning ~9:15-11:30 AM)
+                if open_d == today_ist_str and not cand["openNotified"] and now_hour >= 9:
                     p_str = f"₹{int(cand['issuePriceMin'])}-₹{int(cand['issuePriceMax'])}" if cand['issuePriceMax'] > 0 else "Price TBA"
                     send_push_notification(
-                        title=f"📢 Bidding Open: {cand['name']}",
-                        body=f"IPO is now open for bidding ({p_str}). Lot size: {cand['lotSize']} shares.",
+                        title=f"📢 Bidding Opens Today: {cand['name']}",
+                        body=f"IPO bidding is now live ({p_str}). Lot size: {cand['lotSize']} shares.",
                         ipo_id=cand["id"],
                         channel_type="market_updates"
                     )
-                # 3. Listing Debut Discovery
-                elif prev_status in ["CLOSED", "UPCOMING"] and cand["status"] == "LISTED":
-                    gain_prefix = "+" if cand["listingGainPercent"] >= 0 else ""
+                    cand["openNotified"] = True
+
+                # Rule B: Bidding Closes Today (Urgency alert on closing date ~9:30-12:00 PM)
+                if close_d == today_ist_str and not cand["closeNotified"] and now_hour >= 9:
+                    sub_str = f" (Subscribed {cand['subscriptionTotal']}x)" if cand['subscriptionTotal'] > 0 else ""
                     send_push_notification(
-                        title=f"🚀 Listed: {cand['name']}",
-                        body=f"Debut trade at ₹{cand['listingPrice']} ({gain_prefix}{cand['listingGainPercent']}% vs Issue Price).",
+                        title=f"⏰ Last Day to Bid: {cand['name']}",
+                        body=f"Bidding closes at 5:00 PM today{sub_str}. Check lot sizes and details.",
                         ipo_id=cand["id"],
                         channel_type="market_updates"
                     )
+                    cand["closeNotified"] = True
 
             if validate_record(cand):
                 final_dataset.append(cand)
@@ -650,7 +664,7 @@ def run_pipeline():
         f.write(f"**Last Sync (UTC):** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
         f.write(f"**Primary Active Source:** {active_source}\n")
         f.write(f"**Total Records Ingested:** {len(final_dataset)}\n")
-        f.write("Status: Direct Upstox v2 Ingestion with Category Subscription Distribution.\n")
+        f.write("Status: Direct Upstox v2 Ingestion with Strict Notification Guards.\n")
 
     print(f">>> Pipeline completed successfully via [{active_source}]. Processed {len(final_dataset)} records.", flush=True)
 
