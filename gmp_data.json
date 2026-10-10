@@ -1,170 +1,98 @@
 {
   "hdfireprotect": {
     "name": "HD Fire Protect",
-    "status": "UPCOMING",
-    "issuePriceMax": 271.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "ravitaengineering": {
     "name": "Ravita Engineering Services",
-    "status": "UPCOMING",
-    "issuePriceMax": 112.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "vaibhavvyapaar": {
     "name": "Vaibhav Vyapaar",
-    "status": "UPCOMING",
-    "issuePriceMax": 54.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "fusioncx": {
     "name": "Fusion CX",
-    "status": "UPCOMING",
-    "issuePriceMax": 289.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "parleproducts": {
     "name": "Parle Products",
-    "status": "UPCOMING",
-    "issuePriceMax": 0.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "twinklepapers": {
     "name": "Twinkle Papers",
-    "status": "UPCOMING",
-    "issuePriceMax": 69.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "sripriyankageocommex": {
     "name": "Sri Priyanka Geo Commex",
-    "status": "UPCOMING",
-    "issuePriceMax": 212.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "reliancejio": {
     "name": "Reliance Jio",
-    "status": "UPCOMING",
-    "issuePriceMax": 0.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "flipkart": {
     "name": "Flipkart",
-    "status": "UPCOMING",
-    "issuePriceMax": 0.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "prestigehospitalityventures": {
     "name": "Prestige Hospitality Ventures",
-    "status": "UPCOMING",
-    "issuePriceMax": 0.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "credilafinancial": {
     "name": "Credila Financial Services",
-    "status": "UPCOMING",
-    "issuePriceMax": 0.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "phonepe": {
     "name": "PhonePe",
-    "status": "UPCOMING",
-    "issuePriceMax": 0.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "zepto": {
     "name": "Zepto",
-    "status": "UPCOMING",
-    "issuePriceMax": 0.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "solar91cleantech": {
     "name": "Solar91 Cleantech",
-    "status": "UPCOMING",
-    "issuePriceMax": 0.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "herofincorp": {
     "name": "Hero FinCorp",
-    "status": "UPCOMING",
-    "issuePriceMax": 0.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "deltatechgaming": {
     "name": "Deltatech Gaming",
-    "status": "UPCOMING",
-    "issuePriceMax": 0.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "bibafashions": {
     "name": "Biba Fashions",
-    "status": "UPCOMING",
-    "issuePriceMax": 0.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "droomtechnology": {
     "name": "Droom Technology",
-    "status": "UPCOMING",
-    "issuePriceMax": 0.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "puranikbuilders": {
     "name": "Puranik Builders",
-    "status": "UPCOMING",
-    "issuePriceMax": 0.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "bharatfih": {
     "name": "Bharat FIH",
-    "status": "UPCOMING",
-    "issuePriceMax": 0.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "fabindia": {
     "name": "FabIndia",
-    "status": "UPCOMING",
-    "issuePriceMax": 0.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "oyo": {
     "name": "OYO",
-    "status": "UPCOMING",
-    "issuePriceMax": 0.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "ebixcash": {
     "name": "EBIXCASH",
-    "status": "UPCOMING",
-    "issuePriceMax": 0.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   },
   "rkfashionaccessories": {
     "name": "R.K.Fashion Accessories",
-    "status": "CLOSED",
-    "issuePriceMax": 82.0,
-    "gmp_in_rs": 0.0,
-    "calculated_gmp_pct": 0.0
+    "gmp": 0.0
   }
 }
