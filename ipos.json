@@ -25,7 +25,9 @@
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/oct-2026/hd-fire-protect-limited-rhp_105058.html",
-    "drhpPdfUrl": "https://www.google.com/search?q=HD+Fire+Protect+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=HD+Fire+Protect+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "2",
@@ -53,7 +55,9 @@
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.vivro.net/uploads/team/1791441800230.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Ravita+Engineering+Services+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Ravita+Engineering+Services+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "3",
@@ -81,7 +85,9 @@
     "registrarUrl": "https://ipostatus.kfintech.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Red-Heering-Prospectus_VVL.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Vaibhav+Vyapaar+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Vaibhav+Vyapaar+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "4",
@@ -109,7 +115,9 @@
     "registrarUrl": "https://ipostatus.kfintech.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Fusion+CX+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.google.com/search?q=Fusion+CX+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Fusion+CX+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "5",
@@ -137,7 +145,9 @@
     "registrarUrl": "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Parle+Products+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.google.com/search?q=Parle+Products+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Parle+Products+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "6",
@@ -165,7 +175,9 @@
     "registrarUrl": "https://www.ankitonline.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Twinkle+Papers+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.google.com/search?q=Twinkle+Papers+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Twinkle+Papers+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "7",
@@ -193,7 +205,9 @@
     "registrarUrl": "https://ipo.cameoindia.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Sri+Priyanka+Geo+Commex+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://nsearchives.nseindia.com/emerge/corporates/content/Registration_14082025195719_SriPriyankaGeoCommexLimitedDRHP.pdf"
+    "drhpPdfUrl": "https://nsearchives.nseindia.com/emerge/corporates/content/Registration_14082025195719_SriPriyankaGeoCommexLimitedDRHP.pdf",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "8",
@@ -221,7 +235,9 @@
     "registrarUrl": "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Reliance+Jio+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/jun-2026/jio-platforms-ltd-drhp_102248.html"
+    "drhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/jun-2026/jio-platforms-ltd-drhp_102248.html",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "9",
@@ -249,7 +265,9 @@
     "registrarUrl": "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Flipkart+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.google.com/search?q=Flipkart+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Flipkart+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "10",
@@ -277,7 +295,9 @@
     "registrarUrl": "https://ipostatus.kfintech.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Prestige+Hospitality+Ventures+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.google.com/search?q=Prestige+Hospitality+Ventures+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Prestige+Hospitality+Ventures+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "11",
@@ -305,7 +325,9 @@
     "registrarUrl": "https://ipostatus.kfintech.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Credila+Financial+Services+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.google.com/search?q=Credila+Financial+Services+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Credila+Financial+Services+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "12",
@@ -333,7 +355,9 @@
     "registrarUrl": "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=PhonePe+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.google.com/search?q=PhonePe+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=PhonePe+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "13",
@@ -361,7 +385,9 @@
     "registrarUrl": "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Zepto+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.google.com/search?q=Zepto+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Zepto+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "14",
@@ -389,7 +415,9 @@
     "registrarUrl": "https://maashitla.com/allotment-status/public-issues",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Solar91+Cleantech+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.google.com/search?q=Solar91+Cleantech+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Solar91+Cleantech+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "15",
@@ -417,7 +445,9 @@
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Hero+FinCorp+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.google.com/search?q=Hero+FinCorp+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Hero+FinCorp+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "16",
@@ -445,7 +475,9 @@
     "registrarUrl": "https://ipostatus.kfintech.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Deltatech+Gaming+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655459382467.pdf#page=1&zoom=page-width,-16,849"
+    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655459382467.pdf#page=1&zoom=page-width,-16,849",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "17",
@@ -473,7 +505,9 @@
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Biba+Fashions+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jul-2022/1659005306568.pdf#page=1&zoom=page-width,-16,764"
+    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jul-2022/1659005306568.pdf#page=1&zoom=page-width,-16,764",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "18",
@@ -501,7 +535,9 @@
     "registrarUrl": "https://ipostatus.kfintech.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Droom+Technology+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/may-2023/1683610115492.pdf#page=1&zoom=page-width,-16,842"
+    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/may-2023/1683610115492.pdf#page=1&zoom=page-width,-16,842",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "19",
@@ -529,7 +565,9 @@
     "registrarUrl": "https://ipostatus.kfintech.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Puranik+Builders+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/sep-2022/1663916527724.pdf#page=1&zoom=page-width,-16,764"
+    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/sep-2022/1663916527724.pdf#page=1&zoom=page-width,-16,764",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "20",
@@ -557,7 +595,9 @@
     "registrarUrl": "https://ipostatus.kfintech.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Bharat+FIH+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655876827634.pdf#page=1&zoom=page-width,-16,610"
+    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655876827634.pdf#page=1&zoom=page-width,-16,610",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "21",
@@ -585,7 +625,9 @@
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=FabIndia+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/nov-2022/fabindia-limited-corrigendum-to-drhp_64776.html"
+    "drhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/nov-2022/fabindia-limited-corrigendum-to-drhp_64776.html",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "22",
@@ -613,7 +655,9 @@
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=OYO+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/nov-2022/1669613102669.pdf#page=1&zoom=page-width,-15,842"
+    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/nov-2022/1669613102669.pdf#page=1&zoom=page-width,-15,842",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "23",
@@ -641,7 +685,9 @@
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=EBIXCASH+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/oct-2021/1633066313151.pdf#page=1&zoom=page-width,-16,379"
+    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/oct-2021/1633066313151.pdf#page=1&zoom=page-width,-16,379",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "24",
@@ -669,7 +715,9 @@
     "registrarUrl": "https://ipo.cameoindia.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://affinityglobalcap.in/wp-content/uploads/2026/10/RHP_LFINAL-1.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=R.K.Fashion+Accessories+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=R.K.Fashion+Accessories+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "25",
@@ -697,7 +745,9 @@
     "registrarUrl": "https://maashitla.com/allotment-status/public-issues",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.kotakneo.com/uploads/RHP_TNA_24_09_2026_6603ce008c.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=TNA+Solutions+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=TNA+Solutions+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "26",
@@ -725,7 +775,9 @@
     "registrarUrl": "https://www.bigshareonline.com/ipo_allotment.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://hemadmin.hemsecurities.com/images/Files/offer/3205.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Acme+India+Industries+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Acme+India+Industries+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "27",
@@ -753,7 +805,9 @@
     "registrarUrl": "https://www.bigshareonline.com/ipo_allotment.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/paramount-syntex-ipo-rhp_compressed_compressed_compressed.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Paramount+Syntex+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Paramount+Syntex+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "28",
@@ -781,7 +835,9 @@
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.shreetnbpolymers.in/investor-pdf/01M34R00M95SSVD0BVECEBFCCR.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Shree+TNB+Polymers+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Shree+TNB+Polymers+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "29",
@@ -809,7 +865,9 @@
     "registrarUrl": "https://maashitla.com/allotment-status/public-issues",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://everestims.com/assets/docs/EverestIMS_Technologies/rhp/EverestIMS_RHP_21092026.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=EverestIMS+Technologies+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=EverestIMS+Technologies+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "30",
@@ -837,7 +895,9 @@
     "registrarUrl": "https://mudrarta.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://eventions.in/wp-content/uploads/2026/09/Final_RHP.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Eventions+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Eventions+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "31",
@@ -865,7 +925,9 @@
     "registrarUrl": "https://www.purvashare.com/investor-service/ipo-query",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://dovesoft.io/images/investor/RHP.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Dove+Soft+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Dove+Soft+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "32",
@@ -893,7 +955,9 @@
     "registrarUrl": "https://maashitla.com/allotment-status/public-issues",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=SJP+Ultrasonic+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.bsesme.com/download/334252/SME_IPO%20InPrinciple/DPSJP_20250929205030.pdf"
+    "drhpPdfUrl": "https://www.bsesme.com/download/334252/SME_IPO%20InPrinciple/DPSJP_20250929205030.pdf",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "33",
@@ -921,7 +985,9 @@
     "registrarUrl": "https://www.bigshareonline.com/ipo_allotment.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Omara_DraftProspectus_compressed.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Omara+Ventures+India+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Omara+Ventures+India+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "34",
@@ -949,7 +1015,9 @@
     "registrarUrl": "https://ipostatus.kfintech.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Sollfege+Smart+Electronics+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://assets.upstox.com/ipo/documents/drhp/DP_Sollfege_BSE_23042026_20260423120527_compressed.pdf"
+    "drhpPdfUrl": "https://assets.upstox.com/ipo/documents/drhp/DP_Sollfege_BSE_23042026_20260423120527_compressed.pdf",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "35",
@@ -977,7 +1045,9 @@
     "registrarUrl": "https://www.bigshareonline.com/ipo_allotment.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/apr-2026/nityas-gems-and-jewellery-limited-drhp_100802.html",
-    "drhpPdfUrl": "https://www.google.com/search?q=Nityas+Gems+&+Jewellery+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Nityas+Gems+&+Jewellery+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "36",
@@ -1005,7 +1075,9 @@
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.saffronadvisor.com/files/offer-documents/Red_Herring_Prospectus__1_.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Vishal+Nirmiti+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Vishal+Nirmiti+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "37",
@@ -1033,7 +1105,9 @@
     "registrarUrl": "https://www.bigshareonline.com/ipo_allotment.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/GAIL_RHP_1789799314.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Green+Asia+Impex+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Green+Asia+Impex+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "38",
@@ -1061,7 +1135,9 @@
     "registrarUrl": "https://www.skylinerta.com/ipo.php",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/RHP_Black Opal Consultants Limited.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Black+Opal+Consultants+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Black+Opal+Consultants+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "39",
@@ -1089,7 +1165,9 @@
     "registrarUrl": "https://www.masserv.com/opt.asp",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Papadmalji+Agro+Foods+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://assets.upstox.com/ipo/documents/drhp/Registration_27122025223037_DRHP_compressed.pdf"
+    "drhpPdfUrl": "https://assets.upstox.com/ipo/documents/drhp/Registration_27122025223037_DRHP_compressed.pdf",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "40",
@@ -1117,7 +1195,9 @@
     "registrarUrl": "https://www.bigshareonline.com/ipo_allotment.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/rhp_vans_electroengineering_limited.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Vans+Electroengineerings+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Vans+Electroengineerings+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "41",
@@ -1145,7 +1225,9 @@
     "registrarUrl": "https://www.bigshareonline.com/ipo_allotment.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/1. RHP - BSE_19.09.2026_compressed.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Pind+Hospitality+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Pind+Hospitality+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "42",
@@ -1173,7 +1255,9 @@
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.chittorgarh.net/reports/ipo_notes/shah-investors-home-ltd_rhp.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Shah+Investor’s+Home+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Shah+Investor’s+Home+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "43",
@@ -1201,7 +1285,9 @@
     "registrarUrl": "https://maashitla.com/allotment-status/public-issues",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Red Herring Prospectus_compressed.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Shivchem+Agro+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=Shivchem+Agro+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "44",
@@ -1229,7 +1315,9 @@
     "registrarUrl": "https://ipostatus.kfintech.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://static1.squarespace.com/static/64bf881ed10e9e2c82cb9367/t/6ab39d3507e7c86aadbbfaf8/1790156118227/Red+Herring+Prospectus%28RHP%29.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=SRIT+India+IPO+DRHP+file+SEBI"
+    "drhpPdfUrl": "https://www.google.com/search?q=SRIT+India+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "45",
