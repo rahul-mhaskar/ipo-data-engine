@@ -2,25 +2,26 @@ name: Auto-Update IPO Feed
 
 on:
   schedule:
-    # 04:35 UTC -> 10:05 AM IST (Listing Debut & Price Discovery Sync)
-    - cron: '35 4 * * 1-5'
+    # 03:45 UTC -> 09:15 AM IST (Bidding Opens Today Alerts)
+    - cron: '45 3 * * 1-5'
 
-    # 11:35 UTC -> 5:05 PM IST (Market Closing & Bidding Cutoff Sync)
+    # 04:30 UTC -> 10:00 AM IST (Last Day to Bid Urgency Alerts)
+    - cron: '30 4 * * 1-5'
+
+    # 11:35 UTC -> 05:05 PM IST (Market Closing & Bidding Cutoff Sync)
     - cron: '35 11 * * 1-5'
 
-    # 18:00 UTC -> 11:30 PM IST (Late-night Registrar Allotment Upload)
+    # 18:00 UTC -> 11:30 PM IST (Late-night Registrar Allotment / GMP Sync)
     - cron: '0 18 * * 1-5'
 
-    # 01:00 UTC -> 06:30 AM IST (Dawn sync for overnight/midnight uploads)
+    # 01:00 UTC -> 06:30 AM IST (Dawn sync for overnight data updates)
     - cron: '0 1 * * 2-6'
 
   workflow_dispatch:
 
-# Workflow permissions for committing data back to main
 permissions:
   contents: write
 
-# Cancels redundant queued/running jobs on concurrent trigger
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -70,11 +71,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add ipos.json data_health_audit.md
+          git add ipos.json data_health_audit.md gmp_data.json
           if git diff --staged --quiet; then
-            echo "No changes detected in ipos.json."
+            echo "No changes detected across dataset and GMP files."
           else
-            git commit -m "Auto-update IPO feed [skip ci]"
+            git commit -m "Auto-sync IPO pipeline and dynamic GMP [skip ci]"
             git pull --rebase origin main
             git push origin main
           fi
+          
