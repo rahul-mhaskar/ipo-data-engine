@@ -128,7 +128,7 @@
     "issueSizeCr": 5012.0,
     "issuePriceMin": 143.0,
     "issuePriceMax": 151.0,
-    "lotSize": 99,
+    "lotSize": 0,
     "openDate": "2026-10-15",
     "closeDate": "2026-10-19",
     "allotmentDate": "2026-10-21",
@@ -144,7 +144,7 @@
     "registrarName": "KFin Technologies",
     "registrarUrl": "https://ipostatus.kfintech.com/",
     "isAllotmentDone": false,
-    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Zetwerk-RHP_compressed.pdf",
+    "rhpPdfUrl": "https://www.google.com/search?q=Zetwerk+Manufacturing+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Zetwerk+Manufacturing+IPO+DRHP+file+SEBI",
     "openNotified": false,
     "closeNotified": false
