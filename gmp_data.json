@@ -11,6 +11,26 @@
     "name": "Vaibhav Vyapaar",
     "gmp": 0.0
   },
+  "bonfigliolitransmissions": {
+    "name": "Bonfiglioli Transmissions",
+    "gmp": 0.0
+  },
+  "zetwerkmanufacturing": {
+    "name": "Zetwerk Manufacturing",
+    "gmp": 0.0
+  },
+  "shellzindia": {
+    "name": "Shellz India",
+    "gmp": 0.0
+  },
+  "tonboimagingindia": {
+    "name": "Tonbo Imaging India",
+    "gmp": 0.0
+  },
+  "sahajanandmedicaltechnologies": {
+    "name": "Sahajanand Medical Technologies",
+    "gmp": 0.0
+  },
   "fusioncx": {
     "name": "Fusion CX",
     "gmp": 20.0
@@ -70,29 +90,5 @@
   "droomtechnology": {
     "name": "Droom Technology",
     "gmp": 0.0
-  },
-  "puranikbuilders": {
-    "name": "Puranik Builders",
-    "gmp": 0.0
-  },
-  "bharatfih": {
-    "name": "Bharat FIH",
-    "gmp": 0.0
-  },
-  "fabindia": {
-    "name": "FabIndia",
-    "gmp": 0.0
-  },
-  "oyo": {
-    "name": "OYO",
-    "gmp": 0.0
-  },
-  "ebixcash": {
-    "name": "EBIXCASH",
-    "gmp": 0.0
-  },
-  "rkfashionaccessories": {
-    "name": "R.K.Fashion Accessories",
-    "gmp": 1.5
   }
 }
