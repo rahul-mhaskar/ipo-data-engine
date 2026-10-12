@@ -1,4 +1,8 @@
 {
+  "fusioncx": {
+    "name": "Fusion CX",
+    "gmp": 17.0
+  },
   "hdfireprotect": {
     "name": "HD Fire Protect",
     "gmp": 86.0
@@ -30,10 +34,6 @@
   "sahajanandmedicaltechnologies": {
     "name": "Sahajanand Medical Technologies",
     "gmp": 35.0
-  },
-  "fusioncx": {
-    "name": "Fusion CX",
-    "gmp": 17.0
   },
   "parleproducts": {
     "name": "Parle Products",
@@ -89,6 +89,10 @@
   },
   "droomtechnology": {
     "name": "Droom Technology",
+    "gmp": 0.0
+  },
+  "puranikbuilders": {
+    "name": "Puranik Builders",
     "gmp": 0.0
   }
 }
