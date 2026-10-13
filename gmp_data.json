@@ -3,6 +3,10 @@
     "name": "Bonfiglioli Transmissions",
     "gmp": 173.0
   },
+  "tonboimagingindia": {
+    "name": "Tonbo Imaging India",
+    "gmp": 480.0
+  },
   "fusioncx": {
     "name": "Fusion CX",
     "gmp": 33.0
@@ -26,10 +30,6 @@
   "shellzindia": {
     "name": "Shellz India",
     "gmp": 0.0
-  },
-  "tonboimagingindia": {
-    "name": "Tonbo Imaging India",
-    "gmp": 480.0
   },
   "sahajanandmedicaltechnologies": {
     "name": "Sahajanand Medical Technologies",
@@ -97,6 +97,10 @@
   },
   "bharatfih": {
     "name": "Bharat FIH",
+    "gmp": 0.0
+  },
+  "fabindia": {
+    "name": "FabIndia",
     "gmp": 0.0
   }
 }

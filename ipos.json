@@ -13,8 +13,8 @@
     "closeDate": "2026-10-19",
     "allotmentDate": "2026-10-21",
     "listingDate": "2026-10-23",
-    "gmpAmount": 155.0,
-    "gmpPercent": 26.45,
+    "gmpAmount": 173.0,
+    "gmpPercent": 29.52,
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -31,6 +31,36 @@
   },
   {
     "id": "2",
+    "name": "Tonbo Imaging India",
+    "symbol": "TONBO",
+    "category": "Mainboard",
+    "status": "UPCOMING",
+    "issueSizeCr": 852.0,
+    "issuePriceMin": 665.0,
+    "issuePriceMax": 700.0,
+    "lotSize": 21,
+    "openDate": "2026-10-15",
+    "closeDate": "2026-10-19",
+    "allotmentDate": "2026-10-21",
+    "listingDate": "2026-10-23",
+    "gmpAmount": 480.0,
+    "gmpPercent": 68.57,
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KFin Technologies",
+    "registrarUrl": "https://ipostatus.kfintech.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://live.jmfl.com/od/UploadedFiles/CA86AB52-0D43-437A-8D1C-6E475C6CEF01.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=Tonbo+Imaging+India+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "3",
     "name": "Fusion CX",
     "symbol": "FUSIONCX",
     "category": "Mainboard",
@@ -43,8 +73,8 @@
     "closeDate": "2026-10-16",
     "allotmentDate": "2026-10-19",
     "listingDate": "2026-10-22",
-    "gmpAmount": 17.0,
-    "gmpPercent": 5.88,
+    "gmpAmount": 33.0,
+    "gmpPercent": 11.42,
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -60,7 +90,7 @@
     "closeNotified": false
   },
   {
-    "id": "3",
+    "id": "4",
     "name": "Ravita Engineering Services",
     "symbol": "RAVITA",
     "category": "SME",
@@ -73,8 +103,8 @@
     "closeDate": "2026-10-16",
     "allotmentDate": "2026-10-19",
     "listingDate": "2026-10-22",
-    "gmpAmount": 4.0,
-    "gmpPercent": 3.57,
+    "gmpAmount": 2.0,
+    "gmpPercent": 1.79,
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -90,7 +120,7 @@
     "closeNotified": false
   },
   {
-    "id": "4",
+    "id": "5",
     "name": "HD Fire Protect",
     "symbol": "HDFIRE",
     "category": "Mainboard",
@@ -103,9 +133,9 @@
     "closeDate": "2026-10-15",
     "allotmentDate": "2026-10-16",
     "listingDate": "2026-10-21",
-    "gmpAmount": 86.0,
-    "gmpPercent": 31.73,
-    "subscriptionTotal": 4.61,
+    "gmpAmount": 91.0,
+    "gmpPercent": 33.58,
+    "subscriptionTotal": 4.64,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -120,7 +150,7 @@
     "closeNotified": false
   },
   {
-    "id": "5",
+    "id": "6",
     "name": "Vaibhav Vyapaar",
     "symbol": "LOANFRONT",
     "category": "SME",
@@ -150,7 +180,7 @@
     "closeNotified": false
   },
   {
-    "id": "6",
+    "id": "7",
     "name": "Zetwerk Manufacturing",
     "symbol": "ZETWERK",
     "category": "Mainboard",
@@ -163,8 +193,8 @@
     "closeDate": "2026-10-19",
     "allotmentDate": "2026-10-21",
     "listingDate": "2026-10-23",
-    "gmpAmount": 15.0,
-    "gmpPercent": 9.93,
+    "gmpAmount": 22.0,
+    "gmpPercent": 14.57,
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -180,7 +210,7 @@
     "closeNotified": false
   },
   {
-    "id": "7",
+    "id": "8",
     "name": "Shellz India",
     "symbol": "SHELLZI",
     "category": "SME",
@@ -210,36 +240,6 @@
     "closeNotified": false
   },
   {
-    "id": "8",
-    "name": "Tonbo Imaging India",
-    "symbol": "TONBOIM",
-    "category": "Mainboard",
-    "status": "UPCOMING",
-    "issueSizeCr": 852.0,
-    "issuePriceMin": 665.0,
-    "issuePriceMax": 700.0,
-    "lotSize": 21,
-    "openDate": "2026-10-15",
-    "closeDate": "2026-10-19",
-    "allotmentDate": "2026-10-21",
-    "listingDate": "2026-10-23",
-    "gmpAmount": 460.0,
-    "gmpPercent": 65.71,
-    "subscriptionTotal": 0.0,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "KFin Technologies",
-    "registrarUrl": "https://ipostatus.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://live.jmfl.com/od/UploadedFiles/CA86AB52-0D43-437A-8D1C-6E475C6CEF01.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Tonbo+Imaging+India+IPO+DRHP+file+SEBI",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
     "id": "9",
     "name": "Sahajanand Medical Technologies",
     "symbol": "SAHAJAN",
@@ -253,8 +253,8 @@
     "closeDate": "2026-10-19",
     "allotmentDate": "2026-10-21",
     "listingDate": "2026-10-23",
-    "gmpAmount": 35.0,
-    "gmpPercent": 10.17,
+    "gmpAmount": 39.0,
+    "gmpPercent": 11.34,
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -751,6 +751,36 @@
   },
   {
     "id": "26",
+    "name": "FabIndia",
+    "symbol": "FABINDI",
+    "category": "Mainboard",
+    "status": "UPCOMING",
+    "issueSizeCr": 0.0,
+    "issuePriceMin": 0.0,
+    "issuePriceMax": 0.0,
+    "lotSize": 0,
+    "openDate": "To Be Updated",
+    "closeDate": "To Be Updated",
+    "allotmentDate": "To Be Updated",
+    "listingDate": "To Be Updated",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Link Intime / MUFG",
+    "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.google.com/search?q=FabIndia+IPO+RHP+file+SEBI",
+    "drhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/nov-2022/fabindia-limited-corrigendum-to-drhp_64776.html",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "27",
     "name": "R.K.Fashion Accessories",
     "symbol": "RKFAL",
     "category": "SME",
@@ -780,7 +810,7 @@
     "closeNotified": false
   },
   {
-    "id": "27",
+    "id": "28",
     "name": "TNA Solutions",
     "symbol": "TNA",
     "category": "SME",
@@ -810,7 +840,7 @@
     "closeNotified": false
   },
   {
-    "id": "28",
+    "id": "29",
     "name": "Acme India Industries",
     "symbol": "ACMERAIL",
     "category": "SME",
@@ -840,7 +870,7 @@
     "closeNotified": false
   },
   {
-    "id": "29",
+    "id": "30",
     "name": "Paramount Syntex",
     "symbol": "PARASYNTEX",
     "category": "SME",
@@ -870,7 +900,7 @@
     "closeNotified": false
   },
   {
-    "id": "30",
+    "id": "31",
     "name": "Shree TNB Polymers",
     "symbol": "SHREETNB",
     "category": "SME",
@@ -900,7 +930,7 @@
     "closeNotified": false
   },
   {
-    "id": "31",
+    "id": "32",
     "name": "EverestIMS Technologies",
     "symbol": "EIMS",
     "category": "SME",
@@ -930,7 +960,7 @@
     "closeNotified": false
   },
   {
-    "id": "32",
+    "id": "33",
     "name": "Eventions",
     "symbol": "EVENTIONS",
     "category": "SME",
@@ -960,7 +990,7 @@
     "closeNotified": false
   },
   {
-    "id": "33",
+    "id": "34",
     "name": "Dove Soft",
     "symbol": "DSL",
     "category": "SME",
@@ -990,7 +1020,7 @@
     "closeNotified": false
   },
   {
-    "id": "34",
+    "id": "35",
     "name": "SJP Ultrasonic",
     "symbol": "SJP",
     "category": "SME",
@@ -1020,7 +1050,7 @@
     "closeNotified": false
   },
   {
-    "id": "35",
+    "id": "36",
     "name": "Omara Ventures India",
     "symbol": "OMARA",
     "category": "SME",
@@ -1050,7 +1080,7 @@
     "closeNotified": false
   },
   {
-    "id": "36",
+    "id": "37",
     "name": "Sollfege Smart Electronics",
     "symbol": "SOLLFEGE",
     "category": "SME",
@@ -1080,7 +1110,7 @@
     "closeNotified": false
   },
   {
-    "id": "37",
+    "id": "38",
     "name": "Nityas Gems & Jewellery",
     "symbol": "NITYAS",
     "category": "Mainboard",
@@ -1110,7 +1140,7 @@
     "closeNotified": false
   },
   {
-    "id": "38",
+    "id": "39",
     "name": "Vishal Nirmiti",
     "symbol": "VNL",
     "category": "Mainboard",
@@ -1140,7 +1170,7 @@
     "closeNotified": false
   },
   {
-    "id": "39",
+    "id": "40",
     "name": "Green Asia Impex",
     "symbol": "GREENASIA",
     "category": "SME",
@@ -1170,7 +1200,7 @@
     "closeNotified": false
   },
   {
-    "id": "40",
+    "id": "41",
     "name": "Black Opal Consultants",
     "symbol": "BLACKOPAL",
     "category": "SME",
@@ -1200,7 +1230,7 @@
     "closeNotified": false
   },
   {
-    "id": "41",
+    "id": "42",
     "name": "Papadmalji Agro Foods",
     "symbol": "PAPADMALJI",
     "category": "SME",
@@ -1230,7 +1260,7 @@
     "closeNotified": false
   },
   {
-    "id": "42",
+    "id": "43",
     "name": "Vans Electroengineerings",
     "symbol": "VANS",
     "category": "SME",
@@ -1260,7 +1290,7 @@
     "closeNotified": false
   },
   {
-    "id": "43",
+    "id": "44",
     "name": "Pind Hospitality",
     "symbol": "PIND",
     "category": "SME",
@@ -1290,7 +1320,7 @@
     "closeNotified": false
   },
   {
-    "id": "44",
+    "id": "45",
     "name": "Shah Investor’s Home",
     "symbol": "SHAHINVEST",
     "category": "Mainboard",
@@ -1320,7 +1350,7 @@
     "closeNotified": false
   },
   {
-    "id": "45",
+    "id": "46",
     "name": "Shivchem Agro",
     "symbol": "SHIVCHEM",
     "category": "SME",
@@ -1350,7 +1380,7 @@
     "closeNotified": false
   },
   {
-    "id": "46",
+    "id": "47",
     "name": "SRIT India",
     "symbol": "SRIT",
     "category": "Mainboard",
@@ -1380,7 +1410,7 @@
     "closeNotified": false
   },
   {
-    "id": "47",
+    "id": "48",
     "name": "Acme Universal Safezone 9",
     "symbol": "ACMEUNIV",
     "category": "SME",
@@ -1408,7 +1438,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Acme+Universal+Safezone+9+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "48",
+    "id": "49",
     "name": "Sai Urja Indo Ventures",
     "symbol": "SAIURJA",
     "category": "SME",
@@ -1436,7 +1466,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Sai+Urja+Indo+Ventures+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "49",
+    "id": "50",
     "name": "Runwal Enterprises",
     "symbol": "RUNWALENTR",
     "category": "Mainboard",
@@ -1464,7 +1494,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Runwal+Enterprises+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "50",
+    "id": "51",
     "name": "German Green Steel & Power",
     "symbol": "GERMAN",
     "category": "Mainboard",
@@ -1492,7 +1522,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=German+Green+Steel+&+Power+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "51",
+    "id": "52",
     "name": "Orient Cables (India)",
     "symbol": "ORIENTCABL",
     "category": "Mainboard",
@@ -1520,7 +1550,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Orient+Cables+(India)+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "52",
+    "id": "53",
     "name": "Acevector (Snapdeal)",
     "symbol": "ACEVECTOR",
     "category": "Mainboard",
@@ -1548,7 +1578,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Acevector+(Snapdeal)+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "53",
+    "id": "54",
     "name": "Himalayan Solar",
     "symbol": "HIMALAYAN",
     "category": "SME",
@@ -1576,7 +1606,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Himalayan+Solar+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "54",
+    "id": "55",
     "name": "Dudani Retail",
     "symbol": "DUDANI",
     "category": "SME",
@@ -1604,7 +1634,7 @@
     "drhpPdfUrl": "https://www.bsesme.com/download/376098/SME_IPO%20InPrinciple/DP_Dudani_Final_20260331230446.pdf"
   },
   {
-    "id": "55",
+    "id": "56",
     "name": "Bench Mark Infotech Services",
     "symbol": "BMISL",
     "category": "SME",
@@ -1632,7 +1662,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Bench+Mark+Infotech+Services+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "56",
+    "id": "57",
     "name": "A-One Steels India",
     "symbol": "AONESTEELS",
     "category": "Mainboard",
@@ -1660,7 +1690,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=A-One+Steels+India+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "57",
+    "id": "58",
     "name": "Moneyview",
     "symbol": "MONEYVIEW",
     "category": "Mainboard",
@@ -1688,7 +1718,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Moneyview+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "58",
+    "id": "59",
     "name": "Peshwa Wheat",
     "symbol": "PESHWA",
     "category": "SME",
@@ -1716,7 +1746,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Peshwa+Wheat+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "59",
+    "id": "60",
     "name": "Roopa Screen",
     "symbol": "ROOPA",
     "category": "SME",
@@ -1744,7 +1774,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Roopa+Screen+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "60",
+    "id": "61",
     "name": "ArMee Infotech",
     "symbol": "ARMEE",
     "category": "Mainboard",
@@ -1772,7 +1802,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=ArMee+Infotech+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "61",
+    "id": "62",
     "name": "S.K.Offset",
     "symbol": "SKOFFSET",
     "category": "SME",
@@ -1800,7 +1830,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=S.K.Offset+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "62",
+    "id": "63",
     "name": "Unitec Fibres",
     "symbol": "UNITEC",
     "category": "SME",
@@ -1828,7 +1858,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Unitec+Fibres+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "63",
+    "id": "64",
     "name": "Adroit Industries (India)",
     "symbol": "ADROITIND",
     "category": "Mainboard",
@@ -1854,7 +1884,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Adroit+Industries+(India)+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "64",
+    "id": "65",
     "name": "Swastika Infra",
     "symbol": "SWASTIKAIN",
     "category": "Mainboard",
@@ -1880,7 +1910,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Swastika+Infra+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "65",
+    "id": "66",
     "name": "Liqvd Digital India",
     "symbol": "LIQVD",
     "category": "SME",
@@ -1906,7 +1936,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Liqvd+Digital+India+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "66",
+    "id": "67",
     "name": "Pooja Logistics",
     "symbol": "POOJALOGIS",
     "category": "SME",
@@ -1932,7 +1962,7 @@
     "drhpPdfUrl": "https://www.google.com/search?q=Pooja+Logistics+IPO+DRHP+file+SEBI"
   },
   {
-    "id": "67",
+    "id": "68",
     "name": "Coreintegra Consulting Services",
     "symbol": "COREIN",
     "category": "SME",
