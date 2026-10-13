@@ -1,4 +1,8 @@
 {
+  "bonfigliolitransmissions": {
+    "name": "Bonfiglioli Transmissions",
+    "gmp": 155.0
+  },
   "fusioncx": {
     "name": "Fusion CX",
     "gmp": 17.0
@@ -14,10 +18,6 @@
   "vaibhavvyapaar": {
     "name": "Vaibhav Vyapaar",
     "gmp": 0.0
-  },
-  "bonfigliolitransmissions": {
-    "name": "Bonfiglioli Transmissions",
-    "gmp": 155.0
   },
   "zetwerkmanufacturing": {
     "name": "Zetwerk Manufacturing",
@@ -93,6 +93,10 @@
   },
   "puranikbuilders": {
     "name": "Puranik Builders",
+    "gmp": 0.0
+  },
+  "bharatfih": {
+    "name": "Bharat FIH",
     "gmp": 0.0
   }
 }
