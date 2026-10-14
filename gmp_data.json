@@ -1,19 +1,19 @@
 {
   "bonfigliolitransmissions": {
     "name": "Bonfiglioli Transmissions",
-    "gmp": 173.0
+    "gmp": 180.0
   },
   "sahajanandmedicaltechnologies": {
     "name": "Sahajanand Medical Technologies",
-    "gmp": 39.0
+    "gmp": 38.0
   },
   "tonboimagingindia": {
     "name": "Tonbo Imaging India",
-    "gmp": 480.0
+    "gmp": 500.0
   },
   "zetwerkmanufacturing": {
     "name": "Zetwerk Manufacturing",
-    "gmp": 22.0
+    "gmp": 19.0
   },
   "fusioncx": {
     "name": "Fusion CX",
@@ -21,11 +21,11 @@
   },
   "ravitaengineering": {
     "name": "Ravita Engineering Services",
-    "gmp": 2.0
+    "gmp": 7.0
   },
   "hdfireprotect": {
     "name": "HD Fire Protect",
-    "gmp": 91.0
+    "gmp": 89.0
   },
   "vaibhavvyapaar": {
     "name": "Vaibhav Vyapaar",
