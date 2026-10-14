@@ -7,6 +7,10 @@
     "name": "Tonbo Imaging India",
     "gmp": 480.0
   },
+  "zetwerkmanufacturing": {
+    "name": "Zetwerk Manufacturing",
+    "gmp": 22.0
+  },
   "fusioncx": {
     "name": "Fusion CX",
     "gmp": 33.0
@@ -22,10 +26,6 @@
   "vaibhavvyapaar": {
     "name": "Vaibhav Vyapaar",
     "gmp": 0.0
-  },
-  "zetwerkmanufacturing": {
-    "name": "Zetwerk Manufacturing",
-    "gmp": 22.0
   },
   "shellzindia": {
     "name": "Shellz India",
@@ -101,6 +101,10 @@
   },
   "fabindia": {
     "name": "FabIndia",
+    "gmp": 0.0
+  },
+  "oyo": {
+    "name": "OYO",
     "gmp": 0.0
   }
 }
