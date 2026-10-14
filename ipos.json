@@ -86,7 +86,7 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.fusioncx.com/wp-content/uploads/rhp/Fusion-CX-Limited-Red-Herring-Prospectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Fusion+CX+IPO+DRHP+file+SEBI",
-    "openNotified": false,
+    "openNotified": true,
     "closeNotified": false
   },
   {
@@ -116,7 +116,7 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.vivro.net/uploads/team/1791441800230.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Ravita+Engineering+Services+IPO+DRHP+file+SEBI",
-    "openNotified": false,
+    "openNotified": true,
     "closeNotified": false
   },
   {
@@ -135,7 +135,7 @@
     "listingDate": "2026-10-21",
     "gmpAmount": 91.0,
     "gmpPercent": 33.58,
-    "subscriptionTotal": 4.64,
+    "subscriptionTotal": 7.36,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -165,7 +165,7 @@
     "listingDate": "2026-10-21",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 0.22,
+    "subscriptionTotal": 0.26,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
