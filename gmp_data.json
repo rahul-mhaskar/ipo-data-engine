@@ -3,6 +3,10 @@
     "name": "Bonfiglioli Transmissions",
     "gmp": 173.0
   },
+  "sahajanandmedicaltechnologies": {
+    "name": "Sahajanand Medical Technologies",
+    "gmp": 39.0
+  },
   "tonboimagingindia": {
     "name": "Tonbo Imaging India",
     "gmp": 480.0
@@ -26,14 +30,6 @@
   "vaibhavvyapaar": {
     "name": "Vaibhav Vyapaar",
     "gmp": 0.0
-  },
-  "shellzindia": {
-    "name": "Shellz India",
-    "gmp": 0.0
-  },
-  "sahajanandmedicaltechnologies": {
-    "name": "Sahajanand Medical Technologies",
-    "gmp": 39.0
   },
   "parleproducts": {
     "name": "Parle Products",
@@ -105,6 +101,14 @@
   },
   "oyo": {
     "name": "OYO",
+    "gmp": 0.0
+  },
+  "ebixcash": {
+    "name": "EBIXCASH",
+    "gmp": 0.0
+  },
+  "boat": {
+    "name": "BoAt",
     "gmp": 0.0
   }
 }
