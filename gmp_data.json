@@ -35,6 +35,10 @@
     "name": "Vaibhav Vyapaar",
     "gmp": 0.0
   },
+  "reliancejio": {
+    "name": "Reliance Jio",
+    "gmp": 0.0
+  },
   "parleproducts": {
     "name": "Parle Products",
     "gmp": 0.0
@@ -45,10 +49,6 @@
   },
   "sripriyankageocommex": {
     "name": "Sri Priyanka Geo Commex",
-    "gmp": 0.0
-  },
-  "reliancejio": {
-    "name": "Reliance Jio",
     "gmp": 0.0
   },
   "flipkart": {

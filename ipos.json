@@ -26,7 +26,7 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.bonfiglioli.com/india/IPO/RHP/Peacock%20-%20RHP%20%28Filing%20version%29%20-%20Signed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Bonfiglioli+Transmissions+IPO+DRHP+file+SEBI",
-    "openNotified": false,
+    "openNotified": true,
     "closeNotified": false
   },
   {
@@ -56,7 +56,7 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.ipopremium.in/images/ipo/sahajanand_medical_technologies_ltd_mainboard_rhp_1791630001.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Sahajanand+Medical+Technologies+IPO+DRHP+file+SEBI",
-    "openNotified": false,
+    "openNotified": true,
     "closeNotified": false
   },
   {
@@ -86,7 +86,7 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.socradamus.in/downloads/sme-ipo/shellz-india-limited/RHP-Shellz-final.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Shellz+India+IPO+DRHP+file+SEBI",
-    "openNotified": false,
+    "openNotified": true,
     "closeNotified": false
   },
   {
@@ -116,7 +116,7 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://live.jmfl.com/od/UploadedFiles/CA86AB52-0D43-437A-8D1C-6E475C6CEF01.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Tonbo+Imaging+India+IPO+DRHP+file+SEBI",
-    "openNotified": false,
+    "openNotified": true,
     "closeNotified": false
   },
   {
@@ -146,7 +146,7 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Zetwerk-RHP_compressed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Zetwerk+Manufacturing+IPO+DRHP+file+SEBI",
-    "openNotified": false,
+    "openNotified": true,
     "closeNotified": false
   },
   {
@@ -165,7 +165,7 @@
     "listingDate": "2026-10-22",
     "gmpAmount": 33.0,
     "gmpPercent": 11.42,
-    "subscriptionTotal": 0.41,
+    "subscriptionTotal": 0.61,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -195,7 +195,7 @@
     "listingDate": "2026-10-22",
     "gmpAmount": 7.0,
     "gmpPercent": 6.25,
-    "subscriptionTotal": 1.33,
+    "subscriptionTotal": 1.57,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -225,7 +225,7 @@
     "listingDate": "2026-10-21",
     "gmpAmount": 89.0,
     "gmpPercent": 32.84,
-    "subscriptionTotal": 16.52,
+    "subscriptionTotal": 27.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -237,7 +237,7 @@
     "rhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/oct-2026/hd-fire-protect-limited-rhp_105058.html",
     "drhpPdfUrl": "https://www.google.com/search?q=HD+Fire+Protect+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": false
+    "closeNotified": true
   },
   {
     "id": "9",
@@ -255,7 +255,7 @@
     "listingDate": "2026-10-21",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 0.54,
+    "subscriptionTotal": 0.68,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -267,10 +267,40 @@
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Red-Heering-Prospectus_VVL.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Vaibhav+Vyapaar+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": false
+    "closeNotified": true
   },
   {
     "id": "10",
+    "name": "Reliance Jio",
+    "symbol": "RELIANC",
+    "category": "Mainboard",
+    "status": "UPCOMING",
+    "issueSizeCr": 30188.0,
+    "issuePriceMin": 1065.0,
+    "issuePriceMax": 1119.0,
+    "lotSize": 12,
+    "openDate": "2026-10-21",
+    "closeDate": "2026-10-23",
+    "allotmentDate": "2026-10-26",
+    "listingDate": "2026-10-28",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KFin Technologies",
+    "registrarUrl": "https://ipostatus.kfintech.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://myjiostatic.cdn.jio.com/cms/assets/iv3/Red%20Herring%20Prospectus.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=Reliance+Jio+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "11",
     "name": "Parle Products",
     "symbol": "PARLEPR",
     "category": "Mainboard",
@@ -300,7 +330,7 @@
     "closeNotified": false
   },
   {
-    "id": "11",
+    "id": "12",
     "name": "Twinkle Papers",
     "symbol": "TWINKLE",
     "category": "SME",
@@ -330,7 +360,7 @@
     "closeNotified": false
   },
   {
-    "id": "12",
+    "id": "13",
     "name": "Sri Priyanka Geo Commex",
     "symbol": "SPGCL",
     "category": "SME",
@@ -356,36 +386,6 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Sri+Priyanka+Geo+Commex+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://nsearchives.nseindia.com/emerge/corporates/content/Registration_14082025195719_SriPriyankaGeoCommexLimitedDRHP.pdf",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "13",
-    "name": "Reliance Jio",
-    "symbol": "RELIANC",
-    "category": "Mainboard",
-    "status": "UPCOMING",
-    "issueSizeCr": 37700.0,
-    "issuePriceMin": 0.0,
-    "issuePriceMax": 0.0,
-    "lotSize": 0,
-    "openDate": "To Be Updated",
-    "closeDate": "To Be Updated",
-    "allotmentDate": "To Be Updated",
-    "listingDate": "To Be Updated",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "subscriptionTotal": 0.0,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "To Be Updated",
-    "registrarUrl": "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.google.com/search?q=Reliance+Jio+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/jun-2026/jio-platforms-ltd-drhp_102248.html",
     "openNotified": false,
     "closeNotified": false
   },
