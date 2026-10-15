@@ -27,12 +27,8 @@
     "name": "Ravita Engineering Services",
     "gmp": 7.0
   },
-  "hdfireprotect": {
-    "name": "HD Fire Protect",
-    "gmp": 89.0
-  },
-  "vaibhavvyapaar": {
-    "name": "Vaibhav Vyapaar",
+  "parashealthcare": {
+    "name": "Paras Healthcare",
     "gmp": 0.0
   },
   "reliancejio": {
@@ -111,8 +107,12 @@
     "name": "EBIXCASH",
     "gmp": 0.0
   },
-  "boat": {
-    "name": "BoAt",
+  "hdfireprotect": {
+    "name": "HD Fire Protect",
+    "gmp": 89.0
+  },
+  "vaibhavvyapaar": {
+    "name": "Vaibhav Vyapaar",
     "gmp": 0.0
   }
 }
