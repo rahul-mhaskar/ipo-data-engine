@@ -1,4 +1,8 @@
 {
+  "reliancejio": {
+    "name": "Reliance Jio",
+    "gmp": 221.0
+  },
   "bonfigliolitransmissions": {
     "name": "Bonfiglioli Transmissions",
     "gmp": 140.0
@@ -30,10 +34,6 @@
   "parashealthcare": {
     "name": "Paras Healthcare",
     "gmp": 95.0
-  },
-  "reliancejio": {
-    "name": "Reliance Jio",
-    "gmp": 221.0
   },
   "parleproducts": {
     "name": "Parle Products",
@@ -105,6 +105,10 @@
   },
   "ebixcash": {
     "name": "EBIXCASH",
+    "gmp": 0.0
+  },
+  "boat": {
+    "name": "BoAt",
     "gmp": 0.0
   },
   "hdfireprotect": {
