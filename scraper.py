@@ -226,7 +226,6 @@ def sync_and_save_gmp(active_unlisted_ipos, existing_gmp):
         norm_key = clean_company_name(ipo["name"])
         saved_entry = existing_gmp.get(norm_key, {})
         
-        # Read either 'gmp' or legacy 'gmp_in_rs' safely
         if isinstance(saved_entry, dict):
             manual_val = float(saved_entry.get("gmp") or saved_entry.get("gmp_in_rs") or 0.0)
         else:
@@ -360,49 +359,59 @@ def try_fetch_upstox():
                     item["registrar_name"] = reg_info.get("name")
                     item["registrar_url"] = reg_info.get("website")
 
-                    item["total_subscription"] = (
-                        clean_num_or_none(details.get("total_subscription")) or 
-                        clean_num_or_none(item.get("total_subscription")) or 
-                        0.0
-                    )
+                    # ----------------- COMPREHENSIVE SUBSCRIPTION PARSER -----------------
+                    sub_retail, sub_hni, sub_qib = 0.0, 0.0, 0.0
+                    total_sub = clean_num_or_none(details.get("total_subscription")) or clean_num_or_none(item.get("total_subscription")) or 0.0
 
-                    cats = []
-                    for k in ["categories", "distribution", "bidding_details", "investor_categories", "sub_categories"]:
+                    cats_data = None
+                    for k in ["categories", "distribution", "bidding_details", "investor_categories", "sub_categories", "subscription_details"]:
                         val = details.get(k)
-                        if isinstance(val, list):
-                            cats = val
+                        if isinstance(val, list) and val:
+                            cats_data = val
                             break
                         elif isinstance(val, dict):
-                            cats = val.get("categories") or val.get("distribution") or []
-                            if cats:
+                            cats_data = val.get("categories") or val.get("distribution")
+                            if cats_data:
                                 break
 
-                    if not cats:
-                        for endpoint_suffix in ["subscriptions", "bids", "details"]:
+                    # If not embedded in details, query category endpoints
+                    if not cats_data:
+                        sub_queries = [
+                            (f"{UPSTOX_BASE_URL}/ipos/{ipo_id}/subscriptions", None),
+                            (f"{UPSTOX_BASE_URL}/ipos/{ipo_id}/subscription", None),
+                            (f"{UPSTOX_BASE_URL}/ipos/{ipo_id}/bids", None),
+                        ]
+                        for sub_url, params in sub_queries:
                             try:
-                                sub_res = requests.get(f"{UPSTOX_BASE_URL}/ipos/{ipo_id}/{endpoint_suffix}", headers=headers, timeout=4)
+                                sub_res = requests.get(sub_url, headers=headers, params=params, timeout=4)
                                 if sub_res.status_code == 200:
                                     sdata = sub_res.json().get("data", {})
-                                    if isinstance(sdata, list):
-                                        cats = sdata
+                                    if isinstance(sdata, list) and sdata:
+                                        cats_data = sdata
                                         break
                                     elif isinstance(sdata, dict):
-                                        cats = sdata.get("categories") or sdata.get("distribution") or sdata.get("bidding_details") or []
-                                        if cats:
+                                        cats_data = sdata.get("categories") or sdata.get("distribution") or sdata.get("subscription_details")
+                                        if cats_data:
                                             break
                             except Exception:
                                 pass
 
-                    sub_retail, sub_hni, sub_qib = 0.0, 0.0, 0.0
-                    if isinstance(cats, list):
-                        for c in cats:
+                    if isinstance(cats_data, list):
+                        for c in cats_data:
                             if not isinstance(c, dict):
                                 continue
-                            c_name = str(c.get("category") or c.get("name") or c.get("category_name") or "").upper().strip()
+                            c_name = str(
+                                c.get("category") or 
+                                c.get("name") or 
+                                c.get("category_name") or 
+                                c.get("sub_category") or ""
+                            ).upper().strip()
+
                             c_rate = clean_num_or_none(
+                                c.get("subscription_times") or 
+                                c.get("times_subscribed") or 
                                 c.get("subscription_rate") or 
                                 c.get("rate") or 
-                                c.get("times_subscribed") or 
                                 c.get("subscription") or 
                                 c.get("oversubscription") or 
                                 c.get("value")
@@ -415,6 +424,10 @@ def try_fetch_upstox():
                             elif "QIB" in c_name:
                                 sub_qib = float(c_rate)
 
+                    if total_sub <= 0.0 and (sub_retail > 0 or sub_hni > 0 or sub_qib > 0):
+                        total_sub = round(max(sub_retail, sub_hni, sub_qib), 2)
+
+                    item["total_subscription"] = total_sub
                     item["subscription_retail"] = sub_retail
                     item["subscription_hni"] = sub_hni
                     item["subscription_qib"] = sub_qib
@@ -652,7 +665,7 @@ def run_pipeline():
     # Synchronize GMP storage file
     synced_gmp_map = sync_and_save_gmp(active_unlisted_candidates, existing_gmp)
 
-        # ----------------- ATTACH GMP WITH HISTORICAL PERSISTENCE -----------------
+    # ----------------- ATTACH GMP WITH HISTORICAL PERSISTENCE -----------------
     for item in final_dataset:
         k = clean_company_name(item.get("name", ""))
         price_max = float(item.get("issuePriceMax", 0.0))
@@ -663,7 +676,6 @@ def run_pipeline():
                 item["gmpAmount"] = gmp_val
                 item["gmpPercent"] = round((gmp_val / price_max * 100.0), 2) if (price_max > 0 and gmp_val > 0) else 0.0
         else:
-            # Listed IPOs: Permanently pin the last recorded pre-listing GMP
             if k in previous_cache:
                 prev_gmp_amt = float(previous_cache[k].get("gmpAmount", 0.0))
                 prev_gmp_pct = float(previous_cache[k].get("gmpPercent", 0.0))
@@ -684,7 +696,7 @@ def run_pipeline():
         f.write(f"**Last Sync (UTC):** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
         f.write(f"**Primary Active Source:** {active_source}\n")
         f.write(f"**Total Records Ingested:** {len(final_dataset)}\n")
-        f.write("Status: Direct Upstox v2 Ingestion with Dynamic GMP auto-sync & Historical Pinning.\n")
+        f.write("Status: Direct Upstox v2 Ingestion with Category Subscription & Dynamic GMP.\n")
 
     print(f">>> Pipeline completed successfully via [{active_source}]. Processed {len(final_dataset)} records.", flush=True)
 
