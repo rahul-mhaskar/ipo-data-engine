@@ -23,14 +23,6 @@
     "name": "Zetwerk Manufacturing",
     "gmp": 14.0
   },
-  "fusioncx": {
-    "name": "Fusion CX",
-    "gmp": 22.0
-  },
-  "ravitaengineering": {
-    "name": "Ravita Engineering Services",
-    "gmp": 2.0
-  },
   "parashealthcare": {
     "name": "Paras Healthcare",
     "gmp": 95.0
@@ -110,6 +102,14 @@
   "boat": {
     "name": "BoAt",
     "gmp": 0.0
+  },
+  "ravitaengineering": {
+    "name": "Ravita Engineering Services",
+    "gmp": 2.0
+  },
+  "fusioncx": {
+    "name": "Fusion CX",
+    "gmp": 22.0
   },
   "hdfireprotect": {
     "name": "HD Fire Protect",
