@@ -1,31 +1,31 @@
 {
   "reliancejio": {
     "name": "Reliance Jio",
-    "gmp": 221.0
+    "gmp": 223.0
   },
   "bonfigliolitransmissions": {
     "name": "Bonfiglioli Transmissions",
-    "gmp": 140.0
+    "gmp": 132.0
   },
   "sahajanandmedicaltechnologies": {
     "name": "Sahajanand Medical Technologies",
-    "gmp": 43.0
+    "gmp": 15.0
   },
   "shellzindia": {
     "name": "Shellz India",
-    "gmp": 0.0
+    "gmp": 24.0
   },
   "tonboimagingindia": {
     "name": "Tonbo Imaging India",
-    "gmp": 500.0
+    "gmp": 505.0
   },
   "zetwerkmanufacturing": {
     "name": "Zetwerk Manufacturing",
-    "gmp": 14.0
+    "gmp": 7.2
   },
   "parashealthcare": {
     "name": "Paras Healthcare",
-    "gmp": 95.0
+    "gmp": 96.0
   },
   "parleproducts": {
     "name": "Parle Products",
@@ -105,18 +105,18 @@
   },
   "ravitaengineering": {
     "name": "Ravita Engineering Services",
-    "gmp": 2.0
+    "gmp": 3.0
   },
   "fusioncx": {
     "name": "Fusion CX",
-    "gmp": 22.0
+    "gmp": 15.0
   },
   "hdfireprotect": {
     "name": "HD Fire Protect",
-    "gmp": 82.0
+    "gmp": 69.0
   },
   "vaibhavvyapaar": {
     "name": "Vaibhav Vyapaar",
-    "gmp": 2.0
+    "gmp": 5.0
   }
 }
