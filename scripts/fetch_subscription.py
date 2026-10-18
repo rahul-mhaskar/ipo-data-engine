@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup
 def clean_multiplier(val_str):
     if not val_str:
         return 0.0
-    # Extract decimal multiplier like "131.25" or "4.43x"
     match = re.search(r"(\d+(\.\d+)?)", str(val_str).replace(",", ""))
     return float(match.group(1)) if match else 0.0
 
@@ -39,7 +38,6 @@ def scrape_table(url):
             if not rows:
                 continue
 
-            # Identify header indexes
             for row in rows[:2]:
                 for idx, cell in enumerate(row.find_all(["th", "td"])):
                     txt = cell.get_text(strip=True).upper()
@@ -52,7 +50,6 @@ def scrape_table(url):
                     elif "TOTAL" in txt:
                         headers_map["total"] = idx
 
-            # If this table doesn't have at least retail or total headers, skip
             if "total" not in headers_map and "retail" not in headers_map:
                 continue
 
@@ -83,7 +80,6 @@ def scrape_table(url):
         return []
 
 def fetch_all_sources():
-    # Live bidding + Past closed status tables
     urls = [
         "https://www.investorgain.com/report/live-ipo-subscription-status/331/",
         "https://www.investorgain.com/report/ipo-subscription-status-live-bidding-data-bse-nse/333/"
@@ -101,7 +97,7 @@ def fetch_all_sources():
 def update_root_ipos_json():
     target_path = "ipos.json"
     if not os.path.exists(target_path):
-        print("ipos.json not found at repository root.")
+        print(f"{target_path} not found at repository root.")
         return
 
     sub_data = fetch_all_sources()
@@ -115,7 +111,7 @@ def update_root_ipos_json():
 
     matched_count = 0
     for item in items:
-        # Strip redundant nested field if present
+        # Strip redundant nested structure
         item.pop("subscription", None)
 
         norm_name = normalize(item.get("name") or "")
@@ -130,8 +126,6 @@ def update_root_ipos_json():
                 break
 
         if matched:
-            # Overwrite only if scraped values are greater than zero,
-            # or if current values are empty/zero.
             if matched["total"] > 0:
                 item["subscriptionTotal"] = matched["total"]
             if matched["qib"] > 0:
