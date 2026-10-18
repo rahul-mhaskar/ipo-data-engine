@@ -45,7 +45,7 @@
     "listingDate": "2026-10-23",
     "gmpAmount": 132.0,
     "gmpPercent": 22.53,
-    "subscriptionTotal": 0.71,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -57,14 +57,7 @@
     "rhpPdfUrl": "https://www.bonfiglioli.com/india/IPO/RHP/Peacock%20-%20RHP%20%28Filing%20version%29%20-%20Signed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Bonfiglioli+Transmissions+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 13222.53129178,
-      "nii": 0.99,
-      "retail": 586.0,
-      "total": 18737.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "3",
@@ -82,7 +75,7 @@
     "listingDate": "2026-10-23",
     "gmpAmount": 15.0,
     "gmpPercent": 4.36,
-    "subscriptionTotal": 0.28,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -94,14 +87,7 @@
     "rhpPdfUrl": "https://assets.ipopremium.in/images/ipo/sahajanand_medical_technologies_ltd_mainboard_rhp_1791630001.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Sahajanand+Medical+Technologies+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 154.361543,
-      "nii": 0.83,
-      "retail": 344.0,
-      "total": 18737.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "4",
@@ -119,7 +105,7 @@
     "listingDate": "2026-10-23",
     "gmpAmount": 24.0,
     "gmpPercent": 13.41,
-    "subscriptionTotal": 1.05,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -131,14 +117,7 @@
     "rhpPdfUrl": "https://www.socradamus.in/downloads/sme-ipo/shellz-india-limited/RHP-Shellz-final.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Shellz+India+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 2513.972525,
-      "nii": 0.89,
-      "retail": 179.0,
-      "total": 18737.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "5",
@@ -156,7 +135,7 @@
     "listingDate": "2026-10-23",
     "gmpAmount": 505.0,
     "gmpPercent": 72.14,
-    "subscriptionTotal": 5.22,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -168,14 +147,7 @@
     "rhpPdfUrl": "https://live.jmfl.com/od/UploadedFiles/CA86AB52-0D43-437A-8D1C-6E475C6CEF01.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Tonbo+Imaging+India+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 50572.14270516,
-      "nii": 7.78,
-      "retail": 700.0,
-      "total": 18737.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "6",
@@ -193,7 +165,7 @@
     "listingDate": "2026-10-23",
     "gmpAmount": 7.2,
     "gmpPercent": 4.77,
-    "subscriptionTotal": 0.19,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -205,14 +177,7 @@
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Zetwerk-RHP_compressed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Zetwerk+Manufacturing+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 0.0,
-      "nii": 0.31,
-      "retail": 151.0,
-      "total": 18737.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "7",
@@ -242,14 +207,7 @@
     "rhpPdfUrl": "https://www.jmfl.com/Common/getFile/6104",
     "drhpPdfUrl": "https://www.google.com/search?q=Paras+Healthcare+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 9613.858396,
-      "nii": 693.0,
-      "retail": 1450.0,
-      "total": 18737.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "8",
@@ -837,7 +795,7 @@
     "listingDate": "2026-10-22",
     "gmpAmount": 3.0,
     "gmpPercent": 2.68,
-    "subscriptionTotal": 8.32,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -849,14 +807,7 @@
     "rhpPdfUrl": "https://www.vivro.net/uploads/team/1791441800230.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Ravita+Engineering+Services+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": true,
-    "subscription": {
-      "qib": 32.68212,
-      "nii": 7.11,
-      "retail": 112.0,
-      "total": 18737.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": true
   },
   {
     "id": "28",
@@ -874,7 +825,7 @@
     "listingDate": "2026-10-22",
     "gmpAmount": 15.0,
     "gmpPercent": 5.19,
-    "subscriptionTotal": 4.43,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -886,14 +837,7 @@
     "rhpPdfUrl": "https://www.fusioncx.com/wp-content/uploads/rhp/Fusion-CX-Limited-Red-Herring-Prospectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Fusion+CX+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": true,
-    "subscription": {
-      "qib": 155.191055,
-      "nii": 4.68,
-      "retail": 289.0,
-      "total": 18737.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": true
   },
   {
     "id": "29",
@@ -911,7 +855,7 @@
     "listingDate": "2026-10-21",
     "gmpAmount": 69.0,
     "gmpPercent": 25.46,
-    "subscriptionTotal": 131.25,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -923,14 +867,7 @@
     "rhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/oct-2026/hd-fire-protect-limited-rhp_105058.html",
     "drhpPdfUrl": "https://www.google.com/search?q=HD+Fire+Protect+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": true,
-    "subscription": {
-      "qib": 6925.466391,
-      "nii": 131.73,
-      "retail": 271.0,
-      "total": 18737.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": true
   },
   {
     "id": "30",
@@ -948,7 +885,7 @@
     "listingDate": "2026-10-21",
     "gmpAmount": 5.0,
     "gmpPercent": 9.26,
-    "subscriptionTotal": 3.8,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -960,14 +897,7 @@
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Red-Heering-Prospectus_VVL.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Vaibhav+Vyapaar+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": true,
-    "subscription": {
-      "qib": 59.2625,
-      "nii": 3.23,
-      "retail": 54.0,
-      "total": 18737.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": true
   },
   {
     "id": "31",
@@ -985,7 +915,7 @@
     "listingDate": "2026-10-12",
     "gmpAmount": 1.5,
     "gmpPercent": 1.83,
-    "subscriptionTotal": 2.72,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -997,14 +927,7 @@
     "rhpPdfUrl": "https://affinityglobalcap.in/wp-content/uploads/2026/10/RHP_LFINAL-1.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=R.K.Fashion+Accessories+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 0.0,
-      "nii": 0.0,
-      "retail": 2.7,
-      "total": 12937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "32",
@@ -1022,7 +945,7 @@
     "listingDate": "2026-10-09",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 54.92,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1034,14 +957,7 @@
     "rhpPdfUrl": "https://www.kotakneo.com/uploads/RHP_TNA_24_09_2026_6603ce008c.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=TNA+Solutions+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 20.0,
-      "nii": 0.0001,
-      "retail": 55.2,
-      "total": 9937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "33",
@@ -1059,7 +975,7 @@
     "listingDate": "2026-10-09",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 123.52,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1071,14 +987,7 @@
     "rhpPdfUrl": "https://hemadmin.hemsecurities.com/images/Files/offer/3205.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Acme+India+Industries+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 12.76,
-      "nii": 4321.942565,
-      "retail": 124.23,
-      "total": 9937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "34",
@@ -1096,7 +1005,7 @@
     "listingDate": "2026-10-09",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 1.93,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1108,14 +1017,7 @@
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/paramount-syntex-ipo-rhp_compressed_compressed_compressed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Paramount+Syntex+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 9.45,
-      "nii": 0.0,
-      "retail": 1.88,
-      "total": 9931.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "35",
@@ -1133,7 +1035,7 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 2.38,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1145,14 +1047,7 @@
     "rhpPdfUrl": "https://www.shreetnbpolymers.in/investor-pdf/01M34R00M95SSVD0BVECEBFCCR.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Shree+TNB+Polymers+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 13.21,
-      "nii": 47.5544,
-      "retail": 1.98,
-      "total": 8937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "36",
@@ -1170,7 +1065,7 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 292.21,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1182,14 +1077,7 @@
     "rhpPdfUrl": "https://everestims.com/assets/docs/EverestIMS_Technologies/rhp/EverestIMS_RHP_21092026.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=EverestIMS+Technologies+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 48.24,
-      "nii": 5058.821355,
-      "retail": 294.22,
-      "total": 8937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "37",
@@ -1207,7 +1095,7 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 2.44,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1219,14 +1107,7 @@
     "rhpPdfUrl": "https://eventions.in/wp-content/uploads/2026/09/Final_RHP.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Eventions+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 5.93,
-      "nii": 0.0,
-      "retail": 2.39,
-      "total": 8935.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "38",
@@ -1244,7 +1125,7 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 1.43,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1256,14 +1137,7 @@
     "rhpPdfUrl": "https://dovesoft.io/images/investor/RHP.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Dove+Soft+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 0.63,
-      "nii": 0.0,
-      "retail": 1.38,
-      "total": 8937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "39",
@@ -1281,7 +1155,7 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 1.86,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1293,14 +1167,7 @@
     "rhpPdfUrl": "https://www.google.com/search?q=SJP+Ultrasonic+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.bsesme.com/download/334252/SME_IPO%20InPrinciple/DPSJP_20250929205030.pdf",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 10.75,
-      "nii": 0.0,
-      "retail": 1.82,
-      "total": 8936.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "40",
@@ -1318,7 +1185,7 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 1.11,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1330,14 +1197,7 @@
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Omara_DraftProspectus_compressed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Omara+Ventures+India+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 2.57,
-      "nii": 0.0,
-      "retail": 1.06,
-      "total": 8928.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "41",
@@ -1355,7 +1215,7 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 2.19,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1367,14 +1227,7 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Sollfege+Smart+Electronics+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://assets.upstox.com/ipo/documents/drhp/DP_Sollfege_BSE_23042026_20260423120527_compressed.pdf",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 89.82,
-      "nii": 1018.18101,
-      "retail": 2.14,
-      "total": 8937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "42",
@@ -1392,7 +1245,7 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 2.2,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1404,14 +1257,7 @@
     "rhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/apr-2026/nityas-gems-and-jewellery-limited-drhp_100802.html",
     "drhpPdfUrl": "https://www.google.com/search?q=Nityas+Gems+&+Jewellery+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 6.67,
-      "nii": 11.3319,
-      "retail": 2.26,
-      "total": 8937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "43",
@@ -1429,7 +1275,7 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 1.68,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1441,14 +1287,7 @@
     "rhpPdfUrl": "https://www.saffronadvisor.com/files/offer-documents/Red_Herring_Prospectus__1_.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Vishal+Nirmiti+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 2.27,
-      "nii": 20.9122,
-      "retail": 1.79,
-      "total": 8937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "44",
@@ -1466,7 +1305,7 @@
     "listingDate": "2026-10-07",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 1.42,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1478,14 +1317,7 @@
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/GAIL_RHP_1789799314.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Green+Asia+Impex+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 0.0,
-      "nii": 0.0,
-      "retail": 1.04,
-      "total": 7931.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "45",
@@ -1503,7 +1335,7 @@
     "listingDate": "2026-10-07",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 85.26,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1515,14 +1347,7 @@
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/RHP_Black Opal Consultants Limited.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Black+Opal+Consultants+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 1.52,
-      "nii": 0.0001,
-      "retail": 73.8,
-      "total": 7937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "46",
@@ -1540,7 +1365,7 @@
     "listingDate": "2026-10-07",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 3.21,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1552,14 +1377,7 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Papadmalji+Agro+Foods+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://assets.upstox.com/ipo/documents/drhp/Registration_27122025223037_DRHP_compressed.pdf",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 0.42,
-      "nii": 0.0,
-      "retail": 2.54,
-      "total": 7935.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "47",
@@ -1577,7 +1395,7 @@
     "listingDate": "2026-10-07",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 725.05,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1589,14 +1407,7 @@
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/rhp_vans_electroengineering_limited.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Vans+Electroengineerings+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 90.0,
-      "nii": 10387.2945103,
-      "retail": 628.73,
-      "total": 7937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "48",
@@ -1614,7 +1425,7 @@
     "listingDate": "2026-10-06",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 4.1,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1626,14 +1437,7 @@
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/1. RHP - BSE_19.09.2026_compressed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Pind+Hospitality+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 20.0,
-      "nii": 11.0112,
-      "retail": 2.71,
-      "total": 6937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "49",
@@ -1681,7 +1485,7 @@
     "listingDate": "2026-10-06",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 3.25,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1693,14 +1497,7 @@
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Red Herring Prospectus_compressed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Shivchem+Agro+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 0.0,
-      "nii": 0.0,
-      "retail": 2.2,
-      "total": 6937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "51",
@@ -1718,7 +1515,7 @@
     "listingDate": "2026-10-06",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 102.47,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1730,14 +1527,7 @@
     "rhpPdfUrl": "https://static1.squarespace.com/static/64bf881ed10e9e2c82cb9367/t/6ab39d3507e7c86aadbbfaf8/1790156118227/Red+Herring+Prospectus%28RHP%29.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=SRIT+India+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "subscription": {
-      "qib": 13.85,
-      "nii": 5945.381262,
-      "retail": 125.16,
-      "total": 6937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "closeNotified": false
   },
   {
     "id": "52",
@@ -1755,7 +1545,7 @@
     "listingDate": "2026-10-06",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 17.81,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1765,14 +1555,7 @@
     "registrarUrl": "https://maashitla.com/allotment-status/public-issues",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/1_RHP_ACME_22092026.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Acme+Universal+Safezone+9+IPO+DRHP+file+SEBI",
-    "subscription": {
-      "qib": 942.25,
-      "nii": 1622.541016,
-      "retail": 23.41,
-      "total": 6937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "drhpPdfUrl": "https://www.google.com/search?q=Acme+Universal+Safezone+9+IPO+DRHP+file+SEBI"
   },
   {
     "id": "53",
@@ -1818,7 +1601,7 @@
     "listingDate": "2026-10-05",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 2.88,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1828,14 +1611,7 @@
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.icicisecurities.com/console/uploads/actual/RUNWAL-ENTERPRISES-LIMITED--RED-HERRING-PROSPECTUS_1790022848_83.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Runwal+Enterprises+IPO+DRHP+file+SEBI",
-    "subscription": {
-      "qib": 3050.0,
-      "nii": 0.00037,
-      "retail": 2.64,
-      "total": 5937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "drhpPdfUrl": "https://www.google.com/search?q=Runwal+Enterprises+IPO+DRHP+file+SEBI"
   },
   {
     "id": "55",
@@ -1853,7 +1629,7 @@
     "listingDate": "2026-10-05",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 33.45,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1863,14 +1639,7 @@
     "registrarUrl": "https://www.bigshareonline.com/ipo_allotment.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.systematixgroup.in/wp-content/uploads/2026/09/GGSPL-RHP.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=German+Green+Steel+&+Power+IPO+DRHP+file+SEBI",
-    "subscription": {
-      "qib": 1422.16,
-      "nii": 0.0,
-      "retail": 30.42,
-      "total": 5937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "drhpPdfUrl": "https://www.google.com/search?q=German+Green+Steel+&+Power+IPO+DRHP+file+SEBI"
   },
   {
     "id": "56",
@@ -1916,7 +1685,7 @@
     "listingDate": "2026-10-05",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 5.97,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1926,14 +1695,7 @@
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.india.clsa.com/uploads/Ace_Vector_Limited_RHP_18515f8243.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Acevector+(Snapdeal)+IPO+DRHP+file+SEBI",
-    "subscription": {
-      "qib": 11.5,
-      "nii": 0.0002,
-      "retail": 5.07,
-      "total": 5937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "drhpPdfUrl": "https://www.google.com/search?q=Acevector+(Snapdeal)+IPO+DRHP+file+SEBI"
   },
   {
     "id": "58",
@@ -1951,7 +1713,7 @@
     "listingDate": "2026-10-05",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 1.1,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1961,14 +1723,7 @@
     "registrarUrl": "https://maashitla.com/allotment-status/public-issues",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/rhp_himalayann-1.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Himalayan+Solar+IPO+DRHP+file+SEBI",
-    "subscription": {
-      "qib": 8517.48,
-      "nii": 0.0,
-      "retail": 1.19,
-      "total": 5935.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "drhpPdfUrl": "https://www.google.com/search?q=Himalayan+Solar+IPO+DRHP+file+SEBI"
   },
   {
     "id": "59",
@@ -1986,7 +1741,7 @@
     "listingDate": "2026-10-05",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 1.46,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -1996,14 +1751,7 @@
     "registrarUrl": "https://maashitla.com/allotment-status/public-issues",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Dudani+Retail+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.bsesme.com/download/376098/SME_IPO%20InPrinciple/DP_Dudani_Final_20260331230446.pdf",
-    "subscription": {
-      "qib": 2513.79,
-      "nii": 0.0,
-      "retail": 1.42,
-      "total": 5937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "drhpPdfUrl": "https://www.bsesme.com/download/376098/SME_IPO%20InPrinciple/DP_Dudani_Final_20260331230446.pdf"
   },
   {
     "id": "60",
@@ -2021,7 +1769,7 @@
     "listingDate": "2026-10-05",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 239.18,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -2031,14 +1779,7 @@
     "registrarUrl": "https://ipostatus.kfintech.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/benchmark_rhp (1).pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Bench+Mark+Infotech+Services+IPO+DRHP+file+SEBI",
-    "subscription": {
-      "qib": 1100.0,
-      "nii": 1513.641229,
-      "retail": 103.12,
-      "total": 5937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "drhpPdfUrl": "https://www.google.com/search?q=Bench+Mark+Infotech+Services+IPO+DRHP+file+SEBI"
   },
   {
     "id": "61",
@@ -2084,7 +1825,7 @@
     "listingDate": "2026-10-01",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 114.67,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -2094,14 +1835,7 @@
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.chittorgarh.net/reports/ipo_notes/moneyview-rhp.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Moneyview+IPO+DRHP+file+SEBI",
-    "subscription": {
-      "qib": 61.76,
-      "nii": 0.0,
-      "retail": 101.87,
-      "total": 1937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "drhpPdfUrl": "https://www.google.com/search?q=Moneyview+IPO+DRHP+file+SEBI"
   },
   {
     "id": "63",
@@ -2119,7 +1853,7 @@
     "listingDate": "2026-10-01",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 4.23,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -2129,14 +1863,7 @@
     "registrarUrl": "https://maashitla.com/allotment-status/public-issues",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/rhp-peshwa-wheat-limited_compressed.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Peshwa+Wheat+IPO+DRHP+file+SEBI",
-    "subscription": {
-      "qib": 0.94,
-      "nii": 0.0,
-      "retail": 2.77,
-      "total": 1933.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "drhpPdfUrl": "https://www.google.com/search?q=Peshwa+Wheat+IPO+DRHP+file+SEBI"
   },
   {
     "id": "64",
@@ -2154,7 +1881,7 @@
     "listingDate": "2026-10-01",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 299.57,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -2164,14 +1891,7 @@
     "registrarUrl": "https://www.bigshareonline.com/ipo_allotment.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/roopa_screen_limited_red_herring_prospectus.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Roopa+Screen+IPO+DRHP+file+SEBI",
-    "subscription": {
-      "qib": 90.0,
-      "nii": 4265.62842,
-      "retail": 271.94,
-      "total": 1937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "drhpPdfUrl": "https://www.google.com/search?q=Roopa+Screen+IPO+DRHP+file+SEBI"
   },
   {
     "id": "65",
@@ -2189,7 +1909,7 @@
     "listingDate": "2026-09-30",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 2.92,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -2199,14 +1919,7 @@
     "registrarUrl": "https://ipo.cameoindia.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.saffronadvisor.com/files/offer-documents/Red_Herring_Prospectus.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=ArMee+Infotech+IPO+DRHP+file+SEBI",
-    "subscription": {
-      "qib": 0.0,
-      "nii": 61.60151,
-      "retail": 2.62,
-      "total": 30937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "drhpPdfUrl": "https://www.google.com/search?q=ArMee+Infotech+IPO+DRHP+file+SEBI"
   },
   {
     "id": "66",
@@ -2224,7 +1937,7 @@
     "listingDate": "2026-09-30",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 1.44,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -2234,14 +1947,7 @@
     "registrarUrl": "https://maashitla.com/allotment-status/public-issues",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/RHP.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=S.K.Offset+IPO+DRHP+file+SEBI",
-    "subscription": {
-      "qib": 0.0,
-      "nii": 0.0,
-      "retail": 1.18,
-      "total": 30932.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "drhpPdfUrl": "https://www.google.com/search?q=S.K.Offset+IPO+DRHP+file+SEBI"
   },
   {
     "id": "67",
@@ -2259,7 +1965,7 @@
     "listingDate": "2026-09-30",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 4.45,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -2269,14 +1975,7 @@
     "registrarUrl": "https://www.bigshareonline.com/ipo_allotment.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/unitech-ipo-rhp.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Unitec+Fibres+IPO+DRHP+file+SEBI",
-    "subscription": {
-      "qib": 2.27,
-      "nii": 0.0,
-      "retail": 3.92,
-      "total": 30928.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "drhpPdfUrl": "https://www.google.com/search?q=Unitec+Fibres+IPO+DRHP+file+SEBI"
   },
   {
     "id": "68",
@@ -2319,7 +2018,7 @@
     "listingDate": "2026-09-30",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 8.71,
+    "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -2328,14 +2027,7 @@
     "registrarName": "Link Intime / MUFG",
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
     "rhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/sep-2026/swastika-infra-ltd-rhp_104573.html",
-    "drhpPdfUrl": "https://www.google.com/search?q=Swastika+Infra+IPO+DRHP+file+SEBI",
-    "subscription": {
-      "qib": 8.11,
-      "nii": 0.0,
-      "retail": 7.91,
-      "total": 30937.0,
-      "updatedAt": "18 Oct 2026, 06:34 AM"
-    }
+    "drhpPdfUrl": "https://www.google.com/search?q=Swastika+Infra+IPO+DRHP+file+SEBI"
   },
   {
     "id": "70",
