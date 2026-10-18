@@ -244,7 +244,6 @@ def sync_and_save_gmp(active_unlisted_ipos, existing_gmp):
 
     return updated_gmp_map
 
-
 # ----------------- UPSTOX INGESTION -----------------
 def try_fetch_upstox():
     if not UPSTOX_TOKEN:
@@ -367,16 +366,6 @@ def try_fetch_upstox():
                         any(done_kw in raw_status_str for done_kw in ["ALLOTTED", "FINALIZED", "COMPLETED", "DECLARED", "SUCCESS"])
                     )
 
-                    ipo_name = item.get("name", "")
-                    if any(target in ipo_name.lower() for target in ["hd fire", "vaibhav"]):
-                        print(f"\n>>> [Upstox Allotment Diagnostic: {ipo_name}]", flush=True)
-                        print(f"    raw_status_str = '{raw_status_str}'", flush=True)
-                        print(f"    details['is_allotment_done'] = {details.get('is_allotment_done')}", flush=True)
-                        print(f"    details['allotment_status'] = {details.get('allotment_status')}", flush=True)
-                        print(f"    details['allotment_details'] = {allotment_details}", flush=True)
-                        print(f"    timeline = {timeline}", flush=True)
-                        print(f"    -> Evaluated is_allotment_done: {is_allotment_finalized}\n", flush=True)
-
                     item["is_allotment_done"] = is_allotment_finalized
 
                     reg_info = details.get("registrar_info") or {}
@@ -461,7 +450,7 @@ def try_fetch_upstox():
 
     return upstox_list, "OK"
 
-# ----------------- MAIN PIPELINE ORCHESTRATOR -----------------
+ # ----------------- MAIN PIPELINE ORCHESTRATOR -----------------
 def run_pipeline():
     print(">>> [Phase 1/3] Initializing pipeline session...", flush=True)
 
@@ -469,8 +458,12 @@ def run_pipeline():
     if os.path.exists(OVERRIDES_PATH):
         try:
             with open(OVERRIDES_PATH, "r", encoding="utf-8") as f:
-                for k, v in json.load(f).items():
-                    manual_overrides[clean_company_name(k)] = (v["registrarName"], v["registrarUrl"])
+                raw_overrides = json.load(f)
+                for k, v in raw_overrides.items():
+                    if k == "aliases":
+                        continue
+                    if isinstance(v, dict) and "registrarName" in v and "registrarUrl" in v:
+                        manual_overrides[clean_company_name(k)] = (v["registrarName"], v["registrarUrl"])
         except Exception:
             pass
 
@@ -526,7 +519,8 @@ def run_pipeline():
             sub_hni = float(item.get("subscription_hni", 0.0))
             sub_qib = float(item.get("subscription_qib", 0.0))
 
-            # CACHE PINNING
+            # Retrieve prior historical data from cache
+            prior_gmp_history = []
             if norm_key in previous_cache:
                 prev = previous_cache[norm_key]
                 if sub_retail <= 0.0:
@@ -538,7 +532,8 @@ def run_pipeline():
                 if total_sub <= 0.0:
                     total_sub = float(prev.get("subscriptionTotal", 0.0))
 
-                # Retain verified allotment completion
+                prior_gmp_history = prev.get("gmpHistory", [])
+
                 if prev.get("isAllotmentDone") is True:
                     item["is_allotment_done"] = True
 
@@ -636,6 +631,7 @@ def run_pipeline():
                 "listingDate": list_d,
                 "gmpAmount": 0.0,
                 "gmpPercent": 0.0,
+                "gmpHistory": prior_gmp_history,
                 "subscriptionTotal": total_sub,
                 "subscriptionRetail": sub_retail,
                 "subscriptionHNI": sub_hni,
