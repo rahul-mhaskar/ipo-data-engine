@@ -7,14 +7,18 @@ from bs4 import BeautifulSoup
 import firebase_admin
 from firebase_admin import credentials, firestore
 
-# Initialize Firebase via GitHub Secret
+# Initialize Firebase Admin SDK
 cred_json = os.environ.get("FIREBASE_SERVICE_ACCOUNT")
 if cred_json:
-    cred_dict = json.loads(cred_json)
-    cred = credentials.Certificate(cred_dict)
-    if not firebase_admin._apps:
-        firebase_admin.initialize_app(cred)
-    db = firestore.client()
+    try:
+        cred_dict = json.loads(cred_json)
+        cred = credentials.Certificate(cred_dict)
+        if not firebase_admin._apps:
+            firebase_admin.initialize_app(cred)
+        db = firestore.client()
+    except Exception as e:
+        print(f"Firebase init error: {e}")
+        db = None
 else:
     db = None
 
@@ -30,12 +34,13 @@ def clean_multiplier(val_str):
 def fetch_from_investorgain():
     url = "https://www.investorgain.com/report/live-ipo-subscription-status/331/"
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
     }
     try:
         res = requests.get(url, headers=headers, timeout=20)
         if res.status_code != 200:
+            print(f"InvestorGain returned HTTP {res.status_code}")
             return []
 
         soup = BeautifulSoup(res.text, "html.parser")
@@ -65,39 +70,31 @@ def fetch_from_investorgain():
         print(f"Error fetching from InvestorGain: {e}")
         return []
 
-def update_local_json(sub_data, now_str):
-    # Locate ipos.json across common locations in the repo
-    possible_paths = [
-        "ipos.json",
-        "data/ipos.json",
-        "app/src/main/assets/ipos.json",
-        "scripts/ipos.json"
-    ]
-    target_path = next((p for p in possible_paths if os.path.exists(p)), None)
+def update_root_ipos_json(sub_data, now_str):
+    target_path = "ipos.json"
+    if not os.path.exists(target_path):
+        print("ipos.json not found at repository root.")
+        return
 
-    if not target_path:
-        print("ipos.json was not found in common locations. Creating it at root: ipos.json")
-        target_path = "ipos.json"
-        ipos_list = []
-    else:
-        with open(target_path, "r", encoding="utf-8") as f:
-            try:
-                ipos_list = json.load(f)
-            except json.JSONDecodeError:
-                ipos_list = []
+    with open(target_path, "r", encoding="utf-8") as f:
+        try:
+            data = json.load(f)
+        except json.JSONDecodeError as err:
+            print(f"Error decoding ipos.json: {err}")
+            return
 
-    # If ipos.json is a dict with an "ipos" or "data" key, handle both formats
-    is_dict = isinstance(ipos_list, dict)
-    items = ipos_list.get("ipos", ipos_list.get("data", [])) if is_dict else ipos_list
+    # Handle list of IPO objects or dict wrapping a list {"ipos": [...]}
+    is_dict = isinstance(data, dict)
+    items = data.get("ipos", data.get("data", [])) if is_dict else data
 
-    updated = 0
+    matched_count = 0
     for item in items:
-        name = (item.get("name") or item.get("companyName") or "").lower()
-        symbol = (item.get("symbol") or "").lower()
+        name = (item.get("name") or item.get("companyName") or "").lower().strip()
+        symbol = (item.get("symbol") or "").lower().strip()
 
         matched = None
         for sub in sub_data:
-            s_name = sub["name"].lower()
+            s_name = sub["name"].lower().strip()
             if (name and (name in s_name or s_name in name)) or (symbol and symbol in s_name):
                 matched = sub
                 break
@@ -110,22 +107,25 @@ def update_local_json(sub_data, now_str):
                 "total": matched["total"],
                 "updatedAt": now_str
             }
-            updated += 1
+            matched_count += 1
 
     with open(target_path, "w", encoding="utf-8") as f:
-        json.dump(ipos_list, f, indent=2, ensure_ascii=False)
+        json.dump(data, f, indent=2, ensure_ascii=False)
 
-    print(f"Successfully updated {updated} entries in {target_path}")
+    print(f"Updated subscription for {matched_count} IPOs directly in {target_path}")
 
 def sync_all():
     sub_data = fetch_from_investorgain()
     if not sub_data:
-        print("No subscription records found.")
+        print("No subscription records scraped.")
         return
 
     now_str = datetime.now().strftime("%d %b %Y, %I:%M %p")
 
-    # 1. Update Firestore
+    # 1. Update root ipos.json
+    update_root_ipos_json(sub_data, now_str)
+
+    # 2. Update Firestore if connected
     if db:
         ipos_ref = db.collection("ipos")
         for item in sub_data:
@@ -140,10 +140,7 @@ def sync_all():
                     "updatedAt": now_str
                 }
             }, merge=True)
-        print(f"Firestore synced with {len(sub_data)} records.")
-
-    # 2. Update local JSON file
-    update_local_json(sub_data, now_str)
+        print("Firestore updated in parallel.")
 
 if __name__ == "__main__":
     sync_all()
