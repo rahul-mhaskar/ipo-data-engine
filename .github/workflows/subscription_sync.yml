@@ -1,0 +1,32 @@
+name: Sync IPO Subscriptions
+
+on:
+  schedule:
+    # 08:00 UTC = 1:30 PM IST (Mon-Fri)
+    - cron: '0 8 * * 1-5'
+    # 11:45 UTC = 5:15 PM IST (Mon-Fri)
+    - cron: '45 11 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  update-subscriptions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          pip install -r scripts/requirements.txt
+
+      - name: Run Subscription Sync
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          python scripts/fetch_subscription.py
+          
