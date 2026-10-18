@@ -9,7 +9,6 @@ from bs4 import BeautifulSoup
 try:
     from rapidfuzz import fuzz
 except ImportError:
-    # Fallback to standard library ratio if rapidfuzz is not yet installed
     import difflib
     class FuzzFallback:
         @staticmethod
@@ -24,7 +23,7 @@ IPOS_JSON_PATH = "ipos.json"
 GMP_DATA_PATH = "gmp_data.json"
 OVERRIDES_PATH = "manual_overrides.json"
 
-# Sector noise and corporate suffixes to strip when isolating the unique entity
+# Industry noise words to ignore during matching
 INDUSTRY_NOISE: Set[str] = {
     "pharma", "pharmaceuticals", "pharmaceutical", "jewels", "jewellers", 
     "jewellery", "tech", "technologies", "technology", "solutions", 
@@ -35,29 +34,22 @@ INDUSTRY_NOISE: Set[str] = {
     "closing", "today", "sme", "bse", "nse"
 }
 
-# Common parent conglomerate prefixes
 PARENT_PREFIXES: Set[str] = {
     "reliance", "tata", "adani", "bajaj", "birla", "mahindra", "godrej", "l&t"
 }
 
 def clean_tokens(name: str) -> Set[str]:
-    """Extracts alphanumeric words from a name."""
     if not name:
         return set()
     cleaned = re.sub(r"[^a-zA-Z0-9\s]", " ", name.lower())
     return set(cleaned.split())
 
 def extract_core_entity(name: str) -> Set[str]:
-    """
-    Strips noise words and conglomerate prefixes to isolate the distinct entity.
-    E.g., 'Reliance Jio Platforms Ltd' -> {'jio'}
-    """
     tokens = clean_tokens(name) - INDUSTRY_NOISE
     specific_tokens = tokens - PARENT_PREFIXES
     return specific_tokens if specific_tokens else tokens
 
 def check_alias_match(name1: str, name2: str, aliases: Dict[str, str]) -> bool:
-    """Checks explicit bidirectional mappings from manual_overrides.json."""
     n1 = name1.strip().lower()
     n2 = name2.strip().lower()
     if aliases.get(n1) == n2 or aliases.get(n2) == n1:
@@ -73,18 +65,10 @@ def find_best_gmp_match(
     aliases: Dict[str, str],
     min_score: int = 86
 ) -> Optional[Dict]:
-    """
-    Multi-stage composite matcher:
-    1. Direct Symbol match (if both provide symbol)
-    2. Explicit manual aliases
-    3. Core brand anchor match (prevents cross-matching distinct Pharma/Jewel companies)
-    4. Guarded Token Set Fuzzy ratio
-    """
     target_name = target_ipo.get("name", "")
     target_symbol = target_ipo.get("symbol", "").strip().upper()
     target_close = target_ipo.get("closeDate", "").strip()
 
-    # 1. Symbol Match (100% deterministic)
     if target_symbol:
         for cand in candidates:
             cand_symbol = cand.get("symbol", "").strip().upper()
@@ -99,24 +83,18 @@ def find_best_gmp_match(
         cand_name = cand.get("name", "")
         cand_close = cand.get("closeDate", "").strip()
 
-        # 2. Manual Alias Match
         if check_alias_match(target_name, cand_name, aliases):
             return cand
 
-        # 3. Core Anchor Overlap Gate
         cand_core = extract_core_entity(cand_name)
         common_anchors = target_core.intersection(cand_core)
         
-        # If both have meaningful words and share zero anchors, reject immediately.
-        # This prevents 'Zenith Pharma' from matching 'Apex Pharma'.
         if target_core and cand_core and not common_anchors:
             continue
 
-        # 4. Date Gate (if close dates are known)
         if target_close and cand_close and target_close != cand_close:
             continue
 
-        # 5. Fuzzy Match on Cleaned Strings
         score = fuzz.token_set_ratio(target_name.lower(), cand_name.lower())
         if score > highest_score and score >= min_score:
             highest_score = score
@@ -124,71 +102,82 @@ def find_best_gmp_match(
 
     return best_candidate
 
-def scrape_investorgain_gmp() -> List[Dict]:
-    url = "https://www.investorgain.com/report/ipo-gmp-live/331/"
+def scrape_live_sources() -> List[Dict]:
+    """Scrapes latest real-time feeds across both Mainboard, SME, and Live Subscription headers."""
+    urls = [
+        "https://www.investorgain.com/report/live-ipo-gmp/331/ipo/",
+        "https://www.investorgain.com/report/live-ipo-gmp/331/sme/",
+        "https://www.investorgain.com/report/ipo-subscription-live/333/"
+    ]
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
     }
 
-    scraped_list = []
-    try:
-        res = requests.get(url, headers=headers, timeout=20)
-        if res.status_code != 200:
-            print(f"[GMP Scraper] HTTP {res.status_code} from InvestorGain.")
-            return scraped_list
+    records_by_name = {}
 
-        soup = BeautifulSoup(res.text, "html.parser")
-        table = soup.find("table")
-        if not table:
-            print("[GMP Scraper] Table not found on page.")
-            return scraped_list
+    for url in urls:
+        try:
+            res = requests.get(url, headers=headers, timeout=20)
+            if res.status_code != 200:
+                continue
 
-        # Locate column indexes dynamically
-        headers_row = table.find("tr")
-        col_name_idx = 0
-        col_gmp_idx = 1
+            soup = BeautifulSoup(res.text, "html.parser")
+            table = soup.find("table")
+            if not table:
+                continue
 
-        if headers_row:
-            for idx, th in enumerate(headers_row.find_all(["th", "td"])):
-                txt = th.get_text(strip=True).upper()
-                if any(k in txt for k in ["NAME", "COMPANY", "IPO"]):
-                    col_name_idx = idx
-                elif "GMP" in txt:
-                    col_gmp_idx = idx
+            rows = table.find_all("tr")
+            for row in rows[1:]:
+                cols = [td.get_text(separator=" ", strip=True) for td in row.find_all(["td", "th"])]
+                if not cols:
+                    continue
 
-        for row in table.find_all("tr")[1:]:
-            cols = [td.get_text(separator=" ", strip=True) for td in row.find_all(["td", "th"])]
-            if len(cols) > max(col_name_idx, col_gmp_idx):
-                raw_name = cols[col_name_idx]
-                raw_gmp = cols[col_gmp_idx]
+                raw_name = cols[0]
+                
+                # Check for inline GMP badge in the name cell: e.g. "Tonbo Imaging India IPOGMP:₹515 (73.57%)"
+                inline_amt = re.search(r"GMP:\s*₹?\s*([0-9]+(?:\.[0-9]+)?)", raw_name)
+                inline_pct = re.search(r"GMP:.*?\((\d+(?:\.\d+)?)%\)", raw_name)
 
-                # Match patterns like: "₹69 (25.46%)" or "₹15 (5.19%)" or "₹-- (0.00%)"
-                amt_match = re.search(r"₹\s*([0-9]+(?:\.[0-9]+)?)", raw_gmp)
-                pct_match = re.search(r"\(([+-]?[0-9]+(?:\.[0-9]+)?)\s*%\)", raw_gmp)
+                gmp_amt = None
+                gmp_pct = None
 
-                gmp_amt = float(amt_match.group(1)) if amt_match else 0.0
-                gmp_pct = float(pct_match.group(1)) if pct_match else 0.0
+                if inline_amt:
+                    gmp_amt = float(inline_amt.group(1))
+                    gmp_pct = float(inline_pct.group(1)) if inline_pct else 0.0
+                elif len(cols) > 2:
+                    # Check column 2/3 for standard GMP tables
+                    for col_text in cols[1:4]:
+                        if "₹" in col_text:
+                            amt_match = re.search(r"₹\s*([0-9]+(?:\.[0-9]+)?)", col_text)
+                            pct_match = re.search(r"\(([+-]?[0-9]+(?:\.[0-9]+)?)\s*%\)", col_text)
+                            if amt_match:
+                                gmp_amt = float(amt_match.group(1))
+                                gmp_pct = float(pct_match.group(1)) if pct_match else 0.0
+                                break
 
-                # Clean name of trailing UI markers
-                clean_name = re.sub(r"\b(IPO|SME|BSE|NSE)\b", "", raw_name, flags=re.IGNORECASE).strip()
+                if gmp_amt is not None:
+                    # Clean out noise and status markers
+                    clean_name = re.sub(r"GMP:.*", "", raw_name, flags=re.IGNORECASE)
+                    clean_name = re.sub(r"\b(IPO|SME|BSE|NSE|Open|Closed|Allotted)\b", "", clean_name, flags=re.IGNORECASE).strip()
 
-                if clean_name:
-                    scraped_list.append({
-                        "name": clean_name,
-                        "raw_name": raw_name,
-                        "gmp": gmp_amt,
-                        "percent": gmp_pct
-                    })
+                    key = re.sub(r"[^a-z0-9]", "", clean_name.lower())
+                    if key and (key not in records_by_name or gmp_amt > 0):
+                        records_by_name[key] = {
+                            "name": clean_name,
+                            "raw_name": raw_name,
+                            "gmp": gmp_amt,
+                            "percent": gmp_pct
+                        }
+        except Exception as e:
+            print(f"[WARN] Error fetching {url}: {e}")
 
-        print(f"[GMP Scraper] Extracted {len(scraped_list)} live GMP records.")
-    except Exception as e:
-        print(f"[GMP Scraper] Error during fetch: {e}")
-
-    return scraped_list
+    results = list(records_by_name.values())
+    print(f"[GMP Scraper] Extracted {len(results)} live real-time GMP records.")
+    return results
 
 def sync_gmp():
-    scraped_candidates = scrape_investorgain_gmp()
+    scraped_candidates = scrape_live_sources()
 
     # Load manual overrides
     manual_overrides = {}
@@ -200,7 +189,7 @@ def sync_gmp():
                 aliases = raw_overrides.get("aliases", {})
                 manual_overrides = {k: v for k, v in raw_overrides.items() if k != "aliases"}
         except Exception as e:
-            print(f"[WARN] Failed to load manual overrides: {e}")
+            print(f"[WARN] Failed to load overrides: {e}")
 
     # Load persistent GMP storage
     gmp_store = {}
@@ -231,19 +220,19 @@ def sync_gmp():
         final_gmp = None
         final_pct = None
 
-        # 1. Priority 1: Check manual overrides file
+        # Priority 1: Manual overrides
         override_entry = manual_overrides.get(raw_name.lower()) or manual_overrides.get(raw_name)
         if override_entry and "gmp" in override_entry:
             final_gmp = float(override_entry["gmp"])
 
-        # 2. Priority 2: Multi-layer composite matching against scraped data
+        # Priority 2: Multi-layer matching against scraped data
         if final_gmp is None:
             match = find_best_gmp_match(item, scraped_candidates, aliases)
             if match:
                 final_gmp = match["gmp"]
                 final_pct = match["percent"]
 
-        # 3. Priority 3: Fallback to historical local store
+        # Priority 3: Previous storage
         if final_gmp is None and clean_key in gmp_store:
             saved = gmp_store[clean_key]
             final_gmp = float(saved.get("gmp", 0.0) if isinstance(saved, dict) else saved)
@@ -251,7 +240,6 @@ def sync_gmp():
         if final_gmp is None:
             continue
 
-        # Recalculate percentage if needed
         p_max = float(item.get("issuePriceMax", 0.0))
         if final_pct is None:
             final_pct = round((final_gmp / p_max * 100.0), 2) if (p_max > 0 and final_gmp > 0) else 0.0
@@ -259,7 +247,7 @@ def sync_gmp():
         item["gmpAmount"] = final_gmp
         item["gmpPercent"] = final_pct
 
-        # Update rolling 6-day history for Compose Canvas sparkline
+        # Rolling 6-day history
         history = item.setdefault("gmpHistory", [])
         if history and history[-1].get("dateLabel") == today_str:
             history[-1]["amount"] = final_gmp
@@ -268,11 +256,8 @@ def sync_gmp():
                 "dateLabel": today_str,
                 "amount": final_gmp
             })
-
-        # Retain last 6 days
         item["gmpHistory"] = history[-6:]
 
-        # Update local persistence store
         gmp_store[clean_key] = {
             "name": raw_name,
             "gmp": final_gmp,
@@ -280,7 +265,6 @@ def sync_gmp():
         }
         updated_count += 1
 
-    # Save updated datasets
     with open(IPOS_JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(ipos_data, f, indent=2, ensure_ascii=False)
 
@@ -291,3 +275,4 @@ def sync_gmp():
 
 if __name__ == "__main__":
     sync_gmp()
+    
