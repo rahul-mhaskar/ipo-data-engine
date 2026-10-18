@@ -11,36 +11,54 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   sync-ipo-data:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: 'pip'
 
       - name: Install Dependencies
         run: |
-          pip install -r scripts/requirements.txt
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: Run Subscription Sync
         env:
           FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          PYTHONUNBUFFERED: "1"
         run: |
-          python scripts/fetch_subscription.py
+          python -u scripts/fetch_subscription.py
 
       - name: Run GMP & Momentum Trend Sync
+        env:
+          PYTHONUNBUFFERED: "1"
         run: |
-          python scripts/fetch_gmp.py
+          python -u scripts/fetch_gmp.py
 
       - name: Commit and Push if Changed
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add ipos.json gmp_data.json
-          git diff --staged --quiet || (git commit -m "chore: auto-sync subscriptions, GMP & trend history" && git push)
+          if git diff --staged --quiet; then
+            echo "No changes detected across dataset and GMP files."
+          else
+            git commit -m "chore: auto-sync subscriptions, GMP & trend history [skip ci]"
+            git pull --rebase origin main
+            git push origin main
+          fi
           
