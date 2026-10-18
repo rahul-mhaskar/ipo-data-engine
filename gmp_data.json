@@ -6,28 +6,28 @@
   },
   "bonfigliolitransmissions": {
     "name": "Bonfiglioli Transmissions",
-    "gmp": 132.0,
-    "percent": 22.53
+    "gmp": 130.0,
+    "percent": 22.18
   },
   "sahajanandmedicaltechnologies": {
     "name": "Sahajanand Medical Technologies",
-    "gmp": 15.0,
-    "percent": 4.36
+    "gmp": 25.0,
+    "percent": 7.27
   },
   "shellzindia": {
     "name": "Shellz India",
-    "gmp": 24.0,
-    "percent": 13.41
+    "gmp": 35.0,
+    "percent": 19.55
   },
   "tonboimagingindia": {
     "name": "Tonbo Imaging India",
-    "gmp": 505.0,
-    "percent": 72.14
+    "gmp": 515.0,
+    "percent": 73.57
   },
   "zetwerkmanufacturing": {
     "name": "Zetwerk Manufacturing",
-    "gmp": 7.2,
-    "percent": 4.77
+    "gmp": 5.0,
+    "percent": 3.31
   },
   "parashealthcare": {
     "name": "Paras Healthcare",
@@ -134,17 +134,22 @@
   },
   "fusioncx": {
     "name": "Fusion CX",
-    "gmp": 15.0,
-    "percent": 5.19
+    "gmp": 19.0,
+    "percent": 6.57
   },
   "hdfireprotect": {
     "name": "HD Fire Protect",
-    "gmp": 69.0,
-    "percent": 25.46
+    "gmp": 65.0,
+    "percent": 23.99
   },
   "vaibhavvyapaar": {
     "name": "Vaibhav Vyapaar",
     "gmp": 5.0,
     "percent": 9.26
+  },
+  "ravitaengineeringservices": {
+    "name": "Ravita Engineering Services",
+    "gmp": 4.5,
+    "percent": 4.02
   }
 }
