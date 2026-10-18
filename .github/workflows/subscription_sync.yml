@@ -1,4 +1,4 @@
-name: Sync IPO Subscriptions
+name: Sync IPO Subscriptions and GMP
 
 on:
   schedule:
@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 jobs:
-  update-subscriptions:
+  sync-ipo-data:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -33,10 +33,14 @@ jobs:
         run: |
           python scripts/fetch_subscription.py
 
+      - name: Run GMP & Momentum Trend Sync
+        run: |
+          python scripts/fetch_gmp.py
+
       - name: Commit and Push if Changed
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add ipos.json
-          git diff --staged --quiet || (git commit -m "chore: auto-update live subscriptions in ipos.json" && git push)
+          git add ipos.json gmp_data.json
+          git diff --staged --quiet || (git commit -m "chore: auto-sync subscriptions, GMP & trend history" && git push)
           
