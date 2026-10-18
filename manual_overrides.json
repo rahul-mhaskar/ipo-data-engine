@@ -2,5 +2,12 @@
   "eventions": {
     "registrarName": "Mudra RTA Ventures",
     "registrarUrl": "https://mudrarta.com/"
+  },
+  "aliases": {
+    "reliance jio": "jio platforms",
+    "jio platforms limited": "reliance jio",
+    "vaibhav vyapaar": "loanfront",
+    "sahajanand medical": "smt",
+    "hd fire protect": "hdfire"
   }
 }
