@@ -7,16 +7,16 @@ from bs4 import BeautifulSoup
 import firebase_admin
 from firebase_admin import credentials, firestore
 
+# Initialize Firebase via GitHub Secret
 cred_json = os.environ.get("FIREBASE_SERVICE_ACCOUNT")
-if not cred_json:
-    raise ValueError("Missing FIREBASE_SERVICE_ACCOUNT environment variable")
-
-cred_dict = json.loads(cred_json)
-cred = credentials.Certificate(cred_dict)
-if not firebase_admin._apps:
-    firebase_admin.initialize_app(cred)
-
-db = firestore.client()
+if cred_json:
+    cred_dict = json.loads(cred_json)
+    cred = credentials.Certificate(cred_dict)
+    if not firebase_admin._apps:
+        firebase_admin.initialize_app(cred)
+    db = firestore.client()
+else:
+    db = None
 
 def clean_multiplier(val_str):
     if not val_str:
@@ -27,19 +27,12 @@ def clean_multiplier(val_str):
     except ValueError:
         return 0.0
 
-def slugify(text):
-    """Creates a clean, consistent document ID from company name."""
-    text = text.lower().strip()
-    text = re.sub(r"[^\w\s-]", "", text)
-    return re.sub(r"[-\s]+", "_", text)
-
 def fetch_from_investorgain():
     url = "https://www.investorgain.com/report/live-ipo-subscription-status/331/"
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
     }
-    
     try:
         res = requests.get(url, headers=headers, timeout=20)
         if res.status_code != 200:
@@ -58,7 +51,6 @@ def fetch_from_investorgain():
                 first_col = cols[0]
                 if any(h in first_col.lower() for h in ["issuer", "company", "ipo name"]):
                     continue
-                
                 numbers = [clean_multiplier(c) for c in cols if any(ch.isdigit() for ch in c)]
                 if len(numbers) >= 3:
                     results.append({
@@ -73,54 +65,86 @@ def fetch_from_investorgain():
         print(f"Error fetching from InvestorGain: {e}")
         return []
 
-def sync_to_firestore():
-    sub_data = fetch_from_investorgain()
+def update_local_json(sub_data, now_str):
+    # Locate ipos.json across common locations in the repo
+    possible_paths = [
+        "ipos.json",
+        "data/ipos.json",
+        "app/src/main/assets/ipos.json",
+        "scripts/ipos.json"
+    ]
+    target_path = next((p for p in possible_paths if os.path.exists(p)), None)
 
+    if not target_path:
+        print("ipos.json was not found in common locations. Creating it at root: ipos.json")
+        target_path = "ipos.json"
+        ipos_list = []
+    else:
+        with open(target_path, "r", encoding="utf-8") as f:
+            try:
+                ipos_list = json.load(f)
+            except json.JSONDecodeError:
+                ipos_list = []
+
+    # If ipos.json is a dict with an "ipos" or "data" key, handle both formats
+    is_dict = isinstance(ipos_list, dict)
+    items = ipos_list.get("ipos", ipos_list.get("data", [])) if is_dict else ipos_list
+
+    updated = 0
+    for item in items:
+        name = (item.get("name") or item.get("companyName") or "").lower()
+        symbol = (item.get("symbol") or "").lower()
+
+        matched = None
+        for sub in sub_data:
+            s_name = sub["name"].lower()
+            if (name and (name in s_name or s_name in name)) or (symbol and symbol in s_name):
+                matched = sub
+                break
+
+        if matched:
+            item["subscription"] = {
+                "qib": matched["qib"],
+                "nii": matched["nii"],
+                "retail": matched["retail"],
+                "total": matched["total"],
+                "updatedAt": now_str
+            }
+            updated += 1
+
+    with open(target_path, "w", encoding="utf-8") as f:
+        json.dump(ipos_list, f, indent=2, ensure_ascii=False)
+
+    print(f"Successfully updated {updated} entries in {target_path}")
+
+def sync_all():
+    sub_data = fetch_from_investorgain()
     if not sub_data:
         print("No subscription records found.")
         return
 
-    print(f"Retrieved {len(sub_data)} live subscription records.")
-
-    ipos_ref = db.collection("ipos")
-    existing_docs = {doc.id: doc.to_dict() for doc in ipos_ref.stream()}
-
     now_str = datetime.now().strftime("%d %b %Y, %I:%M %p")
-    written_count = 0
 
-    for item in sub_data:
-        sub_payload = {
-            "qib": item["qib"],
-            "nii": item["nii"],
-            "retail": item["retail"],
-            "total": item["total"],
-            "updatedAt": now_str
-        }
-
-        # Check if matched in existing documents
-        matched_doc_id = None
-        for doc_id, data in existing_docs.items():
-            name = (data.get("name") or data.get("companyName") or "").lower()
-            if name and (name in item["name"].lower() or item["name"].lower() in name):
-                matched_doc_id = doc_id
-                break
-
-        if matched_doc_id:
-            ipos_ref.document(matched_doc_id).set({"subscription": sub_payload}, merge=True)
-            print(f"Updated existing: {matched_doc_id} -> {sub_payload['total']}x")
-        else:
-            # Create document if it doesn't exist yet
-            doc_id = slugify(item["name"])
-            ipos_ref.document(doc_id).set({
+    # 1. Update Firestore
+    if db:
+        ipos_ref = db.collection("ipos")
+        for item in sub_data:
+            slug = re.sub(r"[-\s]+", "_", re.sub(r"[^\w\s-]", "", item["name"].lower().strip()))
+            ipos_ref.document(slug).set({
                 "name": item["name"],
-                "subscription": sub_payload
+                "subscription": {
+                    "qib": item["qib"],
+                    "nii": item["nii"],
+                    "retail": item["retail"],
+                    "total": item["total"],
+                    "updatedAt": now_str
+                }
             }, merge=True)
-            print(f"Created new doc: {doc_id} -> {sub_payload['total']}x")
+        print(f"Firestore synced with {len(sub_data)} records.")
 
-        written_count += 1
-
-    print(f"Sync complete. Successfully populated/updated {written_count} IPO records in Firestore.")
+    # 2. Update local JSON file
+    update_local_json(sub_data, now_str)
 
 if __name__ == "__main__":
-    sync_to_firestore()
+    sync_all()
     
