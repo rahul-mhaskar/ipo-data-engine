@@ -27,7 +27,13 @@
     "rhpPdfUrl": "https://myjiostatic.cdn.jio.com/cms/assets/iv3/Red%20Herring%20Prospectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Reliance+Jio+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 223.0
+      }
+    ]
   },
   {
     "id": "2",
@@ -45,7 +51,7 @@
     "listingDate": "2026-10-23",
     "gmpAmount": 132.0,
     "gmpPercent": 22.53,
-    "subscriptionTotal": 0.71,
+    "subscriptionTotal": 0.9916,
     "subscriptionRetail": 1.16,
     "subscriptionHNI": 1.71,
     "subscriptionQIB": 0.16,
@@ -57,7 +63,13 @@
     "rhpPdfUrl": "https://www.bonfiglioli.com/india/IPO/RHP/Peacock%20-%20RHP%20%28Filing%20version%29%20-%20Signed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Bonfiglioli+Transmissions+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 132.0
+      }
+    ]
   },
   {
     "id": "3",
@@ -75,7 +87,7 @@
     "listingDate": "2026-10-23",
     "gmpAmount": 15.0,
     "gmpPercent": 4.36,
-    "subscriptionTotal": 0.28,
+    "subscriptionTotal": 0.8316,
     "subscriptionRetail": 0.83,
     "subscriptionHNI": 0.51,
     "subscriptionQIB": 1.12,
@@ -87,7 +99,13 @@
     "rhpPdfUrl": "https://assets.ipopremium.in/images/ipo/sahajanand_medical_technologies_ltd_mainboard_rhp_1791630001.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Sahajanand+Medical+Technologies+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 15.0
+      }
+    ]
   },
   {
     "id": "4",
@@ -105,7 +123,7 @@
     "listingDate": "2026-10-23",
     "gmpAmount": 24.0,
     "gmpPercent": 13.41,
-    "subscriptionTotal": 1.05,
+    "subscriptionTotal": 0.8916,
     "subscriptionRetail": 0.85,
     "subscriptionHNI": 2.18,
     "subscriptionQIB": 0.0,
@@ -117,7 +135,13 @@
     "rhpPdfUrl": "https://www.socradamus.in/downloads/sme-ipo/shellz-india-limited/RHP-Shellz-final.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Shellz+India+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 24.0
+      }
+    ]
   },
   {
     "id": "5",
@@ -135,7 +159,7 @@
     "listingDate": "2026-10-23",
     "gmpAmount": 505.0,
     "gmpPercent": 72.14,
-    "subscriptionTotal": 5.22,
+    "subscriptionTotal": 7.7816,
     "subscriptionRetail": 7.14,
     "subscriptionHNI": 14.35,
     "subscriptionQIB": 3.95,
@@ -147,7 +171,13 @@
     "rhpPdfUrl": "https://live.jmfl.com/od/UploadedFiles/CA86AB52-0D43-437A-8D1C-6E475C6CEF01.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Tonbo+Imaging+India+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 505.0
+      }
+    ]
   },
   {
     "id": "6",
@@ -165,7 +195,7 @@
     "listingDate": "2026-10-23",
     "gmpAmount": 7.2,
     "gmpPercent": 4.77,
-    "subscriptionTotal": 0.19,
+    "subscriptionTotal": 0.3116,
     "subscriptionRetail": 0.37,
     "subscriptionHNI": 0.17,
     "subscriptionQIB": 0.37,
@@ -177,7 +207,13 @@
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Zetwerk-RHP_compressed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Zetwerk+Manufacturing+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 7.2
+      }
+    ]
   },
   {
     "id": "7",
@@ -207,7 +243,13 @@
     "rhpPdfUrl": "https://www.jmfl.com/Common/getFile/6104",
     "drhpPdfUrl": "https://www.google.com/search?q=Paras+Healthcare+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 96.0
+      }
+    ]
   },
   {
     "id": "8",
@@ -237,7 +279,13 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Parle+Products+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Parle+Products+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "9",
@@ -267,7 +315,13 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Twinkle+Papers+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Twinkle+Papers+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "10",
@@ -297,7 +351,13 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Sri+Priyanka+Geo+Commex+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://nsearchives.nseindia.com/emerge/corporates/content/Registration_14082025195719_SriPriyankaGeoCommexLimitedDRHP.pdf",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "11",
@@ -327,7 +387,13 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Flipkart+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Flipkart+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "12",
@@ -357,7 +423,13 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Prestige+Hospitality+Ventures+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Prestige+Hospitality+Ventures+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "13",
@@ -387,7 +459,13 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Credila+Financial+Services+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Credila+Financial+Services+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "14",
@@ -417,7 +495,13 @@
     "rhpPdfUrl": "https://www.google.com/search?q=PhonePe+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=PhonePe+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "15",
@@ -447,7 +531,13 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Zepto+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Zepto+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "16",
@@ -477,7 +567,13 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Solar91+Cleantech+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Solar91+Cleantech+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "17",
@@ -507,7 +603,13 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Hero+FinCorp+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Hero+FinCorp+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "18",
@@ -537,7 +639,13 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Deltatech+Gaming+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655459382467.pdf#page=1&zoom=page-width,-16,849",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "19",
@@ -567,7 +675,13 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Biba+Fashions+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jul-2022/1659005306568.pdf#page=1&zoom=page-width,-16,764",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "20",
@@ -597,7 +711,13 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Droom+Technology+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/may-2023/1683610115492.pdf#page=1&zoom=page-width,-16,842",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "21",
@@ -627,7 +747,13 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Puranik+Builders+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/sep-2022/1663916527724.pdf#page=1&zoom=page-width,-16,764",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "22",
@@ -657,7 +783,13 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Bharat+FIH+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655876827634.pdf#page=1&zoom=page-width,-16,610",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "23",
@@ -687,7 +819,13 @@
     "rhpPdfUrl": "https://www.google.com/search?q=FabIndia+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/nov-2022/fabindia-limited-corrigendum-to-drhp_64776.html",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "24",
@@ -717,7 +855,13 @@
     "rhpPdfUrl": "https://www.google.com/search?q=OYO+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/nov-2022/1669613102669.pdf#page=1&zoom=page-width,-15,842",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "25",
@@ -747,7 +891,13 @@
     "rhpPdfUrl": "https://www.google.com/search?q=EBIXCASH+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/oct-2021/1633066313151.pdf#page=1&zoom=page-width,-16,379",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "26",
@@ -777,7 +927,13 @@
     "rhpPdfUrl": "https://www.google.com/search?q=BoAt+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=/sebi_data/attachdocs/jan-2022/1643353844101.PDF#page=2&zoom=page-width,-15,379",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "27",
@@ -795,7 +951,7 @@
     "listingDate": "2026-10-22",
     "gmpAmount": 3.0,
     "gmpPercent": 2.68,
-    "subscriptionTotal": 8.32,
+    "subscriptionTotal": 7.1116,
     "subscriptionRetail": 3.5,
     "subscriptionHNI": 7.42,
     "subscriptionQIB": 13.21,
@@ -807,7 +963,13 @@
     "rhpPdfUrl": "https://www.vivro.net/uploads/team/1791441800230.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Ravita+Engineering+Services+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": true
+    "closeNotified": true,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 3.0
+      }
+    ]
   },
   {
     "id": "28",
@@ -825,7 +987,7 @@
     "listingDate": "2026-10-22",
     "gmpAmount": 15.0,
     "gmpPercent": 5.19,
-    "subscriptionTotal": 4.43,
+    "subscriptionTotal": 4.6816,
     "subscriptionRetail": 5.99,
     "subscriptionHNI": 4.73,
     "subscriptionQIB": 4.21,
@@ -837,7 +999,13 @@
     "rhpPdfUrl": "https://www.fusioncx.com/wp-content/uploads/rhp/Fusion-CX-Limited-Red-Herring-Prospectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Fusion+CX+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": true
+    "closeNotified": true,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 15.0
+      }
+    ]
   },
   {
     "id": "29",
@@ -855,7 +1023,7 @@
     "listingDate": "2026-10-21",
     "gmpAmount": 69.0,
     "gmpPercent": 25.46,
-    "subscriptionTotal": 131.25,
+    "subscriptionTotal": 131.7315,
     "subscriptionRetail": 30.55,
     "subscriptionHNI": 203.21,
     "subscriptionQIB": 256.65,
@@ -867,7 +1035,13 @@
     "rhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/oct-2026/hd-fire-protect-limited-rhp_105058.html",
     "drhpPdfUrl": "https://www.google.com/search?q=HD+Fire+Protect+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": true
+    "closeNotified": true,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 69.0
+      }
+    ]
   },
   {
     "id": "30",
@@ -885,7 +1059,7 @@
     "listingDate": "2026-10-21",
     "gmpAmount": 5.0,
     "gmpPercent": 9.26,
-    "subscriptionTotal": 3.8,
+    "subscriptionTotal": 3.2315,
     "subscriptionRetail": 2.7,
     "subscriptionHNI": 6.65,
     "subscriptionQIB": 1.61,
@@ -897,7 +1071,13 @@
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Red-Heering-Prospectus_VVL.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Vaibhav+Vyapaar+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": true
+    "closeNotified": true,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 5.0
+      }
+    ]
   },
   {
     "id": "31",
@@ -915,7 +1095,7 @@
     "listingDate": "2026-10-12",
     "gmpAmount": 1.5,
     "gmpPercent": 1.83,
-    "subscriptionTotal": 2.72,
+    "subscriptionTotal": 2.77,
     "subscriptionRetail": 3.11,
     "subscriptionHNI": 1.77,
     "subscriptionQIB": 14.11,
@@ -945,7 +1125,7 @@
     "listingDate": "2026-10-09",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 54.92,
+    "subscriptionTotal": 55.26,
     "subscriptionRetail": 46.17,
     "subscriptionHNI": 102.14,
     "subscriptionQIB": 35.64,
@@ -975,7 +1155,7 @@
     "listingDate": "2026-10-09",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 123.52,
+    "subscriptionTotal": 124.236,
     "subscriptionRetail": 85.5,
     "subscriptionHNI": 196.27,
     "subscriptionQIB": 137.93,
@@ -1005,7 +1185,7 @@
     "listingDate": "2026-10-09",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 1.93,
+    "subscriptionTotal": 1.886,
     "subscriptionRetail": 1.1,
     "subscriptionHNI": 0.09,
     "subscriptionQIB": 119.29,
@@ -1035,7 +1215,7 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 2.38,
+    "subscriptionTotal": 1.985,
     "subscriptionRetail": 1.72,
     "subscriptionHNI": 2.98,
     "subscriptionQIB": 1.7,
@@ -1065,7 +1245,7 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 292.21,
+    "subscriptionTotal": 294.225,
     "subscriptionRetail": 268.29,
     "subscriptionHNI": 548.61,
     "subscriptionQIB": 148.63,
@@ -1095,7 +1275,7 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 2.44,
+    "subscriptionTotal": 2.395,
     "subscriptionRetail": 1.38,
     "subscriptionHNI": 0.52,
     "subscriptionQIB": 26.18,
@@ -1125,7 +1305,7 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 1.43,
+    "subscriptionTotal": 1.385,
     "subscriptionRetail": 0.81,
     "subscriptionHNI": 1.96,
     "subscriptionQIB": 1.0,
@@ -1155,7 +1335,7 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 1.86,
+    "subscriptionTotal": 1.825,
     "subscriptionRetail": 1.0,
     "subscriptionHNI": 1.86,
     "subscriptionQIB": 0.0,
@@ -1185,7 +1365,7 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 1.11,
+    "subscriptionTotal": 1.065,
     "subscriptionRetail": 0.43,
     "subscriptionHNI": 1.72,
     "subscriptionQIB": 1.0,
@@ -1215,7 +1395,7 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 2.19,
+    "subscriptionTotal": 2.145,
     "subscriptionRetail": 2.0,
     "subscriptionHNI": 2.28,
     "subscriptionQIB": 0.0,
@@ -1245,7 +1425,7 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 2.2,
+    "subscriptionTotal": 2.265,
     "subscriptionRetail": 4.07,
     "subscriptionHNI": 2.05,
     "subscriptionQIB": 1.06,
@@ -1275,7 +1455,7 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 1.68,
+    "subscriptionTotal": 1.795,
     "subscriptionRetail": 1.75,
     "subscriptionHNI": 1.89,
     "subscriptionQIB": 1.33,
@@ -1305,7 +1485,7 @@
     "listingDate": "2026-10-07",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 1.42,
+    "subscriptionTotal": 1.041,
     "subscriptionRetail": 0.56,
     "subscriptionHNI": 0.64,
     "subscriptionQIB": 2.06,
@@ -1335,7 +1515,7 @@
     "listingDate": "2026-10-07",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 85.26,
+    "subscriptionTotal": 73.81,
     "subscriptionRetail": 60.15,
     "subscriptionHNI": 124.29,
     "subscriptionQIB": 59.77,
@@ -1365,7 +1545,7 @@
     "listingDate": "2026-10-07",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 3.21,
+    "subscriptionTotal": 2.541,
     "subscriptionRetail": 1.59,
     "subscriptionHNI": 1.32,
     "subscriptionQIB": 86.85,
@@ -1395,7 +1575,7 @@
     "listingDate": "2026-10-07",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 725.05,
+    "subscriptionTotal": 628.731,
     "subscriptionRetail": 686.32,
     "subscriptionHNI": 1031.87,
     "subscriptionQIB": 281.65,
@@ -1425,7 +1605,7 @@
     "listingDate": "2026-10-06",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 4.1,
+    "subscriptionTotal": 2.713,
     "subscriptionRetail": 4.31,
     "subscriptionHNI": 1.15,
     "subscriptionQIB": 1.0,
@@ -1455,7 +1635,7 @@
     "listingDate": "2026-10-06",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 43.67,
+    "subscriptionTotal": 38.123,
     "subscriptionRetail": 19.26,
     "subscriptionHNI": 95.54,
     "subscriptionQIB": 28.05,
@@ -1485,7 +1665,7 @@
     "listingDate": "2026-10-06",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "subscriptionTotal": 3.25,
+    "subscriptionTotal": 2.23,
     "subscriptionRetail": 3.5,
     "subscriptionHNI": 1.0,
     "subscriptionQIB": 1.0,
