@@ -4,32 +4,13 @@ import re
 from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
-import firebase_admin
-from firebase_admin import credentials, firestore
-
-# Initialize Firebase Admin SDK
-cred_json = os.environ.get("FIREBASE_SERVICE_ACCOUNT")
-if cred_json:
-    try:
-        cred_dict = json.loads(cred_json)
-        cred = credentials.Certificate(cred_dict)
-        if not firebase_admin._apps:
-            firebase_admin.initialize_app(cred)
-        db = firestore.client()
-    except Exception as e:
-        print(f"Firebase init error: {e}")
-        db = None
-else:
-    db = None
 
 def clean_multiplier(val_str):
     if not val_str:
         return 0.0
-    cleaned = re.sub(r"[^\d.]", "", str(val_str).strip())
-    try:
-        return float(cleaned)
-    except ValueError:
-        return 0.0
+    # Match decimal multiplier like "12.45" or "4.43x"
+    match = re.search(r"(\d+(\.\d+)?)", str(val_str).replace(",", ""))
+    return float(match.group(1)) if match else 0.0
 
 def fetch_from_investorgain():
     url = "https://www.investorgain.com/report/live-ipo-subscription-status/331/"
@@ -40,7 +21,6 @@ def fetch_from_investorgain():
     try:
         res = requests.get(url, headers=headers, timeout=20)
         if res.status_code != 200:
-            print(f"InvestorGain returned HTTP {res.status_code}")
             return []
 
         soup = BeautifulSoup(res.text, "html.parser")
@@ -48,48 +28,70 @@ def fetch_from_investorgain():
         if not table:
             return []
 
+        # Map header positions dynamically
+        headers_map = {}
+        header_row = table.find("tr")
+        if header_row:
+            for idx, th in enumerate(header_row.find_all(["th", "td"])):
+                text = th.get_text(strip=True).upper()
+                if "QIB" in text:
+                    headers_map["qib"] = idx
+                elif "NII" in text or "HNI" in text:
+                    headers_map["nii"] = idx
+                elif "RETAIL" in text or "RII" in text:
+                    headers_map["retail"] = idx
+                elif "TOTAL" in text:
+                    headers_map["total"] = idx
+
         results = []
-        rows = table.find_all("tr")
+        rows = table.find_all("tr")[1:]
         for row in rows:
             cols = [td.get_text(strip=True) for td in row.find_all(["td", "th"])]
             if len(cols) >= 5:
-                first_col = cols[0]
-                if any(h in first_col.lower() for h in ["issuer", "company", "ipo name"]):
+                name = cols[0]
+                if any(h in name.lower() for h in ["issuer", "company", "ipo name"]):
                     continue
-                numbers = [clean_multiplier(c) for c in cols if any(ch.isdigit() for ch in c)]
-                if len(numbers) >= 3:
-                    results.append({
-                        "name": first_col,
-                        "qib": numbers[0] if len(numbers) >= 4 else 0.0,
-                        "nii": numbers[1] if len(numbers) >= 4 else numbers[0],
-                        "retail": numbers[2] if len(numbers) >= 4 else numbers[1],
-                        "total": numbers[-1]
-                    })
+
+                qib = clean_multiplier(cols[headers_map["qib"]]) if "qib" in headers_map and headers_map["qib"] < len(cols) else 0.0
+                nii = clean_multiplier(cols[headers_map["nii"]]) if "nii" in headers_map and headers_map["nii"] < len(cols) else 0.0
+                retail = clean_multiplier(cols[headers_map["retail"]]) if "retail" in headers_map and headers_map["retail"] < len(cols) else 0.0
+                total = clean_multiplier(cols[headers_map["total"]]) if "total" in headers_map and headers_map["total"] < len(cols) else 0.0
+
+                results.append({
+                    "name": name,
+                    "qib": qib,
+                    "nii": nii,
+                    "retail": retail,
+                    "total": total
+                })
         return results
     except Exception as e:
         print(f"Error fetching from InvestorGain: {e}")
         return []
 
-def update_root_ipos_json(sub_data, now_str):
+def update_root_ipos_json():
     target_path = "ipos.json"
     if not os.path.exists(target_path):
         print("ipos.json not found at repository root.")
         return
 
-    with open(target_path, "r", encoding="utf-8") as f:
-        try:
-            data = json.load(f)
-        except json.JSONDecodeError as err:
-            print(f"Error decoding ipos.json: {err}")
-            return
+    sub_data = fetch_from_investorgain()
+    if not sub_data:
+        print("No subscription records scraped.")
+        return
 
-    # Handle list of IPO objects or dict wrapping a list {"ipos": [...]}
+    with open(target_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
     is_dict = isinstance(data, dict)
     items = data.get("ipos", data.get("data", [])) if is_dict else data
 
     matched_count = 0
     for item in items:
-        name = (item.get("name") or item.get("companyName") or "").lower().strip()
+        # Remove any faulty nested subscription object if it was added
+        item.pop("subscription", None)
+
+        name = (item.get("name") or "").lower().strip()
         symbol = (item.get("symbol") or "").lower().strip()
 
         matched = None
@@ -100,48 +102,18 @@ def update_root_ipos_json(sub_data, now_str):
                 break
 
         if matched:
-            item["subscription"] = {
-                "qib": matched["qib"],
-                "nii": matched["nii"],
-                "retail": matched["retail"],
-                "total": matched["total"],
-                "updatedAt": now_str
-            }
+            # Overwrite the clean flat fields
+            item["subscriptionQIB"] = matched["qib"]
+            item["subscriptionHNI"] = matched["nii"]
+            item["subscriptionRetail"] = matched["retail"]
+            item["subscriptionTotal"] = matched["total"]
             matched_count += 1
 
     with open(target_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
-    print(f"Updated subscription for {matched_count} IPOs directly in {target_path}")
-
-def sync_all():
-    sub_data = fetch_from_investorgain()
-    if not sub_data:
-        print("No subscription records scraped.")
-        return
-
-    now_str = datetime.now().strftime("%d %b %Y, %I:%M %p")
-
-    # 1. Update root ipos.json
-    update_root_ipos_json(sub_data, now_str)
-
-    # 2. Update Firestore if connected
-    if db:
-        ipos_ref = db.collection("ipos")
-        for item in sub_data:
-            slug = re.sub(r"[-\s]+", "_", re.sub(r"[^\w\s-]", "", item["name"].lower().strip()))
-            ipos_ref.document(slug).set({
-                "name": item["name"],
-                "subscription": {
-                    "qib": item["qib"],
-                    "nii": item["nii"],
-                    "retail": item["retail"],
-                    "total": item["total"],
-                    "updatedAt": now_str
-                }
-            }, merge=True)
-        print("Firestore updated in parallel.")
+    print(f"Cleaned up and synced flat subscription keys for {matched_count} IPOs.")
 
 if __name__ == "__main__":
-    sync_all()
+    update_root_ipos_json()
     
