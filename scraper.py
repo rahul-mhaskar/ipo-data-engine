@@ -295,7 +295,7 @@ def try_fetch_upstox():
         ipo_id = item.get("id")
         if not ipo_id:
             continue
-        try:
+       try:
             d_res = requests.get(f"{UPSTOX_BASE_URL}/ipos/{ipo_id}", headers=headers, timeout=5)
             if d_res.status_code == 200:
                 details = d_res.json().get("data", {})
@@ -358,6 +358,7 @@ def try_fetch_upstox():
                     ).upper()
 
                     allotment_details = details.get("allotment_details") or {}
+                    
                     is_allotment_finalized = bool(
                         details.get("is_allotment_done") is True or
                         timeline.get("is_allotment_done") is True or
@@ -365,6 +366,15 @@ def try_fetch_upstox():
                         item.get("is_allotment_done") is True or
                         any(done_kw in raw_status_str for done_kw in ["ALLOTTED", "FINALIZED", "COMPLETED", "DECLARED", "SUCCESS"])
                     )
+
+                    ipo_name = item.get("name", "")
+                    if any(target in ipo_name.lower() for target in ["hd fire", "vaibhav"]):
+                        print(f">>> [Upstox Allotment Check] {ipo_name}:", flush=True)
+                        print(f"    allotment_status = '{raw_status_str}'", flush=True)
+                        print(f"    is_allotment_done = {details.get('is_allotment_done')}", flush=True)
+                        print(f"    timeline = {timeline}", flush=True)
+                        print(f"    -> Resolved is_allotment_done: {is_allotment_finalized}", flush=True)
+
                     item["is_allotment_done"] = is_allotment_finalized
 
                     reg_info = details.get("registrar_info") or {}
