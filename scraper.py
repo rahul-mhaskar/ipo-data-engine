@@ -349,9 +349,21 @@ def try_fetch_upstox():
                     )
                     item["listing_date"] = timeline.get("listing_date")
 
+                    # ----------------- UPSTOX NATIVE ALLOTMENT DETECTION -----------------
+                    raw_status_str = str(
+                        details.get("allotment_status") or 
+                        details.get("status") or 
+                        timeline.get("allotment_status") or 
+                        item.get("allotment_status") or ""
+                    ).upper()
+
+                    allotment_details = details.get("allotment_details") or {}
                     is_allotment_finalized = bool(
-                        details.get("is_allotment_done") or 
-                        str(details.get("allotment_status", "")).upper() in ["ALLOTTED", "FINALIZED", "COMPLETED"]
+                        details.get("is_allotment_done") is True or
+                        timeline.get("is_allotment_done") is True or
+                        allotment_details.get("is_done") is True or
+                        item.get("is_allotment_done") is True or
+                        any(done_kw in raw_status_str for done_kw in ["ALLOTTED", "FINALIZED", "COMPLETED", "DECLARED", "SUCCESS"])
                     )
                     item["is_allotment_done"] = is_allotment_finalized
 
@@ -515,6 +527,10 @@ def run_pipeline():
                 if total_sub <= 0.0:
                     total_sub = float(prev.get("subscriptionTotal", 0.0))
 
+                # Retain verified allotment completion
+                if prev.get("isAllotmentDone") is True:
+                    item["is_allotment_done"] = True
+
                 if (not list_d or list_d == "To Be Updated") and prev.get("listingDate") not in [None, "To Be Updated", ""]:
                     list_d = prev.get("listingDate")
                 if (not allot_d or allot_d == "To Be Updated") and prev.get("allotmentDate") not in [None, "To Be Updated", ""]:
@@ -617,7 +633,10 @@ def run_pipeline():
                 "listingGainPercent": listing_gain_pct,
                 "registrarName": reg_name,
                 "registrarUrl": reg_url,
-                "isAllotmentDone": bool(item.get("is_allotment_done", False)),
+                "isAllotmentDone": bool(
+                    item.get("is_allotment_done", False) or 
+                    previous_cache.get(norm_key, {}).get("isAllotmentDone", False)
+                ),
                 "rhpPdfUrl": rhp_url,
                 "drhpPdfUrl": drhp_url,
                 "openNotified": bool(previous_cache.get(norm_key, {}).get("openNotified", False)),
