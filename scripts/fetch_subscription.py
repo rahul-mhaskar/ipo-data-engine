@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup
 import firebase_admin
 from firebase_admin import credentials, firestore
 
-# Initialize Firebase via GitHub Secret
 cred_json = os.environ.get("FIREBASE_SERVICE_ACCOUNT")
 if not cred_json:
     raise ValueError("Missing FIREBASE_SERVICE_ACCOUNT environment variable")
@@ -20,7 +19,6 @@ if not firebase_admin._apps:
 db = firestore.client()
 
 def clean_multiplier(val_str):
-    """Converts strings like '12.45x', '12.45', or '-' to float."""
     if not val_str:
         return 0.0
     cleaned = re.sub(r"[^\d.]", "", str(val_str).strip())
@@ -29,8 +27,13 @@ def clean_multiplier(val_str):
     except ValueError:
         return 0.0
 
+def slugify(text):
+    """Creates a clean, consistent document ID from company name."""
+    text = text.lower().strip()
+    text = re.sub(r"[^\w\s-]", "", text)
+    return re.sub(r"[-\s]+", "_", text)
+
 def fetch_from_investorgain():
-    """Fetches live subscription figures from InvestorGain's server-rendered table."""
     url = "https://www.investorgain.com/report/live-ipo-subscription-status/331/"
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
@@ -40,7 +43,6 @@ def fetch_from_investorgain():
     try:
         res = requests.get(url, headers=headers, timeout=20)
         if res.status_code != 200:
-            print(f"InvestorGain returned HTTP {res.status_code}")
             return []
 
         soup = BeautifulSoup(res.text, "html.parser")
@@ -52,13 +54,11 @@ def fetch_from_investorgain():
         rows = table.find_all("tr")
         for row in rows:
             cols = [td.get_text(strip=True) for td in row.find_all(["td", "th"])]
-            # Looking for rows with issuer name, QIB, NII, Retail, Total
             if len(cols) >= 5:
                 first_col = cols[0]
-                if any(header_word in first_col.lower() for header_word in ["issuer", "company", "ipo name"]):
+                if any(h in first_col.lower() for h in ["issuer", "company", "ipo name"]):
                     continue
                 
-                # Check for numerical subscription data across row cells
                 numbers = [clean_multiplier(c) for c in cols if any(ch.isdigit() for ch in c)]
                 if len(numbers) >= 3:
                     results.append({
@@ -73,83 +73,53 @@ def fetch_from_investorgain():
         print(f"Error fetching from InvestorGain: {e}")
         return []
 
-def fetch_from_chittorgarh_api():
-    """Queries the internal JSON table data endpoint used by Chittorgarh."""
-    url = "https://webnodejs.chittorgarh.com/report/data-read/21"
-    headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
-        "Referer": "https://www.chittorgarh.com/"
-    }
-    try:
-        res = requests.get(url, headers=headers, timeout=15)
-        if res.status_code == 200:
-            data = res.json()
-            items = data.get("reportData") or data.get("data") or []
-            results = []
-            for item in items:
-                name = item.get("Company_Name") or item.get("name") or item.get("Issuer_Company") or ""
-                if name:
-                    results.append({
-                        "name": name,
-                        "qib": clean_multiplier(item.get("QIB")),
-                        "nii": clean_multiplier(item.get("NII")),
-                        "retail": clean_multiplier(item.get("RII") or item.get("Retail")),
-                        "total": clean_multiplier(item.get("Total"))
-                    })
-            if results:
-                return results
-    except Exception as e:
-        print(f"Chittorgarh internal API call bypassed: {e}")
-    return []
-
 def sync_to_firestore():
-    # Attempt primary JSON API first, then fall back to server-rendered HTML table
-    sub_data = fetch_from_chittorgarh_api()
-    if not sub_data:
-        print("API endpoint unavailable, querying server-rendered table...")
-        sub_data = fetch_from_investorgain()
+    sub_data = fetch_from_investorgain()
 
     if not sub_data:
-        print("No subscription records could be retrieved from either source.")
+        print("No subscription records found.")
         return
 
     print(f"Retrieved {len(sub_data)} live subscription records.")
 
     ipos_ref = db.collection("ipos")
-    docs = ipos_ref.stream()
+    existing_docs = {doc.id: doc.to_dict() for doc in ipos_ref.stream()}
 
-    updated_count = 0
     now_str = datetime.now().strftime("%d %b %Y, %I:%M %p")
+    written_count = 0
 
-    for doc in docs:
-        ipo = doc.to_dict()
-        doc_name = (ipo.get("name") or ipo.get("companyName") or "").lower().strip()
-        doc_symbol = (ipo.get("symbol") or "").lower().strip()
+    for item in sub_data:
+        sub_payload = {
+            "qib": item["qib"],
+            "nii": item["nii"],
+            "retail": item["retail"],
+            "total": item["total"],
+            "updatedAt": now_str
+        }
 
-        matched = None
-        for item in sub_data:
-            item_name = item["name"].lower().strip()
-            # Match against company name or ticker/symbol
-            if (doc_name and (doc_name in item_name or item_name in doc_name)) or \
-               (doc_symbol and doc_symbol in item_name):
-                matched = item
+        # Check if matched in existing documents
+        matched_doc_id = None
+        for doc_id, data in existing_docs.items():
+            name = (data.get("name") or data.get("companyName") or "").lower()
+            if name and (name in item["name"].lower() or item["name"].lower() in name):
+                matched_doc_id = doc_id
                 break
 
-        if matched:
-            sub_payload = {
-                "qib": matched["qib"],
-                "nii": matched["nii"],
-                "retail": matched["retail"],
-                "total": matched["total"],
-                "updatedAt": now_str
-            }
-            ipos_ref.document(doc.id).update({
+        if matched_doc_id:
+            ipos_ref.document(matched_doc_id).set({"subscription": sub_payload}, merge=True)
+            print(f"Updated existing: {matched_doc_id} -> {sub_payload['total']}x")
+        else:
+            # Create document if it doesn't exist yet
+            doc_id = slugify(item["name"])
+            ipos_ref.document(doc_id).set({
+                "name": item["name"],
                 "subscription": sub_payload
-            })
-            print(f"Updated subscription for {doc.id} ({matched['name']}) -> Total: {sub_payload['total']}x")
-            updated_count += 1
+            }, merge=True)
+            print(f"Created new doc: {doc_id} -> {sub_payload['total']}x")
 
-    print(f"Sync complete. Updated {updated_count} active IPO records.")
+        written_count += 1
+
+    print(f"Sync complete. Successfully populated/updated {written_count} IPO records in Firestore.")
 
 if __name__ == "__main__":
     sync_to_firestore()
