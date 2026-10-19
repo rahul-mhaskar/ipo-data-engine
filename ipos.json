@@ -948,8 +948,8 @@
     "closeDate": "2026-10-19",
     "allotmentDate": "2026-10-21",
     "listingDate": "2026-10-23",
-    "gmpAmount": 515.0,
-    "gmpPercent": 73.57,
+    "gmpAmount": 510.0,
+    "gmpPercent": 72.86,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -957,7 +957,7 @@
       },
       {
         "dateLabel": "19 Oct",
-        "amount": 515.0
+        "amount": 510.0
       }
     ],
     "financials": [
