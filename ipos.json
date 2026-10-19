@@ -25,7 +25,20 @@
         "amount": 96.0
       }
     ],
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY30",
+        "revenue": 478.8,
+        "pat": 49.7,
+        "netWorth": 445.0
+      },
+      {
+        "year": "FY31",
+        "revenue": 1628.8,
+        "pat": 43.8,
+        "netWorth": 394.9
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -66,7 +79,20 @@
         "amount": 223.0
       }
     ],
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY30",
+        "revenue": 40197.9,
+        "pat": 7764.1,
+        "netWorth": 341778.5
+      },
+      {
+        "year": "FY31",
+        "revenue": 149759.1,
+        "pat": 30052.7,
+        "netWorth": 334013.4
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -103,7 +129,20 @@
         "amount": 0.0
       }
     ],
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY30",
+        "revenue": 47.3,
+        "pat": 6.0,
+        "netWorth": 24.8
+      },
+      {
+        "year": "FY31",
+        "revenue": 34.6,
+        "pat": 3.8,
+        "netWorth": 18.7
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -185,7 +224,14 @@
         "amount": 0.0
       }
     ],
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY31",
+        "revenue": 73.1,
+        "pat": 5.4,
+        "netWorth": 24.9
+      }
+    ],
     "subscriptionTotal": 0.42,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -226,7 +272,14 @@
         "amount": 0.0
       }
     ],
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY31",
+        "revenue": 249.7,
+        "pat": 17.8,
+        "netWorth": 51.0
+      }
+    ],
     "subscriptionTotal": 0.42,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -308,7 +361,14 @@
         "amount": 0.0
       }
     ],
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY31",
+        "revenue": 1012.9,
+        "pat": 67.8,
+        "netWorth": 78.9
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -345,7 +405,14 @@
         "amount": 0.0
       }
     ],
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY31",
+        "revenue": 4719.7,
+        "pat": 990.0,
+        "netWorth": 8694.5
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -386,7 +453,20 @@
         "amount": 0.0
       }
     ],
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY30",
+        "revenue": 4174.5,
+        "pat": -1444.4,
+        "netWorth": 9539.0
+      },
+      {
+        "year": "FY31",
+        "revenue": 7631.4,
+        "pat": -1727.4,
+        "netWorth": 9374.3
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -427,7 +507,14 @@
         "amount": 0.0
       }
     ],
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY31",
+        "revenue": 23128.4,
+        "pat": -5905.2,
+        "netWorth": 3559.6
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -509,7 +596,14 @@
         "amount": 0.0
       }
     ],
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY31",
+        "revenue": 8359.7,
+        "pat": 637.0,
+        "netWorth": 5766.0
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -796,7 +890,14 @@
         "amount": 0.0
       }
     ],
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY31",
+        "revenue": 7166.3,
+        "pat": 748.3,
+        "netWorth": 6146.6
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -878,7 +979,20 @@
         "amount": 0.0
       }
     ],
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY30",
+        "revenue": 638.4,
+        "pat": 21.4,
+        "netWorth": 452.8
+      },
+      {
+        "year": "FY31",
+        "revenue": 3097.8,
+        "pat": 61.1,
+        "netWorth": 432.0
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -1020,7 +1134,20 @@
         "amount": 46.0
       }
     ],
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY30",
+        "revenue": 47.4,
+        "pat": 4.1,
+        "netWorth": 63.0
+      },
+      {
+        "year": "FY31",
+        "revenue": 193.2,
+        "pat": 13.4,
+        "netWorth": 59.0
+      }
+    ],
     "subscriptionTotal": 58.01,
     "subscriptionRetail": 0.85,
     "subscriptionHNI": 2.18,
@@ -1102,7 +1229,20 @@
         "amount": 127.0
       }
     ],
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY30",
+        "revenue": 1139.2,
+        "pat": 148.6,
+        "netWorth": 1034.3
+      },
+      {
+        "year": "FY31",
+        "revenue": 2023.6,
+        "pat": 237.9,
+        "netWorth": 975.2
+      }
+    ],
     "subscriptionTotal": 31.66,
     "subscriptionRetail": 1.16,
     "subscriptionHNI": 1.71,
@@ -1143,7 +1283,20 @@
         "amount": 7.0
       }
     ],
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY30",
+        "revenue": 97.5,
+        "pat": 10.1,
+        "netWorth": 109.7
+      },
+      {
+        "year": "FY31",
+        "revenue": 277.8,
+        "pat": 28.0,
+        "netWorth": 99.6
+      }
+    ],
     "subscriptionTotal": 8.32,
     "subscriptionRetail": 3.5,
     "subscriptionHNI": 7.42,
@@ -1184,7 +1337,20 @@
         "amount": 16.0
       }
     ],
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY30",
+        "revenue": 503.9,
+        "pat": 55.7,
+        "netWorth": 610.8
+      },
+      {
+        "year": "FY31",
+        "revenue": 1851.8,
+        "pat": 169.8,
+        "netWorth": 552.5
+      }
+    ],
     "subscriptionTotal": 4.43,
     "subscriptionRetail": 5.99,
     "subscriptionHNI": 4.73,
