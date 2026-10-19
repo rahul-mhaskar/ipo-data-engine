@@ -980,7 +980,7 @@
         "netWorth": 511.55
       }
     ],
-    "subscriptionTotal": 96.63,
+    "subscriptionTotal": 132.8119,
     "subscriptionRetail": 31.11,
     "subscriptionHNI": 156.36,
     "subscriptionQIB": 293.56,
@@ -1131,8 +1131,8 @@
     "closeDate": "2026-10-16",
     "allotmentDate": "2026-10-19",
     "listingDate": "2026-10-22",
-    "gmpAmount": 3.0,
-    "gmpPercent": 2.68,
+    "gmpAmount": 7.0,
+    "gmpPercent": 6.25,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
