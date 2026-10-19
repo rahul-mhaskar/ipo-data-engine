@@ -36,9 +36,10 @@ def clean_num(val_str: str) -> float:
         return 0.0
 
 def parse_financial_year(period_str: str) -> Optional[str]:
-    """Converts '31 Mar 2026', '31 Mar 26', 'FY26' -> 'FY26'"""
+    """Converts '31 Mar 2026', '31 Mar 26', 'FY26' -> 'FY26'. Ignores stub interim periods."""
     if not period_str:
         return None
+    # If it's a quarterly stub (e.g., Jun, Sep, Dec), prioritize full Mar year-ends when possible
     match = re.search(r"(?:20)?(\d{2})\b", period_str)
     if match:
         return f"FY{match.group(1)}"
@@ -76,18 +77,15 @@ def extract_financials_from_soup(soup: BeautifulSoup) -> List[Dict]:
 
             if period_row and rev_row and pat_row:
                 financial_records = []
-                # Period Ended row: col 0 is label, cols 1..N are dates
                 for i in range(1, len(period_row)):
                     yr_label = parse_financial_year(period_row[i])
                     if not yr_label:
                         continue
 
-                    # Avoid stub interim periods if FY full year is available
                     r_val = clean_num(rev_row[i]) if i < len(rev_row) else 0.0
                     p_val = clean_num(pat_row[i]) if i < len(pat_row) else 0.0
                     nw_val = clean_num(nw_row[i]) if nw_row and i < len(nw_row) else 0.0
 
-                    # Don't add duplicate years
                     if not any(f["year"] == yr_label for f in financial_records):
                         financial_records.append({
                             "year": yr_label,
@@ -97,7 +95,6 @@ def extract_financials_from_soup(soup: BeautifulSoup) -> List[Dict]:
                         })
 
                 if financial_records:
-                    # Sort chronologically (e.g., FY24, FY25, FY26) and keep top 3
                     return sorted(financial_records, key=lambda x: x["year"])[-3:]
 
     return []
@@ -119,7 +116,6 @@ def resolve_chittorgarh_url(company_name: str) -> Optional[str]:
         except Exception:
             continue
 
-    # Fallback to search query
     try:
         q_url = f"https://www.chittorgarh.com/search/?search={requests.utils.quote(clean_company_name(company_name))}"
         r = requests.get(q_url, headers=HEADERS, timeout=10)
@@ -171,7 +167,7 @@ def sync_all_financials():
             updated_count += 1
             continue
 
-        # 2. If already populated from a previous run, preserve it
+        # 2. Preserve existing multi-year data
         if item.get("financials") and len(item["financials"]) > 0:
             updated_count += 1
             continue
