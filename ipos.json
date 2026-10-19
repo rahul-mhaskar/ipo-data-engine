@@ -108,7 +108,7 @@
       }
     ],
     "financials": [],
-    "subscriptionTotal": 9.73,
+    "subscriptionTotal": 21.94,
     "subscriptionRetail": 1.16,
     "subscriptionHNI": 1.71,
     "subscriptionQIB": 0.16,
@@ -149,7 +149,7 @@
       }
     ],
     "financials": [],
-    "subscriptionTotal": 4.7,
+    "subscriptionTotal": 10.79,
     "subscriptionRetail": 0.83,
     "subscriptionHNI": 0.51,
     "subscriptionQIB": 1.12,
@@ -190,7 +190,7 @@
       }
     ],
     "financials": [],
-    "subscriptionTotal": 22.41,
+    "subscriptionTotal": 43.55,
     "subscriptionRetail": 0.85,
     "subscriptionHNI": 2.18,
     "subscriptionQIB": 0.0,
@@ -250,7 +250,7 @@
         "netWorth": 511.55
       }
     ],
-    "subscriptionTotal": 76.6219,
+    "subscriptionTotal": 86.39,
     "subscriptionRetail": 24.75,
     "subscriptionHNI": 136.72,
     "subscriptionQIB": 122.5,
@@ -291,7 +291,7 @@
       }
     ],
     "financials": [],
-    "subscriptionTotal": 1.44,
+    "subscriptionTotal": 2.77,
     "subscriptionRetail": 0.37,
     "subscriptionHNI": 0.17,
     "subscriptionQIB": 0.37,
@@ -1131,8 +1131,8 @@
     "closeDate": "2026-10-16",
     "allotmentDate": "2026-10-19",
     "listingDate": "2026-10-22",
-    "gmpAmount": 7.0,
-    "gmpPercent": 6.25,
+    "gmpAmount": 3.0,
+    "gmpPercent": 2.68,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
