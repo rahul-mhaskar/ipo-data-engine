@@ -3,11 +3,36 @@
     "registrarName": "Mudra RTA Ventures",
     "registrarUrl": "https://mudrarta.com/"
   },
+  "tonbo imaging": {
+    "registrarName": "KFin Technologies",
+    "registrarUrl": "https://ipostatus.kfintech.com/",
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 144.37,
+        "pat": 68.54,
+        "netWorth": 127.83
+      },
+      {
+        "year": "FY25",
+        "revenue": 469.08,
+        "pat": 72.76,
+        "netWorth": 236.22
+      },
+      {
+        "year": "FY26",
+        "revenue": 362.65,
+        "pat": 50.88,
+        "netWorth": 511.55
+      }
+    ]
+  },
   "aliases": {
     "reliance jio": "jio platforms",
     "jio platforms limited": "reliance jio",
     "vaibhav vyapaar": "loanfront",
     "sahajanand medical": "smt",
-    "hd fire protect": "hdfire"
+    "hd fire protect": "hdfire",
+    "tonbo imaging india": "tonbo imaging"
   }
 }
