@@ -37,10 +37,11 @@ def clean_num(val_str: str) -> float:
 
 def parse_financial_year(period_str: str) -> Optional[str]:
     """
-    Standardizes dates like:
+    Handles:
     '31-Mar-2025' -> 'FY25'
-    '31 Mar 26'   -> 'FY26'
     '30-Jun-2024' -> 'FY24'
+    '31 Mar 26'   -> 'FY26'
+    'FY 2025'     -> 'FY25'
     'FY24'        -> 'FY24'
     """
     if not period_str:
@@ -48,12 +49,17 @@ def parse_financial_year(period_str: str) -> Optional[str]:
     
     clean_p = period_str.strip()
     
-    # 1. Match trailing 2 or 4 digits (e.g., '31-Mar-2025', '31 Mar 25')
-    match = re.search(r"(?:19|20)?(\d{2})(?:\s*\(.*\))?$", clean_p)
-    if match:
-        return f"FY{match.group(1)}"
-        
-    # 2. Match standard 'FY24' / 'FY 2024' formats
+    # 1. Match 4-digit years like 2023, 2024, 2025, 2026 anywhere in the cell
+    match_4digit = re.search(r"\b20(2[0-9])\b", clean_p)
+    if match_4digit:
+        return f"FY{match_4digit.group(1)}"
+
+    # 2. Match patterns like '31-Mar-25' or '30-Jun-24' (Month followed by 2 digits)
+    match_month_2digit = re.search(r"(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*[\s\-_]+(?:20)?(\d{2})\b", clean_p, re.IGNORECASE)
+    if match_month_2digit:
+        return f"FY{match_month_2digit.group(1)}"
+
+    # 3. Match 'FY24', 'FY 25', etc.
     match_fy = re.search(r"FY\s*(?:20)?(\d{2})", clean_p, re.IGNORECASE)
     if match_fy:
         return f"FY{match_fy.group(1)}"
@@ -183,10 +189,17 @@ def sync_all_financials():
             updated_count += 1
             continue
 
-        # 2. Preserve existing multi-year data
-        if item.get("financials") and len(item["financials"]) > 0:
+        # 2. Preserve existing valid multi-year data (purge if it contains buggy FY30/FY31)
+        existing_financials = item.get("financials", [])
+        has_invalid_years = any(f.get("year") in ["FY30", "FY31", "FY01", "FY02", "FY03", "FY04", "FY05", "FY06", "FY07", "FY08", "FY09", "FY10", "FY11", "FY12", "FY13", "FY14", "FY15", "FY16", "FY17", "FY18", "FY19"] for f in existing_financials)
+        
+        if existing_financials and not has_invalid_years:
             updated_count += 1
             continue
+        else:
+            # Clear out corrupted financial years so it gets re-scraped cleanly
+            item["financials"] = []
+
 
         # 3. Only actively scrape for OPEN, UPCOMING, and recently CLOSED/LISTED IPOs
         status = str(item.get("status", "")).upper()
