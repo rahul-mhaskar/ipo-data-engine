@@ -519,8 +519,9 @@ def run_pipeline():
             sub_hni = float(item.get("subscription_hni", 0.0))
             sub_qib = float(item.get("subscription_qib", 0.0))
 
-            # Retrieve prior historical data from cache
+                        # Retrieve prior historical data from cache
             prior_gmp_history = []
+            prior_financials = []
             if norm_key in previous_cache:
                 prev = previous_cache[norm_key]
                 if sub_retail <= 0.0:
@@ -533,6 +534,7 @@ def run_pipeline():
                     total_sub = float(prev.get("subscriptionTotal", 0.0))
 
                 prior_gmp_history = prev.get("gmpHistory", [])
+                prior_financials = prev.get("financials", [])
 
                 if prev.get("isAllotmentDone") is True:
                     item["is_allotment_done"] = True
@@ -581,10 +583,26 @@ def run_pipeline():
                     "issuePriceMax": price_max
                 })
 
+            # Check manual overrides with alias resolution
+            alias_target = manual_overrides.get("aliases", {}).get(clean_name.lower(), clean_name.lower())
+            override_key = clean_company_name(alias_target)
+            override_entry = manual_overrides.get(override_key) or manual_overrides.get(norm_key)
+
             reg_name, reg_url = None, None
-            if norm_key in manual_overrides:
-                reg_name, reg_url = manual_overrides[norm_key]
-            else:
+            financials_data = []
+
+            if override_entry:
+                if isinstance(override_entry, dict):
+                    reg_name = override_entry.get("registrarName")
+                    reg_url = override_entry.get("registrarUrl")
+                    financials_data = override_entry.get("financials", [])
+                elif isinstance(override_entry, (tuple, list)) and len(override_entry) >= 2:
+                    reg_name, reg_url = override_entry[0], override_entry[1]
+
+            if not financials_data:
+                financials_data = prior_financials
+
+            if not reg_name or not reg_url:
                 raw_reg = item.get("registrar_name") or ""
                 raw_url = item.get("registrar_url") or ""
                 
@@ -632,6 +650,7 @@ def run_pipeline():
                 "gmpAmount": 0.0,
                 "gmpPercent": 0.0,
                 "gmpHistory": prior_gmp_history,
+                "financials": financials_data,
                 "subscriptionTotal": total_sub,
                 "subscriptionRetail": sub_retail,
                 "subscriptionHNI": sub_hni,
@@ -649,6 +668,8 @@ def run_pipeline():
                 "openNotified": bool(previous_cache.get(norm_key, {}).get("openNotified", False)),
                 "closeNotified": bool(previous_cache.get(norm_key, {}).get("closeNotified", False))
             }
+
+
 
             # ----------------- STRICT NOTIFICATION RULES -----------------
             if status != "LISTED":
