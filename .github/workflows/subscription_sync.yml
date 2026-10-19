@@ -48,10 +48,13 @@ jobs:
           PYTHONUNBUFFERED: "1"
         run: |
           python -u scripts/fetch_gmp.py
-          
+
       - name: Run Financial Scorecard Sync
-        run: python -u scripts/fetch_financials.py
-        
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python -u scripts/fetch_financials.py
+
       - name: Commit and Push if Changed
         run: |
           git config --global user.name "github-actions[bot]"
@@ -60,7 +63,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes detected across dataset and GMP files."
           else
-            git commit -m "chore: auto-sync subscriptions, GMP & trend history [skip ci]"
+            git commit -m "chore: auto-sync subscriptions, GMP & financials [skip ci]"
             git pull --rebase origin main
             git push origin main
           fi
