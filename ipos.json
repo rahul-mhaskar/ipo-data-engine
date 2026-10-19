@@ -53,8 +53,8 @@
     "closeDate": "2026-10-19",
     "allotmentDate": "2026-10-21",
     "listingDate": "2026-10-23",
-    "gmpAmount": 130.0,
-    "gmpPercent": 22.18,
+    "gmpAmount": 104.0,
+    "gmpPercent": 17.75,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -62,7 +62,7 @@
       },
       {
         "dateLabel": "19 Oct",
-        "amount": 130.0
+        "amount": 104.0
       }
     ],
     "subscriptionTotal": 0.71,
@@ -93,8 +93,8 @@
     "closeDate": "2026-10-19",
     "allotmentDate": "2026-10-21",
     "listingDate": "2026-10-23",
-    "gmpAmount": 25.0,
-    "gmpPercent": 7.27,
+    "gmpAmount": 17.0,
+    "gmpPercent": 4.94,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -102,7 +102,7 @@
       },
       {
         "dateLabel": "19 Oct",
-        "amount": 25.0
+        "amount": 17.0
       }
     ],
     "subscriptionTotal": 0.28,
@@ -133,8 +133,8 @@
     "closeDate": "2026-10-19",
     "allotmentDate": "2026-10-21",
     "listingDate": "2026-10-23",
-    "gmpAmount": 35.0,
-    "gmpPercent": 19.55,
+    "gmpAmount": 46.0,
+    "gmpPercent": 25.7,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -142,7 +142,7 @@
       },
       {
         "dateLabel": "19 Oct",
-        "amount": 35.0
+        "amount": 46.0
       }
     ],
     "subscriptionTotal": 1.05,
@@ -185,10 +185,10 @@
         "amount": 515.0
       }
     ],
-    "subscriptionTotal": 5.22,
-    "subscriptionRetail": 7.14,
-    "subscriptionHNI": 14.35,
-    "subscriptionQIB": 3.95,
+    "subscriptionTotal": 53.5919,
+    "subscriptionRetail": 22.87,
+    "subscriptionHNI": 121.33,
+    "subscriptionQIB": 56.63,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
     "registrarName": "KFin Technologies",
@@ -213,8 +213,8 @@
     "closeDate": "2026-10-19",
     "allotmentDate": "2026-10-21",
     "listingDate": "2026-10-23",
-    "gmpAmount": 5.0,
-    "gmpPercent": 3.31,
+    "gmpAmount": 3.75,
+    "gmpPercent": 2.48,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -222,7 +222,7 @@
       },
       {
         "dateLabel": "19 Oct",
-        "amount": 5.0
+        "amount": 3.75
       }
     ],
     "subscriptionTotal": 0.19,
@@ -1049,8 +1049,8 @@
     "closeDate": "2026-10-16",
     "allotmentDate": "2026-10-19",
     "listingDate": "2026-10-22",
-    "gmpAmount": 4.5,
-    "gmpPercent": 4.02,
+    "gmpAmount": 7.0,
+    "gmpPercent": 6.25,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -1058,7 +1058,7 @@
       },
       {
         "dateLabel": "19 Oct",
-        "amount": 4.5
+        "amount": 7.0
       }
     ],
     "subscriptionTotal": 8.32,
@@ -1089,8 +1089,8 @@
     "closeDate": "2026-10-16",
     "allotmentDate": "2026-10-19",
     "listingDate": "2026-10-22",
-    "gmpAmount": 19.0,
-    "gmpPercent": 6.57,
+    "gmpAmount": 18.0,
+    "gmpPercent": 6.23,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -1098,7 +1098,7 @@
       },
       {
         "dateLabel": "19 Oct",
-        "amount": 19.0
+        "amount": 18.0
       }
     ],
     "subscriptionTotal": 4.43,
