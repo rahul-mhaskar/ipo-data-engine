@@ -83,230 +83,38 @@
   },
   {
     "id": "3",
-    "name": "Bonfiglioli Transmissions",
-    "symbol": "BONFIG",
-    "category": "Mainboard",
-    "status": "OPEN",
-    "issueSizeCr": 2534.0,
-    "issuePriceMin": 558.0,
-    "issuePriceMax": 586.0,
-    "lotSize": 25,
-    "openDate": "2026-10-15",
-    "closeDate": "2026-10-19",
-    "allotmentDate": "2026-10-21",
-    "listingDate": "2026-10-23",
-    "gmpAmount": 127.0,
-    "gmpPercent": 21.67,
-    "gmpHistory": [
-      {
-        "dateLabel": "18 Oct",
-        "amount": 132.0
-      },
-      {
-        "dateLabel": "19 Oct",
-        "amount": 127.0
-      }
-    ],
-    "financials": [],
-    "subscriptionTotal": 21.94,
-    "subscriptionRetail": 1.16,
-    "subscriptionHNI": 1.71,
-    "subscriptionQIB": 0.16,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Link Intime / MUFG",
-    "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.bonfiglioli.com/india/IPO/RHP/Peacock%20-%20RHP%20%28Filing%20version%29%20-%20Signed.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Bonfiglioli+Transmissions+IPO+DRHP+file+SEBI",
-    "openNotified": true,
-    "closeNotified": true
-  },
-  {
-    "id": "4",
-    "name": "Sahajanand Medical Technologies",
-    "symbol": "SMT",
-    "category": "Mainboard",
-    "status": "OPEN",
-    "issueSizeCr": 475.0,
-    "issuePriceMin": 327.0,
-    "issuePriceMax": 344.0,
-    "lotSize": 43,
-    "openDate": "2026-10-15",
-    "closeDate": "2026-10-19",
-    "allotmentDate": "2026-10-21",
-    "listingDate": "2026-10-23",
-    "gmpAmount": 24.0,
-    "gmpPercent": 6.98,
-    "gmpHistory": [
-      {
-        "dateLabel": "18 Oct",
-        "amount": 15.0
-      },
-      {
-        "dateLabel": "19 Oct",
-        "amount": 24.0
-      }
-    ],
-    "financials": [],
-    "subscriptionTotal": 10.79,
-    "subscriptionRetail": 0.83,
-    "subscriptionHNI": 0.51,
-    "subscriptionQIB": 1.12,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Link Intime / MUFG",
-    "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://assets.ipopremium.in/images/ipo/sahajanand_medical_technologies_ltd_mainboard_rhp_1791630001.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Sahajanand+Medical+Technologies+IPO+DRHP+file+SEBI",
-    "openNotified": true,
-    "closeNotified": true
-  },
-  {
-    "id": "5",
-    "name": "Shellz India",
-    "symbol": "SHELLZ",
+    "name": "Core4 Engineers",
+    "symbol": "CORE4EN",
     "category": "SME",
-    "status": "OPEN",
-    "issueSizeCr": 60.0,
-    "issuePriceMin": 170.0,
-    "issuePriceMax": 179.0,
-    "lotSize": 800,
-    "openDate": "2026-10-15",
-    "closeDate": "2026-10-19",
-    "allotmentDate": "2026-10-21",
-    "listingDate": "2026-10-23",
-    "gmpAmount": 46.0,
-    "gmpPercent": 25.7,
-    "gmpHistory": [
-      {
-        "dateLabel": "18 Oct",
-        "amount": 24.0
-      },
-      {
-        "dateLabel": "19 Oct",
-        "amount": 46.0
-      }
-    ],
+    "status": "UPCOMING",
+    "issueSizeCr": 55.0,
+    "issuePriceMin": 88.0,
+    "issuePriceMax": 93.0,
+    "lotSize": 1200,
+    "openDate": "2026-10-23",
+    "closeDate": "2026-10-27",
+    "allotmentDate": "2026-10-28",
+    "listingDate": "2026-10-30",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [],
     "financials": [],
-    "subscriptionTotal": 43.55,
-    "subscriptionRetail": 0.85,
-    "subscriptionHNI": 2.18,
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
-    "registrarName": "Bigshare Services",
-    "registrarUrl": "https://www.bigshareonline.com/ipo_allotment.html",
+    "registrarName": "Purva Sharegistry",
+    "registrarUrl": "https://www.purvashare.com/investor-service/ipo-query",
     "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.socradamus.in/downloads/sme-ipo/shellz-india-limited/RHP-Shellz-final.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Shellz+India+IPO+DRHP+file+SEBI",
-    "openNotified": true,
-    "closeNotified": true
+    "rhpPdfUrl": "https://www.google.com/search?q=Core4+Engineers+IPO+RHP+file+SEBI",
+    "drhpPdfUrl": "https://www.google.com/search?q=Core4+Engineers+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
-    "id": "6",
-    "name": "Tonbo Imaging India",
-    "symbol": "TONBO",
-    "category": "Mainboard",
-    "status": "OPEN",
-    "issueSizeCr": 852.0,
-    "issuePriceMin": 665.0,
-    "issuePriceMax": 700.0,
-    "lotSize": 21,
-    "openDate": "2026-10-15",
-    "closeDate": "2026-10-19",
-    "allotmentDate": "2026-10-21",
-    "listingDate": "2026-10-23",
-    "gmpAmount": 515.0,
-    "gmpPercent": 73.57,
-    "gmpHistory": [
-      {
-        "dateLabel": "18 Oct",
-        "amount": 505.0
-      },
-      {
-        "dateLabel": "19 Oct",
-        "amount": 515.0
-      }
-    ],
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 144.37,
-        "pat": 68.54,
-        "netWorth": 127.83
-      },
-      {
-        "year": "FY25",
-        "revenue": 469.08,
-        "pat": 72.76,
-        "netWorth": 236.22
-      },
-      {
-        "year": "FY26",
-        "revenue": 362.65,
-        "pat": 50.88,
-        "netWorth": 511.55
-      }
-    ],
-    "subscriptionTotal": 132.8119,
-    "subscriptionRetail": 31.11,
-    "subscriptionHNI": 156.36,
-    "subscriptionQIB": 293.56,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "KFin Technologies",
-    "registrarUrl": "https://ipostatus.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://live.jmfl.com/od/UploadedFiles/CA86AB52-0D43-437A-8D1C-6E475C6CEF01.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Tonbo+Imaging+India+IPO+DRHP+file+SEBI",
-    "openNotified": true,
-    "closeNotified": true
-  },
-  {
-    "id": "7",
-    "name": "Zetwerk Manufacturing",
-    "symbol": "ZETWERK",
-    "category": "Mainboard",
-    "status": "OPEN",
-    "issueSizeCr": 5012.0,
-    "issuePriceMin": 143.0,
-    "issuePriceMax": 151.0,
-    "lotSize": 99,
-    "openDate": "2026-10-15",
-    "closeDate": "2026-10-19",
-    "allotmentDate": "2026-10-21",
-    "listingDate": "2026-10-23",
-    "gmpAmount": 3.5,
-    "gmpPercent": 2.32,
-    "gmpHistory": [
-      {
-        "dateLabel": "18 Oct",
-        "amount": 7.2
-      },
-      {
-        "dateLabel": "19 Oct",
-        "amount": 3.5
-      }
-    ],
-    "financials": [],
-    "subscriptionTotal": 2.77,
-    "subscriptionRetail": 0.37,
-    "subscriptionHNI": 0.17,
-    "subscriptionQIB": 0.37,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "KFin Technologies",
-    "registrarUrl": "https://ipostatus.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Zetwerk-RHP_compressed.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Zetwerk+Manufacturing+IPO+DRHP+file+SEBI",
-    "openNotified": true,
-    "closeNotified": true
-  },
-  {
-    "id": "8",
+    "id": "4",
     "name": "Parle Products",
     "symbol": "PARLEPR",
     "category": "Mainboard",
@@ -347,7 +155,7 @@
     "closeNotified": false
   },
   {
-    "id": "9",
+    "id": "5",
     "name": "Twinkle Papers",
     "symbol": "TWINKLE",
     "category": "SME",
@@ -388,7 +196,7 @@
     "closeNotified": false
   },
   {
-    "id": "10",
+    "id": "6",
     "name": "Sri Priyanka Geo Commex",
     "symbol": "SPGCL",
     "category": "SME",
@@ -429,7 +237,7 @@
     "closeNotified": false
   },
   {
-    "id": "11",
+    "id": "7",
     "name": "Flipkart",
     "symbol": "FLIPKAR",
     "category": "Mainboard",
@@ -470,7 +278,7 @@
     "closeNotified": false
   },
   {
-    "id": "12",
+    "id": "8",
     "name": "Prestige Hospitality Ventures",
     "symbol": "PRESTIG",
     "category": "Mainboard",
@@ -511,7 +319,7 @@
     "closeNotified": false
   },
   {
-    "id": "13",
+    "id": "9",
     "name": "Credila Financial Services",
     "symbol": "CREDILA",
     "category": "Mainboard",
@@ -548,7 +356,7 @@
     "closeNotified": false
   },
   {
-    "id": "14",
+    "id": "10",
     "name": "PhonePe",
     "symbol": "PHONEPE",
     "category": "Mainboard",
@@ -589,7 +397,7 @@
     "closeNotified": false
   },
   {
-    "id": "15",
+    "id": "11",
     "name": "Zepto",
     "symbol": "ZEPTO",
     "category": "Mainboard",
@@ -630,7 +438,7 @@
     "closeNotified": false
   },
   {
-    "id": "16",
+    "id": "12",
     "name": "Solar91 Cleantech",
     "symbol": "SOLAR91",
     "category": "SME",
@@ -671,7 +479,7 @@
     "closeNotified": false
   },
   {
-    "id": "17",
+    "id": "13",
     "name": "Hero FinCorp",
     "symbol": "HEROFIN",
     "category": "Mainboard",
@@ -712,7 +520,7 @@
     "closeNotified": false
   },
   {
-    "id": "18",
+    "id": "14",
     "name": "Deltatech Gaming",
     "symbol": "DELTATE",
     "category": "Mainboard",
@@ -753,7 +561,7 @@
     "closeNotified": false
   },
   {
-    "id": "19",
+    "id": "15",
     "name": "Biba Fashions",
     "symbol": "BIBAFAS",
     "category": "Mainboard",
@@ -794,7 +602,7 @@
     "closeNotified": false
   },
   {
-    "id": "20",
+    "id": "16",
     "name": "Droom Technology",
     "symbol": "DROOMTE",
     "category": "Mainboard",
@@ -835,7 +643,7 @@
     "closeNotified": false
   },
   {
-    "id": "21",
+    "id": "17",
     "name": "Puranik Builders",
     "symbol": "PURANIK",
     "category": "Mainboard",
@@ -876,7 +684,7 @@
     "closeNotified": false
   },
   {
-    "id": "22",
+    "id": "18",
     "name": "Bharat FIH",
     "symbol": "BHARATF",
     "category": "Mainboard",
@@ -917,7 +725,7 @@
     "closeNotified": false
   },
   {
-    "id": "23",
+    "id": "19",
     "name": "FabIndia",
     "symbol": "FABINDI",
     "category": "Mainboard",
@@ -958,7 +766,7 @@
     "closeNotified": false
   },
   {
-    "id": "24",
+    "id": "20",
     "name": "OYO",
     "symbol": "OYO",
     "category": "Mainboard",
@@ -999,7 +807,7 @@
     "closeNotified": false
   },
   {
-    "id": "25",
+    "id": "21",
     "name": "EBIXCASH",
     "symbol": "EBIXCAS",
     "category": "Mainboard",
@@ -1040,7 +848,7 @@
     "closeNotified": false
   },
   {
-    "id": "26",
+    "id": "22",
     "name": "BoAt",
     "symbol": "BOAT",
     "category": "Mainboard",
@@ -1081,41 +889,228 @@
     "closeNotified": false
   },
   {
-    "id": "27",
-    "name": "Navi Technologies",
-    "symbol": "NAVITEC",
+    "id": "23",
+    "name": "Sahajanand Medical Technologies",
+    "symbol": "SMT",
     "category": "Mainboard",
-    "status": "UPCOMING",
-    "issueSizeCr": 0.0,
-    "issuePriceMin": 0.0,
-    "issuePriceMax": 0.0,
-    "lotSize": 0,
-    "openDate": "To Be Updated",
-    "closeDate": "To Be Updated",
-    "allotmentDate": "To Be Updated",
-    "listingDate": "To Be Updated",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
+    "status": "CLOSED",
+    "issueSizeCr": 475.0,
+    "issuePriceMin": 327.0,
+    "issuePriceMax": 344.0,
+    "lotSize": 43,
+    "openDate": "2026-10-15",
+    "closeDate": "2026-10-19",
+    "allotmentDate": "2026-10-21",
+    "listingDate": "2026-10-23",
+    "gmpAmount": 24.0,
+    "gmpPercent": 6.98,
     "gmpHistory": [
       {
+        "dateLabel": "18 Oct",
+        "amount": 15.0
+      },
+      {
         "dateLabel": "19 Oct",
-        "amount": 0.0
+        "amount": 24.0
       }
     ],
     "financials": [],
-    "subscriptionTotal": 0.0,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
+    "subscriptionTotal": 14.08,
+    "subscriptionRetail": 0.83,
+    "subscriptionHNI": 0.51,
+    "subscriptionQIB": 1.12,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
     "registrarName": "Link Intime / MUFG",
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
     "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.google.com/search?q=Navi+Technologies+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/oct-2021/1633066313151.pdf#page=1&zoom=page-width,-16,379",
-    "openNotified": false,
-    "closeNotified": false
+    "rhpPdfUrl": "https://assets.ipopremium.in/images/ipo/sahajanand_medical_technologies_ltd_mainboard_rhp_1791630001.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=Sahajanand+Medical+Technologies+IPO+DRHP+file+SEBI",
+    "openNotified": true,
+    "closeNotified": true
+  },
+  {
+    "id": "24",
+    "name": "Tonbo Imaging India",
+    "symbol": "TONBO",
+    "category": "Mainboard",
+    "status": "CLOSED",
+    "issueSizeCr": 852.0,
+    "issuePriceMin": 665.0,
+    "issuePriceMax": 700.0,
+    "lotSize": 21,
+    "openDate": "2026-10-15",
+    "closeDate": "2026-10-19",
+    "allotmentDate": "2026-10-21",
+    "listingDate": "2026-10-23",
+    "gmpAmount": 515.0,
+    "gmpPercent": 73.57,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 505.0
+      },
+      {
+        "dateLabel": "19 Oct",
+        "amount": 515.0
+      }
+    ],
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 144.37,
+        "pat": 68.54,
+        "netWorth": 127.83
+      },
+      {
+        "year": "FY25",
+        "revenue": 469.08,
+        "pat": 72.76,
+        "netWorth": 236.22
+      },
+      {
+        "year": "FY26",
+        "revenue": 362.65,
+        "pat": 50.88,
+        "netWorth": 511.55
+      }
+    ],
+    "subscriptionTotal": 96.63,
+    "subscriptionRetail": 31.11,
+    "subscriptionHNI": 156.36,
+    "subscriptionQIB": 293.56,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KFin Technologies",
+    "registrarUrl": "https://ipostatus.kfintech.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://live.jmfl.com/od/UploadedFiles/CA86AB52-0D43-437A-8D1C-6E475C6CEF01.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=Tonbo+Imaging+India+IPO+DRHP+file+SEBI",
+    "openNotified": true,
+    "closeNotified": true
+  },
+  {
+    "id": "25",
+    "name": "Shellz India",
+    "symbol": "SHELLZ",
+    "category": "SME",
+    "status": "CLOSED",
+    "issueSizeCr": 60.0,
+    "issuePriceMin": 170.0,
+    "issuePriceMax": 179.0,
+    "lotSize": 800,
+    "openDate": "2026-10-15",
+    "closeDate": "2026-10-19",
+    "allotmentDate": "2026-10-21",
+    "listingDate": "2026-10-23",
+    "gmpAmount": 46.0,
+    "gmpPercent": 25.7,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 24.0
+      },
+      {
+        "dateLabel": "19 Oct",
+        "amount": 46.0
+      }
+    ],
+    "financials": [],
+    "subscriptionTotal": 58.01,
+    "subscriptionRetail": 0.85,
+    "subscriptionHNI": 2.18,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Bigshare Services",
+    "registrarUrl": "https://www.bigshareonline.com/ipo_allotment.html",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.socradamus.in/downloads/sme-ipo/shellz-india-limited/RHP-Shellz-final.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=Shellz+India+IPO+DRHP+file+SEBI",
+    "openNotified": true,
+    "closeNotified": true
+  },
+  {
+    "id": "26",
+    "name": "Zetwerk Manufacturing",
+    "symbol": "ZETWERK",
+    "category": "Mainboard",
+    "status": "CLOSED",
+    "issueSizeCr": 5012.0,
+    "issuePriceMin": 143.0,
+    "issuePriceMax": 151.0,
+    "lotSize": 99,
+    "openDate": "2026-10-15",
+    "closeDate": "2026-10-19",
+    "allotmentDate": "2026-10-21",
+    "listingDate": "2026-10-23",
+    "gmpAmount": 3.5,
+    "gmpPercent": 2.32,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 7.2
+      },
+      {
+        "dateLabel": "19 Oct",
+        "amount": 3.5
+      }
+    ],
+    "financials": [],
+    "subscriptionTotal": 3.05,
+    "subscriptionRetail": 0.37,
+    "subscriptionHNI": 0.17,
+    "subscriptionQIB": 0.37,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KFin Technologies",
+    "registrarUrl": "https://ipostatus.kfintech.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Zetwerk-RHP_compressed.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=Zetwerk+Manufacturing+IPO+DRHP+file+SEBI",
+    "openNotified": true,
+    "closeNotified": true
+  },
+  {
+    "id": "27",
+    "name": "Bonfiglioli Transmissions",
+    "symbol": "BONFIG",
+    "category": "Mainboard",
+    "status": "CLOSED",
+    "issueSizeCr": 2534.0,
+    "issuePriceMin": 558.0,
+    "issuePriceMax": 586.0,
+    "lotSize": 25,
+    "openDate": "2026-10-15",
+    "closeDate": "2026-10-19",
+    "allotmentDate": "2026-10-21",
+    "listingDate": "2026-10-23",
+    "gmpAmount": 127.0,
+    "gmpPercent": 21.67,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 132.0
+      },
+      {
+        "dateLabel": "19 Oct",
+        "amount": 127.0
+      }
+    ],
+    "financials": [],
+    "subscriptionTotal": 31.66,
+    "subscriptionRetail": 1.16,
+    "subscriptionHNI": 1.71,
+    "subscriptionQIB": 0.16,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Link Intime / MUFG",
+    "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.bonfiglioli.com/india/IPO/RHP/Peacock%20-%20RHP%20%28Filing%20version%29%20-%20Signed.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=Bonfiglioli+Transmissions+IPO+DRHP+file+SEBI",
+    "openNotified": true,
+    "closeNotified": true
   },
   {
     "id": "28",
@@ -1131,8 +1126,8 @@
     "closeDate": "2026-10-16",
     "allotmentDate": "2026-10-19",
     "listingDate": "2026-10-22",
-    "gmpAmount": 7.0,
-    "gmpPercent": 6.25,
+    "gmpAmount": 3.0,
+    "gmpPercent": 2.68,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
