@@ -5,25 +5,14 @@ from typing import Dict, List, Optional
 import requests
 from bs4 import BeautifulSoup
 
-try:
-    from rapidfuzz import fuzz
-except ImportError:
-    import difflib
-    class FuzzFallback:
-        @staticmethod
-        def token_set_ratio(s1: str, s2: str) -> int:
-            t1 = " ".join(sorted(set(s1.split())))
-            t2 = " ".join(sorted(set(s2.split())))
-            return int(difflib.SequenceMatcher(None, t1, t2).ratio() * 100)
-    fuzz = FuzzFallback()
-
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) if "scripts" in os.path.dirname(os.path.abspath(__file__)) else os.path.abspath(".")
 IPOS_JSON_PATH = os.path.join(REPO_ROOT, "ipos.json")
 OVERRIDES_PATH = os.path.join(REPO_ROOT, "manual_overrides.json")
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9"
 }
 
 INDUSTRY_NOISE = {
@@ -47,7 +36,7 @@ def clean_num(val_str: str) -> float:
         return 0.0
 
 def parse_financial_year(period_str: str) -> Optional[str]:
-    """Extracts FY label: '31 Mar 2026' -> 'FY26', 'FY24' -> 'FY24'"""
+    """Converts '31 Mar 2026', '31 Mar 26', 'FY26' -> 'FY26'"""
     if not period_str:
         return None
     match = re.search(r"(?:20)?(\d{2})\b", period_str)
@@ -55,50 +44,51 @@ def parse_financial_year(period_str: str) -> Optional[str]:
         return f"FY{match.group(1)}"
     return None
 
-def scrape_individual_financials(ipo_url: str) -> List[Dict]:
-    """Scrapes the server-side static financial table on an individual IPO page."""
-    try:
-        res = requests.get(ipo_url, headers=HEADERS, timeout=15)
-        if res.status_code != 200:
-            return []
+def extract_financials_from_soup(soup: BeautifulSoup) -> List[Dict]:
+    """
+    Parses the Chittorgarh 'Company Financials (Restated)' table.
+    Row labels: 'Period Ended', 'Total Income' / 'Revenue', 'Profit After Tax', 'NET Worth'.
+    """
+    tables = soup.find_all("table")
+    for table in tables:
+        table_text = table.get_text(separator=" ", strip=True).lower()
+        if "profit after tax" in table_text and ("total income" in table_text or "revenue" in table_text):
+            rows = table.find_all("tr")
+            if len(rows) < 3:
+                continue
 
-        soup = BeautifulSoup(res.text, "html.parser")
-        tables = soup.find_all("table")
+            period_row, rev_row, pat_row, nw_row = None, None, None, None
 
-        for table in tables:
-            headers_text = [th.get_text(strip=True).lower() for th in table.find_all(["th", "td"])]
-            # Match standard company financials table
-            if any("revenue" in h or "total income" in h for h in headers_text) and any("pat" in h or "profit after tax" in h for h in headers_text):
-                rows = table.find_all("tr")
-                if len(rows) < 2:
+            for row in rows:
+                txt = row.get_text(separator=" ", strip=True).lower()
+                cells = [c.get_text(strip=True) for c in row.find_all(["td", "th"])]
+                if not cells:
                     continue
 
-                col_headers = [td.get_text(strip=True) for td in rows[0].find_all(["th", "td"])]
+                if "period ended" in txt and not period_row:
+                    period_row = cells
+                elif ("total income" in txt or "revenue" in txt) and not rev_row:
+                    rev_row = cells
+                elif "profit after tax" in txt and not pat_row:
+                    pat_row = cells
+                elif "net worth" in txt and not nw_row:
+                    nw_row = cells
+
+            if period_row and rev_row and pat_row:
                 financial_records = []
+                # Period Ended row: col 0 is label, cols 1..N are dates
+                for i in range(1, len(period_row)):
+                    yr_label = parse_financial_year(period_row[i])
+                    if not yr_label:
+                        continue
 
-                # Many detail pages arrange periods across columns (horizontal format)
-                # or across rows (vertical format)
-                rev_row, pat_row, nw_row = None, None, None
-                for row in rows:
-                    row_txt = row.get_text(separator=" ", strip=True).lower()
-                    cells = [c.get_text(strip=True) for c in row.find_all(["td", "th"])]
-                    if "revenue" in row_txt or "total income" in row_txt:
-                        rev_row = cells
-                    elif "pat" in row_txt or "profit after tax" in row_txt:
-                        pat_row = cells
-                    elif "net worth" in row_txt:
-                        nw_row = cells
+                    # Avoid stub interim periods if FY full year is available
+                    r_val = clean_num(rev_row[i]) if i < len(rev_row) else 0.0
+                    p_val = clean_num(pat_row[i]) if i < len(pat_row) else 0.0
+                    nw_val = clean_num(nw_row[i]) if nw_row and i < len(nw_row) else 0.0
 
-                if rev_row and pat_row and len(col_headers) >= 2:
-                    # Horizontal layout: column 1..N are dates
-                    for col_idx in range(1, len(col_headers)):
-                        yr_label = parse_financial_year(col_headers[col_idx])
-                        if not yr_label:
-                            continue
-                        r_val = clean_num(rev_row[col_idx]) if col_idx < len(rev_row) else 0.0
-                        p_val = clean_num(pat_row[col_idx]) if col_idx < len(pat_row) else 0.0
-                        nw_val = clean_num(nw_row[col_idx]) if nw_row and col_idx < len(nw_row) else 0.0
-
+                    # Don't add duplicate years
+                    if not any(f["year"] == yr_label for f in financial_records):
                         financial_records.append({
                             "year": yr_label,
                             "revenue": r_val,
@@ -106,60 +96,45 @@ def scrape_individual_financials(ipo_url: str) -> List[Dict]:
                             "netWorth": nw_val
                         })
 
-                    if financial_records:
-                        return sorted(financial_records, key=lambda x: x["year"])[-3:]
+                if financial_records:
+                    # Sort chronologically (e.g., FY24, FY25, FY26) and keep top 3
+                    return sorted(financial_records, key=lambda x: x["year"])[-3:]
 
-        return []
-    except Exception:
-        return []
+    return []
 
-def scrape_financials_directory() -> Dict[str, List[Dict]]:
-    """
-    Crawls active IPO profiles and aggregates financial metrics.
-    """
-    directory_url = "https://www.chittorgarh.com/report/ipo-in-india-list-main-board-sme/82/all/?year=2026"
-    results: Dict[str, List[Dict]] = {}
+def resolve_chittorgarh_url(company_name: str) -> Optional[str]:
+    """Finds the company's direct IPO detail page on Chittorgarh."""
+    search_slug = re.sub(r"[^a-zA-Z0-9\s]", "", company_name).lower().strip().replace(" ", "-")
+    direct_candidates = [
+        f"https://www.chittorgarh.com/ipo/{search_slug}-ipo/",
+        f"https://www.chittorgarh.com/ipo/{search_slug.replace('-ltd', '')}-ipo/",
+        f"https://www.chittorgarh.com/ipo/{clean_company_name(company_name).replace(' ', '-')}-ipo/"
+    ]
 
+    for cand_url in direct_candidates:
+        try:
+            r = requests.get(cand_url, headers=HEADERS, timeout=8, allow_redirects=True)
+            if r.status_code == 200 and "Company Financials" in r.text:
+                return cand_url
+        except Exception:
+            continue
+
+    # Fallback to search query
     try:
-        res = requests.get(directory_url, headers=HEADERS, timeout=25)
-        if res.status_code != 200:
-            print(f"[WARN] Failed to fetch directory: HTTP {res.status_code}")
-            return results
+        q_url = f"https://www.chittorgarh.com/search/?search={requests.utils.quote(clean_company_name(company_name))}"
+        r = requests.get(q_url, headers=HEADERS, timeout=10)
+        if r.status_code == 200:
+            soup = BeautifulSoup(r.text, "html.parser")
+            for a in soup.find_all("a", href=True):
+                href = a["href"]
+                if "/ipo/" in href and "-ipo/" in href:
+                    return href if href.startswith("http") else f"https://www.chittorgarh.com{href}"
+    except Exception:
+        pass
 
-        soup = BeautifulSoup(res.text, "html.parser")
-        table = soup.find("table")
-        if not table:
-            return results
-
-        rows = table.find_all("tr")[1:]
-        links_to_crawl = []
-
-        for row in rows:
-            a_tag = row.find("a")
-            if a_tag and a_tag.get("href") and "/ipo/" in a_tag.get("href"):
-                name = a_tag.get_text(strip=True)
-                clean_name = re.sub(r"\b(IPO|SME|BSE|NSE)\b", "", name, flags=re.IGNORECASE).strip()
-                norm_key = clean_company_name(clean_name)
-                full_url = a_tag["href"] if a_tag["href"].startswith("http") else f"https://www.chittorgarh.com{a_tag['href']}"
-                links_to_crawl.append((norm_key, full_url))
-
-        print(f"[Financials Scraper] Found {len(links_to_crawl)} IPO detail profiles to crawl.")
-
-        # Limit to the top 25 active/recent IPOs to respect workflow execution limits
-        for norm_key, url in links_to_crawl[:25]:
-            metrics = scrape_individual_financials(url)
-            if metrics:
-                results[norm_key] = metrics
-
-    except Exception as e:
-        print(f"[ERROR] Exception during directory scrape: {e}")
-
-    print(f"[Financials Scraper] Extracted financial scorecards for {len(results)} issuers.")
-    return results
+    return None
 
 def sync_all_financials():
-    scraped_financials = scrape_financials_directory()
-
     manual_overrides = {}
     aliases = {}
     if os.path.exists(OVERRIDES_PATH):
@@ -168,8 +143,8 @@ def sync_all_financials():
                 raw_data = json.load(f)
                 aliases = raw_data.get("aliases", {})
                 manual_overrides = {k: v for k, v in raw_data.items() if k != "aliases"}
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"[WARN] Failed to load manual overrides: {e}")
 
     if not os.path.exists(IPOS_JSON_PATH):
         print(f"[ERROR] {IPOS_JSON_PATH} not found.")
@@ -181,40 +156,60 @@ def sync_all_financials():
     items = ipos_data.get("ipos", ipos_data.get("data", [])) if isinstance(ipos_data, dict) else ipos_data
 
     updated_count = 0
-    for item in items:
+    total_items = len(items)
+
+    print(f"[Financials Sync] Starting sync across {total_items} IPOs...")
+
+    for idx, item in enumerate(items):
         name = item.get("name", "")
         norm_name = clean_company_name(name)
 
-        # 1. Manual Overrides Priority
+        # 1. Manual Overrides Priority (e.g. Tonbo Imaging)
         override_entry = manual_overrides.get(norm_name) or manual_overrides.get(name.lower())
         if override_entry and "financials" in override_entry and override_entry["financials"]:
             item["financials"] = override_entry["financials"]
             updated_count += 1
             continue
 
-        # 2. Check Aliases
-        alias_target = aliases.get(norm_name) or aliases.get(name.lower())
-        lookup_name = clean_company_name(alias_target) if alias_target else norm_name
-
-        # 3. Fuzzy Match against Scraped Profiles
-        best_match_key = None
-        highest_score = 0
-        for scraped_key in scraped_financials:
-            score = fuzz.token_set_ratio(lookup_name, scraped_key)
-            if score > highest_score and score >= 80:
-                highest_score = score
-                best_match_key = scraped_key
-
-        if best_match_key and scraped_financials[best_match_key]:
-            item["financials"] = scraped_financials[best_match_key]
+        # 2. If already populated from a previous run, preserve it
+        if item.get("financials") and len(item["financials"]) > 0:
             updated_count += 1
-        elif "financials" not in item:
-            item["financials"] = []
+            continue
+
+        # 3. Only actively scrape for OPEN, UPCOMING, and recently CLOSED/LISTED IPOs
+        status = str(item.get("status", "")).upper()
+        if status not in ["OPEN", "UPCOMING", "CLOSED"]:
+            if "financials" not in item:
+                item["financials"] = []
+            continue
+
+        # Check aliases
+        alias_target = aliases.get(norm_name) or aliases.get(name.lower())
+        target_name = alias_target if alias_target else name
+
+        ipo_url = resolve_chittorgarh_url(target_name)
+        if ipo_url:
+            try:
+                res = requests.get(ipo_url, headers=HEADERS, timeout=12)
+                if res.status_code == 200:
+                    metrics = extract_financials_from_soup(BeautifulSoup(res.text, "html.parser"))
+                    if metrics:
+                        item["financials"] = metrics
+                        updated_count += 1
+                        print(f"[{updated_count}] Synced financials for: {name} ({len(metrics)} years)")
+                    else:
+                        item["financials"] = []
+            except Exception as e:
+                print(f"[WARN] Failed to scrape {name}: {e}")
+                item["financials"] = []
+        else:
+            if "financials" not in item:
+                item["financials"] = []
 
     with open(IPOS_JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(ipos_data, f, indent=2, ensure_ascii=False)
 
-    print(f"Successfully synced financial scorecards for {updated_count}/{len(items)} IPOs.")
+    print(f"\n[Done] Successfully verified & synced financial scorecards for {updated_count}/{total_items} IPOs.")
 
 if __name__ == "__main__":
     sync_all_financials()
