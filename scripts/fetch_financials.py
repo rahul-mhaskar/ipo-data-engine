@@ -36,14 +36,30 @@ def clean_num(val_str: str) -> float:
         return 0.0
 
 def parse_financial_year(period_str: str) -> Optional[str]:
-    """Converts '31 Mar 2026', '31 Mar 26', 'FY26' -> 'FY26'. Ignores stub interim periods."""
+    """
+    Standardizes dates like:
+    '31-Mar-2025' -> 'FY25'
+    '31 Mar 26'   -> 'FY26'
+    '30-Jun-2024' -> 'FY24'
+    'FY24'        -> 'FY24'
+    """
     if not period_str:
         return None
-    # If it's a quarterly stub (e.g., Jun, Sep, Dec), prioritize full Mar year-ends when possible
-    match = re.search(r"(?:20)?(\d{2})\b", period_str)
+    
+    clean_p = period_str.strip()
+    
+    # 1. Match trailing 2 or 4 digits (e.g., '31-Mar-2025', '31 Mar 25')
+    match = re.search(r"(?:19|20)?(\d{2})(?:\s*\(.*\))?$", clean_p)
     if match:
         return f"FY{match.group(1)}"
+        
+    # 2. Match standard 'FY24' / 'FY 2024' formats
+    match_fy = re.search(r"FY\s*(?:20)?(\d{2})", clean_p, re.IGNORECASE)
+    if match_fy:
+        return f"FY{match_fy.group(1)}"
+
     return None
+
 
 def extract_financials_from_soup(soup: BeautifulSoup) -> List[Dict]:
     """
