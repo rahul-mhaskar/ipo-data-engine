@@ -95,8 +95,8 @@
     "closeDate": "2026-10-19",
     "allotmentDate": "2026-10-21",
     "listingDate": "2026-10-23",
-    "gmpAmount": 105.0,
-    "gmpPercent": 17.92,
+    "gmpAmount": 127.0,
+    "gmpPercent": 21.67,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -104,7 +104,7 @@
       },
       {
         "dateLabel": "19 Oct",
-        "amount": 105.0
+        "amount": 127.0
       }
     ],
     "financials": [],
@@ -136,8 +136,8 @@
     "closeDate": "2026-10-19",
     "allotmentDate": "2026-10-21",
     "listingDate": "2026-10-23",
-    "gmpAmount": 17.0,
-    "gmpPercent": 4.94,
+    "gmpAmount": 24.0,
+    "gmpPercent": 6.98,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -145,7 +145,7 @@
       },
       {
         "dateLabel": "19 Oct",
-        "amount": 17.0
+        "amount": 24.0
       }
     ],
     "financials": [],
@@ -250,10 +250,10 @@
         "netWorth": 511.55
       }
     ],
-    "subscriptionTotal": 86.39,
-    "subscriptionRetail": 24.75,
-    "subscriptionHNI": 136.72,
-    "subscriptionQIB": 122.5,
+    "subscriptionTotal": 132.8119,
+    "subscriptionRetail": 31.11,
+    "subscriptionHNI": 156.36,
+    "subscriptionQIB": 293.56,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
     "registrarName": "KFin Technologies",
@@ -1131,8 +1131,8 @@
     "closeDate": "2026-10-16",
     "allotmentDate": "2026-10-19",
     "listingDate": "2026-10-22",
-    "gmpAmount": 3.0,
-    "gmpPercent": 2.68,
+    "gmpAmount": 7.0,
+    "gmpPercent": 6.25,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -1172,8 +1172,8 @@
     "closeDate": "2026-10-16",
     "allotmentDate": "2026-10-19",
     "listingDate": "2026-10-22",
-    "gmpAmount": 20.0,
-    "gmpPercent": 6.92,
+    "gmpAmount": 16.0,
+    "gmpPercent": 5.54,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -1181,7 +1181,7 @@
       },
       {
         "dateLabel": "19 Oct",
-        "amount": 20.0
+        "amount": 16.0
       }
     ],
     "financials": [],
@@ -1213,8 +1213,8 @@
     "closeDate": "2026-10-15",
     "allotmentDate": "2026-10-16",
     "listingDate": "2026-10-21",
-    "gmpAmount": 65.0,
-    "gmpPercent": 23.99,
+    "gmpAmount": 61.0,
+    "gmpPercent": 22.51,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -1222,7 +1222,7 @@
       },
       {
         "dateLabel": "19 Oct",
-        "amount": 65.0
+        "amount": 61.0
       }
     ],
     "financials": [],
