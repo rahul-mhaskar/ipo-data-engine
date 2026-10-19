@@ -48,7 +48,10 @@ jobs:
           PYTHONUNBUFFERED: "1"
         run: |
           python -u scripts/fetch_gmp.py
-
+          
+      - name: Run Financial Scorecard Sync
+        run: python -u scripts/fetch_financials.py
+        
       - name: Commit and Push if Changed
         run: |
           git config --global user.name "github-actions[bot]"
