@@ -17,8 +17,10 @@ except ImportError:
             return int(difflib.SequenceMatcher(None, t1, t2).ratio() * 100)
     fuzz = FuzzFallback()
 
-IPOS_JSON_PATH = "ipos.json"
-OVERRIDES_PATH = "manual_overrides.json"
+# Resolve repository root cleanly regardless of where script is invoked
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) if "scripts" in os.path.dirname(os.path.abspath(__file__)) else os.path.abspath(".")
+IPOS_JSON_PATH = os.path.join(REPO_ROOT, "ipos.json")
+OVERRIDES_PATH = os.path.join(REPO_ROOT, "manual_overrides.json")
 
 INDUSTRY_NOISE = {
     "pharma", "pharmaceuticals", "jewels", "jewellers", "tech", 
@@ -40,67 +42,78 @@ def clean_num(val_str: str) -> float:
     except Exception:
         return 0.0
 
+def parse_financial_year(period_str: str) -> str:
+    """Standardizes dates like '31-Mar-2024', '31-Mar-24', 'FY24' -> 'FY24'"""
+    period = period_str.strip()
+    match = re.search(r"(?:20)?(\d{2})", period)
+    if match:
+        return f"FY{match.group(1)}"
+    return period
+
 def scrape_financials_directory() -> Dict[str, List[Dict]]:
     """
     Scrapes the aggregate public financial disclosures directory.
     Extracts multi-period Revenue, PAT, and Net Worth in ₹ Cr.
     """
-    url = "https://www.chittorgarh.com/report/ipo-key-financial-details/161/all/?year=2026"
+    urls = [
+        "https://www.chittorgarh.com/report/ipo-key-financial-details/161/all/",
+        "https://www.chittorgarh.com/report/ipo-key-financial-details/161/all/?year=2026"
+    ]
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
     }
 
     results = {}
-    try:
-        res = requests.get(url, headers=headers, timeout=25)
-        if res.status_code != 200:
-            print(f"[WARN] Failed to fetch financials table: HTTP {res.status_code}")
-            return results
-
-        soup = BeautifulSoup(res.text, "html.parser")
-        table = soup.find("table")
-        if not table:
-            return results
-
-        rows = table.find_all("tr")
-        for row in rows[1:]:
-            cols = [td.get_text(separator=" ", strip=True) for td in row.find_all(["td", "th"])]
-            if len(cols) < 5:
+    for url in urls:
+        try:
+            res = requests.get(url, headers=headers, timeout=25)
+            if res.status_code != 200:
                 continue
 
-            raw_name = cols[0]
-            # Strip trailing status tags like 'IPO', 'SME', 'BSE', 'NSE'
-            clean_name = re.sub(r"\b(IPO|SME|BSE|NSE)\b", "", raw_name, flags=re.IGNORECASE).strip()
-            norm_key = clean_company_name(clean_name)
+            soup = BeautifulSoup(res.text, "html.parser")
+            tables = soup.find_all("table")
 
-            # Period extraction (e.g., '31-Mar-2025' -> 'FY25')
-            period_raw = cols[1]
-            match_yr = re.search(r"(\d{2,4})$", period_raw)
-            yr_str = f"FY{match_yr.group(1)[-2:]}" if match_yr else period_raw
+            for table in tables:
+                rows = table.find_all("tr")
+                for row in rows[1:]:
+                    cols = [td.get_text(separator=" ", strip=True) for td in row.find_all(["td", "th"])]
+                    if len(cols) < 5:
+                        continue
 
-            rev = clean_num(cols[2])      # Revenue from operations
-            pat = clean_num(cols[3])      # Profit After Tax (PAT)
-            net_worth = clean_num(cols[4]) # Net Worth / Reserves
+                    raw_name = cols[0]
+                    # Filter out non-issuer header rows
+                    if any(term in raw_name.lower() for term in ["issuer", "company name", "period ended"]):
+                        continue
 
-            entry = {
-                "year": yr_str,
-                "revenue": rev,
-                "pat": pat,
-                "netWorth": net_worth
-            }
+                    clean_name = re.sub(r"\b(IPO|SME|BSE|NSE)\b", "", raw_name, flags=re.IGNORECASE).strip()
+                    norm_key = clean_company_name(clean_name)
+                    if not norm_key:
+                        continue
 
-            if norm_key not in results:
-                results[norm_key] = []
-            
-            # Keep up to 3 most recent financial periods
-            if not any(f["year"] == yr_str for f in results[norm_key]):
-                results[norm_key].append(entry)
+                    yr_str = parse_financial_year(cols[1])
+                    rev = clean_num(cols[2])
+                    pat = clean_num(cols[3])
+                    net_worth = clean_num(cols[4])
 
-    except Exception as e:
-        print(f"[ERROR] Financials scraper encountered an exception: {e}")
+                    entry = {
+                        "year": yr_str,
+                        "revenue": rev,
+                        "pat": pat,
+                        "netWorth": net_worth
+                    }
 
-    # Ensure chronological order (e.g. FY24, FY25, FY26)
+                    if norm_key not in results:
+                        results[norm_key] = []
+
+                    # Avoid duplicate year records
+                    if not any(f["year"] == yr_str for f in results[norm_key]):
+                        results[norm_key].append(entry)
+
+        except Exception as e:
+            print(f"[WARN] Error fetching {url}: {e}")
+
+    # Retain the 3 most recent chronologically ordered financial periods
     for k in results:
         results[k] = sorted(results[k], key=lambda x: x["year"])[-3:]
 
@@ -118,11 +131,11 @@ def sync_all_financials():
                 raw_data = json.load(f)
                 aliases = raw_data.get("aliases", {})
                 manual_overrides = {k: v for k, v in raw_data.items() if k != "aliases"}
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"[WARN] Failed to load manual overrides: {e}")
 
     if not os.path.exists(IPOS_JSON_PATH):
-        print(f"{IPOS_JSON_PATH} not found.")
+        print(f"[ERROR] {IPOS_JSON_PATH} not found.")
         return
 
     with open(IPOS_JSON_PATH, "r", encoding="utf-8") as f:
@@ -135,18 +148,18 @@ def sync_all_financials():
         name = item.get("name", "")
         norm_name = clean_company_name(name)
 
-        # 1. Check manual overrides first
+        # 1. Manual Overrides Priority
         override_entry = manual_overrides.get(norm_name) or manual_overrides.get(name.lower())
         if override_entry and "financials" in override_entry and override_entry["financials"]:
             item["financials"] = override_entry["financials"]
             updated_count += 1
             continue
 
-        # 2. Check alias mapping
+        # 2. Check Aliases
         alias_target = aliases.get(norm_name) or aliases.get(name.lower())
         lookup_name = clean_company_name(alias_target) if alias_target else norm_name
 
-        # 3. Match against scraped financials using token ratio
+        # 3. Match against Scraped Directory
         best_match_key = None
         highest_score = 0
         for scraped_key in scraped_financials:
@@ -158,7 +171,7 @@ def sync_all_financials():
         if best_match_key:
             item["financials"] = scraped_financials[best_match_key]
             updated_count += 1
-        elif not item.get("financials"):
+        elif "financials" not in item:
             item["financials"] = []
 
     with open(IPOS_JSON_PATH, "w", encoding="utf-8") as f:
@@ -168,4 +181,4 @@ def sync_all_financials():
 
 if __name__ == "__main__":
     sync_all_financials()
-      
+    
