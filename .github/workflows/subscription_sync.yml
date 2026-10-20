@@ -65,12 +65,19 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Stage the modified data files
           git add ipos.json gmp_data.json
+          
           if git diff --staged --quiet; then
             echo "No changes detected across dataset and GMP files."
           else
             git commit -m "chore: auto-sync subscriptions, GMP & financials [skip ci]"
-            git pull --rebase origin main
+            
+            # Pull latest changes using merge strategy preferring the newly generated files
+            git pull --no-rebase -s recursive -X ours origin main || true
+            
             git push origin main
           fi
+
           
