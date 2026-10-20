@@ -23,6 +23,10 @@
       {
         "dateLabel": "19 Oct",
         "amount": 96.0
+      },
+      {
+        "dateLabel": "20 Oct",
+        "amount": 96.0
       }
     ],
     "financials": [
@@ -83,6 +87,10 @@
       {
         "dateLabel": "19 Oct",
         "amount": 223.0
+      },
+      {
+        "dateLabel": "20 Oct",
+        "amount": 223.0
       }
     ],
     "financials": [
@@ -139,6 +147,10 @@
       {
         "dateLabel": "19 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [
@@ -193,6 +205,10 @@
       {
         "dateLabel": "19 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -233,6 +249,10 @@
       },
       {
         "dateLabel": "19 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Oct",
         "amount": 0.0
       }
     ],
@@ -294,6 +314,10 @@
       {
         "dateLabel": "19 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [
@@ -354,6 +378,10 @@
       {
         "dateLabel": "19 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -394,6 +422,10 @@
       },
       {
         "dateLabel": "19 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Oct",
         "amount": 0.0
       }
     ],
@@ -511,6 +543,10 @@
       {
         "dateLabel": "19 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [
@@ -570,6 +606,10 @@
       },
       {
         "dateLabel": "19 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Oct",
         "amount": 0.0
       }
     ],
@@ -631,6 +671,10 @@
       {
         "dateLabel": "19 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -671,6 +715,10 @@
       },
       {
         "dateLabel": "19 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Oct",
         "amount": 0.0
       }
     ],
@@ -732,6 +780,10 @@
       {
         "dateLabel": "19 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -772,6 +824,10 @@
       },
       {
         "dateLabel": "19 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Oct",
         "amount": 0.0
       }
     ],
@@ -814,6 +870,10 @@
       {
         "dateLabel": "19 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -854,6 +914,10 @@
       },
       {
         "dateLabel": "19 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Oct",
         "amount": 0.0
       }
     ],
@@ -896,6 +960,10 @@
       {
         "dateLabel": "19 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -937,6 +1005,10 @@
       {
         "dateLabel": "19 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -977,6 +1049,10 @@
       },
       {
         "dateLabel": "19 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Oct",
         "amount": 0.0
       }
     ],
@@ -1038,6 +1114,10 @@
       {
         "dateLabel": "19 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -1078,6 +1158,10 @@
       },
       {
         "dateLabel": "19 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Oct",
         "amount": 0.0
       }
     ],
@@ -1139,6 +1223,10 @@
       {
         "dateLabel": "19 Oct",
         "amount": 24.0
+      },
+      {
+        "dateLabel": "20 Oct",
+        "amount": 24.0
       }
     ],
     "financials": [],
@@ -1180,6 +1268,10 @@
       {
         "dateLabel": "19 Oct",
         "amount": 510.0
+      },
+      {
+        "dateLabel": "20 Oct",
+        "amount": 510.0
       }
     ],
     "financials": [
@@ -1202,7 +1294,7 @@
         "netWorth": 511.55
       }
     ],
-    "subscriptionTotal": 96.63,
+    "subscriptionTotal": 132.8119,
     "subscriptionRetail": 31.11,
     "subscriptionHNI": 156.36,
     "subscriptionQIB": 293.56,
@@ -1239,6 +1331,10 @@
       },
       {
         "dateLabel": "19 Oct",
+        "amount": 46.0
+      },
+      {
+        "dateLabel": "20 Oct",
         "amount": 46.0
       }
     ],
@@ -1300,6 +1396,10 @@
       {
         "dateLabel": "19 Oct",
         "amount": 3.5
+      },
+      {
+        "dateLabel": "20 Oct",
+        "amount": 3.5
       }
     ],
     "financials": [],
@@ -1340,6 +1440,10 @@
       },
       {
         "dateLabel": "19 Oct",
+        "amount": 127.0
+      },
+      {
+        "dateLabel": "20 Oct",
         "amount": 127.0
       }
     ],
@@ -1391,8 +1495,8 @@
     "closeDate": "2026-10-16",
     "allotmentDate": "2026-10-19",
     "listingDate": "2026-10-22",
-    "gmpAmount": 3.0,
-    "gmpPercent": 2.68,
+    "gmpAmount": 5.0,
+    "gmpPercent": 4.46,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -1401,6 +1505,10 @@
       {
         "dateLabel": "19 Oct",
         "amount": 7.0
+      },
+      {
+        "dateLabel": "20 Oct",
+        "amount": 5.0
       }
     ],
     "financials": [
@@ -1451,8 +1559,8 @@
     "closeDate": "2026-10-16",
     "allotmentDate": "2026-10-19",
     "listingDate": "2026-10-22",
-    "gmpAmount": 16.0,
-    "gmpPercent": 5.54,
+    "gmpAmount": 15.0,
+    "gmpPercent": 5.19,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -1461,6 +1569,10 @@
       {
         "dateLabel": "19 Oct",
         "amount": 16.0
+      },
+      {
+        "dateLabel": "20 Oct",
+        "amount": 15.0
       }
     ],
     "financials": [
@@ -1521,6 +1633,10 @@
       {
         "dateLabel": "19 Oct",
         "amount": 61.0
+      },
+      {
+        "dateLabel": "20 Oct",
+        "amount": 61.0
       }
     ],
     "financials": [],
@@ -1561,6 +1677,10 @@
       },
       {
         "dateLabel": "19 Oct",
+        "amount": 5.0
+      },
+      {
+        "dateLabel": "20 Oct",
         "amount": 5.0
       }
     ],
