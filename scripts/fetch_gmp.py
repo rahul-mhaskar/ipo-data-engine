@@ -19,9 +19,12 @@ except ImportError:
     fuzz = FuzzFallback()
 
 IST = timezone(timedelta(hours=5, minutes=30))
-IPOS_JSON_PATH = "ipos.json"
-GMP_DATA_PATH = "gmp_data.json"
-OVERRIDES_PATH = "manual_overrides.json"
+
+# Dynamically resolve root repo path whether run from root or inside scripts/
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) if "scripts" in os.path.dirname(os.path.abspath(__file__)) else os.path.abspath(".")
+IPOS_JSON_PATH = os.path.join(REPO_ROOT, "ipos.json")
+GMP_DATA_PATH = os.path.join(REPO_ROOT, "gmp_data.json")
+OVERRIDES_PATH = os.path.join(REPO_ROOT, "manual_overrides.json")
 
 # Industry noise words to ignore during matching
 INDUSTRY_NOISE: Set[str] = {
@@ -103,7 +106,6 @@ def find_best_gmp_match(
     return best_candidate
 
 def scrape_live_sources() -> List[Dict]:
-    """Scrapes latest real-time feeds across both Mainboard, SME, and Live Subscription headers."""
     urls = [
         "https://www.investorgain.com/report/live-ipo-gmp/331/ipo/",
         "https://www.investorgain.com/report/live-ipo-gmp/331/sme/",
@@ -134,10 +136,8 @@ def scrape_live_sources() -> List[Dict]:
                     continue
 
                 raw_name = cols[0]
-                
-                # Check for inline GMP badge in the name cell: e.g. "Tonbo Imaging India IPOGMP:₹515 (73.57%)"
                 inline_amt = re.search(r"GMP:\s*₹?\s*([0-9]+(?:\.[0-9]+)?)", raw_name)
-                inline_pct = re.search(r"GMP:.*?\((\d+(?:\.\d+)?)%\)", raw_name)
+                inline_pct = re.search(r"GMP:.*?\((\d+(?:\.\d+)?)\%\)", raw_name)
 
                 gmp_amt = None
                 gmp_pct = None
@@ -146,18 +146,16 @@ def scrape_live_sources() -> List[Dict]:
                     gmp_amt = float(inline_amt.group(1))
                     gmp_pct = float(inline_pct.group(1)) if inline_pct else 0.0
                 elif len(cols) > 2:
-                    # Check column 2/3 for standard GMP tables
                     for col_text in cols[1:4]:
                         if "₹" in col_text:
                             amt_match = re.search(r"₹\s*([0-9]+(?:\.[0-9]+)?)", col_text)
-                            pct_match = re.search(r"\(([+-]?[0-9]+(?:\.[0-9]+)?)\s*%\)", col_text)
+                            pct_match = re.search(r"\(([+-]?[0-9]+(?:\.[0-9]+)?)\s*\%\)", col_text)
                             if amt_match:
                                 gmp_amt = float(amt_match.group(1))
                                 gmp_pct = float(pct_match.group(1)) if pct_match else 0.0
                                 break
 
                 if gmp_amt is not None:
-                    # Clean out noise and status markers
                     clean_name = re.sub(r"GMP:.*", "", raw_name, flags=re.IGNORECASE)
                     clean_name = re.sub(r"\b(IPO|SME|BSE|NSE|Open|Closed|Allotted)\b", "", clean_name, flags=re.IGNORECASE).strip()
 
@@ -179,7 +177,6 @@ def scrape_live_sources() -> List[Dict]:
 def sync_gmp():
     scraped_candidates = scrape_live_sources()
 
-    # Load manual overrides
     manual_overrides = {}
     aliases = {}
     if os.path.exists(OVERRIDES_PATH):
@@ -191,7 +188,6 @@ def sync_gmp():
         except Exception as e:
             print(f"[WARN] Failed to load overrides: {e}")
 
-    # Load persistent GMP storage
     gmp_store = {}
     if os.path.exists(GMP_DATA_PATH):
         try:
@@ -203,7 +199,7 @@ def sync_gmp():
     today_str = datetime.now(IST).strftime("%d %b")
 
     if not os.path.exists(IPOS_JSON_PATH):
-        print(f"{IPOS_JSON_PATH} not found.")
+        print(f"[ERROR] {IPOS_JSON_PATH} not found.")
         return
 
     with open(IPOS_JSON_PATH, "r", encoding="utf-8") as f:
@@ -225,7 +221,7 @@ def sync_gmp():
         if override_entry and "gmp" in override_entry:
             final_gmp = float(override_entry["gmp"])
 
-        # Priority 2: Multi-layer matching against scraped data
+        # Priority 2: Scraped match
         if final_gmp is None:
             match = find_best_gmp_match(item, scraped_candidates, aliases)
             if match:
@@ -247,8 +243,11 @@ def sync_gmp():
         item["gmpAmount"] = final_gmp
         item["gmpPercent"] = final_pct
 
-        # Rolling 6-day history
-        history = item.setdefault("gmpHistory", [])
+        # Genuine incremental append (strictly actual recorded sessions)
+        history = item.get("gmpHistory", [])
+        if not isinstance(history, list):
+            history = []
+
         if history and history[-1].get("dateLabel") == today_str:
             history[-1]["amount"] = final_gmp
         else:
@@ -256,6 +255,8 @@ def sync_gmp():
                 "dateLabel": today_str,
                 "amount": final_gmp
             })
+
+        # Cap strictly to the latest 6 authentic captures
         item["gmpHistory"] = history[-6:]
 
         gmp_store[clean_key] = {
@@ -271,8 +272,7 @@ def sync_gmp():
     with open(GMP_DATA_PATH, "w", encoding="utf-8") as f:
         json.dump(gmp_store, f, indent=2, ensure_ascii=False)
 
-    print(f"Successfully synced GMP and history points for {updated_count}/{len(items)} IPOs.")
+    print(f"Successfully synced GMP and authentic history points for {updated_count}/{len(items)} IPOs.")
 
 if __name__ == "__main__":
     sync_gmp()
-    
