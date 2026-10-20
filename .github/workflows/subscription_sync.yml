@@ -55,6 +55,12 @@ jobs:
         run: |
           python -u scripts/fetch_financials.py
 
+      - name: Run Issuer Details & Structure Sync
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: |
+          python -u scripts/fetch_issuer_details.py
+          
       - name: Commit and Push if Changed
         run: |
           git config --global user.name "github-actions[bot]"
