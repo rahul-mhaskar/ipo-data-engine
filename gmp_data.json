@@ -1,11 +1,11 @@
 {
-  "parashealthcare": {
-    "name": "Paras Healthcare",
-    "gmp": 96.0
-  },
   "reliancejio": {
     "name": "Reliance Jio",
     "gmp": 223.0
+  },
+  "parashealthcare": {
+    "name": "Paras Healthcare",
+    "gmp": 96.0
   },
   "core4engineers": {
     "name": "Core4 Engineers",
@@ -114,13 +114,5 @@
   "fusioncx": {
     "name": "Fusion CX",
     "gmp": 20.0
-  },
-  "hdfireprotect": {
-    "name": "HD Fire Protect",
-    "gmp": 71.0
-  },
-  "vaibhavvyapaar": {
-    "name": "Vaibhav Vyapaar",
-    "gmp": 3.0
   }
 }

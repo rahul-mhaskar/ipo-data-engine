@@ -1,70 +1,6 @@
 [
   {
     "id": "1",
-    "name": "Paras Healthcare",
-    "symbol": "PARASHLTH",
-    "category": "Mainboard",
-    "status": "OPEN",
-    "issueSizeCr": 1450.0,
-    "issuePriceMin": 660.0,
-    "issuePriceMax": 693.0,
-    "lotSize": 21,
-    "openDate": "2026-10-21",
-    "closeDate": "2026-10-23",
-    "allotmentDate": "2026-10-26",
-    "listingDate": "2026-10-28",
-    "gmpAmount": 96.0,
-    "gmpPercent": 13.85,
-    "gmpHistory": [
-      {
-        "dateLabel": "18 Oct",
-        "amount": 96.0
-      },
-      {
-        "dateLabel": "19 Oct",
-        "amount": 96.0
-      },
-      {
-        "dateLabel": "20 Oct",
-        "amount": 96.0
-      }
-    ],
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 1151.0,
-        "pat": -15.3,
-        "netWorth": 338.5
-      },
-      {
-        "year": "FY25",
-        "revenue": 1314.2,
-        "pat": -58.0,
-        "netWorth": 280.5
-      },
-      {
-        "year": "FY26",
-        "revenue": 478.8,
-        "pat": 49.7,
-        "netWorth": 445.0
-      }
-    ],
-    "subscriptionTotal": 0.0,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Link Intime / MUFG",
-    "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.jmfl.com/Common/getFile/6104",
-    "drhpPdfUrl": "https://www.google.com/search?q=Paras+Healthcare+IPO+DRHP+file+SEBI",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "2",
     "name": "Reliance Jio",
     "symbol": "JPL",
     "category": "Mainboard",
@@ -113,7 +49,7 @@
         "netWorth": 341778.5
       }
     ],
-    "subscriptionTotal": 0.0,
+    "subscriptionTotal": 1.22,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -124,7 +60,71 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://myjiostatic.cdn.jio.com/cms/assets/iv3/Red%20Herring%20Prospectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Reliance+Jio+IPO+DRHP+file+SEBI",
-    "openNotified": false,
+    "openNotified": true,
+    "closeNotified": false
+  },
+  {
+    "id": "2",
+    "name": "Paras Healthcare",
+    "symbol": "PARASHLTH",
+    "category": "Mainboard",
+    "status": "OPEN",
+    "issueSizeCr": 1450.0,
+    "issuePriceMin": 660.0,
+    "issuePriceMax": 693.0,
+    "lotSize": 21,
+    "openDate": "2026-10-21",
+    "closeDate": "2026-10-23",
+    "allotmentDate": "2026-10-26",
+    "listingDate": "2026-10-28",
+    "gmpAmount": 96.0,
+    "gmpPercent": 13.85,
+    "gmpHistory": [
+      {
+        "dateLabel": "18 Oct",
+        "amount": 96.0
+      },
+      {
+        "dateLabel": "19 Oct",
+        "amount": 96.0
+      },
+      {
+        "dateLabel": "20 Oct",
+        "amount": 96.0
+      }
+    ],
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 1151.0,
+        "pat": -15.3,
+        "netWorth": 338.5
+      },
+      {
+        "year": "FY25",
+        "revenue": 1314.2,
+        "pat": -58.0,
+        "netWorth": 280.5
+      },
+      {
+        "year": "FY26",
+        "revenue": 478.8,
+        "pat": 49.7,
+        "netWorth": 445.0
+      }
+    ],
+    "subscriptionTotal": 0.05,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Link Intime / MUFG",
+    "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.jmfl.com/Common/getFile/6104",
+    "drhpPdfUrl": "https://www.google.com/search?q=Paras+Healthcare+IPO+DRHP+file+SEBI",
+    "openNotified": true,
     "closeNotified": false
   },
   {
@@ -1614,7 +1614,7 @@
     "name": "HD Fire Protect",
     "symbol": "HDFIRE",
     "category": "Mainboard",
-    "status": "CLOSED",
+    "status": "LISTED",
     "issueSizeCr": 712.0,
     "issuePriceMin": 258.0,
     "issuePriceMax": 271.0,
@@ -1644,8 +1644,8 @@
     "subscriptionRetail": 30.55,
     "subscriptionHNI": 203.21,
     "subscriptionQIB": 256.65,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
+    "listingPrice": 335.0,
+    "listingGainPercent": 23.62,
     "registrarName": "Link Intime / MUFG",
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
     "isAllotmentDone": false,
@@ -1659,7 +1659,7 @@
     "name": "Vaibhav Vyapaar",
     "symbol": "LOANFRONT",
     "category": "SME",
-    "status": "CLOSED",
+    "status": "LISTED",
     "issueSizeCr": 42.0,
     "issuePriceMin": 51.0,
     "issuePriceMax": 54.0,
@@ -1689,8 +1689,8 @@
     "subscriptionRetail": 2.7,
     "subscriptionHNI": 6.65,
     "subscriptionQIB": 1.61,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
+    "listingPrice": 52.9,
+    "listingGainPercent": -2.04,
     "registrarName": "KFin Technologies",
     "registrarUrl": "https://ipostatus.kfintech.com/",
     "isAllotmentDone": false,
