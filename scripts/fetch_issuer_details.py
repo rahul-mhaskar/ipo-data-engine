@@ -104,17 +104,28 @@ def extract_issuer_details(soup: BeautifulSoup) -> Dict:
                 if pct_match:
                     details["promoterHoldingPost"] = float(pct_match.group(1))
 
+        # Noise phrases found in Chittorgarh table navigation
+    BRLM_NAV_NOISE = {
+        "performance", "managed", "report", "track record", 
+        "issues", "listing gain", "market maker", "registrar",
+        "lead manager", "click here", "view"
+    }
+
     # 2. Parse Lead Managers (BRLMs)
-    for tag in soup.find_all(["div", "p", "td", "li"]):
+    for tag in soup.find_all(["div", "td", "li"]):
         txt = tag.get_text(separator=" ", strip=True)
-        if "lead manager" in txt.lower() and len(txt) < 300:
-            # Often styled as list items or comma-separated names
-            links = tag.find_all("a")
-            if links:
-                for a in links:
-                    name = a.get_text(strip=True)
-                    if len(name) > 3 and "report" not in name.lower() and name not in details["leadManagers"]:
-                        details["leadManagers"].append(name)
+        if "lead manager" in txt.lower() and len(txt) < 400:
+            for a in tag.find_all("a"):
+                name = a.get_text(strip=True)
+                name_clean = name.strip()
+                # Skip navigation links and short garbage
+                if (
+                    len(name_clean) > 3 
+                    and not any(noise in name_clean.lower() for noise in BRLM_NAV_NOISE)
+                    and name_clean not in details["leadManagers"]
+                ):
+                    details["leadManagers"].append(name_clean)
+
 
     # 3. Parse Anchor Portion
     for table in tables:
