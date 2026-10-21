@@ -13,8 +13,8 @@
     "closeDate": "2026-10-23",
     "allotmentDate": "2026-10-26",
     "listingDate": "2026-10-28",
-    "gmpAmount": 254.0,
-    "gmpPercent": 22.7,
+    "gmpAmount": 249.0,
+    "gmpPercent": 22.25,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -30,7 +30,7 @@
       },
       {
         "dateLabel": "21 Oct",
-        "amount": 254.0
+        "amount": 249.0
       }
     ],
     "financials": [
@@ -53,10 +53,10 @@
         "netWorth": 341778.5
       }
     ],
-    "subscriptionTotal": 2.5221,
-    "subscriptionRetail": 0.62,
-    "subscriptionHNI": 1.31,
-    "subscriptionQIB": 7.46,
+    "subscriptionTotal": 3.0421,
+    "subscriptionRetail": 0.73,
+    "subscriptionHNI": 1.61,
+    "subscriptionQIB": 9.04,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
     "registrarName": "KFin Technologies",
@@ -1771,8 +1771,8 @@
     "closeDate": "2026-10-19",
     "allotmentDate": "2026-10-21",
     "listingDate": "2026-10-23",
-    "gmpAmount": 513.0,
-    "gmpPercent": 73.29,
+    "gmpAmount": 512.0,
+    "gmpPercent": 73.14,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -1788,7 +1788,7 @@
       },
       {
         "dateLabel": "21 Oct",
-        "amount": 513.0
+        "amount": 512.0
       }
     ],
     "financials": [
@@ -2014,8 +2014,8 @@
     "closeDate": "2026-10-19",
     "allotmentDate": "2026-10-21",
     "listingDate": "2026-10-23",
-    "gmpAmount": 135.0,
-    "gmpPercent": 23.04,
+    "gmpAmount": 132.0,
+    "gmpPercent": 22.53,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -2031,7 +2031,7 @@
       },
       {
         "dateLabel": "21 Oct",
-        "amount": 135.0
+        "amount": 132.0
       }
     ],
     "financials": [
