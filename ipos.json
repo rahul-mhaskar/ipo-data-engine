@@ -53,7 +53,7 @@
         "netWorth": 341778.5
       }
     ],
-    "subscriptionTotal": 3.02,
+    "subscriptionTotal": 3.0421,
     "subscriptionRetail": 0.73,
     "subscriptionHNI": 1.61,
     "subscriptionQIB": 9.04,
@@ -65,7 +65,22 @@
     "rhpPdfUrl": "https://myjiostatic.cdn.jio.com/cms/assets/iv3/Red%20Herring%20Prospectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Reliance+Jio+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "2",
@@ -81,8 +96,8 @@
     "closeDate": "2026-10-23",
     "allotmentDate": "2026-10-26",
     "listingDate": "2026-10-28",
-    "gmpAmount": 35.0,
-    "gmpPercent": 5.05,
+    "gmpAmount": 28.0,
+    "gmpPercent": 4.04,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -98,7 +113,7 @@
       },
       {
         "dateLabel": "21 Oct",
-        "amount": 35.0
+        "amount": 28.0
       }
     ],
     "financials": [
@@ -133,7 +148,29 @@
     "rhpPdfUrl": "https://www.jmfl.com/Common/getFile/6104",
     "drhpPdfUrl": "https://www.google.com/search?q=Paras+Healthcare+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 500.0,
+      "ofsCr": 950.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed",
+      "JM Financial Ltd.",
+      "lead manager",
+      "MUFG Intime India Pvt.Ltd.",
+      "BOFA Securities India Ltd.",
+      "Nuvama Wealth Management Ltd.",
+      "Lead Manager Performance Summary",
+      "Lead Manager Performance Tracker"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "3",
@@ -151,8 +188,32 @@
     "listingDate": "2026-11-02",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "gmpHistory": [],
-    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "21 Oct",
+        "amount": 0.0
+      }
+    ],
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 584.2,
+        "pat": 175.2,
+        "netWorth": 729.5
+      },
+      {
+        "year": "FY25",
+        "revenue": 786.5,
+        "pat": 229.8,
+        "netWorth": 966.5
+      },
+      {
+        "year": "FY26",
+        "revenue": 336.1,
+        "pat": 80.7,
+        "netWorth": 1160.4
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -165,7 +226,30 @@
     "rhpPdfUrl": "https://www.eaaa.in/wp-content/uploads/2026/09/Red-Herring-Prospectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=EAAA+India+Alternatives+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 1200.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed",
+      "Axis Capital Ltd.",
+      "lead manager",
+      "MUFG Intime India Pvt.Ltd.",
+      "Jefferies India Pvt.Ltd.",
+      "Motilal Oswal Investment Advisors Ltd.",
+      "Nuvama Wealth Management Ltd.",
+      "Lead Manager Performance Summary",
+      "Lead Manager Performance Tracker"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "4",
@@ -223,7 +307,29 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Core4+Engineers+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Core4+Engineers+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 48.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed",
+      "Socradamus Capital Pvt.Ltd.",
+      "lead manager",
+      "Purva Sharegistry (India) Pvt.Ltd.",
+      "Market Maker",
+      "Mansi Share & Stock Broking Pvt.Ltd.",
+      "Lead Manager Performance Summary",
+      "Lead Manager Performance Tracker"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "5",
@@ -272,7 +378,22 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Parle+Products+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Parle+Products+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "6",
@@ -340,7 +461,29 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Twinkle+Papers+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Twinkle+Papers+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 26.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed",
+      "Novus Capital Advisors Pvt.Ltd.",
+      "lead manager",
+      "Alankit Assignments Ltd.",
+      "Market Maker",
+      "Nirman Share Brokers Pvt.Ltd.",
+      "Lead Manager Performance Summary",
+      "Lead Manager Performance Tracker"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "7",
@@ -408,7 +551,29 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Sri+Priyanka+Geo+Commex+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://nsearchives.nseindia.com/emerge/corporates/content/Registration_14082025195719_SriPriyankaGeoCommexLimitedDRHP.pdf",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 90.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed",
+      "Horizon Management Pvt.Ltd.",
+      "lead manager",
+      "Cameo Corporate Services Ltd.",
+      "Market Maker",
+      "Nikunj Stock Brokers Ltd.",
+      "Lead Manager Performance Summary",
+      "Lead Manager Performance Tracker"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "8",
@@ -457,7 +622,22 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Flipkart+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Flipkart+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "9",
@@ -525,7 +705,28 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Prestige+Hospitality+Ventures+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Prestige+Hospitality+Ventures+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 1700.0,
+      "ofsCr": 1000.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed",
+      "JM Financial Ltd.",
+      "CLSA India Pvt.Ltd.",
+      "JP Morgan India Pvt.Ltd.",
+      "Kotak Mahindra Capital Co.Ltd.",
+      "Lead Manager Performance Summary",
+      "Lead Manager Performance Tracker"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "10",
@@ -581,7 +782,29 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Credila+Financial+Services+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Credila+Financial+Services+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 3000.0,
+      "ofsCr": 2000.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed",
+      "Axis Capital Ltd.",
+      "Citigroup Global Markets India Pvt.Ltd.",
+      "Goldman Sachs (India) Securities Pvt.Ltd.",
+      "IIFL Capital Services Ltd.",
+      "Jefferies India Pvt.Ltd.",
+      "Lead Manager Performance Summary",
+      "Lead Manager Performance Tracker"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "11",
@@ -649,7 +872,24 @@
     "rhpPdfUrl": "https://www.google.com/search?q=PhonePe+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=PhonePe+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed",
+      "Lead Manager Performance Summary",
+      "Lead Manager Performance Tracker"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "12",
@@ -717,7 +957,30 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Zepto+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Zepto+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed",
+      "equity shares",
+      "Axis Capital Ltd.",
+      "lead manager",
+      "Kfin Technologies Ltd.",
+      "lot size",
+      "DRHP",
+      "Lead Manager Performance Summary",
+      "Lead Manager Performance Tracker"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "13",
@@ -766,7 +1029,22 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Solar91+Cleantech+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Solar91+Cleantech+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "14",
@@ -834,7 +1112,24 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Hero+FinCorp+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Hero+FinCorp+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 2100.0,
+      "ofsCr": 1568.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed",
+      "Lead Manager Performance Summary",
+      "Lead Manager Performance Tracker"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "15",
@@ -883,7 +1178,22 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Deltatech+Gaming+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655459382467.pdf#page=1&zoom=page-width,-16,849",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "16",
@@ -932,7 +1242,22 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Biba+Fashions+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jul-2022/1659005306568.pdf#page=1&zoom=page-width,-16,764",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "17",
@@ -981,7 +1306,22 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Droom+Technology+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/may-2023/1683610115492.pdf#page=1&zoom=page-width,-16,842",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "18",
@@ -1030,7 +1370,22 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Puranik+Builders+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/sep-2022/1663916527724.pdf#page=1&zoom=page-width,-16,764",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "19",
@@ -1079,7 +1434,22 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Bharat+FIH+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655876827634.pdf#page=1&zoom=page-width,-16,610",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "20",
@@ -1128,7 +1498,22 @@
     "rhpPdfUrl": "https://www.google.com/search?q=FabIndia+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/nov-2022/fabindia-limited-corrigendum-to-drhp_64776.html",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "21",
@@ -1196,7 +1581,30 @@
     "rhpPdfUrl": "https://www.google.com/search?q=OYO+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/nov-2022/1669613102669.pdf#page=1&zoom=page-width,-15,842",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 6650.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed",
+      "equity shares",
+      "Axis Capital Ltd.",
+      "lead manager",
+      "MUFG Intime India Pvt.Ltd.",
+      "lot size",
+      "DRHP",
+      "Lead Manager Performance Summary",
+      "Lead Manager Performance Tracker"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "22",
@@ -1245,7 +1653,22 @@
     "rhpPdfUrl": "https://www.google.com/search?q=EBIXCASH+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/oct-2021/1633066313151.pdf#page=1&zoom=page-width,-16,379",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "23",
@@ -1294,7 +1717,30 @@
     "rhpPdfUrl": "https://assets.ipopremium.in/images/ipo/sahajanand_medical_technologies_ltd_mainboard_rhp_1791630001.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Sahajanand+Medical+Technologies+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": true
+    "closeNotified": true,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 475.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed",
+      "Motilal Oswal Investment Advisors Ltd.",
+      "lead manager",
+      "MUFG Intime India Pvt.Ltd.",
+      "Avendus Capital Pvt.Ltd.",
+      "HSBC Securities & Capital Markets (India) Pvt.Ltd.",
+      "Nuvama Wealth Management Ltd.",
+      "Lead Manager Performance Summary",
+      "Lead Manager Performance Tracker"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "24",
@@ -1350,7 +1796,7 @@
         "netWorth": 511.55
       }
     ],
-    "subscriptionTotal": 96.63,
+    "subscriptionTotal": 132.8119,
     "subscriptionRetail": 31.11,
     "subscriptionHNI": 156.36,
     "subscriptionQIB": 293.56,
@@ -1362,7 +1808,28 @@
     "rhpPdfUrl": "https://live.jmfl.com/od/UploadedFiles/CA86AB52-0D43-437A-8D1C-6E475C6CEF01.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Tonbo+Imaging+India+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": true
+    "closeNotified": true,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 852.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed",
+      "JM Financial Ltd.",
+      "lead manager",
+      "Kfin Technologies Ltd.",
+      "IIFL Capital Services Ltd.",
+      "Lead Manager Performance Summary",
+      "Lead Manager Performance Tracker"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "25",
@@ -1430,7 +1897,29 @@
     "rhpPdfUrl": "https://www.socradamus.in/downloads/sme-ipo/shellz-india-limited/RHP-Shellz-final.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Shellz+India+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": true
+    "closeNotified": true,
+    "issueStructure": {
+      "freshIssueCr": 54.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed",
+      "Socradamus Capital Pvt.Ltd.",
+      "lead manager",
+      "Bigshare Services Pvt.Ltd.",
+      "Market Maker",
+      "Mansi Share & Stock Broking Pvt.Ltd.",
+      "Lead Manager Performance Summary",
+      "Lead Manager Performance Tracker"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "26",
@@ -1479,7 +1968,22 @@
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Zetwerk-RHP_compressed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Zetwerk+Manufacturing+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": true
+    "closeNotified": true,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "27",
@@ -1547,7 +2051,30 @@
     "rhpPdfUrl": "https://www.bonfiglioli.com/india/IPO/RHP/Peacock%20-%20RHP%20%28Filing%20version%29%20-%20Signed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Bonfiglioli+Transmissions+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": true
+    "closeNotified": true,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 2534.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed",
+      "Axis Capital Ltd.",
+      "lead manager",
+      "MUFG Intime India Pvt.Ltd.",
+      "BNP Paribas",
+      "ICICI Securities Ltd.",
+      "Jefferies India Pvt.Ltd.",
+      "Lead Manager Performance Summary",
+      "Lead Manager Performance Tracker"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "28",
@@ -1563,8 +2090,8 @@
     "closeDate": "2026-10-16",
     "allotmentDate": "2026-10-19",
     "listingDate": "2026-10-22",
-    "gmpAmount": 3.0,
-    "gmpPercent": 2.68,
+    "gmpAmount": 1.0,
+    "gmpPercent": 0.89,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -1615,7 +2142,29 @@
     "rhpPdfUrl": "https://www.vivro.net/uploads/team/1791441800230.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Ravita+Engineering+Services+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": true
+    "closeNotified": true,
+    "issueStructure": {
+      "freshIssueCr": 110.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed",
+      "Vivro Financial Services Pvt.Ltd.",
+      "lead manager",
+      "MUFG Intime India Pvt.Ltd.",
+      "Market Maker",
+      "Pace Stock Broking Services Pvt.Ltd.",
+      "Lead Manager Performance Summary",
+      "Lead Manager Performance Tracker"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "29",
@@ -1631,8 +2180,8 @@
     "closeDate": "2026-10-16",
     "allotmentDate": "2026-10-19",
     "listingDate": "2026-10-22",
-    "gmpAmount": 17.0,
-    "gmpPercent": 5.88,
+    "gmpAmount": 15.0,
+    "gmpPercent": 5.19,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -1648,7 +2197,7 @@
       },
       {
         "dateLabel": "21 Oct",
-        "amount": 17.0
+        "amount": 15.0
       }
     ],
     "financials": [
@@ -1683,7 +2232,29 @@
     "rhpPdfUrl": "https://www.fusioncx.com/wp-content/uploads/rhp/Fusion-CX-Limited-Red-Herring-Prospectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Fusion+CX+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": true
+    "closeNotified": true,
+    "issueStructure": {
+      "freshIssueCr": 500.0,
+      "ofsCr": 202.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "No. and Performance of IPOs Managed",
+      "No. of Issues Managed",
+      "List of Issues managed",
+      "Market Maker v/s IPO Listing Gain",
+      "Registrar- List of Issues Managed",
+      "Registrar- No.of IPOs Managed",
+      "Nuvama Wealth Management Ltd.",
+      "lead manager",
+      "Kfin Technologies Ltd.",
+      "IIFL Capital Services Ltd.",
+      "Motilal Oswal Investment Advisors Ltd.",
+      "Lead Manager Performance Summary",
+      "Lead Manager Performance Tracker"
+    ],
+    "anchorPortionCr": 0.0
   },
   {
     "id": "30",
