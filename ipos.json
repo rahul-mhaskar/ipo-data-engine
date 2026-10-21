@@ -13,8 +13,8 @@
     "closeDate": "2026-10-23",
     "allotmentDate": "2026-10-26",
     "listingDate": "2026-10-28",
-    "gmpAmount": 249.0,
-    "gmpPercent": 22.25,
+    "gmpAmount": 248.0,
+    "gmpPercent": 22.16,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -30,7 +30,7 @@
       },
       {
         "dateLabel": "21 Oct",
-        "amount": 249.0
+        "amount": 248.0
       }
     ],
     "financials": [
@@ -96,8 +96,8 @@
     "closeDate": "2026-10-23",
     "allotmentDate": "2026-10-26",
     "listingDate": "2026-10-28",
-    "gmpAmount": 28.0,
-    "gmpPercent": 4.04,
+    "gmpAmount": 25.0,
+    "gmpPercent": 3.61,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -113,7 +113,7 @@
       },
       {
         "dateLabel": "21 Oct",
-        "amount": 28.0
+        "amount": 25.0
       }
     ],
     "financials": [
@@ -1684,8 +1684,8 @@
     "closeDate": "2026-10-19",
     "allotmentDate": "2026-10-21",
     "listingDate": "2026-10-23",
-    "gmpAmount": 24.0,
-    "gmpPercent": 6.98,
+    "gmpAmount": 20.0,
+    "gmpPercent": 5.81,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -1701,7 +1701,7 @@
       },
       {
         "dateLabel": "21 Oct",
-        "amount": 24.0
+        "amount": 20.0
       }
     ],
     "financials": [],
@@ -2180,8 +2180,8 @@
     "closeDate": "2026-10-16",
     "allotmentDate": "2026-10-19",
     "listingDate": "2026-10-22",
-    "gmpAmount": 15.0,
-    "gmpPercent": 5.19,
+    "gmpAmount": 13.0,
+    "gmpPercent": 4.5,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -2197,7 +2197,7 @@
       },
       {
         "dateLabel": "21 Oct",
-        "amount": 15.0
+        "amount": 13.0
       }
     ],
     "financials": [

@@ -1,13 +1,13 @@
 {
   "reliancejio": {
     "name": "Reliance Jio",
-    "gmp": 249.0,
-    "percent": 22.25
+    "gmp": 248.0,
+    "percent": 22.16
   },
   "parashealthcare": {
     "name": "Paras Healthcare",
-    "gmp": 28.0,
-    "percent": 4.04
+    "gmp": 25.0,
+    "percent": 3.61
   },
   "eaaaindiaalternatives": {
     "name": "EAAA India Alternatives",
@@ -110,8 +110,8 @@
   },
   "sahajanandmedicaltechnologies": {
     "name": "Sahajanand Medical Technologies",
-    "gmp": 24.0,
-    "percent": 6.98
+    "gmp": 20.0,
+    "percent": 5.81
   },
   "tonboimagingindia": {
     "name": "Tonbo Imaging India",
@@ -139,8 +139,8 @@
   },
   "fusioncx": {
     "name": "Fusion CX",
-    "gmp": 15.0,
-    "percent": 5.19
+    "gmp": 13.0,
+    "percent": 4.5
   },
   "ravitaengineeringservices": {
     "name": "Ravita Engineering Services",
