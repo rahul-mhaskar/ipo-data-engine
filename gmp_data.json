@@ -1,48 +1,39 @@
 {
   "reliancejio": {
     "name": "Reliance Jio",
-    "gmp": 239.0,
-    "percent": 21.36
+    "gmp": 239.0
   },
   "parashealthcare": {
     "name": "Paras Healthcare",
-    "gmp": 15.0,
-    "percent": 2.16
+    "gmp": 15.0
   },
   "eaaaindiaalternatives": {
     "name": "EAAA India Alternatives",
-    "gmp": 0.0,
-    "percent": 0.0
+    "gmp": 0.0
   },
   "core4engineers": {
     "name": "Core4 Engineers",
-    "gmp": 0.0,
-    "percent": 0.0
+    "gmp": 0.0
   },
   "parleproducts": {
     "name": "Parle Products",
-    "gmp": 0.0,
-    "percent": 0.0
+    "gmp": 0.0
   },
   "twinklepapers": {
     "name": "Twinkle Papers",
-    "gmp": 0.0,
-    "percent": 0.0
+    "gmp": 0.0
   },
   "sripriyankageocommex": {
     "name": "Sri Priyanka Geo Commex",
-    "gmp": 0.0,
-    "percent": 0.0
+    "gmp": 0.0
   },
   "flipkart": {
     "name": "Flipkart",
-    "gmp": 0.0,
-    "percent": 0.0
+    "gmp": 0.0
   },
   "prestigehospitalityventures": {
     "name": "Prestige Hospitality Ventures",
-    "gmp": 0.0,
-    "percent": 0.0
+    "gmp": 0.0
   },
   "credilafinancial": {
     "name": "Credila Financial Services",
@@ -50,87 +41,70 @@
   },
   "phonepe": {
     "name": "PhonePe",
-    "gmp": 0.0,
-    "percent": 0.0
+    "gmp": 0.0
   },
   "zepto": {
     "name": "Zepto",
-    "gmp": 0.0,
-    "percent": 0.0
+    "gmp": 0.0
   },
   "solar91cleantech": {
     "name": "Solar91 Cleantech",
-    "gmp": 0.0,
-    "percent": 0.0
+    "gmp": 0.0
   },
   "herofincorp": {
     "name": "Hero FinCorp",
-    "gmp": 0.0,
-    "percent": 0.0
+    "gmp": 0.0
   },
   "deltatechgaming": {
     "name": "Deltatech Gaming",
-    "gmp": 0.0,
-    "percent": 0.0
+    "gmp": 0.0
   },
   "bibafashions": {
     "name": "Biba Fashions",
-    "gmp": 0.0,
-    "percent": 0.0
+    "gmp": 0.0
   },
   "droomtechnology": {
     "name": "Droom Technology",
-    "gmp": 0.0,
-    "percent": 0.0
+    "gmp": 0.0
   },
   "puranikbuilders": {
     "name": "Puranik Builders",
-    "gmp": 0.0,
-    "percent": 0.0
+    "gmp": 0.0
   },
   "bharatfih": {
     "name": "Bharat FIH",
-    "gmp": 0.0,
-    "percent": 0.0
+    "gmp": 0.0
   },
   "fabindia": {
     "name": "FabIndia",
-    "gmp": 0.0,
-    "percent": 0.0
+    "gmp": 0.0
   },
   "oyo": {
     "name": "OYO",
-    "gmp": 0.0,
-    "percent": 0.0
+    "gmp": 0.0
   },
   "ebixcash": {
     "name": "EBIXCASH",
-    "gmp": 0.0,
-    "percent": 0.0
+    "gmp": 0.0
   },
   "sahajanandmedicaltechnologies": {
     "name": "Sahajanand Medical Technologies",
-    "gmp": 17.0,
-    "percent": 4.94
+    "gmp": 17.0
   },
   "tonboimagingindia": {
     "name": "Tonbo Imaging India",
-    "gmp": 465.0,
-    "percent": 66.43
+    "gmp": 465.0
   },
   "shellzindia": {
     "name": "Shellz India",
-    "gmp": 25.0,
-    "percent": 13.97
+    "gmp": 25.0
   },
   "zetwerkmanufacturing": {
     "name": "Zetwerk Manufacturing",
-    "gmp": 1.0,
-    "percent": 0.66
+    "gmp": 1.0
   },
   "bonfigliolitransmissions": {
     "name": "Bonfiglioli Transmissions",
-    "gmp": 88.0,
-    "percent": 15.02
+    "gmp": 88.0
   }
 }
