@@ -3,16 +3,16 @@
     "name": "Reliance Jio",
     "gmp": 239.0
   },
+  "core4engineers": {
+    "name": "Core4 Engineers",
+    "gmp": 0.0
+  },
   "parashealthcare": {
     "name": "Paras Healthcare",
     "gmp": 15.0
   },
   "eaaaindiaalternatives": {
     "name": "EAAA India Alternatives",
-    "gmp": 0.0
-  },
-  "core4engineers": {
-    "name": "Core4 Engineers",
     "gmp": 0.0
   },
   "parleproducts": {
@@ -85,6 +85,10 @@
   },
   "ebixcash": {
     "name": "EBIXCASH",
+    "gmp": 0.0
+  },
+  "boat": {
+    "name": "BoAt",
     "gmp": 0.0
   },
   "sahajanandmedicaltechnologies": {
