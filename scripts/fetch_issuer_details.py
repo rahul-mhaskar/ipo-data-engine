@@ -248,6 +248,8 @@ def sync_issuer_details():
                 }
                 item["leadManagers"] = parsed["leadManagers"]
                 item["anchorPortionCr"] = parsed["anchorPortionCr"]
+                item["logoUrl"] = parsed.get("logoUrl") or item.get("logoUrl")
+                
                 updated += 1
                 print(f"[{updated}] Synced {name}: Fresh=₹{parsed['freshIssueCr']}Cr, OFS=₹{parsed['ofsCr']}Cr, BRLMs={len(parsed['leadManagers'])}")
         except Exception as e:
