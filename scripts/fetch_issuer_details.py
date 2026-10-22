@@ -1,13 +1,24 @@
 import os
 import json
 import re
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Set, Tuple
 import requests
 from bs4 import BeautifulSoup
 
+try:
+    from rapidfuzz import fuzz
+except ImportError:
+    import difflib
+    class FuzzFallback:
+        @staticmethod
+        def token_set_ratio(s1: str, s2: str) -> int:
+            t1 = " ".join(sorted(set(s1.split())))
+            t2 = " ".join(sorted(set(s2.split())))
+            return int(difflib.SequenceMatcher(None, t1, t2).ratio() * 100)
+    fuzz = FuzzFallback()
+
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) if "scripts" in os.path.dirname(os.path.abspath(__file__)) else os.path.abspath(".")
 IPOS_JSON_PATH = os.path.join(REPO_ROOT, "ipos.json")
-OVERRIDES_PATH = os.path.join(REPO_ROOT, "manual_overrides.json")
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
@@ -15,55 +26,73 @@ HEADERS = {
     "Accept-Language": "en-US,en;q=0.9"
 }
 
-INDUSTRY_NOISE = {
-    "pharma", "pharmaceuticals", "jewels", "jewellers", "tech", 
-    "technologies", "infra", "infrastructure", "finance", "enterprises", 
-    "limited", "ltd", "pvt", "private", "corp", "ipo", "india", "sme"
+NOISE_WORDS: Set[str] = {
+    "limited", "ltd", "pvt", "private", "ipo", "india", "sme", 
+    "technologies", "tech", "solutions", "industries", "services", 
+    "infra", "infrastructure", "finance", "holdings", "group"
 }
 
-def clean_company_name(name: str) -> str:
+def clean_tokens(name: str) -> Set[str]:
     cleaned = re.sub(r"[^a-zA-Z0-9\s]", " ", name.lower())
-    tokens = [t for t in cleaned.split() if t not in INDUSTRY_NOISE]
-    return " ".join(tokens) if tokens else cleaned
+    return {t for t in cleaned.split() if t not in NOISE_WORDS}
 
 def clean_float(val_str: str) -> float:
     if not val_str:
         return 0.0
-    clean = re.sub(r"[^\d.-]", "", val_str)
+    clean = re.sub(r"[^\d.-]", "", val_str.replace(",", ""))
     try:
         return round(float(clean), 2)
     except Exception:
         return 0.0
 
-def resolve_chittorgarh_url(company_name: str) -> Optional[str]:
-    search_slug = re.sub(r"[^a-zA-Z0-9\s]", "", company_name).lower().strip().replace(" ", "-")
-    direct_candidates = [
-        f"https://www.chittorgarh.com/ipo/{search_slug}-ipo/",
-        f"https://www.chittorgarh.com/ipo/{search_slug.replace('-ltd', '')}-ipo/",
-        f"https://www.chittorgarh.com/ipo/{clean_company_name(company_name).replace(' ', '-')}-ipo/"
+def build_chittorgarh_index() -> List[Tuple[str, str]]:
+    """Crawls Chittorgarh master tracker to build a real-time name -> detail page map."""
+    master_urls = [
+        "https://www.chittorgarh.com/ipo/ipo_dashboard.asp",
+        "https://www.chittorgarh.com/report/mainboard-ipo-list-in-india-bse-nse/82/",
+        "https://www.chittorgarh.com/report/sme-ipo-list-in-india-bse-sme-nse-emerge/84/"
     ]
-    for cand_url in direct_candidates:
-        try:
-            r = requests.get(cand_url, headers=HEADERS, timeout=8, allow_redirects=True)
-            if r.status_code == 200 and ("Issue Type" in r.text or "Lead Manager" in r.text):
-                return cand_url
-        except Exception:
-            continue
+    ipo_links = []
+    seen_urls = set()
 
-    try:
-        q_url = f"https://www.chittorgarh.com/search/?search={requests.utils.quote(clean_company_name(company_name))}"
-        r = requests.get(q_url, headers=HEADERS, timeout=8)
-        if r.status_code == 200:
-            soup = BeautifulSoup(r.text, "html.parser")
+    for url in master_urls:
+        try:
+            res = requests.get(url, headers=HEADERS, timeout=12)
+            if res.status_code != 200:
+                continue
+            soup = BeautifulSoup(res.text, "html.parser")
             for a in soup.find_all("a", href=True):
                 href = a["href"]
-                if "/ipo/" in href and "-ipo/" in href:
-                    return href if href.startswith("http") else f"https://www.chittorgarh.com{href}"
-    except Exception:
-        pass
-    return None
+                if "/ipo/" in href and href.endswith("-ipo/"):
+                    full_url = href if href.startswith("http") else f"https://www.chittorgarh.com{href}"
+                    link_title = a.get_text(strip=True)
+                    if full_url not in seen_urls and len(link_title) > 2:
+                        seen_urls.add(full_url)
+                        ipo_links.append((link_title, full_url))
+        except Exception as e:
+            print(f"[WARN] Failed indexing {url}: {e}")
 
-def extract_issuer_details(soup: BeautifulSoup) -> Dict:
+    print(f"[Issuer Indexer] Indexed {len(ipo_links)} live IPO detail targets.")
+    return ipo_links
+
+def match_ipo_url(target_name: str, index: List[Tuple[str, str]]) -> Optional[str]:
+    target_tokens = clean_tokens(target_name)
+    best_url = None
+    highest_score = 0
+
+    for title, url in index:
+        cand_tokens = clean_tokens(title)
+        if target_tokens and cand_tokens and not target_tokens.intersection(cand_tokens):
+            continue
+
+        score = fuzz.token_set_ratio(target_name.lower(), title.lower())
+        if score > highest_score and score >= 80:
+            highest_score = score
+            best_url = url
+
+    return best_url
+
+def parse_page_details(soup: BeautifulSoup) -> Dict:
     details = {
         "freshIssueCr": 0.0,
         "ofsCr": 0.0,
@@ -73,70 +102,69 @@ def extract_issuer_details(soup: BeautifulSoup) -> Dict:
         "anchorPortionCr": 0.0
     }
 
-    # 1. Parse Issue Structure (Fresh vs OFS) and Promoter Holdings
-    tables = soup.find_all("table")
-    for table in tables:
-        rows = table.find_all("tr")
-        for row in rows:
-            cells = [c.get_text(strip=True) for c in row.find_all(["td", "th"])]
+    # 1. Parse Issue Structure & Promoter Dilution
+    for table in soup.find_all("table"):
+        for row in table.find_all("tr"):
+            cells = [td.get_text(separator=" ", strip=True) for td in row.find_all(["td", "th"])]
             if len(cells) < 2:
                 continue
+
             k = cells[0].lower()
-            v = cells[1]
+            v = " ".join(cells[1:])
 
+            # Fresh Issue
             if "fresh issue" in k and details["freshIssueCr"] == 0.0:
-                match_cr = re.search(r"₹?\s*([\d,]+(?:\.\d+)?)\s*(?:cr|crore)", v, re.IGNORECASE)
-                if match_cr:
-                    details["freshIssueCr"] = clean_float(match_cr.group(1))
+                m = re.search(r"(?:₹|rs\.?)?\s*([\d,]+(?:\.\d+)?)\s*(?:cr|crore)", v, re.IGNORECASE)
+                if m:
+                    details["freshIssueCr"] = clean_float(m.group(1))
 
-            if "offer for sale" in k and details["ofsCr"] == 0.0:
-                match_cr = re.search(r"₹?\s*([\d,]+(?:\.\d+)?)\s*(?:cr|crore)", v, re.IGNORECASE)
-                if match_cr:
-                    details["ofsCr"] = clean_float(match_cr.group(1))
+            # OFS
+            if ("offer for sale" in k or "ofs" in k) and details["ofsCr"] == 0.0:
+                m = re.search(r"(?:₹|rs\.?)?\s*([\d,]+(?:\.\d+)?)\s*(?:cr|crore)", v, re.IGNORECASE)
+                if m:
+                    details["ofsCr"] = clean_float(m.group(1))
 
-            if "pre issue" in k and "share holding" in k:
-                pct_match = re.search(r"([\d.]+)\s*%", v)
-                if pct_match:
-                    details["promoterHoldingPre"] = float(pct_match.group(1))
+            # Pre/Post Shareholding
+            if "pre" in k and "holding" in k:
+                m = re.search(r"([\d.]+)\s*%", v)
+                if m:
+                    details["promoterHoldingPre"] = clean_float(m.group(1))
 
-            if "post issue" in k and "share holding" in k:
-                pct_match = re.search(r"([\d.]+)\s*%", v)
-                if pct_match:
-                    details["promoterHoldingPost"] = float(pct_match.group(1))
-
-        # Noise phrases found in Chittorgarh table navigation
-    BRLM_NAV_NOISE = {
-        "performance", "managed", "report", "track record", 
-        "issues", "listing gain", "market maker", "registrar",
-        "lead manager", "click here", "view"
-    }
+            if "post" in k and "holding" in k:
+                m = re.search(r"([\d.]+)\s*%", v)
+                if m:
+                    details["promoterHoldingPost"] = clean_float(m.group(1))
 
     # 2. Parse Lead Managers (BRLMs)
-    for tag in soup.find_all(["div", "td", "li"]):
-        txt = tag.get_text(separator=" ", strip=True)
-        if "lead manager" in txt.lower() and len(txt) < 400:
-            for a in tag.find_all("a"):
-                name = a.get_text(strip=True)
-                name_clean = name.strip()
-                # Skip navigation links and short garbage
-                if (
-                    len(name_clean) > 3 
-                    and not any(noise in name_clean.lower() for noise in BRLM_NAV_NOISE)
-                    and name_clean not in details["leadManagers"]
-                ):
-                    details["leadManagers"].append(name_clean)
+    BRLM_NOISE = {
+        "performance", "managed", "report", "track record", 
+        "issues", "listing gain", "market maker", "registrar",
+        "lead manager", "click here", "view", "profile", "contact"
+    }
 
+    for tag in soup.find_all(["div", "td", "li", "p"]):
+        txt = tag.get_text(separator=" ", strip=True)
+        if "lead manager" in txt.lower() and len(txt) < 500:
+            for a in tag.find_all("a"):
+                candidate = a.get_text(strip=True)
+                clean_cand = re.sub(r"\s+", " ", candidate).strip()
+                if (
+                    len(clean_cand) > 3
+                    and not any(n in clean_cand.lower() for n in BRLM_NOISE)
+                    and clean_cand not in details["leadManagers"]
+                ):
+                    details["leadManagers"].append(clean_cand)
 
     # 3. Parse Anchor Portion
-    for table in tables:
+    for table in soup.find_all("table"):
         txt = table.get_text(separator=" ", strip=True).lower()
-        if "anchor" in txt and ("portion" in txt or "shares offered" in txt or "size" in txt):
+        if "anchor" in txt:
             for row in table.find_all("tr"):
                 row_txt = row.get_text(separator=" ", strip=True)
-                if "anchor" in row_txt.lower():
-                    match_cr = re.search(r"₹?\s*([\d,]+(?:\.\d+)?)\s*(?:cr|crore)", row_txt, re.IGNORECASE)
-                    if match_cr:
-                        details["anchorPortionCr"] = clean_float(match_cr.group(1))
+                if "anchor" in row_txt.lower() and ("cr" in row_txt.lower() or "crore" in row_txt.lower()):
+                    m = re.search(r"(?:₹|rs\.?)?\s*([\d,]+(?:\.\d+)?)\s*(?:cr|crore)", row_txt, re.IGNORECASE)
+                    if m:
+                        details["anchorPortionCr"] = clean_float(m.group(1))
                         break
 
     return details
@@ -149,18 +177,9 @@ def sync_issuer_details():
     with open(IPOS_JSON_PATH, "r", encoding="utf-8") as f:
         ipos_data = json.load(f)
 
-    manual_overrides = {}
-    if os.path.exists(OVERRIDES_PATH):
-        try:
-            with open(OVERRIDES_PATH, "r", encoding="utf-8") as f:
-                manual_overrides = json.load(f)
-        except Exception:
-            pass
-
     items = ipos_data.get("ipos", ipos_data.get("data", [])) if isinstance(ipos_data, dict) else ipos_data
+    index = build_chittorgarh_index()
     updated = 0
-
-    print(f"[Issuer Details Sync] Processing {len(items)} IPOs...")
 
     for item in items:
         status = str(item.get("status", "")).upper()
@@ -168,48 +187,39 @@ def sync_issuer_details():
             continue
 
         name = item.get("name", "")
-        norm_name = clean_company_name(name)
 
-        # Check manual overrides
-        override = manual_overrides.get(norm_name) or manual_overrides.get(name.lower())
-        if override:
-            if "issueStructure" in override:
-                item["issueStructure"] = override["issueStructure"]
-            if "leadManagers" in override:
-                item["leadManagers"] = override["leadManagers"]
-            if "anchorPortionCr" in override:
-                item["anchorPortionCr"] = override["anchorPortionCr"]
+        # Target matched live page
+        url = match_ipo_url(name, index)
+        if not url:
+            # Fallback direct search
+            search_slug = re.sub(r"[^a-zA-Z0-9\s]", "", name).lower().strip().replace(" ", "-")
+            url = f"https://www.chittorgarh.com/ipo/{search_slug}-ipo/"
 
-        # If already populated with non-zero Fresh/OFS, keep cached
-        if item.get("issueStructure") and (item["issueStructure"].get("freshIssueCr", 0) > 0 or item.get("leadManagers")):
-            updated += 1
-            continue
-
-        url = resolve_chittorgarh_url(name)
-        if url:
-            try:
-                res = requests.get(url, headers=HEADERS, timeout=12)
-                if res.status_code == 200:
-                    d = extract_issuer_details(BeautifulSoup(res.text, "html.parser"))
-                    
+        try:
+            res = requests.get(url, headers=HEADERS, timeout=12)
+            if res.status_code == 200:
+                parsed = parse_page_details(BeautifulSoup(res.text, "html.parser"))
+                
+                # Check if valid issuer details were discovered
+                if parsed["freshIssueCr"] > 0 or parsed["ofsCr"] > 0 or parsed["leadManagers"]:
                     item["issueStructure"] = {
-                        "freshIssueCr": d["freshIssueCr"],
-                        "ofsCr": d["ofsCr"],
-                        "promoterHoldingPre": d["promoterHoldingPre"],
-                        "promoterHoldingPost": d["promoterHoldingPost"]
+                        "freshIssueCr": parsed["freshIssueCr"],
+                        "ofsCr": parsed["ofsCr"],
+                        "promoterHoldingPre": parsed["promoterHoldingPre"],
+                        "promoterHoldingPost": parsed["promoterHoldingPost"]
                     }
-                    item["leadManagers"] = d["leadManagers"]
-                    item["anchorPortionCr"] = d["anchorPortionCr"]
+                    item["leadManagers"] = parsed["leadManagers"]
+                    item["anchorPortionCr"] = parsed["anchorPortionCr"]
                     updated += 1
-                    print(f"[{updated}] Enriched: {name} (Fresh: ₹{d['freshIssueCr']}Cr | OFS: ₹{d['ofsCr']}Cr | BRLMs: {len(d['leadManagers'])})")
-            except Exception as e:
-                print(f"[WARN] Failed fetching {name}: {e}")
+                    print(f"[{updated}] Enriched {name} from {url}: Fresh=₹{parsed['freshIssueCr']}Cr, OFS=₹{parsed['ofsCr']}Cr, BRLMs={len(parsed['leadManagers'])}")
+        except Exception as e:
+            print(f"[WARN] Error parsing {name}: {e}")
 
     with open(IPOS_JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(ipos_data, f, indent=2, ensure_ascii=False)
 
-    print(f"[Done] Enriched issuer details for {updated} IPOs.")
+    print(f"[Done] Automatically enriched issuer details for {updated} IPOs.")
 
 if __name__ == "__main__":
     sync_issuer_details()
-                              
+    
