@@ -1,4 +1,4 @@
-import os
+,import os
 import json
 import re
 from typing import Dict, List, Optional, Set, Tuple
@@ -196,16 +196,39 @@ def parse_page_details(soup: BeautifulSoup) -> Dict:
                     if m:
                         details["anchorPortionCr"] = clean_float(m.group(1))
                         break
-    # 4. Extract Issuer Company Logo
+        # 4. Extract Issuer Company Logo (Targeted with noise exclusion)
     details["logoUrl"] = None
-    # Chittorgarh typically places company logos inside specific divs/classes or alt tags
-    for img in soup.find_all("img", src=True):
-        src = img["src"]
-        # Match common company logo paths or alt text matching issuer
-        if any(keyword in src.lower() for keyword in ["/company-logo/", "/logo/", "ipo_logo"]):
-            full_logo = src if src.startswith("http") else f"https://www.chittorgarh.com{src}"
-            details["logoUrl"] = full_logo
+    
+    # Chittorgarh portal & site logo assets to exclude
+    SITE_ASSET_BLACKLIST = {
+        "chittorgarh", "chit_logo", "site_logo", "logo.svg", "logo.png", 
+        "header", "icon", "broker", "sponsor", "google", "facebook", "twitter"
+    }
+
+    # Strategy A: Target specific logo containers Chittorgarh uses in page headers
+    logo_containers = soup.select(".ipo-logo img, .company-logo img, .summary-logo img, .logo-container img")
+    for img in logo_containers:
+        src = img.get("src") or img.get("data-src")
+        if src and not any(blacklisted in src.lower() for blacklisted in SITE_ASSET_BLACKLIST):
+            details["logoUrl"] = src if src.startswith("http") else f"https://www.chittorgarh.com{src}"
             break
+
+    # Strategy B: Fallback scan across all page images with strict path matching
+    if not details["logoUrl"]:
+        for img in soup.find_all("img", src=True):
+            src = img["src"]
+            src_lower = src.lower()
+            
+            # Skip common Chittorgarh brand assets
+            if any(blacklisted in src_lower for blacklisted in SITE_ASSET_BLACKLIST):
+                continue
+                
+            # Chittorgarh company logo path patterns (e.g. /company_logo/, /upload/company/)
+            if any(pattern in src_lower for pattern in ["/company_logo/", "/company-logo/", "/company/", "/upload/"]):
+                full_logo = src if src.startswith("http") else f"https://www.chittorgarh.com{src}"
+                details["logoUrl"] = full_logo
+                break
+
 
     return details
 
