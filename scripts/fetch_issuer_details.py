@@ -105,7 +105,7 @@ def match_ipo_url(target_name: str, target_symbol: str, index: List[Tuple[str, s
         cand_lower = title.lower()
         cand_tokens = clean_tokens(title)
 
-        # 1. Direct entity triggers (handles Jio -> Reliance Jio Infocomm / Jio Platforms)
+        # 1. Direct entity triggers (e.g., handles Jio -> Reliance Jio Infocomm / Jio Platforms)
         if "jio" in t_tokens and "jio" in cand_tokens:
             return url
 
@@ -176,7 +176,7 @@ def parse_page_details(soup: BeautifulSoup) -> Dict:
                 clean_cand = re.sub(r"\s+", " ", candidate).strip()
                 cand_lower = clean_cand.lower()
 
-                # Check against complete noise list
+                # Filter out UI links, registrars, and web navigational text
                 is_noise = any(noise in cand_lower for noise in REGISTRAR_AND_NOISE_TOKENS)
                 if (
                     len(clean_cand) > 3
@@ -219,13 +219,6 @@ def sync_issuer_details():
         name = item.get("name", "")
         symbol = item.get("symbol", "")
 
-        # Always re-parse if leadManagers currently contains any blacklisted terms
-        current_managers = item.get("leadManagers", [])
-        has_garbage = any(
-            any(noise in str(m).lower() for noise in REGISTRAR_AND_NOISE_TOKENS)
-            for m in current_managers
-        )
-
         url = match_ipo_url(name, symbol, index)
         if not url:
             search_slug = re.sub(r"[^a-zA-Z0-9\s]", "", name).lower().strip().replace(" ", "-")
@@ -236,17 +229,17 @@ def sync_issuer_details():
             if res.status_code == 200:
                 parsed = parse_page_details(BeautifulSoup(res.text, "html.parser"))
                 
-                if parsed["freshIssueCr"] > 0 or parsed["ofsCr"] > 0 or parsed["leadManagers"] or has_garbage:
-                    item["issueStructure"] = {
-                        "freshIssueCr": parsed["freshIssueCr"],
-                        "ofsCr": parsed["ofsCr"],
-                        "promoterHoldingPre": parsed["promoterHoldingPre"],
-                        "promoterHoldingPost": parsed["promoterHoldingPost"]
-                    }
-                    item["leadManagers"] = parsed["leadManagers"]
-                    item["anchorPortionCr"] = parsed["anchorPortionCr"]
-                    updated += 1
-                    print(f"[{updated}] Enriched {name}: Fresh=₹{parsed['freshIssueCr']}Cr, OFS=₹{parsed['ofsCr']}Cr, BRLMs={len(parsed['leadManagers'])}")
+                # Always assign the parsed structure so keys remain defined in ipos.json
+                item["issueStructure"] = {
+                    "freshIssueCr": parsed["freshIssueCr"],
+                    "ofsCr": parsed["ofsCr"],
+                    "promoterHoldingPre": parsed["promoterHoldingPre"],
+                    "promoterHoldingPost": parsed["promoterHoldingPost"]
+                }
+                item["leadManagers"] = parsed["leadManagers"]
+                item["anchorPortionCr"] = parsed["anchorPortionCr"]
+                updated += 1
+                print(f"[{updated}] Synced {name}: Fresh=₹{parsed['freshIssueCr']}Cr, OFS=₹{parsed['ofsCr']}Cr, BRLMs={len(parsed['leadManagers'])}")
         except Exception as e:
             print(f"[WARN] Error parsing {name}: {e}")
 
@@ -257,3 +250,4 @@ def sync_issuer_details():
 
 if __name__ == "__main__":
     sync_issuer_details()
+                    
