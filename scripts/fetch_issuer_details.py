@@ -32,6 +32,19 @@ NOISE_WORDS: Set[str] = {
     "infra", "infrastructure", "finance", "holdings", "group"
 }
 
+REGISTRAR_AND_NOISE_TOKENS: Set[str] = {
+    "visit website", "website", "performance", "managed", "report", 
+    "track record", "issues", "listing gain", "market maker", "registrar",
+    "lead manager", "click here", "view", "profile", "contact",
+    "link intime", "mufg intime", "kfin tech", "kfintech", "bigshare", 
+    "cameo", "maashitla", "skyline", "purva sharegistry"
+}
+
+def clean_company_name(name: str) -> str:
+    cleaned = re.sub(r"[^a-zA-Z0-9\s]", " ", name.lower())
+    tokens = [t for t in cleaned.split() if t not in NOISE_WORDS]
+    return " ".join(tokens) if tokens else cleaned
+
 def clean_tokens(name: str) -> Set[str]:
     cleaned = re.sub(r"[^a-zA-Z0-9\s]", " ", name.lower())
     return {t for t in cleaned.split() if t not in NOISE_WORDS}
@@ -75,18 +88,31 @@ def build_chittorgarh_index() -> List[Tuple[str, str]]:
     print(f"[Issuer Indexer] Indexed {len(ipo_links)} live IPO detail targets.")
     return ipo_links
 
-def match_ipo_url(target_name: str, index: List[Tuple[str, str]]) -> Optional[str]:
-    target_tokens = clean_tokens(target_name)
+def match_ipo_url(target_name: str, target_symbol: str, index: List[Tuple[str, str]]) -> Optional[str]:
+    t_clean = clean_company_name(target_name).lower()
+    t_tokens = clean_tokens(target_name)
+    target_symbol = target_symbol.strip().lower() if target_symbol else ""
     best_url = None
     highest_score = 0
 
     for title, url in index:
+        cand_lower = title.lower()
         cand_tokens = clean_tokens(title)
-        if target_tokens and cand_tokens and not target_tokens.intersection(cand_tokens):
+
+        # 1. Direct entity triggers (handles Jio -> Reliance Jio Infocomm / Jio Platforms)
+        if "jio" in t_tokens and "jio" in cand_tokens:
+            return url
+
+        # 2. Match by exchange ticker symbol
+        if target_symbol and len(target_symbol) >= 3 and target_symbol in cand_lower:
+            return url
+
+        # 3. Token overlap check
+        if t_tokens and cand_tokens and not t_tokens.intersection(cand_tokens):
             continue
 
-        score = fuzz.token_set_ratio(target_name.lower(), title.lower())
-        if score > highest_score and score >= 80:
+        score = fuzz.token_set_ratio(t_clean, cand_lower)
+        if score > highest_score and score >= 68:
             highest_score = score
             best_url = url
 
@@ -125,32 +151,30 @@ def parse_page_details(soup: BeautifulSoup) -> Dict:
                     details["ofsCr"] = clean_float(m.group(1))
 
             # Pre/Post Shareholding
-            if "pre" in k and "holding" in k:
+            if "pre" in k and "holding" in k and details["promoterHoldingPre"] is None:
                 m = re.search(r"([\d.]+)\s*%", v)
                 if m:
                     details["promoterHoldingPre"] = clean_float(m.group(1))
 
-            if "post" in k and "holding" in k:
+            if "post" in k and "holding" in k and details["promoterHoldingPost"] is None:
                 m = re.search(r"([\d.]+)\s*%", v)
                 if m:
                     details["promoterHoldingPost"] = clean_float(m.group(1))
 
-    # 2. Parse Lead Managers (BRLMs)
-    BRLM_NOISE = {
-        "performance", "managed", "report", "track record", 
-        "issues", "listing gain", "market maker", "registrar",
-        "lead manager", "click here", "view", "profile", "contact"
-    }
-
+    # 2. Parse Lead Managers (BRLMs) with strict filtering
     for tag in soup.find_all(["div", "td", "li", "p"]):
         txt = tag.get_text(separator=" ", strip=True)
         if "lead manager" in txt.lower() and len(txt) < 500:
             for a in tag.find_all("a"):
                 candidate = a.get_text(strip=True)
                 clean_cand = re.sub(r"\s+", " ", candidate).strip()
+                cand_lower = clean_cand.lower()
+
+                # Filter out UI links, registrars, and web navigational text
+                is_noise = any(noise in cand_lower for noise in REGISTRAR_AND_NOISE_TOKENS)
                 if (
                     len(clean_cand) > 3
-                    and not any(n in clean_cand.lower() for n in BRLM_NOISE)
+                    and not is_noise
                     and clean_cand not in details["leadManagers"]
                 ):
                     details["leadManagers"].append(clean_cand)
@@ -187,11 +211,15 @@ def sync_issuer_details():
             continue
 
         name = item.get("name", "")
+        symbol = item.get("symbol", "")
 
-        # Target matched live page
-        url = match_ipo_url(name, index)
+        # Always re-parse if leadManagers contains noisy tokens like "Visit Website"
+        current_managers = item.get("leadManagers", [])
+        has_garbage_managers = any("visit website" in str(m).lower() or "mufg" in str(m).lower() for m in current_managers)
+
+        # Match live page
+        url = match_ipo_url(name, symbol, index)
         if not url:
-            # Fallback direct search
             search_slug = re.sub(r"[^a-zA-Z0-9\s]", "", name).lower().strip().replace(" ", "-")
             url = f"https://www.chittorgarh.com/ipo/{search_slug}-ipo/"
 
@@ -200,8 +228,7 @@ def sync_issuer_details():
             if res.status_code == 200:
                 parsed = parse_page_details(BeautifulSoup(res.text, "html.parser"))
                 
-                # Check if valid issuer details were discovered
-                if parsed["freshIssueCr"] > 0 or parsed["ofsCr"] > 0 or parsed["leadManagers"]:
+                if parsed["freshIssueCr"] > 0 or parsed["ofsCr"] > 0 or parsed["leadManagers"] or has_garbage_managers:
                     item["issueStructure"] = {
                         "freshIssueCr": parsed["freshIssueCr"],
                         "ofsCr": parsed["ofsCr"],
@@ -211,7 +238,7 @@ def sync_issuer_details():
                     item["leadManagers"] = parsed["leadManagers"]
                     item["anchorPortionCr"] = parsed["anchorPortionCr"]
                     updated += 1
-                    print(f"[{updated}] Enriched {name} from {url}: Fresh=₹{parsed['freshIssueCr']}Cr, OFS=₹{parsed['ofsCr']}Cr, BRLMs={len(parsed['leadManagers'])}")
+                    print(f"[{updated}] Enriched {name}: Fresh=₹{parsed['freshIssueCr']}Cr, OFS=₹{parsed['ofsCr']}Cr, BRLMs={len(parsed['leadManagers'])}")
         except Exception as e:
             print(f"[WARN] Error parsing {name}: {e}")
 
@@ -222,4 +249,4 @@ def sync_issuer_details():
 
 if __name__ == "__main__":
     sync_issuer_details()
-    
+        
