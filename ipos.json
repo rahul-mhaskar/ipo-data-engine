@@ -13,8 +13,8 @@
     "closeDate": "2026-10-23",
     "allotmentDate": "2026-10-26",
     "listingDate": "2026-10-28",
-    "gmpAmount": 240.0,
-    "gmpPercent": 21.45,
+    "gmpAmount": 244.0,
+    "gmpPercent": 21.81,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -34,7 +34,7 @@
       },
       {
         "dateLabel": "22 Oct",
-        "amount": 240.0
+        "amount": 244.0
       }
     ],
     "financials": [
@@ -77,7 +77,8 @@
       "promoterHoldingPost": null
     },
     "leadManagers": [],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "2",
@@ -150,7 +151,8 @@
       "Socradamus Capital Pvt.Ltd.",
       "Mansi Share & Stock Broking Pvt.Ltd."
     ],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "3",
@@ -166,8 +168,8 @@
     "closeDate": "2026-10-23",
     "allotmentDate": "2026-10-26",
     "listingDate": "2026-10-28",
-    "gmpAmount": 10.0,
-    "gmpPercent": 1.44,
+    "gmpAmount": 13.0,
+    "gmpPercent": 1.88,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -187,7 +189,7 @@
       },
       {
         "dateLabel": "22 Oct",
-        "amount": 10.0
+        "amount": 13.0
       }
     ],
     "financials": [
@@ -234,7 +236,8 @@
       "BOFA Securities India Ltd.",
       "Nuvama Wealth Management Ltd."
     ],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "4",
@@ -307,7 +310,8 @@
       "Motilal Oswal Investment Advisors Ltd.",
       "Nuvama Wealth Management Ltd."
     ],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "5",
@@ -368,7 +372,8 @@
       "promoterHoldingPost": null
     },
     "leadManagers": [],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "6",
@@ -452,7 +457,8 @@
       "Alankit Assignments Ltd.",
       "Nirman Share Brokers Pvt.Ltd."
     ],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "7",
@@ -535,7 +541,8 @@
       "Horizon Management Pvt.Ltd.",
       "Nikunj Stock Brokers Ltd."
     ],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "8",
@@ -596,7 +603,8 @@
       "promoterHoldingPost": null
     },
     "leadManagers": [],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "9",
@@ -681,7 +689,8 @@
       "JP Morgan India Pvt.Ltd.",
       "Kotak Mahindra Capital Co.Ltd."
     ],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "10",
@@ -751,7 +760,8 @@
       "IIFL Capital Services Ltd.",
       "Jefferies India Pvt.Ltd."
     ],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "11",
@@ -840,7 +850,8 @@
       "JM Financial Ltd.",
       "Axis Capital Ltd."
     ],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "12",
@@ -928,7 +939,8 @@
       "Morgan Stanley India Co.Pvt.Ltd.",
       "Motilal Oswal Investment Advisors Ltd."
     ],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "13",
@@ -989,7 +1001,8 @@
       "promoterHoldingPost": null
     },
     "leadManagers": [],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "14",
@@ -1078,7 +1091,8 @@
       "Jefferies India Pvt.Ltd.",
       "SBI Capital Markets Ltd."
     ],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "15",
@@ -1139,7 +1153,8 @@
       "promoterHoldingPost": null
     },
     "leadManagers": [],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "16",
@@ -1200,7 +1215,8 @@
       "promoterHoldingPost": null
     },
     "leadManagers": [],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "17",
@@ -1261,7 +1277,8 @@
       "promoterHoldingPost": null
     },
     "leadManagers": [],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "18",
@@ -1322,7 +1339,8 @@
       "promoterHoldingPost": null
     },
     "leadManagers": [],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "19",
@@ -1383,7 +1401,8 @@
       "promoterHoldingPost": null
     },
     "leadManagers": [],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "20",
@@ -1444,7 +1463,8 @@
       "promoterHoldingPost": null
     },
     "leadManagers": [],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "21",
@@ -1533,7 +1553,8 @@
       "JM Financial Ltd.",
       "SBI Capital Markets Ltd."
     ],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "22",
@@ -1594,7 +1615,8 @@
       "promoterHoldingPost": null
     },
     "leadManagers": [],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "23",
@@ -1663,7 +1685,8 @@
       "JM Financial Ltd.",
       "Nomura Financial Advisory & Securities (India) Pvt.Ltd."
     ],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "24",
@@ -1679,8 +1702,8 @@
     "closeDate": "2026-10-19",
     "allotmentDate": "2026-10-21",
     "listingDate": "2026-10-23",
-    "gmpAmount": 17.0,
-    "gmpPercent": 4.94,
+    "gmpAmount": 16.0,
+    "gmpPercent": 4.65,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -1700,7 +1723,7 @@
       },
       {
         "dateLabel": "22 Oct",
-        "amount": 17.0
+        "amount": 16.0
       }
     ],
     "financials": [],
@@ -1729,7 +1752,8 @@
       "HSBC Securities & Capital Markets (India) Pvt.Ltd.",
       "Nuvama Wealth Management Ltd."
     ],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "25",
@@ -1745,8 +1769,8 @@
     "closeDate": "2026-10-19",
     "allotmentDate": "2026-10-21",
     "listingDate": "2026-10-23",
-    "gmpAmount": 441.0,
-    "gmpPercent": 63.0,
+    "gmpAmount": 445.0,
+    "gmpPercent": 63.57,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -1766,7 +1790,7 @@
       },
       {
         "dateLabel": "22 Oct",
-        "amount": 441.0
+        "amount": 445.0
       }
     ],
     "financials": [
@@ -1812,7 +1836,8 @@
       "JM Financial Ltd.",
       "IIFL Capital Services Ltd."
     ],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "26",
@@ -1895,7 +1920,8 @@
       "Socradamus Capital Pvt.Ltd.",
       "Mansi Share & Stock Broking Pvt.Ltd."
     ],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "27",
@@ -1956,7 +1982,8 @@
       "promoterHoldingPost": null
     },
     "leadManagers": [],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "28",
@@ -1972,8 +1999,8 @@
     "closeDate": "2026-10-19",
     "allotmentDate": "2026-10-21",
     "listingDate": "2026-10-23",
-    "gmpAmount": 71.0,
-    "gmpPercent": 12.12,
+    "gmpAmount": 65.0,
+    "gmpPercent": 11.09,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -1993,7 +2020,7 @@
       },
       {
         "dateLabel": "22 Oct",
-        "amount": 71.0
+        "amount": 65.0
       }
     ],
     "financials": [
@@ -2041,7 +2068,8 @@
       "ICICI Securities Ltd.",
       "Jefferies India Pvt.Ltd."
     ],
-    "anchorPortionCr": 0.0
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "29",
