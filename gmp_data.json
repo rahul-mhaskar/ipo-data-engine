@@ -106,13 +106,5 @@
   "bonfigliolitransmissions": {
     "name": "Bonfiglioli Transmissions",
     "gmp": 132.0
-  },
-  "ravitaengineering": {
-    "name": "Ravita Engineering Services",
-    "gmp": 3.0
-  },
-  "fusioncx": {
-    "name": "Fusion CX",
-    "gmp": 13.0
   }
 }
