@@ -13,8 +13,8 @@
     "closeDate": "2026-10-23",
     "allotmentDate": "2026-10-26",
     "listingDate": "2026-10-28",
-    "gmpAmount": 246.0,
-    "gmpPercent": 21.98,
+    "gmpAmount": 239.0,
+    "gmpPercent": 21.36,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -34,7 +34,7 @@
       },
       {
         "dateLabel": "22 Oct",
-        "amount": 246.0
+        "amount": 239.0
       }
     ],
     "financials": [
@@ -57,10 +57,10 @@
         "netWorth": 341778.5
       }
     ],
-    "subscriptionTotal": 3.0421,
-    "subscriptionRetail": 0.73,
-    "subscriptionHNI": 1.61,
-    "subscriptionQIB": 9.04,
+    "subscriptionTotal": 3.422,
+    "subscriptionRetail": 0.98,
+    "subscriptionHNI": 2.11,
+    "subscriptionQIB": 9.42,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
     "registrarName": "KFin Technologies",
@@ -150,8 +150,6 @@
     },
     "leadManagers": [
       "JM Financial Ltd.",
-      "MUFG Intime India Pvt.Ltd.",
-      "Visit Website",
       "BOFA Securities India Ltd.",
       "Nuvama Wealth Management Ltd."
     ],
@@ -224,8 +222,6 @@
     },
     "leadManagers": [
       "Axis Capital Ltd.",
-      "MUFG Intime India Pvt.Ltd.",
-      "Visit Website",
       "Jefferies India Pvt.Ltd.",
       "Motilal Oswal Investment Advisors Ltd.",
       "Nuvama Wealth Management Ltd."
@@ -301,9 +297,7 @@
     },
     "leadManagers": [
       "Socradamus Capital Pvt.Ltd.",
-      "Purva Sharegistry (India) Pvt.Ltd.",
-      "Mansi Share & Stock Broking Pvt.Ltd.",
-      "Visit Website"
+      "Mansi Share & Stock Broking Pvt.Ltd."
     ],
     "anchorPortionCr": 0.0
   },
@@ -440,8 +434,7 @@
     "leadManagers": [
       "Novus Capital Advisors Pvt.Ltd.",
       "Alankit Assignments Ltd.",
-      "Nirman Share Brokers Pvt.Ltd.",
-      "Visit Website"
+      "Nirman Share Brokers Pvt.Ltd."
     ],
     "anchorPortionCr": 0.0
   },
@@ -524,7 +517,6 @@
     },
     "leadManagers": [
       "Horizon Management Pvt.Ltd.",
-      "Cameo Corporate Services Ltd.",
       "Nikunj Stock Brokers Ltd."
     ],
     "anchorPortionCr": 0.0
@@ -662,10 +654,8 @@
     "leadManagers": [
       "equity shares",
       "JM Financial Ltd.",
-      "Kfin Technologies Ltd.",
       "lot size",
       "DRHP",
-      "Visit Website",
       "CLSA India Pvt.Ltd.",
       "JP Morgan India Pvt.Ltd.",
       "Kotak Mahindra Capital Co.Ltd."
@@ -736,7 +726,6 @@
     "leadManagers": [
       "equity shares",
       "Axis Capital Ltd.",
-      "Kfin Technologies Ltd.",
       "lot size",
       "DRHP",
       "Citigroup Global Markets India Pvt.Ltd.",
@@ -826,7 +815,6 @@
     "leadManagers": [
       "equity shares",
       "Kotak Mahindra Capital Co.Ltd.",
-      "Kfin Technologies Ltd.",
       "lot size",
       "DRHP",
       "JP Morgan India Pvt.Ltd.",
@@ -919,7 +907,6 @@
     "leadManagers": [
       "equity shares",
       "Axis Capital Ltd.",
-      "Kfin Technologies Ltd.",
       "lot size",
       "DRHP",
       "Goldman Sachs (India) Securities Pvt.Ltd.",
@@ -1064,7 +1051,6 @@
     "leadManagers": [
       "equity shares",
       "JM Financial Ltd.",
-      "MUFG Intime India Pvt.Ltd.",
       "lot size",
       "DRHP",
       "Axis Capital Ltd.",
@@ -1475,7 +1461,6 @@
     "leadManagers": [
       "equity shares",
       "Axis Capital Ltd.",
-      "MUFG Intime India Pvt.Ltd.",
       "lot size",
       "DRHP",
       "Citigroup Global Markets India Pvt.Ltd.",
@@ -1555,8 +1540,8 @@
     "closeDate": "2026-10-19",
     "allotmentDate": "2026-10-21",
     "listingDate": "2026-10-23",
-    "gmpAmount": 18.5,
-    "gmpPercent": 5.38,
+    "gmpAmount": 17.0,
+    "gmpPercent": 4.94,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -1576,7 +1561,7 @@
       },
       {
         "dateLabel": "22 Oct",
-        "amount": 18.5
+        "amount": 17.0
       }
     ],
     "financials": [],
@@ -1601,7 +1586,6 @@
     },
     "leadManagers": [
       "Motilal Oswal Investment Advisors Ltd.",
-      "MUFG Intime India Pvt.Ltd.",
       "Avendus Capital Pvt.Ltd.",
       "HSBC Securities & Capital Markets (India) Pvt.Ltd.",
       "Nuvama Wealth Management Ltd."
@@ -1687,8 +1671,6 @@
     },
     "leadManagers": [
       "JM Financial Ltd.",
-      "Kfin Technologies Ltd.",
-      "Visit Website",
       "IIFL Capital Services Ltd."
     ],
     "anchorPortionCr": 0.0
@@ -1772,9 +1754,7 @@
     },
     "leadManagers": [
       "Socradamus Capital Pvt.Ltd.",
-      "Bigshare Services Pvt.Ltd.",
-      "Mansi Share & Stock Broking Pvt.Ltd.",
-      "Visit Website"
+      "Mansi Share & Stock Broking Pvt.Ltd."
     ],
     "anchorPortionCr": 0.0
   },
@@ -1845,8 +1825,8 @@
     "closeDate": "2026-10-19",
     "allotmentDate": "2026-10-21",
     "listingDate": "2026-10-23",
-    "gmpAmount": 118.0,
-    "gmpPercent": 20.14,
+    "gmpAmount": 105.0,
+    "gmpPercent": 17.92,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -1866,7 +1846,7 @@
       },
       {
         "dateLabel": "22 Oct",
-        "amount": 118.0
+        "amount": 105.0
       }
     ],
     "financials": [
@@ -1910,7 +1890,6 @@
     },
     "leadManagers": [
       "Axis Capital Ltd.",
-      "MUFG Intime India Pvt.Ltd.",
       "BNP Paribas",
       "ICICI Securities Ltd.",
       "Jefferies India Pvt.Ltd."
