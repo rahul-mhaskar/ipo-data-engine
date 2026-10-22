@@ -196,6 +196,16 @@ def parse_page_details(soup: BeautifulSoup) -> Dict:
                     if m:
                         details["anchorPortionCr"] = clean_float(m.group(1))
                         break
+    # 4. Extract Issuer Company Logo
+    details["logoUrl"] = None
+    # Chittorgarh typically places company logos inside specific divs/classes or alt tags
+    for img in soup.find_all("img", src=True):
+        src = img["src"]
+        # Match common company logo paths or alt text matching issuer
+        if any(keyword in src.lower() for keyword in ["/company-logo/", "/logo/", "ipo_logo"]):
+            full_logo = src if src.startswith("http") else f"https://www.chittorgarh.com{src}"
+            details["logoUrl"] = full_logo
+            break
 
     return details
 
