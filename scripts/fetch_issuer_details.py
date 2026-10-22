@@ -32,12 +32,18 @@ NOISE_WORDS: Set[str] = {
     "infra", "infrastructure", "finance", "holdings", "group"
 }
 
+# Strict blacklist to eliminate website links, registrars, table terms, and prospectus terminology
 REGISTRAR_AND_NOISE_TOKENS: Set[str] = {
     "visit website", "website", "performance", "managed", "report", 
     "track record", "issues", "listing gain", "market maker", "registrar",
     "lead manager", "click here", "view", "profile", "contact",
     "link intime", "mufg intime", "kfin tech", "kfintech", "bigshare", 
-    "cameo", "maashitla", "skyline", "purva sharegistry"
+    "cameo", "maashitla", "skyline", "purva sharegistry",
+    # Prospectus, table header, and financial metric terms:
+    "equity shares", "lot size", "drhp", "rhp", "prospectus", "anchor",
+    "shareholding", "face value", "shares offered", "ipo dates", "issue type",
+    "retail portion", "qib portion", "nii portion", "basis of allotment",
+    "listing at", "share holding pre", "share holding post", "price band"
 }
 
 def clean_company_name(name: str) -> str:
@@ -161,7 +167,7 @@ def parse_page_details(soup: BeautifulSoup) -> Dict:
                 if m:
                     details["promoterHoldingPost"] = clean_float(m.group(1))
 
-    # 2. Parse Lead Managers (BRLMs) with strict filtering
+    # 2. Parse Lead Managers (BRLMs) with strict multi-layer filtering
     for tag in soup.find_all(["div", "td", "li", "p"]):
         txt = tag.get_text(separator=" ", strip=True)
         if "lead manager" in txt.lower() and len(txt) < 500:
@@ -170,7 +176,7 @@ def parse_page_details(soup: BeautifulSoup) -> Dict:
                 clean_cand = re.sub(r"\s+", " ", candidate).strip()
                 cand_lower = clean_cand.lower()
 
-                # Filter out UI links, registrars, and web navigational text
+                # Check against complete noise list
                 is_noise = any(noise in cand_lower for noise in REGISTRAR_AND_NOISE_TOKENS)
                 if (
                     len(clean_cand) > 3
@@ -213,11 +219,13 @@ def sync_issuer_details():
         name = item.get("name", "")
         symbol = item.get("symbol", "")
 
-        # Always re-parse if leadManagers contains noisy tokens like "Visit Website"
+        # Always re-parse if leadManagers currently contains any blacklisted terms
         current_managers = item.get("leadManagers", [])
-        has_garbage_managers = any("visit website" in str(m).lower() or "mufg" in str(m).lower() for m in current_managers)
+        has_garbage = any(
+            any(noise in str(m).lower() for noise in REGISTRAR_AND_NOISE_TOKENS)
+            for m in current_managers
+        )
 
-        # Match live page
         url = match_ipo_url(name, symbol, index)
         if not url:
             search_slug = re.sub(r"[^a-zA-Z0-9\s]", "", name).lower().strip().replace(" ", "-")
@@ -228,7 +236,7 @@ def sync_issuer_details():
             if res.status_code == 200:
                 parsed = parse_page_details(BeautifulSoup(res.text, "html.parser"))
                 
-                if parsed["freshIssueCr"] > 0 or parsed["ofsCr"] > 0 or parsed["leadManagers"] or has_garbage_managers:
+                if parsed["freshIssueCr"] > 0 or parsed["ofsCr"] > 0 or parsed["leadManagers"] or has_garbage:
                     item["issueStructure"] = {
                         "freshIssueCr": parsed["freshIssueCr"],
                         "ofsCr": parsed["ofsCr"],
@@ -245,8 +253,7 @@ def sync_issuer_details():
     with open(IPOS_JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(ipos_data, f, indent=2, ensure_ascii=False)
 
-    print(f"[Done] Automatically enriched issuer details for {updated} IPOs.")
+    print(f"[Done] Cleaned and enriched issuer details for {updated} IPOs.")
 
 if __name__ == "__main__":
     sync_issuer_details()
-        
