@@ -13,8 +13,8 @@
     "closeDate": "2026-10-23",
     "allotmentDate": "2026-10-26",
     "listingDate": "2026-10-28",
-    "gmpAmount": 239.0,
-    "gmpPercent": 21.36,
+    "gmpAmount": 247.0,
+    "gmpPercent": 22.07,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -34,7 +34,7 @@
       },
       {
         "dateLabel": "22 Oct",
-        "amount": 239.0
+        "amount": 247.0
       }
     ],
     "financials": [
@@ -652,10 +652,7 @@
       "promoterHoldingPost": null
     },
     "leadManagers": [
-      "equity shares",
       "JM Financial Ltd.",
-      "lot size",
-      "DRHP",
       "CLSA India Pvt.Ltd.",
       "JP Morgan India Pvt.Ltd.",
       "Kotak Mahindra Capital Co.Ltd."
@@ -724,10 +721,7 @@
       "promoterHoldingPost": null
     },
     "leadManagers": [
-      "equity shares",
       "Axis Capital Ltd.",
-      "lot size",
-      "DRHP",
       "Citigroup Global Markets India Pvt.Ltd.",
       "Goldman Sachs (India) Securities Pvt.Ltd.",
       "IIFL Capital Services Ltd.",
@@ -813,10 +807,7 @@
       "promoterHoldingPost": null
     },
     "leadManagers": [
-      "equity shares",
       "Kotak Mahindra Capital Co.Ltd.",
-      "lot size",
-      "DRHP",
       "JP Morgan India Pvt.Ltd.",
       "Citigroup Global Markets India Pvt.Ltd.",
       "Morgan Stanley India Co.Pvt.Ltd.",
@@ -905,10 +896,7 @@
       "promoterHoldingPost": null
     },
     "leadManagers": [
-      "equity shares",
       "Axis Capital Ltd.",
-      "lot size",
-      "DRHP",
       "Goldman Sachs (India) Securities Pvt.Ltd.",
       "HSBC Securities & Capital Markets (India) Pvt.Ltd.",
       "IIFL Capital Services Ltd.",
@@ -1049,10 +1037,7 @@
       "promoterHoldingPost": null
     },
     "leadManagers": [
-      "equity shares",
       "JM Financial Ltd.",
-      "lot size",
-      "DRHP",
       "Axis Capital Ltd.",
       "BOFA Securities India Ltd.",
       "HDFC Bank Ltd.",
@@ -1459,10 +1444,7 @@
       "promoterHoldingPost": null
     },
     "leadManagers": [
-      "equity shares",
       "Axis Capital Ltd.",
-      "lot size",
-      "DRHP",
       "Citigroup Global Markets India Pvt.Ltd.",
       "Goldman Sachs (India) Securities Pvt.Ltd.",
       "ICICI Securities Ltd.",
@@ -1606,8 +1588,8 @@
     "closeDate": "2026-10-19",
     "allotmentDate": "2026-10-21",
     "listingDate": "2026-10-23",
-    "gmpAmount": 465.0,
-    "gmpPercent": 66.43,
+    "gmpAmount": 453.0,
+    "gmpPercent": 64.71,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -1627,7 +1609,7 @@
       },
       {
         "dateLabel": "22 Oct",
-        "amount": 465.0
+        "amount": 453.0
       }
     ],
     "financials": [
