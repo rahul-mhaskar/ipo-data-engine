@@ -46,6 +46,12 @@ REGISTRAR_AND_NOISE_TOKENS: Set[str] = {
     "listing at", "share holding pre", "share holding post", "price band"
 }
 
+SITE_ASSET_BLACKLIST: Set[str] = {
+    "chittorgarh", "chit_logo", "site_logo", "logo.svg", "logo.png", 
+    "header", "icon", "broker", "sponsor", "google", "facebook", "twitter",
+    "whatsapp", "telegram", "banner", "advertisement", "default"
+}
+
 def clean_company_name(name: str) -> str:
     cleaned = re.sub(r"[^a-zA-Z0-9\s]", " ", name.lower())
     tokens = [t for t in cleaned.split() if t not in NOISE_WORDS]
@@ -131,7 +137,8 @@ def parse_page_details(soup: BeautifulSoup) -> Dict:
         "promoterHoldingPre": None,
         "promoterHoldingPost": None,
         "leadManagers": [],
-        "anchorPortionCr": 0.0
+        "anchorPortionCr": 0.0,
+        "logoUrl": None
     }
 
     # 1. Parse Issue Structure & Promoter Dilution
@@ -196,39 +203,30 @@ def parse_page_details(soup: BeautifulSoup) -> Dict:
                     if m:
                         details["anchorPortionCr"] = clean_float(m.group(1))
                         break
-        # 4. Extract Issuer Company Logo (Targeted with noise exclusion)
-    details["logoUrl"] = None
-    
-    # Chittorgarh portal & site logo assets to exclude
-    SITE_ASSET_BLACKLIST = {
-        "chittorgarh", "chit_logo", "site_logo", "logo.svg", "logo.png", 
-        "header", "icon", "broker", "sponsor", "google", "facebook", "twitter"
-    }
 
-    # Strategy A: Target specific logo containers Chittorgarh uses in page headers
-    logo_containers = soup.select(".ipo-logo img, .company-logo img, .summary-logo img, .logo-container img")
-    for img in logo_containers:
-        src = img.get("src") or img.get("data-src")
-        if src and not any(blacklisted in src.lower() for blacklisted in SITE_ASSET_BLACKLIST):
-            details["logoUrl"] = src if src.startswith("http") else f"https://www.chittorgarh.com{src}"
-            break
-
-    # Strategy B: Fallback scan across all page images with strict path matching
-    if not details["logoUrl"]:
-        for img in soup.find_all("img", src=True):
-            src = img["src"]
+    # 4. Extract Issuer Company Logo (Targeted with noise exclusion & lazy-load check)
+    # Strategy A: Target explicit logo container classes commonly used on Chittorgarh
+    containers = soup.select(".ipo-logo img, .company-logo img, .summary-logo img, .logo-container img")
+    for img in containers:
+        src = img.get("src") or img.get("data-src") or img.get("data-original")
+        if src:
             src_lower = src.lower()
-            
-            # Skip common Chittorgarh brand assets
-            if any(blacklisted in src_lower for blacklisted in SITE_ASSET_BLACKLIST):
-                continue
-                
-            # Chittorgarh company logo path patterns (e.g. /company_logo/, /upload/company/)
-            if any(pattern in src_lower for pattern in ["/company_logo/", "/company-logo/", "/company/", "/upload/"]):
-                full_logo = src if src.startswith("http") else f"https://www.chittorgarh.com{src}"
-                details["logoUrl"] = full_logo
+            if not any(b in src_lower for b in SITE_ASSET_BLACKLIST):
+                details["logoUrl"] = src if src.startswith("http") else f"https://www.chittorgarh.com{src}"
                 break
 
+    # Strategy B: Search for company logo image paths in all document img elements
+    if not details["logoUrl"]:
+        for img in soup.find_all("img"):
+            src = img.get("src") or img.get("data-src") or img.get("data-original")
+            if not src:
+                continue
+            src_lower = src.lower()
+            if any(b in src_lower for b in SITE_ASSET_BLACKLIST):
+                continue
+            if any(pat in src_lower for pat in ["/company_logo/", "/company-logo/", "/company/", "/upload/company/"]):
+                details["logoUrl"] = src if src.startswith("http") else f"https://www.chittorgarh.com{src}"
+                break
 
     return details
 
@@ -262,7 +260,7 @@ def sync_issuer_details():
             if res.status_code == 200:
                 parsed = parse_page_details(BeautifulSoup(res.text, "html.parser"))
                 
-                # Always assign the parsed structure so keys remain defined in ipos.json
+                # Always structure and assign properties cleanly
                 item["issueStructure"] = {
                     "freshIssueCr": parsed["freshIssueCr"],
                     "ofsCr": parsed["ofsCr"],
@@ -271,18 +269,20 @@ def sync_issuer_details():
                 }
                 item["leadManagers"] = parsed["leadManagers"]
                 item["anchorPortionCr"] = parsed["anchorPortionCr"]
+                # Explicitly store logoUrl (extracted or fallback to existing value or None)
                 item["logoUrl"] = parsed.get("logoUrl") or item.get("logoUrl")
                 
                 updated += 1
-                print(f"[{updated}] Synced {name}: Fresh=₹{parsed['freshIssueCr']}Cr, OFS=₹{parsed['ofsCr']}Cr, BRLMs={len(parsed['leadManagers'])}")
+                logo_status = "Found" if item["logoUrl"] else "None"
+                print(f"[{updated}] Synced {name}: Fresh=₹{parsed['freshIssueCr']}Cr, OFS=₹{parsed['ofsCr']}Cr, BRLMs={len(parsed['leadManagers'])}, Logo={logo_status}")
         except Exception as e:
             print(f"[WARN] Error parsing {name}: {e}")
 
     with open(IPOS_JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(ipos_data, f, indent=2, ensure_ascii=False)
 
-    print(f"[Done] Cleaned and enriched issuer details for {updated} IPOs.")
+    print(f"\n[Done] Successfully enriched {updated} IPO records in {IPOS_JSON_PATH}.")
 
 if __name__ == "__main__":
     sync_issuer_details()
-                    
+    
