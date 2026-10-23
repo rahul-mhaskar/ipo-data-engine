@@ -90,25 +90,5 @@
   "oyo": {
     "name": "OYO",
     "gmp": 0.0
-  },
-  "sahajanandmedicaltechnologies": {
-    "name": "Sahajanand Medical Technologies",
-    "gmp": 16.0
-  },
-  "tonboimagingindia": {
-    "name": "Tonbo Imaging India",
-    "gmp": 445.0
-  },
-  "shellzindia": {
-    "name": "Shellz India",
-    "gmp": 7.0
-  },
-  "zetwerkmanufacturing": {
-    "name": "Zetwerk Manufacturing",
-    "gmp": 1.0
-  },
-  "bonfigliolitransmissions": {
-    "name": "Bonfiglioli Transmissions",
-    "gmp": 57.0
   }
 }
