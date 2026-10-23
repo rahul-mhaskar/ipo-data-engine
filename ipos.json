@@ -13,8 +13,8 @@
     "closeDate": "2026-10-23",
     "allotmentDate": "2026-10-26",
     "listingDate": "2026-10-28",
-    "gmpAmount": 242.0,
-    "gmpPercent": 21.63,
+    "gmpAmount": 252.0,
+    "gmpPercent": 22.52,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -35,6 +35,10 @@
       {
         "dateLabel": "22 Oct",
         "amount": 242.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 252.0
       }
     ],
     "financials": [
@@ -57,10 +61,10 @@
         "netWorth": 341778.5
       }
     ],
-    "subscriptionTotal": 11.02,
-    "subscriptionRetail": 1.55,
-    "subscriptionHNI": 5.67,
-    "subscriptionQIB": 12.87,
+    "subscriptionTotal": 20.5823,
+    "subscriptionRetail": 2.74,
+    "subscriptionHNI": 13.95,
+    "subscriptionQIB": 64.07,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
     "registrarName": "KFin Technologies",
@@ -69,7 +73,16 @@
     "rhpPdfUrl": "https://myjiostatic.cdn.jio.com/cms/assets/iv3/Red%20Herring%20Prospectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Reliance+Jio+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": true
+    "closeNotified": true,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "2",
@@ -103,6 +116,10 @@
       {
         "dateLabel": "22 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [
@@ -131,7 +148,19 @@
     "rhpPdfUrl": "https://core4engineers.com/pdf/ipo/RedHerringProspectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Core4+Engineers+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 48.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Socradamus Capital Pvt.Ltd.",
+      "Mansi Share & Stock Broking Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "3",
@@ -147,8 +176,8 @@
     "closeDate": "2026-10-23",
     "allotmentDate": "2026-10-26",
     "listingDate": "2026-10-28",
-    "gmpAmount": 13.0,
-    "gmpPercent": 1.88,
+    "gmpAmount": 11.0,
+    "gmpPercent": 1.59,
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
@@ -169,6 +198,10 @@
       {
         "dateLabel": "22 Oct",
         "amount": 13.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 11.0
       }
     ],
     "financials": [
@@ -203,7 +236,20 @@
     "rhpPdfUrl": "https://www.jmfl.com/Common/getFile/6104",
     "drhpPdfUrl": "https://www.google.com/search?q=Paras+Healthcare+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": true
+    "closeNotified": true,
+    "issueStructure": {
+      "freshIssueCr": 500.0,
+      "ofsCr": 950.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "JM Financial Ltd.",
+      "BOFA Securities India Ltd.",
+      "Nuvama Wealth Management Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "4",
@@ -224,6 +270,10 @@
     "gmpHistory": [
       {
         "dateLabel": "22 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
         "amount": 0.0
       }
     ],
@@ -259,7 +309,20 @@
     "rhpPdfUrl": "https://sfcenvironment.com/wp-content/uploads/2026/10/SFC-Environmental-Technologies-Ltd_RHP-1.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=SFC+Environmental+Technologies+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 150.0,
+      "ofsCr": 518.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "IIFL Capital Services Ltd.",
+      "JM Financial Ltd.",
+      "Nuvama Wealth Management Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "5",
@@ -280,6 +343,10 @@
     "gmpHistory": [
       {
         "dateLabel": "22 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
         "amount": 0.0
       }
     ],
@@ -315,7 +382,18 @@
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/1792388466880.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=BLS+Polymers+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 255.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Unistone Capital Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "6",
@@ -340,6 +418,10 @@
       },
       {
         "dateLabel": "22 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
         "amount": 0.0
       }
     ],
@@ -375,7 +457,21 @@
     "rhpPdfUrl": "https://www.eaaa.in/wp-content/uploads/2026/09/Red-Herring-Prospectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=EAAA+India+Alternatives+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 1200.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Axis Capital Ltd.",
+      "Jefferies India Pvt.Ltd.",
+      "Motilal Oswal Investment Advisors Ltd.",
+      "Nuvama Wealth Management Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "7",
@@ -413,6 +509,10 @@
       {
         "dateLabel": "22 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -428,7 +528,16 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Parle+Products+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Parle+Products+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "8",
@@ -466,6 +575,10 @@
       {
         "dateLabel": "22 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [
@@ -500,7 +613,20 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Twinkle+Papers+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Twinkle+Papers+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 26.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Novus Capital Advisors Pvt.Ltd.",
+      "Alankit Assignments Ltd.",
+      "Nirman Share Brokers Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "9",
@@ -538,6 +664,10 @@
       {
         "dateLabel": "22 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [
@@ -572,7 +702,19 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Sri+Priyanka+Geo+Commex+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://nsearchives.nseindia.com/emerge/corporates/content/Registration_14082025195719_SriPriyankaGeoCommexLimitedDRHP.pdf",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 90.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Horizon Management Pvt.Ltd.",
+      "Nikunj Stock Brokers Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "10",
@@ -610,6 +752,10 @@
       {
         "dateLabel": "22 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -625,7 +771,16 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Flipkart+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Flipkart+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "11",
@@ -663,6 +818,10 @@
       {
         "dateLabel": "22 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [
@@ -697,7 +856,21 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Prestige+Hospitality+Ventures+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Prestige+Hospitality+Ventures+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 1700.0,
+      "ofsCr": 1000.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "JM Financial Ltd.",
+      "CLSA India Pvt.Ltd.",
+      "JP Morgan India Pvt.Ltd.",
+      "Kotak Mahindra Capital Co.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "12",
@@ -753,7 +926,22 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Credila+Financial+Services+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Credila+Financial+Services+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 3000.0,
+      "ofsCr": 2000.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Axis Capital Ltd.",
+      "Citigroup Global Markets India Pvt.Ltd.",
+      "Goldman Sachs (India) Securities Pvt.Ltd.",
+      "IIFL Capital Services Ltd.",
+      "Jefferies India Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "13",
@@ -791,6 +979,10 @@
       {
         "dateLabel": "22 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [
@@ -825,7 +1017,25 @@
     "rhpPdfUrl": "https://www.google.com/search?q=PhonePe+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=PhonePe+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Kotak Mahindra Capital Co.Ltd.",
+      "JP Morgan India Pvt.Ltd.",
+      "Citigroup Global Markets India Pvt.Ltd.",
+      "Morgan Stanley India Co.Pvt.Ltd.",
+      "Goldman Sachs (India) Securities Pvt.Ltd.",
+      "Jefferies India Pvt.Ltd.",
+      "JM Financial Ltd.",
+      "Axis Capital Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "14",
@@ -863,6 +1073,10 @@
       {
         "dateLabel": "22 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [
@@ -897,7 +1111,24 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Zepto+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Zepto+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Axis Capital Ltd.",
+      "Goldman Sachs (India) Securities Pvt.Ltd.",
+      "HSBC Securities & Capital Markets (India) Pvt.Ltd.",
+      "IIFL Capital Services Ltd.",
+      "JM Financial Ltd.",
+      "Morgan Stanley India Co.Pvt.Ltd.",
+      "Motilal Oswal Investment Advisors Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "15",
@@ -935,6 +1166,10 @@
       {
         "dateLabel": "22 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -950,7 +1185,16 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Solar91+Cleantech+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Solar91+Cleantech+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "16",
@@ -988,6 +1232,10 @@
       {
         "dateLabel": "22 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [
@@ -1022,7 +1270,25 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Hero+FinCorp+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Hero+FinCorp+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 2100.0,
+      "ofsCr": 1568.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "JM Financial Ltd.",
+      "Axis Capital Ltd.",
+      "BOFA Securities India Ltd.",
+      "HDFC Bank Ltd.",
+      "HSBC Securities & Capital Markets (India) Pvt.Ltd.",
+      "ICICI Securities Ltd.",
+      "Jefferies India Pvt.Ltd.",
+      "SBI Capital Markets Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "17",
@@ -1060,6 +1326,10 @@
       {
         "dateLabel": "22 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -1075,7 +1345,16 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Deltatech+Gaming+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655459382467.pdf#page=1&zoom=page-width,-16,849",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "18",
@@ -1113,6 +1392,10 @@
       {
         "dateLabel": "22 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -1128,7 +1411,16 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Biba+Fashions+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jul-2022/1659005306568.pdf#page=1&zoom=page-width,-16,764",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "19",
@@ -1166,6 +1458,10 @@
       {
         "dateLabel": "22 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -1181,7 +1477,16 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Droom+Technology+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/may-2023/1683610115492.pdf#page=1&zoom=page-width,-16,842",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "20",
@@ -1219,6 +1524,10 @@
       {
         "dateLabel": "22 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -1234,7 +1543,16 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Puranik+Builders+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/sep-2022/1663916527724.pdf#page=1&zoom=page-width,-16,764",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "21",
@@ -1272,6 +1590,10 @@
       {
         "dateLabel": "22 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -1287,7 +1609,16 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Bharat+FIH+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655876827634.pdf#page=1&zoom=page-width,-16,610",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "22",
@@ -1325,6 +1656,10 @@
       {
         "dateLabel": "22 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -1340,7 +1675,16 @@
     "rhpPdfUrl": "https://www.google.com/search?q=FabIndia+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/nov-2022/fabindia-limited-corrigendum-to-drhp_64776.html",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "23",
@@ -1378,6 +1722,10 @@
       {
         "dateLabel": "22 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [
@@ -1412,7 +1760,25 @@
     "rhpPdfUrl": "https://www.google.com/search?q=OYO+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/nov-2022/1669613102669.pdf#page=1&zoom=page-width,-15,842",
     "openNotified": false,
-    "closeNotified": false
+    "closeNotified": false,
+    "issueStructure": {
+      "freshIssueCr": 3350.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Axis Capital Ltd.",
+      "Citigroup Global Markets India Pvt.Ltd.",
+      "Goldman Sachs (India) Securities Pvt.Ltd.",
+      "ICICI Securities Ltd.",
+      "InCred Capital Wealth Portfolio Managers Pvt.Ltd.",
+      "Intensive Fiscal Services Pvt.Ltd.",
+      "JM Financial Ltd.",
+      "SBI Capital Markets Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "logoUrl": null
   },
   {
     "id": "24",
@@ -1525,7 +1891,7 @@
         "netWorth": 511.55
       }
     ],
-    "subscriptionTotal": 96.63,
+    "subscriptionTotal": 132.8119,
     "subscriptionRetail": 31.11,
     "subscriptionHNI": 156.36,
     "subscriptionQIB": 293.56,
