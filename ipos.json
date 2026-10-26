@@ -5,6 +5,7 @@
     "symbol": "BLSPOLY",
     "category": "Mainboard",
     "status": "UPCOMING",
+    "logoUrl": null,
     "issueSizeCr": 255.0,
     "issuePriceMin": 142.0,
     "issuePriceMax": 150.0,
@@ -33,6 +34,17 @@
         "amount": 38.0
       }
     ],
+    "issueStructure": {
+      "freshIssueCr": 255.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Unistone Capital Pvt.Ltd.",
+      "BLS Polymers Ltd. IPO Set to Open Soon - Here's What to Know"
+    ],
+    "anchorPortionCr": 0.0,
     "financials": [
       {
         "year": "FY24",
@@ -59,32 +71,102 @@
     "subscriptionQIB": 0.0,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
-    "registrarName": "KFin Technologies",
-    "registrarUrl": "https://ipostatus.kfintech.com/",
+    "registrarName": "KFin Technologies Limited",
+    "registrarUrl": "https://www.kfintech.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/1792388466880.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=BLS+Polymers+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "2",
+    "name": "SFC Environmental Technologies",
+    "symbol": "SFCTECH",
+    "category": "Mainboard",
+    "status": "UPCOMING",
+    "logoUrl": null,
+    "issueSizeCr": 668.0,
+    "issuePriceMin": 313.0,
+    "issuePriceMax": 330.0,
+    "lotSize": 45,
+    "openDate": "2026-10-27",
+    "closeDate": "2026-10-29",
+    "allotmentDate": "2026-10-30",
+    "listingDate": "2026-11-03",
+    "gmpAmount": 32.0,
+    "gmpPercent": 9.7,
+    "gmpHistory": [
+      {
+        "dateLabel": "22 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "24 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "26 Oct",
+        "amount": 32.0
+      }
+    ],
     "issueStructure": {
-      "freshIssueCr": 255.0,
-      "ofsCr": 0.0,
+      "freshIssueCr": 150.0,
+      "ofsCr": 518.0,
       "promoterHoldingPre": null,
       "promoterHoldingPost": null
     },
     "leadManagers": [
-      "Unistone Capital Pvt.Ltd.",
-      "BLS Polymers Ltd. IPO Set to Open Soon - Here's What to Know"
+      "IIFL Capital Services Ltd.",
+      "JM Financial Ltd.",
+      "Nuvama Wealth Management Ltd."
     ],
     "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 676.7,
+        "pat": 144.2,
+        "netWorth": 534.3
+      },
+      {
+        "year": "FY25",
+        "revenue": 727.0,
+        "pat": 152.0,
+        "netWorth": 648.7
+      },
+      {
+        "year": "FY26",
+        "revenue": 137.9,
+        "pat": 1.5,
+        "netWorth": 805.5
+      }
+    ],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "MUFG Intime India Private Limited",
+    "registrarUrl": "https://in.mpms.mufg.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://sfcenvironment.com/wp-content/uploads/2026/10/SFC-Environmental-Technologies-Ltd_RHP-1.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=SFC+Environmental+Technologies+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
-    "id": "2",
+    "id": "3",
     "name": "EAAA India Alternatives",
     "symbol": "EDELALTS",
     "category": "Mainboard",
-    "status": "UPCOMING",
+    "status": "OPEN",
+    "logoUrl": null,
     "issueSizeCr": 1200.0,
     "issuePriceMin": 1585.0,
     "issuePriceMax": 1665.0,
@@ -117,6 +199,19 @@
         "amount": 33.0
       }
     ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 1200.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Axis Capital Ltd.",
+      "Jefferies India Pvt.Ltd.",
+      "Motilal Oswal Investment Advisors Ltd.",
+      "Nuvama Wealth Management Ltd."
+    ],
+    "anchorPortionCr": 0.0,
     "financials": [
       {
         "year": "FY24",
@@ -137,40 +232,27 @@
         "netWorth": 1160.4
       }
     ],
-    "subscriptionTotal": 0.0,
+    "subscriptionTotal": 0.07,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
-    "registrarName": "Link Intime / MUFG",
-    "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "registrarName": "MUFG Intime India Private Limited ",
+    "registrarUrl": "https://in.mpms.mufg.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.eaaa.in/wp-content/uploads/2026/09/Red-Herring-Prospectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=EAAA+India+Alternatives+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "issueStructure": {
-      "freshIssueCr": 0.0,
-      "ofsCr": 1200.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Axis Capital Ltd.",
-      "Jefferies India Pvt.Ltd.",
-      "Motilal Oswal Investment Advisors Ltd.",
-      "Nuvama Wealth Management Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "closeNotified": false
   },
   {
-    "id": "3",
+    "id": "4",
     "name": "Core4 Engineers",
     "symbol": "CORE4",
     "category": "SME",
     "status": "OPEN",
+    "logoUrl": null,
     "issueSizeCr": 55.0,
     "issuePriceMin": 88.0,
     "issuePriceMax": 93.0,
@@ -207,6 +289,17 @@
         "amount": 0.0
       }
     ],
+    "issueStructure": {
+      "freshIssueCr": 48.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Socradamus Capital Pvt.Ltd.",
+      "Mansi Share & Stock Broking Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
     "financials": [
       {
         "year": "FY24",
@@ -221,38 +314,27 @@
         "netWorth": 24.8
       }
     ],
-    "subscriptionTotal": 0.0823,
+    "subscriptionTotal": 0.61,
     "subscriptionRetail": 0.14,
     "subscriptionHNI": 0.05,
     "subscriptionQIB": 0.0,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
-    "registrarName": "Purva Sharegistry",
-    "registrarUrl": "https://www.purvashare.com/investor-service/ipo-query",
+    "registrarName": "Purva Sharegistry (India) Private Limited ",
+    "registrarUrl": "https://www.purvashare.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://core4engineers.com/pdf/ipo/RedHerringProspectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Core4+Engineers+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": false,
-    "issueStructure": {
-      "freshIssueCr": 48.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Socradamus Capital Pvt.Ltd.",
-      "Mansi Share & Stock Broking Pvt.Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "closeNotified": false
   },
   {
-    "id": "4",
+    "id": "5",
     "name": "Bombay Coated & Special Steels",
     "symbol": "BOMBAYC",
     "category": "Mainboard",
     "status": "UPCOMING",
+    "logoUrl": null,
     "issueSizeCr": 183.0,
     "issuePriceMin": 78.0,
     "issuePriceMax": 82.0,
@@ -277,20 +359,6 @@
         "amount": 8.0
       }
     ],
-    "financials": [],
-    "subscriptionTotal": 0.0,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "KFin Technologies",
-    "registrarUrl": "https://ipostatus.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/bombay-coated-special-steels-ltd-rhp.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Bombay+Coated+&+Special+Steels+IPO+DRHP+file+SEBI",
-    "openNotified": false,
-    "closeNotified": false,
     "issueStructure": {
       "freshIssueCr": 0.0,
       "ofsCr": 0.0,
@@ -299,14 +367,28 @@
     },
     "leadManagers": [],
     "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "financials": [],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KFin Technologies Limited",
+    "registrarUrl": "https://www.kfintech.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/bombay-coated-special-steels-ltd-rhp.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=Bombay+Coated+&+Special+Steels+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
-    "id": "5",
+    "id": "6",
     "name": "Carver Roboweld",
     "symbol": "CARVERR",
     "category": "SME",
     "status": "UPCOMING",
+    "logoUrl": null,
     "issueSizeCr": 28.0,
     "issuePriceMin": 76.0,
     "issuePriceMax": 80.0,
@@ -331,6 +413,17 @@
         "amount": 0.0
       }
     ],
+    "issueStructure": {
+      "freshIssueCr": 27.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Smart Horizon Capital Advisors Pvt.Ltd.",
+      "Shreni Shares Ltd."
+    ],
+    "anchorPortionCr": 0.0,
     "financials": [
       {
         "year": "FY24",
@@ -357,32 +450,21 @@
     "subscriptionQIB": 0.0,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
-    "registrarName": "Bigshare Services",
-    "registrarUrl": "https://www.bigshareonline.com/ipo_allotment.html",
+    "registrarName": "Bigshare Services Private Limited",
+    "registrarUrl": "https://www.bigshareonline.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Carver+Roboweld+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Carver+Roboweld+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "issueStructure": {
-      "freshIssueCr": 27.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Smart Horizon Capital Advisors Pvt.Ltd.",
-      "Shreni Shares Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "closeNotified": false
   },
   {
-    "id": "6",
+    "id": "7",
     "name": "M.K.Sons Fine Jewels",
     "symbol": "MKSONSF",
     "category": "Mainboard",
     "status": "UPCOMING",
+    "logoUrl": null,
     "issueSizeCr": 275.0,
     "issuePriceMin": 153.0,
     "issuePriceMax": 162.0,
@@ -407,6 +489,16 @@
         "amount": 7.0
       }
     ],
+    "issueStructure": {
+      "freshIssueCr": 220.0,
+      "ofsCr": 55.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Aryaman Financial Services Ltd."
+    ],
+    "anchorPortionCr": 0.0,
     "financials": [
       {
         "year": "FY24",
@@ -433,31 +525,21 @@
     "subscriptionQIB": 0.0,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
-    "registrarName": "Bigshare Services",
-    "registrarUrl": "https://www.bigshareonline.com/ipo_allotment.html",
+    "registrarName": "Bigshare Services Private Limited",
+    "registrarUrl": "https://www.bigshareonline.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.afsl.co.in/pdfnew/Red%20Herring%20Prospectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=M.K.Sons+Fine+Jewels+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "issueStructure": {
-      "freshIssueCr": 220.0,
-      "ofsCr": 55.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Aryaman Financial Services Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "closeNotified": false
   },
   {
-    "id": "7",
+    "id": "8",
     "name": "Wiscon Industries",
     "symbol": "WISCONI",
     "category": "Mainboard",
     "status": "UPCOMING",
+    "logoUrl": null,
     "issueSizeCr": 110.0,
     "issuePriceMin": 194.0,
     "issuePriceMax": 204.0,
@@ -474,6 +556,17 @@
         "amount": 0.0
       }
     ],
+    "issueStructure": {
+      "freshIssueCr": 80.0,
+      "ofsCr": 22.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Smart Horizon Capital Advisors Pvt.Ltd.",
+      "Shreni Shares Ltd."
+    ],
+    "anchorPortionCr": 0.0,
     "financials": [
       {
         "year": "FY26",
@@ -488,106 +581,13 @@
     "subscriptionQIB": 0.0,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
-    "registrarName": "Maashitla Securities",
-    "registrarUrl": "https://maashitla.com/allotment-status/public-issues",
+    "registrarName": "MAASHITLA SECURITIES PRIVATE LIMITED",
+    "registrarUrl": "https://maashitla.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Wiscon+Industries+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Wiscon+Industries+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "issueStructure": {
-      "freshIssueCr": 80.0,
-      "ofsCr": 22.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Smart Horizon Capital Advisors Pvt.Ltd.",
-      "Shreni Shares Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "logoUrl": null
-  },
-  {
-    "id": "8",
-    "name": "SFC Environmental Technologies",
-    "symbol": "SFCENVI",
-    "category": "Mainboard",
-    "status": "UPCOMING",
-    "issueSizeCr": 668.0,
-    "issuePriceMin": 313.0,
-    "issuePriceMax": 330.0,
-    "lotSize": 45,
-    "openDate": "2026-10-27",
-    "closeDate": "2026-10-29",
-    "allotmentDate": "2026-10-30",
-    "listingDate": "2026-11-03",
-    "gmpAmount": 32.0,
-    "gmpPercent": 9.7,
-    "gmpHistory": [
-      {
-        "dateLabel": "22 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "23 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "24 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "26 Oct",
-        "amount": 32.0
-      }
-    ],
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 676.7,
-        "pat": 144.2,
-        "netWorth": 534.3
-      },
-      {
-        "year": "FY25",
-        "revenue": 727.0,
-        "pat": 152.0,
-        "netWorth": 648.7
-      },
-      {
-        "year": "FY26",
-        "revenue": 137.9,
-        "pat": 1.5,
-        "netWorth": 805.5
-      }
-    ],
-    "subscriptionTotal": 0.0,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Link Intime / MUFG",
-    "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://sfcenvironment.com/wp-content/uploads/2026/10/SFC-Environmental-Technologies-Ltd_RHP-1.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=SFC+Environmental+Technologies+IPO+DRHP+file+SEBI",
-    "openNotified": false,
-    "closeNotified": false,
-    "issueStructure": {
-      "freshIssueCr": 150.0,
-      "ofsCr": 518.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "IIFL Capital Services Ltd.",
-      "JM Financial Ltd.",
-      "Nuvama Wealth Management Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "closeNotified": false
   },
   {
     "id": "9",
@@ -595,6 +595,7 @@
     "symbol": "PARLEPR",
     "category": "Mainboard",
     "status": "UPCOMING",
+    "logoUrl": null,
     "issueSizeCr": 0.0,
     "issuePriceMin": 0.0,
     "issuePriceMax": 0.0,
@@ -631,6 +632,14 @@
         "amount": 0.0
       }
     ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
@@ -644,16 +653,7 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Parle+Products+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Parle+Products+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "issueStructure": {
-      "freshIssueCr": 0.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [],
-    "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "closeNotified": false
   },
   {
     "id": "10",
@@ -661,6 +661,7 @@
     "symbol": "TWINKLE",
     "category": "SME",
     "status": "UPCOMING",
+    "logoUrl": null,
     "issueSizeCr": 28.0,
     "issuePriceMin": 64.0,
     "issuePriceMax": 69.0,
@@ -697,6 +698,18 @@
         "amount": 0.0
       }
     ],
+    "issueStructure": {
+      "freshIssueCr": 26.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Novus Capital Advisors Pvt.Ltd.",
+      "Alankit Assignments Ltd.",
+      "Nirman Share Brokers Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
     "financials": [
       {
         "year": "FY23",
@@ -723,26 +736,13 @@
     "subscriptionQIB": 0.0,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
-    "registrarName": "Ankit Consultancy",
-    "registrarUrl": "https://www.ankitonline.com/",
+    "registrarName": "ALANKIT ASSIGNMENTS LIMITED",
+    "registrarUrl": "https://www.alankit.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Twinkle+Papers+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Twinkle+Papers+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "issueStructure": {
-      "freshIssueCr": 26.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Novus Capital Advisors Pvt.Ltd.",
-      "Alankit Assignments Ltd.",
-      "Nirman Share Brokers Pvt.Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "closeNotified": false
   },
   {
     "id": "11",
@@ -750,6 +750,7 @@
     "symbol": "SPGCL",
     "category": "SME",
     "status": "UPCOMING",
+    "logoUrl": null,
     "issueSizeCr": 95.0,
     "issuePriceMin": 207.0,
     "issuePriceMax": 212.0,
@@ -786,6 +787,17 @@
         "amount": 0.0
       }
     ],
+    "issueStructure": {
+      "freshIssueCr": 90.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Horizon Management Pvt.Ltd.",
+      "Nikunj Stock Brokers Ltd."
+    ],
+    "anchorPortionCr": 0.0,
     "financials": [
       {
         "year": "FY23",
@@ -812,25 +824,13 @@
     "subscriptionQIB": 0.0,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
-    "registrarName": "Cameo Corporate Services",
-    "registrarUrl": "https://ipo.cameoindia.com/",
+    "registrarName": "Cameo Corporate Services Limited",
+    "registrarUrl": "https://cameoindia.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Sri+Priyanka+Geo+Commex+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://nsearchives.nseindia.com/emerge/corporates/content/Registration_14082025195719_SriPriyankaGeoCommexLimitedDRHP.pdf",
     "openNotified": false,
-    "closeNotified": false,
-    "issueStructure": {
-      "freshIssueCr": 90.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Horizon Management Pvt.Ltd.",
-      "Nikunj Stock Brokers Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "closeNotified": false
   },
   {
     "id": "12",
@@ -838,6 +838,7 @@
     "symbol": "FLIPKAR",
     "category": "Mainboard",
     "status": "UPCOMING",
+    "logoUrl": null,
     "issueSizeCr": 0.0,
     "issuePriceMin": 0.0,
     "issuePriceMax": 0.0,
@@ -874,6 +875,14 @@
         "amount": 0.0
       }
     ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
@@ -887,16 +896,7 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Flipkart+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Flipkart+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "issueStructure": {
-      "freshIssueCr": 0.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [],
-    "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "closeNotified": false
   },
   {
     "id": "13",
@@ -904,6 +904,7 @@
     "symbol": "PRESTIG",
     "category": "Mainboard",
     "status": "UPCOMING",
+    "logoUrl": null,
     "issueSizeCr": 0.0,
     "issuePriceMin": 0.0,
     "issuePriceMax": 0.0,
@@ -940,6 +941,19 @@
         "amount": 0.0
       }
     ],
+    "issueStructure": {
+      "freshIssueCr": 1700.0,
+      "ofsCr": 1000.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "JM Financial Ltd.",
+      "CLSA India Pvt.Ltd.",
+      "JP Morgan India Pvt.Ltd.",
+      "Kotak Mahindra Capital Co.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
     "financials": [
       {
         "year": "FY22",
@@ -966,27 +980,13 @@
     "subscriptionQIB": 0.0,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
-    "registrarName": "KFin Technologies",
-    "registrarUrl": "https://ipostatus.kfintech.com/",
+    "registrarName": "KFin Technologies Limited",
+    "registrarUrl": "https://www.kfintech.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Prestige+Hospitality+Ventures+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Prestige+Hospitality+Ventures+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "issueStructure": {
-      "freshIssueCr": 1700.0,
-      "ofsCr": 1000.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "JM Financial Ltd.",
-      "CLSA India Pvt.Ltd.",
-      "JP Morgan India Pvt.Ltd.",
-      "Kotak Mahindra Capital Co.Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "closeNotified": false
   },
   {
     "id": "14",
@@ -994,6 +994,7 @@
     "symbol": "CREDILA",
     "category": "Mainboard",
     "status": "UPCOMING",
+    "logoUrl": null,
     "issueSizeCr": 0.0,
     "issuePriceMin": 0.0,
     "issuePriceMax": 0.0,
@@ -1014,6 +1015,20 @@
         "amount": 0.0
       }
     ],
+    "issueStructure": {
+      "freshIssueCr": 3000.0,
+      "ofsCr": 2000.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Axis Capital Ltd.",
+      "Citigroup Global Markets India Pvt.Ltd.",
+      "Goldman Sachs (India) Securities Pvt.Ltd.",
+      "IIFL Capital Services Ltd.",
+      "Jefferies India Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
     "financials": [
       {
         "year": "FY23",
@@ -1040,28 +1055,13 @@
     "subscriptionQIB": 0.0,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
-    "registrarName": "KFin Technologies",
-    "registrarUrl": "https://ipostatus.kfintech.com/",
+    "registrarName": "KFin Technologies Limited ",
+    "registrarUrl": "https://www.kfintech.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Credila+Financial+Services+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Credila+Financial+Services+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "issueStructure": {
-      "freshIssueCr": 3000.0,
-      "ofsCr": 2000.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Axis Capital Ltd.",
-      "Citigroup Global Markets India Pvt.Ltd.",
-      "Goldman Sachs (India) Securities Pvt.Ltd.",
-      "IIFL Capital Services Ltd.",
-      "Jefferies India Pvt.Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "closeNotified": false
   },
   {
     "id": "15",
@@ -1069,6 +1069,7 @@
     "symbol": "PHONEPE",
     "category": "Mainboard",
     "status": "UPCOMING",
+    "logoUrl": null,
     "issueSizeCr": 0.0,
     "issuePriceMin": 0.0,
     "issuePriceMax": 0.0,
@@ -1105,6 +1106,23 @@
         "amount": 0.0
       }
     ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Kotak Mahindra Capital Co.Ltd.",
+      "JP Morgan India Pvt.Ltd.",
+      "Citigroup Global Markets India Pvt.Ltd.",
+      "Morgan Stanley India Co.Pvt.Ltd.",
+      "Goldman Sachs (India) Securities Pvt.Ltd.",
+      "Jefferies India Pvt.Ltd.",
+      "JM Financial Ltd.",
+      "Axis Capital Ltd."
+    ],
+    "anchorPortionCr": 0.0,
     "financials": [
       {
         "year": "FY23",
@@ -1137,25 +1155,7 @@
     "rhpPdfUrl": "https://www.google.com/search?q=PhonePe+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=PhonePe+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "issueStructure": {
-      "freshIssueCr": 0.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Kotak Mahindra Capital Co.Ltd.",
-      "JP Morgan India Pvt.Ltd.",
-      "Citigroup Global Markets India Pvt.Ltd.",
-      "Morgan Stanley India Co.Pvt.Ltd.",
-      "Goldman Sachs (India) Securities Pvt.Ltd.",
-      "Jefferies India Pvt.Ltd.",
-      "JM Financial Ltd.",
-      "Axis Capital Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "closeNotified": false
   },
   {
     "id": "16",
@@ -1163,6 +1163,7 @@
     "symbol": "ZEPTO",
     "category": "Mainboard",
     "status": "UPCOMING",
+    "logoUrl": null,
     "issueSizeCr": 0.0,
     "issuePriceMin": 0.0,
     "issuePriceMax": 0.0,
@@ -1199,6 +1200,22 @@
         "amount": 0.0
       }
     ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Axis Capital Ltd.",
+      "Goldman Sachs (India) Securities Pvt.Ltd.",
+      "HSBC Securities & Capital Markets (India) Pvt.Ltd.",
+      "IIFL Capital Services Ltd.",
+      "JM Financial Ltd.",
+      "Morgan Stanley India Co.Pvt.Ltd.",
+      "Motilal Oswal Investment Advisors Ltd."
+    ],
+    "anchorPortionCr": 0.0,
     "financials": [
       {
         "year": "FY24",
@@ -1231,24 +1248,7 @@
     "rhpPdfUrl": "https://www.google.com/search?q=Zepto+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Zepto+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "issueStructure": {
-      "freshIssueCr": 0.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Axis Capital Ltd.",
-      "Goldman Sachs (India) Securities Pvt.Ltd.",
-      "HSBC Securities & Capital Markets (India) Pvt.Ltd.",
-      "IIFL Capital Services Ltd.",
-      "JM Financial Ltd.",
-      "Morgan Stanley India Co.Pvt.Ltd.",
-      "Motilal Oswal Investment Advisors Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "closeNotified": false
   },
   {
     "id": "17",
@@ -1256,6 +1256,7 @@
     "symbol": "SOLAR91",
     "category": "SME",
     "status": "UPCOMING",
+    "logoUrl": null,
     "issueSizeCr": 0.0,
     "issuePriceMin": 0.0,
     "issuePriceMax": 0.0,
@@ -1292,20 +1293,6 @@
         "amount": 0.0
       }
     ],
-    "financials": [],
-    "subscriptionTotal": 0.0,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Maashitla Securities",
-    "registrarUrl": "https://maashitla.com/allotment-status/public-issues",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.google.com/search?q=Solar91+Cleantech+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.google.com/search?q=Solar91+Cleantech+IPO+DRHP+file+SEBI",
-    "openNotified": false,
-    "closeNotified": false,
     "issueStructure": {
       "freshIssueCr": 0.0,
       "ofsCr": 0.0,
@@ -1314,7 +1301,20 @@
     },
     "leadManagers": [],
     "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "financials": [],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Maashitla Securities Private Limited",
+    "registrarUrl": "https://maashitla.com/allotment-status/public-issues",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.google.com/search?q=Solar91+Cleantech+IPO+RHP+file+SEBI",
+    "drhpPdfUrl": "https://www.google.com/search?q=Solar91+Cleantech+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "18",
@@ -1322,6 +1322,7 @@
     "symbol": "HEROFIN",
     "category": "Mainboard",
     "status": "UPCOMING",
+    "logoUrl": null,
     "issueSizeCr": 0.0,
     "issuePriceMin": 0.0,
     "issuePriceMax": 0.0,
@@ -1358,6 +1359,23 @@
         "amount": 0.0
       }
     ],
+    "issueStructure": {
+      "freshIssueCr": 2100.0,
+      "ofsCr": 1568.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "JM Financial Ltd.",
+      "Axis Capital Ltd.",
+      "BOFA Securities India Ltd.",
+      "HDFC Bank Ltd.",
+      "HSBC Securities & Capital Markets (India) Pvt.Ltd.",
+      "ICICI Securities Ltd.",
+      "Jefferies India Pvt.Ltd.",
+      "SBI Capital Markets Ltd."
+    ],
+    "anchorPortionCr": 0.0,
     "financials": [
       {
         "year": "FY22",
@@ -1384,31 +1402,13 @@
     "subscriptionQIB": 0.0,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
-    "registrarName": "Link Intime / MUFG",
-    "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "registrarName": "Link Intime India Private Limited",
+    "registrarUrl": "https://linkintime.co.in/initial_offer/public-issues.html",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Hero+FinCorp+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Hero+FinCorp+IPO+DRHP+file+SEBI",
     "openNotified": false,
-    "closeNotified": false,
-    "issueStructure": {
-      "freshIssueCr": 2100.0,
-      "ofsCr": 1568.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "JM Financial Ltd.",
-      "Axis Capital Ltd.",
-      "BOFA Securities India Ltd.",
-      "HDFC Bank Ltd.",
-      "HSBC Securities & Capital Markets (India) Pvt.Ltd.",
-      "ICICI Securities Ltd.",
-      "Jefferies India Pvt.Ltd.",
-      "SBI Capital Markets Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "closeNotified": false
   },
   {
     "id": "19",
@@ -1416,6 +1416,7 @@
     "symbol": "DELTATE",
     "category": "Mainboard",
     "status": "UPCOMING",
+    "logoUrl": null,
     "issueSizeCr": 0.0,
     "issuePriceMin": 0.0,
     "issuePriceMax": 0.0,
@@ -1452,20 +1453,6 @@
         "amount": 0.0
       }
     ],
-    "financials": [],
-    "subscriptionTotal": 0.0,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "KFin Technologies",
-    "registrarUrl": "https://ipostatus.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.google.com/search?q=Deltatech+Gaming+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655459382467.pdf#page=1&zoom=page-width,-16,849",
-    "openNotified": false,
-    "closeNotified": false,
     "issueStructure": {
       "freshIssueCr": 0.0,
       "ofsCr": 0.0,
@@ -1474,7 +1461,20 @@
     },
     "leadManagers": [],
     "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "financials": [],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KfinTechnologies Limited",
+    "registrarUrl": "www.kfintech.com",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.google.com/search?q=Deltatech+Gaming+IPO+RHP+file+SEBI",
+    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655459382467.pdf#page=1&zoom=page-width,-16,849",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "20",
@@ -1482,6 +1482,7 @@
     "symbol": "BIBAFAS",
     "category": "Mainboard",
     "status": "UPCOMING",
+    "logoUrl": null,
     "issueSizeCr": 0.0,
     "issuePriceMin": 0.0,
     "issuePriceMax": 0.0,
@@ -1518,20 +1519,6 @@
         "amount": 0.0
       }
     ],
-    "financials": [],
-    "subscriptionTotal": 0.0,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Link Intime / MUFG",
-    "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.google.com/search?q=Biba+Fashions+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jul-2022/1659005306568.pdf#page=1&zoom=page-width,-16,764",
-    "openNotified": false,
-    "closeNotified": false,
     "issueStructure": {
       "freshIssueCr": 0.0,
       "ofsCr": 0.0,
@@ -1540,7 +1527,20 @@
     },
     "leadManagers": [],
     "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "financials": [],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Link Intime India Private Limited",
+    "registrarUrl": "www.linkintime.co.in",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.google.com/search?q=Biba+Fashions+IPO+RHP+file+SEBI",
+    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jul-2022/1659005306568.pdf#page=1&zoom=page-width,-16,764",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "21",
@@ -1548,6 +1548,7 @@
     "symbol": "DROOMTE",
     "category": "Mainboard",
     "status": "UPCOMING",
+    "logoUrl": null,
     "issueSizeCr": 0.0,
     "issuePriceMin": 0.0,
     "issuePriceMax": 0.0,
@@ -1584,20 +1585,6 @@
         "amount": 0.0
       }
     ],
-    "financials": [],
-    "subscriptionTotal": 0.0,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "KFin Technologies",
-    "registrarUrl": "https://ipostatus.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.google.com/search?q=Droom+Technology+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/may-2023/1683610115492.pdf#page=1&zoom=page-width,-16,842",
-    "openNotified": false,
-    "closeNotified": false,
     "issueStructure": {
       "freshIssueCr": 0.0,
       "ofsCr": 0.0,
@@ -1606,7 +1593,20 @@
     },
     "leadManagers": [],
     "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "financials": [],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KfinTechnologies Limited",
+    "registrarUrl": "www.kfintech.com",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.google.com/search?q=Droom+Technology+IPO+RHP+file+SEBI",
+    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/may-2023/1683610115492.pdf#page=1&zoom=page-width,-16,842",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "22",
@@ -1614,6 +1614,7 @@
     "symbol": "PURANIK",
     "category": "Mainboard",
     "status": "UPCOMING",
+    "logoUrl": null,
     "issueSizeCr": 0.0,
     "issuePriceMin": 0.0,
     "issuePriceMax": 0.0,
@@ -1650,20 +1651,6 @@
         "amount": 0.0
       }
     ],
-    "financials": [],
-    "subscriptionTotal": 0.0,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "KFin Technologies",
-    "registrarUrl": "https://ipostatus.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.google.com/search?q=Puranik+Builders+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/sep-2022/1663916527724.pdf#page=1&zoom=page-width,-16,764",
-    "openNotified": false,
-    "closeNotified": false,
     "issueStructure": {
       "freshIssueCr": 0.0,
       "ofsCr": 0.0,
@@ -1672,7 +1659,20 @@
     },
     "leadManagers": [],
     "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "financials": [],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KfinTechnologies Limited",
+    "registrarUrl": "www.kfintech.com",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.google.com/search?q=Puranik+Builders+IPO+RHP+file+SEBI",
+    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/sep-2022/1663916527724.pdf#page=1&zoom=page-width,-16,764",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "23",
@@ -1680,6 +1680,7 @@
     "symbol": "BHARATF",
     "category": "Mainboard",
     "status": "UPCOMING",
+    "logoUrl": null,
     "issueSizeCr": 0.0,
     "issuePriceMin": 0.0,
     "issuePriceMax": 0.0,
@@ -1716,20 +1717,6 @@
         "amount": 0.0
       }
     ],
-    "financials": [],
-    "subscriptionTotal": 0.0,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "KFin Technologies",
-    "registrarUrl": "https://ipostatus.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.google.com/search?q=Bharat+FIH+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655876827634.pdf#page=1&zoom=page-width,-16,610",
-    "openNotified": false,
-    "closeNotified": false,
     "issueStructure": {
       "freshIssueCr": 0.0,
       "ofsCr": 0.0,
@@ -1738,14 +1725,64 @@
     },
     "leadManagers": [],
     "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "financials": [],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KfinTechnologies Limited",
+    "registrarUrl": "www.kfintech.com",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.google.com/search?q=Bharat+FIH+IPO+RHP+file+SEBI",
+    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655876827634.pdf#page=1&zoom=page-width,-16,610",
+    "openNotified": false,
+    "closeNotified": false
   },
   {
     "id": "24",
+    "name": "FabIndia",
+    "symbol": "FABINDI",
+    "category": "Mainboard",
+    "status": "UPCOMING",
+    "logoUrl": null,
+    "issueSizeCr": 0.0,
+    "issuePriceMin": 0.0,
+    "issuePriceMax": 0.0,
+    "lotSize": 0,
+    "openDate": "To Be Updated",
+    "closeDate": "To Be Updated",
+    "allotmentDate": "To Be Updated",
+    "listingDate": "To Be Updated",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "financials": [],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Link Intime India Private Limited",
+    "registrarUrl": "www.linkintime.co.in",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "",
+    "drhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/nov-2022/fabindia-limited-corrigendum-to-drhp_64776.html",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "25",
     "name": "Reliance Jio",
     "symbol": "JPL",
     "category": "Mainboard",
     "status": "CLOSED",
+    "logoUrl": null,
     "issueSizeCr": 30188.0,
     "issuePriceMin": 1065.0,
     "issuePriceMax": 1119.0,
@@ -1782,6 +1819,14 @@
         "amount": 247.0
       }
     ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [
       {
         "year": "FY24",
@@ -1802,35 +1847,27 @@
         "netWorth": 341778.5
       }
     ],
-    "subscriptionTotal": 21.3623,
+    "subscriptionTotal": 19.67,
     "subscriptionRetail": 2.76,
     "subscriptionHNI": 13.99,
     "subscriptionQIB": 67.15,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
-    "registrarName": "KFin Technologies",
-    "registrarUrl": "https://ipostatus.kfintech.com/",
+    "registrarName": "KFin Technologies Limited ",
+    "registrarUrl": "https://www.kfintech.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://myjiostatic.cdn.jio.com/cms/assets/iv3/Red%20Herring%20Prospectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Reliance+Jio+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": true,
-    "issueStructure": {
-      "freshIssueCr": 0.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [],
-    "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "closeNotified": true
   },
   {
-    "id": "25",
+    "id": "26",
     "name": "Paras Healthcare",
     "symbol": "PARASHLTH",
     "category": "Mainboard",
     "status": "CLOSED",
+    "logoUrl": null,
     "issueSizeCr": 1450.0,
     "issuePriceMin": 660.0,
     "issuePriceMax": 693.0,
@@ -1867,6 +1904,18 @@
         "amount": 9.0
       }
     ],
+    "issueStructure": {
+      "freshIssueCr": 500.0,
+      "ofsCr": 950.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "JM Financial Ltd.",
+      "BOFA Securities India Ltd.",
+      "Nuvama Wealth Management Ltd."
+    ],
+    "anchorPortionCr": 0.0,
     "financials": [
       {
         "year": "FY24",
@@ -1887,39 +1936,27 @@
         "netWorth": 445.0
       }
     ],
-    "subscriptionTotal": 2.3423,
+    "subscriptionTotal": 2.21,
     "subscriptionRetail": 2.1,
     "subscriptionHNI": 0.69,
     "subscriptionQIB": 3.25,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
-    "registrarName": "Link Intime / MUFG",
-    "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "registrarName": "MUFG Intime India Private Limited",
+    "registrarUrl": "https://in.mpms.mufg.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.jmfl.com/Common/getFile/6104",
     "drhpPdfUrl": "https://www.google.com/search?q=Paras+Healthcare+IPO+DRHP+file+SEBI",
     "openNotified": true,
-    "closeNotified": true,
-    "issueStructure": {
-      "freshIssueCr": 500.0,
-      "ofsCr": 950.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "JM Financial Ltd.",
-      "BOFA Securities India Ltd.",
-      "Nuvama Wealth Management Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "logoUrl": null
+    "closeNotified": true
   },
   {
-    "id": "26",
+    "id": "27",
     "name": "Sahajanand Medical Technologies",
     "symbol": "SMT",
     "category": "Mainboard",
     "status": "LISTED",
+    "logoUrl": null,
     "issueSizeCr": 475.0,
     "issuePriceMin": 327.0,
     "issuePriceMax": 344.0,
@@ -1956,15 +1993,18 @@
         "amount": 17.0
       }
     ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 14.2119,
+    "subscriptionTotal": 14.08,
     "subscriptionRetail": 3.04,
     "subscriptionHNI": 14.64,
     "subscriptionQIB": 34.7,
     "listingPrice": 371.15,
     "listingGainPercent": 7.89,
-    "registrarName": "Link Intime / MUFG",
-    "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "registrarName": "MUFG Intime India Private Limited",
+    "registrarUrl": "https://in.mpms.mufg.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.ipopremium.in/images/ipo/sahajanand_medical_technologies_ltd_mainboard_rhp_1791630001.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Sahajanand+Medical+Technologies+IPO+DRHP+file+SEBI",
@@ -1972,11 +2012,12 @@
     "closeNotified": true
   },
   {
-    "id": "27",
+    "id": "28",
     "name": "Tonbo Imaging India",
     "symbol": "TONBO",
     "category": "Mainboard",
     "status": "LISTED",
+    "logoUrl": null,
     "issueSizeCr": 852.0,
     "issuePriceMin": 665.0,
     "issuePriceMax": 700.0,
@@ -2013,6 +2054,9 @@
         "amount": 452.0
       }
     ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [
       {
         "year": "FY24",
@@ -2033,14 +2077,14 @@
         "netWorth": 511.55
       }
     ],
-    "subscriptionTotal": 132.8119,
+    "subscriptionTotal": 96.63,
     "subscriptionRetail": 31.11,
     "subscriptionHNI": 156.36,
     "subscriptionQIB": 293.56,
     "listingPrice": 1160.0,
     "listingGainPercent": 65.71,
-    "registrarName": "KFin Technologies",
-    "registrarUrl": "https://ipostatus.kfintech.com/",
+    "registrarName": "KFin Technologies Limited",
+    "registrarUrl": "https://www.kfintech.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://live.jmfl.com/od/UploadedFiles/CA86AB52-0D43-437A-8D1C-6E475C6CEF01.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Tonbo+Imaging+India+IPO+DRHP+file+SEBI",
@@ -2048,11 +2092,12 @@
     "closeNotified": true
   },
   {
-    "id": "28",
+    "id": "29",
     "name": "Shellz India",
     "symbol": "SHELLZ",
     "category": "SME",
     "status": "LISTED",
+    "logoUrl": null,
     "issueSizeCr": 60.0,
     "issuePriceMin": 170.0,
     "issuePriceMax": 179.0,
@@ -2089,6 +2134,9 @@
         "amount": 7.0
       }
     ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [
       {
         "year": "FY24",
@@ -2109,14 +2157,14 @@
         "netWorth": 63.0
       }
     ],
-    "subscriptionTotal": 58.5419,
+    "subscriptionTotal": 58.01,
     "subscriptionRetail": 56.09,
     "subscriptionHNI": 86.41,
     "subscriptionQIB": 41.92,
     "listingPrice": 179.0,
     "listingGainPercent": 0.0,
-    "registrarName": "Bigshare Services",
-    "registrarUrl": "https://www.bigshareonline.com/ipo_allotment.html",
+    "registrarName": "Bigshare Services Private Limited",
+    "registrarUrl": "https://www.bigshareonline.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.socradamus.in/downloads/sme-ipo/shellz-india-limited/RHP-Shellz-final.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Shellz+India+IPO+DRHP+file+SEBI",
@@ -2124,11 +2172,12 @@
     "closeNotified": true
   },
   {
-    "id": "29",
+    "id": "30",
     "name": "Zetwerk Manufacturing",
     "symbol": "ZETWERK",
     "category": "Mainboard",
     "status": "LISTED",
+    "logoUrl": null,
     "issueSizeCr": 5012.0,
     "issuePriceMin": 143.0,
     "issuePriceMax": 151.0,
@@ -2165,15 +2214,18 @@
         "amount": 1.2
       }
     ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 3.119,
+    "subscriptionTotal": 3.05,
     "subscriptionRetail": 0.77,
     "subscriptionHNI": 1.45,
     "subscriptionQIB": 4.71,
     "listingPrice": 159.25,
     "listingGainPercent": 5.46,
-    "registrarName": "KFin Technologies",
-    "registrarUrl": "https://ipostatus.kfintech.com/",
+    "registrarName": "KFin Technologies Limited",
+    "registrarUrl": "https://www.kfintech.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Zetwerk-RHP_compressed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Zetwerk+Manufacturing+IPO+DRHP+file+SEBI",
@@ -2181,11 +2233,12 @@
     "closeNotified": true
   },
   {
-    "id": "30",
+    "id": "31",
     "name": "Bonfiglioli Transmissions",
     "symbol": "BONFIG",
     "category": "Mainboard",
     "status": "LISTED",
+    "logoUrl": null,
     "issueSizeCr": 2534.0,
     "issuePriceMin": 558.0,
     "issuePriceMax": 586.0,
@@ -2222,6 +2275,9 @@
         "amount": 66.0
       }
     ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [
       {
         "year": "FY24",
@@ -2242,14 +2298,14 @@
         "netWorth": 1034.3
       }
     ],
-    "subscriptionTotal": 46.0519,
+    "subscriptionTotal": 31.66,
     "subscriptionRetail": 5.9,
     "subscriptionHNI": 40.39,
     "subscriptionQIB": 120.78,
     "listingPrice": 586.0,
     "listingGainPercent": 0.0,
-    "registrarName": "Link Intime / MUFG",
-    "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "registrarName": "MUFG Intime India Private Limited",
+    "registrarUrl": "https://in.mpms.mufg.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.bonfiglioli.com/india/IPO/RHP/Peacock%20-%20RHP%20%28Filing%20version%29%20-%20Signed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Bonfiglioli+Transmissions+IPO+DRHP+file+SEBI",
@@ -2257,11 +2313,12 @@
     "closeNotified": true
   },
   {
-    "id": "31",
+    "id": "32",
     "name": "Ravita Engineering Services",
     "symbol": "RAVITA",
     "category": "SME",
     "status": "LISTED",
+    "logoUrl": null,
     "issueSizeCr": 116.0,
     "issuePriceMin": 105.0,
     "issuePriceMax": 112.0,
@@ -2298,6 +2355,9 @@
         "amount": 1.0
       }
     ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [
       {
         "year": "FY24",
@@ -2318,14 +2378,14 @@
         "netWorth": 109.7
       }
     ],
-    "subscriptionTotal": 7.1116,
+    "subscriptionTotal": 8.32,
     "subscriptionRetail": 3.5,
     "subscriptionHNI": 7.42,
     "subscriptionQIB": 13.21,
     "listingPrice": 112.0,
     "listingGainPercent": 0.0,
-    "registrarName": "Link Intime / MUFG",
-    "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "registrarName": "MUFG Intime India Private Limited",
+    "registrarUrl": "https://in.mpms.mufg.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.vivro.net/uploads/team/1791441800230.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Ravita+Engineering+Services+IPO+DRHP+file+SEBI",
@@ -2333,11 +2393,12 @@
     "closeNotified": true
   },
   {
-    "id": "32",
+    "id": "33",
     "name": "Fusion CX",
     "symbol": "FUSIONCX",
     "category": "Mainboard",
     "status": "LISTED",
+    "logoUrl": null,
     "issueSizeCr": 702.0,
     "issuePriceMin": 275.0,
     "issuePriceMax": 289.0,
@@ -2374,6 +2435,9 @@
         "amount": 13.5
       }
     ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [
       {
         "year": "FY24",
@@ -2394,14 +2458,14 @@
         "netWorth": 610.8
       }
     ],
-    "subscriptionTotal": 4.6816,
+    "subscriptionTotal": 4.43,
     "subscriptionRetail": 5.99,
     "subscriptionHNI": 4.73,
     "subscriptionQIB": 4.21,
     "listingPrice": 305.0,
     "listingGainPercent": 5.54,
-    "registrarName": "KFin Technologies",
-    "registrarUrl": "https://ipostatus.kfintech.com/",
+    "registrarName": "KFin Technologies Limited",
+    "registrarUrl": "https://www.kfintech.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.fusioncx.com/wp-content/uploads/rhp/Fusion-CX-Limited-Red-Herring-Prospectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Fusion+CX+IPO+DRHP+file+SEBI",
@@ -2409,11 +2473,12 @@
     "closeNotified": true
   },
   {
-    "id": "33",
+    "id": "34",
     "name": "HD Fire Protect",
     "symbol": "HDFIRE",
     "category": "Mainboard",
     "status": "LISTED",
+    "logoUrl": null,
     "issueSizeCr": 712.0,
     "issuePriceMin": 258.0,
     "issuePriceMax": 271.0,
@@ -2442,15 +2507,18 @@
         "amount": 70.0
       }
     ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 131.7315,
+    "subscriptionTotal": 131.25,
     "subscriptionRetail": 30.55,
     "subscriptionHNI": 203.21,
     "subscriptionQIB": 256.65,
     "listingPrice": 335.0,
     "listingGainPercent": 23.62,
-    "registrarName": "Link Intime / MUFG",
-    "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "registrarName": "MUFG Intime India Private Limited",
+    "registrarUrl": "https://in.mpms.mufg.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/oct-2026/hd-fire-protect-limited-rhp_105058.html",
     "drhpPdfUrl": "https://www.google.com/search?q=HD+Fire+Protect+IPO+DRHP+file+SEBI",
@@ -2458,11 +2526,12 @@
     "closeNotified": true
   },
   {
-    "id": "34",
+    "id": "35",
     "name": "Vaibhav Vyapaar",
     "symbol": "LOANFRONT",
     "category": "SME",
     "status": "LISTED",
+    "logoUrl": null,
     "issueSizeCr": 42.0,
     "issuePriceMin": 51.0,
     "issuePriceMax": 54.0,
@@ -2491,15 +2560,18 @@
         "amount": 3.0
       }
     ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 3.2315,
+    "subscriptionTotal": 3.8,
     "subscriptionRetail": 2.7,
     "subscriptionHNI": 6.65,
     "subscriptionQIB": 1.61,
     "listingPrice": 52.9,
     "listingGainPercent": -2.04,
-    "registrarName": "KFin Technologies",
-    "registrarUrl": "https://ipostatus.kfintech.com/",
+    "registrarName": "Kfin Technologies Limited",
+    "registrarUrl": "https://www.kfintech.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Red-Heering-Prospectus_VVL.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Vaibhav+Vyapaar+IPO+DRHP+file+SEBI",
@@ -2507,11 +2579,12 @@
     "closeNotified": true
   },
   {
-    "id": "35",
+    "id": "36",
     "name": "R.K.Fashion Accessories",
     "symbol": "RKFAL",
     "category": "SME",
     "status": "LISTED",
+    "logoUrl": null,
     "issueSizeCr": 35.0,
     "issuePriceMin": 77.0,
     "issuePriceMax": 82.0,
@@ -2528,15 +2601,18 @@
         "amount": 1.5
       }
     ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 2.77,
+    "subscriptionTotal": 2.72,
     "subscriptionRetail": 3.11,
     "subscriptionHNI": 1.77,
     "subscriptionQIB": 14.11,
     "listingPrice": 80.0,
     "listingGainPercent": -2.44,
-    "registrarName": "Cameo Corporate Services",
-    "registrarUrl": "https://ipo.cameoindia.com/",
+    "registrarName": "Cameo Corporate Services Limited",
+    "registrarUrl": "https://cameoindia.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://affinityglobalcap.in/wp-content/uploads/2026/10/RHP_LFINAL-1.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=R.K.Fashion+Accessories+IPO+DRHP+file+SEBI",
@@ -2544,11 +2620,12 @@
     "closeNotified": false
   },
   {
-    "id": "36",
+    "id": "37",
     "name": "TNA Solutions",
     "symbol": "TNA",
     "category": "SME",
     "status": "LISTED",
+    "logoUrl": null,
     "issueSizeCr": 38.0,
     "issuePriceMin": 66.0,
     "issuePriceMax": 70.0,
@@ -2565,15 +2642,18 @@
         "amount": 0.0
       }
     ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 55.26,
+    "subscriptionTotal": 54.92,
     "subscriptionRetail": 46.17,
     "subscriptionHNI": 102.14,
     "subscriptionQIB": 35.64,
     "listingPrice": 56.0,
     "listingGainPercent": -20.0,
-    "registrarName": "Maashitla Securities",
-    "registrarUrl": "https://maashitla.com/allotment-status/public-issues",
+    "registrarName": "MAASHITLA SECURITIES PRIVATE LIMITED ",
+    "registrarUrl": "https://maashitla.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.kotakneo.com/uploads/RHP_TNA_24_09_2026_6603ce008c.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=TNA+Solutions+IPO+DRHP+file+SEBI",
@@ -2581,11 +2661,12 @@
     "closeNotified": false
   },
   {
-    "id": "37",
+    "id": "38",
     "name": "Acme India Industries",
     "symbol": "ACMERAIL",
     "category": "SME",
     "status": "LISTED",
+    "logoUrl": null,
     "issueSizeCr": 122.0,
     "issuePriceMin": 186.0,
     "issuePriceMax": 196.0,
@@ -2602,15 +2683,18 @@
         "amount": 43.0
       }
     ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 124.236,
+    "subscriptionTotal": 123.52,
     "subscriptionRetail": 85.5,
     "subscriptionHNI": 196.27,
     "subscriptionQIB": 137.93,
     "listingPrice": 221.0,
     "listingGainPercent": 12.76,
-    "registrarName": "Bigshare Services",
-    "registrarUrl": "https://www.bigshareonline.com/ipo_allotment.html",
+    "registrarName": "BIGSHARE SERVICES PRIVATE LIMITED ",
+    "registrarUrl": "https://www.bigshareonline.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://hemadmin.hemsecurities.com/images/Files/offer/3205.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Acme+India+Industries+IPO+DRHP+file+SEBI",
@@ -2618,11 +2702,12 @@
     "closeNotified": false
   },
   {
-    "id": "38",
+    "id": "39",
     "name": "Paramount Syntex",
     "symbol": "PARASYNTEX",
     "category": "SME",
     "status": "LISTED",
+    "logoUrl": null,
     "issueSizeCr": 82.0,
     "issuePriceMin": 119.0,
     "issuePriceMax": 127.0,
@@ -2639,15 +2724,18 @@
         "amount": 0.0
       }
     ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 1.886,
+    "subscriptionTotal": 1.93,
     "subscriptionRetail": 1.1,
     "subscriptionHNI": 0.09,
     "subscriptionQIB": 119.29,
     "listingPrice": 115.0,
     "listingGainPercent": -9.45,
-    "registrarName": "Bigshare Services",
-    "registrarUrl": "https://www.bigshareonline.com/ipo_allotment.html",
+    "registrarName": "BIGSHARE SERVICES PRIVATE LIMITED",
+    "registrarUrl": "https://www.bigshareonline.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/paramount-syntex-ipo-rhp_compressed_compressed_compressed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Paramount+Syntex+IPO+DRHP+file+SEBI",
@@ -2655,11 +2743,12 @@
     "closeNotified": false
   },
   {
-    "id": "39",
+    "id": "40",
     "name": "Shree TNB Polymers",
     "symbol": "SHREETNB",
     "category": "SME",
     "status": "LISTED",
+    "logoUrl": null,
     "issueSizeCr": 31.0,
     "issuePriceMin": 50.0,
     "issuePriceMax": 53.0,
@@ -2676,15 +2765,18 @@
         "amount": 4.0
       }
     ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 1.985,
+    "subscriptionTotal": 2.38,
     "subscriptionRetail": 1.72,
     "subscriptionHNI": 2.98,
     "subscriptionQIB": 1.7,
     "listingPrice": 60.0,
     "listingGainPercent": 13.21,
-    "registrarName": "Link Intime / MUFG",
-    "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
+    "registrarName": "MUFG INTIME INDIA PRIVATE LIMITED",
+    "registrarUrl": "https://in.mpms.mufg.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.shreetnbpolymers.in/investor-pdf/01M34R00M95SSVD0BVECEBFCCR.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Shree+TNB+Polymers+IPO+DRHP+file+SEBI",
@@ -2692,11 +2784,12 @@
     "closeNotified": false
   },
   {
-    "id": "40",
+    "id": "41",
     "name": "EverestIMS Technologies",
     "symbol": "EIMS",
     "category": "SME",
     "status": "LISTED",
+    "logoUrl": null,
     "issueSizeCr": 48.0,
     "issuePriceMin": 80.0,
     "issuePriceMax": 85.0,
@@ -2713,15 +2806,18 @@
         "amount": 50.0
       }
     ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 294.225,
+    "subscriptionTotal": 292.21,
     "subscriptionRetail": 268.29,
     "subscriptionHNI": 548.61,
     "subscriptionQIB": 148.63,
     "listingPrice": 126.0,
     "listingGainPercent": 48.24,
-    "registrarName": "Maashitla Securities",
-    "registrarUrl": "https://maashitla.com/allotment-status/public-issues",
+    "registrarName": "MAASHITLA SECURITIES PRIVATE LIMITED",
+    "registrarUrl": "https://maashitla.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://everestims.com/assets/docs/EverestIMS_Technologies/rhp/EverestIMS_RHP_21092026.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=EverestIMS+Technologies+IPO+DRHP+file+SEBI",
@@ -2729,11 +2825,12 @@
     "closeNotified": false
   },
   {
-    "id": "41",
+    "id": "42",
     "name": "Eventions",
     "symbol": "EVENTIONS",
     "category": "SME",
     "status": "LISTED",
+    "logoUrl": null,
     "issueSizeCr": 38.0,
     "issuePriceMin": 112.0,
     "issuePriceMax": 118.0,
@@ -2750,14 +2847,17 @@
         "amount": 0.0
       }
     ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 2.395,
+    "subscriptionTotal": 2.44,
     "subscriptionRetail": 1.38,
     "subscriptionHNI": 0.52,
     "subscriptionQIB": 26.18,
     "listingPrice": 111.0,
     "listingGainPercent": -5.93,
-    "registrarName": "Mudra RTA Ventures",
+    "registrarName": "Mudra RTA Ventures Private Limited",
     "registrarUrl": "https://mudrarta.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://eventions.in/wp-content/uploads/2026/09/Final_RHP.pdf",
@@ -2766,11 +2866,12 @@
     "closeNotified": false
   },
   {
-    "id": "42",
+    "id": "43",
     "name": "Dove Soft",
     "symbol": "DSL",
     "category": "SME",
     "status": "LISTED",
+    "logoUrl": null,
     "issueSizeCr": 73.0,
     "issuePriceMin": 104.0,
     "issuePriceMax": 111.0,
@@ -2787,15 +2888,18 @@
         "amount": 0.0
       }
     ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 1.385,
+    "subscriptionTotal": 1.43,
     "subscriptionRetail": 0.81,
     "subscriptionHNI": 1.96,
     "subscriptionQIB": 1.0,
     "listingPrice": 110.3,
     "listingGainPercent": -0.63,
-    "registrarName": "Purva Sharegistry",
-    "registrarUrl": "https://www.purvashare.com/investor-service/ipo-query",
+    "registrarName": "PURVA SHAREGISTRY (INDIA) PRIVATE LIMITED",
+    "registrarUrl": "https://www.purvashare.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://dovesoft.io/images/investor/RHP.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Dove+Soft+IPO+DRHP+file+SEBI",
@@ -2803,11 +2907,12 @@
     "closeNotified": false
   },
   {
-    "id": "43",
+    "id": "44",
     "name": "SJP Ultrasonic",
     "symbol": "SJP",
     "category": "SME",
     "status": "LISTED",
+    "logoUrl": null,
     "issueSizeCr": 23.0,
     "issuePriceMin": 67.0,
     "issuePriceMax": 67.0,
@@ -2819,6 +2924,9 @@
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
     "gmpHistory": [],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [],
     "subscriptionTotal": 1.86,
     "subscriptionRetail": 1.0,
@@ -2826,8 +2934,8 @@
     "subscriptionQIB": 0.0,
     "listingPrice": 74.2,
     "listingGainPercent": 10.75,
-    "registrarName": "Maashitla Securities",
-    "registrarUrl": "https://maashitla.com/allotment-status/public-issues",
+    "registrarName": "MAASHITLA SECURITIES PRIVATE LIMITED",
+    "registrarUrl": "https://maashitla.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=SJP+Ultrasonic+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.bsesme.com/download/334252/SME_IPO%20InPrinciple/DPSJP_20250929205030.pdf",
@@ -2835,11 +2943,12 @@
     "closeNotified": false
   },
   {
-    "id": "44",
+    "id": "45",
     "name": "Omara Ventures India",
     "symbol": "OMARA",
     "category": "SME",
     "status": "LISTED",
+    "logoUrl": null,
     "issueSizeCr": 42.0,
     "issuePriceMin": 296.0,
     "issuePriceMax": 311.0,
@@ -2851,6 +2960,9 @@
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
     "gmpHistory": [],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [],
     "subscriptionTotal": 1.11,
     "subscriptionRetail": 0.43,
@@ -2858,8 +2970,8 @@
     "subscriptionQIB": 1.0,
     "listingPrice": 319.0,
     "listingGainPercent": 2.57,
-    "registrarName": "Bigshare Services",
-    "registrarUrl": "https://www.bigshareonline.com/ipo_allotment.html",
+    "registrarName": "BIGSHARE SERVICES PRIVATE LIMITED",
+    "registrarUrl": "https://www.bigshareonline.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Omara_DraftProspectus_compressed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Omara+Ventures+India+IPO+DRHP+file+SEBI",
@@ -2867,11 +2979,12 @@
     "closeNotified": false
   },
   {
-    "id": "45",
+    "id": "46",
     "name": "Sollfege Smart Electronics",
     "symbol": "SOLLFEGE",
     "category": "SME",
     "status": "LISTED",
+    "logoUrl": null,
     "issueSizeCr": 22.0,
     "issuePriceMin": 55.0,
     "issuePriceMax": 55.0,
@@ -2888,15 +3001,18 @@
         "amount": 10.0
       }
     ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 2.145,
+    "subscriptionTotal": 2.19,
     "subscriptionRetail": 2.0,
     "subscriptionHNI": 2.28,
     "subscriptionQIB": 0.0,
     "listingPrice": 104.4,
     "listingGainPercent": 89.82,
-    "registrarName": "KFin Technologies",
-    "registrarUrl": "https://ipostatus.kfintech.com/",
+    "registrarName": "KFIN TECHNOLOGIES LIMITED",
+    "registrarUrl": "https://www.kfintech.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Sollfege+Smart+Electronics+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://assets.upstox.com/ipo/documents/drhp/DP_Sollfege_BSE_23042026_20260423120527_compressed.pdf",
@@ -2904,7 +3020,7 @@
     "closeNotified": false
   },
   {
-    "id": "46",
+    "id": "47",
     "name": "Nityas Gems & Jewellery",
     "symbol": "NITYAS",
     "category": "Mainboard",
@@ -2936,7 +3052,7 @@
     "closeNotified": false
   },
   {
-    "id": "47",
+    "id": "48",
     "name": "Vishal Nirmiti",
     "symbol": "VNL",
     "category": "Mainboard",
@@ -2968,7 +3084,7 @@
     "closeNotified": false
   },
   {
-    "id": "48",
+    "id": "49",
     "name": "Green Asia Impex",
     "symbol": "GREENASIA",
     "category": "SME",
@@ -3000,7 +3116,7 @@
     "closeNotified": false
   },
   {
-    "id": "49",
+    "id": "50",
     "name": "Black Opal Consultants",
     "symbol": "BLACKOPAL",
     "category": "SME",
@@ -3032,7 +3148,7 @@
     "closeNotified": false
   },
   {
-    "id": "50",
+    "id": "51",
     "name": "Papadmalji Agro Foods",
     "symbol": "PAPADMALJI",
     "category": "SME",
@@ -3064,7 +3180,7 @@
     "closeNotified": false
   },
   {
-    "id": "51",
+    "id": "52",
     "name": "Vans Electroengineerings",
     "symbol": "VANS",
     "category": "SME",
@@ -3096,7 +3212,7 @@
     "closeNotified": false
   },
   {
-    "id": "52",
+    "id": "53",
     "name": "Pind Hospitality",
     "symbol": "PIND",
     "category": "SME",
@@ -3128,7 +3244,7 @@
     "closeNotified": false
   },
   {
-    "id": "53",
+    "id": "54",
     "name": "Shah Investor’s Home",
     "symbol": "SHAHINVEST",
     "category": "Mainboard",
@@ -3160,7 +3276,7 @@
     "closeNotified": false
   },
   {
-    "id": "54",
+    "id": "55",
     "name": "Shivchem Agro",
     "symbol": "SHIVCHEM",
     "category": "SME",
@@ -3192,7 +3308,7 @@
     "closeNotified": false
   },
   {
-    "id": "55",
+    "id": "56",
     "name": "SRIT India",
     "symbol": "SRIT",
     "category": "Mainboard",
@@ -3223,7 +3339,7 @@
     "financials": []
   },
   {
-    "id": "56",
+    "id": "57",
     "name": "Acme Universal Safezone 9",
     "symbol": "ACMEUNIV",
     "category": "SME",
@@ -3258,7 +3374,7 @@
     ]
   },
   {
-    "id": "57",
+    "id": "58",
     "name": "Sai Urja Indo Ventures",
     "symbol": "SAIURJA",
     "category": "SME",
@@ -3287,7 +3403,7 @@
     "financials": []
   },
   {
-    "id": "58",
+    "id": "59",
     "name": "Runwal Enterprises",
     "symbol": "RUNWALENTR",
     "category": "Mainboard",
@@ -3316,7 +3432,7 @@
     "financials": []
   },
   {
-    "id": "59",
+    "id": "60",
     "name": "German Green Steel & Power",
     "symbol": "GERMAN",
     "category": "Mainboard",
@@ -3345,7 +3461,7 @@
     "financials": []
   },
   {
-    "id": "60",
+    "id": "61",
     "name": "Orient Cables (India)",
     "symbol": "ORIENTCABL",
     "category": "Mainboard",
@@ -3374,7 +3490,7 @@
     "financials": []
   },
   {
-    "id": "61",
+    "id": "62",
     "name": "Acevector (Snapdeal)",
     "symbol": "ACEVECTOR",
     "category": "Mainboard",
@@ -3403,7 +3519,7 @@
     "financials": []
   },
   {
-    "id": "62",
+    "id": "63",
     "name": "Himalayan Solar",
     "symbol": "HIMALAYAN",
     "category": "SME",
@@ -3432,7 +3548,7 @@
     "financials": []
   },
   {
-    "id": "63",
+    "id": "64",
     "name": "Dudani Retail",
     "symbol": "DUDANI",
     "category": "SME",
@@ -3461,7 +3577,7 @@
     "financials": []
   },
   {
-    "id": "64",
+    "id": "65",
     "name": "Bench Mark Infotech Services",
     "symbol": "BMISL",
     "category": "SME",
@@ -3490,7 +3606,7 @@
     "financials": []
   },
   {
-    "id": "65",
+    "id": "66",
     "name": "A-One Steels India",
     "symbol": "AONESTEELS",
     "category": "Mainboard",
@@ -3519,7 +3635,7 @@
     "financials": []
   },
   {
-    "id": "66",
+    "id": "67",
     "name": "Moneyview",
     "symbol": "MONEYVIEW",
     "category": "Mainboard",
@@ -3548,7 +3664,7 @@
     "financials": []
   },
   {
-    "id": "67",
+    "id": "68",
     "name": "Peshwa Wheat",
     "symbol": "PESHWA",
     "category": "SME",
@@ -3577,7 +3693,7 @@
     "financials": []
   },
   {
-    "id": "68",
+    "id": "69",
     "name": "Roopa Screen",
     "symbol": "ROOPA",
     "category": "SME",
@@ -3606,7 +3722,7 @@
     "financials": []
   },
   {
-    "id": "69",
+    "id": "70",
     "name": "ArMee Infotech",
     "symbol": "ARMEE",
     "category": "Mainboard",
@@ -3635,7 +3751,7 @@
     "financials": []
   },
   {
-    "id": "70",
+    "id": "71",
     "name": "S.K.Offset",
     "symbol": "SKOFFSET",
     "category": "SME",
@@ -3664,7 +3780,7 @@
     "financials": []
   },
   {
-    "id": "71",
+    "id": "72",
     "name": "Unitec Fibres",
     "symbol": "UNITEC",
     "category": "SME",
@@ -3693,7 +3809,7 @@
     "financials": []
   },
   {
-    "id": "72",
+    "id": "73",
     "name": "Adroit Industries (India)",
     "symbol": "ADROITIND",
     "category": "Mainboard",
@@ -3726,7 +3842,7 @@
     ]
   },
   {
-    "id": "73",
+    "id": "74",
     "name": "Swastika Infra",
     "symbol": "SWASTIKAIN",
     "category": "Mainboard",
@@ -3753,7 +3869,7 @@
     "financials": []
   },
   {
-    "id": "74",
+    "id": "75",
     "name": "Liqvd Digital India",
     "symbol": "LIQVD",
     "category": "SME",
@@ -3780,7 +3896,7 @@
     "financials": []
   },
   {
-    "id": "75",
+    "id": "76",
     "name": "Pooja Logistics",
     "symbol": "POOJALOGIS",
     "category": "SME",
@@ -3807,7 +3923,7 @@
     "financials": []
   },
   {
-    "id": "76",
+    "id": "77",
     "name": "Coreintegra Consulting Services",
     "symbol": "COREIN",
     "category": "SME",
