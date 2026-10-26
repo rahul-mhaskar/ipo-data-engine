@@ -14,8 +14,8 @@
     "closeDate": "2026-10-29",
     "allotmentDate": "2026-10-30",
     "listingDate": "2026-11-03",
-    "gmpAmount": 38.0,
-    "gmpPercent": 25.33,
+    "gmpAmount": 40.0,
+    "gmpPercent": 26.67,
     "gmpHistory": [
       {
         "dateLabel": "22 Oct",
@@ -31,7 +31,7 @@
       },
       {
         "dateLabel": "26 Oct",
-        "amount": 38.0
+        "amount": 40.0
       }
     ],
     "issueStructure": {
@@ -94,8 +94,8 @@
     "closeDate": "2026-10-29",
     "allotmentDate": "2026-10-30",
     "listingDate": "2026-11-03",
-    "gmpAmount": 32.0,
-    "gmpPercent": 9.7,
+    "gmpAmount": 27.0,
+    "gmpPercent": 8.18,
     "gmpHistory": [
       {
         "dateLabel": "22 Oct",
@@ -111,7 +111,7 @@
       },
       {
         "dateLabel": "26 Oct",
-        "amount": 32.0
+        "amount": 27.0
       }
     ],
     "issueStructure": {
@@ -175,8 +175,8 @@
     "closeDate": "2026-10-28",
     "allotmentDate": "2026-10-29",
     "listingDate": "2026-11-02",
-    "gmpAmount": 33.0,
-    "gmpPercent": 1.98,
+    "gmpAmount": 35.0,
+    "gmpPercent": 2.1,
     "gmpHistory": [
       {
         "dateLabel": "21 Oct",
@@ -196,7 +196,7 @@
       },
       {
         "dateLabel": "26 Oct",
-        "amount": 33.0
+        "amount": 35.0
       }
     ],
     "issueStructure": {
@@ -232,10 +232,10 @@
         "netWorth": 1160.4
       }
     ],
-    "subscriptionTotal": 0.09,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
+    "subscriptionTotal": 0.1226,
+    "subscriptionRetail": 0.04,
+    "subscriptionHNI": 0.33,
+    "subscriptionQIB": 0.08,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
     "registrarName": "MUFG Intime India Private Limited ",
@@ -314,9 +314,9 @@
         "netWorth": 24.8
       }
     ],
-    "subscriptionTotal": 0.82,
-    "subscriptionRetail": 0.14,
-    "subscriptionHNI": 0.05,
+    "subscriptionTotal": 0.7126,
+    "subscriptionRetail": 0.4,
+    "subscriptionHNI": 2.37,
     "subscriptionQIB": 0.0,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
@@ -343,8 +343,8 @@
     "closeDate": "2026-11-02",
     "allotmentDate": "2026-11-03",
     "listingDate": "2026-11-05",
-    "gmpAmount": 8.0,
-    "gmpPercent": 9.76,
+    "gmpAmount": 9.0,
+    "gmpPercent": 10.98,
     "gmpHistory": [
       {
         "dateLabel": "23 Oct",
@@ -356,7 +356,7 @@
       },
       {
         "dateLabel": "26 Oct",
-        "amount": 8.0
+        "amount": 9.0
       }
     ],
     "issueStructure": {
@@ -473,8 +473,8 @@
     "closeDate": "2026-10-30",
     "allotmentDate": "2026-11-02",
     "listingDate": "2026-11-04",
-    "gmpAmount": 7.0,
-    "gmpPercent": 4.32,
+    "gmpAmount": 8.5,
+    "gmpPercent": 5.25,
     "gmpHistory": [
       {
         "dateLabel": "23 Oct",
@@ -486,7 +486,7 @@
       },
       {
         "dateLabel": "26 Oct",
-        "amount": 7.0
+        "amount": 8.5
       }
     ],
     "issueStructure": {
@@ -1757,8 +1757,18 @@
     "listingDate": "To Be Updated",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "gmpHistory": [],
-    "issueStructure": null,
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
@@ -1791,8 +1801,8 @@
     "closeDate": "2026-10-23",
     "allotmentDate": "2026-10-26",
     "listingDate": "2026-10-28",
-    "gmpAmount": 247.0,
-    "gmpPercent": 22.07,
+    "gmpAmount": 248.0,
+    "gmpPercent": 22.16,
     "gmpHistory": [
       {
         "dateLabel": "20 Oct",
@@ -1816,7 +1826,7 @@
       },
       {
         "dateLabel": "26 Oct",
-        "amount": 247.0
+        "amount": 248.0
       }
     ],
     "issueStructure": {
@@ -1847,7 +1857,7 @@
         "netWorth": 341778.5
       }
     ],
-    "subscriptionTotal": 19.67,
+    "subscriptionTotal": 21.3623,
     "subscriptionRetail": 2.76,
     "subscriptionHNI": 13.99,
     "subscriptionQIB": 67.15,
@@ -1876,8 +1886,8 @@
     "closeDate": "2026-10-23",
     "allotmentDate": "2026-10-26",
     "listingDate": "2026-10-28",
-    "gmpAmount": 9.0,
-    "gmpPercent": 1.3,
+    "gmpAmount": 11.0,
+    "gmpPercent": 1.59,
     "gmpHistory": [
       {
         "dateLabel": "20 Oct",
@@ -1901,7 +1911,7 @@
       },
       {
         "dateLabel": "26 Oct",
-        "amount": 9.0
+        "amount": 11.0
       }
     ],
     "issueStructure": {
@@ -1936,7 +1946,7 @@
         "netWorth": 445.0
       }
     ],
-    "subscriptionTotal": 2.21,
+    "subscriptionTotal": 2.3423,
     "subscriptionRetail": 2.1,
     "subscriptionHNI": 0.69,
     "subscriptionQIB": 3.25,
@@ -1997,7 +2007,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 14.08,
+    "subscriptionTotal": 14.2119,
     "subscriptionRetail": 3.04,
     "subscriptionHNI": 14.64,
     "subscriptionQIB": 34.7,
@@ -2077,7 +2087,7 @@
         "netWorth": 511.55
       }
     ],
-    "subscriptionTotal": 96.63,
+    "subscriptionTotal": 132.8119,
     "subscriptionRetail": 31.11,
     "subscriptionHNI": 156.36,
     "subscriptionQIB": 293.56,
@@ -2157,7 +2167,7 @@
         "netWorth": 63.0
       }
     ],
-    "subscriptionTotal": 58.01,
+    "subscriptionTotal": 58.5419,
     "subscriptionRetail": 56.09,
     "subscriptionHNI": 86.41,
     "subscriptionQIB": 41.92,
@@ -2218,7 +2228,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 3.05,
+    "subscriptionTotal": 3.119,
     "subscriptionRetail": 0.77,
     "subscriptionHNI": 1.45,
     "subscriptionQIB": 4.71,
@@ -2298,7 +2308,7 @@
         "netWorth": 1034.3
       }
     ],
-    "subscriptionTotal": 31.66,
+    "subscriptionTotal": 46.0519,
     "subscriptionRetail": 5.9,
     "subscriptionHNI": 40.39,
     "subscriptionQIB": 120.78,
@@ -2378,7 +2388,7 @@
         "netWorth": 109.7
       }
     ],
-    "subscriptionTotal": 8.32,
+    "subscriptionTotal": 7.1116,
     "subscriptionRetail": 3.5,
     "subscriptionHNI": 7.42,
     "subscriptionQIB": 13.21,
@@ -2458,7 +2468,7 @@
         "netWorth": 610.8
       }
     ],
-    "subscriptionTotal": 4.43,
+    "subscriptionTotal": 4.6816,
     "subscriptionRetail": 5.99,
     "subscriptionHNI": 4.73,
     "subscriptionQIB": 4.21,
@@ -2511,7 +2521,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 131.25,
+    "subscriptionTotal": 131.7315,
     "subscriptionRetail": 30.55,
     "subscriptionHNI": 203.21,
     "subscriptionQIB": 256.65,
@@ -2564,7 +2574,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 3.8,
+    "subscriptionTotal": 3.2315,
     "subscriptionRetail": 2.7,
     "subscriptionHNI": 6.65,
     "subscriptionQIB": 1.61,
@@ -2605,7 +2615,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 2.72,
+    "subscriptionTotal": 2.77,
     "subscriptionRetail": 3.11,
     "subscriptionHNI": 1.77,
     "subscriptionQIB": 14.11,
@@ -2646,7 +2656,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 54.92,
+    "subscriptionTotal": 55.26,
     "subscriptionRetail": 46.17,
     "subscriptionHNI": 102.14,
     "subscriptionQIB": 35.64,
@@ -2687,7 +2697,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 123.52,
+    "subscriptionTotal": 124.236,
     "subscriptionRetail": 85.5,
     "subscriptionHNI": 196.27,
     "subscriptionQIB": 137.93,
@@ -2728,7 +2738,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 1.93,
+    "subscriptionTotal": 1.886,
     "subscriptionRetail": 1.1,
     "subscriptionHNI": 0.09,
     "subscriptionQIB": 119.29,
@@ -2769,7 +2779,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 2.38,
+    "subscriptionTotal": 1.985,
     "subscriptionRetail": 1.72,
     "subscriptionHNI": 2.98,
     "subscriptionQIB": 1.7,
@@ -2810,7 +2820,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 292.21,
+    "subscriptionTotal": 294.225,
     "subscriptionRetail": 268.29,
     "subscriptionHNI": 548.61,
     "subscriptionQIB": 148.63,
@@ -2851,7 +2861,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 2.44,
+    "subscriptionTotal": 2.395,
     "subscriptionRetail": 1.38,
     "subscriptionHNI": 0.52,
     "subscriptionQIB": 26.18,
@@ -2892,7 +2902,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 1.43,
+    "subscriptionTotal": 1.385,
     "subscriptionRetail": 0.81,
     "subscriptionHNI": 1.96,
     "subscriptionQIB": 1.0,
@@ -2923,7 +2933,12 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "gmpHistory": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ],
     "issueStructure": null,
     "leadManagers": [],
     "anchorPortionCr": 0.0,
@@ -2959,7 +2974,12 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "gmpHistory": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ],
     "issueStructure": null,
     "leadManagers": [],
     "anchorPortionCr": 0.0,
@@ -3005,7 +3025,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 2.19,
+    "subscriptionTotal": 2.145,
     "subscriptionRetail": 2.0,
     "subscriptionHNI": 2.28,
     "subscriptionQIB": 0.0,
@@ -3035,7 +3055,12 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "gmpHistory": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ],
     "financials": [],
     "subscriptionTotal": 2.2,
     "subscriptionRetail": 4.07,
@@ -3067,7 +3092,12 @@
     "listingDate": "2026-10-08",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "gmpHistory": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ],
     "financials": [],
     "subscriptionTotal": 1.68,
     "subscriptionRetail": 1.75,
@@ -3099,7 +3129,12 @@
     "listingDate": "2026-10-07",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "gmpHistory": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ],
     "financials": [],
     "subscriptionTotal": 1.42,
     "subscriptionRetail": 0.56,
@@ -3131,7 +3166,12 @@
     "listingDate": "2026-10-07",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "gmpHistory": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ],
     "financials": [],
     "subscriptionTotal": 85.26,
     "subscriptionRetail": 60.15,
@@ -3163,7 +3203,12 @@
     "listingDate": "2026-10-07",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "gmpHistory": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ],
     "financials": [],
     "subscriptionTotal": 3.21,
     "subscriptionRetail": 1.59,
@@ -3195,7 +3240,12 @@
     "listingDate": "2026-10-07",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "gmpHistory": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ],
     "financials": [],
     "subscriptionTotal": 725.05,
     "subscriptionRetail": 686.32,
@@ -3227,7 +3277,12 @@
     "listingDate": "2026-10-06",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "gmpHistory": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ],
     "financials": [],
     "subscriptionTotal": 4.1,
     "subscriptionRetail": 4.31,
@@ -3291,7 +3346,12 @@
     "listingDate": "2026-10-06",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "gmpHistory": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ],
     "financials": [],
     "subscriptionTotal": 3.25,
     "subscriptionRetail": 3.5,
@@ -3336,7 +3396,13 @@
     "drhpPdfUrl": "https://www.google.com/search?q=SRIT+India+IPO+DRHP+file+SEBI",
     "openNotified": false,
     "closeNotified": false,
-    "financials": []
+    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "57",
@@ -3400,7 +3466,13 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Sai+Urja+Indo+Ventures+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.google.com/search?q=Sai+Urja+Indo+Ventures+IPO+DRHP+file+SEBI",
-    "financials": []
+    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "59",
@@ -3429,7 +3501,13 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.icicisecurities.com/console/uploads/actual/RUNWAL-ENTERPRISES-LIMITED--RED-HERRING-PROSPECTUS_1790022848_83.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Runwal+Enterprises+IPO+DRHP+file+SEBI",
-    "financials": []
+    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "60",
@@ -3458,7 +3536,13 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.systematixgroup.in/wp-content/uploads/2026/09/GGSPL-RHP.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=German+Green+Steel+&+Power+IPO+DRHP+file+SEBI",
-    "financials": []
+    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "61",
@@ -3487,7 +3571,13 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://orientcables.in/wp-content/uploads/2026/09/Red-Herring-Prospectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Orient+Cables+(India)+IPO+DRHP+file+SEBI",
-    "financials": []
+    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "62",
@@ -3516,7 +3606,13 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.india.clsa.com/uploads/Ace_Vector_Limited_RHP_18515f8243.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Acevector+(Snapdeal)+IPO+DRHP+file+SEBI",
-    "financials": []
+    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "63",
@@ -3545,7 +3641,13 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/rhp_himalayann-1.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Himalayan+Solar+IPO+DRHP+file+SEBI",
-    "financials": []
+    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "64",
@@ -3574,7 +3676,13 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Dudani+Retail+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.bsesme.com/download/376098/SME_IPO%20InPrinciple/DP_Dudani_Final_20260331230446.pdf",
-    "financials": []
+    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "65",
@@ -3603,7 +3711,13 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/benchmark_rhp (1).pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Bench+Mark+Infotech+Services+IPO+DRHP+file+SEBI",
-    "financials": []
+    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "66",
@@ -3632,7 +3746,13 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.aonesteelgroup.com/wp-content/uploads/2026/09/RHP.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=A-One+Steels+India+IPO+DRHP+file+SEBI",
-    "financials": []
+    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "67",
@@ -3661,7 +3781,13 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.chittorgarh.net/reports/ipo_notes/moneyview-rhp.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Moneyview+IPO+DRHP+file+SEBI",
-    "financials": []
+    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "68",
@@ -3690,7 +3816,13 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/rhp-peshwa-wheat-limited_compressed.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Peshwa+Wheat+IPO+DRHP+file+SEBI",
-    "financials": []
+    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "69",
@@ -3719,7 +3851,13 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/roopa_screen_limited_red_herring_prospectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Roopa+Screen+IPO+DRHP+file+SEBI",
-    "financials": []
+    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "70",
@@ -3748,7 +3886,13 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.saffronadvisor.com/files/offer-documents/Red_Herring_Prospectus.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=ArMee+Infotech+IPO+DRHP+file+SEBI",
-    "financials": []
+    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "71",
@@ -3777,7 +3921,13 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/RHP.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=S.K.Offset+IPO+DRHP+file+SEBI",
-    "financials": []
+    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "72",
@@ -3806,7 +3956,13 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/unitech-ipo-rhp.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Unitec+Fibres+IPO+DRHP+file+SEBI",
-    "financials": []
+    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "73",
@@ -3866,7 +4022,13 @@
     "registrarUrl": "https://in.mpms.mufg.com/Initial_Offer/public-issues.html",
     "rhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/sep-2026/swastika-infra-ltd-rhp_104573.html",
     "drhpPdfUrl": "https://www.google.com/search?q=Swastika+Infra+IPO+DRHP+file+SEBI",
-    "financials": []
+    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "75",
@@ -3893,7 +4055,13 @@
     "registrarUrl": "https://ipo.bigshareonline.com/ipo_status.html",
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Liqvd Digital RHP_1789621041_.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Liqvd+Digital+India+IPO+DRHP+file+SEBI",
-    "financials": []
+    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "76",
@@ -3920,7 +4088,13 @@
     "registrarUrl": "https://maashitla.com/allotment-status",
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/rhp_pooja-logistics_17092026.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Pooja+Logistics+IPO+DRHP+file+SEBI",
-    "financials": []
+    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ]
   },
   {
     "id": "77",
@@ -3947,6 +4121,12 @@
     "registrarUrl": "https://www.purvashare.com/queries/",
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/17092026-RHP-Coreintegra.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Coreintegra+Consulting+Services+IPO+DRHP+file+SEBI",
-    "financials": []
+    "financials": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ]
   }
 ]
