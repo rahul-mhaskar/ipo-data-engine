@@ -28,7 +28,8 @@ OVERRIDES_PATH = os.path.join(REPO_ROOT, "manual_overrides.json")
 NOISE_WORDS: Set[str] = {
     "limited", "ltd", "pvt", "private", "corp", "corporation", "ipo",
     "india", "services", "solutions", "technologies", "tech", "group",
-    "industries", "sme", "bse", "nse", "enterprises"
+    "industries", "industry", "sme", "bse", "nse", "enterprises",
+    "polymers", "safezone", "holdings", "ventures", "fabtech"
 }
 
 def clean_company_name(name: str) -> str:
@@ -60,7 +61,7 @@ def matches_target(target_name: str, cand_name: str, aliases: Dict[str, str]) ->
     t_clean = target_name.lower().strip()
     c_clean = cand_name.lower().strip()
 
-    # Manual alias check
+    # 1. Manual alias check
     if aliases.get(t_clean) == c_clean or aliases.get(c_clean) == t_clean:
         return True
     for k, v in aliases.items():
@@ -73,21 +74,51 @@ def matches_target(target_name: str, cand_name: str, aliases: Dict[str, str]) ->
     if not t_tokens or not c_tokens:
         return False
 
-    # Check direct containment or subset
+    # 2. Complete subset containment
     if t_tokens.issubset(c_tokens) or c_tokens.issubset(t_tokens):
         return True
 
-    # Check intersection overlap
+    # 3. Intersecting tokens
     common = t_tokens.intersection(c_tokens)
-    if len(common) >= 2 or (len(t_tokens) == 1 and len(common) == 1):
+    if len(common) >= 2:
+        return True
+    if len(t_tokens) == 1 and len(common) == 1 and len(list(t_tokens)[0]) >= 4:
         return True
 
-    # Fallback fuzzy match
+    # 4. Strict fuzzy match fallback
     score = fuzz.token_set_ratio(t_clean, c_clean)
-    return score >= 72
+    return score >= 82
+
+def parse_gmp_cell(raw_text: str):
+    """
+    Isolates the current active GMP price from strings like '₹9 (1.30%) 9 ↓ / 96 ↑'.
+    Prevents picking up old historical highs (e.g. ₹25 or ₹96).
+    """
+    if not raw_text or raw_text in ["--", "-", "N/A"]:
+        return None, None
+
+    # Isolate text preceding the trend arrows
+    active_portion = raw_text.split("↓")[0].split("↑")[0].strip()
+
+    amt = None
+    pct = 0.0
+
+    # Extract percentage if present
+    p_match = re.search(r"\(([+-]?[0-9]+(?:\.[0-9]+)?)\s*%\)", active_portion)
+    if p_match:
+        pct = float(p_match.group(1))
+
+    # Strip parentheses so we do not extract percentages as rupee values
+    sans_pct = re.sub(r"\([+-]?[0-9]+(?:\.[0-9]+)?\s*%\)", " ", active_portion)
+
+    # Extract the actual GMP amount
+    a_match = re.search(r"(?:₹|\+)?\s*([0-9]+(?:\.[0-9]+)?)", sans_pct)
+    if a_match:
+        amt = float(a_match.group(1).replace(",", ""))
+
+    return amt, pct
 
 def scrape_live_sources() -> List[Dict]:
-    # Strictly query GMP-dedicated endpoints (never subscription reports like /333/)
     urls = [
         "https://www.investorgain.com/report/live-ipo-gmp/331/all/",
         "https://www.investorgain.com/report/live-ipo-gmp/331/"
@@ -113,7 +144,6 @@ def scrape_live_sources() -> List[Dict]:
                 if not rows:
                     continue
 
-                # Locate the exact column index for GMP
                 gmp_col_idx = None
                 for idx, cell in enumerate(rows[0].find_all(["th", "td"])):
                     txt = cell.get_text(strip=True).upper()
@@ -136,34 +166,24 @@ def scrape_live_sources() -> List[Dict]:
                     gmp_amt = None
                     gmp_pct = None
 
-                    # Check 1: Inline label "GMP: ₹247 (22.07%)"
-                    amt_match = re.search(r"GMP\s*:\s*₹?\s*([0-9]+(?:\.[0-9]+)?)", raw_text, re.IGNORECASE)
-                    pct_match = re.search(r"GMP:.*?\((\d+(?:\.\d+)?)\%\)", raw_text, re.IGNORECASE)
+                    # Check 1: Explicit target column
+                    if gmp_col_idx is not None and gmp_col_idx < len(cells):
+                        cell_txt = cells[gmp_col_idx].get_text(separator=" ", strip=True)
+                        gmp_amt, gmp_pct = parse_gmp_cell(cell_txt)
 
-                    if amt_match:
-                        gmp_amt = float(amt_match.group(1))
-                        gmp_pct = float(pct_match.group(1)) if pct_match else 0.0
+                    # Check 2: Inline "GMP: ₹X (Y%)" in row text
+                    if gmp_amt is None:
+                        inline_match = re.search(r"GMP\s*:\s*([^|,\n]+)", raw_text, re.IGNORECASE)
+                        if inline_match:
+                            gmp_amt, gmp_pct = parse_gmp_cell(inline_match.group(1))
 
-                    # Check 2: Target the dedicated GMP column if identified in the header
-                    elif gmp_col_idx is not None and gmp_col_idx < len(cells):
-                        target_cell_text = cells[gmp_col_idx].get_text(strip=True)
-                        if target_cell_text not in ["--", "-", "N/A", ""]:
-                            m = re.search(r"(?:₹|\+)?\s*([0-9]+(?:\.[0-9]+)?)", target_cell_text)
-                            p_m = re.search(r"\(([+-]?[0-9]+(?:\.[0-9]+)?)\s*%\)", target_cell_text)
-                            if m:
-                                gmp_amt = float(m.group(1).replace(",", ""))
-                                gmp_pct = float(p_m.group(1).replace(",", "")) if p_m else 0.0
-
-                    # Check 3: Only match columns with an explicit '₹' symbol (prevents subscription overlap)
-                    else:
+                    # Check 3: Rupee indicator in primary cells
+                    if gmp_amt is None:
                         for cell in cells[1:4]:
-                            c_text = cell.get_text(strip=True)
+                            c_text = cell.get_text(separator=" ", strip=True)
                             if "₹" in c_text:
-                                m = re.search(r"₹\s*([0-9]+(?:\.[0-9]+)?)", c_text)
-                                p_m = re.search(r"\(([+-]?[0-9]+(?:\.[0-9]+)?)\s*%\)", c_text)
-                                if m:
-                                    gmp_amt = float(m.group(1).replace(",", ""))
-                                    gmp_pct = float(p_m.group(1).replace(",", "")) if p_m else 0.0
+                                gmp_amt, gmp_pct = parse_gmp_cell(c_text)
+                                if gmp_amt is not None:
                                     break
 
                     if gmp_amt is not None and gmp_amt >= 0:
@@ -178,11 +198,10 @@ def scrape_live_sources() -> List[Dict]:
             print(f"[WARN] Error fetching {url}: {e}")
 
     results = list(records_by_name.values())
-    print(f"[GMP Scraper] Extracted {len(results)} authentic GMP records across /331/ sources.")
+    print(f"[GMP Scraper] Extracted {len(results)} authentic GMP records across sources.")
     for r in results:
         print(f"   -> Found GMP: '{r['name']}' = ₹{r['gmp']} ({r['percent']}%)")
     return results
-
 
 def sync_gmp():
     scraped_candidates = scrape_live_sources()
@@ -231,7 +250,7 @@ def sync_gmp():
         if override_entry and "gmp" in override_entry:
             final_gmp = float(override_entry["gmp"])
 
-        # Priority 2: Scraped match via token & alias overlap
+        # Priority 2: Scraped match
         if final_gmp is None:
             for cand in scraped_candidates:
                 if matches_target(raw_name, cand["name"], aliases):
@@ -254,7 +273,6 @@ def sync_gmp():
         item["gmpAmount"] = final_gmp
         item["gmpPercent"] = final_pct
 
-        # Incremental history append
         history = item.get("gmpHistory", [])
         if not isinstance(history, list):
             history = []
@@ -267,7 +285,6 @@ def sync_gmp():
                 "amount": final_gmp
             })
 
-        # Retain last 7 tracking captures
         item["gmpHistory"] = history[-7:]
 
         gmp_store[clean_key] = {
@@ -288,4 +305,3 @@ def sync_gmp():
 
 if __name__ == "__main__":
     sync_gmp()
-                
