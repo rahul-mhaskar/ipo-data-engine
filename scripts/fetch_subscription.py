@@ -20,46 +20,39 @@ except ImportError:
 IPOS_JSON_PATH = "ipos.json"
 OVERRIDES_PATH = "manual_overrides.json"
 
-# Common industry sectors and corporate noise to filter out when checking for entity identity
 INDUSTRY_NOISE: Set[str] = {
-    "pharma", "pharmaceuticals", "pharmaceutical", "jewels", "jewellers", 
-    "jewellery", "tech", "technologies", "technology", "solutions", 
-    "infra", "infrastructure", "finance", "financial", "enterprises", 
-    "logistics", "industries", "energy", "power", "capital", "holdings",
     "limited", "ltd", "pvt", "private", "corp", "corporation", "ipo",
-    "india", "global", "international", "services", "group", "allotted",
-    "closing", "today", "sme", "bse", "nse"
-}
-
-# Common conglomerate parent prefixes
-PARENT_PREFIXES: Set[str] = {
-    "reliance", "tata", "adani", "bajaj", "birla", "mahindra", "godrej", "l&t"
+    "india", "services", "solutions", "technologies", "tech", "group",
+    "industries", "sme", "bse", "nse", "enterprises"
 }
 
 def clean_multiplier(val_str) -> float:
     if not val_str:
         return 0.0
-    match = re.search(r"(\d+(\.\d+)?)", str(val_str).replace(",", ""))
+    # Capture first decimal or float number
+    match = re.search(r"(\d+(?:\.\d+)?)", str(val_str).replace(",", ""))
     return float(match.group(1)) if match else 0.0
 
-def clean_tokens(name: str) -> Set[str]:
-    """Extracts alphanumeric words from a name."""
-    if not name:
-        return set()
-    cleaned = re.sub(r"[^a-zA-Z0-9\s]", " ", name.lower())
-    return set(cleaned.split())
+def sanitize_scraped_name(raw_name: str) -> str:
+    """Strips InvestorGain table noise like GMP badges, price tags, and exchange markers."""
+    if not raw_name:
+        return ""
+    # Remove GMP badges: GMP:₹247 (22.07%)
+    s = re.sub(r"gmp\s*:\s*[₹rs\.\d\s\(\)\+\-%]+", " ", raw_name, flags=re.IGNORECASE)
+    # Remove listing price tags: L@115.00 (-9.45%)
+    s = re.sub(r"l\s*@\s*[\d\.\s\(\)\+\-%]+", " ", s, flags=re.IGNORECASE)
+    # Remove exchange markers and single-letter status codes at word boundaries
+    s = re.sub(r"\b(BSE|NSE|SME|IPO)\b", " ", s, flags=re.IGNORECASE)
+    s = re.sub(r"\b[OCLU]\b\.?", " ", s, flags=re.IGNORECASE)
+    # Remove special punctuation
+    s = re.sub(r"[^a-zA-Z0-9\s]", " ", s)
+    return " ".join(s.split())
 
-def extract_core_entity(name: str) -> Set[str]:
-    """
-    Strips noise words and conglomerate prefixes to isolate the distinct entity.
-    E.g., 'Reliance Jio Platforms Ltd' -> {'jio'}
-    """
-    tokens = clean_tokens(name) - INDUSTRY_NOISE
-    specific_tokens = tokens - PARENT_PREFIXES
-    return specific_tokens if specific_tokens else tokens
+def extract_tokens(name: str) -> Set[str]:
+    cleaned = re.sub(r"[^a-zA-Z0-9\s]", " ", name.lower())
+    return {t for t in cleaned.split() if t not in INDUSTRY_NOISE and len(t) > 1}
 
 def check_alias_match(name1: str, name2: str, aliases: Dict[str, str]) -> bool:
-    """Checks explicit bidirectional mappings from manual_overrides.json."""
     n1 = name1.strip().lower()
     n2 = name2.strip().lower()
     if aliases.get(n1) == n2 or aliases.get(n2) == n1:
@@ -73,52 +66,36 @@ def find_best_sub_match(
     target_ipo: Dict, 
     candidates: List[Dict], 
     aliases: Dict[str, str],
-    min_score: int = 86
+    min_score: int = 70
 ) -> Optional[Dict]:
-    """
-    Multi-stage composite matcher:
-    1. Direct Symbol match
-    2. Explicit manual aliases
-    3. Core brand anchor match (prevents cross-matching distinct Pharma/Jewel companies)
-    4. Guarded Token Set Fuzzy ratio
-    """
     target_name = target_ipo.get("name", "")
     target_symbol = target_ipo.get("symbol", "").strip().upper()
-    target_close = target_ipo.get("closeDate", "").strip()
+    target_tokens = extract_tokens(target_name)
 
-    # 1. Symbol Match (100% deterministic)
-    if target_symbol:
+    # 1. Direct symbol matching
+    if target_symbol and len(target_symbol) >= 3 and target_symbol != "IPO":
         for cand in candidates:
-            cand_symbol = cand.get("symbol", "").strip().upper()
-            if cand_symbol and cand_symbol == target_symbol:
+            if target_symbol in cand.get("raw_name", "").upper():
                 return cand
 
-    target_core = extract_core_entity(target_name)
     best_candidate = None
     highest_score = 0
 
     for cand in candidates:
         cand_name = cand.get("name", "")
-        cand_close = cand.get("closeDate", "").strip()
 
-        # 2. Manual Alias Match
+        # 2. Manual overrides alias check
         if check_alias_match(target_name, cand_name, aliases):
             return cand
 
-        # 3. Core Anchor Overlap Gate
-        cand_core = extract_core_entity(cand_name)
-        common_anchors = target_core.intersection(cand_core)
-        
-        # If both have meaningful words and share zero anchors, reject immediately.
-        # This prevents 'Zenith Pharma' from matching 'Apex Pharma'.
-        if target_core and cand_core and not common_anchors:
-            continue
+        cand_tokens = extract_tokens(cand_name)
 
-        # 4. Date Gate (if close dates are known)
-        if target_close and cand_close and target_close != cand_close:
-            continue
+        # 3. Token overlap fallback
+        if target_tokens and cand_tokens:
+            if target_tokens.issubset(cand_tokens) or cand_tokens.issubset(target_tokens):
+                return cand
 
-        # 5. Fuzzy Match on Cleaned Strings
+        # 4. Fuzzy token ratio
         score = fuzz.token_set_ratio(target_name.lower(), cand_name.lower())
         if score > highest_score and score >= min_score:
             highest_score = score
@@ -149,14 +126,14 @@ def scrape_table(url: str) -> List[Dict]:
             if not rows:
                 continue
 
-            for row in rows[:2]:
+            for row in rows[:3]:
                 for idx, cell in enumerate(row.find_all(["th", "td"])):
                     txt = cell.get_text(strip=True).upper()
                     if "QIB" in txt:
                         headers_map["qib"] = idx
-                    elif "NII" in txt or "HNI" in txt or "sNII" in txt or "bNII" in txt:
+                    elif any(h in txt for h in ["NII", "HNI", "SNII", "BNII"]):
                         headers_map["nii"] = idx
-                    elif "RETAIL" in txt or "RII" in txt:
+                    elif any(r in txt for r in ["RETAIL", "RII"]):
                         headers_map["retail"] = idx
                     elif "TOTAL" in txt:
                         headers_map["total"] = idx
@@ -168,7 +145,7 @@ def scrape_table(url: str) -> List[Dict]:
                 cols = [td.get_text(strip=True) for td in row.find_all(["td", "th"])]
                 if len(cols) >= 4:
                     raw_name = cols[0]
-                    if any(h in raw_name.lower() for h in ["issuer", "company", "ipo name", "total"]):
+                    if any(h in raw_name.lower() for h in ["issuer", "company", "ipo name", "closing date"]):
                         continue
 
                     q = clean_multiplier(cols[headers_map["qib"]]) if "qib" in headers_map and headers_map["qib"] < len(cols) else 0.0
@@ -176,10 +153,8 @@ def scrape_table(url: str) -> List[Dict]:
                     r = clean_multiplier(cols[headers_map["retail"]]) if "retail" in headers_map and headers_map["retail"] < len(cols) else 0.0
                     tot = clean_multiplier(cols[headers_map["total"]]) if "total" in headers_map and headers_map["total"] < len(cols) else 0.0
 
-                    # Extract pure clean name
-                    clean_name = re.sub(r"\b(IPO|SME|BSE|NSE)\b", "", raw_name, flags=re.IGNORECASE).strip()
-
-                    if tot > 0.0 or r > 0.0:
+                    clean_name = sanitize_scraped_name(raw_name)
+                    if len(clean_name) > 2 and (tot > 0.0 or r > 0.0 or n > 0.0 or q > 0.0):
                         results.append({
                             "name": clean_name,
                             "raw_name": raw_name,
@@ -195,8 +170,8 @@ def scrape_table(url: str) -> List[Dict]:
 
 def fetch_all_sources() -> List[Dict]:
     urls = [
-        "https://www.investorgain.com/report/live-ipo-subscription-status/331/",
-        "https://www.investorgain.com/report/ipo-subscription-status-live-bidding-data-bse-nse/333/"
+        "https://www.investorgain.com/report/ipo-subscription-live/333/",
+        "https://www.investorgain.com/report/live-ipo-subscription-status/331/"
     ]
     all_data = []
     seen = set()
@@ -214,7 +189,6 @@ def update_root_ipos_json():
         print(f"{IPOS_JSON_PATH} not found at repository root.")
         return
 
-    # Load manual overrides and aliases
     aliases = {}
     if os.path.exists(OVERRIDES_PATH):
         try:
@@ -235,9 +209,6 @@ def update_root_ipos_json():
 
     matched_count = 0
     for item in items:
-        # Strip old legacy nested structure if still present
-        item.pop("subscription", None)
-
         matched = find_best_sub_match(item, sub_data, aliases)
         if matched:
             if matched["total"] > 0:
