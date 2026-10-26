@@ -78,12 +78,14 @@ def matches_target(target_name: str, cand_name: str, aliases: Dict[str, str]) ->
     if t_tokens.issubset(c_tokens) or c_tokens.issubset(t_tokens):
         return True
 
-    # 3. Intersecting tokens
+    # 3. Intersecting tokens: require at least 2 common words, 
+    # OR if only 1 word matches, ensure neither string has extra distinctive tokens
     common = t_tokens.intersection(c_tokens)
     if len(common) >= 2:
         return True
-    if len(t_tokens) == 1 and len(common) == 1 and len(list(t_tokens)[0]) >= 4:
+    if len(t_tokens) == 1 and len(c_tokens) == 1 and len(common) == 1:
         return True
+
 
     # 4. Strict fuzzy match fallback
     score = fuzz.token_set_ratio(t_clean, c_clean)
