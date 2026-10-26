@@ -5,6 +5,7 @@ import sys
 import time
 import requests
 from datetime import datetime, timezone, timedelta
+from bs4 import BeautifulSoup
 import firebase_admin
 from firebase_admin import credentials, messaging
 
@@ -19,8 +20,23 @@ UPSTOX_TOKEN = os.getenv("UPSTOX_ACCESS_TOKEN", "").strip()
 # Explicit Indian Standard Time (UTC+05:30)
 IST = timezone(timedelta(hours=5, minutes=30))
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+# Anti-blocking desktop browser headers for web scraping
+WEB_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Referer": "https://www.google.com/",
+    "sec-ch-ua": '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"',
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": '"Windows"',
+    "sec-fetch-dest": "document",
+    "sec-fetch-mode": "navigate",
+    "sec-fetch-site": "cross-site",
+    "upgrade-insecure-requests": "1"
+}
+
+API_HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
     "Accept": "application/json"
 }
 
@@ -210,7 +226,33 @@ def validate_record(item: dict) -> bool:
         return False
     return True
 
-# ----------------- DYNAMIC GMP DATA STORAGE -----------------
+# ----------------- DYNAMIC LIVE GMP WEB SCRAPER & STORAGE -----------------
+def fetch_live_web_gmp() -> dict:
+    """Scrapes live GMP values from InvestorGain."""
+    gmp_map = {}
+    url = "https://www.investorgain.com/report/live-ipo-gmp/331/ipo/"
+    try:
+        res = requests.get(url, headers=WEB_HEADERS, timeout=12)
+        if res.status_code == 200:
+            soup = BeautifulSoup(res.text, "html.parser")
+            for table in soup.find_all("table"):
+                for row in table.find_all("tr"):
+                    cells = [td.get_text(separator=" ", strip=True) for td in row.find_all(["td", "th"])]
+                    if len(cells) >= 3:
+                        name_cell = cells[0]
+                        for c in cells[1:]:
+                            m = re.search(r"(?:₹|\+)?\s*([\d,]+(?:\.\d+)?)", c)
+                            if m:
+                                clean_val = float(m.group(1).replace(",", ""))
+                                norm_k = clean_company_name(name_cell)
+                                if norm_k and clean_val > 0:
+                                    gmp_map[norm_k] = clean_val
+                                break
+        print(f">>> [Live GMP] Successfully scraped {len(gmp_map)} live GMP quotes from web.", flush=True)
+    except Exception as e:
+        print(f">>> [Live GMP] Notice: Web scraper error: {e}", flush=True)
+    return gmp_map
+
 def load_existing_gmp():
     if os.path.exists(GMP_DATA_PATH):
         try:
@@ -221,19 +263,27 @@ def load_existing_gmp():
     return {}
 
 def sync_and_save_gmp(active_unlisted_ipos, existing_gmp):
+    web_gmp = fetch_live_web_gmp()
+    today_str = datetime.now(IST).strftime("%d %b")
     updated_gmp_map = {}
+
     for ipo in active_unlisted_ipos:
         norm_key = clean_company_name(ipo["name"])
         saved_entry = existing_gmp.get(norm_key, {})
         
-        if isinstance(saved_entry, dict):
-            manual_val = float(saved_entry.get("gmp") or saved_entry.get("gmp_in_rs") or 0.0)
+        # Prefer live scraped web GMP, fallback to saved cache
+        live_val = web_gmp.get(norm_key)
+        if live_val is not None and live_val > 0:
+            final_val = live_val
+        elif isinstance(saved_entry, dict):
+            final_val = float(saved_entry.get("gmp") or saved_entry.get("gmp_in_rs") or 0.0)
         else:
-            manual_val = float(saved_entry or 0.0)
+            final_val = float(saved_entry or 0.0)
             
         updated_gmp_map[norm_key] = {
             "name": ipo["name"],
-            "gmp": manual_val
+            "gmp": final_val,
+            "last_updated": today_str
         }
 
     try:
@@ -450,7 +500,7 @@ def try_fetch_upstox():
 
     return upstox_list, "OK"
 
- # ----------------- MAIN PIPELINE ORCHESTRATOR -----------------
+# ----------------- MAIN PIPELINE ORCHESTRATOR -----------------
 def run_pipeline():
     print(">>> [Phase 1/3] Initializing pipeline session...", flush=True)
 
@@ -489,6 +539,7 @@ def run_pipeline():
     upstox_data, status_msg = try_fetch_upstox()
 
     today_ist_str = datetime.now(IST).strftime("%Y-%m-%d")
+    today_label = datetime.now(IST).strftime("%d %b")
     now_hour = datetime.now(IST).hour
 
     if upstox_data:
@@ -519,9 +570,14 @@ def run_pipeline():
             sub_hni = float(item.get("subscription_hni", 0.0))
             sub_qib = float(item.get("subscription_qib", 0.0))
 
-                        # Retrieve prior historical data from cache
+            # Retrieve prior historical data, logos, and issue structures from cache
             prior_gmp_history = []
             prior_financials = []
+            prior_logo = None
+            prior_structure = None
+            prior_managers = []
+            prior_anchor = 0.0
+
             if norm_key in previous_cache:
                 prev = previous_cache[norm_key]
                 if sub_retail <= 0.0:
@@ -535,6 +591,10 @@ def run_pipeline():
 
                 prior_gmp_history = prev.get("gmpHistory", [])
                 prior_financials = prev.get("financials", [])
+                prior_logo = prev.get("logoUrl")
+                prior_structure = prev.get("issueStructure")
+                prior_managers = prev.get("leadManagers", [])
+                prior_anchor = float(prev.get("anchorPortionCr", 0.0))
 
                 if prev.get("isAllotmentDone") is True:
                     item["is_allotment_done"] = True
@@ -583,7 +643,7 @@ def run_pipeline():
                     "issuePriceMax": price_max
                 })
 
-            # Check manual overrides with alias resolution
+            # Manual overrides resolution
             alias_target = manual_overrides.get("aliases", {}).get(clean_name.lower(), clean_name.lower())
             override_key = clean_company_name(alias_target)
             override_entry = manual_overrides.get(override_key) or manual_overrides.get(norm_key)
@@ -639,6 +699,7 @@ def run_pipeline():
                 "symbol": str(sym).strip(),
                 "category": "SME" if str(item.get("issue_type", "")).lower() == "sme" else "Mainboard",
                 "status": status,
+                "logoUrl": prior_logo,
                 "issueSizeCr": issue_size_cr,
                 "issuePriceMin": price_min,
                 "issuePriceMax": price_max,
@@ -650,6 +711,9 @@ def run_pipeline():
                 "gmpAmount": 0.0,
                 "gmpPercent": 0.0,
                 "gmpHistory": prior_gmp_history,
+                "issueStructure": prior_structure,
+                "leadManagers": prior_managers,
+                "anchorPortionCr": prior_anchor,
                 "financials": financials_data,
                 "subscriptionTotal": total_sub,
                 "subscriptionRetail": sub_retail,
@@ -668,8 +732,6 @@ def run_pipeline():
                 "openNotified": bool(previous_cache.get(norm_key, {}).get("openNotified", False)),
                 "closeNotified": bool(previous_cache.get(norm_key, {}).get("closeNotified", False))
             }
-
-
 
             # ----------------- STRICT NOTIFICATION RULES -----------------
             if status != "LISTED":
@@ -709,7 +771,7 @@ def run_pipeline():
         final_dataset = last_known_good
         active_source = "CACHE_FALLBACK"
 
-    # Synchronize GMP storage file
+    # Synchronize live GMP storage file
     synced_gmp_map = sync_and_save_gmp(active_unlisted_candidates, existing_gmp)
 
     # ----------------- ATTACH GMP WITH HISTORICAL PERSISTENCE -----------------
@@ -722,6 +784,15 @@ def run_pipeline():
                 gmp_val = float(synced_gmp_map[k].get("gmp", 0.0))
                 item["gmpAmount"] = gmp_val
                 item["gmpPercent"] = round((gmp_val / price_max * 100.0), 2) if (price_max > 0 and gmp_val > 0) else 0.0
+
+                # Append daily point to gmpHistory if new and non-zero
+                if gmp_val > 0:
+                    history = item.get("gmpHistory", [])
+                    if not history or history[-1].get("dateLabel") != today_label:
+                        history.append({"dateLabel": today_label, "amount": gmp_val})
+                        item["gmpHistory"] = history[-7:]  # Keep last 7 tracking points
+                    else:
+                        history[-1]["amount"] = gmp_val
         else:
             if k in previous_cache:
                 prev_gmp_amt = float(previous_cache[k].get("gmpAmount", 0.0))
@@ -743,7 +814,7 @@ def run_pipeline():
         f.write(f"**Last Sync (UTC):** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
         f.write(f"**Primary Active Source:** {active_source}\n")
         f.write(f"**Total Records Ingested:** {len(final_dataset)}\n")
-        f.write("Status: Direct Upstox v2 Ingestion with Category Subscription & Dynamic GMP.\n")
+        f.write("Status: Direct Upstox v2 Ingestion with Category Subscription & Dynamic Web GMP.\n")
 
     print(f">>> Pipeline completed successfully via [{active_source}]. Processed {len(final_dataset)} records.", flush=True)
 
