@@ -88,13 +88,14 @@ def matches_target(target_name: str, cand_name: str, aliases: Dict[str, str]) ->
 
 def scrape_live_sources() -> List[Dict]:
     urls = [
-        "https://www.investorgain.com/report/live-ipo-gmp/331/ipo/",
-        "https://www.investorgain.com/report/live-ipo-gmp/331/sme/",
+        "https://www.investorgain.com/report/live-ipo-gmp/331/all/",
+        "https://www.investorgain.com/report/live-ipo-gmp/331/",
         "https://www.investorgain.com/report/ipo-subscription-live/333/"
     ]
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Referer": "https://www.google.com/"
     }
 
     records_by_name = {}
@@ -103,48 +104,65 @@ def scrape_live_sources() -> List[Dict]:
         try:
             res = requests.get(url, headers=headers, timeout=15)
             if res.status_code != 200:
+                print(f"[WARN] Failed fetching {url}: HTTP {res.status_code}")
                 continue
 
             soup = BeautifulSoup(res.text, "html.parser")
             for table in soup.find_all("table"):
                 rows = table.find_all("tr")
+                if not rows:
+                    continue
+
                 for row in rows[1:]:
                     cells = row.find_all(["td", "th"])
-                    if not cells:
+                    if len(cells) < 3:
                         continue
 
                     first_cell = cells[0]
                     clean_name = extract_clean_name(first_cell)
                     raw_text = row.get_text(separator=" ", strip=True)
 
-                    if not clean_name or any(h in clean_name.lower() for h in ["issuer", "company", "ipo name", "closing date"]):
+                    if not clean_name or any(h in clean_name.lower() for h in ["issuer", "company", "ipo name", "closing date", "fire rating"]):
                         continue
 
-                    # Extract GMP amount & percentage
                     gmp_amt = None
                     gmp_pct = None
 
-                    # 1. Regex check on row text for standard GMP representation
-                    amt_match = re.search(r"GMP\s*:\s*₹?\s*([0-9]+(?:\.[0-9]+)?)", raw_text, re.IGNORECASE)
+                    # 1. Direct regex on entire row for explicit "GMP: ₹X (Y%)" or "GMP: --"
+                    amt_match = re.search(r"GMP\s*:\s*(?:₹|\+)?\s*([0-9]+(?:\.[0-9]+)?)", raw_text, re.IGNORECASE)
                     pct_match = re.search(r"GMP:.*?\((\d+(?:\.\d+)?)\%\)", raw_text, re.IGNORECASE)
 
                     if amt_match:
                         gmp_amt = float(amt_match.group(1))
                         gmp_pct = float(pct_match.group(1)) if pct_match else 0.0
                     else:
+                        # 2. Inspect cells 1 to 4 where InvestorGain places GMP and Sub figures
                         for cell in cells[1:4]:
                             c_text = cell.get_text(strip=True)
-                            if "₹" in c_text or "+" in c_text:
-                                m = re.search(r"(?:₹|\+)\s*([\d,]+(?:\.\d+)?)", c_text)
-                                p_m = re.search(r"\(([+-]?[\d,]+(?:\.\d+)?)\s*%\)", c_text)
-                                if m:
-                                    gmp_amt = float(m.group(1).replace(",", ""))
-                                    gmp_pct = float(p_m.group(1).replace(",", "")) if p_m else 0.0
-                                    break
+                            
+                            # Skip empty or dashed indicators
+                            if c_text in ["--", "-", "N/A", ""]:
+                                continue
 
-                    if gmp_amt is not None:
+                            # Detect currency symbols or explicit numerical GMP values
+                            m = re.search(r"(?:₹|\+|\b)\s*([\d,]+(?:\.\d+)?)\s*(?:\([+-]?\d+(?:\.\d+)?%\))?", c_text)
+                            p_m = re.search(r"\(([+-]?[\d,]+(?:\.\d+)?)\s*%\)", c_text)
+                            
+                            if m:
+                                val_clean = m.group(1).replace(",", "")
+                                try:
+                                    parsed_val = float(val_clean)
+                                    # Guard against parsing price bands/dates as GMP
+                                    if parsed_val > 0 and parsed_val < 5000:
+                                        gmp_amt = parsed_val
+                                        gmp_pct = float(p_m.group(1).replace(",", "")) if p_m else 0.0
+                                        break
+                                except ValueError:
+                                    pass
+
+                    if gmp_amt is not None and gmp_amt > 0:
                         key = clean_company_name(clean_name)
-                        if key and (key not in records_by_name or gmp_amt > 0):
+                        if key:
                             records_by_name[key] = {
                                 "name": clean_name,
                                 "gmp": gmp_amt,
@@ -154,7 +172,9 @@ def scrape_live_sources() -> List[Dict]:
             print(f"[WARN] Error fetching {url}: {e}")
 
     results = list(records_by_name.values())
-    print(f"[GMP Scraper] Extracted {len(results)} live GMP records across sources.")
+    print(f"[GMP Scraper] Extracted {len(results)} live real-time GMP records.")
+    for r in results:
+        print(f"   -> Found: '{r['name']}' = ₹{r['gmp']} ({r['percent']}%)")
     return results
 
 def sync_gmp():
