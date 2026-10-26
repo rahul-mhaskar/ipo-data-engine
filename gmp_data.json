@@ -31,7 +31,8 @@
   },
   "wiscon": {
     "name": "Wiscon Industries",
-    "gmp": 0.0
+    "gmp": 0.0,
+    "percent": 0.0
   },
   "sfcenvironmentaltechnologies": {
     "name": "SFC Environmental Technologies",
@@ -65,7 +66,8 @@
   },
   "credilafinancial": {
     "name": "Credila Financial Services",
-    "gmp": 0.0
+    "gmp": 0.0,
+    "percent": 0.0
   },
   "phonepe": {
     "name": "PhonePe",

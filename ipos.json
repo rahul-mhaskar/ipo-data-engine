@@ -468,7 +468,12 @@
     "listingDate": "2026-11-03",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "gmpHistory": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      }
+    ],
     "financials": [
       {
         "year": "FY26",
@@ -1002,6 +1007,10 @@
     "gmpHistory": [
       {
         "dateLabel": "18 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "26 Oct",
         "amount": 0.0
       }
     ],
