@@ -17,27 +17,14 @@ GMP_DATA_PATH = "gmp_data.json"
 UPSTOX_BASE_URL = "https://api.upstox.com/v2"
 UPSTOX_TOKEN = os.getenv("UPSTOX_ACCESS_TOKEN", "").strip()
 
-# Explicit Indian Standard Time (UTC+05:30)
+# Indian Standard Time (UTC+05:30)
 IST = timezone(timedelta(hours=5, minutes=30))
 
-# Anti-blocking desktop browser headers for web scraping
 WEB_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9",
-    "Referer": "https://www.google.com/",
-    "sec-ch-ua": '"Chromium";v="128", "Not;A=Brand";v="24", "Google Chrome";v="128"',
-    "sec-ch-ua-mobile": "?0",
-    "sec-ch-ua-platform": '"Windows"',
-    "sec-fetch-dest": "document",
-    "sec-fetch-mode": "navigate",
-    "sec-fetch-site": "cross-site",
-    "upgrade-insecure-requests": "1"
-}
-
-API_HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
-    "Accept": "application/json"
+    "Referer": "https://www.google.com/"
 }
 
 SEBI_REGISTRARS = [
@@ -73,7 +60,6 @@ if FIREBASE_CREDS_RAW:
         print(f">>> [Firebase] Initialization notice: {e}", flush=True)
 
 def send_push_notification(title: str, body: str, ipo_id: str, channel_type: str = "market_updates"):
-    """Dispatches a native FCM broadcast to all devices subscribed to 'ipo_alerts'."""
     if not FIREBASE_APP_INITIALIZED:
         return
     try:
@@ -93,6 +79,7 @@ def send_push_notification(title: str, body: str, ipo_id: str, channel_type: str
     except Exception as e:
         print(f"      [FCM Push Error] Failed to send '{title}': {e}", flush=True)
 
+# ----------------- STRING & DATE UTILITIES -----------------
 def clean_num_or_none(val):
     if val is None or val == "":
         return None
@@ -106,6 +93,13 @@ def clean_company_name(name: str) -> str:
     s = name.replace("’", "").replace("'", "")
     s = re.sub(r"\b(IPO|SME|BSE|NSE|Ltd\.?|Limited|Pvt\.?|Private|Industries|Industry|Enterprises|Services|Home)\b", "", s, flags=re.IGNORECASE)
     return re.sub(r"[^a-z0-9]", "", s.lower())
+
+def get_tokens(name: str) -> set:
+    if not name:
+        return set()
+    cleaned = re.sub(r"[^a-zA-Z0-9\s]", " ", name.lower())
+    noise = {"limited", "ltd", "pvt", "private", "ipo", "india", "sme", "technologies", "tech", "solutions", "industries", "services", "bse", "nse"}
+    return {t for t in cleaned.split() if t not in noise and len(t) > 2}
 
 def parse_date_or_none(date_str):
     if not date_str or str(date_str).strip() in ["--", "-", "", "N/A", "TBD", "TBA", "null", "None"]:
@@ -149,34 +143,6 @@ def parse_date_or_none(date_str):
 
     return None
 
-def fetch_live_listing_quote(symbol: str, headers: dict) -> float:
-    if not symbol or symbol == "IPO":
-        return 0.0
-    clean_sym = symbol.strip().upper()
-    keys_to_try = [
-        f"NSE_EQ|{clean_sym}",
-        f"NSE_EQ|{clean_sym}-SM",
-        f"NSE_EQ|{clean_sym}-ST",
-        f"BSE_EQ|{clean_sym}"
-    ]
-    for instrument_key in keys_to_try:
-        try:
-            url = f"{UPSTOX_BASE_URL}/market-quote/quotes?instrument_key={instrument_key}"
-            res = requests.get(url, headers=headers, timeout=4)
-            if res.status_code == 200:
-                data = res.json().get("data", {})
-                for _, v in data.items():
-                    ohlc = v.get("ohlc", {})
-                    open_price = float(ohlc.get("open") or 0.0)
-                    if open_price > 0.0:
-                        return open_price
-                    ltp = float(v.get("last_price") or 0.0)
-                    if ltp > 0.0:
-                        return ltp
-        except Exception:
-            pass
-    return 0.0
-
 def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0):
     now_ist = datetime.now(IST)
     today = now_ist.date()
@@ -200,10 +166,7 @@ def determine_status(open_d, close_d, list_d, raw_status=None, listing_price=0.0
                 return "CLOSED"
             elif today == l:
                 is_after_10am = (now_ist.hour > 10) or (now_ist.hour == 10 and now_ist.minute >= 0)
-                if is_after_10am and listing_price > 0.0:
-                    return "LISTED"
-                else:
-                    return "CLOSED"
+                return "LISTED" if (is_after_10am and listing_price > 0.0) else "CLOSED"
             elif today > l:
                 return "LISTED"
 
@@ -228,29 +191,39 @@ def validate_record(item: dict) -> bool:
 
 # ----------------- DYNAMIC LIVE GMP WEB SCRAPER & STORAGE -----------------
 def fetch_live_web_gmp() -> dict:
-    """Scrapes live GMP values from InvestorGain."""
+    """Scrapes live GMP values and discovered issues across all tables on InvestorGain."""
     gmp_map = {}
-    url = "https://www.investorgain.com/report/live-ipo-gmp/331/ipo/"
-    try:
-        res = requests.get(url, headers=WEB_HEADERS, timeout=12)
-        if res.status_code == 200:
-            soup = BeautifulSoup(res.text, "html.parser")
-            for table in soup.find_all("table"):
-                for row in table.find_all("tr"):
-                    cells = [td.get_text(separator=" ", strip=True) for td in row.find_all(["td", "th"])]
-                    if len(cells) >= 3:
-                        name_cell = cells[0]
-                        for c in cells[1:]:
-                            m = re.search(r"(?:₹|\+)?\s*([\d,]+(?:\.\d+)?)", c)
-                            if m:
-                                clean_val = float(m.group(1).replace(",", ""))
-                                norm_k = clean_company_name(name_cell)
-                                if norm_k and clean_val > 0:
-                                    gmp_map[norm_k] = clean_val
-                                break
-        print(f">>> [Live GMP] Successfully scraped {len(gmp_map)} live GMP quotes from web.", flush=True)
-    except Exception as e:
-        print(f">>> [Live GMP] Notice: Web scraper error: {e}", flush=True)
+    urls = [
+        "https://www.investorgain.com/report/live-ipo-gmp/331/ipo/",
+        "https://www.investorgain.com/report/ipo-gmp-live/331/"
+    ]
+    for url in urls:
+        try:
+            res = requests.get(url, headers=WEB_HEADERS, timeout=12)
+            if res.status_code == 200:
+                soup = BeautifulSoup(res.text, "html.parser")
+                for table in soup.find_all("table"):
+                    for row in table.find_all("tr"):
+                        cells = [td.get_text(separator=" ", strip=True) for td in row.find_all(["td", "th"])]
+                        if len(cells) >= 3:
+                            name_cell = cells[0].strip()
+                            clean_k = clean_company_name(name_cell)
+                            for c in cells[1:]:
+                                m = re.search(r"(?:₹|\+)\s*([\d,]+(?:\.\d+)?)", c)
+                                if m:
+                                    clean_val = float(m.group(1).replace(",", ""))
+                                    if clean_k and clean_val > 0:
+                                        gmp_map[clean_k] = {
+                                            "name": name_cell,
+                                            "gmp": clean_val
+                                        }
+                                    break
+            if gmp_map:
+                break
+        except Exception as e:
+            print(f">>> [Live GMP] Notice: Failed scraping from {url}: {e}", flush=True)
+
+    print(f">>> [Live GMP] Successfully scraped {len(gmp_map)} live GMP quotes from web.", flush=True)
     return gmp_map
 
 def load_existing_gmp():
@@ -262,29 +235,30 @@ def load_existing_gmp():
             pass
     return {}
 
-def sync_and_save_gmp(active_unlisted_ipos, existing_gmp):
+def sync_and_save_gmp(all_items: list, existing_gmp: dict):
     web_gmp = fetch_live_web_gmp()
     today_str = datetime.now(IST).strftime("%d %b")
     updated_gmp_map = {}
 
-    for ipo in active_unlisted_ipos:
-        norm_key = clean_company_name(ipo["name"])
-        saved_entry = existing_gmp.get(norm_key, {})
-        
-        # Prefer live scraped web GMP, fallback to saved cache
-        live_val = web_gmp.get(norm_key)
-        if live_val is not None and live_val > 0:
-            final_val = live_val
-        elif isinstance(saved_entry, dict):
-            final_val = float(saved_entry.get("gmp") or saved_entry.get("gmp_in_rs") or 0.0)
-        else:
-            final_val = float(saved_entry or 0.0)
-            
-        updated_gmp_map[norm_key] = {
-            "name": ipo["name"],
-            "gmp": final_val,
+    # Seed with live scraped GMP data
+    for k, v in web_gmp.items():
+        updated_gmp_map[k] = {
+            "name": v["name"],
+            "gmp": v["gmp"],
             "last_updated": today_str
         }
+
+    # Retain existing entries if not in current web tables
+    for item in all_items:
+        norm_key = clean_company_name(item.get("name", ""))
+        if norm_key not in updated_gmp_map:
+            saved_entry = existing_gmp.get(norm_key, {})
+            val = float(saved_entry.get("gmp") or 0.0) if isinstance(saved_entry, dict) else float(saved_entry or 0.0)
+            updated_gmp_map[norm_key] = {
+                "name": item.get("name", ""),
+                "gmp": val,
+                "last_updated": today_str
+            }
 
     try:
         with open(GMP_DATA_PATH, "w", encoding="utf-8") as f:
@@ -293,6 +267,39 @@ def sync_and_save_gmp(active_unlisted_ipos, existing_gmp):
         print(f">>> [GMP] Sync save notice: {e}", flush=True)
 
     return updated_gmp_map
+
+# ----------------- WEB PIPELINE FALLBACK -----------------
+def scrape_live_ipo_feed() -> list:
+    """Scrapes currently open and upcoming IPO issues directly from live tables."""
+    url = "https://www.investorgain.com/report/live-ipo-gmp/331/ipo/"
+    discovered = []
+    seen = set()
+    try:
+        res = requests.get(url, headers=WEB_HEADERS, timeout=12)
+        if res.status_code == 200:
+            soup = BeautifulSoup(res.text, "html.parser")
+            for table in soup.find_all("table"):
+                for row in table.find_all("tr"):
+                    cells = [td.get_text(separator=" ", strip=True) for td in row.find_all(["td", "th"])]
+                    if len(cells) >= 4:
+                        raw_name = cells[0].strip()
+                        if any(term in raw_name.lower() for term in ["ipo", "company", "price", "gmp"]) and len(raw_name) < 5:
+                            continue
+                        
+                        clean_name = re.sub(r"\b(IPO|SME|BSE|NSE|Ltd\.?|Limited)\b", "", raw_name, flags=re.IGNORECASE).strip()
+                        k = clean_company_name(clean_name)
+                        if k and k not in seen and len(clean_name) > 2:
+                            seen.add(k)
+                            is_sme = "sme" in raw_name.lower()
+                            discovered.append({
+                                "name": clean_name,
+                                "raw_name": raw_name,
+                                "is_sme": is_sme
+                            })
+        print(f">>> [Live Feed Scraper] Discovered {len(discovered)} active issues via live web.", flush=True)
+    except Exception as e:
+        print(f">>> [Live Feed Scraper] Notice: {e}", flush=True)
+    return discovered
 
 # ----------------- UPSTOX INGESTION -----------------
 def try_fetch_upstox():
@@ -305,31 +312,17 @@ def try_fetch_upstox():
     }
 
     all_upstox_items = []
-    queries = [
-        {"status": "open"},
-        {"status": "upcoming"},
-        {"status": "closed"},
-        {"status": "listed"}
-    ]
+    queries = [{"status": "open"}, {"status": "upcoming"}, {"status": "closed"}, {"status": "listed"}]
 
     for q in queries:
         try:
             res = requests.get(f"{UPSTOX_BASE_URL}/ipos", headers=headers, params=q, timeout=6)
             if res.status_code == 200:
-                items = res.json().get("data", [])
-                all_upstox_items.extend(items)
+                all_upstox_items.extend(res.json().get("data", []))
             elif res.status_code in [401, 403]:
                 return None, f"Upstox Auth Token Expired / Invalid (HTTP {res.status_code})."
         except Exception as e:
             print(f">>> Upstox query notice for {q}: {e}", flush=True)
-
-    if not all_upstox_items:
-        try:
-            res = requests.get(f"{UPSTOX_BASE_URL}/ipos", headers=headers, timeout=6)
-            if res.status_code == 200:
-                all_upstox_items = res.json().get("data", [])
-        except Exception:
-            pass
 
     deduped = {}
     for it in all_upstox_items:
@@ -355,144 +348,35 @@ def try_fetch_upstox():
                     item["rhp_url"] = details.get("rhp_url")
                     item["drhp_url"] = details.get("drhp_url")
 
-                    raw_total_size = (
-                        details.get("total_issue_size") or 
-                        details.get("issue_size") or 
-                        details.get("issue_size_in_crores") or 
-                        details.get("size") or 
-                        item.get("issue_size")
-                    )
-
+                    raw_total_size = details.get("total_issue_size") or details.get("issue_size") or details.get("issue_size_in_crores") or item.get("issue_size")
                     clean_size = clean_num_or_none(raw_total_size)
                     issue_size_cr = 0.0
 
                     if clean_size and clean_size > 0:
-                        if clean_size < 100000:
-                            issue_size_cr = round(float(clean_size), 2)
-                        else:
-                            issue_size_cr = round(float(clean_size) / 10000000.0, 2)
-                    else:
-                        fresh_sz = clean_num_or_none(details.get("fresh_issue_size") or details.get("fresh_issue")) or 0.0
-                        ofs_sz = clean_num_or_none(details.get("ofs_issue_size") or details.get("offer_for_sale_size")) or 0.0
-                        if (fresh_sz + ofs_sz) > 0:
-                            combined = fresh_sz + ofs_sz
-                            issue_size_cr = round(combined / 10000000.0, 2) if combined > 100000 else round(combined, 2)
-                        else:
-                            total_shares = clean_num_or_none(
-                                details.get("total_shares") or 
-                                details.get("issue_shares") or 
-                                details.get("shares_offered")
-                            )
-                            p_max = clean_num_or_none(details.get("maximum_price") or item.get("maximum_price"))
-                            if total_shares and p_max and total_shares > 0 and p_max > 0:
-                                issue_size_cr = round((float(total_shares) * float(p_max)) / 10000000.0, 2)
-
+                        issue_size_cr = round(float(clean_size), 2) if clean_size < 100000 else round(float(clean_size) / 10000000.0, 2)
                     item["issue_size_cr"] = issue_size_cr
                     item["listing_price"] = details.get("listing_price")
 
                     timeline = details.get("timeline") or {}
-                    item["allotment_date"] = (
-                        timeline.get("allotment_start_date") or 
-                        timeline.get("basis_of_allotment_date") or 
-                        timeline.get("allotment_date")
-                    )
+                    item["allotment_date"] = timeline.get("allotment_start_date") or timeline.get("allotment_date")
                     item["listing_date"] = timeline.get("listing_date")
 
-                    # ----------------- UPSTOX NATIVE ALLOTMENT DETECTION -----------------
-                    raw_status_str = str(
-                        details.get("allotment_status") or 
-                        details.get("status") or 
-                        timeline.get("allotment_status") or 
-                        item.get("allotment_status") or ""
-                    ).upper()
-
-                    allotment_details = details.get("allotment_details") or {}
-                    
-                    is_allotment_finalized = bool(
+                    raw_status_str = str(details.get("allotment_status") or timeline.get("allotment_status") or "").upper()
+                    item["is_allotment_done"] = bool(
                         details.get("is_allotment_done") is True or
                         timeline.get("is_allotment_done") is True or
-                        allotment_details.get("is_done") is True or
-                        item.get("is_allotment_done") is True or
-                        any(done_kw in raw_status_str for done_kw in ["ALLOTTED", "FINALIZED", "COMPLETED", "DECLARED", "SUCCESS"])
+                        any(w in raw_status_str for w in ["ALLOTTED", "FINALIZED", "COMPLETED", "DECLARED", "SUCCESS"])
                     )
-
-                    item["is_allotment_done"] = is_allotment_finalized
 
                     reg_info = details.get("registrar_info") or {}
                     item["registrar_name"] = reg_info.get("name")
                     item["registrar_url"] = reg_info.get("website")
 
-                    # ----------------- COMPREHENSIVE SUBSCRIPTION PARSER -----------------
-                    sub_retail, sub_hni, sub_qib = 0.0, 0.0, 0.0
-                    total_sub = clean_num_or_none(details.get("total_subscription")) or clean_num_or_none(item.get("total_subscription")) or 0.0
-
-                    cats_data = None
-                    for k in ["categories", "distribution", "bidding_details", "investor_categories", "sub_categories", "subscription_details"]:
-                        val = details.get(k)
-                        if isinstance(val, list) and val:
-                            cats_data = val
-                            break
-                        elif isinstance(val, dict):
-                            cats_data = val.get("categories") or val.get("distribution")
-                            if cats_data:
-                                break
-
-                    if not cats_data:
-                        sub_queries = [
-                            (f"{UPSTOX_BASE_URL}/ipos/{ipo_id}/subscriptions", None),
-                            (f"{UPSTOX_BASE_URL}/ipos/{ipo_id}/subscription", None),
-                            (f"{UPSTOX_BASE_URL}/ipos/{ipo_id}/bids", None),
-                        ]
-                        for sub_url, params in sub_queries:
-                            try:
-                                sub_res = requests.get(sub_url, headers=headers, params=params, timeout=4)
-                                if sub_res.status_code == 200:
-                                    sdata = sub_res.json().get("data", {})
-                                    if isinstance(sdata, list) and sdata:
-                                        cats_data = sdata
-                                        break
-                                    elif isinstance(sdata, dict):
-                                        cats_data = sdata.get("categories") or sdata.get("distribution") or sdata.get("subscription_details")
-                                        if cats_data:
-                                            break
-                            except Exception:
-                                pass
-
-                    if isinstance(cats_data, list):
-                        for c in cats_data:
-                            if not isinstance(c, dict):
-                                continue
-                            c_name = str(
-                                c.get("category") or 
-                                c.get("name") or 
-                                c.get("category_name") or 
-                                c.get("sub_category") or ""
-                            ).upper().strip()
-
-                            c_rate = clean_num_or_none(
-                                c.get("subscription_times") or 
-                                c.get("times_subscribed") or 
-                                c.get("subscription_rate") or 
-                                c.get("rate") or 
-                                c.get("subscription") or 
-                                c.get("oversubscription") or 
-                                c.get("value")
-                            ) or 0.0
-
-                            if any(x in c_name for x in ["RETAIL", "RII", "INDIVIDUAL"]):
-                                sub_retail = float(c_rate)
-                            elif any(x in c_name for x in ["NII", "HNI", "NON-INSTITUTIONAL", "NON INSTITUTIONAL"]):
-                                sub_hni = float(c_rate)
-                            elif "QIB" in c_name:
-                                sub_qib = float(c_rate)
-
-                    if total_sub <= 0.0 and (sub_retail > 0 or sub_hni > 0 or sub_qib > 0):
-                        total_sub = round(max(sub_retail, sub_hni, sub_qib), 2)
-
-                    item["total_subscription"] = total_sub
-                    item["subscription_retail"] = sub_retail
-                    item["subscription_hni"] = sub_hni
-                    item["subscription_qib"] = sub_qib
+                    # Subscription Parsing
+                    item["total_subscription"] = clean_num_or_none(details.get("total_subscription")) or 0.0
+                    item["subscription_retail"] = 0.0
+                    item["subscription_hni"] = 0.0
+                    item["subscription_qib"] = 0.0
 
             time.sleep(0.05)
         except Exception as e:
@@ -503,19 +387,6 @@ def try_fetch_upstox():
 # ----------------- MAIN PIPELINE ORCHESTRATOR -----------------
 def run_pipeline():
     print(">>> [Phase 1/3] Initializing pipeline session...", flush=True)
-
-    manual_overrides = {}
-    if os.path.exists(OVERRIDES_PATH):
-        try:
-            with open(OVERRIDES_PATH, "r", encoding="utf-8") as f:
-                raw_overrides = json.load(f)
-                for k, v in raw_overrides.items():
-                    if k == "aliases":
-                        continue
-                    if isinstance(v, dict) and "registrarName" in v and "registrarUrl" in v:
-                        manual_overrides[clean_company_name(k)] = (v["registrarName"], v["registrarUrl"])
-        except Exception:
-            pass
 
     previous_cache = {}
     last_known_good = []
@@ -532,9 +403,8 @@ def run_pipeline():
 
     existing_gmp = load_existing_gmp()
 
-    print(">>> [Phase 2/3] Executing Upstox data ingestion...", flush=True)
+    print(">>> [Phase 2/3] Ingesting IPO pipeline data...", flush=True)
     final_dataset = []
-    active_unlisted_candidates = []
     active_source = "None"
     upstox_data, status_msg = try_fetch_upstox()
 
@@ -555,9 +425,7 @@ def run_pipeline():
 
             price_min = float(item.get("issue_price_min") or item.get("minimum_price") or 0.0)
             price_max = float(item.get("issue_price_max") or item.get("maximum_price") or 0.0)
-
-            raw_lot = item.get("lot_size") or item.get("minimum_quantity")
-            lot_size = int(clean_num_or_none(raw_lot) or 0)
+            lot_size = int(clean_num_or_none(item.get("lot_size")) or 0)
 
             open_d = parse_date_or_none(item.get("bidding_start_date") or item.get("open_date"))
             close_d = parse_date_or_none(item.get("bidding_end_date") or item.get("close_date"))
@@ -565,243 +433,151 @@ def run_pipeline():
             list_d = parse_date_or_none(item.get("listing_date")) or "To Be Updated"
             raw_status = (item.get("status") or "UPCOMING").upper()
 
-            total_sub = float(item.get("total_subscription") or 0.0)
-            sub_retail = float(item.get("subscription_retail", 0.0))
-            sub_hni = float(item.get("subscription_hni", 0.0))
-            sub_qib = float(item.get("subscription_qib", 0.0))
-
-            # Retrieve prior historical data, logos, and issue structures from cache
-            prior_gmp_history = []
-            prior_financials = []
-            prior_logo = None
-            prior_structure = None
-            prior_managers = []
-            prior_anchor = 0.0
-
-            if norm_key in previous_cache:
-                prev = previous_cache[norm_key]
-                if sub_retail <= 0.0:
-                    sub_retail = float(prev.get("subscriptionRetail", 0.0))
-                if sub_hni <= 0.0:
-                    sub_hni = float(prev.get("subscriptionHNI", 0.0))
-                if sub_qib <= 0.0:
-                    sub_qib = float(prev.get("subscriptionQIB", 0.0))
-                if total_sub <= 0.0:
-                    total_sub = float(prev.get("subscriptionTotal", 0.0))
-
-                prior_gmp_history = prev.get("gmpHistory", [])
-                prior_financials = prev.get("financials", [])
-                prior_logo = prev.get("logoUrl")
-                prior_structure = prev.get("issueStructure")
-                prior_managers = prev.get("leadManagers", [])
-                prior_anchor = float(prev.get("anchorPortionCr", 0.0))
-
-                if prev.get("isAllotmentDone") is True:
-                    item["is_allotment_done"] = True
-
-                if (not list_d or list_d == "To Be Updated") and prev.get("listingDate") not in [None, "To Be Updated", ""]:
-                    list_d = prev.get("listingDate")
-                if (not allot_d or allot_d == "To Be Updated") and prev.get("allotmentDate") not in [None, "To Be Updated", ""]:
-                    allot_d = prev.get("allotmentDate")
-                if (not open_d or open_d == "To Be Updated") and prev.get("openDate") not in [None, "To Be Updated", ""]:
-                    open_d = prev.get("openDate")
-                if (not close_d or close_d == "To Be Updated") and prev.get("closeDate") not in [None, "To Be Updated", ""]:
-                    close_d = prev.get("closeDate")
-
-            issue_size_cr = float(item.get("issue_size_cr") or 0.0)
-            if issue_size_cr <= 0.0 and norm_key in previous_cache:
-                issue_size_cr = float(previous_cache[norm_key].get("issueSizeCr", 0.0))
-                
-            listing_price = float(clean_num_or_none(item.get("listing_price")) or 0.0)
-            if listing_price <= 0.0 and norm_key in previous_cache:
-                listing_price = float(previous_cache[norm_key].get("listingPrice", 0.0))
-
-            if listing_price <= 0.0 and item.get("symbol"):
-                parsed_list_d = parse_date_or_none(item.get("listing_date"))
-                if parsed_list_d and parsed_list_d <= today_ist_str:
-                    listing_price = fetch_live_listing_quote(
-                        item.get("symbol"),
-                        headers={"Accept": "application/json", "Authorization": f"Bearer {UPSTOX_TOKEN}"}
-                    )
-
-            listing_gain_pct = 0.0
-            if listing_price > 0.0 and price_max > 0.0:
-                listing_gain_pct = round(((listing_price - price_max) / price_max) * 100.0, 2)
-
-            status = determine_status(
-                open_d,
-                close_d,
-                list_d if list_d != "To Be Updated" else None,
-                raw_status=raw_status,
-                listing_price=listing_price
-            )
-
-            if status in ["OPEN", "UPCOMING", "CLOSED"]:
-                active_unlisted_candidates.append({
-                    "name": clean_name,
-                    "status": status,
-                    "issuePriceMax": price_max
-                })
-
-            # Manual overrides resolution
-            alias_target = manual_overrides.get("aliases", {}).get(clean_name.lower(), clean_name.lower())
-            override_key = clean_company_name(alias_target)
-            override_entry = manual_overrides.get(override_key) or manual_overrides.get(norm_key)
-
-            reg_name, reg_url = None, None
-            financials_data = []
-
-            if override_entry:
-                if isinstance(override_entry, dict):
-                    reg_name = override_entry.get("registrarName")
-                    reg_url = override_entry.get("registrarUrl")
-                    financials_data = override_entry.get("financials", [])
-                elif isinstance(override_entry, (tuple, list)) and len(override_entry) >= 2:
-                    reg_name, reg_url = override_entry[0], override_entry[1]
-
-            if not financials_data:
-                financials_data = prior_financials
-
-            if not reg_name or not reg_url:
-                raw_reg = item.get("registrar_name") or ""
-                raw_url = item.get("registrar_url") or ""
-                
-                if not raw_reg and norm_key in previous_cache:
-                    raw_reg = previous_cache[norm_key].get("registrarName") or ""
-                    raw_url = previous_cache[norm_key].get("registrarUrl") or ""
-
-                search_target = f"{raw_reg} {raw_url}".lower().strip()
-
-                if search_target:
-                    for pat, name, url in SEBI_REGISTRARS:
-                        if pat in search_target:
-                            reg_name, reg_url = name, url
-                            break
-                    if not reg_name:
-                        reg_name = raw_reg if raw_reg else "Registrar Awaited"
-                        reg_url = raw_url if raw_url.startswith("http") else "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
-                else:
-                    reg_name = "To Be Updated"
-                    reg_url = "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=3&ssid=15&smid=1"
-
-            sym = item.get("symbol")
-            if not sym or str(sym).strip() in ["None", "null", ""]:
-                sym = re.sub(r"[^A-Za-z0-9]", "", clean_name)[:7].upper()
-            if not sym:
-                sym = "IPO"
-
-            rhp_url = item.get("rhp_url") or f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+RHP+file+SEBI"
-            drhp_url = item.get("drhp_url") or f"https://www.google.com/search?q={clean_name.replace(' ', '+')}+IPO+DRHP+file+SEBI"
+            # Merge previous cached attributes (logos, issue structure, BRLMs)
+            prev = previous_cache.get(norm_key, {})
+            status = determine_status(open_d, close_d, list_d if list_d != "To Be Updated" else None, raw_status=raw_status)
 
             cand = {
                 "id": str(idx_counter),
                 "name": clean_name,
-                "symbol": str(sym).strip(),
+                "symbol": str(item.get("symbol") or re.sub(r"[^A-Za-z0-9]", "", clean_name)[:7].upper()),
                 "category": "SME" if str(item.get("issue_type", "")).lower() == "sme" else "Mainboard",
                 "status": status,
-                "logoUrl": prior_logo,
-                "issueSizeCr": issue_size_cr,
-                "issuePriceMin": price_min,
-                "issuePriceMax": price_max,
-                "lotSize": lot_size,
-                "openDate": open_d or "To Be Updated",
-                "closeDate": close_d or "To Be Updated",
-                "allotmentDate": allot_d,
-                "listingDate": list_d,
+                "logoUrl": prev.get("logoUrl"),
+                "issueSizeCr": float(item.get("issue_size_cr") or prev.get("issueSizeCr", 0.0)),
+                "issuePriceMin": price_min or float(prev.get("issuePriceMin", 0.0)),
+                "issuePriceMax": price_max or float(prev.get("issuePriceMax", 0.0)),
+                "lotSize": lot_size or int(prev.get("lotSize", 0)),
+                "openDate": open_d or prev.get("openDate", "To Be Updated"),
+                "closeDate": close_d or prev.get("closeDate", "To Be Updated"),
+                "allotmentDate": allot_d if allot_d != "To Be Updated" else prev.get("allotmentDate", "To Be Updated"),
+                "listingDate": list_d if list_d != "To Be Updated" else prev.get("listingDate", "To Be Updated"),
                 "gmpAmount": 0.0,
                 "gmpPercent": 0.0,
-                "gmpHistory": prior_gmp_history,
-                "issueStructure": prior_structure,
-                "leadManagers": prior_managers,
-                "anchorPortionCr": prior_anchor,
-                "financials": financials_data,
-                "subscriptionTotal": total_sub,
-                "subscriptionRetail": sub_retail,
-                "subscriptionHNI": sub_hni,
-                "subscriptionQIB": sub_qib,
-                "listingPrice": listing_price,
-                "listingGainPercent": listing_gain_pct,
-                "registrarName": reg_name,
-                "registrarUrl": reg_url,
-                "isAllotmentDone": bool(
-                    item.get("is_allotment_done", False) or 
-                    previous_cache.get(norm_key, {}).get("isAllotmentDone", False)
-                ),
-                "rhpPdfUrl": rhp_url,
-                "drhpPdfUrl": drhp_url,
-                "openNotified": bool(previous_cache.get(norm_key, {}).get("openNotified", False)),
-                "closeNotified": bool(previous_cache.get(norm_key, {}).get("closeNotified", False))
+                "gmpHistory": prev.get("gmpHistory", []),
+                "issueStructure": prev.get("issueStructure"),
+                "leadManagers": prev.get("leadManagers", []),
+                "anchorPortionCr": prev.get("anchorPortionCr", 0.0),
+                "financials": prev.get("financials", []),
+                "subscriptionTotal": float(item.get("total_subscription") or prev.get("subscriptionTotal", 0.0)),
+                "subscriptionRetail": float(item.get("subscription_retail", 0.0) or prev.get("subscriptionRetail", 0.0)),
+                "subscriptionHNI": float(item.get("subscription_hni", 0.0) or prev.get("subscriptionHNI", 0.0)),
+                "subscriptionQIB": float(item.get("subscription_qib", 0.0) or prev.get("subscriptionQIB", 0.0)),
+                "listingPrice": float(item.get("listing_price") or prev.get("listingPrice", 0.0)),
+                "listingGainPercent": float(prev.get("listingGainPercent", 0.0)),
+                "registrarName": item.get("registrar_name") or prev.get("registrarName", "To Be Updated"),
+                "registrarUrl": item.get("registrar_url") or prev.get("registrarUrl", "https://www.sebi.gov.in"),
+                "isAllotmentDone": bool(item.get("is_allotment_done", False) or prev.get("isAllotmentDone", False)),
+                "rhpPdfUrl": item.get("rhp_url") or prev.get("rhpPdfUrl", ""),
+                "drhpPdfUrl": item.get("drhp_url") or prev.get("drhpPdfUrl", ""),
+                "openNotified": bool(prev.get("openNotified", False)),
+                "closeNotified": bool(prev.get("closeNotified", False))
             }
-
-            # ----------------- STRICT NOTIFICATION RULES -----------------
-            if status != "LISTED":
-                if open_d == today_ist_str and not cand["openNotified"] and now_hour >= 9:
-                    p_str = f"₹{int(cand['issuePriceMin'])}-₹{int(cand['issuePriceMax'])}" if cand['issuePriceMax'] > 0 else "Price TBA"
-                    send_push_notification(
-                        title=f"📢 Bidding Opens Today: {cand['name']}",
-                        body=f"IPO bidding is now live ({p_str}). Lot size: {cand['lotSize']} shares.",
-                        ipo_id=cand["id"],
-                        channel_type="market_updates"
-                    )
-                    cand["openNotified"] = True
-
-                if close_d == today_ist_str and not cand["closeNotified"] and now_hour >= 9:
-                    sub_str = f" (Subscribed {cand['subscriptionTotal']}x)" if cand['subscriptionTotal'] > 0 else ""
-                    send_push_notification(
-                        title=f"⏰ Last Day to Bid: {cand['name']}",
-                        body=f"Bidding closes at 5:00 PM today{sub_str}. Check lot sizes and details.",
-                        ipo_id=cand["id"],
-                        channel_type="market_updates"
-                    )
-                    cand["closeNotified"] = True
-
             if validate_record(cand):
                 final_dataset.append(cand)
                 idx_counter += 1
 
         for old in last_known_good:
-            old_key = clean_company_name(old.get("name", ""))
-            if old_key not in seen_keys and old.get("status") in ["LISTED", "CLOSED"]:
+            old_k = clean_company_name(old.get("name", ""))
+            if old_k not in seen_keys:
                 old["id"] = str(idx_counter)
                 final_dataset.append(old)
                 idx_counter += 1
-
     else:
-        print(f"    Tier 1 Notice: {status_msg}", flush=True)
-        final_dataset = last_known_good
-        active_source = "CACHE_FALLBACK"
+        print(f"    Tier 1 Notice: {status_msg}. Running Web Feed Discovery...", flush=True)
+        active_source = "LIVE_WEB_FALLBACK"
+        discovered_ipos = scrape_live_ipo_feed()
 
-    # Synchronize live GMP storage file
-    synced_gmp_map = sync_and_save_gmp(active_unlisted_candidates, existing_gmp)
+        # Merge with existing cache
+        merged_dict = {clean_company_name(item.get("name", "")): item for item in last_known_good}
+        idx = len(last_known_good) + 1
 
-    # ----------------- ATTACH GMP WITH HISTORICAL PERSISTENCE -----------------
+        for disc in discovered_ipos:
+            k = clean_company_name(disc["name"])
+            if k not in merged_dict:
+                merged_dict[k] = {
+                    "id": str(idx),
+                    "name": disc["name"],
+                    "symbol": re.sub(r"[^A-Za-z0-9]", "", disc["name"])[:7].upper(),
+                    "category": "SME" if disc["is_sme"] else "Mainboard",
+                    "status": "OPEN",
+                    "logoUrl": None,
+                    "issueSizeCr": 0.0,
+                    "issuePriceMin": 0.0,
+                    "issuePriceMax": 0.0,
+                    "lotSize": 0,
+                    "openDate": today_ist_str,
+                    "closeDate": "To Be Updated",
+                    "allotmentDate": "To Be Updated",
+                    "listingDate": "To Be Updated",
+                    "gmpAmount": 0.0,
+                    "gmpPercent": 0.0,
+                    "gmpHistory": [],
+                    "issueStructure": None,
+                    "leadManagers": [],
+                    "anchorPortionCr": 0.0,
+                    "financials": [],
+                    "subscriptionTotal": 0.0,
+                    "subscriptionRetail": 0.0,
+                    "subscriptionHNI": 0.0,
+                    "subscriptionQIB": 0.0,
+                    "listingPrice": 0.0,
+                    "listingGainPercent": 0.0,
+                    "registrarName": "To Be Updated",
+                    "registrarUrl": "https://www.sebi.gov.in",
+                    "isAllotmentDone": False,
+                    "rhpPdfUrl": "",
+                    "drhpPdfUrl": "",
+                    "openNotified": False,
+                    "closeNotified": False
+                }
+                idx += 1
+
+        final_dataset = list(merged_dict.values())
+
+    # Synchronize live GMP map across entire dataset
+    synced_gmp_map = sync_and_save_gmp(final_dataset, existing_gmp)
+
+    # ----------------- ATTACH GMP VIA FUZZY TOKEN MATCHING -----------------
+    updated_gmp_count = 0
     for item in final_dataset:
         k = clean_company_name(item.get("name", ""))
         price_max = float(item.get("issuePriceMax", 0.0))
 
         if item.get("status") != "LISTED":
+            gmp_val = 0.0
+
+            # 1. Exact match
             if k in synced_gmp_map:
                 gmp_val = float(synced_gmp_map[k].get("gmp", 0.0))
+            else:
+                # 2. Token overlap fallback (handles titles like Core4 Engineers vs Core4)
+                item_tokens = get_tokens(item.get("name", ""))
+                for g_k, g_v in synced_gmp_map.items():
+                    target_tokens = get_tokens(g_v.get("name", ""))
+                    if item_tokens and target_tokens and (item_tokens.issubset(target_tokens) or target_tokens.issubset(item_tokens)):
+                        gmp_val = float(g_v.get("gmp", 0.0))
+                        break
+
+            if gmp_val > 0.0:
                 item["gmpAmount"] = gmp_val
-                item["gmpPercent"] = round((gmp_val / price_max * 100.0), 2) if (price_max > 0 and gmp_val > 0) else 0.0
+                item["gmpPercent"] = round((gmp_val / price_max * 100.0), 2) if price_max > 0.0 else 0.0
+                updated_gmp_count += 1
 
-                # Append daily point to gmpHistory if new and non-zero
-                if gmp_val > 0:
-                    history = item.get("gmpHistory", [])
-                    if not history or history[-1].get("dateLabel") != today_label:
-                        history.append({"dateLabel": today_label, "amount": gmp_val})
-                        item["gmpHistory"] = history[-7:]  # Keep last 7 tracking points
-                    else:
-                        history[-1]["amount"] = gmp_val
+                # Append daily historical tracking
+                history = item.get("gmpHistory", [])
+                if not history or history[-1].get("dateLabel") != today_label:
+                    history.append({"dateLabel": today_label, "amount": gmp_val})
+                    item["gmpHistory"] = history[-7:]
+                else:
+                    history[-1]["amount"] = gmp_val
         else:
-            if k in previous_cache:
-                prev_gmp_amt = float(previous_cache[k].get("gmpAmount", 0.0))
-                prev_gmp_pct = float(previous_cache[k].get("gmpPercent", 0.0))
-                if prev_gmp_amt > 0.0:
-                    item["gmpAmount"] = prev_gmp_amt
-                    item["gmpPercent"] = prev_gmp_pct
+            prev_entry = previous_cache.get(k, {})
+            if prev_entry.get("gmpAmount", 0.0) > 0:
+                item["gmpAmount"] = prev_entry.get("gmpAmount", 0.0)
+                item["gmpPercent"] = prev_entry.get("gmpPercent", 0.0)
 
-    print(">>> [Phase 3/3] Saving feed to disk...", flush=True)
+    print(f">>> [Phase 3/3] Saving feed to disk. Applied live GMP to {updated_gmp_count} non-listed IPOs...", flush=True)
     if not final_dataset:
         print("CRITICAL: Ingestion failed. Preserving existing ipos.json.", flush=True)
         return
@@ -814,7 +590,7 @@ def run_pipeline():
         f.write(f"**Last Sync (UTC):** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
         f.write(f"**Primary Active Source:** {active_source}\n")
         f.write(f"**Total Records Ingested:** {len(final_dataset)}\n")
-        f.write("Status: Direct Upstox v2 Ingestion with Category Subscription & Dynamic Web GMP.\n")
+        f.write(f"**Live GMP Records Attached:** {updated_gmp_count}\n")
 
     print(f">>> Pipeline completed successfully via [{active_source}]. Processed {len(final_dataset)} records.", flush=True)
 
