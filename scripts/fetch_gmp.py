@@ -87,10 +87,10 @@ def matches_target(target_name: str, cand_name: str, aliases: Dict[str, str]) ->
     return score >= 72
 
 def scrape_live_sources() -> List[Dict]:
+    # Strictly query GMP-dedicated endpoints (never subscription reports like /333/)
     urls = [
         "https://www.investorgain.com/report/live-ipo-gmp/331/all/",
-        "https://www.investorgain.com/report/live-ipo-gmp/331/",
-        "https://www.investorgain.com/report/ipo-subscription-live/333/"
+        "https://www.investorgain.com/report/live-ipo-gmp/331/"
     ]
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
@@ -113,6 +113,14 @@ def scrape_live_sources() -> List[Dict]:
                 if not rows:
                     continue
 
+                # Locate the exact column index for GMP
+                gmp_col_idx = None
+                for idx, cell in enumerate(rows[0].find_all(["th", "td"])):
+                    txt = cell.get_text(strip=True).upper()
+                    if "GMP" in txt:
+                        gmp_col_idx = idx
+                        break
+
                 for row in rows[1:]:
                     cells = row.find_all(["td", "th"])
                     if len(cells) < 3:
@@ -128,39 +136,37 @@ def scrape_live_sources() -> List[Dict]:
                     gmp_amt = None
                     gmp_pct = None
 
-                    # 1. Direct regex on entire row for explicit "GMP: ₹X (Y%)" or "GMP: --"
-                    amt_match = re.search(r"GMP\s*:\s*(?:₹|\+)?\s*([0-9]+(?:\.[0-9]+)?)", raw_text, re.IGNORECASE)
+                    # Check 1: Inline label "GMP: ₹247 (22.07%)"
+                    amt_match = re.search(r"GMP\s*:\s*₹?\s*([0-9]+(?:\.[0-9]+)?)", raw_text, re.IGNORECASE)
                     pct_match = re.search(r"GMP:.*?\((\d+(?:\.\d+)?)\%\)", raw_text, re.IGNORECASE)
 
                     if amt_match:
                         gmp_amt = float(amt_match.group(1))
                         gmp_pct = float(pct_match.group(1)) if pct_match else 0.0
+
+                    # Check 2: Target the dedicated GMP column if identified in the header
+                    elif gmp_col_idx is not None and gmp_col_idx < len(cells):
+                        target_cell_text = cells[gmp_col_idx].get_text(strip=True)
+                        if target_cell_text not in ["--", "-", "N/A", ""]:
+                            m = re.search(r"(?:₹|\+)?\s*([0-9]+(?:\.[0-9]+)?)", target_cell_text)
+                            p_m = re.search(r"\(([+-]?[0-9]+(?:\.[0-9]+)?)\s*%\)", target_cell_text)
+                            if m:
+                                gmp_amt = float(m.group(1).replace(",", ""))
+                                gmp_pct = float(p_m.group(1).replace(",", "")) if p_m else 0.0
+
+                    # Check 3: Only match columns with an explicit '₹' symbol (prevents subscription overlap)
                     else:
-                        # 2. Inspect cells 1 to 4 where InvestorGain places GMP and Sub figures
                         for cell in cells[1:4]:
                             c_text = cell.get_text(strip=True)
-                            
-                            # Skip empty or dashed indicators
-                            if c_text in ["--", "-", "N/A", ""]:
-                                continue
+                            if "₹" in c_text:
+                                m = re.search(r"₹\s*([0-9]+(?:\.[0-9]+)?)", c_text)
+                                p_m = re.search(r"\(([+-]?[0-9]+(?:\.[0-9]+)?)\s*%\)", c_text)
+                                if m:
+                                    gmp_amt = float(m.group(1).replace(",", ""))
+                                    gmp_pct = float(p_m.group(1).replace(",", "")) if p_m else 0.0
+                                    break
 
-                            # Detect currency symbols or explicit numerical GMP values
-                            m = re.search(r"(?:₹|\+|\b)\s*([\d,]+(?:\.\d+)?)\s*(?:\([+-]?\d+(?:\.\d+)?%\))?", c_text)
-                            p_m = re.search(r"\(([+-]?[\d,]+(?:\.\d+)?)\s*%\)", c_text)
-                            
-                            if m:
-                                val_clean = m.group(1).replace(",", "")
-                                try:
-                                    parsed_val = float(val_clean)
-                                    # Guard against parsing price bands/dates as GMP
-                                    if parsed_val > 0 and parsed_val < 5000:
-                                        gmp_amt = parsed_val
-                                        gmp_pct = float(p_m.group(1).replace(",", "")) if p_m else 0.0
-                                        break
-                                except ValueError:
-                                    pass
-
-                    if gmp_amt is not None and gmp_amt > 0:
+                    if gmp_amt is not None and gmp_amt >= 0:
                         key = clean_company_name(clean_name)
                         if key:
                             records_by_name[key] = {
@@ -172,10 +178,11 @@ def scrape_live_sources() -> List[Dict]:
             print(f"[WARN] Error fetching {url}: {e}")
 
     results = list(records_by_name.values())
-    print(f"[GMP Scraper] Extracted {len(results)} live real-time GMP records.")
+    print(f"[GMP Scraper] Extracted {len(results)} authentic GMP records across /331/ sources.")
     for r in results:
-        print(f"   -> Found: '{r['name']}' = ₹{r['gmp']} ({r['percent']}%)")
+        print(f"   -> Found GMP: '{r['name']}' = ₹{r['gmp']} ({r['percent']}%)")
     return results
+
 
 def sync_gmp():
     scraped_candidates = scrape_live_sources()
