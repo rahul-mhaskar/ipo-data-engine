@@ -11,8 +11,8 @@
   },
   "core4engineers": {
     "name": "Core4 Engineers",
-    "gmp": 0.0823,
-    "percent": 0.09
+    "gmp": 0.0,
+    "percent": 0.0
   },
   "bombaycoatedspecialsteels": {
     "name": "Bombay Coated & Special Steels",
@@ -31,8 +31,8 @@
   },
   "wiscon": {
     "name": "Wiscon Industries",
-    "gmp": 124.236,
-    "percent": 60.9
+    "gmp": 0.0,
+    "percent": 0.0
   },
   "sfcenvironmentaltechnologies": {
     "name": "SFC Environmental Technologies",
@@ -116,78 +116,78 @@
   },
   "reliancejio": {
     "name": "Reliance Jio",
-    "gmp": 247.0,
-    "percent": 22.07
+    "gmp": 246.0,
+    "percent": 21.98
   },
   "parashealthcare": {
     "name": "Paras Healthcare",
-    "gmp": 9.0,
-    "percent": 1.3
+    "gmp": 25.0,
+    "percent": 3.61
   },
   "sahajanandmedicaltechnologies": {
     "name": "Sahajanand Medical Technologies",
-    "gmp": 14.2119,
-    "percent": 4.13
+    "gmp": 43.0,
+    "percent": 12.5
   },
   "tonboimagingindia": {
     "name": "Tonbo Imaging India",
-    "gmp": 132.8119,
-    "percent": 18.97
+    "gmp": 500.0,
+    "percent": 71.43
   },
   "shellzindia": {
     "name": "Shellz India",
-    "gmp": 58.5419,
-    "percent": 32.7
+    "gmp": 46.0,
+    "percent": 25.7
   },
   "zetwerkmanufacturing": {
     "name": "Zetwerk Manufacturing",
-    "gmp": 3.119,
-    "percent": 2.07
+    "gmp": 14.0,
+    "percent": 9.27
   },
   "bonfigliolitransmissions": {
     "name": "Bonfiglioli Transmissions",
-    "gmp": 46.0519,
-    "percent": 7.86
+    "gmp": 140.0,
+    "percent": 23.89
   },
   "ravitaengineering": {
     "name": "Ravita Engineering Services",
-    "gmp": 7.1116,
-    "percent": 6.35
+    "gmp": 7.0,
+    "percent": 6.25
   },
   "fusioncx": {
     "name": "Fusion CX",
-    "gmp": 4.6816,
-    "percent": 1.62
+    "gmp": 33.0,
+    "percent": 11.42
   },
   "hdfireprotect": {
     "name": "HD Fire Protect",
-    "gmp": 131.7315,
-    "percent": 48.61
+    "gmp": 91.0,
+    "percent": 33.58
   },
   "vaibhavvyapaar": {
     "name": "Vaibhav Vyapaar",
-    "gmp": 3.2315,
-    "percent": 5.98
+    "gmp": 2.0,
+    "percent": 3.7
   },
   "rkfashionaccessories": {
     "name": "R.K.Fashion Accessories",
-    "gmp": 2.77,
-    "percent": 3.38
+    "gmp": 7.0,
+    "percent": 8.54
   },
   "tnasolutions": {
     "name": "TNA Solutions",
-    "gmp": 55.26,
-    "percent": 78.94
+    "gmp": 7.0,
+    "percent": 10.0
   },
   "acmeindia": {
     "name": "Acme India Industries",
-    "gmp": 124.236,
-    "percent": 63.39
+    "gmp": 0.0,
+    "percent": 0.0
   },
   "paramountsyntex": {
     "name": "Paramount Syntex",
-    "gmp": 1.886,
-    "percent": 1.49
+    "gmp": 0.0,
+    "percent": 0.0
   },
   "shreetnbpolymers": {
     "name": "Shree TNB Polymers",
@@ -196,27 +196,32 @@
   },
   "everestimstechnologies": {
     "name": "EverestIMS Technologies",
-    "gmp": 294.225,
-    "percent": 346.15
+    "gmp": 16.0,
+    "percent": 18.82
   },
   "eventions": {
     "name": "Eventions",
-    "gmp": 2.395,
-    "percent": 2.03
+    "gmp": 0.0,
+    "percent": 0.0
   },
   "dovesoft": {
     "name": "Dove Soft",
-    "gmp": 1.385,
-    "percent": 1.25
+    "gmp": 0.0,
+    "percent": 0.0
   },
   "sollfegesmartelectronics": {
     "name": "Sollfege Smart Electronics",
-    "gmp": 2.145,
-    "percent": 3.9
+    "gmp": 10.0,
+    "percent": 18.18
   },
   "acmeuniversalsafezone9": {
     "name": "Acme Universal Safezone 9",
-    "gmp": 124.236,
-    "percent": 174.98
+    "gmp": 30.0,
+    "percent": 42.25
+  },
+  "adroitindia": {
+    "name": "Adroit Industries (India)",
+    "gmp": 0.0,
+    "percent": 0.0
   }
 }
