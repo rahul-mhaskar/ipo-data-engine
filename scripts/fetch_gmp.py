@@ -20,90 +20,71 @@ except ImportError:
 
 IST = timezone(timedelta(hours=5, minutes=30))
 
-# Dynamically resolve root repo path whether run from root or inside scripts/
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) if "scripts" in os.path.dirname(os.path.abspath(__file__)) else os.path.abspath(".")
 IPOS_JSON_PATH = os.path.join(REPO_ROOT, "ipos.json")
 GMP_DATA_PATH = os.path.join(REPO_ROOT, "gmp_data.json")
 OVERRIDES_PATH = os.path.join(REPO_ROOT, "manual_overrides.json")
 
-# Industry noise words to ignore during matching
-INDUSTRY_NOISE: Set[str] = {
-    "pharma", "pharmaceuticals", "pharmaceutical", "jewels", "jewellers", 
-    "jewellery", "tech", "technologies", "technology", "solutions", 
-    "infra", "infrastructure", "finance", "financial", "enterprises", 
-    "logistics", "industries", "energy", "power", "capital", "holdings",
+NOISE_WORDS: Set[str] = {
     "limited", "ltd", "pvt", "private", "corp", "corporation", "ipo",
-    "india", "global", "international", "services", "group", "allotted",
-    "closing", "today", "sme", "bse", "nse"
+    "india", "services", "solutions", "technologies", "tech", "group",
+    "industries", "sme", "bse", "nse", "enterprises"
 }
 
-PARENT_PREFIXES: Set[str] = {
-    "reliance", "tata", "adani", "bajaj", "birla", "mahindra", "godrej", "l&t"
-}
-
-def clean_tokens(name: str) -> Set[str]:
+def clean_company_name(name: str) -> str:
     if not name:
-        return set()
+        return ""
+    s = name.replace("’", "").replace("'", "")
+    s = re.sub(r"\b(IPO|SME|BSE|NSE|Ltd\.?|Limited|Pvt\.?|Private|Industries|Industry|Enterprises|Services|Holdings)\b", "", s, flags=re.IGNORECASE)
+    return re.sub(r"[^a-z0-9]", "", s.lower())
+
+def extract_clean_name(cell) -> str:
+    """Extracts company name, stripping out InvestorGain's appended GMP and ticker badges."""
+    a_tag = cell.find("a")
+    raw = a_tag.get_text(strip=True) if a_tag else cell.get_text(separator=" ", strip=True)
+    
+    # Cut off everything once 'GMP:' or 'L@' starts
+    raw = re.split(r"gmp\s*:", raw, flags=re.IGNORECASE)[0]
+    raw = re.split(r"l\s*@", raw, flags=re.IGNORECASE)[0]
+    
+    cleaned = re.sub(r"\b(IPO|SME|BSE|NSE)\b", " ", raw, flags=re.IGNORECASE)
+    cleaned = re.sub(r"\b[OCLU]\b\.?", " ", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"[^a-zA-Z0-9\s]", " ", cleaned)
+    return " ".join(cleaned.split())
+
+def get_tokens(name: str) -> Set[str]:
     cleaned = re.sub(r"[^a-zA-Z0-9\s]", " ", name.lower())
-    return set(cleaned.split())
+    return {t for t in cleaned.split() if t not in NOISE_WORDS and len(t) > 1}
 
-def extract_core_entity(name: str) -> Set[str]:
-    tokens = clean_tokens(name) - INDUSTRY_NOISE
-    specific_tokens = tokens - PARENT_PREFIXES
-    return specific_tokens if specific_tokens else tokens
+def matches_target(target_name: str, cand_name: str, aliases: Dict[str, str]) -> bool:
+    t_clean = target_name.lower().strip()
+    c_clean = cand_name.lower().strip()
 
-def check_alias_match(name1: str, name2: str, aliases: Dict[str, str]) -> bool:
-    n1 = name1.strip().lower()
-    n2 = name2.strip().lower()
-    if aliases.get(n1) == n2 or aliases.get(n2) == n1:
+    # Manual alias check
+    if aliases.get(t_clean) == c_clean or aliases.get(c_clean) == t_clean:
         return True
     for k, v in aliases.items():
-        if (k in n1 and v in n2) or (v in n1 and k in n2):
+        if (k in t_clean and v in c_clean) or (v in t_clean and k in c_clean):
             return True
-    return False
 
-def find_best_gmp_match(
-    target_ipo: Dict, 
-    candidates: List[Dict], 
-    aliases: Dict[str, str],
-    min_score: int = 86
-) -> Optional[Dict]:
-    target_name = target_ipo.get("name", "")
-    target_symbol = target_ipo.get("symbol", "").strip().upper()
-    target_close = target_ipo.get("closeDate", "").strip()
+    t_tokens = get_tokens(target_name)
+    c_tokens = get_tokens(cand_name)
 
-    if target_symbol:
-        for cand in candidates:
-            cand_symbol = cand.get("symbol", "").strip().upper()
-            if cand_symbol and cand_symbol == target_symbol:
-                return cand
+    if not t_tokens or not c_tokens:
+        return False
 
-    target_core = extract_core_entity(target_name)
-    best_candidate = None
-    highest_score = 0
+    # Check direct containment or subset
+    if t_tokens.issubset(c_tokens) or c_tokens.issubset(t_tokens):
+        return True
 
-    for cand in candidates:
-        cand_name = cand.get("name", "")
-        cand_close = cand.get("closeDate", "").strip()
+    # Check intersection overlap
+    common = t_tokens.intersection(c_tokens)
+    if len(common) >= 2 or (len(t_tokens) == 1 and len(common) == 1):
+        return True
 
-        if check_alias_match(target_name, cand_name, aliases):
-            return cand
-
-        cand_core = extract_core_entity(cand_name)
-        common_anchors = target_core.intersection(cand_core)
-        
-        if target_core and cand_core and not common_anchors:
-            continue
-
-        if target_close and cand_close and target_close != cand_close:
-            continue
-
-        score = fuzz.token_set_ratio(target_name.lower(), cand_name.lower())
-        if score > highest_score and score >= min_score:
-            highest_score = score
-            best_candidate = cand
-
-    return best_candidate
+    # Fallback fuzzy match
+    score = fuzz.token_set_ratio(t_clean, c_clean)
+    return score >= 72
 
 def scrape_live_sources() -> List[Dict]:
     urls = [
@@ -120,58 +101,60 @@ def scrape_live_sources() -> List[Dict]:
 
     for url in urls:
         try:
-            res = requests.get(url, headers=headers, timeout=20)
+            res = requests.get(url, headers=headers, timeout=15)
             if res.status_code != 200:
                 continue
 
             soup = BeautifulSoup(res.text, "html.parser")
-            table = soup.find("table")
-            if not table:
-                continue
+            for table in soup.find_all("table"):
+                rows = table.find_all("tr")
+                for row in rows[1:]:
+                    cells = row.find_all(["td", "th"])
+                    if not cells:
+                        continue
 
-            rows = table.find_all("tr")
-            for row in rows[1:]:
-                cols = [td.get_text(separator=" ", strip=True) for td in row.find_all(["td", "th"])]
-                if not cols:
-                    continue
+                    first_cell = cells[0]
+                    clean_name = extract_clean_name(first_cell)
+                    raw_text = row.get_text(separator=" ", strip=True)
 
-                raw_name = cols[0]
-                inline_amt = re.search(r"GMP:\s*₹?\s*([0-9]+(?:\.[0-9]+)?)", raw_name)
-                inline_pct = re.search(r"GMP:.*?\((\d+(?:\.\d+)?)\%\)", raw_name)
+                    if not clean_name or any(h in clean_name.lower() for h in ["issuer", "company", "ipo name", "closing date"]):
+                        continue
 
-                gmp_amt = None
-                gmp_pct = None
+                    # Extract GMP amount & percentage
+                    gmp_amt = None
+                    gmp_pct = None
 
-                if inline_amt:
-                    gmp_amt = float(inline_amt.group(1))
-                    gmp_pct = float(inline_pct.group(1)) if inline_pct else 0.0
-                elif len(cols) > 2:
-                    for col_text in cols[1:4]:
-                        if "₹" in col_text:
-                            amt_match = re.search(r"₹\s*([0-9]+(?:\.[0-9]+)?)", col_text)
-                            pct_match = re.search(r"\(([+-]?[0-9]+(?:\.[0-9]+)?)\s*\%\)", col_text)
-                            if amt_match:
-                                gmp_amt = float(amt_match.group(1))
-                                gmp_pct = float(pct_match.group(1)) if pct_match else 0.0
-                                break
+                    # 1. Regex check on row text for standard GMP representation
+                    amt_match = re.search(r"GMP\s*:\s*₹?\s*([0-9]+(?:\.[0-9]+)?)", raw_text, re.IGNORECASE)
+                    pct_match = re.search(r"GMP:.*?\((\d+(?:\.\d+)?)\%\)", raw_text, re.IGNORECASE)
 
-                if gmp_amt is not None:
-                    clean_name = re.sub(r"GMP:.*", "", raw_name, flags=re.IGNORECASE)
-                    clean_name = re.sub(r"\b(IPO|SME|BSE|NSE|Open|Closed|Allotted)\b", "", clean_name, flags=re.IGNORECASE).strip()
+                    if amt_match:
+                        gmp_amt = float(amt_match.group(1))
+                        gmp_pct = float(pct_match.group(1)) if pct_match else 0.0
+                    else:
+                        for cell in cells[1:4]:
+                            c_text = cell.get_text(strip=True)
+                            if "₹" in c_text or "+" in c_text:
+                                m = re.search(r"(?:₹|\+)\s*([\d,]+(?:\.\d+)?)", c_text)
+                                p_m = re.search(r"\(([+-]?[\d,]+(?:\.\d+)?)\s*%\)", c_text)
+                                if m:
+                                    gmp_amt = float(m.group(1).replace(",", ""))
+                                    gmp_pct = float(p_m.group(1).replace(",", "")) if p_m else 0.0
+                                    break
 
-                    key = re.sub(r"[^a-z0-9]", "", clean_name.lower())
-                    if key and (key not in records_by_name or gmp_amt > 0):
-                        records_by_name[key] = {
-                            "name": clean_name,
-                            "raw_name": raw_name,
-                            "gmp": gmp_amt,
-                            "percent": gmp_pct
-                        }
+                    if gmp_amt is not None:
+                        key = clean_company_name(clean_name)
+                        if key and (key not in records_by_name or gmp_amt > 0):
+                            records_by_name[key] = {
+                                "name": clean_name,
+                                "gmp": gmp_amt,
+                                "percent": gmp_pct
+                            }
         except Exception as e:
             print(f"[WARN] Error fetching {url}: {e}")
 
     results = list(records_by_name.values())
-    print(f"[GMP Scraper] Extracted {len(results)} live real-time GMP records.")
+    print(f"[GMP Scraper] Extracted {len(results)} live GMP records across sources.")
     return results
 
 def sync_gmp():
@@ -211,7 +194,7 @@ def sync_gmp():
     updated_count = 0
     for item in items:
         raw_name = item.get("name", "")
-        clean_key = re.sub(r"[^a-z0-9]", "", raw_name.lower())
+        clean_key = clean_company_name(raw_name)
 
         final_gmp = None
         final_pct = None
@@ -221,14 +204,15 @@ def sync_gmp():
         if override_entry and "gmp" in override_entry:
             final_gmp = float(override_entry["gmp"])
 
-        # Priority 2: Scraped match
+        # Priority 2: Scraped match via token & alias overlap
         if final_gmp is None:
-            match = find_best_gmp_match(item, scraped_candidates, aliases)
-            if match:
-                final_gmp = match["gmp"]
-                final_pct = match["percent"]
+            for cand in scraped_candidates:
+                if matches_target(raw_name, cand["name"], aliases):
+                    final_gmp = cand["gmp"]
+                    final_pct = cand["percent"]
+                    break
 
-        # Priority 3: Previous storage
+        # Priority 3: Fallback to persistent storage
         if final_gmp is None and clean_key in gmp_store:
             saved = gmp_store[clean_key]
             final_gmp = float(saved.get("gmp", 0.0) if isinstance(saved, dict) else saved)
@@ -237,13 +221,13 @@ def sync_gmp():
             continue
 
         p_max = float(item.get("issuePriceMax", 0.0))
-        if final_pct is None:
+        if final_pct is None or final_pct == 0.0:
             final_pct = round((final_gmp / p_max * 100.0), 2) if (p_max > 0 and final_gmp > 0) else 0.0
 
         item["gmpAmount"] = final_gmp
         item["gmpPercent"] = final_pct
 
-        # Genuine incremental append (strictly actual recorded sessions)
+        # Incremental history append
         history = item.get("gmpHistory", [])
         if not isinstance(history, list):
             history = []
@@ -256,8 +240,8 @@ def sync_gmp():
                 "amount": final_gmp
             })
 
-        # Cap strictly to the latest 6 authentic captures
-        item["gmpHistory"] = history[-6:]
+        # Retain last 7 tracking captures
+        item["gmpHistory"] = history[-7:]
 
         gmp_store[clean_key] = {
             "name": raw_name,
@@ -265,6 +249,7 @@ def sync_gmp():
             "percent": final_pct
         }
         updated_count += 1
+        print(f"[MATCHED GMP] {raw_name} -> ₹{final_gmp} ({final_pct}%)")
 
     with open(IPOS_JSON_PATH, "w", encoding="utf-8") as f:
         json.dump(ipos_data, f, indent=2, ensure_ascii=False)
@@ -272,7 +257,8 @@ def sync_gmp():
     with open(GMP_DATA_PATH, "w", encoding="utf-8") as f:
         json.dump(gmp_store, f, indent=2, ensure_ascii=False)
 
-    print(f"Successfully synced GMP and authentic history points for {updated_count}/{len(items)} IPOs.")
+    print(f"[SUCCESS] Updated GMP for {updated_count}/{len(items)} IPOs in {IPOS_JSON_PATH}")
 
 if __name__ == "__main__":
     sync_gmp()
+                
