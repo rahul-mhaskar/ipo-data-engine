@@ -114,12 +114,12 @@
   },
   "reliancejio": {
     "name": "Reliance Jio",
-    "gmp": 248.0,
-    "percent": 22.16
+    "gmp": 247.0,
+    "percent": 22.07
   },
   "parashealthcare": {
     "name": "Paras Healthcare",
-    "gmp": 11.0,
-    "percent": 1.59
+    "gmp": 9.0,
+    "percent": 1.3
   }
 }
