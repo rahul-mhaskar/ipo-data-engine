@@ -4,7 +4,7 @@
     "name": "Ajwa Projects",
     "symbol": "AJWA",
     "category": "SME",
-    "status": "UPCOMING",
+    "status": "OPEN",
     "logoUrl": null,
     "issueSizeCr": 38.0,
     "issuePriceMin": 203.0,
@@ -19,6 +19,10 @@
     "gmpHistory": [
       {
         "dateLabel": "27 Oct",
+        "amount": 25.0
+      },
+      {
+        "dateLabel": "28 Oct",
         "amount": 25.0
       }
     ],
@@ -73,7 +77,7 @@
     "name": "Carver Roboweld",
     "symbol": "CRL",
     "category": "SME",
-    "status": "UPCOMING",
+    "status": "OPEN",
     "logoUrl": null,
     "issueSizeCr": 28.0,
     "issuePriceMin": 76.0,
@@ -153,7 +157,7 @@
     "name": "M.K.Sons Fine Jewels",
     "symbol": "MKSONS",
     "category": "Mainboard",
-    "status": "UPCOMING",
+    "status": "OPEN",
     "logoUrl": null,
     "issueSizeCr": 275.0,
     "issuePriceMin": 153.0,
@@ -180,6 +184,10 @@
       },
       {
         "dateLabel": "27 Oct",
+        "amount": 9.0
+      },
+      {
+        "dateLabel": "28 Oct",
         "amount": 9.0
       }
     ],
@@ -264,6 +272,10 @@
       {
         "dateLabel": "27 Oct",
         "amount": 44.0
+      },
+      {
+        "dateLabel": "28 Oct",
+        "amount": 44.0
       }
     ],
     "issueStructure": {
@@ -296,7 +308,7 @@
         "netWorth": 105.2
       }
     ],
-    "subscriptionTotal": 9.6227,
+    "subscriptionTotal": 5.07,
     "subscriptionRetail": 6.79,
     "subscriptionHNI": 13.01,
     "subscriptionQIB": 12.03,
@@ -347,6 +359,10 @@
       {
         "dateLabel": "27 Oct",
         "amount": 15.0
+      },
+      {
+        "dateLabel": "28 Oct",
+        "amount": 15.0
       }
     ],
     "issueStructure": {
@@ -381,7 +397,7 @@
         "netWorth": 805.5
       }
     ],
-    "subscriptionTotal": 0.127,
+    "subscriptionTotal": 0.06,
     "subscriptionRetail": 0.16,
     "subscriptionHNI": 0.09,
     "subscriptionQIB": 0.0,
@@ -441,7 +457,7 @@
         "netWorth": 38.5
       }
     ],
-    "subscriptionTotal": 0.9127,
+    "subscriptionTotal": 0.91,
     "subscriptionRetail": 0.34,
     "subscriptionHNI": 0.51,
     "subscriptionQIB": 2.0,
@@ -496,6 +512,10 @@
       {
         "dateLabel": "27 Oct",
         "amount": 10.0
+      },
+      {
+        "dateLabel": "28 Oct",
+        "amount": 10.0
       }
     ],
     "issueStructure": {
@@ -531,7 +551,7 @@
         "netWorth": 1160.4
       }
     ],
-    "subscriptionTotal": 0.3527,
+    "subscriptionTotal": 0.18,
     "subscriptionRetail": 0.11,
     "subscriptionHNI": 0.72,
     "subscriptionQIB": 0.48,
@@ -577,6 +597,10 @@
       },
       {
         "dateLabel": "27 Oct",
+        "amount": 9.0
+      },
+      {
+        "dateLabel": "28 Oct",
         "amount": 9.0
       }
     ],
@@ -2130,7 +2154,7 @@
         "netWorth": 24.8
       }
     ],
-    "subscriptionTotal": 5.4427,
+    "subscriptionTotal": 5.54,
     "subscriptionRetail": 2.72,
     "subscriptionHNI": 12.26,
     "subscriptionQIB": 5.06,
@@ -2163,10 +2187,6 @@
     "gmpPercent": 21.81,
     "gmpHistory": [
       {
-        "dateLabel": "20 Oct",
-        "amount": 223.0
-      },
-      {
         "dateLabel": "21 Oct",
         "amount": 248.0
       },
@@ -2188,6 +2208,10 @@
       },
       {
         "dateLabel": "27 Oct",
+        "amount": 244.0
+      },
+      {
+        "dateLabel": "28 Oct",
         "amount": 244.0
       }
     ],
@@ -2219,7 +2243,7 @@
         "netWorth": 341778.5
       }
     ],
-    "subscriptionTotal": 21.3623,
+    "subscriptionTotal": 19.67,
     "subscriptionRetail": 2.76,
     "subscriptionHNI": 13.99,
     "subscriptionQIB": 67.15,
@@ -2252,10 +2276,6 @@
     "gmpPercent": 2.31,
     "gmpHistory": [
       {
-        "dateLabel": "20 Oct",
-        "amount": 96.0
-      },
-      {
         "dateLabel": "21 Oct",
         "amount": 25.0
       },
@@ -2277,6 +2297,10 @@
       },
       {
         "dateLabel": "27 Oct",
+        "amount": 16.0
+      },
+      {
+        "dateLabel": "28 Oct",
         "amount": 16.0
       }
     ],
@@ -2312,7 +2336,7 @@
         "netWorth": 445.0
       }
     ],
-    "subscriptionTotal": 2.3423,
+    "subscriptionTotal": 2.21,
     "subscriptionRetail": 2.1,
     "subscriptionHNI": 0.69,
     "subscriptionQIB": 3.25,
@@ -2377,7 +2401,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 14.2119,
+    "subscriptionTotal": 14.08,
     "subscriptionRetail": 3.04,
     "subscriptionHNI": 14.64,
     "subscriptionQIB": 34.7,
@@ -2461,7 +2485,7 @@
         "netWorth": 511.55
       }
     ],
-    "subscriptionTotal": 132.8119,
+    "subscriptionTotal": 96.63,
     "subscriptionRetail": 31.11,
     "subscriptionHNI": 156.36,
     "subscriptionQIB": 293.56,
@@ -2545,7 +2569,7 @@
         "netWorth": 63.0
       }
     ],
-    "subscriptionTotal": 58.5419,
+    "subscriptionTotal": 58.01,
     "subscriptionRetail": 56.09,
     "subscriptionHNI": 86.41,
     "subscriptionQIB": 41.92,
@@ -2610,7 +2634,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 3.119,
+    "subscriptionTotal": 3.05,
     "subscriptionRetail": 0.77,
     "subscriptionHNI": 1.45,
     "subscriptionQIB": 4.71,
@@ -2694,7 +2718,7 @@
         "netWorth": 1034.3
       }
     ],
-    "subscriptionTotal": 46.0519,
+    "subscriptionTotal": 31.66,
     "subscriptionRetail": 5.9,
     "subscriptionHNI": 40.39,
     "subscriptionQIB": 120.78,
@@ -2778,7 +2802,7 @@
         "netWorth": 109.7
       }
     ],
-    "subscriptionTotal": 7.1116,
+    "subscriptionTotal": 8.32,
     "subscriptionRetail": 3.5,
     "subscriptionHNI": 7.42,
     "subscriptionQIB": 13.21,
@@ -2862,7 +2886,7 @@
         "netWorth": 610.8
       }
     ],
-    "subscriptionTotal": 4.6816,
+    "subscriptionTotal": 4.43,
     "subscriptionRetail": 5.99,
     "subscriptionHNI": 4.73,
     "subscriptionQIB": 4.21,
@@ -2919,7 +2943,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 131.7315,
+    "subscriptionTotal": 131.25,
     "subscriptionRetail": 30.55,
     "subscriptionHNI": 203.21,
     "subscriptionQIB": 256.65,
@@ -2976,7 +3000,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 3.2315,
+    "subscriptionTotal": 3.8,
     "subscriptionRetail": 2.7,
     "subscriptionHNI": 6.65,
     "subscriptionQIB": 1.61,
@@ -3021,7 +3045,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 2.77,
+    "subscriptionTotal": 2.72,
     "subscriptionRetail": 3.11,
     "subscriptionHNI": 1.77,
     "subscriptionQIB": 14.11,
@@ -3066,7 +3090,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 55.26,
+    "subscriptionTotal": 54.92,
     "subscriptionRetail": 46.17,
     "subscriptionHNI": 102.14,
     "subscriptionQIB": 35.64,
@@ -3111,7 +3135,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 124.236,
+    "subscriptionTotal": 123.52,
     "subscriptionRetail": 85.5,
     "subscriptionHNI": 196.27,
     "subscriptionQIB": 137.93,
@@ -3156,7 +3180,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 1.886,
+    "subscriptionTotal": 1.93,
     "subscriptionRetail": 1.1,
     "subscriptionHNI": 0.09,
     "subscriptionQIB": 119.29,
@@ -3426,7 +3450,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 1.065,
+    "subscriptionTotal": 1.11,
     "subscriptionRetail": 0.43,
     "subscriptionHNI": 1.72,
     "subscriptionQIB": 1.0,
