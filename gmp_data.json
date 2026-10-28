@@ -1,12 +1,17 @@
 {
-  "johnsoncabelectricalsu": {
-    "name": "Johnsoncab Electricals BSE SME U",
-    "gmp": 56.02,
+  "vedantpolyfabsu": {
+    "name": "Vedant Poly Fabs NSE SME U",
+    "gmp": 56.68,
     "last_updated": "28 Oct"
   },
   "hgsindiau": {
     "name": "HGS (India) NSE SME U",
     "gmp": 34.56,
+    "last_updated": "28 Oct"
+  },
+  "johnsoncabelectricalsu": {
+    "name": "Johnsoncab Electricals BSE SME U",
+    "gmp": 56.02,
     "last_updated": "28 Oct"
   },
   "vectrasenproconu": {
@@ -16,7 +21,7 @@
   },
   "maxwellengineeringsolutionsu": {
     "name": "Maxwell Engineering Solutions NSE SME U",
-    "gmp": 25.0,
+    "gmp": 27.0,
     "last_updated": "28 Oct"
   },
   "antalau": {
@@ -29,18 +34,18 @@
     "gmp": 9.0,
     "last_updated": "28 Oct"
   },
-  "mksonsfinejewelsu": {
-    "name": "M.K.Sons Fine Jewels IPO U",
-    "gmp": 10.0,
+  "mksonsfinejewelso": {
+    "name": "M.K.Sons Fine Jewels IPO O",
+    "gmp": 8.5,
     "last_updated": "28 Oct"
   },
-  "ajwaprojectsu": {
-    "name": "Ajwa Projects BSE SME U",
+  "ajwaprojectso": {
+    "name": "Ajwa Projects BSE SME O",
     "gmp": 38.0,
     "last_updated": "28 Oct"
   },
-  "carverroboweldu": {
-    "name": "Carver Roboweld BSE SME U",
+  "carverroboweldo": {
+    "name": "Carver Roboweld BSE SME O",
     "gmp": 28.29,
     "last_updated": "28 Oct"
   },
@@ -49,18 +54,18 @@
     "gmp": 110.0,
     "last_updated": "28 Oct"
   },
+  "sfcenvironmentaltechnologieso": {
+    "name": "SFC Environmental Technologies IPO O",
+    "gmp": 17.0,
+    "last_updated": "28 Oct"
+  },
   "blspolymerso": {
     "name": "BLS Polymers IPO O",
     "gmp": 44.0,
     "last_updated": "28 Oct"
   },
-  "sfcenvironmentaltechnologieso": {
-    "name": "SFC Environmental Technologies IPO O",
-    "gmp": 19.0,
-    "last_updated": "28 Oct"
-  },
-  "eaaaindiaalternativeso": {
-    "name": "EAAA India Alternatives IPO O",
+  "eaaaindiaalternativesct": {
+    "name": "EAAA India Alternatives IPO CT",
     "gmp": 10.0,
     "last_updated": "28 Oct"
   },
@@ -69,24 +74,14 @@
     "gmp": 54.82,
     "last_updated": "28 Oct"
   },
-  "parashealthcarecallotted": {
-    "name": "Paras Healthcare IPO C Allotted",
-    "gmp": 15.0,
+  "parashealthcareemailprotected39": {
+    "name": "Paras Healthcare IPO [email protected] (3.9%)",
+    "gmp": 13.0,
     "last_updated": "28 Oct"
   },
-  "jioplatformscallotted": {
-    "name": "Jio Platforms IPO C Allotted",
-    "gmp": 252.0,
-    "last_updated": "28 Oct"
-  },
-  "bonfigliolitransmissionsemailprotected0": {
-    "name": "Bonfiglioli Transmissions IPO [email protected] (0%)",
-    "gmp": 66.0,
-    "last_updated": "28 Oct"
-  },
-  "sahajanandmedicaltechnologiesemailprotected789": {
-    "name": "Sahajanand Medical Technologies IPO [email protected] (7.89%)",
-    "gmp": 17.0,
+  "jioplatformsemailprotected2136": {
+    "name": "Jio Platforms IPO [email protected] (21.36%)",
+    "gmp": 250.0,
     "last_updated": "28 Oct"
   },
   "zetwerkemailprotected546": {
@@ -94,14 +89,24 @@
     "gmp": 1.2,
     "last_updated": "28 Oct"
   },
-  "shellzindiaemailprotected0": {
-    "name": "Shellz India BSE SME [email protected] (0%)",
-    "gmp": 7.0,
-    "last_updated": "28 Oct"
-  },
   "tonboimagingindiaemailprotected6571": {
     "name": "Tonbo Imaging India IPO [email protected] (65.71%)",
     "gmp": 452.0,
+    "last_updated": "28 Oct"
+  },
+  "sahajanandmedicaltechnologiesemailprotected789": {
+    "name": "Sahajanand Medical Technologies IPO [email protected] (7.89%)",
+    "gmp": 17.0,
+    "last_updated": "28 Oct"
+  },
+  "bonfigliolitransmissionsemailprotected0": {
+    "name": "Bonfiglioli Transmissions IPO [email protected] (0%)",
+    "gmp": 66.0,
+    "last_updated": "28 Oct"
+  },
+  "shellzindiaemailprotected0": {
+    "name": "Shellz India BSE SME [email protected] (0%)",
+    "gmp": 7.0,
     "last_updated": "28 Oct"
   },
   "ravitaengineeringemailprotected0": {
@@ -129,9 +134,9 @@
     "gmp": 1.5,
     "last_updated": "28 Oct"
   },
-  "tnasolutionsemailprotected20": {
-    "name": "TNA Solutions BSE SME [email protected] (-20%)",
-    "gmp": 37.86,
+  "paramountsyntexemailprotected945": {
+    "name": "Paramount Syntex BSE SME [email protected] (-9.45%)",
+    "gmp": 81.79,
     "last_updated": "28 Oct"
   },
   "acmeindiaemailprotected1276": {
@@ -139,14 +144,14 @@
     "gmp": 43.0,
     "last_updated": "28 Oct"
   },
-  "paramountsyntexemailprotected945": {
-    "name": "Paramount Syntex BSE SME [email protected] (-9.45%)",
-    "gmp": 81.79,
+  "tnasolutionsemailprotected20": {
+    "name": "TNA Solutions BSE SME [email protected] (-20%)",
+    "gmp": 37.86,
     "last_updated": "28 Oct"
   },
-  "omaraventuresindiaemailprotected257": {
-    "name": "Omara Ventures India BSE SME [email protected] (2.57%)",
-    "gmp": 41.99,
+  "bombaycoatedspecialsteels": {
+    "name": "Bombay Coated & Special Steels",
+    "gmp": 9.0,
     "last_updated": "28 Oct"
   },
   "ajwaprojects": {
@@ -182,11 +187,6 @@
   "eaaaindiaalternatives": {
     "name": "EAAA India Alternatives",
     "gmp": 10.0,
-    "last_updated": "28 Oct"
-  },
-  "bombaycoatedspecialsteels": {
-    "name": "Bombay Coated & Special Steels",
-    "gmp": 9.0,
     "last_updated": "28 Oct"
   },
   "parleproducts": {
@@ -281,6 +281,11 @@
   },
   "boat": {
     "name": "BoAt",
+    "gmp": 0.0,
+    "last_updated": "28 Oct"
+  },
+  "navitechnologies": {
+    "name": "Navi Technologies",
     "gmp": 0.0,
     "last_updated": "28 Oct"
   },
