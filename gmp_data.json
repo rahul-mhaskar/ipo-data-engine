@@ -36,7 +36,7 @@
   },
   "mksonsfinejewelso": {
     "name": "M.K.Sons Fine Jewels IPO O",
-    "gmp": 8.5,
+    "gmp": 10.0,
     "last_updated": "28 Oct"
   },
   "ajwaprojectso": {
@@ -56,17 +56,17 @@
   },
   "sfcenvironmentaltechnologieso": {
     "name": "SFC Environmental Technologies IPO O",
-    "gmp": 17.0,
+    "gmp": 16.0,
     "last_updated": "28 Oct"
   },
   "blspolymerso": {
     "name": "BLS Polymers IPO O",
-    "gmp": 44.0,
+    "gmp": 44.5,
     "last_updated": "28 Oct"
   },
   "eaaaindiaalternativesct": {
     "name": "EAAA India Alternatives IPO CT",
-    "gmp": 10.0,
+    "gmp": 9.0,
     "last_updated": "28 Oct"
   },
   "core4engineersc": {
@@ -147,6 +147,11 @@
   "tnasolutionsemailprotected20": {
     "name": "TNA Solutions BSE SME [email protected] (-20%)",
     "gmp": 37.86,
+    "last_updated": "28 Oct"
+  },
+  "antala": {
+    "name": "Antala Industries",
+    "gmp": 0.0,
     "last_updated": "28 Oct"
   },
   "bombaycoatedspecialsteels": {
