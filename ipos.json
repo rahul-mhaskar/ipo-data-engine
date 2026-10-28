@@ -187,7 +187,7 @@
         "netWorth": 19.3
       }
     ],
-    "subscriptionTotal": 0.428,
+    "subscriptionTotal": 0.39,
     "subscriptionRetail": 0.65,
     "subscriptionHNI": 0.14,
     "subscriptionQIB": 0.0,
@@ -271,7 +271,7 @@
         "netWorth": 17.6
       }
     ],
-    "subscriptionTotal": 0.2528,
+    "subscriptionTotal": 0.25,
     "subscriptionRetail": 0.21,
     "subscriptionHNI": 0.69,
     "subscriptionQIB": 0.0,
@@ -354,7 +354,7 @@
         "netWorth": 183.0
       }
     ],
-    "subscriptionTotal": 0.6528,
+    "subscriptionTotal": 0.41,
     "subscriptionRetail": 0.23,
     "subscriptionHNI": 1.19,
     "subscriptionQIB": 0.96,
@@ -441,7 +441,7 @@
         "netWorth": 105.2
       }
     ],
-    "subscriptionTotal": 35.328,
+    "subscriptionTotal": 21.58,
     "subscriptionRetail": 29.85,
     "subscriptionHNI": 78.81,
     "subscriptionQIB": 12.2,
@@ -530,7 +530,7 @@
         "netWorth": 805.5
       }
     ],
-    "subscriptionTotal": 0.2728,
+    "subscriptionTotal": 0.15,
     "subscriptionRetail": 0.34,
     "subscriptionHNI": 0.37,
     "subscriptionQIB": 0.08,
@@ -594,7 +594,7 @@
         "netWorth": 38.5
       }
     ],
-    "subscriptionTotal": 0.9128,
+    "subscriptionTotal": 0.95,
     "subscriptionRetail": 0.42,
     "subscriptionHNI": 0.51,
     "subscriptionQIB": 2.0,
@@ -610,100 +610,6 @@
   },
   {
     "id": "9",
-    "name": "EAAA India Alternatives",
-    "symbol": "EDELALTS",
-    "category": "Mainboard",
-    "status": "OPEN",
-    "logoUrl": null,
-    "issueSizeCr": 1200.0,
-    "issuePriceMin": 1585.0,
-    "issuePriceMax": 1665.0,
-    "lotSize": 9,
-    "openDate": "2026-10-26",
-    "closeDate": "2026-10-28",
-    "allotmentDate": "2026-10-29",
-    "listingDate": "2026-11-02",
-    "gmpAmount": 25.0,
-    "gmpPercent": 1.5,
-    "gmpHistory": [
-      {
-        "dateLabel": "21 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "22 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "23 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "24 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "26 Oct",
-        "amount": 17.0
-      },
-      {
-        "dateLabel": "27 Oct",
-        "amount": 10.0
-      },
-      {
-        "dateLabel": "28 Oct",
-        "amount": 25.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 0.0,
-      "ofsCr": 1200.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Axis Capital Ltd.",
-      "Jefferies India Pvt.Ltd.",
-      "Motilal Oswal Investment Advisors Ltd.",
-      "Nuvama Wealth Management Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 584.2,
-        "pat": 175.2,
-        "netWorth": 729.5
-      },
-      {
-        "year": "FY25",
-        "revenue": 786.5,
-        "pat": 229.8,
-        "netWorth": 966.5
-      },
-      {
-        "year": "FY26",
-        "revenue": 336.1,
-        "pat": 80.7,
-        "netWorth": 1160.4
-      }
-    ],
-    "subscriptionTotal": 5.5128,
-    "subscriptionRetail": 1.08,
-    "subscriptionHNI": 4.81,
-    "subscriptionQIB": 13.8,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "MUFG Intime India Private Limited ",
-    "registrarUrl": "https://in.mpms.mufg.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.eaaa.in/wp-content/uploads/2026/09/Red-Herring-Prospectus.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=EAAA+India+Alternatives+IPO+DRHP+file+SEBI",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "10",
     "name": "Parle Products",
     "symbol": "PARLEPR",
     "category": "Mainboard",
@@ -773,7 +679,7 @@
     "closeNotified": false
   },
   {
-    "id": "11",
+    "id": "10",
     "name": "Twinkle Papers",
     "symbol": "TWINKLE",
     "category": "SME",
@@ -866,7 +772,7 @@
     "closeNotified": false
   },
   {
-    "id": "12",
+    "id": "11",
     "name": "Sri Priyanka Geo Commex",
     "symbol": "SPGCL",
     "category": "SME",
@@ -875,7 +781,7 @@
     "issueSizeCr": 95.0,
     "issuePriceMin": 207.0,
     "issuePriceMax": 212.0,
-    "lotSize": 600,
+    "lotSize": 1200,
     "openDate": "To Be Updated",
     "closeDate": "To Be Updated",
     "allotmentDate": "To Be Updated",
@@ -958,7 +864,7 @@
     "closeNotified": false
   },
   {
-    "id": "13",
+    "id": "12",
     "name": "Flipkart",
     "symbol": "FLIPKAR",
     "category": "Mainboard",
@@ -1028,7 +934,7 @@
     "closeNotified": false
   },
   {
-    "id": "14",
+    "id": "13",
     "name": "Prestige Hospitality Ventures",
     "symbol": "PRESTIG",
     "category": "Mainboard",
@@ -1122,7 +1028,7 @@
     "closeNotified": false
   },
   {
-    "id": "15",
+    "id": "14",
     "name": "Credila Financial Services",
     "symbol": "CREDILA",
     "category": "Mainboard",
@@ -1205,7 +1111,7 @@
     "closeNotified": false
   },
   {
-    "id": "16",
+    "id": "15",
     "name": "PhonePe",
     "symbol": "PHONEPE",
     "category": "Mainboard",
@@ -1303,7 +1209,7 @@
     "closeNotified": false
   },
   {
-    "id": "17",
+    "id": "16",
     "name": "Zepto",
     "symbol": "ZEPTO",
     "category": "Mainboard",
@@ -1400,7 +1306,7 @@
     "closeNotified": false
   },
   {
-    "id": "18",
+    "id": "17",
     "name": "Solar91 Cleantech",
     "symbol": "SOLAR91",
     "category": "SME",
@@ -1470,7 +1376,7 @@
     "closeNotified": false
   },
   {
-    "id": "19",
+    "id": "18",
     "name": "Hero FinCorp",
     "symbol": "HEROFIN",
     "category": "Mainboard",
@@ -1568,7 +1474,7 @@
     "closeNotified": false
   },
   {
-    "id": "20",
+    "id": "19",
     "name": "Deltatech Gaming",
     "symbol": "DELTATE",
     "category": "Mainboard",
@@ -1638,7 +1544,7 @@
     "closeNotified": false
   },
   {
-    "id": "21",
+    "id": "20",
     "name": "Biba Fashions",
     "symbol": "BIBAFAS",
     "category": "Mainboard",
@@ -1708,7 +1614,7 @@
     "closeNotified": false
   },
   {
-    "id": "22",
+    "id": "21",
     "name": "Droom Technology",
     "symbol": "DROOMTE",
     "category": "Mainboard",
@@ -1778,7 +1684,7 @@
     "closeNotified": false
   },
   {
-    "id": "23",
+    "id": "22",
     "name": "Puranik Builders",
     "symbol": "PURANIK",
     "category": "Mainboard",
@@ -1848,7 +1754,7 @@
     "closeNotified": false
   },
   {
-    "id": "24",
+    "id": "23",
     "name": "Bharat FIH",
     "symbol": "BHARATF",
     "category": "Mainboard",
@@ -1918,7 +1824,7 @@
     "closeNotified": false
   },
   {
-    "id": "25",
+    "id": "24",
     "name": "FabIndia",
     "symbol": "FABINDI",
     "category": "Mainboard",
@@ -1972,7 +1878,7 @@
     "closeNotified": false
   },
   {
-    "id": "26",
+    "id": "25",
     "name": "OYO",
     "symbol": "OYO",
     "category": "Mainboard",
@@ -2054,7 +1960,7 @@
     "closeNotified": false
   },
   {
-    "id": "27",
+    "id": "26",
     "name": "EBIXCASH",
     "symbol": "EBIXCAS",
     "category": "Mainboard",
@@ -2104,7 +2010,7 @@
     "closeNotified": false
   },
   {
-    "id": "28",
+    "id": "27",
     "name": "BoAt",
     "symbol": "BOAT",
     "category": "Mainboard",
@@ -2178,7 +2084,7 @@
     "closeNotified": false
   },
   {
-    "id": "29",
+    "id": "28",
     "name": "Navi Technologies",
     "symbol": "NAVITEC",
     "category": "Mainboard",
@@ -2193,7 +2099,7 @@
     "allotmentDate": "To Be Updated",
     "listingDate": "To Be Updated",
     "gmpAmount": 13.0,
-    "gmpPercent": 3.94,
+    "gmpPercent": 0.0,
     "gmpHistory": [
       {
         "dateLabel": "28 Oct",
@@ -2220,6 +2126,100 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/oct-2021/1633066313151.pdf#page=1&zoom=page-width,-16,379",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "29",
+    "name": "EAAA India Alternatives",
+    "symbol": "EDELALTS",
+    "category": "Mainboard",
+    "status": "CLOSED",
+    "logoUrl": null,
+    "issueSizeCr": 1200.0,
+    "issuePriceMin": 1585.0,
+    "issuePriceMax": 1665.0,
+    "lotSize": 9,
+    "openDate": "2026-10-26",
+    "closeDate": "2026-10-28",
+    "allotmentDate": "2026-10-29",
+    "listingDate": "2026-11-02",
+    "gmpAmount": 25.0,
+    "gmpPercent": 1.5,
+    "gmpHistory": [
+      {
+        "dateLabel": "21 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "22 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "24 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "26 Oct",
+        "amount": 17.0
+      },
+      {
+        "dateLabel": "27 Oct",
+        "amount": 10.0
+      },
+      {
+        "dateLabel": "28 Oct",
+        "amount": 25.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 1200.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Axis Capital Ltd.",
+      "Jefferies India Pvt.Ltd.",
+      "Motilal Oswal Investment Advisors Ltd.",
+      "Nuvama Wealth Management Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 584.2,
+        "pat": 175.2,
+        "netWorth": 729.5
+      },
+      {
+        "year": "FY25",
+        "revenue": 786.5,
+        "pat": 229.8,
+        "netWorth": 966.5
+      },
+      {
+        "year": "FY26",
+        "revenue": 336.1,
+        "pat": 80.7,
+        "netWorth": 1160.4
+      }
+    ],
+    "subscriptionTotal": 5.15,
+    "subscriptionRetail": 1.08,
+    "subscriptionHNI": 4.81,
+    "subscriptionQIB": 13.8,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "MUFG Intime India Private Limited ",
+    "registrarUrl": "https://in.mpms.mufg.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.eaaa.in/wp-content/uploads/2026/09/Red-Herring-Prospectus.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=EAAA+India+Alternatives+IPO+DRHP+file+SEBI",
     "openNotified": false,
     "closeNotified": false
   },
@@ -2296,7 +2296,7 @@
         "netWorth": 24.8
       }
     ],
-    "subscriptionTotal": 5.4427,
+    "subscriptionTotal": 5.54,
     "subscriptionRetail": 2.72,
     "subscriptionHNI": 12.26,
     "subscriptionQIB": 5.06,
@@ -2385,7 +2385,7 @@
         "netWorth": 341778.5
       }
     ],
-    "subscriptionTotal": 21.3623,
+    "subscriptionTotal": 19.67,
     "subscriptionRetail": 2.76,
     "subscriptionHNI": 13.99,
     "subscriptionQIB": 67.15,
@@ -2478,7 +2478,7 @@
         "netWorth": 445.0
       }
     ],
-    "subscriptionTotal": 2.3423,
+    "subscriptionTotal": 2.21,
     "subscriptionRetail": 2.1,
     "subscriptionHNI": 0.69,
     "subscriptionQIB": 3.25,
@@ -2543,7 +2543,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 14.2119,
+    "subscriptionTotal": 14.08,
     "subscriptionRetail": 3.04,
     "subscriptionHNI": 14.64,
     "subscriptionQIB": 34.7,
@@ -2627,7 +2627,7 @@
         "netWorth": 511.55
       }
     ],
-    "subscriptionTotal": 132.8119,
+    "subscriptionTotal": 96.63,
     "subscriptionRetail": 31.11,
     "subscriptionHNI": 156.36,
     "subscriptionQIB": 293.56,
@@ -2711,7 +2711,7 @@
         "netWorth": 63.0
       }
     ],
-    "subscriptionTotal": 58.5419,
+    "subscriptionTotal": 58.01,
     "subscriptionRetail": 56.09,
     "subscriptionHNI": 86.41,
     "subscriptionQIB": 41.92,
@@ -2776,7 +2776,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 3.119,
+    "subscriptionTotal": 3.05,
     "subscriptionRetail": 0.77,
     "subscriptionHNI": 1.45,
     "subscriptionQIB": 4.71,
@@ -2860,7 +2860,7 @@
         "netWorth": 1034.3
       }
     ],
-    "subscriptionTotal": 46.0519,
+    "subscriptionTotal": 31.66,
     "subscriptionRetail": 5.9,
     "subscriptionHNI": 40.39,
     "subscriptionQIB": 120.78,
@@ -2944,7 +2944,7 @@
         "netWorth": 109.7
       }
     ],
-    "subscriptionTotal": 7.1116,
+    "subscriptionTotal": 8.32,
     "subscriptionRetail": 3.5,
     "subscriptionHNI": 7.42,
     "subscriptionQIB": 13.21,
@@ -3028,7 +3028,7 @@
         "netWorth": 610.8
       }
     ],
-    "subscriptionTotal": 4.6816,
+    "subscriptionTotal": 4.43,
     "subscriptionRetail": 5.99,
     "subscriptionHNI": 4.73,
     "subscriptionQIB": 4.21,
@@ -3089,7 +3089,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 131.7315,
+    "subscriptionTotal": 131.25,
     "subscriptionRetail": 30.55,
     "subscriptionHNI": 203.21,
     "subscriptionQIB": 256.65,
@@ -3150,7 +3150,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 3.2315,
+    "subscriptionTotal": 3.8,
     "subscriptionRetail": 2.7,
     "subscriptionHNI": 6.65,
     "subscriptionQIB": 1.61,
@@ -3199,7 +3199,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 2.77,
+    "subscriptionTotal": 2.72,
     "subscriptionRetail": 3.11,
     "subscriptionHNI": 1.77,
     "subscriptionQIB": 14.11,
@@ -3248,7 +3248,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 55.26,
+    "subscriptionTotal": 54.92,
     "subscriptionRetail": 46.17,
     "subscriptionHNI": 102.14,
     "subscriptionQIB": 35.64,
@@ -3297,7 +3297,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 124.236,
+    "subscriptionTotal": 123.52,
     "subscriptionRetail": 85.5,
     "subscriptionHNI": 196.27,
     "subscriptionQIB": 137.93,
@@ -3346,7 +3346,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 1.886,
+    "subscriptionTotal": 1.93,
     "subscriptionRetail": 1.1,
     "subscriptionHNI": 0.09,
     "subscriptionQIB": 119.29,
