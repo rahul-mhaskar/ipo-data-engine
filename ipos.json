@@ -332,7 +332,7 @@
         "netWorth": 22.2
       }
     ],
-    "subscriptionTotal": 0.8229,
+    "subscriptionTotal": 0.82,
     "subscriptionRetail": 0.05,
     "subscriptionHNI": 0.36,
     "subscriptionQIB": 66.72,
@@ -398,7 +398,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 2.8129,
+    "subscriptionTotal": 0.45,
     "subscriptionRetail": 1.31,
     "subscriptionHNI": 0.76,
     "subscriptionQIB": 6.89,
@@ -474,7 +474,7 @@
         "netWorth": 19.3
       }
     ],
-    "subscriptionTotal": 0.8729,
+    "subscriptionTotal": 0.91,
     "subscriptionRetail": 1.57,
     "subscriptionHNI": 0.18,
     "subscriptionQIB": 0.0,
@@ -562,7 +562,7 @@
         "netWorth": 17.6
       }
     ],
-    "subscriptionTotal": 0.8329,
+    "subscriptionTotal": 0.66,
     "subscriptionRetail": 0.65,
     "subscriptionHNI": 2.31,
     "subscriptionQIB": 0.0,
@@ -649,7 +649,7 @@
         "netWorth": 183.0
       }
     ],
-    "subscriptionTotal": 1.1829,
+    "subscriptionTotal": 0.7,
     "subscriptionRetail": 0.85,
     "subscriptionHNI": 2.2,
     "subscriptionQIB": 0.99,
@@ -665,190 +665,6 @@
   },
   {
     "id": "10",
-    "name": "BLS Polymers",
-    "symbol": "BLSPOLY",
-    "category": "Mainboard",
-    "status": "OPEN",
-    "logoUrl": null,
-    "issueSizeCr": 255.0,
-    "issuePriceMin": 142.0,
-    "issuePriceMax": 150.0,
-    "lotSize": 100,
-    "openDate": "2026-10-27",
-    "closeDate": "2026-10-29",
-    "allotmentDate": "2026-10-30",
-    "listingDate": "2026-11-03",
-    "gmpAmount": 63.0,
-    "gmpPercent": 42.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "22 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "23 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "24 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "26 Oct",
-        "amount": 40.0
-      },
-      {
-        "dateLabel": "27 Oct",
-        "amount": 44.0
-      },
-      {
-        "dateLabel": "28 Oct",
-        "amount": 51.0
-      },
-      {
-        "dateLabel": "29 Oct",
-        "amount": 63.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 255.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Unistone Capital Pvt.Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 301.5,
-        "pat": 7.5,
-        "netWorth": 46.8
-      },
-      {
-        "year": "FY25",
-        "revenue": 336.7,
-        "pat": 21.1,
-        "netWorth": 67.9
-      },
-      {
-        "year": "FY26",
-        "revenue": 107.8,
-        "pat": 10.2,
-        "netWorth": 105.2
-      }
-    ],
-    "subscriptionTotal": 241.2229,
-    "subscriptionRetail": 128.36,
-    "subscriptionHNI": 559.2,
-    "subscriptionQIB": 200.25,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "KFin Technologies Limited",
-    "registrarUrl": "https://www.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/1792388466880.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=BLS+Polymers+IPO+DRHP+file+SEBI",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "11",
-    "name": "SFC Environmental Technologies",
-    "symbol": "SFCTECH",
-    "category": "Mainboard",
-    "status": "OPEN",
-    "logoUrl": null,
-    "issueSizeCr": 668.0,
-    "issuePriceMin": 313.0,
-    "issuePriceMax": 330.0,
-    "lotSize": 45,
-    "openDate": "2026-10-27",
-    "closeDate": "2026-10-29",
-    "allotmentDate": "2026-10-30",
-    "listingDate": "2026-11-03",
-    "gmpAmount": 18.5,
-    "gmpPercent": 5.61,
-    "gmpHistory": [
-      {
-        "dateLabel": "22 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "23 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "24 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "26 Oct",
-        "amount": 20.0
-      },
-      {
-        "dateLabel": "27 Oct",
-        "amount": 15.0
-      },
-      {
-        "dateLabel": "28 Oct",
-        "amount": 13.0
-      },
-      {
-        "dateLabel": "29 Oct",
-        "amount": 18.5
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 150.0,
-      "ofsCr": 518.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "IIFL Capital Services Ltd.",
-      "JM Financial Ltd.",
-      "Nuvama Wealth Management Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 676.7,
-        "pat": 144.2,
-        "netWorth": 534.3
-      },
-      {
-        "year": "FY25",
-        "revenue": 727.0,
-        "pat": 152.0,
-        "netWorth": 648.7
-      },
-      {
-        "year": "FY26",
-        "revenue": 137.9,
-        "pat": 1.5,
-        "netWorth": 805.5
-      }
-    ],
-    "subscriptionTotal": 9.4729,
-    "subscriptionRetail": 2.71,
-    "subscriptionHNI": 12.81,
-    "subscriptionQIB": 18.81,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "MUFG Intime India Private Limited",
-    "registrarUrl": "https://in.mpms.mufg.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://sfcenvironment.com/wp-content/uploads/2026/10/SFC-Environmental-Technologies-Ltd_RHP-1.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=SFC+Environmental+Technologies+IPO+DRHP+file+SEBI",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "12",
     "name": "Vedant Poly Fabs",
     "symbol": "VEDANTP",
     "category": "SME",
@@ -915,7 +731,7 @@
     "closeNotified": false
   },
   {
-    "id": "13",
+    "id": "11",
     "name": "Parle Products",
     "symbol": "PARLEPR",
     "category": "Mainboard",
@@ -985,7 +801,7 @@
     "closeNotified": false
   },
   {
-    "id": "14",
+    "id": "12",
     "name": "Twinkle Papers",
     "symbol": "TWINKLE",
     "category": "SME",
@@ -1078,7 +894,7 @@
     "closeNotified": false
   },
   {
-    "id": "15",
+    "id": "13",
     "name": "Sri Priyanka Geo Commex",
     "symbol": "SPGCL",
     "category": "SME",
@@ -1170,7 +986,7 @@
     "closeNotified": false
   },
   {
-    "id": "16",
+    "id": "14",
     "name": "Flipkart",
     "symbol": "FLIPKAR",
     "category": "Mainboard",
@@ -1240,7 +1056,7 @@
     "closeNotified": false
   },
   {
-    "id": "17",
+    "id": "15",
     "name": "Prestige Hospitality Ventures",
     "symbol": "PRESTIG",
     "category": "Mainboard",
@@ -1334,7 +1150,7 @@
     "closeNotified": false
   },
   {
-    "id": "18",
+    "id": "16",
     "name": "Credila Financial Services",
     "symbol": "CREDILA",
     "category": "Mainboard",
@@ -1421,7 +1237,7 @@
     "closeNotified": false
   },
   {
-    "id": "19",
+    "id": "17",
     "name": "PhonePe",
     "symbol": "PHONEPE",
     "category": "Mainboard",
@@ -1519,7 +1335,7 @@
     "closeNotified": false
   },
   {
-    "id": "20",
+    "id": "18",
     "name": "Zepto",
     "symbol": "ZEPTO",
     "category": "Mainboard",
@@ -1616,7 +1432,7 @@
     "closeNotified": false
   },
   {
-    "id": "21",
+    "id": "19",
     "name": "Solar91 Cleantech",
     "symbol": "SOLAR91",
     "category": "SME",
@@ -1686,7 +1502,7 @@
     "closeNotified": false
   },
   {
-    "id": "22",
+    "id": "20",
     "name": "Hero FinCorp",
     "symbol": "HEROFIN",
     "category": "Mainboard",
@@ -1784,7 +1600,7 @@
     "closeNotified": false
   },
   {
-    "id": "23",
+    "id": "21",
     "name": "Deltatech Gaming",
     "symbol": "DELTATE",
     "category": "Mainboard",
@@ -1854,7 +1670,7 @@
     "closeNotified": false
   },
   {
-    "id": "24",
+    "id": "22",
     "name": "Biba Fashions",
     "symbol": "BIBAFAS",
     "category": "Mainboard",
@@ -1924,7 +1740,7 @@
     "closeNotified": false
   },
   {
-    "id": "25",
+    "id": "23",
     "name": "Droom Technology",
     "symbol": "DROOMTE",
     "category": "Mainboard",
@@ -1994,7 +1810,7 @@
     "closeNotified": false
   },
   {
-    "id": "26",
+    "id": "24",
     "name": "Puranik Builders",
     "symbol": "PURANIK",
     "category": "Mainboard",
@@ -2064,7 +1880,7 @@
     "closeNotified": false
   },
   {
-    "id": "27",
+    "id": "25",
     "name": "Bharat FIH",
     "symbol": "BHARATF",
     "category": "Mainboard",
@@ -2134,7 +1950,7 @@
     "closeNotified": false
   },
   {
-    "id": "28",
+    "id": "26",
     "name": "FabIndia",
     "symbol": "FABINDI",
     "category": "Mainboard",
@@ -2192,7 +2008,7 @@
     "closeNotified": false
   },
   {
-    "id": "29",
+    "id": "27",
     "name": "OYO",
     "symbol": "OYO",
     "category": "Mainboard",
@@ -2278,7 +2094,7 @@
     "closeNotified": false
   },
   {
-    "id": "30",
+    "id": "28",
     "name": "EBIXCASH",
     "symbol": "EBIXCAS",
     "category": "Mainboard",
@@ -2332,7 +2148,7 @@
     "closeNotified": false
   },
   {
-    "id": "31",
+    "id": "29",
     "name": "BoAt",
     "symbol": "BOAT",
     "category": "Mainboard",
@@ -2410,11 +2226,195 @@
     "closeNotified": false
   },
   {
+    "id": "30",
+    "name": "BLS Polymers",
+    "symbol": "BLSPOLY",
+    "category": "Mainboard",
+    "status": "CLOSED",
+    "logoUrl": null,
+    "issueSizeCr": 255.0,
+    "issuePriceMin": 142.0,
+    "issuePriceMax": 150.0,
+    "lotSize": 100,
+    "openDate": "2026-10-27",
+    "closeDate": "2026-10-29",
+    "allotmentDate": "2026-10-30",
+    "listingDate": "2026-11-03",
+    "gmpAmount": 63.0,
+    "gmpPercent": 42.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "22 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "24 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "26 Oct",
+        "amount": 40.0
+      },
+      {
+        "dateLabel": "27 Oct",
+        "amount": 44.0
+      },
+      {
+        "dateLabel": "28 Oct",
+        "amount": 51.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 63.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 255.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Unistone Capital Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 301.5,
+        "pat": 7.5,
+        "netWorth": 46.8
+      },
+      {
+        "year": "FY25",
+        "revenue": 336.7,
+        "pat": 21.1,
+        "netWorth": 67.9
+      },
+      {
+        "year": "FY26",
+        "revenue": 107.8,
+        "pat": 10.2,
+        "netWorth": 105.2
+      }
+    ],
+    "subscriptionTotal": 239.02,
+    "subscriptionRetail": 128.36,
+    "subscriptionHNI": 559.2,
+    "subscriptionQIB": 200.25,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KFin Technologies Limited",
+    "registrarUrl": "https://www.kfintech.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/1792388466880.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=BLS+Polymers+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "31",
+    "name": "SFC Environmental Technologies",
+    "symbol": "SFCTECH",
+    "category": "Mainboard",
+    "status": "CLOSED",
+    "logoUrl": null,
+    "issueSizeCr": 668.0,
+    "issuePriceMin": 313.0,
+    "issuePriceMax": 330.0,
+    "lotSize": 45,
+    "openDate": "2026-10-27",
+    "closeDate": "2026-10-29",
+    "allotmentDate": "2026-10-30",
+    "listingDate": "2026-11-03",
+    "gmpAmount": 18.5,
+    "gmpPercent": 5.61,
+    "gmpHistory": [
+      {
+        "dateLabel": "22 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "24 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "26 Oct",
+        "amount": 20.0
+      },
+      {
+        "dateLabel": "27 Oct",
+        "amount": 15.0
+      },
+      {
+        "dateLabel": "28 Oct",
+        "amount": 13.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 18.5
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 150.0,
+      "ofsCr": 518.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "IIFL Capital Services Ltd.",
+      "JM Financial Ltd.",
+      "Nuvama Wealth Management Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 676.7,
+        "pat": 144.2,
+        "netWorth": 534.3
+      },
+      {
+        "year": "FY25",
+        "revenue": 727.0,
+        "pat": 152.0,
+        "netWorth": 648.7
+      },
+      {
+        "year": "FY26",
+        "revenue": 137.9,
+        "pat": 1.5,
+        "netWorth": 805.5
+      }
+    ],
+    "subscriptionTotal": 9.17,
+    "subscriptionRetail": 2.71,
+    "subscriptionHNI": 12.81,
+    "subscriptionQIB": 18.81,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "MUFG Intime India Private Limited",
+    "registrarUrl": "https://in.mpms.mufg.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://sfcenvironment.com/wp-content/uploads/2026/10/SFC-Environmental-Technologies-Ltd_RHP-1.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=SFC+Environmental+Technologies+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
     "id": "32",
     "name": "Wiscon Industries",
     "symbol": "WISCON",
     "category": "SME",
-    "status": "OPEN",
+    "status": "CLOSED",
     "logoUrl": null,
     "issueSizeCr": 110.0,
     "issuePriceMin": 194.0,
@@ -2463,7 +2463,7 @@
         "netWorth": 38.5
       }
     ],
-    "subscriptionTotal": 1.1729,
+    "subscriptionTotal": 1.26,
     "subscriptionRetail": 0.66,
     "subscriptionHNI": 0.62,
     "subscriptionQIB": 2.24,
@@ -2557,7 +2557,7 @@
         "netWorth": 1160.4
       }
     ],
-    "subscriptionTotal": 5.5128,
+    "subscriptionTotal": 5.15,
     "subscriptionRetail": 1.08,
     "subscriptionHNI": 4.81,
     "subscriptionQIB": 13.8,
@@ -2644,7 +2644,7 @@
         "netWorth": 24.8
       }
     ],
-    "subscriptionTotal": 5.4427,
+    "subscriptionTotal": 5.54,
     "subscriptionRetail": 2.72,
     "subscriptionHNI": 12.26,
     "subscriptionQIB": 5.06,
@@ -2733,7 +2733,7 @@
         "netWorth": 341778.5
       }
     ],
-    "subscriptionTotal": 21.3623,
+    "subscriptionTotal": 19.67,
     "subscriptionRetail": 2.76,
     "subscriptionHNI": 13.99,
     "subscriptionQIB": 67.15,
@@ -2826,7 +2826,7 @@
         "netWorth": 445.0
       }
     ],
-    "subscriptionTotal": 2.3423,
+    "subscriptionTotal": 2.21,
     "subscriptionRetail": 2.1,
     "subscriptionHNI": 0.69,
     "subscriptionQIB": 3.25,
@@ -2891,7 +2891,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 14.2119,
+    "subscriptionTotal": 14.08,
     "subscriptionRetail": 3.04,
     "subscriptionHNI": 14.64,
     "subscriptionQIB": 34.7,
@@ -2975,7 +2975,7 @@
         "netWorth": 511.55
       }
     ],
-    "subscriptionTotal": 132.8119,
+    "subscriptionTotal": 96.63,
     "subscriptionRetail": 31.11,
     "subscriptionHNI": 156.36,
     "subscriptionQIB": 293.56,
@@ -3059,7 +3059,7 @@
         "netWorth": 63.0
       }
     ],
-    "subscriptionTotal": 58.5419,
+    "subscriptionTotal": 58.01,
     "subscriptionRetail": 56.09,
     "subscriptionHNI": 86.41,
     "subscriptionQIB": 41.92,
@@ -3124,7 +3124,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 3.119,
+    "subscriptionTotal": 3.05,
     "subscriptionRetail": 0.77,
     "subscriptionHNI": 1.45,
     "subscriptionQIB": 4.71,
@@ -3208,7 +3208,7 @@
         "netWorth": 1034.3
       }
     ],
-    "subscriptionTotal": 46.0519,
+    "subscriptionTotal": 31.66,
     "subscriptionRetail": 5.9,
     "subscriptionHNI": 40.39,
     "subscriptionQIB": 120.78,
@@ -3292,7 +3292,7 @@
         "netWorth": 109.7
       }
     ],
-    "subscriptionTotal": 7.1116,
+    "subscriptionTotal": 8.32,
     "subscriptionRetail": 3.5,
     "subscriptionHNI": 7.42,
     "subscriptionQIB": 13.21,
@@ -3376,7 +3376,7 @@
         "netWorth": 610.8
       }
     ],
-    "subscriptionTotal": 4.6816,
+    "subscriptionTotal": 4.43,
     "subscriptionRetail": 5.99,
     "subscriptionHNI": 4.73,
     "subscriptionQIB": 4.21,
@@ -3441,7 +3441,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 131.7315,
+    "subscriptionTotal": 131.25,
     "subscriptionRetail": 30.55,
     "subscriptionHNI": 203.21,
     "subscriptionQIB": 256.65,
@@ -3506,7 +3506,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 3.2315,
+    "subscriptionTotal": 3.8,
     "subscriptionRetail": 2.7,
     "subscriptionHNI": 6.65,
     "subscriptionQIB": 1.61,
@@ -3559,7 +3559,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 2.77,
+    "subscriptionTotal": 2.72,
     "subscriptionRetail": 3.11,
     "subscriptionHNI": 1.77,
     "subscriptionQIB": 14.11,
@@ -3612,7 +3612,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 55.26,
+    "subscriptionTotal": 54.92,
     "subscriptionRetail": 46.17,
     "subscriptionHNI": 102.14,
     "subscriptionQIB": 35.64,
@@ -3665,7 +3665,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 124.236,
+    "subscriptionTotal": 123.52,
     "subscriptionRetail": 85.5,
     "subscriptionHNI": 196.27,
     "subscriptionQIB": 137.93,
@@ -3718,7 +3718,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 1.886,
+    "subscriptionTotal": 1.93,
     "subscriptionRetail": 1.1,
     "subscriptionHNI": 0.09,
     "subscriptionQIB": 119.29,
@@ -4013,7 +4013,7 @@
     "allotmentDate": "To Be Updated",
     "listingDate": "To Be Updated",
     "gmpAmount": 18.5,
-    "gmpPercent": 5.61,
+    "gmpPercent": 0.0,
     "gmpHistory": [
       {
         "dateLabel": "28 Oct",
