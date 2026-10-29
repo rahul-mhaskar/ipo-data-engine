@@ -16,11 +16,44 @@
     "listingDate": "2026-11-06",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "gmpHistory": [],
-    "issueStructure": null,
-    "leadManagers": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 26.0,
+      "ofsCr": 7.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Hem Securities Ltd.",
+      "Hem Finlease Pvt.Ltd.",
+      "IPO Alert: HGS (India) Ltd. Set to Hit the Primary Market Soon"
+    ],
     "anchorPortionCr": 0.0,
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 37.9,
+        "pat": 4.0,
+        "netWorth": 95.0
+      },
+      {
+        "year": "FY25",
+        "revenue": 53.5,
+        "pat": 10.5,
+        "netWorth": 85.2
+      },
+      {
+        "year": "FY26",
+        "revenue": 3.8,
+        "pat": 1.1,
+        "netWorth": 90.4
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -50,13 +83,46 @@
     "closeDate": "2026-11-03",
     "allotmentDate": "2026-11-04",
     "listingDate": "2026-11-06",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "gmpHistory": [],
-    "issueStructure": null,
-    "leadManagers": [],
+    "gmpAmount": 13.0,
+    "gmpPercent": 6.5,
+    "gmpHistory": [
+      {
+        "dateLabel": "29 Oct",
+        "amount": 13.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 53.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "ISK Advisors Pvt.Ltd.",
+      "Isk Equities Private Ltd.",
+      "Sunflower Broking Pvt.Ltd."
+    ],
     "anchorPortionCr": 0.0,
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 89.0,
+        "pat": 2.5,
+        "netWorth": 8.9
+      },
+      {
+        "year": "FY25",
+        "revenue": 140.0,
+        "pat": 5.5,
+        "netWorth": 14.2
+      },
+      {
+        "year": "FY26",
+        "revenue": 113.3,
+        "pat": 8.6,
+        "netWorth": 40.1
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -86,13 +152,45 @@
     "closeDate": "2026-11-03",
     "allotmentDate": "2026-11-04",
     "listingDate": "2026-11-06",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "gmpHistory": [],
-    "issueStructure": null,
-    "leadManagers": [],
+    "gmpAmount": 52.0,
+    "gmpPercent": 32.91,
+    "gmpHistory": [
+      {
+        "dateLabel": "29 Oct",
+        "amount": 52.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 54.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "JDA Capital Services Ltd.",
+      "Jda Capital Services Ltd."
+    ],
     "anchorPortionCr": 0.0,
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 10.9,
+        "pat": 3.2,
+        "netWorth": 3.3
+      },
+      {
+        "year": "FY25",
+        "revenue": 22.6,
+        "pat": 9.2,
+        "netWorth": 13.0
+      },
+      {
+        "year": "FY26",
+        "revenue": 12.2,
+        "pat": 3.0,
+        "netWorth": 27.9
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -124,11 +222,44 @@
     "listingDate": "2026-11-06",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "gmpHistory": [],
-    "issueStructure": null,
-    "leadManagers": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 40.0,
+      "ofsCr": 10.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Beeline Capital Advisors Pvt.Ltd.",
+      "Spread X Securities Pvt.Ltd.",
+      "Beeline Capital Advisors Pvt.ltd."
+    ],
     "anchorPortionCr": 0.0,
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 54.4,
+        "pat": 5.8,
+        "netWorth": 12.2
+      },
+      {
+        "year": "FY25",
+        "revenue": 80.5,
+        "pat": 10.2,
+        "netWorth": 22.3
+      },
+      {
+        "year": "FY26",
+        "revenue": 72.2,
+        "pat": 9.1,
+        "netWorth": 46.9
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -164,6 +295,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ],
     "issueStructure": {
@@ -173,7 +308,7 @@
       "promoterHoldingPost": null
     },
     "leadManagers": [
-      "Vatsa Capital Venture Pvt.Ltd.",
+      "Vatsa Capital Venture Pvt.ltd.",
       "Asnani Stock Broker Pvt.Ltd."
     ],
     "anchorPortionCr": 0.0,
@@ -197,10 +332,10 @@
         "netWorth": 22.2
       }
     ],
-    "subscriptionTotal": 0.81,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
+    "subscriptionTotal": 0.8229,
+    "subscriptionRetail": 0.05,
+    "subscriptionHNI": 0.36,
+    "subscriptionQIB": 66.72,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
     "registrarName": "BIGSHARE SERVICES PRIVATE LIMITED",
@@ -263,10 +398,10 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 2.57,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
+    "subscriptionTotal": 2.8129,
+    "subscriptionRetail": 1.31,
+    "subscriptionHNI": 0.76,
+    "subscriptionQIB": 6.89,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
     "registrarName": "KFin Technologies Limited",
@@ -292,8 +427,8 @@
     "closeDate": "2026-10-30",
     "allotmentDate": "2026-11-02",
     "listingDate": "2026-11-04",
-    "gmpAmount": 35.0,
-    "gmpPercent": 17.24,
+    "gmpAmount": 5.0,
+    "gmpPercent": 2.46,
     "gmpHistory": [
       {
         "dateLabel": "27 Oct",
@@ -305,7 +440,7 @@
       },
       {
         "dateLabel": "29 Oct",
-        "amount": 35.0
+        "amount": 5.0
       }
     ],
     "issueStructure": {
@@ -339,9 +474,9 @@
         "netWorth": 19.3
       }
     ],
-    "subscriptionTotal": 0.86,
-    "subscriptionRetail": 0.65,
-    "subscriptionHNI": 0.14,
+    "subscriptionTotal": 0.8729,
+    "subscriptionRetail": 1.57,
+    "subscriptionHNI": 0.18,
     "subscriptionQIB": 0.0,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
@@ -390,6 +525,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ],
     "issueStructure": {
@@ -423,9 +562,9 @@
         "netWorth": 17.6
       }
     ],
-    "subscriptionTotal": 0.63,
-    "subscriptionRetail": 0.21,
-    "subscriptionHNI": 0.69,
+    "subscriptionTotal": 0.8329,
+    "subscriptionRetail": 0.65,
+    "subscriptionHNI": 2.31,
     "subscriptionQIB": 0.0,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
@@ -452,8 +591,8 @@
     "closeDate": "2026-10-30",
     "allotmentDate": "2026-11-02",
     "listingDate": "2026-11-04",
-    "gmpAmount": 13.0,
-    "gmpPercent": 8.02,
+    "gmpAmount": 10.5,
+    "gmpPercent": 6.48,
     "gmpHistory": [
       {
         "dateLabel": "23 Oct",
@@ -477,7 +616,7 @@
       },
       {
         "dateLabel": "29 Oct",
-        "amount": 13.0
+        "amount": 10.5
       }
     ],
     "issueStructure": {
@@ -510,10 +649,10 @@
         "netWorth": 183.0
       }
     ],
-    "subscriptionTotal": 1.09,
-    "subscriptionRetail": 0.23,
-    "subscriptionHNI": 1.19,
-    "subscriptionQIB": 0.96,
+    "subscriptionTotal": 1.1829,
+    "subscriptionRetail": 0.85,
+    "subscriptionHNI": 2.2,
+    "subscriptionQIB": 0.99,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
     "registrarName": "Bigshare Services Private Limited",
@@ -539,8 +678,8 @@
     "closeDate": "2026-10-29",
     "allotmentDate": "2026-10-30",
     "listingDate": "2026-11-03",
-    "gmpAmount": 51.0,
-    "gmpPercent": 34.0,
+    "gmpAmount": 63.0,
+    "gmpPercent": 42.0,
     "gmpHistory": [
       {
         "dateLabel": "22 Oct",
@@ -568,7 +707,7 @@
       },
       {
         "dateLabel": "29 Oct",
-        "amount": 51.0
+        "amount": 63.0
       }
     ],
     "issueStructure": {
@@ -601,10 +740,10 @@
         "netWorth": 105.2
       }
     ],
-    "subscriptionTotal": 236.13,
-    "subscriptionRetail": 29.85,
-    "subscriptionHNI": 78.81,
-    "subscriptionQIB": 12.2,
+    "subscriptionTotal": 241.2229,
+    "subscriptionRetail": 128.36,
+    "subscriptionHNI": 559.2,
+    "subscriptionQIB": 200.25,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
     "registrarName": "KFin Technologies Limited",
@@ -630,8 +769,8 @@
     "closeDate": "2026-10-29",
     "allotmentDate": "2026-10-30",
     "listingDate": "2026-11-03",
-    "gmpAmount": 13.0,
-    "gmpPercent": 3.94,
+    "gmpAmount": 18.5,
+    "gmpPercent": 5.61,
     "gmpHistory": [
       {
         "dateLabel": "22 Oct",
@@ -659,7 +798,7 @@
       },
       {
         "dateLabel": "29 Oct",
-        "amount": 13.0
+        "amount": 18.5
       }
     ],
     "issueStructure": {
@@ -694,10 +833,10 @@
         "netWorth": 805.5
       }
     ],
-    "subscriptionTotal": 8.79,
-    "subscriptionRetail": 0.34,
-    "subscriptionHNI": 0.37,
-    "subscriptionQIB": 0.08,
+    "subscriptionTotal": 9.4729,
+    "subscriptionRetail": 2.71,
+    "subscriptionHNI": 12.81,
+    "subscriptionQIB": 18.81,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
     "registrarName": "MUFG Intime India Private Limited",
@@ -725,11 +864,42 @@
     "listingDate": "2026-11-09",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "gmpHistory": [],
-    "issueStructure": null,
-    "leadManagers": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 51.0,
+      "ofsCr": 6.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Affinity Global Capital Market Pvt.Ltd."
+    ],
     "anchorPortionCr": 0.0,
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 49.7,
+        "pat": 0.6,
+        "netWorth": 3.9
+      },
+      {
+        "year": "FY25",
+        "revenue": 81.6,
+        "pat": 4.6,
+        "netWorth": 15.4
+      },
+      {
+        "year": "FY26",
+        "revenue": 115.3,
+        "pat": 11.0,
+        "netWorth": 42.3
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -763,10 +933,6 @@
     "gmpPercent": 0.0,
     "gmpHistory": [
       {
-        "dateLabel": "21 Oct",
-        "amount": 0.0
-      },
-      {
         "dateLabel": "22 Oct",
         "amount": 0.0
       },
@@ -788,6 +954,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -833,10 +1003,6 @@
     "gmpPercent": 0.0,
     "gmpHistory": [
       {
-        "dateLabel": "21 Oct",
-        "amount": 0.0
-      },
-      {
         "dateLabel": "22 Oct",
         "amount": 0.0
       },
@@ -858,6 +1024,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -926,10 +1096,6 @@
     "gmpPercent": 0.0,
     "gmpHistory": [
       {
-        "dateLabel": "21 Oct",
-        "amount": 0.0
-      },
-      {
         "dateLabel": "22 Oct",
         "amount": 0.0
       },
@@ -951,6 +1117,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -1018,10 +1188,6 @@
     "gmpPercent": 0.0,
     "gmpHistory": [
       {
-        "dateLabel": "21 Oct",
-        "amount": 0.0
-      },
-      {
         "dateLabel": "22 Oct",
         "amount": 0.0
       },
@@ -1043,6 +1209,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -1088,10 +1258,6 @@
     "gmpPercent": 0.0,
     "gmpHistory": [
       {
-        "dateLabel": "21 Oct",
-        "amount": 0.0
-      },
-      {
         "dateLabel": "22 Oct",
         "amount": 0.0
       },
@@ -1113,6 +1279,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -1196,6 +1366,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ],
     "issueStructure": {
@@ -1265,10 +1439,6 @@
     "gmpPercent": 0.0,
     "gmpHistory": [
       {
-        "dateLabel": "21 Oct",
-        "amount": 0.0
-      },
-      {
         "dateLabel": "22 Oct",
         "amount": 0.0
       },
@@ -1290,6 +1460,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -1363,10 +1537,6 @@
     "gmpPercent": 0.0,
     "gmpHistory": [
       {
-        "dateLabel": "21 Oct",
-        "amount": 0.0
-      },
-      {
         "dateLabel": "22 Oct",
         "amount": 0.0
       },
@@ -1388,6 +1558,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -1460,10 +1634,6 @@
     "gmpPercent": 0.0,
     "gmpHistory": [
       {
-        "dateLabel": "21 Oct",
-        "amount": 0.0
-      },
-      {
         "dateLabel": "22 Oct",
         "amount": 0.0
       },
@@ -1485,6 +1655,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -1530,10 +1704,6 @@
     "gmpPercent": 0.0,
     "gmpHistory": [
       {
-        "dateLabel": "21 Oct",
-        "amount": 0.0
-      },
-      {
         "dateLabel": "22 Oct",
         "amount": 0.0
       },
@@ -1555,6 +1725,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -1628,10 +1802,6 @@
     "gmpPercent": 0.0,
     "gmpHistory": [
       {
-        "dateLabel": "21 Oct",
-        "amount": 0.0
-      },
-      {
         "dateLabel": "22 Oct",
         "amount": 0.0
       },
@@ -1653,6 +1823,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -1698,10 +1872,6 @@
     "gmpPercent": 0.0,
     "gmpHistory": [
       {
-        "dateLabel": "21 Oct",
-        "amount": 0.0
-      },
-      {
         "dateLabel": "22 Oct",
         "amount": 0.0
       },
@@ -1723,6 +1893,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -1768,10 +1942,6 @@
     "gmpPercent": 0.0,
     "gmpHistory": [
       {
-        "dateLabel": "21 Oct",
-        "amount": 0.0
-      },
-      {
         "dateLabel": "22 Oct",
         "amount": 0.0
       },
@@ -1793,6 +1963,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -1838,10 +2012,6 @@
     "gmpPercent": 0.0,
     "gmpHistory": [
       {
-        "dateLabel": "21 Oct",
-        "amount": 0.0
-      },
-      {
         "dateLabel": "22 Oct",
         "amount": 0.0
       },
@@ -1863,6 +2033,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -1908,10 +2082,6 @@
     "gmpPercent": 0.0,
     "gmpHistory": [
       {
-        "dateLabel": "21 Oct",
-        "amount": 0.0
-      },
-      {
         "dateLabel": "22 Oct",
         "amount": 0.0
       },
@@ -1933,6 +2103,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -1988,6 +2162,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ],
     "issueStructure": {
@@ -2041,6 +2219,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -2120,6 +2302,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ],
     "issueStructure": {
@@ -2169,6 +2355,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -2248,6 +2438,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ],
     "issueStructure": {
@@ -2269,10 +2463,10 @@
         "netWorth": 38.5
       }
     ],
-    "subscriptionTotal": 1.25,
-    "subscriptionRetail": 0.42,
-    "subscriptionHNI": 0.51,
-    "subscriptionQIB": 2.0,
+    "subscriptionTotal": 1.1729,
+    "subscriptionRetail": 0.66,
+    "subscriptionHNI": 0.62,
+    "subscriptionQIB": 2.24,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
     "registrarName": "MAASHITLA SECURITIES PRIVATE LIMITED",
@@ -2298,8 +2492,8 @@
     "closeDate": "2026-10-28",
     "allotmentDate": "2026-10-29",
     "listingDate": "2026-11-02",
-    "gmpAmount": 26.0,
-    "gmpPercent": 1.56,
+    "gmpAmount": 38.0,
+    "gmpPercent": 2.28,
     "gmpHistory": [
       {
         "dateLabel": "22 Oct",
@@ -2327,7 +2521,7 @@
       },
       {
         "dateLabel": "29 Oct",
-        "amount": 26.0
+        "amount": 38.0
       }
     ],
     "issueStructure": {
@@ -2363,7 +2557,7 @@
         "netWorth": 1160.4
       }
     ],
-    "subscriptionTotal": 5.15,
+    "subscriptionTotal": 5.5128,
     "subscriptionRetail": 1.08,
     "subscriptionHNI": 4.81,
     "subscriptionQIB": 13.8,
@@ -2396,10 +2590,6 @@
     "gmpPercent": 0.0,
     "gmpHistory": [
       {
-        "dateLabel": "21 Oct",
-        "amount": 0.0
-      },
-      {
         "dateLabel": "22 Oct",
         "amount": 0.0
       },
@@ -2421,6 +2611,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -2450,7 +2644,7 @@
         "netWorth": 24.8
       }
     ],
-    "subscriptionTotal": 5.54,
+    "subscriptionTotal": 5.4427,
     "subscriptionRetail": 2.72,
     "subscriptionHNI": 12.26,
     "subscriptionQIB": 5.06,
@@ -2483,10 +2677,6 @@
     "gmpPercent": 22.34,
     "gmpHistory": [
       {
-        "dateLabel": "21 Oct",
-        "amount": 248.0
-      },
-      {
         "dateLabel": "22 Oct",
         "amount": 242.0
       },
@@ -2508,6 +2698,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 250.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 250.0
       }
     ],
@@ -2539,7 +2733,7 @@
         "netWorth": 341778.5
       }
     ],
-    "subscriptionTotal": 19.67,
+    "subscriptionTotal": 21.3623,
     "subscriptionRetail": 2.76,
     "subscriptionHNI": 13.99,
     "subscriptionQIB": 67.15,
@@ -2572,10 +2766,6 @@
     "gmpPercent": 1.88,
     "gmpHistory": [
       {
-        "dateLabel": "21 Oct",
-        "amount": 25.0
-      },
-      {
         "dateLabel": "22 Oct",
         "amount": 13.0
       },
@@ -2597,6 +2787,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 13.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 13.0
       }
     ],
@@ -2632,7 +2826,7 @@
         "netWorth": 445.0
       }
     ],
-    "subscriptionTotal": 2.21,
+    "subscriptionTotal": 2.3423,
     "subscriptionRetail": 2.1,
     "subscriptionHNI": 0.69,
     "subscriptionQIB": 3.25,
@@ -2665,10 +2859,6 @@
     "gmpPercent": 4.94,
     "gmpHistory": [
       {
-        "dateLabel": "19 Oct",
-        "amount": 24.0
-      },
-      {
         "dateLabel": "20 Oct",
         "amount": 24.0
       },
@@ -2691,13 +2881,17 @@
       {
         "dateLabel": "28 Oct",
         "amount": 17.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 17.0
       }
     ],
     "issueStructure": null,
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 14.08,
+    "subscriptionTotal": 14.2119,
     "subscriptionRetail": 3.04,
     "subscriptionHNI": 14.64,
     "subscriptionQIB": 34.7,
@@ -2730,10 +2924,6 @@
     "gmpPercent": 64.57,
     "gmpHistory": [
       {
-        "dateLabel": "19 Oct",
-        "amount": 510.0
-      },
-      {
         "dateLabel": "20 Oct",
         "amount": 515.0
       },
@@ -2755,6 +2945,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 452.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 452.0
       }
     ],
@@ -2781,7 +2975,7 @@
         "netWorth": 511.55
       }
     ],
-    "subscriptionTotal": 96.63,
+    "subscriptionTotal": 132.8119,
     "subscriptionRetail": 31.11,
     "subscriptionHNI": 156.36,
     "subscriptionQIB": 293.56,
@@ -2814,10 +3008,6 @@
     "gmpPercent": 3.91,
     "gmpHistory": [
       {
-        "dateLabel": "19 Oct",
-        "amount": 46.0
-      },
-      {
         "dateLabel": "20 Oct",
         "amount": 35.0
       },
@@ -2839,6 +3029,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 7.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 7.0
       }
     ],
@@ -2865,7 +3059,7 @@
         "netWorth": 63.0
       }
     ],
-    "subscriptionTotal": 58.01,
+    "subscriptionTotal": 58.5419,
     "subscriptionRetail": 56.09,
     "subscriptionHNI": 86.41,
     "subscriptionQIB": 41.92,
@@ -2898,10 +3092,6 @@
     "gmpPercent": 0.79,
     "gmpHistory": [
       {
-        "dateLabel": "19 Oct",
-        "amount": 3.5
-      },
-      {
         "dateLabel": "20 Oct",
         "amount": 2.0
       },
@@ -2924,13 +3114,17 @@
       {
         "dateLabel": "28 Oct",
         "amount": 1.2
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 1.2
       }
     ],
     "issueStructure": null,
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 3.05,
+    "subscriptionTotal": 3.119,
     "subscriptionRetail": 0.77,
     "subscriptionHNI": 1.45,
     "subscriptionQIB": 4.71,
@@ -2963,10 +3157,6 @@
     "gmpPercent": 11.26,
     "gmpHistory": [
       {
-        "dateLabel": "19 Oct",
-        "amount": 127.0
-      },
-      {
         "dateLabel": "20 Oct",
         "amount": 137.0
       },
@@ -2988,6 +3178,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 66.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 66.0
       }
     ],
@@ -3014,7 +3208,7 @@
         "netWorth": 1034.3
       }
     ],
-    "subscriptionTotal": 31.66,
+    "subscriptionTotal": 46.0519,
     "subscriptionRetail": 5.9,
     "subscriptionHNI": 40.39,
     "subscriptionQIB": 120.78,
@@ -3047,10 +3241,6 @@
     "gmpPercent": 0.89,
     "gmpHistory": [
       {
-        "dateLabel": "19 Oct",
-        "amount": 7.0
-      },
-      {
         "dateLabel": "20 Oct",
         "amount": 2.0
       },
@@ -3072,6 +3262,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 1.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 1.0
       }
     ],
@@ -3098,7 +3292,7 @@
         "netWorth": 109.7
       }
     ],
-    "subscriptionTotal": 8.32,
+    "subscriptionTotal": 7.1116,
     "subscriptionRetail": 3.5,
     "subscriptionHNI": 7.42,
     "subscriptionQIB": 13.21,
@@ -3131,10 +3325,6 @@
     "gmpPercent": 4.67,
     "gmpHistory": [
       {
-        "dateLabel": "19 Oct",
-        "amount": 16.0
-      },
-      {
         "dateLabel": "20 Oct",
         "amount": 20.0
       },
@@ -3156,6 +3346,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 13.5
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 13.5
       }
     ],
@@ -3182,7 +3376,7 @@
         "netWorth": 610.8
       }
     ],
-    "subscriptionTotal": 4.43,
+    "subscriptionTotal": 4.6816,
     "subscriptionRetail": 5.99,
     "subscriptionHNI": 4.73,
     "subscriptionQIB": 4.21,
@@ -3237,13 +3431,17 @@
       {
         "dateLabel": "28 Oct",
         "amount": 70.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 70.0
       }
     ],
     "issueStructure": null,
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 131.25,
+    "subscriptionTotal": 131.7315,
     "subscriptionRetail": 30.55,
     "subscriptionHNI": 203.21,
     "subscriptionQIB": 256.65,
@@ -3298,13 +3496,17 @@
       {
         "dateLabel": "28 Oct",
         "amount": 3.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 3.0
       }
     ],
     "issueStructure": null,
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 3.8,
+    "subscriptionTotal": 3.2315,
     "subscriptionRetail": 2.7,
     "subscriptionHNI": 6.65,
     "subscriptionQIB": 1.61,
@@ -3347,13 +3549,17 @@
       {
         "dateLabel": "28 Oct",
         "amount": 1.5
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 1.5
       }
     ],
     "issueStructure": null,
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 2.72,
+    "subscriptionTotal": 2.77,
     "subscriptionRetail": 3.11,
     "subscriptionHNI": 1.77,
     "subscriptionQIB": 14.11,
@@ -3396,13 +3602,17 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ],
     "issueStructure": null,
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 54.92,
+    "subscriptionTotal": 55.26,
     "subscriptionRetail": 46.17,
     "subscriptionHNI": 102.14,
     "subscriptionQIB": 35.64,
@@ -3445,13 +3655,17 @@
       {
         "dateLabel": "28 Oct",
         "amount": 43.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 43.0
       }
     ],
     "issueStructure": null,
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 123.52,
+    "subscriptionTotal": 124.236,
     "subscriptionRetail": 85.5,
     "subscriptionHNI": 196.27,
     "subscriptionQIB": 137.93,
@@ -3494,13 +3708,17 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ],
     "issueStructure": null,
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 1.93,
+    "subscriptionTotal": 1.886,
     "subscriptionRetail": 1.1,
     "subscriptionHNI": 0.09,
     "subscriptionQIB": 119.29,
@@ -3542,6 +3760,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 4.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 4.0
       }
     ],
@@ -3592,6 +3814,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 50.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 50.0
       }
     ],
     "issueStructure": null,
@@ -3640,6 +3866,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -3690,6 +3920,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ],
     "issueStructure": null,
@@ -3739,6 +3973,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ],
     "issueStructure": null,
@@ -3774,8 +4012,8 @@
     "closeDate": "To Be Updated",
     "allotmentDate": "To Be Updated",
     "listingDate": "To Be Updated",
-    "gmpAmount": 13.0,
-    "gmpPercent": 0.0,
+    "gmpAmount": 18.5,
+    "gmpPercent": 5.61,
     "gmpHistory": [
       {
         "dateLabel": "28 Oct",
@@ -3783,7 +4021,7 @@
       },
       {
         "dateLabel": "29 Oct",
-        "amount": 13.0
+        "amount": 18.5
       }
     ],
     "issueStructure": {
@@ -3838,6 +4076,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ],
     "issueStructure": null,
@@ -3887,6 +4129,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 10.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 10.0
       }
     ],
     "issueStructure": null,
@@ -3935,6 +4181,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -3979,6 +4229,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -4025,6 +4279,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -4069,6 +4327,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -4115,6 +4377,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -4160,6 +4426,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -4204,6 +4474,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ],
@@ -4282,6 +4556,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ],
     "financials": [],
@@ -4341,6 +4619,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ]
   },
@@ -4383,6 +4665,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 43.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 43.0
       }
     ]
@@ -4427,6 +4713,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ]
   },
@@ -4469,6 +4759,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ]
@@ -4513,6 +4807,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ]
   },
@@ -4555,6 +4853,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ]
@@ -4599,6 +4901,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ]
   },
@@ -4641,6 +4947,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ]
@@ -4685,6 +4995,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ]
   },
@@ -4727,6 +5041,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ]
@@ -4771,6 +5089,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ]
   },
@@ -4813,6 +5135,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ]
@@ -4857,6 +5183,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ]
   },
@@ -4899,6 +5229,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ]
@@ -4943,6 +5277,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ]
   },
@@ -4985,6 +5323,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ]
@@ -5029,6 +5371,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ]
   },
@@ -5069,6 +5415,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ]
@@ -5111,6 +5461,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ]
   },
@@ -5151,6 +5505,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ]
@@ -5193,6 +5551,10 @@
       {
         "dateLabel": "28 Oct",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
       }
     ]
   },
@@ -5233,6 +5595,10 @@
       },
       {
         "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
         "amount": 0.0
       }
     ]
