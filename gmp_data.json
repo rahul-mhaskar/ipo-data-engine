@@ -164,6 +164,11 @@
     "gmp": 0.0,
     "last_updated": "29 Oct"
   },
+  "vectrasenprocon": {
+    "name": "Vectras Enprocon",
+    "gmp": 0.0,
+    "last_updated": "29 Oct"
+  },
   "antala": {
     "name": "Antala Industries",
     "gmp": 0.0,
@@ -197,11 +202,6 @@
   "sfcenvironmentaltechnologies": {
     "name": "SFC Environmental Technologies",
     "gmp": 13.0,
-    "last_updated": "29 Oct"
-  },
-  "wiscon": {
-    "name": "Wiscon Industries",
-    "gmp": 0.0,
     "last_updated": "29 Oct"
   },
   "vedantpolyfabs": {
@@ -301,6 +301,11 @@
   },
   "boat": {
     "name": "BoAt",
+    "gmp": 0.0,
+    "last_updated": "29 Oct"
+  },
+  "wiscon": {
+    "name": "Wiscon Industries",
     "gmp": 0.0,
     "last_updated": "29 Oct"
   },
