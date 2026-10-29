@@ -11,7 +11,7 @@
   },
   "johnsoncabelectricalsu": {
     "name": "Johnsoncab Electricals BSE SME U",
-    "gmp": 10.0,
+    "gmp": 13.0,
     "last_updated": "29 Oct"
   },
   "vectrasenproconu": {
@@ -36,12 +36,12 @@
   },
   "mksonsfinejewelso": {
     "name": "M.K.Sons Fine Jewels IPO O",
-    "gmp": 15.0,
+    "gmp": 11.0,
     "last_updated": "29 Oct"
   },
   "ajwaprojectso": {
     "name": "Ajwa Projects BSE SME O",
-    "gmp": 35.0,
+    "gmp": 15.0,
     "last_updated": "29 Oct"
   },
   "carverroboweldo": {
@@ -56,21 +56,21 @@
   },
   "sfcenvironmentaltechnologiesct": {
     "name": "SFC Environmental Technologies IPO CT",
-    "gmp": 10.0,
+    "gmp": 6.5,
     "last_updated": "29 Oct"
   },
   "blspolymersct": {
     "name": "BLS Polymers IPO CT",
-    "gmp": 51.0,
+    "gmp": 60.0,
     "last_updated": "29 Oct"
   },
   "eaaaindiaalternativesc": {
     "name": "EAAA India Alternatives IPO C",
-    "gmp": 28.0,
+    "gmp": 27.0,
     "last_updated": "29 Oct"
   },
-  "core4engineersc": {
-    "name": "Core4 Engineers BSE SME C",
+  "core4engineerscallotted": {
+    "name": "Core4 Engineers BSE SME C Allotted",
     "gmp": 54.82,
     "last_updated": "29 Oct"
   },
@@ -149,6 +149,21 @@
     "gmp": 37.86,
     "last_updated": "29 Oct"
   },
+  "hgsindia": {
+    "name": "HGS (India)",
+    "gmp": 0.0,
+    "last_updated": "29 Oct"
+  },
+  "johnsoncabelectricals": {
+    "name": "Johnsoncab Electricals",
+    "gmp": 0.0,
+    "last_updated": "29 Oct"
+  },
+  "maxwellengineeringsolutions": {
+    "name": "Maxwell Engineering Solutions",
+    "gmp": 0.0,
+    "last_updated": "29 Oct"
+  },
   "antala": {
     "name": "Antala Industries",
     "gmp": 0.0,
@@ -186,6 +201,11 @@
   },
   "wiscon": {
     "name": "Wiscon Industries",
+    "gmp": 0.0,
+    "last_updated": "29 Oct"
+  },
+  "vedantpolyfabs": {
+    "name": "Vedant Poly Fabs",
     "gmp": 0.0,
     "last_updated": "29 Oct"
   },
@@ -282,11 +302,6 @@
   "boat": {
     "name": "BoAt",
     "gmp": 0.0,
-    "last_updated": "29 Oct"
-  },
-  "navitechnologies": {
-    "name": "Navi Technologies",
-    "gmp": 13.0,
     "last_updated": "29 Oct"
   },
   "eaaaindiaalternatives": {
@@ -397,6 +412,11 @@
   "sjpultrasonic": {
     "name": "SJP Ultrasonic",
     "gmp": 0.0,
+    "last_updated": "29 Oct"
+  },
+  "navitechnologies": {
+    "name": "Navi Technologies",
+    "gmp": 13.0,
     "last_updated": "29 Oct"
   },
   "omaraventuresindia": {
