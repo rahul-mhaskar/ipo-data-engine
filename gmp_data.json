@@ -21,16 +21,16 @@
   },
   "maxwellengineeringsolutionsu": {
     "name": "Maxwell Engineering Solutions NSE SME U",
-    "gmp": 43.0,
+    "gmp": 52.0,
     "last_updated": "29 Oct"
   },
-  "antalau": {
-    "name": "Antala Industries BSE SME U",
+  "antalao": {
+    "name": "Antala Industries BSE SME O",
     "gmp": 23.33,
     "last_updated": "29 Oct"
   },
-  "bombaycoatedandspecialsteelsu": {
-    "name": "Bombay Coated and Special Steels IPO U",
+  "bombaycoatedandspecialsteelso": {
+    "name": "Bombay Coated and Special Steels IPO O",
     "gmp": 9.0,
     "last_updated": "29 Oct"
   },
@@ -49,18 +49,18 @@
     "gmp": 28.29,
     "last_updated": "29 Oct"
   },
-  "wiscono": {
-    "name": "Wiscon Industries BSE SME O",
+  "wisconct": {
+    "name": "Wiscon Industries BSE SME CT",
     "gmp": 110.0,
     "last_updated": "29 Oct"
   },
-  "sfcenvironmentaltechnologieso": {
-    "name": "SFC Environmental Technologies IPO O",
+  "sfcenvironmentaltechnologiesct": {
+    "name": "SFC Environmental Technologies IPO CT",
     "gmp": 10.0,
     "last_updated": "29 Oct"
   },
-  "blspolymerso": {
-    "name": "BLS Polymers IPO O",
+  "blspolymersct": {
+    "name": "BLS Polymers IPO CT",
     "gmp": 51.0,
     "last_updated": "29 Oct"
   },
