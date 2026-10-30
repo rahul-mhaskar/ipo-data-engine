@@ -6,7 +6,7 @@
   },
   "hgsindiao": {
     "name": "HGS (India) NSE SME O",
-    "gmp": 34.56,
+    "gmp": 19.0,
     "last_updated": "30 Oct"
   },
   "johnsoncabelectricalso": {
@@ -31,12 +31,12 @@
   },
   "bombaycoatedandspecialsteelso": {
     "name": "Bombay Coated and Special Steels IPO O",
-    "gmp": 9.0,
+    "gmp": 7.0,
     "last_updated": "30 Oct"
   },
   "mksonsfinejewelsct": {
     "name": "M.K.Sons Fine Jewels IPO CT",
-    "gmp": 7.0,
+    "gmp": 4.0,
     "last_updated": "30 Oct"
   },
   "ajwaprojectsct": {
@@ -46,7 +46,7 @@
   },
   "carverroboweldct": {
     "name": "Carver Roboweld BSE SME CT",
-    "gmp": 28.29,
+    "gmp": 3.0,
     "last_updated": "30 Oct"
   },
   "wisconc": {
@@ -56,17 +56,17 @@
   },
   "sfcenvironmentaltechnologiesc": {
     "name": "SFC Environmental Technologies IPO C",
-    "gmp": 20.0,
+    "gmp": 21.0,
     "last_updated": "30 Oct"
   },
   "blspolymersc": {
     "name": "BLS Polymers IPO C",
-    "gmp": 68.0,
+    "gmp": 74.0,
     "last_updated": "30 Oct"
   },
   "eaaaindiaalternativescallotted": {
     "name": "EAAA India Alternatives IPO C Allotted",
-    "gmp": 56.0,
+    "gmp": 53.0,
     "last_updated": "30 Oct"
   },
   "core4engineersemailprotected20": {
@@ -179,16 +179,6 @@
     "gmp": 9.0,
     "last_updated": "30 Oct"
   },
-  "ajwaprojects": {
-    "name": "Ajwa Projects",
-    "gmp": 5.0,
-    "last_updated": "30 Oct"
-  },
-  "carverroboweld": {
-    "name": "Carver Roboweld",
-    "gmp": 0.0,
-    "last_updated": "30 Oct"
-  },
   "mksonsfinejewels": {
     "name": "M.K.Sons Fine Jewels",
     "gmp": 12.0,
@@ -292,6 +282,16 @@
   "boat": {
     "name": "BoAt",
     "gmp": 0.0,
+    "last_updated": "30 Oct"
+  },
+  "carverroboweld": {
+    "name": "Carver Roboweld",
+    "gmp": 0.0,
+    "last_updated": "30 Oct"
+  },
+  "ajwaprojects": {
+    "name": "Ajwa Projects",
+    "gmp": 5.0,
     "last_updated": "30 Oct"
   },
   "blspolymers": {

@@ -54,7 +54,7 @@
         "netWorth": 90.4
       }
     ],
-    "subscriptionTotal": 0.79,
+    "subscriptionTotal": 0.81,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -127,7 +127,7 @@
         "netWorth": 40.1
       }
     ],
-    "subscriptionTotal": 0.87,
+    "subscriptionTotal": 0.92,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -199,7 +199,7 @@
         "netWorth": 27.9
       }
     ],
-    "subscriptionTotal": 3.68,
+    "subscriptionTotal": 3.94,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -268,7 +268,7 @@
         "netWorth": 46.9
       }
     ],
-    "subscriptionTotal": 1.04,
+    "subscriptionTotal": 1.07,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -410,7 +410,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 3.6,
+    "subscriptionTotal": 3.65,
     "subscriptionRetail": 1.31,
     "subscriptionHNI": 0.76,
     "subscriptionQIB": 6.89,
@@ -426,174 +426,6 @@
   },
   {
     "id": "7",
-    "name": "Ajwa Projects",
-    "symbol": "AJWA",
-    "category": "SME",
-    "status": "OPEN",
-    "logoUrl": null,
-    "issueSizeCr": 38.0,
-    "issuePriceMin": 203.0,
-    "issuePriceMax": 203.0,
-    "lotSize": 600,
-    "openDate": "2026-10-28",
-    "closeDate": "2026-10-30",
-    "allotmentDate": "2026-11-02",
-    "listingDate": "2026-11-04",
-    "gmpAmount": 5.0,
-    "gmpPercent": 2.46,
-    "gmpHistory": [
-      {
-        "dateLabel": "27 Oct",
-        "amount": 25.0
-      },
-      {
-        "dateLabel": "28 Oct",
-        "amount": 35.0
-      },
-      {
-        "dateLabel": "29 Oct",
-        "amount": 5.0
-      },
-      {
-        "dateLabel": "30 Oct",
-        "amount": 5.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 29.0,
-      "ofsCr": 8.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Wealth Mine Networks Ltd.",
-      "Prabhat Financial Services Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 34.4,
-        "pat": 3.0,
-        "netWorth": 8.9
-      },
-      {
-        "year": "FY25",
-        "revenue": 36.9,
-        "pat": 3.3,
-        "netWorth": 12.3
-      },
-      {
-        "year": "FY26",
-        "revenue": 12.4,
-        "pat": 1.6,
-        "netWorth": 19.3
-      }
-    ],
-    "subscriptionTotal": 1.16,
-    "subscriptionRetail": 1.57,
-    "subscriptionHNI": 0.18,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "KFIN TECHNOLOGIES LIMITED",
-    "registrarUrl": "https://www.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "",
-    "drhpPdfUrl": "",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "8",
-    "name": "Carver Roboweld",
-    "symbol": "CRL",
-    "category": "SME",
-    "status": "OPEN",
-    "logoUrl": null,
-    "issueSizeCr": 28.0,
-    "issuePriceMin": 76.0,
-    "issuePriceMax": 80.0,
-    "lotSize": 1600,
-    "openDate": "2026-10-28",
-    "closeDate": "2026-10-30",
-    "allotmentDate": "2026-11-02",
-    "listingDate": "2026-11-04",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "23 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "24 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "26 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "27 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "28 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "29 Oct",
-        "amount": 0.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 27.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Smart Horizon Capital Advisors Pvt.Ltd.",
-      "Shreni Shares Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 21.7,
-        "pat": 1.0,
-        "netWorth": 3.1
-      },
-      {
-        "year": "FY25",
-        "revenue": 25.0,
-        "pat": 1.4,
-        "netWorth": 4.6
-      },
-      {
-        "year": "FY26",
-        "revenue": 7.7,
-        "pat": 1.5,
-        "netWorth": 17.6
-      }
-    ],
-    "subscriptionTotal": 19.03,
-    "subscriptionRetail": 0.65,
-    "subscriptionHNI": 2.31,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Bigshare Services Private Limited",
-    "registrarUrl": "https://www.bigshareonline.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.google.com/search?q=Carver+Roboweld+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.google.com/search?q=Carver+Roboweld+IPO+DRHP+file+SEBI",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "9",
     "name": "M.K.Sons Fine Jewels",
     "symbol": "MKSONS",
     "category": "Mainboard",
@@ -669,7 +501,7 @@
         "netWorth": 183.0
       }
     ],
-    "subscriptionTotal": 4.65,
+    "subscriptionTotal": 4.97,
     "subscriptionRetail": 0.85,
     "subscriptionHNI": 2.2,
     "subscriptionQIB": 0.99,
@@ -684,7 +516,7 @@
     "closeNotified": false
   },
   {
-    "id": "10",
+    "id": "8",
     "name": "Vedant Poly Fabs",
     "symbol": "VEDANTP",
     "category": "SME",
@@ -751,7 +583,7 @@
     "closeNotified": false
   },
   {
-    "id": "11",
+    "id": "9",
     "name": "Parle Products",
     "symbol": "PARLEPR",
     "category": "Mainboard",
@@ -821,7 +653,7 @@
     "closeNotified": false
   },
   {
-    "id": "12",
+    "id": "10",
     "name": "Twinkle Papers",
     "symbol": "TWINKLE",
     "category": "SME",
@@ -914,7 +746,7 @@
     "closeNotified": false
   },
   {
-    "id": "13",
+    "id": "11",
     "name": "Sri Priyanka Geo Commex",
     "symbol": "SPGCL",
     "category": "SME",
@@ -1006,7 +838,7 @@
     "closeNotified": false
   },
   {
-    "id": "14",
+    "id": "12",
     "name": "Flipkart",
     "symbol": "FLIPKAR",
     "category": "Mainboard",
@@ -1076,7 +908,7 @@
     "closeNotified": false
   },
   {
-    "id": "15",
+    "id": "13",
     "name": "Prestige Hospitality Ventures",
     "symbol": "PRESTIG",
     "category": "Mainboard",
@@ -1170,7 +1002,7 @@
     "closeNotified": false
   },
   {
-    "id": "16",
+    "id": "14",
     "name": "Credila Financial Services",
     "symbol": "CREDILA",
     "category": "Mainboard",
@@ -1257,7 +1089,7 @@
     "closeNotified": false
   },
   {
-    "id": "17",
+    "id": "15",
     "name": "PhonePe",
     "symbol": "PHONEPE",
     "category": "Mainboard",
@@ -1355,7 +1187,7 @@
     "closeNotified": false
   },
   {
-    "id": "18",
+    "id": "16",
     "name": "Zepto",
     "symbol": "ZEPTO",
     "category": "Mainboard",
@@ -1452,7 +1284,7 @@
     "closeNotified": false
   },
   {
-    "id": "19",
+    "id": "17",
     "name": "Solar91 Cleantech",
     "symbol": "SOLAR91",
     "category": "SME",
@@ -1522,7 +1354,7 @@
     "closeNotified": false
   },
   {
-    "id": "20",
+    "id": "18",
     "name": "Hero FinCorp",
     "symbol": "HEROFIN",
     "category": "Mainboard",
@@ -1620,7 +1452,7 @@
     "closeNotified": false
   },
   {
-    "id": "21",
+    "id": "19",
     "name": "Deltatech Gaming",
     "symbol": "DELTATE",
     "category": "Mainboard",
@@ -1690,7 +1522,7 @@
     "closeNotified": false
   },
   {
-    "id": "22",
+    "id": "20",
     "name": "Biba Fashions",
     "symbol": "BIBAFAS",
     "category": "Mainboard",
@@ -1760,7 +1592,7 @@
     "closeNotified": false
   },
   {
-    "id": "23",
+    "id": "21",
     "name": "Droom Technology",
     "symbol": "DROOMTE",
     "category": "Mainboard",
@@ -1830,7 +1662,7 @@
     "closeNotified": false
   },
   {
-    "id": "24",
+    "id": "22",
     "name": "Puranik Builders",
     "symbol": "PURANIK",
     "category": "Mainboard",
@@ -1900,7 +1732,7 @@
     "closeNotified": false
   },
   {
-    "id": "25",
+    "id": "23",
     "name": "Bharat FIH",
     "symbol": "BHARATF",
     "category": "Mainboard",
@@ -1970,7 +1802,7 @@
     "closeNotified": false
   },
   {
-    "id": "26",
+    "id": "24",
     "name": "FabIndia",
     "symbol": "FABINDI",
     "category": "Mainboard",
@@ -2028,7 +1860,7 @@
     "closeNotified": false
   },
   {
-    "id": "27",
+    "id": "25",
     "name": "OYO",
     "symbol": "OYO",
     "category": "Mainboard",
@@ -2114,7 +1946,7 @@
     "closeNotified": false
   },
   {
-    "id": "28",
+    "id": "26",
     "name": "EBIXCASH",
     "symbol": "EBIXCAS",
     "category": "Mainboard",
@@ -2168,7 +2000,7 @@
     "closeNotified": false
   },
   {
-    "id": "29",
+    "id": "27",
     "name": "BoAt",
     "symbol": "BOAT",
     "category": "Mainboard",
@@ -2242,6 +2074,174 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=/sebi_data/attachdocs/jan-2022/1643353844101.PDF#page=2&zoom=page-width,-15,379",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "28",
+    "name": "Carver Roboweld",
+    "symbol": "CRL",
+    "category": "SME",
+    "status": "OPEN",
+    "logoUrl": null,
+    "issueSizeCr": 28.0,
+    "issuePriceMin": 76.0,
+    "issuePriceMax": 80.0,
+    "lotSize": 1600,
+    "openDate": "2026-10-28",
+    "closeDate": "2026-10-30",
+    "allotmentDate": "2026-11-02",
+    "listingDate": "2026-11-04",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "23 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "24 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "26 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "27 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 27.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Smart Horizon Capital Advisors Pvt.Ltd.",
+      "Shreni Shares Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 21.7,
+        "pat": 1.0,
+        "netWorth": 3.1
+      },
+      {
+        "year": "FY25",
+        "revenue": 25.0,
+        "pat": 1.4,
+        "netWorth": 4.6
+      },
+      {
+        "year": "FY26",
+        "revenue": 7.7,
+        "pat": 1.5,
+        "netWorth": 17.6
+      }
+    ],
+    "subscriptionTotal": 24.27,
+    "subscriptionRetail": 0.65,
+    "subscriptionHNI": 2.31,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Bigshare Services Private Limited",
+    "registrarUrl": "https://www.bigshareonline.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.google.com/search?q=Carver+Roboweld+IPO+RHP+file+SEBI",
+    "drhpPdfUrl": "https://www.google.com/search?q=Carver+Roboweld+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "29",
+    "name": "Ajwa Projects",
+    "symbol": "AJWA",
+    "category": "SME",
+    "status": "OPEN",
+    "logoUrl": null,
+    "issueSizeCr": 38.0,
+    "issuePriceMin": 203.0,
+    "issuePriceMax": 203.0,
+    "lotSize": 600,
+    "openDate": "2026-10-28",
+    "closeDate": "2026-10-30",
+    "allotmentDate": "2026-11-02",
+    "listingDate": "2026-11-04",
+    "gmpAmount": 5.0,
+    "gmpPercent": 2.46,
+    "gmpHistory": [
+      {
+        "dateLabel": "27 Oct",
+        "amount": 25.0
+      },
+      {
+        "dateLabel": "28 Oct",
+        "amount": 35.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 5.0
+      },
+      {
+        "dateLabel": "30 Oct",
+        "amount": 5.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 29.0,
+      "ofsCr": 8.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Wealth Mine Networks Ltd.",
+      "Prabhat Financial Services Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 34.4,
+        "pat": 3.0,
+        "netWorth": 8.9
+      },
+      {
+        "year": "FY25",
+        "revenue": 36.9,
+        "pat": 3.3,
+        "netWorth": 12.3
+      },
+      {
+        "year": "FY26",
+        "revenue": 12.4,
+        "pat": 1.6,
+        "netWorth": 19.3
+      }
+    ],
+    "subscriptionTotal": 1.17,
+    "subscriptionRetail": 1.57,
+    "subscriptionHNI": 0.18,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KFIN TECHNOLOGIES LIMITED",
+    "registrarUrl": "https://www.kfintech.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "",
+    "drhpPdfUrl": "",
     "openNotified": false,
     "closeNotified": false
   },
