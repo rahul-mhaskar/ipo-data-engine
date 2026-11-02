@@ -1,592 +1,592 @@
 {
-  "vedantpolyfabsu": {
-    "name": "Vedant Poly Fabs NSE SME U",
-    "gmp": 4.25,
-    "last_updated": "31 Oct"
+  "vedantpolyfabso": {
+    "name": "Vedant Poly Fabs NSE SME O",
+    "gmp": 15.0,
+    "last_updated": "02 Nov"
   },
   "hgsindiao": {
     "name": "HGS (India) NSE SME O",
     "gmp": 30.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "johnsoncabelectricalso": {
     "name": "Johnsoncab Electricals BSE SME O",
     "gmp": 10.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "vectrasenprocono": {
     "name": "Vectras Enprocon BSE SME O",
     "gmp": 53.05,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "maxwellengineeringsolutionso": {
     "name": "Maxwell Engineering Solutions NSE SME O",
     "gmp": 70.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
-  "antalao": {
-    "name": "Antala Industries BSE SME O",
+  "antalact": {
+    "name": "Antala Industries BSE SME CT",
     "gmp": 23.33,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
-  "bombaycoatedandspecialsteelso": {
-    "name": "Bombay Coated and Special Steels IPO O",
-    "gmp": 7.0,
-    "last_updated": "31 Oct"
+  "bombaycoatedandspecialsteelsct": {
+    "name": "Bombay Coated and Special Steels IPO CT",
+    "gmp": 9.0,
+    "last_updated": "02 Nov"
   },
   "mksonsfinejewelsc": {
     "name": "M.K.Sons Fine Jewels IPO C",
-    "gmp": 5.0,
-    "last_updated": "31 Oct"
+    "gmp": 5.5,
+    "last_updated": "02 Nov"
   },
   "ajwaprojectsc": {
     "name": "Ajwa Projects BSE SME C",
-    "gmp": 2.0,
-    "last_updated": "31 Oct"
+    "gmp": 1.0,
+    "last_updated": "02 Nov"
   },
   "carverroboweldc": {
     "name": "Carver Roboweld BSE SME C",
     "gmp": 5.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "wisconcallotted": {
     "name": "Wiscon Industries BSE SME C Allotted",
     "gmp": 110.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "sfcenvironmentaltechnologiescallotted": {
     "name": "SFC Environmental Technologies IPO C Allotted",
-    "gmp": 21.0,
-    "last_updated": "31 Oct"
+    "gmp": 19.5,
+    "last_updated": "02 Nov"
   },
   "blspolymersc": {
     "name": "BLS Polymers IPO C",
     "gmp": 68.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
-  "eaaaindiaalternativescallotted": {
-    "name": "EAAA India Alternatives IPO C Allotted",
-    "gmp": 53.0,
-    "last_updated": "31 Oct"
+  "eaaaindiaalternativesemailprotected063": {
+    "name": "EAAA India Alternatives IPO [email protected] (0.63%)",
+    "gmp": 54.0,
+    "last_updated": "02 Nov"
   },
   "core4engineersemailprotected20": {
     "name": "Core4 Engineers BSE SME [email protected] (-20%)",
     "gmp": 54.82,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "parashealthcareemailprotected39": {
     "name": "Paras Healthcare IPO [email protected] (3.9%)",
     "gmp": 13.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "jioplatformsemailprotected2136": {
     "name": "Jio Platforms IPO [email protected] (21.36%)",
     "gmp": 250.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "zetwerkemailprotected546": {
     "name": "Zetwerk IPO [email protected] (5.46%)",
     "gmp": 1.2,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "tonboimagingindiaemailprotected6571": {
     "name": "Tonbo Imaging India IPO [email protected] (65.71%)",
     "gmp": 452.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "sahajanandmedicaltechnologiesemailprotected789": {
     "name": "Sahajanand Medical Technologies IPO [email protected] (7.89%)",
     "gmp": 17.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "bonfigliolitransmissionsemailprotected0": {
     "name": "Bonfiglioli Transmissions IPO [email protected] (0%)",
     "gmp": 66.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "shellzindiaemailprotected0": {
     "name": "Shellz India BSE SME [email protected] (0%)",
     "gmp": 7.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "ravitaengineeringemailprotected0": {
     "name": "Ravita Engineering Services NSE SME [email protected] (0%)",
     "gmp": 1.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "fusioncxemailprotected554": {
     "name": "Fusion CX IPO [email protected] (5.54%)",
     "gmp": 13.5,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "hdfireprotectemailprotected2362": {
     "name": "HD Fire Protect IPO [email protected] (23.62%)",
     "gmp": 70.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "vaibhavvyapaaremailprotected204": {
     "name": "Vaibhav Vyapaar NSE SME [email protected] (-2.04%)",
     "gmp": 3.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "rkfashionaccessoriesemailprotected244": {
     "name": "R.K.Fashion Accessories NSE SME [email protected] (-2.44%)",
     "gmp": 1.5,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "paramountsyntexemailprotected945": {
     "name": "Paramount Syntex BSE SME [email protected] (-9.45%)",
     "gmp": 81.79,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "acmeindiaemailprotected1276": {
     "name": "Acme India Industries BSE SME [email protected] (12.76%)",
     "gmp": 43.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "tnasolutionsemailprotected20": {
     "name": "TNA Solutions BSE SME [email protected] (-20%)",
     "gmp": 37.86,
-    "last_updated": "31 Oct"
-  },
-  "hgsindia": {
-    "name": "HGS (India)",
-    "gmp": 19.0,
-    "last_updated": "31 Oct"
-  },
-  "johnsoncabelectricals": {
-    "name": "Johnsoncab Electricals",
-    "gmp": 10.0,
-    "last_updated": "31 Oct"
-  },
-  "maxwellengineeringsolutions": {
-    "name": "Maxwell Engineering Solutions",
-    "gmp": 70.0,
-    "last_updated": "31 Oct"
-  },
-  "vectrasenprocon": {
-    "name": "Vectras Enprocon",
-    "gmp": 0.0,
-    "last_updated": "31 Oct"
-  },
-  "antala": {
-    "name": "Antala Industries",
-    "gmp": 0.0,
-    "last_updated": "31 Oct"
-  },
-  "bombaycoatedspecialsteels": {
-    "name": "Bombay Coated & Special Steels",
-    "gmp": 7.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "vedantpolyfabs": {
     "name": "Vedant Poly Fabs",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
+  },
+  "hgsindia": {
+    "name": "HGS (India)",
+    "gmp": 19.0,
+    "last_updated": "02 Nov"
+  },
+  "johnsoncabelectricals": {
+    "name": "Johnsoncab Electricals",
+    "gmp": 10.0,
+    "last_updated": "02 Nov"
+  },
+  "maxwellengineeringsolutions": {
+    "name": "Maxwell Engineering Solutions",
+    "gmp": 70.0,
+    "last_updated": "02 Nov"
+  },
+  "vectrasenprocon": {
+    "name": "Vectras Enprocon",
+    "gmp": 0.0,
+    "last_updated": "02 Nov"
   },
   "parleproducts": {
     "name": "Parle Products",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "twinklepapers": {
     "name": "Twinkle Papers",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "sripriyankageocommex": {
     "name": "Sri Priyanka Geo Commex",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "flipkart": {
     "name": "Flipkart",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "prestigehospitalityventures": {
     "name": "Prestige Hospitality Ventures",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "credilafinancial": {
     "name": "Credila Financial Services",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "phonepe": {
     "name": "PhonePe",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "zepto": {
     "name": "Zepto",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "solar91cleantech": {
     "name": "Solar91 Cleantech",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "herofincorp": {
     "name": "Hero FinCorp",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "deltatechgaming": {
     "name": "Deltatech Gaming",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "bibafashions": {
     "name": "Biba Fashions",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "droomtechnology": {
     "name": "Droom Technology",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "puranikbuilders": {
     "name": "Puranik Builders",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "bharatfih": {
     "name": "Bharat FIH",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "fabindia": {
     "name": "FabIndia",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "oyo": {
     "name": "OYO",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "ebixcash": {
     "name": "EBIXCASH",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "boat": {
     "name": "BoAt",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
-  },
-  "mksonsfinejewels": {
-    "name": "M.K.Sons Fine Jewels",
-    "gmp": 6.3,
-    "last_updated": "31 Oct"
-  },
-  "carverroboweld": {
-    "name": "Carver Roboweld",
-    "gmp": 5.0,
-    "last_updated": "31 Oct"
-  },
-  "ajwaprojects": {
-    "name": "Ajwa Projects",
-    "gmp": 2.0,
-    "last_updated": "31 Oct"
-  },
-  "blspolymers": {
-    "name": "BLS Polymers",
-    "gmp": 73.0,
-    "last_updated": "31 Oct"
-  },
-  "sfcenvironmentaltechnologies": {
-    "name": "SFC Environmental Technologies",
-    "gmp": 21.0,
-    "last_updated": "31 Oct"
-  },
-  "wiscon": {
-    "name": "Wiscon Industries",
-    "gmp": 0.0,
-    "last_updated": "31 Oct"
-  },
-  "eaaaindiaalternatives": {
-    "name": "EAAA India Alternatives",
-    "gmp": 52.0,
-    "last_updated": "31 Oct"
-  },
-  "core4engineers": {
-    "name": "Core4 Engineers",
-    "gmp": 0.0,
-    "last_updated": "31 Oct"
-  },
-  "reliancejio": {
-    "name": "Reliance Jio",
-    "gmp": 250.0,
-    "last_updated": "31 Oct"
-  },
-  "parashealthcare": {
-    "name": "Paras Healthcare",
-    "gmp": 13.0,
-    "last_updated": "31 Oct"
-  },
-  "sahajanandmedicaltechnologies": {
-    "name": "Sahajanand Medical Technologies",
-    "gmp": 17.0,
-    "last_updated": "31 Oct"
-  },
-  "tonboimagingindia": {
-    "name": "Tonbo Imaging India",
-    "gmp": 452.0,
-    "last_updated": "31 Oct"
-  },
-  "shellzindia": {
-    "name": "Shellz India",
-    "gmp": 7.0,
-    "last_updated": "31 Oct"
-  },
-  "zetwerkmanufacturing": {
-    "name": "Zetwerk Manufacturing",
-    "gmp": 1.2,
-    "last_updated": "31 Oct"
-  },
-  "bonfigliolitransmissions": {
-    "name": "Bonfiglioli Transmissions",
-    "gmp": 66.0,
-    "last_updated": "31 Oct"
-  },
-  "ravitaengineering": {
-    "name": "Ravita Engineering Services",
-    "gmp": 1.0,
-    "last_updated": "31 Oct"
-  },
-  "fusioncx": {
-    "name": "Fusion CX",
-    "gmp": 13.5,
-    "last_updated": "31 Oct"
-  },
-  "hdfireprotect": {
-    "name": "HD Fire Protect",
-    "gmp": 70.0,
-    "last_updated": "31 Oct"
-  },
-  "vaibhavvyapaar": {
-    "name": "Vaibhav Vyapaar",
-    "gmp": 3.0,
-    "last_updated": "31 Oct"
-  },
-  "rkfashionaccessories": {
-    "name": "R.K.Fashion Accessories",
-    "gmp": 1.5,
-    "last_updated": "31 Oct"
-  },
-  "tnasolutions": {
-    "name": "TNA Solutions",
-    "gmp": 0.0,
-    "last_updated": "31 Oct"
-  },
-  "acmeindia": {
-    "name": "Acme India Industries",
-    "gmp": 43.0,
-    "last_updated": "31 Oct"
-  },
-  "paramountsyntex": {
-    "name": "Paramount Syntex",
-    "gmp": 0.0,
-    "last_updated": "31 Oct"
-  },
-  "shreetnbpolymers": {
-    "name": "Shree TNB Polymers",
-    "gmp": 4.0,
-    "last_updated": "31 Oct"
-  },
-  "everestimstechnologies": {
-    "name": "EverestIMS Technologies",
-    "gmp": 50.0,
-    "last_updated": "31 Oct"
-  },
-  "eventions": {
-    "name": "Eventions",
-    "gmp": 0.0,
-    "last_updated": "31 Oct"
-  },
-  "dovesoft": {
-    "name": "Dove Soft",
-    "gmp": 0.0,
-    "last_updated": "31 Oct"
-  },
-  "sjpultrasonic": {
-    "name": "SJP Ultrasonic",
-    "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "navitechnologies": {
     "name": "Navi Technologies",
     "gmp": 21.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
+  },
+  "bombaycoatedspecialsteels": {
+    "name": "Bombay Coated & Special Steels",
+    "gmp": 7.0,
+    "last_updated": "02 Nov"
+  },
+  "antala": {
+    "name": "Antala Industries",
+    "gmp": 0.0,
+    "last_updated": "02 Nov"
+  },
+  "mksonsfinejewels": {
+    "name": "M.K.Sons Fine Jewels",
+    "gmp": 6.3,
+    "last_updated": "02 Nov"
+  },
+  "carverroboweld": {
+    "name": "Carver Roboweld",
+    "gmp": 5.0,
+    "last_updated": "02 Nov"
+  },
+  "ajwaprojects": {
+    "name": "Ajwa Projects",
+    "gmp": 2.0,
+    "last_updated": "02 Nov"
+  },
+  "blspolymers": {
+    "name": "BLS Polymers",
+    "gmp": 73.0,
+    "last_updated": "02 Nov"
+  },
+  "sfcenvironmentaltechnologies": {
+    "name": "SFC Environmental Technologies",
+    "gmp": 21.0,
+    "last_updated": "02 Nov"
+  },
+  "wiscon": {
+    "name": "Wiscon Industries",
+    "gmp": 0.0,
+    "last_updated": "02 Nov"
+  },
+  "eaaaindiaalternatives": {
+    "name": "EAAA India Alternatives",
+    "gmp": 52.0,
+    "last_updated": "02 Nov"
+  },
+  "core4engineers": {
+    "name": "Core4 Engineers",
+    "gmp": 0.0,
+    "last_updated": "02 Nov"
+  },
+  "reliancejio": {
+    "name": "Reliance Jio",
+    "gmp": 250.0,
+    "last_updated": "02 Nov"
+  },
+  "parashealthcare": {
+    "name": "Paras Healthcare",
+    "gmp": 13.0,
+    "last_updated": "02 Nov"
+  },
+  "sahajanandmedicaltechnologies": {
+    "name": "Sahajanand Medical Technologies",
+    "gmp": 17.0,
+    "last_updated": "02 Nov"
+  },
+  "tonboimagingindia": {
+    "name": "Tonbo Imaging India",
+    "gmp": 452.0,
+    "last_updated": "02 Nov"
+  },
+  "shellzindia": {
+    "name": "Shellz India",
+    "gmp": 7.0,
+    "last_updated": "02 Nov"
+  },
+  "zetwerkmanufacturing": {
+    "name": "Zetwerk Manufacturing",
+    "gmp": 1.2,
+    "last_updated": "02 Nov"
+  },
+  "bonfigliolitransmissions": {
+    "name": "Bonfiglioli Transmissions",
+    "gmp": 66.0,
+    "last_updated": "02 Nov"
+  },
+  "ravitaengineering": {
+    "name": "Ravita Engineering Services",
+    "gmp": 1.0,
+    "last_updated": "02 Nov"
+  },
+  "fusioncx": {
+    "name": "Fusion CX",
+    "gmp": 13.5,
+    "last_updated": "02 Nov"
+  },
+  "hdfireprotect": {
+    "name": "HD Fire Protect",
+    "gmp": 70.0,
+    "last_updated": "02 Nov"
+  },
+  "vaibhavvyapaar": {
+    "name": "Vaibhav Vyapaar",
+    "gmp": 3.0,
+    "last_updated": "02 Nov"
+  },
+  "rkfashionaccessories": {
+    "name": "R.K.Fashion Accessories",
+    "gmp": 1.5,
+    "last_updated": "02 Nov"
+  },
+  "tnasolutions": {
+    "name": "TNA Solutions",
+    "gmp": 0.0,
+    "last_updated": "02 Nov"
+  },
+  "acmeindia": {
+    "name": "Acme India Industries",
+    "gmp": 43.0,
+    "last_updated": "02 Nov"
+  },
+  "paramountsyntex": {
+    "name": "Paramount Syntex",
+    "gmp": 0.0,
+    "last_updated": "02 Nov"
+  },
+  "shreetnbpolymers": {
+    "name": "Shree TNB Polymers",
+    "gmp": 4.0,
+    "last_updated": "02 Nov"
+  },
+  "everestimstechnologies": {
+    "name": "EverestIMS Technologies",
+    "gmp": 50.0,
+    "last_updated": "02 Nov"
+  },
+  "eventions": {
+    "name": "Eventions",
+    "gmp": 0.0,
+    "last_updated": "02 Nov"
+  },
+  "dovesoft": {
+    "name": "Dove Soft",
+    "gmp": 0.0,
+    "last_updated": "02 Nov"
+  },
+  "sjpultrasonic": {
+    "name": "SJP Ultrasonic",
+    "gmp": 0.0,
+    "last_updated": "02 Nov"
   },
   "omaraventuresindia": {
     "name": "Omara Ventures India",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "sollfegesmartelectronics": {
     "name": "Sollfege Smart Electronics",
     "gmp": 10.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "nityasgemsjewellery": {
     "name": "Nityas Gems & Jewellery",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "vishalnirmiti": {
     "name": "Vishal Nirmiti",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "greenasiaimpex": {
     "name": "Green Asia Impex",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "blackopalconsultants": {
     "name": "Black Opal Consultants",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "papadmaljiagrofoods": {
     "name": "Papadmalji Agro Foods",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "vanselectroengineerings": {
     "name": "Vans Electroengineerings",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "pindhospitality": {
     "name": "Pind Hospitality",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "shahinvestors": {
     "name": "Shah Investor’s Home",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "shivchemagro": {
     "name": "Shivchem Agro",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "sritindia": {
     "name": "SRIT India",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "acmeuniversalsafezone9": {
     "name": "Acme Universal Safezone 9",
     "gmp": 43.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "saiurjaindoventures": {
     "name": "Sai Urja Indo Ventures",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "runwal": {
     "name": "Runwal Enterprises",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "germangreensteelpower": {
     "name": "German Green Steel & Power",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "orientcablesindia": {
     "name": "Orient Cables (India)",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "acevectorsnapdeal": {
     "name": "Acevector (Snapdeal)",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "himalayansolar": {
     "name": "Himalayan Solar",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "dudaniretail": {
     "name": "Dudani Retail",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "benchmarkinfotech": {
     "name": "Bench Mark Infotech Services",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "aonesteelsindia": {
     "name": "A-One Steels India",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "moneyview": {
     "name": "Moneyview",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "peshwawheat": {
     "name": "Peshwa Wheat",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "roopascreen": {
     "name": "Roopa Screen",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "armeeinfotech": {
     "name": "ArMee Infotech",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "skoffset": {
     "name": "S.K.Offset",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "unitecfibres": {
     "name": "Unitec Fibres",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "adroitindia": {
     "name": "Adroit Industries (India)",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "swastikainfra": {
     "name": "Swastika Infra",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "liqvddigitalindia": {
     "name": "Liqvd Digital India",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "poojalogistics": {
     "name": "Pooja Logistics",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   },
   "coreintegraconsulting": {
     "name": "Coreintegra Consulting Services",
     "gmp": 0.0,
-    "last_updated": "31 Oct"
+    "last_updated": "02 Nov"
   }
 }

@@ -1,6 +1,78 @@
 [
   {
     "id": "1",
+    "name": "Vedant Poly Fabs",
+    "symbol": "VPFL",
+    "category": "SME",
+    "status": "OPEN",
+    "logoUrl": null,
+    "issueSizeCr": 57.0,
+    "issuePriceMin": 88.0,
+    "issuePriceMax": 94.0,
+    "lotSize": 1200,
+    "openDate": "2026-11-02",
+    "closeDate": "2026-11-04",
+    "allotmentDate": "2026-11-05",
+    "listingDate": "2026-11-09",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "30 Oct",
+        "amount": 0.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 48.0,
+      "ofsCr": 6.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Affinity Global Capital Market Pvt.Ltd.",
+      "Giriraj Stock Broking Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 49.7,
+        "pat": 0.6,
+        "netWorth": 3.9
+      },
+      {
+        "year": "FY25",
+        "revenue": 81.6,
+        "pat": 4.6,
+        "netWorth": 15.4
+      },
+      {
+        "year": "FY26",
+        "revenue": 115.3,
+        "pat": 11.0,
+        "netWorth": 42.3
+      }
+    ],
+    "subscriptionTotal": 0.41,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Cameo Corporate Services Limited",
+    "registrarUrl": "https://cameoindia.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Draft_Abridged_Prospectus.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "2",
     "name": "HGS (India)",
     "symbol": "HGSINDIALT",
     "category": "SME",
@@ -27,6 +99,10 @@
       },
       {
         "dateLabel": "31 Oct",
+        "amount": 19.0
+      },
+      {
+        "dateLabel": "02 Nov",
         "amount": 19.0
       }
     ],
@@ -61,7 +137,7 @@
         "netWorth": 90.4
       }
     ],
-    "subscriptionTotal": 1.16,
+    "subscriptionTotal": 14.68,
     "subscriptionRetail": 0.25,
     "subscriptionHNI": 1.24,
     "subscriptionQIB": 1.77,
@@ -76,7 +152,7 @@
     "closeNotified": false
   },
   {
-    "id": "2",
+    "id": "3",
     "name": "Johnsoncab Electricals",
     "symbol": "JOHNSONCAB",
     "category": "SME",
@@ -103,6 +179,10 @@
       },
       {
         "dateLabel": "31 Oct",
+        "amount": 10.0
+      },
+      {
+        "dateLabel": "02 Nov",
         "amount": 10.0
       }
     ],
@@ -138,7 +218,7 @@
         "netWorth": 40.1
       }
     ],
-    "subscriptionTotal": 1.14,
+    "subscriptionTotal": 2.08,
     "subscriptionRetail": 1.3,
     "subscriptionHNI": 2.27,
     "subscriptionQIB": 0.0,
@@ -153,7 +233,7 @@
     "closeNotified": false
   },
   {
-    "id": "3",
+    "id": "4",
     "name": "Maxwell Engineering Solutions",
     "symbol": "MAXENGS",
     "category": "SME",
@@ -180,6 +260,10 @@
       },
       {
         "dateLabel": "31 Oct",
+        "amount": 70.0
+      },
+      {
+        "dateLabel": "02 Nov",
         "amount": 70.0
       }
     ],
@@ -214,7 +298,7 @@
         "netWorth": 27.9
       }
     ],
-    "subscriptionTotal": 4.65,
+    "subscriptionTotal": 79.7,
     "subscriptionRetail": 7.47,
     "subscriptionHNI": 4.35,
     "subscriptionQIB": 0.0,
@@ -229,7 +313,7 @@
     "closeNotified": false
   },
   {
-    "id": "4",
+    "id": "5",
     "name": "Vectras Enprocon",
     "symbol": "VECTRAS",
     "category": "SME",
@@ -286,7 +370,7 @@
         "netWorth": 46.9
       }
     ],
-    "subscriptionTotal": 1.2,
+    "subscriptionTotal": 1.39,
     "subscriptionRetail": 1.03,
     "subscriptionHNI": 1.3,
     "subscriptionQIB": 1.42,
@@ -301,225 +385,7 @@
     "closeNotified": false
   },
   {
-    "id": "5",
-    "name": "Antala Industries",
-    "symbol": "ANTALA",
-    "category": "SME",
-    "status": "OPEN",
-    "logoUrl": null,
-    "issueSizeCr": 23.0,
-    "issuePriceMin": 63.0,
-    "issuePriceMax": 67.0,
-    "lotSize": 2000,
-    "openDate": "2026-10-29",
-    "closeDate": "2026-11-02",
-    "allotmentDate": "2026-11-03",
-    "listingDate": "2026-11-05",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "28 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "29 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "30 Oct",
-        "amount": 0.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 22.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Vatsa Capital Venture Pvt.ltd.",
-      "Asnani Stock Broker Pvt.Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 12.6,
-        "pat": 0.9,
-        "netWorth": 3.5
-      },
-      {
-        "year": "FY25",
-        "revenue": 32.0,
-        "pat": 1.8,
-        "netWorth": 12.2
-      },
-      {
-        "year": "FY26",
-        "revenue": 30.2,
-        "pat": 4.2,
-        "netWorth": 22.2
-      }
-    ],
-    "subscriptionTotal": 0.87,
-    "subscriptionRetail": 0.1,
-    "subscriptionHNI": 0.36,
-    "subscriptionQIB": 66.72,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "BIGSHARE SERVICES PRIVATE LIMITED",
-    "registrarUrl": "https://www.bigshareonline.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/antala-rhp-clean-v3_final-1.pdf",
-    "drhpPdfUrl": "",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
     "id": "6",
-    "name": "Bombay Coated & Special Steels",
-    "symbol": "BCSSL",
-    "category": "Mainboard",
-    "status": "OPEN",
-    "logoUrl": null,
-    "issueSizeCr": 183.0,
-    "issuePriceMin": 78.0,
-    "issuePriceMax": 82.0,
-    "lotSize": 182,
-    "openDate": "2026-10-29",
-    "closeDate": "2026-11-02",
-    "allotmentDate": "2026-11-03",
-    "listingDate": "2026-11-05",
-    "gmpAmount": 7.0,
-    "gmpPercent": 8.54,
-    "gmpHistory": [
-      {
-        "dateLabel": "24 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "26 Oct",
-        "amount": 9.0
-      },
-      {
-        "dateLabel": "27 Oct",
-        "amount": 9.0
-      },
-      {
-        "dateLabel": "28 Oct",
-        "amount": 9.0
-      },
-      {
-        "dateLabel": "29 Oct",
-        "amount": 9.0
-      },
-      {
-        "dateLabel": "30 Oct",
-        "amount": 7.0
-      },
-      {
-        "dateLabel": "31 Oct",
-        "amount": 7.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 0.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [],
-    "anchorPortionCr": 0.0,
-    "financials": [],
-    "subscriptionTotal": 1.13,
-    "subscriptionRetail": 3.17,
-    "subscriptionHNI": 1.9,
-    "subscriptionQIB": 6.89,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "KFin Technologies Limited",
-    "registrarUrl": "https://www.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/bombay-coated-special-steels-ltd-rhp.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Bombay+Coated+&+Special+Steels+IPO+DRHP+file+SEBI",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "7",
-    "name": "Vedant Poly Fabs",
-    "symbol": "VEDANTP",
-    "category": "SME",
-    "status": "UPCOMING",
-    "logoUrl": null,
-    "issueSizeCr": 57.0,
-    "issuePriceMin": 88.0,
-    "issuePriceMax": 94.0,
-    "lotSize": 1200,
-    "openDate": "2026-11-02",
-    "closeDate": "2026-11-04",
-    "allotmentDate": "2026-11-05",
-    "listingDate": "2026-11-09",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "29 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "30 Oct",
-        "amount": 0.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 48.0,
-      "ofsCr": 6.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Affinity Global Capital Market Pvt.Ltd.",
-      "Giriraj Stock Broking Pvt.Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 49.7,
-        "pat": 0.6,
-        "netWorth": 3.9
-      },
-      {
-        "year": "FY25",
-        "revenue": 81.6,
-        "pat": 4.6,
-        "netWorth": 15.4
-      },
-      {
-        "year": "FY26",
-        "revenue": 115.3,
-        "pat": 11.0,
-        "netWorth": 42.3
-      }
-    ],
-    "subscriptionTotal": 0.0,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Cameo Corporate Services Limited",
-    "registrarUrl": "https://cameoindia.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Draft_Abridged_Prospectus.pdf",
-    "drhpPdfUrl": "",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "8",
     "name": "Parle Products",
     "symbol": "PARLEPR",
     "category": "Mainboard",
@@ -589,7 +455,7 @@
     "closeNotified": false
   },
   {
-    "id": "9",
+    "id": "7",
     "name": "Twinkle Papers",
     "symbol": "TWINKLE",
     "category": "SME",
@@ -682,7 +548,7 @@
     "closeNotified": false
   },
   {
-    "id": "10",
+    "id": "8",
     "name": "Sri Priyanka Geo Commex",
     "symbol": "SPGCL",
     "category": "SME",
@@ -774,7 +640,7 @@
     "closeNotified": false
   },
   {
-    "id": "11",
+    "id": "9",
     "name": "Flipkart",
     "symbol": "FLIPKAR",
     "category": "Mainboard",
@@ -844,7 +710,7 @@
     "closeNotified": false
   },
   {
-    "id": "12",
+    "id": "10",
     "name": "Prestige Hospitality Ventures",
     "symbol": "PRESTIG",
     "category": "Mainboard",
@@ -938,7 +804,7 @@
     "closeNotified": false
   },
   {
-    "id": "13",
+    "id": "11",
     "name": "Credila Financial Services",
     "symbol": "CREDILA",
     "category": "Mainboard",
@@ -1029,7 +895,7 @@
     "closeNotified": false
   },
   {
-    "id": "14",
+    "id": "12",
     "name": "PhonePe",
     "symbol": "PHONEPE",
     "category": "Mainboard",
@@ -1127,7 +993,7 @@
     "closeNotified": false
   },
   {
-    "id": "15",
+    "id": "13",
     "name": "Zepto",
     "symbol": "ZEPTO",
     "category": "Mainboard",
@@ -1224,7 +1090,7 @@
     "closeNotified": false
   },
   {
-    "id": "16",
+    "id": "14",
     "name": "Solar91 Cleantech",
     "symbol": "SOLAR91",
     "category": "SME",
@@ -1294,7 +1160,7 @@
     "closeNotified": false
   },
   {
-    "id": "17",
+    "id": "15",
     "name": "Hero FinCorp",
     "symbol": "HEROFIN",
     "category": "Mainboard",
@@ -1392,7 +1258,7 @@
     "closeNotified": false
   },
   {
-    "id": "18",
+    "id": "16",
     "name": "Deltatech Gaming",
     "symbol": "DELTATE",
     "category": "Mainboard",
@@ -1462,7 +1328,7 @@
     "closeNotified": false
   },
   {
-    "id": "19",
+    "id": "17",
     "name": "Biba Fashions",
     "symbol": "BIBAFAS",
     "category": "Mainboard",
@@ -1532,7 +1398,7 @@
     "closeNotified": false
   },
   {
-    "id": "20",
+    "id": "18",
     "name": "Droom Technology",
     "symbol": "DROOMTE",
     "category": "Mainboard",
@@ -1602,7 +1468,7 @@
     "closeNotified": false
   },
   {
-    "id": "21",
+    "id": "19",
     "name": "Puranik Builders",
     "symbol": "PURANIK",
     "category": "Mainboard",
@@ -1672,7 +1538,7 @@
     "closeNotified": false
   },
   {
-    "id": "22",
+    "id": "20",
     "name": "Bharat FIH",
     "symbol": "BHARATF",
     "category": "Mainboard",
@@ -1742,7 +1608,7 @@
     "closeNotified": false
   },
   {
-    "id": "23",
+    "id": "21",
     "name": "FabIndia",
     "symbol": "FABINDI",
     "category": "Mainboard",
@@ -1804,7 +1670,7 @@
     "closeNotified": false
   },
   {
-    "id": "24",
+    "id": "22",
     "name": "OYO",
     "symbol": "OYO",
     "category": "Mainboard",
@@ -1894,7 +1760,7 @@
     "closeNotified": false
   },
   {
-    "id": "25",
+    "id": "23",
     "name": "EBIXCASH",
     "symbol": "EBIXCAS",
     "category": "Mainboard",
@@ -1952,7 +1818,7 @@
     "closeNotified": false
   },
   {
-    "id": "26",
+    "id": "24",
     "name": "BoAt",
     "symbol": "BOAT",
     "category": "Mainboard",
@@ -2034,7 +1900,215 @@
     "closeNotified": false
   },
   {
+    "id": "25",
+    "name": "Navi Technologies",
+    "symbol": "NAVITEC",
+    "category": "Mainboard",
+    "status": "UPCOMING",
+    "logoUrl": null,
+    "issueSizeCr": 0.0,
+    "issuePriceMin": 0.0,
+    "issuePriceMax": 0.0,
+    "lotSize": 0,
+    "openDate": "To Be Updated",
+    "closeDate": "To Be Updated",
+    "allotmentDate": "To Be Updated",
+    "listingDate": "To Be Updated",
+    "gmpAmount": 21.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "28 Oct",
+        "amount": 13.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 19.0
+      },
+      {
+        "dateLabel": "30 Oct",
+        "amount": 21.0
+      },
+      {
+        "dateLabel": "31 Oct",
+        "amount": 21.0
+      },
+      {
+        "dateLabel": "02 Nov",
+        "amount": 21.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "financials": [],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Link Intime India Private Limited",
+    "registrarUrl": "www.linkintime.co.in",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "",
+    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/oct-2021/1633066313151.pdf#page=1&zoom=page-width,-16,379",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "26",
+    "name": "Bombay Coated & Special Steels",
+    "symbol": "BCSSL",
+    "category": "Mainboard",
+    "status": "CLOSED",
+    "logoUrl": null,
+    "issueSizeCr": 183.0,
+    "issuePriceMin": 78.0,
+    "issuePriceMax": 82.0,
+    "lotSize": 182,
+    "openDate": "2026-10-29",
+    "closeDate": "2026-11-02",
+    "allotmentDate": "2026-11-03",
+    "listingDate": "2026-11-05",
+    "gmpAmount": 7.0,
+    "gmpPercent": 8.54,
+    "gmpHistory": [
+      {
+        "dateLabel": "26 Oct",
+        "amount": 9.0
+      },
+      {
+        "dateLabel": "27 Oct",
+        "amount": 9.0
+      },
+      {
+        "dateLabel": "28 Oct",
+        "amount": 9.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 9.0
+      },
+      {
+        "dateLabel": "30 Oct",
+        "amount": 7.0
+      },
+      {
+        "dateLabel": "31 Oct",
+        "amount": 7.0
+      },
+      {
+        "dateLabel": "02 Nov",
+        "amount": 7.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "financials": [],
+    "subscriptionTotal": 32.01,
+    "subscriptionRetail": 3.17,
+    "subscriptionHNI": 1.9,
+    "subscriptionQIB": 6.89,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KFin Technologies Limited",
+    "registrarUrl": "https://www.kfintech.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/bombay-coated-special-steels-ltd-rhp.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=Bombay+Coated+&+Special+Steels+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
     "id": "27",
+    "name": "Antala Industries",
+    "symbol": "ANTALA",
+    "category": "SME",
+    "status": "CLOSED",
+    "logoUrl": null,
+    "issueSizeCr": 23.0,
+    "issuePriceMin": 63.0,
+    "issuePriceMax": 67.0,
+    "lotSize": 2000,
+    "openDate": "2026-10-29",
+    "closeDate": "2026-11-02",
+    "allotmentDate": "2026-11-03",
+    "listingDate": "2026-11-05",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "30 Oct",
+        "amount": 0.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 22.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Vatsa Capital Venture Pvt.ltd.",
+      "Asnani Stock Broker Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 12.6,
+        "pat": 0.9,
+        "netWorth": 3.5
+      },
+      {
+        "year": "FY25",
+        "revenue": 32.0,
+        "pat": 1.8,
+        "netWorth": 12.2
+      },
+      {
+        "year": "FY26",
+        "revenue": 30.2,
+        "pat": 4.2,
+        "netWorth": 22.2
+      }
+    ],
+    "subscriptionTotal": 1.17,
+    "subscriptionRetail": 0.1,
+    "subscriptionHNI": 0.36,
+    "subscriptionQIB": 66.72,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "BIGSHARE SERVICES PRIVATE LIMITED",
+    "registrarUrl": "https://www.bigshareonline.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/antala-rhp-clean-v3_final-1.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "28",
     "name": "M.K.Sons Fine Jewels",
     "symbol": "MKSONS",
     "category": "Mainboard",
@@ -2051,10 +2125,6 @@
     "gmpAmount": 6.3,
     "gmpPercent": 3.89,
     "gmpHistory": [
-      {
-        "dateLabel": "24 Oct",
-        "amount": 0.0
-      },
       {
         "dateLabel": "26 Oct",
         "amount": 8.0
@@ -2077,6 +2147,10 @@
       },
       {
         "dateLabel": "31 Oct",
+        "amount": 6.3
+      },
+      {
+        "dateLabel": "02 Nov",
         "amount": 6.3
       }
     ],
@@ -2125,7 +2199,7 @@
     "closeNotified": false
   },
   {
-    "id": "28",
+    "id": "29",
     "name": "Carver Roboweld",
     "symbol": "CRL",
     "category": "SME",
@@ -2142,10 +2216,6 @@
     "gmpAmount": 5.0,
     "gmpPercent": 6.25,
     "gmpHistory": [
-      {
-        "dateLabel": "24 Oct",
-        "amount": 0.0
-      },
       {
         "dateLabel": "26 Oct",
         "amount": 0.0
@@ -2168,6 +2238,10 @@
       },
       {
         "dateLabel": "31 Oct",
+        "amount": 5.0
+      },
+      {
+        "dateLabel": "02 Nov",
         "amount": 5.0
       }
     ],
@@ -2217,7 +2291,7 @@
     "closeNotified": false
   },
   {
-    "id": "29",
+    "id": "30",
     "name": "Ajwa Projects",
     "symbol": "AJWA",
     "category": "SME",
@@ -2252,6 +2326,10 @@
       },
       {
         "dateLabel": "31 Oct",
+        "amount": 2.0
+      },
+      {
+        "dateLabel": "02 Nov",
         "amount": 2.0
       }
     ],
@@ -2301,7 +2379,7 @@
     "closeNotified": false
   },
   {
-    "id": "30",
+    "id": "31",
     "name": "BLS Polymers",
     "symbol": "BLSPOLY",
     "category": "Mainboard",
@@ -2318,10 +2396,6 @@
     "gmpAmount": 73.0,
     "gmpPercent": 48.67,
     "gmpHistory": [
-      {
-        "dateLabel": "24 Oct",
-        "amount": 0.0
-      },
       {
         "dateLabel": "26 Oct",
         "amount": 40.0
@@ -2344,6 +2418,10 @@
       },
       {
         "dateLabel": "31 Oct",
+        "amount": 73.0
+      },
+      {
+        "dateLabel": "02 Nov",
         "amount": 73.0
       }
     ],
@@ -2392,7 +2470,7 @@
     "closeNotified": false
   },
   {
-    "id": "31",
+    "id": "32",
     "name": "SFC Environmental Technologies",
     "symbol": "SFCTECH",
     "category": "Mainboard",
@@ -2409,10 +2487,6 @@
     "gmpAmount": 21.0,
     "gmpPercent": 6.36,
     "gmpHistory": [
-      {
-        "dateLabel": "24 Oct",
-        "amount": 0.0
-      },
       {
         "dateLabel": "26 Oct",
         "amount": 20.0
@@ -2435,6 +2509,10 @@
       },
       {
         "dateLabel": "31 Oct",
+        "amount": 21.0
+      },
+      {
+        "dateLabel": "02 Nov",
         "amount": 21.0
       }
     ],
@@ -2485,7 +2563,7 @@
     "closeNotified": false
   },
   {
-    "id": "32",
+    "id": "33",
     "name": "Wiscon Industries",
     "symbol": "WISCON",
     "category": "SME",
@@ -2557,7 +2635,7 @@
     "closeNotified": false
   },
   {
-    "id": "33",
+    "id": "34",
     "name": "EAAA India Alternatives",
     "symbol": "EDELALTS",
     "category": "Mainboard",
@@ -2574,10 +2652,6 @@
     "gmpAmount": 52.0,
     "gmpPercent": 3.12,
     "gmpHistory": [
-      {
-        "dateLabel": "24 Oct",
-        "amount": 0.0
-      },
       {
         "dateLabel": "26 Oct",
         "amount": 17.0
@@ -2600,6 +2674,10 @@
       },
       {
         "dateLabel": "31 Oct",
+        "amount": 52.0
+      },
+      {
+        "dateLabel": "02 Nov",
         "amount": 52.0
       }
     ],
@@ -2640,7 +2718,7 @@
     "subscriptionRetail": 1.08,
     "subscriptionHNI": 4.81,
     "subscriptionQIB": 13.8,
-    "listingPrice": 0.0,
+    "listingPrice": 1675.5,
     "listingGainPercent": 0.0,
     "registrarName": "MUFG Intime India Private Limited ",
     "registrarUrl": "https://in.mpms.mufg.com/",
@@ -2651,7 +2729,7 @@
     "closeNotified": false
   },
   {
-    "id": "34",
+    "id": "35",
     "name": "Core4 Engineers",
     "symbol": "CORE4",
     "category": "SME",
@@ -2737,7 +2815,7 @@
     "closeNotified": false
   },
   {
-    "id": "35",
+    "id": "36",
     "name": "Reliance Jio",
     "symbol": "JPL",
     "category": "Mainboard",
@@ -2826,7 +2904,7 @@
     "closeNotified": true
   },
   {
-    "id": "36",
+    "id": "37",
     "name": "Paras Healthcare",
     "symbol": "PARASHLTH",
     "category": "Mainboard",
@@ -2919,7 +2997,7 @@
     "closeNotified": true
   },
   {
-    "id": "37",
+    "id": "38",
     "name": "Sahajanand Medical Technologies",
     "symbol": "SMT",
     "category": "Mainboard",
@@ -2984,7 +3062,7 @@
     "closeNotified": true
   },
   {
-    "id": "38",
+    "id": "39",
     "name": "Tonbo Imaging India",
     "symbol": "TONBO",
     "category": "Mainboard",
@@ -3068,7 +3146,7 @@
     "closeNotified": true
   },
   {
-    "id": "39",
+    "id": "40",
     "name": "Shellz India",
     "symbol": "SHELLZ",
     "category": "SME",
@@ -3152,7 +3230,7 @@
     "closeNotified": true
   },
   {
-    "id": "40",
+    "id": "41",
     "name": "Zetwerk Manufacturing",
     "symbol": "ZETWERK",
     "category": "Mainboard",
@@ -3217,7 +3295,7 @@
     "closeNotified": true
   },
   {
-    "id": "41",
+    "id": "42",
     "name": "Bonfiglioli Transmissions",
     "symbol": "BONFIG",
     "category": "Mainboard",
@@ -3301,7 +3379,7 @@
     "closeNotified": true
   },
   {
-    "id": "42",
+    "id": "43",
     "name": "Ravita Engineering Services",
     "symbol": "RAVITA",
     "category": "SME",
@@ -3385,7 +3463,7 @@
     "closeNotified": true
   },
   {
-    "id": "43",
+    "id": "44",
     "name": "Fusion CX",
     "symbol": "FUSIONCX",
     "category": "Mainboard",
@@ -3469,7 +3547,7 @@
     "closeNotified": true
   },
   {
-    "id": "44",
+    "id": "45",
     "name": "HD Fire Protect",
     "symbol": "HDFIRE",
     "category": "Mainboard",
@@ -3534,7 +3612,7 @@
     "closeNotified": true
   },
   {
-    "id": "45",
+    "id": "46",
     "name": "Vaibhav Vyapaar",
     "symbol": "LOANFRONT",
     "category": "SME",
@@ -3599,7 +3677,7 @@
     "closeNotified": true
   },
   {
-    "id": "46",
+    "id": "47",
     "name": "R.K.Fashion Accessories",
     "symbol": "RKFAL",
     "category": "SME",
@@ -3656,7 +3734,7 @@
     "closeNotified": false
   },
   {
-    "id": "47",
+    "id": "48",
     "name": "TNA Solutions",
     "symbol": "TNA",
     "category": "SME",
@@ -3713,7 +3791,7 @@
     "closeNotified": false
   },
   {
-    "id": "48",
+    "id": "49",
     "name": "Acme India Industries",
     "symbol": "ACMERAIL",
     "category": "SME",
@@ -3770,7 +3848,7 @@
     "closeNotified": false
   },
   {
-    "id": "49",
+    "id": "50",
     "name": "Paramount Syntex",
     "symbol": "PARASYNTEX",
     "category": "SME",
@@ -3827,7 +3905,7 @@
     "closeNotified": false
   },
   {
-    "id": "50",
+    "id": "51",
     "name": "Shree TNB Polymers",
     "symbol": "SHREETNB",
     "category": "SME",
@@ -3884,7 +3962,7 @@
     "closeNotified": false
   },
   {
-    "id": "51",
+    "id": "52",
     "name": "EverestIMS Technologies",
     "symbol": "EIMS",
     "category": "SME",
@@ -3941,7 +4019,7 @@
     "closeNotified": false
   },
   {
-    "id": "52",
+    "id": "53",
     "name": "Eventions",
     "symbol": "EVENTIONS",
     "category": "SME",
@@ -3998,7 +4076,7 @@
     "closeNotified": false
   },
   {
-    "id": "53",
+    "id": "54",
     "name": "Dove Soft",
     "symbol": "DSL",
     "category": "SME",
@@ -4055,7 +4133,7 @@
     "closeNotified": false
   },
   {
-    "id": "54",
+    "id": "55",
     "name": "SJP Ultrasonic",
     "symbol": "SJP",
     "category": "SME",
@@ -4108,64 +4186,6 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=SJP+Ultrasonic+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.bsesme.com/download/334252/SME_IPO%20InPrinciple/DPSJP_20250929205030.pdf",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "55",
-    "name": "Navi Technologies",
-    "symbol": "NAVITEC",
-    "category": "Mainboard",
-    "status": "UPCOMING",
-    "logoUrl": null,
-    "issueSizeCr": 0.0,
-    "issuePriceMin": 0.0,
-    "issuePriceMax": 0.0,
-    "lotSize": 0,
-    "openDate": "To Be Updated",
-    "closeDate": "To Be Updated",
-    "allotmentDate": "To Be Updated",
-    "listingDate": "To Be Updated",
-    "gmpAmount": 21.0,
-    "gmpPercent": 0.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "28 Oct",
-        "amount": 13.0
-      },
-      {
-        "dateLabel": "29 Oct",
-        "amount": 19.0
-      },
-      {
-        "dateLabel": "30 Oct",
-        "amount": 21.0
-      },
-      {
-        "dateLabel": "31 Oct",
-        "amount": 21.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 0.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [],
-    "anchorPortionCr": 0.0,
-    "financials": [],
-    "subscriptionTotal": 0.0,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Link Intime India Private Limited",
-    "registrarUrl": "www.linkintime.co.in",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "",
-    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/oct-2021/1633066313151.pdf#page=1&zoom=page-width,-16,379",
     "openNotified": false,
     "closeNotified": false
   },
