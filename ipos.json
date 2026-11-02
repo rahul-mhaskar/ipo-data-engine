@@ -28,6 +28,10 @@
       {
         "dateLabel": "02 Nov",
         "amount": 15.0
+      },
+      {
+        "dateLabel": "03 Nov",
+        "amount": 15.0
       }
     ],
     "issueStructure": {
@@ -61,7 +65,7 @@
         "netWorth": 42.3
       }
     ],
-    "subscriptionTotal": 0.422,
+    "subscriptionTotal": 0.41,
     "subscriptionRetail": 0.14,
     "subscriptionHNI": 0.83,
     "subscriptionQIB": 0.0,
@@ -108,6 +112,10 @@
       {
         "dateLabel": "02 Nov",
         "amount": 30.0
+      },
+      {
+        "dateLabel": "03 Nov",
+        "amount": 30.0
       }
     ],
     "issueStructure": {
@@ -141,7 +149,7 @@
         "netWorth": 90.4
       }
     ],
-    "subscriptionTotal": 20.962,
+    "subscriptionTotal": 14.75,
     "subscriptionRetail": 25.56,
     "subscriptionHNI": 31.56,
     "subscriptionQIB": 4.88,
@@ -188,6 +196,10 @@
       {
         "dateLabel": "02 Nov",
         "amount": 10.0
+      },
+      {
+        "dateLabel": "03 Nov",
+        "amount": 10.0
       }
     ],
     "issueStructure": {
@@ -222,7 +234,7 @@
         "netWorth": 40.1
       }
     ],
-    "subscriptionTotal": 2.012,
+    "subscriptionTotal": 2.08,
     "subscriptionRetail": 2.21,
     "subscriptionHNI": 2.89,
     "subscriptionQIB": 0.99,
@@ -269,6 +281,10 @@
       {
         "dateLabel": "02 Nov",
         "amount": 80.0
+      },
+      {
+        "dateLabel": "03 Nov",
+        "amount": 80.0
       }
     ],
     "issueStructure": {
@@ -302,7 +318,7 @@
         "netWorth": 27.9
       }
     ],
-    "subscriptionTotal": 80.342,
+    "subscriptionTotal": 80.23,
     "subscriptionRetail": 110.21,
     "subscriptionHNI": 117.09,
     "subscriptionQIB": 0.0,
@@ -378,7 +394,7 @@
         "netWorth": 46.9
       }
     ],
-    "subscriptionTotal": 1.312,
+    "subscriptionTotal": 1.39,
     "subscriptionRetail": 1.33,
     "subscriptionHNI": 1.3,
     "subscriptionQIB": 1.42,
@@ -1943,7 +1959,7 @@
     "allotmentDate": "To Be Updated",
     "listingDate": "To Be Updated",
     "gmpAmount": 15.0,
-    "gmpPercent": 4.55,
+    "gmpPercent": 0.0,
     "gmpHistory": [
       {
         "dateLabel": "28 Oct",
@@ -1963,6 +1979,10 @@
       },
       {
         "dateLabel": "02 Nov",
+        "amount": 15.0
+      },
+      {
+        "dateLabel": "03 Nov",
         "amount": 15.0
       }
     ],
@@ -2008,10 +2028,6 @@
     "gmpPercent": 9.15,
     "gmpHistory": [
       {
-        "dateLabel": "26 Oct",
-        "amount": 9.0
-      },
-      {
         "dateLabel": "27 Oct",
         "amount": 9.0
       },
@@ -2034,6 +2050,10 @@
       {
         "dateLabel": "02 Nov",
         "amount": 7.5
+      },
+      {
+        "dateLabel": "03 Nov",
+        "amount": 7.5
       }
     ],
     "issueStructure": {
@@ -2045,7 +2065,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 63.892,
+    "subscriptionTotal": 32.01,
     "subscriptionRetail": 35.46,
     "subscriptionHNI": 166.44,
     "subscriptionQIB": 37.32,
@@ -2125,7 +2145,7 @@
         "netWorth": 22.2
       }
     ],
-    "subscriptionTotal": 1.132,
+    "subscriptionTotal": 1.17,
     "subscriptionRetail": 0.42,
     "subscriptionHNI": 0.36,
     "subscriptionQIB": 66.72,
@@ -2158,10 +2178,6 @@
     "gmpPercent": 4.01,
     "gmpHistory": [
       {
-        "dateLabel": "26 Oct",
-        "amount": 8.0
-      },
-      {
         "dateLabel": "27 Oct",
         "amount": 9.0
       },
@@ -2183,6 +2199,10 @@
       },
       {
         "dateLabel": "02 Nov",
+        "amount": 6.5
+      },
+      {
+        "dateLabel": "03 Nov",
         "amount": 6.5
       }
     ],
@@ -2216,7 +2236,7 @@
         "netWorth": 183.0
       }
     ],
-    "subscriptionTotal": 5.093,
+    "subscriptionTotal": 5.03,
     "subscriptionRetail": 3.08,
     "subscriptionHNI": 14.12,
     "subscriptionQIB": 1.84,
@@ -2249,10 +2269,6 @@
     "gmpPercent": 6.25,
     "gmpHistory": [
       {
-        "dateLabel": "26 Oct",
-        "amount": 0.0
-      },
-      {
         "dateLabel": "27 Oct",
         "amount": 0.0
       },
@@ -2274,6 +2290,10 @@
       },
       {
         "dateLabel": "02 Nov",
+        "amount": 5.0
+      },
+      {
+        "dateLabel": "03 Nov",
         "amount": 5.0
       }
     ],
@@ -2308,7 +2328,7 @@
         "netWorth": 17.6
       }
     ],
-    "subscriptionTotal": 25.83,
+    "subscriptionTotal": 25.18,
     "subscriptionRetail": 19.17,
     "subscriptionHNI": 40.39,
     "subscriptionQIB": 26.33,
@@ -2363,6 +2383,10 @@
       {
         "dateLabel": "02 Nov",
         "amount": 1.0
+      },
+      {
+        "dateLabel": "03 Nov",
+        "amount": 1.0
       }
     ],
     "issueStructure": {
@@ -2396,7 +2420,7 @@
         "netWorth": 19.3
       }
     ],
-    "subscriptionTotal": 1.123,
+    "subscriptionTotal": 1.18,
     "subscriptionRetail": 1.93,
     "subscriptionHNI": 0.32,
     "subscriptionQIB": 0.0,
@@ -2429,10 +2453,6 @@
     "gmpPercent": 44.67,
     "gmpHistory": [
       {
-        "dateLabel": "26 Oct",
-        "amount": 40.0
-      },
-      {
         "dateLabel": "27 Oct",
         "amount": 44.0
       },
@@ -2454,6 +2474,10 @@
       },
       {
         "dateLabel": "02 Nov",
+        "amount": 67.0
+      },
+      {
+        "dateLabel": "03 Nov",
         "amount": 67.0
       }
     ],
@@ -2487,7 +2511,7 @@
         "netWorth": 105.2
       }
     ],
-    "subscriptionTotal": 241.2229,
+    "subscriptionTotal": 239.02,
     "subscriptionRetail": 128.36,
     "subscriptionHNI": 559.2,
     "subscriptionQIB": 200.25,
@@ -2520,10 +2544,6 @@
     "gmpPercent": 4.55,
     "gmpHistory": [
       {
-        "dateLabel": "26 Oct",
-        "amount": 20.0
-      },
-      {
         "dateLabel": "27 Oct",
         "amount": 15.0
       },
@@ -2545,6 +2565,10 @@
       },
       {
         "dateLabel": "02 Nov",
+        "amount": 15.0
+      },
+      {
+        "dateLabel": "03 Nov",
         "amount": 15.0
       }
     ],
@@ -2580,7 +2604,7 @@
         "netWorth": 805.5
       }
     ],
-    "subscriptionTotal": 9.4729,
+    "subscriptionTotal": 9.17,
     "subscriptionRetail": 2.71,
     "subscriptionHNI": 12.81,
     "subscriptionQIB": 18.81,
@@ -2656,7 +2680,7 @@
         "netWorth": 38.5
       }
     ],
-    "subscriptionTotal": 1.1729,
+    "subscriptionTotal": 1.26,
     "subscriptionRetail": 0.66,
     "subscriptionHNI": 0.62,
     "subscriptionQIB": 2.24,
@@ -2675,7 +2699,7 @@
     "name": "EAAA India Alternatives",
     "symbol": "EDELALTS",
     "category": "Mainboard",
-    "status": "CLOSED",
+    "status": "LISTED",
     "logoUrl": null,
     "issueSizeCr": 1200.0,
     "issuePriceMin": 1585.0,
@@ -2750,7 +2774,7 @@
         "netWorth": 1160.4
       }
     ],
-    "subscriptionTotal": 5.5128,
+    "subscriptionTotal": 5.15,
     "subscriptionRetail": 1.08,
     "subscriptionHNI": 4.81,
     "subscriptionQIB": 13.8,
@@ -2836,7 +2860,7 @@
         "netWorth": 24.8
       }
     ],
-    "subscriptionTotal": 5.4427,
+    "subscriptionTotal": 5.54,
     "subscriptionRetail": 2.72,
     "subscriptionHNI": 12.26,
     "subscriptionQIB": 5.06,
@@ -2925,7 +2949,7 @@
         "netWorth": 341778.5
       }
     ],
-    "subscriptionTotal": 21.3623,
+    "subscriptionTotal": 19.67,
     "subscriptionRetail": 2.76,
     "subscriptionHNI": 13.99,
     "subscriptionQIB": 67.15,
@@ -3018,7 +3042,7 @@
         "netWorth": 445.0
       }
     ],
-    "subscriptionTotal": 2.3423,
+    "subscriptionTotal": 2.21,
     "subscriptionRetail": 2.1,
     "subscriptionHNI": 0.69,
     "subscriptionQIB": 3.25,
@@ -3083,7 +3107,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 14.2119,
+    "subscriptionTotal": 14.08,
     "subscriptionRetail": 3.04,
     "subscriptionHNI": 14.64,
     "subscriptionQIB": 34.7,
@@ -3167,7 +3191,7 @@
         "netWorth": 511.55
       }
     ],
-    "subscriptionTotal": 132.8119,
+    "subscriptionTotal": 96.63,
     "subscriptionRetail": 31.11,
     "subscriptionHNI": 156.36,
     "subscriptionQIB": 293.56,
@@ -3251,7 +3275,7 @@
         "netWorth": 63.0
       }
     ],
-    "subscriptionTotal": 58.5419,
+    "subscriptionTotal": 58.01,
     "subscriptionRetail": 56.09,
     "subscriptionHNI": 86.41,
     "subscriptionQIB": 41.92,
@@ -3316,7 +3340,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 3.119,
+    "subscriptionTotal": 3.05,
     "subscriptionRetail": 0.77,
     "subscriptionHNI": 1.45,
     "subscriptionQIB": 4.71,
@@ -3400,7 +3424,7 @@
         "netWorth": 1034.3
       }
     ],
-    "subscriptionTotal": 46.0519,
+    "subscriptionTotal": 31.66,
     "subscriptionRetail": 5.9,
     "subscriptionHNI": 40.39,
     "subscriptionQIB": 120.78,
@@ -3484,7 +3508,7 @@
         "netWorth": 109.7
       }
     ],
-    "subscriptionTotal": 7.1116,
+    "subscriptionTotal": 8.32,
     "subscriptionRetail": 3.5,
     "subscriptionHNI": 7.42,
     "subscriptionQIB": 13.21,
@@ -3568,7 +3592,7 @@
         "netWorth": 610.8
       }
     ],
-    "subscriptionTotal": 4.6816,
+    "subscriptionTotal": 4.43,
     "subscriptionRetail": 5.99,
     "subscriptionHNI": 4.73,
     "subscriptionQIB": 4.21,
@@ -3633,7 +3657,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 131.7315,
+    "subscriptionTotal": 131.25,
     "subscriptionRetail": 30.55,
     "subscriptionHNI": 203.21,
     "subscriptionQIB": 256.65,
@@ -3698,7 +3722,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 3.2315,
+    "subscriptionTotal": 3.8,
     "subscriptionRetail": 2.7,
     "subscriptionHNI": 6.65,
     "subscriptionQIB": 1.61,
@@ -3759,7 +3783,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 2.77,
+    "subscriptionTotal": 2.72,
     "subscriptionRetail": 3.11,
     "subscriptionHNI": 1.77,
     "subscriptionQIB": 14.11,
@@ -3820,7 +3844,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 55.26,
+    "subscriptionTotal": 54.92,
     "subscriptionRetail": 46.17,
     "subscriptionHNI": 102.14,
     "subscriptionQIB": 35.64,
@@ -3881,7 +3905,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 124.236,
+    "subscriptionTotal": 123.52,
     "subscriptionRetail": 85.5,
     "subscriptionHNI": 196.27,
     "subscriptionQIB": 137.93,
@@ -3942,7 +3966,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 1.886,
+    "subscriptionTotal": 1.93,
     "subscriptionRetail": 1.1,
     "subscriptionHNI": 0.09,
     "subscriptionQIB": 119.29,
