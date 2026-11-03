@@ -11,12 +11,12 @@
   },
   "hgsindiact": {
     "name": "HGS (India) NSE SME CT",
-    "gmp": 20.0,
+    "gmp": 25.0,
     "last_updated": "03 Nov"
   },
   "johnsoncabelectricalsct": {
     "name": "Johnsoncab Electricals BSE SME CT",
-    "gmp": 8.0,
+    "gmp": 9.0,
     "last_updated": "03 Nov"
   },
   "vectrasenproconct": {
@@ -36,7 +36,7 @@
   },
   "mksonsfinejewelsc": {
     "name": "M.K.Sons Fine Jewels IPO C",
-    "gmp": 9.0,
+    "gmp": 10.25,
     "last_updated": "03 Nov"
   },
   "ajwaprojectsc": {
@@ -154,26 +154,6 @@
     "gmp": 15.0,
     "last_updated": "03 Nov"
   },
-  "hgsindia": {
-    "name": "HGS (India)",
-    "gmp": 30.0,
-    "last_updated": "03 Nov"
-  },
-  "johnsoncabelectricals": {
-    "name": "Johnsoncab Electricals",
-    "gmp": 10.0,
-    "last_updated": "03 Nov"
-  },
-  "maxwellengineeringsolutions": {
-    "name": "Maxwell Engineering Solutions",
-    "gmp": 80.0,
-    "last_updated": "03 Nov"
-  },
-  "vectrasenprocon": {
-    "name": "Vectras Enprocon",
-    "gmp": 0.0,
-    "last_updated": "03 Nov"
-  },
   "parleproducts": {
     "name": "Parle Products",
     "gmp": 0.0,
@@ -272,6 +252,26 @@
   "navitechnologies": {
     "name": "Navi Technologies",
     "gmp": 15.0,
+    "last_updated": "03 Nov"
+  },
+  "maxwellengineeringsolutions": {
+    "name": "Maxwell Engineering Solutions",
+    "gmp": 80.0,
+    "last_updated": "03 Nov"
+  },
+  "hgsindia": {
+    "name": "HGS (India)",
+    "gmp": 30.0,
+    "last_updated": "03 Nov"
+  },
+  "johnsoncabelectricals": {
+    "name": "Johnsoncab Electricals",
+    "gmp": 10.0,
+    "last_updated": "03 Nov"
+  },
+  "vectrasenprocon": {
+    "name": "Vectras Enprocon",
+    "gmp": 0.0,
     "last_updated": "03 Nov"
   },
   "bombaycoatedspecialsteels": {

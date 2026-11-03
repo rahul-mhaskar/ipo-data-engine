@@ -65,7 +65,7 @@
         "netWorth": 42.3
       }
     ],
-    "subscriptionTotal": 0.65,
+    "subscriptionTotal": 0.9,
     "subscriptionRetail": 0.14,
     "subscriptionHNI": 0.83,
     "subscriptionQIB": 0.0,
@@ -81,339 +81,6 @@
   },
   {
     "id": "2",
-    "name": "HGS (India)",
-    "symbol": "HGSINDIALT",
-    "category": "SME",
-    "status": "OPEN",
-    "logoUrl": null,
-    "issueSizeCr": 35.0,
-    "issuePriceMin": 114.0,
-    "issuePriceMax": 120.0,
-    "lotSize": 1200,
-    "openDate": "2026-10-30",
-    "closeDate": "2026-11-03",
-    "allotmentDate": "2026-11-04",
-    "listingDate": "2026-11-06",
-    "gmpAmount": 30.0,
-    "gmpPercent": 25.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "29 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "30 Oct",
-        "amount": 19.0
-      },
-      {
-        "dateLabel": "31 Oct",
-        "amount": 19.0
-      },
-      {
-        "dateLabel": "02 Nov",
-        "amount": 30.0
-      },
-      {
-        "dateLabel": "03 Nov",
-        "amount": 30.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 26.0,
-      "ofsCr": 7.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Hem Securities Ltd.",
-      "Hem Finlease Pvt.Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 37.9,
-        "pat": 4.0,
-        "netWorth": 95.0
-      },
-      {
-        "year": "FY25",
-        "revenue": 53.5,
-        "pat": 10.5,
-        "netWorth": 85.2
-      },
-      {
-        "year": "FY26",
-        "revenue": 3.8,
-        "pat": 1.1,
-        "netWorth": 90.4
-      }
-    ],
-    "subscriptionTotal": 69.88,
-    "subscriptionRetail": 25.56,
-    "subscriptionHNI": 31.56,
-    "subscriptionQIB": 4.88,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "KFin Technologies Limited",
-    "registrarUrl": "https://www.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.hgsindia.com/uploads/pdfs/ipomeetings/RHP.pdf",
-    "drhpPdfUrl": "",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "3",
-    "name": "Johnsoncab Electricals",
-    "symbol": "JOHNSONCAB",
-    "category": "SME",
-    "status": "OPEN",
-    "logoUrl": null,
-    "issueSizeCr": 56.0,
-    "issuePriceMin": 190.0,
-    "issuePriceMax": 200.0,
-    "lotSize": 600,
-    "openDate": "2026-10-30",
-    "closeDate": "2026-11-03",
-    "allotmentDate": "2026-11-04",
-    "listingDate": "2026-11-06",
-    "gmpAmount": 10.0,
-    "gmpPercent": 5.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "29 Oct",
-        "amount": 13.0
-      },
-      {
-        "dateLabel": "30 Oct",
-        "amount": 10.0
-      },
-      {
-        "dateLabel": "31 Oct",
-        "amount": 10.0
-      },
-      {
-        "dateLabel": "02 Nov",
-        "amount": 10.0
-      },
-      {
-        "dateLabel": "03 Nov",
-        "amount": 10.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 53.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "ISK Advisors Pvt.Ltd.",
-      "Isk Equities Private Ltd.",
-      "Sunflower Broking Pvt.Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 89.0,
-        "pat": 2.5,
-        "netWorth": 8.9
-      },
-      {
-        "year": "FY25",
-        "revenue": 140.0,
-        "pat": 5.5,
-        "netWorth": 14.2
-      },
-      {
-        "year": "FY26",
-        "revenue": 113.3,
-        "pat": 8.6,
-        "netWorth": 40.1
-      }
-    ],
-    "subscriptionTotal": 4.36,
-    "subscriptionRetail": 2.21,
-    "subscriptionHNI": 2.89,
-    "subscriptionQIB": 0.99,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Maashitla Securities Pvt. Limited",
-    "registrarUrl": "https://maashitla.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://iskadvisors.com/wp-content/uploads/2026/10/RHP-final.pdf",
-    "drhpPdfUrl": "",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "4",
-    "name": "Maxwell Engineering Solutions",
-    "symbol": "MAXENGS",
-    "category": "SME",
-    "status": "OPEN",
-    "logoUrl": null,
-    "issueSizeCr": 58.0,
-    "issuePriceMin": 150.0,
-    "issuePriceMax": 158.0,
-    "lotSize": 800,
-    "openDate": "2026-10-30",
-    "closeDate": "2026-11-03",
-    "allotmentDate": "2026-11-04",
-    "listingDate": "2026-11-06",
-    "gmpAmount": 80.0,
-    "gmpPercent": 50.63,
-    "gmpHistory": [
-      {
-        "dateLabel": "29 Oct",
-        "amount": 70.0
-      },
-      {
-        "dateLabel": "30 Oct",
-        "amount": 70.0
-      },
-      {
-        "dateLabel": "31 Oct",
-        "amount": 70.0
-      },
-      {
-        "dateLabel": "02 Nov",
-        "amount": 80.0
-      },
-      {
-        "dateLabel": "03 Nov",
-        "amount": 80.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 54.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "JDA Capital Services Ltd.",
-      "Jda Capital Services Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 10.9,
-        "pat": 3.2,
-        "netWorth": 3.3
-      },
-      {
-        "year": "FY25",
-        "revenue": 22.6,
-        "pat": 9.2,
-        "netWorth": 13.0
-      },
-      {
-        "year": "FY26",
-        "revenue": 12.2,
-        "pat": 3.0,
-        "netWorth": 27.9
-      }
-    ],
-    "subscriptionTotal": 258.96,
-    "subscriptionRetail": 110.21,
-    "subscriptionHNI": 117.09,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "KFIN TECHNOLOGIES LIMITED",
-    "registrarUrl": "https://www.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://maxwells.in/wp-content/uploads/2026/10/RHP_Maxwell_V5_Combined.pdf",
-    "drhpPdfUrl": "",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "5",
-    "name": "Vectras Enprocon",
-    "symbol": "VECTRAS",
-    "category": "SME",
-    "status": "OPEN",
-    "logoUrl": null,
-    "issueSizeCr": 53.0,
-    "issuePriceMin": 99.0,
-    "issuePriceMax": 105.0,
-    "lotSize": 1200,
-    "openDate": "2026-10-30",
-    "closeDate": "2026-11-03",
-    "allotmentDate": "2026-11-04",
-    "listingDate": "2026-11-06",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "29 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "30 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "02 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "03 Nov",
-        "amount": 0.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 40.0,
-      "ofsCr": 10.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Beeline Capital Advisors Pvt.ltd.",
-      "Spread X Securities Pvt.Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 54.4,
-        "pat": 5.8,
-        "netWorth": 12.2
-      },
-      {
-        "year": "FY25",
-        "revenue": 80.5,
-        "pat": 10.2,
-        "netWorth": 22.3
-      },
-      {
-        "year": "FY26",
-        "revenue": 72.2,
-        "pat": 9.1,
-        "netWorth": 46.9
-      }
-    ],
-    "subscriptionTotal": 1.89,
-    "subscriptionRetail": 1.33,
-    "subscriptionHNI": 1.3,
-    "subscriptionQIB": 1.42,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "MUFG Intime India PrivateLimited",
-    "registrarUrl": "https://in.mpms.mufg.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/rhp_vel_26102026_clean.pdf",
-    "drhpPdfUrl": "",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "6",
     "name": "Parle Products",
     "symbol": "PARLEPR",
     "category": "Mainboard",
@@ -483,7 +150,7 @@
     "closeNotified": false
   },
   {
-    "id": "7",
+    "id": "3",
     "name": "Twinkle Papers",
     "symbol": "TWINKLE",
     "category": "SME",
@@ -576,7 +243,7 @@
     "closeNotified": false
   },
   {
-    "id": "8",
+    "id": "4",
     "name": "Sri Priyanka Geo Commex",
     "symbol": "SPGCL",
     "category": "SME",
@@ -668,7 +335,7 @@
     "closeNotified": false
   },
   {
-    "id": "9",
+    "id": "5",
     "name": "Flipkart",
     "symbol": "FLIPKAR",
     "category": "Mainboard",
@@ -738,7 +405,7 @@
     "closeNotified": false
   },
   {
-    "id": "10",
+    "id": "6",
     "name": "Prestige Hospitality Ventures",
     "symbol": "PRESTIG",
     "category": "Mainboard",
@@ -832,7 +499,7 @@
     "closeNotified": false
   },
   {
-    "id": "11",
+    "id": "7",
     "name": "Credila Financial Services",
     "symbol": "CREDILA",
     "category": "Mainboard",
@@ -927,7 +594,7 @@
     "closeNotified": false
   },
   {
-    "id": "12",
+    "id": "8",
     "name": "PhonePe",
     "symbol": "PHONEPE",
     "category": "Mainboard",
@@ -1025,7 +692,7 @@
     "closeNotified": false
   },
   {
-    "id": "13",
+    "id": "9",
     "name": "Zepto",
     "symbol": "ZEPTO",
     "category": "Mainboard",
@@ -1122,7 +789,7 @@
     "closeNotified": false
   },
   {
-    "id": "14",
+    "id": "10",
     "name": "Solar91 Cleantech",
     "symbol": "SOLAR91",
     "category": "SME",
@@ -1192,7 +859,7 @@
     "closeNotified": false
   },
   {
-    "id": "15",
+    "id": "11",
     "name": "Hero FinCorp",
     "symbol": "HEROFIN",
     "category": "Mainboard",
@@ -1290,7 +957,7 @@
     "closeNotified": false
   },
   {
-    "id": "16",
+    "id": "12",
     "name": "Deltatech Gaming",
     "symbol": "DELTATE",
     "category": "Mainboard",
@@ -1360,7 +1027,7 @@
     "closeNotified": false
   },
   {
-    "id": "17",
+    "id": "13",
     "name": "Biba Fashions",
     "symbol": "BIBAFAS",
     "category": "Mainboard",
@@ -1430,7 +1097,7 @@
     "closeNotified": false
   },
   {
-    "id": "18",
+    "id": "14",
     "name": "Droom Technology",
     "symbol": "DROOMTE",
     "category": "Mainboard",
@@ -1500,7 +1167,7 @@
     "closeNotified": false
   },
   {
-    "id": "19",
+    "id": "15",
     "name": "Puranik Builders",
     "symbol": "PURANIK",
     "category": "Mainboard",
@@ -1570,7 +1237,7 @@
     "closeNotified": false
   },
   {
-    "id": "20",
+    "id": "16",
     "name": "Bharat FIH",
     "symbol": "BHARATF",
     "category": "Mainboard",
@@ -1640,7 +1307,7 @@
     "closeNotified": false
   },
   {
-    "id": "21",
+    "id": "17",
     "name": "FabIndia",
     "symbol": "FABINDI",
     "category": "Mainboard",
@@ -1710,7 +1377,7 @@
     "closeNotified": false
   },
   {
-    "id": "22",
+    "id": "18",
     "name": "OYO",
     "symbol": "OYO",
     "category": "Mainboard",
@@ -1808,7 +1475,7 @@
     "closeNotified": false
   },
   {
-    "id": "23",
+    "id": "19",
     "name": "EBIXCASH",
     "symbol": "EBIXCAS",
     "category": "Mainboard",
@@ -1874,7 +1541,7 @@
     "closeNotified": false
   },
   {
-    "id": "24",
+    "id": "20",
     "name": "BoAt",
     "symbol": "BOAT",
     "category": "Mainboard",
@@ -1964,7 +1631,7 @@
     "closeNotified": false
   },
   {
-    "id": "25",
+    "id": "21",
     "name": "Navi Technologies",
     "symbol": "NAVITEC",
     "category": "Mainboard",
@@ -2026,6 +1693,339 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/oct-2021/1633066313151.pdf#page=1&zoom=page-width,-16,379",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "22",
+    "name": "Maxwell Engineering Solutions",
+    "symbol": "MAXENGS",
+    "category": "SME",
+    "status": "OPEN",
+    "logoUrl": null,
+    "issueSizeCr": 58.0,
+    "issuePriceMin": 150.0,
+    "issuePriceMax": 158.0,
+    "lotSize": 800,
+    "openDate": "2026-10-30",
+    "closeDate": "2026-11-03",
+    "allotmentDate": "2026-11-04",
+    "listingDate": "2026-11-06",
+    "gmpAmount": 80.0,
+    "gmpPercent": 50.63,
+    "gmpHistory": [
+      {
+        "dateLabel": "29 Oct",
+        "amount": 70.0
+      },
+      {
+        "dateLabel": "30 Oct",
+        "amount": 70.0
+      },
+      {
+        "dateLabel": "31 Oct",
+        "amount": 70.0
+      },
+      {
+        "dateLabel": "02 Nov",
+        "amount": 80.0
+      },
+      {
+        "dateLabel": "03 Nov",
+        "amount": 80.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 54.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "JDA Capital Services Ltd.",
+      "Jda Capital Services Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 10.9,
+        "pat": 3.2,
+        "netWorth": 3.3
+      },
+      {
+        "year": "FY25",
+        "revenue": 22.6,
+        "pat": 9.2,
+        "netWorth": 13.0
+      },
+      {
+        "year": "FY26",
+        "revenue": 12.2,
+        "pat": 3.0,
+        "netWorth": 27.9
+      }
+    ],
+    "subscriptionTotal": 534.65,
+    "subscriptionRetail": 110.21,
+    "subscriptionHNI": 117.09,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KFIN TECHNOLOGIES LIMITED",
+    "registrarUrl": "https://www.kfintech.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://maxwells.in/wp-content/uploads/2026/10/RHP_Maxwell_V5_Combined.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "23",
+    "name": "HGS (India)",
+    "symbol": "HGSINDIALT",
+    "category": "SME",
+    "status": "OPEN",
+    "logoUrl": null,
+    "issueSizeCr": 35.0,
+    "issuePriceMin": 114.0,
+    "issuePriceMax": 120.0,
+    "lotSize": 1200,
+    "openDate": "2026-10-30",
+    "closeDate": "2026-11-03",
+    "allotmentDate": "2026-11-04",
+    "listingDate": "2026-11-06",
+    "gmpAmount": 30.0,
+    "gmpPercent": 25.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "30 Oct",
+        "amount": 19.0
+      },
+      {
+        "dateLabel": "31 Oct",
+        "amount": 19.0
+      },
+      {
+        "dateLabel": "02 Nov",
+        "amount": 30.0
+      },
+      {
+        "dateLabel": "03 Nov",
+        "amount": 30.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 26.0,
+      "ofsCr": 7.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Hem Securities Ltd.",
+      "Hem Finlease Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 37.9,
+        "pat": 4.0,
+        "netWorth": 95.0
+      },
+      {
+        "year": "FY25",
+        "revenue": 53.5,
+        "pat": 10.5,
+        "netWorth": 85.2
+      },
+      {
+        "year": "FY26",
+        "revenue": 3.8,
+        "pat": 1.1,
+        "netWorth": 90.4
+      }
+    ],
+    "subscriptionTotal": 173.78,
+    "subscriptionRetail": 25.56,
+    "subscriptionHNI": 31.56,
+    "subscriptionQIB": 4.88,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KFin Technologies Limited",
+    "registrarUrl": "https://www.kfintech.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.hgsindia.com/uploads/pdfs/ipomeetings/RHP.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "24",
+    "name": "Johnsoncab Electricals",
+    "symbol": "JOHNSONCAB",
+    "category": "SME",
+    "status": "OPEN",
+    "logoUrl": null,
+    "issueSizeCr": 56.0,
+    "issuePriceMin": 190.0,
+    "issuePriceMax": 200.0,
+    "lotSize": 600,
+    "openDate": "2026-10-30",
+    "closeDate": "2026-11-03",
+    "allotmentDate": "2026-11-04",
+    "listingDate": "2026-11-06",
+    "gmpAmount": 10.0,
+    "gmpPercent": 5.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "29 Oct",
+        "amount": 13.0
+      },
+      {
+        "dateLabel": "30 Oct",
+        "amount": 10.0
+      },
+      {
+        "dateLabel": "31 Oct",
+        "amount": 10.0
+      },
+      {
+        "dateLabel": "02 Nov",
+        "amount": 10.0
+      },
+      {
+        "dateLabel": "03 Nov",
+        "amount": 10.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 53.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "ISK Advisors Pvt.Ltd.",
+      "Isk Equities Private Ltd.",
+      "Sunflower Broking Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 89.0,
+        "pat": 2.5,
+        "netWorth": 8.9
+      },
+      {
+        "year": "FY25",
+        "revenue": 140.0,
+        "pat": 5.5,
+        "netWorth": 14.2
+      },
+      {
+        "year": "FY26",
+        "revenue": 113.3,
+        "pat": 8.6,
+        "netWorth": 40.1
+      }
+    ],
+    "subscriptionTotal": 23.61,
+    "subscriptionRetail": 2.21,
+    "subscriptionHNI": 2.89,
+    "subscriptionQIB": 0.99,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Maashitla Securities Pvt. Limited",
+    "registrarUrl": "https://maashitla.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://iskadvisors.com/wp-content/uploads/2026/10/RHP-final.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "25",
+    "name": "Vectras Enprocon",
+    "symbol": "VECTRAS",
+    "category": "SME",
+    "status": "OPEN",
+    "logoUrl": null,
+    "issueSizeCr": 53.0,
+    "issuePriceMin": 99.0,
+    "issuePriceMax": 105.0,
+    "lotSize": 1200,
+    "openDate": "2026-10-30",
+    "closeDate": "2026-11-03",
+    "allotmentDate": "2026-11-04",
+    "listingDate": "2026-11-06",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "30 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "02 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "03 Nov",
+        "amount": 0.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 40.0,
+      "ofsCr": 10.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Beeline Capital Advisors Pvt.ltd.",
+      "Spread X Securities Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 54.4,
+        "pat": 5.8,
+        "netWorth": 12.2
+      },
+      {
+        "year": "FY25",
+        "revenue": 80.5,
+        "pat": 10.2,
+        "netWorth": 22.3
+      },
+      {
+        "year": "FY26",
+        "revenue": 72.2,
+        "pat": 9.1,
+        "netWorth": 46.9
+      }
+    ],
+    "subscriptionTotal": 4.22,
+    "subscriptionRetail": 1.33,
+    "subscriptionHNI": 1.3,
+    "subscriptionQIB": 1.42,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "MUFG Intime India PrivateLimited",
+    "registrarUrl": "https://in.mpms.mufg.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/rhp_vel_26102026_clean.pdf",
+    "drhpPdfUrl": "",
     "openNotified": false,
     "closeNotified": false
   },
