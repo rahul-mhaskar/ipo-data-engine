@@ -151,8 +151,8 @@
   },
   "vedantpolyfabs": {
     "name": "Vedant Poly Fabs",
-    "gmp": 13.0,
-    "percent": 13.83
+    "gmp": 11.0,
+    "percent": 11.7
   },
   "parleproducts": {
     "name": "Parle Products",
@@ -291,8 +291,8 @@
   },
   "carverroboweld": {
     "name": "Carver Roboweld",
-    "gmp": 3.0,
-    "percent": 3.75
+    "gmp": 4.0,
+    "percent": 5.0
   },
   "ajwaprojects": {
     "name": "Ajwa Projects",
