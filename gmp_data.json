@@ -31,12 +31,12 @@
   },
   "bombaycoatedandspecialsteelsc": {
     "name": "Bombay Coated and Special Steels IPO C",
-    "gmp": 9.0,
+    "gmp": 7.0,
     "last_updated": "04 Nov"
   },
   "mksonsfinejewelsc": {
     "name": "M.K.Sons Fine Jewels IPO C",
-    "gmp": 11.5,
+    "gmp": 10.0,
     "last_updated": "04 Nov"
   },
   "ajwaprojectsc": {
@@ -147,137 +147,7 @@
   "tnasolutionsemailprotected20": {
     "name": "TNA Solutions BSE SME [email protected] (-20%)",
     "gmp": 37.86,
-    "last_updated": "03 Nov"
-  },
-  "vedantpolyfabs": {
-    "name": "Vedant Poly Fabs",
-    "gmp": 11.0,
-    "percent": 11.7
-  },
-  "parleproducts": {
-    "name": "Parle Products",
-    "gmp": 0.0,
-    "percent": 0.0
-  },
-  "twinklepapers": {
-    "name": "Twinkle Papers",
-    "gmp": 0.0,
-    "percent": 0.0
-  },
-  "sripriyankageocommex": {
-    "name": "Sri Priyanka Geo Commex",
-    "gmp": 0.0,
-    "percent": 0.0
-  },
-  "flipkart": {
-    "name": "Flipkart",
-    "gmp": 0.0,
-    "percent": 0.0
-  },
-  "prestigehospitalityventures": {
-    "name": "Prestige Hospitality Ventures",
-    "gmp": 0.0,
-    "percent": 0.0
-  },
-  "credilafinancial": {
-    "name": "Credila Financial Services",
-    "gmp": 0.0,
-    "percent": 0.0
-  },
-  "phonepe": {
-    "name": "PhonePe",
-    "gmp": 0.0,
-    "percent": 0.0
-  },
-  "zepto": {
-    "name": "Zepto",
-    "gmp": 0.0,
-    "percent": 0.0
-  },
-  "solar91cleantech": {
-    "name": "Solar91 Cleantech",
-    "gmp": 0.0,
-    "percent": 0.0
-  },
-  "herofincorp": {
-    "name": "Hero FinCorp",
-    "gmp": 0.0,
-    "percent": 0.0
-  },
-  "deltatechgaming": {
-    "name": "Deltatech Gaming",
-    "gmp": 0.0,
-    "percent": 0.0
-  },
-  "bibafashions": {
-    "name": "Biba Fashions",
-    "gmp": 0.0,
-    "percent": 0.0
-  },
-  "droomtechnology": {
-    "name": "Droom Technology",
-    "gmp": 0.0,
-    "percent": 0.0
-  },
-  "puranikbuilders": {
-    "name": "Puranik Builders",
-    "gmp": 0.0,
-    "percent": 0.0
-  },
-  "bharatfih": {
-    "name": "Bharat FIH",
-    "gmp": 0.0,
-    "percent": 0.0
-  },
-  "fabindia": {
-    "name": "FabIndia",
-    "gmp": 0.0,
-    "percent": 0.0
-  },
-  "oyo": {
-    "name": "OYO",
-    "gmp": 0.0,
-    "percent": 0.0
-  },
-  "ebixcash": {
-    "name": "EBIXCASH",
-    "gmp": 0.0,
-    "percent": 0.0
-  },
-  "boat": {
-    "name": "BoAt",
-    "gmp": 0.0,
-    "percent": 0.0
-  },
-  "navitechnologies": {
-    "name": "Navi Technologies",
-    "gmp": 15.5,
-    "percent": 4.7
-  },
-  "maxwellengineeringsolutions": {
-    "name": "Maxwell Engineering Solutions",
-    "gmp": 80.0,
-    "percent": 50.63
-  },
-  "hgsindia": {
-    "name": "HGS (India)",
-    "gmp": 25.0,
-    "percent": 20.83
-  },
-  "johnsoncabelectricals": {
-    "name": "Johnsoncab Electricals",
-    "gmp": 8.0,
-    "percent": 4.0
-  },
-  "vectrasenprocon": {
-    "name": "Vectras Enprocon",
-    "gmp": 0.0,
-    "percent": 0.0
-  },
-  "bombaycoatedspecialsteels": {
-    "name": "Bombay Coated & Special Steels",
-    "gmp": 9.0,
-    "percent": 10.98
+    "last_updated": "04 Nov"
   },
   "antala": {
     "name": "Antala Industries",
@@ -422,7 +292,7 @@
   "carverroboweld": {
     "name": "Carver Roboweld",
     "gmp": 4.0,
-    "percent": 5.0
+    "last_updated": "04 Nov"
   },
   "ajwaprojects": {
     "name": "Ajwa Projects",

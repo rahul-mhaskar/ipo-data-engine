@@ -36,6 +36,10 @@
       {
         "dateLabel": "03 Nov",
         "amount": 0.0
+      },
+      {
+        "dateLabel": "04 Nov",
+        "amount": 0.0
       }
     ],
     "issueStructure": {
@@ -98,8 +102,8 @@
     "closeDate": "2026-11-04",
     "allotmentDate": "2026-11-05",
     "listingDate": "2026-11-09",
-    "gmpAmount": 11.0,
-    "gmpPercent": 11.7,
+    "gmpAmount": 13.0,
+    "gmpPercent": 13.83,
     "gmpHistory": [
       {
         "dateLabel": "29 Oct",
@@ -119,7 +123,7 @@
       },
       {
         "dateLabel": "04 Nov",
-        "amount": 11.0
+        "amount": 13.0
       }
     ],
     "issueStructure": {
@@ -2212,94 +2216,6 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/bombay-coated-special-steels-ltd-rhp.pdf",
     "drhpPdfUrl": "https://www.google.com/search?q=Bombay+Coated+&+Special+Steels+IPO+DRHP+file+SEBI",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "27",
-    "name": "Antala Industries",
-    "symbol": "ANTALA",
-    "category": "SME",
-    "status": "CLOSED",
-    "logoUrl": null,
-    "issueSizeCr": 23.0,
-    "issuePriceMin": 63.0,
-    "issuePriceMax": 67.0,
-    "lotSize": 2000,
-    "openDate": "2026-10-29",
-    "closeDate": "2026-11-02",
-    "allotmentDate": "2026-11-03",
-    "listingDate": "2026-11-05",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "28 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "29 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "30 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "02 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "03 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "04 Nov",
-        "amount": 0.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 21.82,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Vatsa Capital Venture Pvt.ltd.",
-      "Asnani Stock Broker Pvt.Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 12.6,
-        "pat": 0.9,
-        "netWorth": 3.5
-      },
-      {
-        "year": "FY25",
-        "revenue": 32.0,
-        "pat": 1.8,
-        "netWorth": 12.2
-      },
-      {
-        "year": "FY26",
-        "revenue": 30.2,
-        "pat": 4.2,
-        "netWorth": 22.2
-      }
-    ],
-    "subscriptionTotal": 1.333,
-    "subscriptionRetail": 0.47,
-    "subscriptionHNI": 1.35,
-    "subscriptionQIB": 66.72,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "BIGSHARE SERVICES PRIVATE LIMITED",
-    "registrarUrl": "https://www.bigshareonline.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/antala-rhp-clean-v3_final-1.pdf",
-    "drhpPdfUrl": "",
     "openNotified": false,
     "closeNotified": false
   },
