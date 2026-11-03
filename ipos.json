@@ -65,7 +65,7 @@
         "netWorth": 42.3
       }
     ],
-    "subscriptionTotal": 0.41,
+    "subscriptionTotal": 0.65,
     "subscriptionRetail": 0.14,
     "subscriptionHNI": 0.83,
     "subscriptionQIB": 0.0,
@@ -149,7 +149,7 @@
         "netWorth": 90.4
       }
     ],
-    "subscriptionTotal": 14.75,
+    "subscriptionTotal": 69.88,
     "subscriptionRetail": 25.56,
     "subscriptionHNI": 31.56,
     "subscriptionQIB": 4.88,
@@ -234,7 +234,7 @@
         "netWorth": 40.1
       }
     ],
-    "subscriptionTotal": 2.08,
+    "subscriptionTotal": 4.36,
     "subscriptionRetail": 2.21,
     "subscriptionHNI": 2.89,
     "subscriptionQIB": 0.99,
@@ -318,7 +318,7 @@
         "netWorth": 27.9
       }
     ],
-    "subscriptionTotal": 80.23,
+    "subscriptionTotal": 258.96,
     "subscriptionRetail": 110.21,
     "subscriptionHNI": 117.09,
     "subscriptionQIB": 0.0,
@@ -398,7 +398,7 @@
         "netWorth": 46.9
       }
     ],
-    "subscriptionTotal": 1.39,
+    "subscriptionTotal": 1.89,
     "subscriptionRetail": 1.33,
     "subscriptionHNI": 1.3,
     "subscriptionQIB": 1.42,
@@ -2539,7 +2539,7 @@
     "subscriptionRetail": 128.36,
     "subscriptionHNI": 559.2,
     "subscriptionQIB": 200.25,
-    "listingPrice": 0.0,
+    "listingPrice": 248.0,
     "listingGainPercent": 0.0,
     "registrarName": "KFin Technologies Limited",
     "registrarUrl": "https://www.kfintech.com/",
@@ -2632,7 +2632,7 @@
     "subscriptionRetail": 2.71,
     "subscriptionHNI": 12.81,
     "subscriptionQIB": 18.81,
-    "listingPrice": 0.0,
+    "listingPrice": 355.1,
     "listingGainPercent": 0.0,
     "registrarName": "MUFG Intime India Private Limited",
     "registrarUrl": "https://in.mpms.mufg.com/",
@@ -2712,7 +2712,7 @@
     "subscriptionRetail": 0.66,
     "subscriptionHNI": 0.62,
     "subscriptionQIB": 2.24,
-    "listingPrice": 0.0,
+    "listingPrice": 204.0,
     "listingGainPercent": 0.0,
     "registrarName": "MAASHITLA SECURITIES PRIVATE LIMITED",
     "registrarUrl": "https://maashitla.com/",

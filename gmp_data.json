@@ -1,42 +1,42 @@
 {
+  "antalao": {
+    "name": "Antala Industries BSE SME O",
+    "gmp": 22.98,
+    "last_updated": "03 Nov"
+  },
   "vedantpolyfabso": {
     "name": "Vedant Poly Fabs NSE SME O",
     "gmp": 15.0,
     "last_updated": "03 Nov"
   },
-  "hgsindiao": {
-    "name": "HGS (India) NSE SME O",
-    "gmp": 30.0,
+  "hgsindiact": {
+    "name": "HGS (India) NSE SME CT",
+    "gmp": 20.0,
     "last_updated": "03 Nov"
   },
-  "johnsoncabelectricalso": {
-    "name": "Johnsoncab Electricals BSE SME O",
-    "gmp": 10.0,
+  "johnsoncabelectricalsct": {
+    "name": "Johnsoncab Electricals BSE SME CT",
+    "gmp": 8.0,
     "last_updated": "03 Nov"
   },
-  "vectrasenprocono": {
-    "name": "Vectras Enprocon BSE SME O",
+  "vectrasenproconct": {
+    "name": "Vectras Enprocon BSE SME CT",
     "gmp": 53.05,
     "last_updated": "03 Nov"
   },
-  "maxwellengineeringsolutionso": {
-    "name": "Maxwell Engineering Solutions NSE SME O",
+  "maxwellengineeringsolutionsct": {
+    "name": "Maxwell Engineering Solutions NSE SME CT",
     "gmp": 80.0,
-    "last_updated": "03 Nov"
-  },
-  "antalac": {
-    "name": "Antala Industries BSE SME C",
-    "gmp": 23.33,
     "last_updated": "03 Nov"
   },
   "bombaycoatedandspecialsteelsc": {
     "name": "Bombay Coated and Special Steels IPO C",
-    "gmp": 8.0,
+    "gmp": 9.0,
     "last_updated": "03 Nov"
   },
   "mksonsfinejewelsc": {
     "name": "M.K.Sons Fine Jewels IPO C",
-    "gmp": 6.5,
+    "gmp": 9.0,
     "last_updated": "03 Nov"
   },
   "ajwaprojectsc": {
@@ -44,24 +44,24 @@
     "gmp": 1.0,
     "last_updated": "03 Nov"
   },
-  "carverroboweldc": {
-    "name": "Carver Roboweld BSE SME C",
-    "gmp": 5.0,
+  "carverroboweldcallotted": {
+    "name": "Carver Roboweld BSE SME C Allotted",
+    "gmp": 3.0,
     "last_updated": "03 Nov"
   },
-  "wisconcallotted": {
-    "name": "Wiscon Industries BSE SME C Allotted",
+  "wisconemailprotected0": {
+    "name": "Wiscon Industries BSE SME [email protected] (0%)",
     "gmp": 110.0,
     "last_updated": "03 Nov"
   },
-  "sfcenvironmentaltechnologiescallotted": {
-    "name": "SFC Environmental Technologies IPO C Allotted",
+  "sfcenvironmentaltechnologiesemailprotected761": {
+    "name": "SFC Environmental Technologies IPO [email protected] (7.61%)",
     "gmp": 15.5,
     "last_updated": "03 Nov"
   },
-  "blspolymersc": {
-    "name": "BLS Polymers IPO C",
-    "gmp": 68.0,
+  "blspolymersemailprotected6533": {
+    "name": "BLS Polymers IPO [email protected] (65.33%)",
+    "gmp": 69.0,
     "last_updated": "03 Nov"
   },
   "eaaaindiaalternativesemailprotected063": {
