@@ -1,6 +1,90 @@
 [
   {
     "id": "1",
+    "name": "Antala Industries",
+    "symbol": "ANTALA",
+    "category": "SME",
+    "status": "OPEN",
+    "logoUrl": null,
+    "issueSizeCr": 23.0,
+    "issuePriceMin": 63.0,
+    "issuePriceMax": 67.0,
+    "lotSize": 2000,
+    "openDate": "2026-10-29",
+    "closeDate": "2026-11-05",
+    "allotmentDate": "2026-11-06",
+    "listingDate": "2026-11-11",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "30 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "02 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "03 Nov",
+        "amount": 0.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 21.82,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Vatsa Capital Venture Pvt.ltd.",
+      "Asnani Stock Broker Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 12.6,
+        "pat": 0.9,
+        "netWorth": 3.5
+      },
+      {
+        "year": "FY25",
+        "revenue": 32.0,
+        "pat": 1.8,
+        "netWorth": 12.2
+      },
+      {
+        "year": "FY26",
+        "revenue": 30.2,
+        "pat": 4.2,
+        "netWorth": 22.2
+      }
+    ],
+    "subscriptionTotal": 1.17,
+    "subscriptionRetail": 0.47,
+    "subscriptionHNI": 1.35,
+    "subscriptionQIB": 66.72,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "BIGSHARE SERVICES PRIVATE LIMITED",
+    "registrarUrl": "https://www.bigshareonline.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/antala-rhp-clean-v3_final-1.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "2",
     "name": "Vedant Poly Fabs",
     "symbol": "VPFL",
     "category": "SME",
@@ -69,7 +153,7 @@
         "netWorth": 42.3
       }
     ],
-    "subscriptionTotal": 0.893,
+    "subscriptionTotal": 0.93,
     "subscriptionRetail": 0.83,
     "subscriptionHNI": 0.94,
     "subscriptionQIB": 327.27,
@@ -84,7 +168,7 @@
     "closeNotified": false
   },
   {
-    "id": "2",
+    "id": "3",
     "name": "Parle Products",
     "symbol": "PARLEPR",
     "category": "Mainboard",
@@ -154,7 +238,7 @@
     "closeNotified": false
   },
   {
-    "id": "3",
+    "id": "4",
     "name": "Twinkle Papers",
     "symbol": "TWINKLE",
     "category": "SME",
@@ -247,7 +331,7 @@
     "closeNotified": false
   },
   {
-    "id": "4",
+    "id": "5",
     "name": "Sri Priyanka Geo Commex",
     "symbol": "SPGCL",
     "category": "SME",
@@ -339,7 +423,7 @@
     "closeNotified": false
   },
   {
-    "id": "5",
+    "id": "6",
     "name": "Flipkart",
     "symbol": "FLIPKAR",
     "category": "Mainboard",
@@ -409,7 +493,7 @@
     "closeNotified": false
   },
   {
-    "id": "6",
+    "id": "7",
     "name": "Prestige Hospitality Ventures",
     "symbol": "PRESTIG",
     "category": "Mainboard",
@@ -503,7 +587,7 @@
     "closeNotified": false
   },
   {
-    "id": "7",
+    "id": "8",
     "name": "Credila Financial Services",
     "symbol": "CREDILA",
     "category": "Mainboard",
@@ -598,7 +682,7 @@
     "closeNotified": false
   },
   {
-    "id": "8",
+    "id": "9",
     "name": "PhonePe",
     "symbol": "PHONEPE",
     "category": "Mainboard",
@@ -696,7 +780,7 @@
     "closeNotified": false
   },
   {
-    "id": "9",
+    "id": "10",
     "name": "Zepto",
     "symbol": "ZEPTO",
     "category": "Mainboard",
@@ -793,7 +877,7 @@
     "closeNotified": false
   },
   {
-    "id": "10",
+    "id": "11",
     "name": "Solar91 Cleantech",
     "symbol": "SOLAR91",
     "category": "SME",
@@ -863,7 +947,7 @@
     "closeNotified": false
   },
   {
-    "id": "11",
+    "id": "12",
     "name": "Hero FinCorp",
     "symbol": "HEROFIN",
     "category": "Mainboard",
@@ -961,7 +1045,7 @@
     "closeNotified": false
   },
   {
-    "id": "12",
+    "id": "13",
     "name": "Deltatech Gaming",
     "symbol": "DELTATE",
     "category": "Mainboard",
@@ -1031,7 +1115,7 @@
     "closeNotified": false
   },
   {
-    "id": "13",
+    "id": "14",
     "name": "Biba Fashions",
     "symbol": "BIBAFAS",
     "category": "Mainboard",
@@ -1101,7 +1185,7 @@
     "closeNotified": false
   },
   {
-    "id": "14",
+    "id": "15",
     "name": "Droom Technology",
     "symbol": "DROOMTE",
     "category": "Mainboard",
@@ -1171,7 +1255,7 @@
     "closeNotified": false
   },
   {
-    "id": "15",
+    "id": "16",
     "name": "Puranik Builders",
     "symbol": "PURANIK",
     "category": "Mainboard",
@@ -1241,7 +1325,7 @@
     "closeNotified": false
   },
   {
-    "id": "16",
+    "id": "17",
     "name": "Bharat FIH",
     "symbol": "BHARATF",
     "category": "Mainboard",
@@ -1311,7 +1395,7 @@
     "closeNotified": false
   },
   {
-    "id": "17",
+    "id": "18",
     "name": "FabIndia",
     "symbol": "FABINDI",
     "category": "Mainboard",
@@ -1381,7 +1465,7 @@
     "closeNotified": false
   },
   {
-    "id": "18",
+    "id": "19",
     "name": "OYO",
     "symbol": "OYO",
     "category": "Mainboard",
@@ -1479,7 +1563,7 @@
     "closeNotified": false
   },
   {
-    "id": "19",
+    "id": "20",
     "name": "EBIXCASH",
     "symbol": "EBIXCAS",
     "category": "Mainboard",
@@ -1549,7 +1633,7 @@
     "closeNotified": false
   },
   {
-    "id": "20",
+    "id": "21",
     "name": "BoAt",
     "symbol": "BOAT",
     "category": "Mainboard",
@@ -1643,7 +1727,7 @@
     "closeNotified": false
   },
   {
-    "id": "21",
+    "id": "22",
     "name": "Navi Technologies",
     "symbol": "NAVITEC",
     "category": "Mainboard",
@@ -1658,7 +1742,7 @@
     "allotmentDate": "To Be Updated",
     "listingDate": "To Be Updated",
     "gmpAmount": 15.5,
-    "gmpPercent": 4.7,
+    "gmpPercent": 0.0,
     "gmpHistory": [
       {
         "dateLabel": "28 Oct",
@@ -1713,7 +1797,7 @@
     "closeNotified": false
   },
   {
-    "id": "22",
+    "id": "23",
     "name": "Maxwell Engineering Solutions",
     "symbol": "MAXENGS",
     "category": "SME",
@@ -1786,7 +1870,7 @@
         "netWorth": 27.9
       }
     ],
-    "subscriptionTotal": 536.83,
+    "subscriptionTotal": 534.65,
     "subscriptionRetail": 556.09,
     "subscriptionHNI": 857.65,
     "subscriptionQIB": 259.45,
@@ -1801,7 +1885,7 @@
     "closeNotified": false
   },
   {
-    "id": "23",
+    "id": "24",
     "name": "HGS (India)",
     "symbol": "HGSINDIALT",
     "category": "SME",
@@ -1874,7 +1958,7 @@
         "netWorth": 90.4
       }
     ],
-    "subscriptionTotal": 248.583,
+    "subscriptionTotal": 173.78,
     "subscriptionRetail": 235.72,
     "subscriptionHNI": 424.67,
     "subscriptionQIB": 137.92,
@@ -1889,7 +1973,7 @@
     "closeNotified": false
   },
   {
-    "id": "24",
+    "id": "25",
     "name": "Johnsoncab Electricals",
     "symbol": "JOHNSONCAB",
     "category": "SME",
@@ -1963,7 +2047,7 @@
         "netWorth": 40.1
       }
     ],
-    "subscriptionTotal": 23.823,
+    "subscriptionTotal": 23.61,
     "subscriptionRetail": 17.98,
     "subscriptionHNI": 42.27,
     "subscriptionQIB": 20.19,
@@ -1978,7 +2062,7 @@
     "closeNotified": false
   },
   {
-    "id": "25",
+    "id": "26",
     "name": "Vectras Enprocon",
     "symbol": "VECTRAS",
     "category": "SME",
@@ -2047,7 +2131,7 @@
         "netWorth": 46.9
       }
     ],
-    "subscriptionTotal": 4.23,
+    "subscriptionTotal": 4.22,
     "subscriptionRetail": 4.45,
     "subscriptionHNI": 6.69,
     "subscriptionQIB": 1.88,
@@ -2062,7 +2146,7 @@
     "closeNotified": false
   },
   {
-    "id": "26",
+    "id": "27",
     "name": "Bombay Coated & Special Steels",
     "symbol": "BCSSL",
     "category": "Mainboard",
@@ -2117,7 +2201,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 63.892,
+    "subscriptionTotal": 32.01,
     "subscriptionRetail": 35.46,
     "subscriptionHNI": 166.44,
     "subscriptionQIB": 37.32,
@@ -2296,7 +2380,7 @@
         "netWorth": 183.0
       }
     ],
-    "subscriptionTotal": 5.093,
+    "subscriptionTotal": 5.03,
     "subscriptionRetail": 3.08,
     "subscriptionHNI": 14.12,
     "subscriptionQIB": 1.84,
@@ -2388,7 +2472,7 @@
         "netWorth": 17.6
       }
     ],
-    "subscriptionTotal": 25.83,
+    "subscriptionTotal": 25.18,
     "subscriptionRetail": 19.17,
     "subscriptionHNI": 40.39,
     "subscriptionQIB": 26.33,
@@ -2480,7 +2564,7 @@
         "netWorth": 19.3
       }
     ],
-    "subscriptionTotal": 1.123,
+    "subscriptionTotal": 1.18,
     "subscriptionRetail": 1.93,
     "subscriptionHNI": 0.32,
     "subscriptionQIB": 0.0,
@@ -2499,7 +2583,7 @@
     "name": "BLS Polymers",
     "symbol": "BLSPOLY",
     "category": "Mainboard",
-    "status": "CLOSED",
+    "status": "LISTED",
     "logoUrl": null,
     "issueSizeCr": 255.0,
     "issuePriceMin": 142.0,
@@ -2571,7 +2655,7 @@
         "netWorth": 105.2
       }
     ],
-    "subscriptionTotal": 241.2229,
+    "subscriptionTotal": 239.02,
     "subscriptionRetail": 128.36,
     "subscriptionHNI": 559.2,
     "subscriptionQIB": 200.25,
@@ -2590,7 +2674,7 @@
     "name": "SFC Environmental Technologies",
     "symbol": "SFCTECH",
     "category": "Mainboard",
-    "status": "CLOSED",
+    "status": "LISTED",
     "logoUrl": null,
     "issueSizeCr": 668.0,
     "issuePriceMin": 313.0,
@@ -2664,7 +2748,7 @@
         "netWorth": 805.5
       }
     ],
-    "subscriptionTotal": 9.4729,
+    "subscriptionTotal": 9.17,
     "subscriptionRetail": 2.71,
     "subscriptionHNI": 12.81,
     "subscriptionQIB": 18.81,
@@ -2683,7 +2767,7 @@
     "name": "Wiscon Industries",
     "symbol": "WISCON",
     "category": "SME",
-    "status": "CLOSED",
+    "status": "LISTED",
     "logoUrl": null,
     "issueSizeCr": 110.0,
     "issuePriceMin": 194.0,
@@ -2744,7 +2828,7 @@
         "netWorth": 38.5
       }
     ],
-    "subscriptionTotal": 1.1729,
+    "subscriptionTotal": 1.26,
     "subscriptionRetail": 0.66,
     "subscriptionHNI": 0.62,
     "subscriptionQIB": 2.24,
@@ -2838,7 +2922,7 @@
         "netWorth": 1160.4
       }
     ],
-    "subscriptionTotal": 5.5128,
+    "subscriptionTotal": 5.15,
     "subscriptionRetail": 1.08,
     "subscriptionHNI": 4.81,
     "subscriptionQIB": 13.8,
@@ -2924,7 +3008,7 @@
         "netWorth": 24.8
       }
     ],
-    "subscriptionTotal": 5.4427,
+    "subscriptionTotal": 5.54,
     "subscriptionRetail": 2.72,
     "subscriptionHNI": 12.26,
     "subscriptionQIB": 5.06,
@@ -3013,7 +3097,7 @@
         "netWorth": 341778.5
       }
     ],
-    "subscriptionTotal": 21.3623,
+    "subscriptionTotal": 19.67,
     "subscriptionRetail": 2.76,
     "subscriptionHNI": 13.99,
     "subscriptionQIB": 67.15,
@@ -3106,7 +3190,7 @@
         "netWorth": 445.0
       }
     ],
-    "subscriptionTotal": 2.3423,
+    "subscriptionTotal": 2.21,
     "subscriptionRetail": 2.1,
     "subscriptionHNI": 0.69,
     "subscriptionQIB": 3.25,
@@ -3171,7 +3255,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 14.2119,
+    "subscriptionTotal": 14.08,
     "subscriptionRetail": 3.04,
     "subscriptionHNI": 14.64,
     "subscriptionQIB": 34.7,
@@ -3255,7 +3339,7 @@
         "netWorth": 511.55
       }
     ],
-    "subscriptionTotal": 132.8119,
+    "subscriptionTotal": 96.63,
     "subscriptionRetail": 31.11,
     "subscriptionHNI": 156.36,
     "subscriptionQIB": 293.56,
@@ -3339,7 +3423,7 @@
         "netWorth": 63.0
       }
     ],
-    "subscriptionTotal": 58.5419,
+    "subscriptionTotal": 58.01,
     "subscriptionRetail": 56.09,
     "subscriptionHNI": 86.41,
     "subscriptionQIB": 41.92,
@@ -3404,7 +3488,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 3.119,
+    "subscriptionTotal": 3.05,
     "subscriptionRetail": 0.77,
     "subscriptionHNI": 1.45,
     "subscriptionQIB": 4.71,
@@ -3488,7 +3572,7 @@
         "netWorth": 1034.3
       }
     ],
-    "subscriptionTotal": 46.0519,
+    "subscriptionTotal": 31.66,
     "subscriptionRetail": 5.9,
     "subscriptionHNI": 40.39,
     "subscriptionQIB": 120.78,
@@ -3572,7 +3656,7 @@
         "netWorth": 109.7
       }
     ],
-    "subscriptionTotal": 7.1116,
+    "subscriptionTotal": 8.32,
     "subscriptionRetail": 3.5,
     "subscriptionHNI": 7.42,
     "subscriptionQIB": 13.21,
@@ -3656,7 +3740,7 @@
         "netWorth": 610.8
       }
     ],
-    "subscriptionTotal": 4.6816,
+    "subscriptionTotal": 4.43,
     "subscriptionRetail": 5.99,
     "subscriptionHNI": 4.73,
     "subscriptionQIB": 4.21,
@@ -3721,7 +3805,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 131.7315,
+    "subscriptionTotal": 131.25,
     "subscriptionRetail": 30.55,
     "subscriptionHNI": 203.21,
     "subscriptionQIB": 256.65,
@@ -3786,7 +3870,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 3.2315,
+    "subscriptionTotal": 3.8,
     "subscriptionRetail": 2.7,
     "subscriptionHNI": 6.65,
     "subscriptionQIB": 1.61,
@@ -3851,7 +3935,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 2.77,
+    "subscriptionTotal": 2.72,
     "subscriptionRetail": 3.11,
     "subscriptionHNI": 1.77,
     "subscriptionQIB": 14.11,
@@ -3916,7 +4000,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 55.26,
+    "subscriptionTotal": 54.92,
     "subscriptionRetail": 46.17,
     "subscriptionHNI": 102.14,
     "subscriptionQIB": 35.64,
@@ -3981,7 +4065,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 124.236,
+    "subscriptionTotal": 123.52,
     "subscriptionRetail": 85.5,
     "subscriptionHNI": 196.27,
     "subscriptionQIB": 137.93,
@@ -4046,7 +4130,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 1.886,
+    "subscriptionTotal": 1.93,
     "subscriptionRetail": 1.1,
     "subscriptionHNI": 0.09,
     "subscriptionQIB": 119.29,
