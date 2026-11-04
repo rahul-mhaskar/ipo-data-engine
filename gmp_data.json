@@ -4,8 +4,8 @@
     "gmp": 22.98,
     "last_updated": "04 Nov"
   },
-  "vedantpolyfabso": {
-    "name": "Vedant Poly Fabs NSE SME O",
+  "vedantpolyfabsct": {
+    "name": "Vedant Poly Fabs NSE SME CT",
     "gmp": 11.0,
     "last_updated": "04 Nov"
   },
@@ -34,18 +34,18 @@
     "gmp": 7.0,
     "last_updated": "04 Nov"
   },
-  "mksonsfinejewelsc": {
-    "name": "M.K.Sons Fine Jewels IPO C",
-    "gmp": 10.0,
+  "mksonsfinejewelslt": {
+    "name": "M.K.Sons Fine Jewels IPO LT",
+    "gmp": 11.0,
     "last_updated": "04 Nov"
   },
-  "ajwaprojectsc": {
-    "name": "Ajwa Projects BSE SME C",
+  "ajwaprojectslt": {
+    "name": "Ajwa Projects BSE SME LT",
     "gmp": 1.0,
     "last_updated": "04 Nov"
   },
-  "carverroboweldcallotted": {
-    "name": "Carver Roboweld BSE SME C Allotted",
+  "carverroboweldlt": {
+    "name": "Carver Roboweld BSE SME LT",
     "gmp": 4.0,
     "last_updated": "04 Nov"
   },
