@@ -6,17 +6,17 @@
   },
   "vedantpolyfabsct": {
     "name": "Vedant Poly Fabs NSE SME CT",
-    "gmp": 11.0,
+    "gmp": 1.0,
     "last_updated": "04 Nov"
   },
   "hgsindiac": {
     "name": "HGS (India) NSE SME C",
-    "gmp": 25.0,
+    "gmp": 23.0,
     "last_updated": "04 Nov"
   },
   "johnsoncabelectricalsc": {
     "name": "Johnsoncab Electricals BSE SME C",
-    "gmp": 8.0,
+    "gmp": 6.0,
     "last_updated": "04 Nov"
   },
   "vectrasenproconc": {
@@ -26,26 +26,26 @@
   },
   "maxwellengineeringsolutionsc": {
     "name": "Maxwell Engineering Solutions NSE SME C",
-    "gmp": 80.0,
+    "gmp": 75.0,
     "last_updated": "04 Nov"
   },
   "bombaycoatedandspecialsteelsc": {
     "name": "Bombay Coated and Special Steels IPO C",
-    "gmp": 7.0,
+    "gmp": 8.5,
     "last_updated": "04 Nov"
   },
-  "mksonsfinejewelslt": {
-    "name": "M.K.Sons Fine Jewels IPO LT",
+  "mksonsfinejewelsemailprotected556": {
+    "name": "M.K.Sons Fine Jewels IPO [email protected] (5.56%)",
     "gmp": 11.0,
     "last_updated": "04 Nov"
   },
-  "ajwaprojectslt": {
-    "name": "Ajwa Projects BSE SME LT",
+  "ajwaprojectsemailprotected0": {
+    "name": "Ajwa Projects BSE SME [email protected] (0%)",
     "gmp": 1.0,
     "last_updated": "04 Nov"
   },
-  "carverroboweldlt": {
-    "name": "Carver Roboweld BSE SME LT",
+  "carverroboweldemailprotected125": {
+    "name": "Carver Roboweld BSE SME [email protected] (12.5%)",
     "gmp": 4.0,
     "last_updated": "04 Nov"
   },
@@ -124,39 +124,9 @@
     "gmp": 70.0,
     "last_updated": "04 Nov"
   },
-  "vaibhavvyapaaremailprotected204": {
-    "name": "Vaibhav Vyapaar NSE SME [email protected] (-2.04%)",
-    "gmp": 3.0,
-    "last_updated": "04 Nov"
-  },
-  "rkfashionaccessoriesemailprotected244": {
-    "name": "R.K.Fashion Accessories NSE SME [email protected] (-2.44%)",
-    "gmp": 1.5,
-    "last_updated": "04 Nov"
-  },
-  "paramountsyntexemailprotected945": {
-    "name": "Paramount Syntex BSE SME [email protected] (-9.45%)",
-    "gmp": 81.79,
-    "last_updated": "04 Nov"
-  },
-  "acmeindiaemailprotected1276": {
-    "name": "Acme India Industries BSE SME [email protected] (12.76%)",
-    "gmp": 43.0,
-    "last_updated": "04 Nov"
-  },
-  "tnasolutionsemailprotected20": {
-    "name": "TNA Solutions BSE SME [email protected] (-20%)",
-    "gmp": 37.86,
-    "last_updated": "04 Nov"
-  },
   "antala": {
     "name": "Antala Industries",
     "gmp": 0.0,
-    "last_updated": "04 Nov"
-  },
-  "vedantpolyfabs": {
-    "name": "Vedant Poly Fabs",
-    "gmp": 13.0,
     "last_updated": "04 Nov"
   },
   "parleproducts": {
@@ -257,6 +227,11 @@
   "navitechnologies": {
     "name": "Navi Technologies",
     "gmp": 15.5,
+    "last_updated": "04 Nov"
+  },
+  "vedantpolyfabs": {
+    "name": "Vedant Poly Fabs",
+    "gmp": 13.0,
     "last_updated": "04 Nov"
   },
   "maxwellengineeringsolutions": {
