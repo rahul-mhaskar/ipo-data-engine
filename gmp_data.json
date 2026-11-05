@@ -11,7 +11,7 @@
   },
   "hgsindiac": {
     "name": "HGS (India) NSE SME C",
-    "gmp": 28.0,
+    "gmp": 40.0,
     "last_updated": "05 Nov"
   },
   "johnsoncabelectricalscallotted": {
@@ -26,11 +26,11 @@
   },
   "maxwellengineeringsolutionsc": {
     "name": "Maxwell Engineering Solutions NSE SME C",
-    "gmp": 113.0,
+    "gmp": 111.0,
     "last_updated": "05 Nov"
   },
-  "bombaycoatedandspecialsteelslt": {
-    "name": "Bombay Coated and Special Steels IPO LT",
+  "bombaycoatedandspecialsteelsemailprotected1098": {
+    "name": "Bombay Coated and Special Steels IPO [email protected] (10.98%)",
     "gmp": 8.0,
     "last_updated": "05 Nov"
   },
@@ -122,11 +122,6 @@
   "hdfireprotectemailprotected2362": {
     "name": "HD Fire Protect IPO [email protected] (23.62%)",
     "gmp": 70.0,
-    "last_updated": "05 Nov"
-  },
-  "antala": {
-    "name": "Antala Industries",
-    "gmp": 0.0,
     "last_updated": "05 Nov"
   },
   "parleproducts": {
@@ -227,6 +222,11 @@
   "navitechnologies": {
     "name": "Navi Technologies",
     "gmp": 15.5,
+    "last_updated": "05 Nov"
+  },
+  "antala": {
+    "name": "Antala Industries",
+    "gmp": 0.0,
     "last_updated": "05 Nov"
   },
   "vedantpolyfabs": {

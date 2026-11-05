@@ -1,98 +1,6 @@
 [
   {
     "id": "1",
-    "name": "Antala Industries",
-    "symbol": "ANTALA",
-    "category": "SME",
-    "status": "OPEN",
-    "logoUrl": null,
-    "issueSizeCr": 23.0,
-    "issuePriceMin": 63.0,
-    "issuePriceMax": 67.0,
-    "lotSize": 2000,
-    "openDate": "2026-10-29",
-    "closeDate": "2026-11-05",
-    "allotmentDate": "2026-11-06",
-    "listingDate": "2026-11-11",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "28 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "29 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "30 Oct",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "02 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "03 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "04 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "05 Nov",
-        "amount": 0.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 21.82,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Vatsa Capital Venture Pvt.ltd.",
-      "Asnani Stock Broker Pvt.Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 12.6,
-        "pat": 0.9,
-        "netWorth": 3.5
-      },
-      {
-        "year": "FY25",
-        "revenue": 32.0,
-        "pat": 1.8,
-        "netWorth": 12.2
-      },
-      {
-        "year": "FY26",
-        "revenue": 30.2,
-        "pat": 4.2,
-        "netWorth": 22.2
-      }
-    ],
-    "subscriptionTotal": 8.31,
-    "subscriptionRetail": 0.8,
-    "subscriptionHNI": 22.17,
-    "subscriptionQIB": 66.72,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "BIGSHARE SERVICES PRIVATE LIMITED",
-    "registrarUrl": "https://www.bigshareonline.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/antala-rhp-clean-v3_final-1.pdf",
-    "drhpPdfUrl": "",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "2",
     "name": "Parle Products",
     "symbol": "PARLEPR",
     "category": "Mainboard",
@@ -162,7 +70,7 @@
     "closeNotified": false
   },
   {
-    "id": "3",
+    "id": "2",
     "name": "Twinkle Papers",
     "symbol": "TWINKLE",
     "category": "SME",
@@ -255,7 +163,7 @@
     "closeNotified": false
   },
   {
-    "id": "4",
+    "id": "3",
     "name": "Sri Priyanka Geo Commex",
     "symbol": "SPGCL",
     "category": "SME",
@@ -347,7 +255,7 @@
     "closeNotified": false
   },
   {
-    "id": "5",
+    "id": "4",
     "name": "Flipkart",
     "symbol": "FLIPKAR",
     "category": "Mainboard",
@@ -417,7 +325,7 @@
     "closeNotified": false
   },
   {
-    "id": "6",
+    "id": "5",
     "name": "Prestige Hospitality Ventures",
     "symbol": "PRESTIG",
     "category": "Mainboard",
@@ -511,7 +419,7 @@
     "closeNotified": false
   },
   {
-    "id": "7",
+    "id": "6",
     "name": "Credila Financial Services",
     "symbol": "CREDILA",
     "category": "Mainboard",
@@ -606,7 +514,7 @@
     "closeNotified": false
   },
   {
-    "id": "8",
+    "id": "7",
     "name": "PhonePe",
     "symbol": "PHONEPE",
     "category": "Mainboard",
@@ -704,7 +612,7 @@
     "closeNotified": false
   },
   {
-    "id": "9",
+    "id": "8",
     "name": "Zepto",
     "symbol": "ZEPTO",
     "category": "Mainboard",
@@ -801,7 +709,7 @@
     "closeNotified": false
   },
   {
-    "id": "10",
+    "id": "9",
     "name": "Solar91 Cleantech",
     "symbol": "SOLAR91",
     "category": "SME",
@@ -871,7 +779,7 @@
     "closeNotified": false
   },
   {
-    "id": "11",
+    "id": "10",
     "name": "Hero FinCorp",
     "symbol": "HEROFIN",
     "category": "Mainboard",
@@ -969,7 +877,7 @@
     "closeNotified": false
   },
   {
-    "id": "12",
+    "id": "11",
     "name": "Deltatech Gaming",
     "symbol": "DELTATE",
     "category": "Mainboard",
@@ -1039,7 +947,7 @@
     "closeNotified": false
   },
   {
-    "id": "13",
+    "id": "12",
     "name": "Biba Fashions",
     "symbol": "BIBAFAS",
     "category": "Mainboard",
@@ -1109,7 +1017,7 @@
     "closeNotified": false
   },
   {
-    "id": "14",
+    "id": "13",
     "name": "Droom Technology",
     "symbol": "DROOMTE",
     "category": "Mainboard",
@@ -1179,7 +1087,7 @@
     "closeNotified": false
   },
   {
-    "id": "15",
+    "id": "14",
     "name": "Puranik Builders",
     "symbol": "PURANIK",
     "category": "Mainboard",
@@ -1249,7 +1157,7 @@
     "closeNotified": false
   },
   {
-    "id": "16",
+    "id": "15",
     "name": "Bharat FIH",
     "symbol": "BHARATF",
     "category": "Mainboard",
@@ -1319,7 +1227,7 @@
     "closeNotified": false
   },
   {
-    "id": "17",
+    "id": "16",
     "name": "FabIndia",
     "symbol": "FABINDI",
     "category": "Mainboard",
@@ -1389,7 +1297,7 @@
     "closeNotified": false
   },
   {
-    "id": "18",
+    "id": "17",
     "name": "OYO",
     "symbol": "OYO",
     "category": "Mainboard",
@@ -1487,7 +1395,7 @@
     "closeNotified": false
   },
   {
-    "id": "19",
+    "id": "18",
     "name": "EBIXCASH",
     "symbol": "EBIXCAS",
     "category": "Mainboard",
@@ -1557,7 +1465,7 @@
     "closeNotified": false
   },
   {
-    "id": "20",
+    "id": "19",
     "name": "BoAt",
     "symbol": "BOAT",
     "category": "Mainboard",
@@ -1651,7 +1559,7 @@
     "closeNotified": false
   },
   {
-    "id": "21",
+    "id": "20",
     "name": "Navi Technologies",
     "symbol": "NAVITEC",
     "category": "Mainboard",
@@ -1717,6 +1625,98 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/oct-2021/1633066313151.pdf#page=1&zoom=page-width,-16,379",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "21",
+    "name": "Antala Industries",
+    "symbol": "ANTALA",
+    "category": "SME",
+    "status": "CLOSED",
+    "logoUrl": null,
+    "issueSizeCr": 23.0,
+    "issuePriceMin": 63.0,
+    "issuePriceMax": 67.0,
+    "lotSize": 2000,
+    "openDate": "2026-10-29",
+    "closeDate": "2026-11-05",
+    "allotmentDate": "2026-11-06",
+    "listingDate": "2026-11-11",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "28 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "29 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "30 Oct",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "02 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "03 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "04 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "05 Nov",
+        "amount": 0.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 21.82,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Vatsa Capital Venture Pvt.ltd.",
+      "Asnani Stock Broker Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 12.6,
+        "pat": 0.9,
+        "netWorth": 3.5
+      },
+      {
+        "year": "FY25",
+        "revenue": 32.0,
+        "pat": 1.8,
+        "netWorth": 12.2
+      },
+      {
+        "year": "FY26",
+        "revenue": 30.2,
+        "pat": 4.2,
+        "netWorth": 22.2
+      }
+    ],
+    "subscriptionTotal": 12.72,
+    "subscriptionRetail": 0.8,
+    "subscriptionHNI": 22.17,
+    "subscriptionQIB": 66.72,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "BIGSHARE SERVICES PRIVATE LIMITED",
+    "registrarUrl": "https://www.bigshareonline.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/antala-rhp-clean-v3_final-1.pdf",
+    "drhpPdfUrl": "",
     "openNotified": false,
     "closeNotified": false
   },
