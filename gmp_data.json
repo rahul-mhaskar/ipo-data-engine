@@ -1,6 +1,6 @@
 {
-  "antalao": {
-    "name": "Antala Industries BSE SME O",
+  "antalact": {
+    "name": "Antala Industries BSE SME CT",
     "gmp": 22.98,
     "last_updated": "05 Nov"
   },
@@ -29,8 +29,8 @@
     "gmp": 113.0,
     "last_updated": "05 Nov"
   },
-  "bombaycoatedandspecialsteelsc": {
-    "name": "Bombay Coated and Special Steels IPO C",
+  "bombaycoatedandspecialsteelslt": {
+    "name": "Bombay Coated and Special Steels IPO LT",
     "gmp": 8.0,
     "last_updated": "05 Nov"
   },
