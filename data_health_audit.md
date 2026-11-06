@@ -1,7 +1,7 @@
 # IPO Pipeline Data Health Audit
 
-**Last Sync (UTC):** 2026-11-06 18:23:19 UTC
+**Last Sync (UTC):** 2026-11-06 22:38:57 UTC
 
 **Primary Active Source:** UPSTOX_OFFICIAL
 **Total Records Ingested:** 88
-**Live GMP Records Attached:** 5
+**Live GMP Records Attached:** 2
