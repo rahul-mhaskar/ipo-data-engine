@@ -9,9 +9,9 @@
     "gmp": 1.0,
     "last_updated": "12 Nov"
   },
-  "hgsindiaemailprotected3333": {
-    "name": "HGS (India) NSE SME [email protected] (33.33%)",
-    "gmp": 27.0,
+  "vectrasenproconemailprotected095": {
+    "name": "Vectras Enprocon BSE SME [email protected] (0.95%)",
+    "gmp": 53.05,
     "last_updated": "12 Nov"
   },
   "johnsoncabelectricalsemailprotected1925": {
@@ -19,24 +19,19 @@
     "gmp": 8.0,
     "last_updated": "12 Nov"
   },
-  "vectrasenproconemailprotected095": {
-    "name": "Vectras Enprocon BSE SME [email protected] (0.95%)",
-    "gmp": 53.05,
-    "last_updated": "12 Nov"
-  },
   "maxwellengineeringsolutionsemailprotected90": {
     "name": "Maxwell Engineering Solutions NSE SME [email protected] (90%)",
     "gmp": 105.0,
     "last_updated": "12 Nov"
   },
+  "hgsindiaemailprotected3333": {
+    "name": "HGS (India) NSE SME [email protected] (33.33%)",
+    "gmp": 27.0,
+    "last_updated": "12 Nov"
+  },
   "bombaycoatedandspecialsteelsemailprotected1098": {
     "name": "Bombay Coated and Special Steels IPO [email protected] (10.98%)",
     "gmp": 8.0,
-    "last_updated": "12 Nov"
-  },
-  "mksonsfinejewelsemailprotected556": {
-    "name": "M.K.Sons Fine Jewels IPO [email protected] (5.56%)",
-    "gmp": 11.0,
     "last_updated": "12 Nov"
   },
   "ajwaprojectsemailprotected0": {
@@ -49,19 +44,24 @@
     "gmp": 4.0,
     "last_updated": "12 Nov"
   },
+  "mksonsfinejewelsemailprotected556": {
+    "name": "M.K.Sons Fine Jewels IPO [email protected] (5.56%)",
+    "gmp": 11.0,
+    "last_updated": "12 Nov"
+  },
   "wisconemailprotected0": {
     "name": "Wiscon Industries BSE SME [email protected] (0%)",
     "gmp": 110.0,
     "last_updated": "12 Nov"
   },
-  "sfcenvironmentaltechnologiesemailprotected761": {
-    "name": "SFC Environmental Technologies IPO [email protected] (7.61%)",
-    "gmp": 15.5,
-    "last_updated": "12 Nov"
-  },
   "blspolymersemailprotected6533": {
     "name": "BLS Polymers IPO [email protected] (65.33%)",
     "gmp": 69.0,
+    "last_updated": "12 Nov"
+  },
+  "sfcenvironmentaltechnologiesemailprotected761": {
+    "name": "SFC Environmental Technologies IPO [email protected] (7.61%)",
+    "gmp": 15.5,
     "last_updated": "12 Nov"
   },
   "eaaaindiaalternativesemailprotected063": {
@@ -74,24 +74,19 @@
     "gmp": 54.82,
     "last_updated": "12 Nov"
   },
-  "parashealthcareemailprotected39": {
-    "name": "Paras Healthcare IPO [email protected] (3.9%)",
-    "gmp": 13.0,
-    "last_updated": "12 Nov"
-  },
   "jioplatformsemailprotected2136": {
     "name": "Jio Platforms IPO [email protected] (21.36%)",
     "gmp": 250.0,
     "last_updated": "12 Nov"
   },
-  "zetwerkemailprotected546": {
-    "name": "Zetwerk IPO [email protected] (5.46%)",
-    "gmp": 1.2,
+  "parashealthcareemailprotected39": {
+    "name": "Paras Healthcare IPO [email protected] (3.9%)",
+    "gmp": 13.0,
     "last_updated": "12 Nov"
   },
-  "tonboimagingindiaemailprotected6571": {
-    "name": "Tonbo Imaging India IPO [email protected] (65.71%)",
-    "gmp": 452.0,
+  "shellzindiaemailprotected0": {
+    "name": "Shellz India BSE SME [email protected] (0%)",
+    "gmp": 7.0,
     "last_updated": "12 Nov"
   },
   "sahajanandmedicaltechnologiesemailprotected789": {
@@ -99,14 +94,19 @@
     "gmp": 17.0,
     "last_updated": "12 Nov"
   },
+  "tonboimagingindiaemailprotected6571": {
+    "name": "Tonbo Imaging India IPO [email protected] (65.71%)",
+    "gmp": 452.0,
+    "last_updated": "12 Nov"
+  },
   "bonfigliolitransmissionsemailprotected0": {
     "name": "Bonfiglioli Transmissions IPO [email protected] (0%)",
     "gmp": 66.0,
     "last_updated": "12 Nov"
   },
-  "shellzindiaemailprotected0": {
-    "name": "Shellz India BSE SME [email protected] (0%)",
-    "gmp": 7.0,
+  "zetwerkemailprotected546": {
+    "name": "Zetwerk IPO [email protected] (5.46%)",
+    "gmp": 1.2,
     "last_updated": "12 Nov"
   },
   "ravitaengineeringemailprotected0": {
@@ -117,11 +117,6 @@
   "fusioncxemailprotected554": {
     "name": "Fusion CX IPO [email protected] (5.54%)",
     "gmp": 13.5,
-    "last_updated": "12 Nov"
-  },
-  "hdfireprotectemailprotected2362": {
-    "name": "HD Fire Protect IPO [email protected] (23.62%)",
-    "gmp": 70.0,
     "last_updated": "12 Nov"
   },
   "parleproducts": {
