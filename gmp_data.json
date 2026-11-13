@@ -1,4 +1,14 @@
 {
+  "watranarentalsu": {
+    "name": "Watrana Rentals NSE SME U",
+    "gmp": 120.1,
+    "last_updated": "13 Nov"
+  },
+  "crystalcropprotectionu": {
+    "name": "Crystal Crop Protection IPO U",
+    "gmp": 45.0,
+    "last_updated": "13 Nov"
+  },
   "antalaemailprotected20": {
     "name": "Antala Industries BSE SME [email protected] (-20%)",
     "gmp": 22.98,
@@ -9,19 +19,14 @@
     "gmp": 1.0,
     "last_updated": "13 Nov"
   },
-  "vectrasenproconemailprotected095": {
-    "name": "Vectras Enprocon BSE SME [email protected] (0.95%)",
-    "gmp": 53.05,
-    "last_updated": "13 Nov"
-  },
   "johnsoncabelectricalsemailprotected1925": {
     "name": "Johnsoncab Electricals BSE SME [email protected] (19.25%)",
     "gmp": 8.0,
     "last_updated": "13 Nov"
   },
-  "maxwellengineeringsolutionsemailprotected90": {
-    "name": "Maxwell Engineering Solutions NSE SME [email protected] (90%)",
-    "gmp": 105.0,
+  "vectrasenproconemailprotected095": {
+    "name": "Vectras Enprocon BSE SME [email protected] (0.95%)",
+    "gmp": 53.05,
     "last_updated": "13 Nov"
   },
   "hgsindiaemailprotected3333": {
@@ -29,9 +34,19 @@
     "gmp": 27.0,
     "last_updated": "13 Nov"
   },
+  "maxwellengineeringsolutionsemailprotected90": {
+    "name": "Maxwell Engineering Solutions NSE SME [email protected] (90%)",
+    "gmp": 105.0,
+    "last_updated": "13 Nov"
+  },
   "bombaycoatedandspecialsteelsemailprotected1098": {
     "name": "Bombay Coated and Special Steels IPO [email protected] (10.98%)",
     "gmp": 8.0,
+    "last_updated": "13 Nov"
+  },
+  "mksonsfinejewelsemailprotected556": {
+    "name": "M.K.Sons Fine Jewels IPO [email protected] (5.56%)",
+    "gmp": 11.0,
     "last_updated": "13 Nov"
   },
   "ajwaprojectsemailprotected0": {
@@ -44,9 +59,9 @@
     "gmp": 4.0,
     "last_updated": "13 Nov"
   },
-  "mksonsfinejewelsemailprotected556": {
-    "name": "M.K.Sons Fine Jewels IPO [email protected] (5.56%)",
-    "gmp": 11.0,
+  "sfcenvironmentaltechnologiesemailprotected761": {
+    "name": "SFC Environmental Technologies IPO [email protected] (7.61%)",
+    "gmp": 15.5,
     "last_updated": "13 Nov"
   },
   "wisconemailprotected0": {
@@ -59,11 +74,6 @@
     "gmp": 69.0,
     "last_updated": "13 Nov"
   },
-  "sfcenvironmentaltechnologiesemailprotected761": {
-    "name": "SFC Environmental Technologies IPO [email protected] (7.61%)",
-    "gmp": 15.5,
-    "last_updated": "13 Nov"
-  },
   "eaaaindiaalternativesemailprotected063": {
     "name": "EAAA India Alternatives IPO [email protected] (0.63%)",
     "gmp": 54.0,
@@ -74,19 +84,24 @@
     "gmp": 54.82,
     "last_updated": "13 Nov"
   },
-  "jioplatformsemailprotected2136": {
-    "name": "Jio Platforms IPO [email protected] (21.36%)",
-    "gmp": 250.0,
-    "last_updated": "13 Nov"
-  },
   "parashealthcareemailprotected39": {
     "name": "Paras Healthcare IPO [email protected] (3.9%)",
     "gmp": 13.0,
     "last_updated": "13 Nov"
   },
+  "jioplatformsemailprotected2136": {
+    "name": "Jio Platforms IPO [email protected] (21.36%)",
+    "gmp": 250.0,
+    "last_updated": "13 Nov"
+  },
   "shellzindiaemailprotected0": {
     "name": "Shellz India BSE SME [email protected] (0%)",
     "gmp": 7.0,
+    "last_updated": "13 Nov"
+  },
+  "bonfigliolitransmissionsemailprotected0": {
+    "name": "Bonfiglioli Transmissions IPO [email protected] (0%)",
+    "gmp": 66.0,
     "last_updated": "13 Nov"
   },
   "sahajanandmedicaltechnologiesemailprotected789": {
@@ -99,11 +114,6 @@
     "gmp": 452.0,
     "last_updated": "13 Nov"
   },
-  "bonfigliolitransmissionsemailprotected0": {
-    "name": "Bonfiglioli Transmissions IPO [email protected] (0%)",
-    "gmp": 66.0,
-    "last_updated": "13 Nov"
-  },
   "zetwerkemailprotected546": {
     "name": "Zetwerk IPO [email protected] (5.46%)",
     "gmp": 1.2,
@@ -112,11 +122,6 @@
   "ravitaengineeringemailprotected0": {
     "name": "Ravita Engineering Services NSE SME [email protected] (0%)",
     "gmp": 1.0,
-    "last_updated": "13 Nov"
-  },
-  "fusioncxemailprotected554": {
-    "name": "Fusion CX IPO [email protected] (5.54%)",
-    "gmp": 13.5,
     "last_updated": "13 Nov"
   },
   "parleproducts": {
