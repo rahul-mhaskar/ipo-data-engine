@@ -1,6 +1,42 @@
 [
   {
     "id": "1",
+    "name": "Crystal Crop Protection",
+    "symbol": "CRYSTAL",
+    "category": "Mainboard",
+    "status": "UPCOMING",
+    "logoUrl": null,
+    "issueSizeCr": 455.49,
+    "issuePriceMin": 259.0,
+    "issuePriceMax": 272.0,
+    "lotSize": 55,
+    "openDate": "2026-11-18",
+    "closeDate": "2026-11-20",
+    "allotmentDate": "2026-11-23",
+    "listingDate": "2026-11-26",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "financials": [],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "MUFG Intime India Private Limited",
+    "registrarUrl": "https://in.mpms.mufg.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/crystal_crop_protection_limited_-_red_herring_prospectus_compressed.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "2",
     "name": "Parle Products",
     "symbol": "PARLEPR",
     "category": "Mainboard",
@@ -70,7 +106,7 @@
     "closeNotified": false
   },
   {
-    "id": "2",
+    "id": "3",
     "name": "Twinkle Papers",
     "symbol": "TWINKLE",
     "category": "SME",
@@ -163,7 +199,7 @@
     "closeNotified": false
   },
   {
-    "id": "3",
+    "id": "4",
     "name": "Sri Priyanka Geo Commex",
     "symbol": "SPGCL",
     "category": "SME",
@@ -255,7 +291,7 @@
     "closeNotified": false
   },
   {
-    "id": "4",
+    "id": "5",
     "name": "Flipkart",
     "symbol": "FLIPKAR",
     "category": "Mainboard",
@@ -325,7 +361,7 @@
     "closeNotified": false
   },
   {
-    "id": "5",
+    "id": "6",
     "name": "Prestige Hospitality Ventures",
     "symbol": "PRESTIG",
     "category": "Mainboard",
@@ -419,7 +455,7 @@
     "closeNotified": false
   },
   {
-    "id": "6",
+    "id": "7",
     "name": "Credila Financial Services",
     "symbol": "CREDILA",
     "category": "Mainboard",
@@ -514,7 +550,7 @@
     "closeNotified": false
   },
   {
-    "id": "7",
+    "id": "8",
     "name": "PhonePe",
     "symbol": "PHONEPE",
     "category": "Mainboard",
@@ -612,7 +648,7 @@
     "closeNotified": false
   },
   {
-    "id": "8",
+    "id": "9",
     "name": "Zepto",
     "symbol": "ZEPTO",
     "category": "Mainboard",
@@ -709,7 +745,7 @@
     "closeNotified": false
   },
   {
-    "id": "9",
+    "id": "10",
     "name": "Solar91 Cleantech",
     "symbol": "SOLAR91",
     "category": "SME",
@@ -779,7 +815,7 @@
     "closeNotified": false
   },
   {
-    "id": "10",
+    "id": "11",
     "name": "Hero FinCorp",
     "symbol": "HEROFIN",
     "category": "Mainboard",
@@ -877,7 +913,7 @@
     "closeNotified": false
   },
   {
-    "id": "11",
+    "id": "12",
     "name": "Deltatech Gaming",
     "symbol": "DELTATE",
     "category": "Mainboard",
@@ -947,7 +983,7 @@
     "closeNotified": false
   },
   {
-    "id": "12",
+    "id": "13",
     "name": "Biba Fashions",
     "symbol": "BIBAFAS",
     "category": "Mainboard",
@@ -1017,7 +1053,7 @@
     "closeNotified": false
   },
   {
-    "id": "13",
+    "id": "14",
     "name": "Droom Technology",
     "symbol": "DROOMTE",
     "category": "Mainboard",
@@ -1087,7 +1123,7 @@
     "closeNotified": false
   },
   {
-    "id": "14",
+    "id": "15",
     "name": "Puranik Builders",
     "symbol": "PURANIK",
     "category": "Mainboard",
@@ -1157,7 +1193,7 @@
     "closeNotified": false
   },
   {
-    "id": "15",
+    "id": "16",
     "name": "Bharat FIH",
     "symbol": "BHARATF",
     "category": "Mainboard",
@@ -1227,7 +1263,7 @@
     "closeNotified": false
   },
   {
-    "id": "16",
+    "id": "17",
     "name": "FabIndia",
     "symbol": "FABINDI",
     "category": "Mainboard",
@@ -1297,7 +1333,7 @@
     "closeNotified": false
   },
   {
-    "id": "17",
+    "id": "18",
     "name": "OYO",
     "symbol": "OYO",
     "category": "Mainboard",
@@ -1395,7 +1431,7 @@
     "closeNotified": false
   },
   {
-    "id": "18",
+    "id": "19",
     "name": "EBIXCASH",
     "symbol": "EBIXCAS",
     "category": "Mainboard",
@@ -1465,7 +1501,7 @@
     "closeNotified": false
   },
   {
-    "id": "19",
+    "id": "20",
     "name": "BoAt",
     "symbol": "BOAT",
     "category": "Mainboard",
@@ -1555,76 +1591,6 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=/sebi_data/attachdocs/jan-2022/1643353844101.PDF#page=2&zoom=page-width,-15,379",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "20",
-    "name": "Navi Technologies",
-    "symbol": "NAVITEC",
-    "category": "Mainboard",
-    "status": "UPCOMING",
-    "logoUrl": null,
-    "issueSizeCr": 0.0,
-    "issuePriceMin": 0.0,
-    "issuePriceMax": 0.0,
-    "lotSize": 0,
-    "openDate": "To Be Updated",
-    "closeDate": "To Be Updated",
-    "allotmentDate": "To Be Updated",
-    "listingDate": "To Be Updated",
-    "gmpAmount": 15.5,
-    "gmpPercent": 0.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "07 Nov",
-        "amount": 15.5
-      },
-      {
-        "dateLabel": "09 Nov",
-        "amount": 15.5
-      },
-      {
-        "dateLabel": "10 Nov",
-        "amount": 15.5
-      },
-      {
-        "dateLabel": "11 Nov",
-        "amount": 15.5
-      },
-      {
-        "dateLabel": "12 Nov",
-        "amount": 15.5
-      },
-      {
-        "dateLabel": "13 Nov",
-        "amount": 15.5
-      },
-      {
-        "dateLabel": "14 Nov",
-        "amount": 15.5
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 0.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [],
-    "anchorPortionCr": 0.0,
-    "financials": [],
-    "subscriptionTotal": 0.0,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Link Intime India Private Limited",
-    "registrarUrl": "www.linkintime.co.in",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "",
-    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/oct-2021/1633066313151.pdf#page=1&zoom=page-width,-16,379",
     "openNotified": false,
     "closeNotified": false
   },
@@ -3387,6 +3353,76 @@
   },
   {
     "id": "41",
+    "name": "Navi Technologies",
+    "symbol": "NAVITEC",
+    "category": "Mainboard",
+    "status": "UPCOMING",
+    "logoUrl": null,
+    "issueSizeCr": 0.0,
+    "issuePriceMin": 0.0,
+    "issuePriceMax": 0.0,
+    "lotSize": 0,
+    "openDate": "To Be Updated",
+    "closeDate": "To Be Updated",
+    "allotmentDate": "To Be Updated",
+    "listingDate": "To Be Updated",
+    "gmpAmount": 15.5,
+    "gmpPercent": 0.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "09 Nov",
+        "amount": 15.5
+      },
+      {
+        "dateLabel": "10 Nov",
+        "amount": 15.5
+      },
+      {
+        "dateLabel": "11 Nov",
+        "amount": 15.5
+      },
+      {
+        "dateLabel": "12 Nov",
+        "amount": 15.5
+      },
+      {
+        "dateLabel": "13 Nov",
+        "amount": 15.5
+      },
+      {
+        "dateLabel": "14 Nov",
+        "amount": 15.5
+      },
+      {
+        "dateLabel": "16 Nov",
+        "amount": 15.5
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "financials": [],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Link Intime India Private Limited",
+    "registrarUrl": "www.linkintime.co.in",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "",
+    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/oct-2021/1633066313151.pdf#page=1&zoom=page-width,-16,379",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "42",
     "name": "Zetwerk Manufacturing",
     "symbol": "ZETWERK",
     "category": "Mainboard",
@@ -3451,7 +3487,7 @@
     "closeNotified": true
   },
   {
-    "id": "42",
+    "id": "43",
     "name": "Bonfiglioli Transmissions",
     "symbol": "BONFIG",
     "category": "Mainboard",
@@ -3535,7 +3571,7 @@
     "closeNotified": true
   },
   {
-    "id": "43",
+    "id": "44",
     "name": "Ravita Engineering Services",
     "symbol": "RAVITA",
     "category": "SME",
@@ -3619,7 +3655,7 @@
     "closeNotified": true
   },
   {
-    "id": "44",
+    "id": "45",
     "name": "Fusion CX",
     "symbol": "FUSIONCX",
     "category": "Mainboard",
@@ -3703,7 +3739,7 @@
     "closeNotified": true
   },
   {
-    "id": "45",
+    "id": "46",
     "name": "HD Fire Protect",
     "symbol": "HDFIRE",
     "category": "Mainboard",
@@ -3768,7 +3804,7 @@
     "closeNotified": true
   },
   {
-    "id": "46",
+    "id": "47",
     "name": "Vaibhav Vyapaar",
     "symbol": "LOANFRONT",
     "category": "SME",
@@ -3833,7 +3869,7 @@
     "closeNotified": true
   },
   {
-    "id": "47",
+    "id": "48",
     "name": "R.K.Fashion Accessories",
     "symbol": "RKFAL",
     "category": "SME",
@@ -3898,7 +3934,7 @@
     "closeNotified": false
   },
   {
-    "id": "48",
+    "id": "49",
     "name": "TNA Solutions",
     "symbol": "TNA",
     "category": "SME",
@@ -3963,7 +3999,7 @@
     "closeNotified": false
   },
   {
-    "id": "49",
+    "id": "50",
     "name": "Acme India Industries",
     "symbol": "ACMERAIL",
     "category": "SME",
@@ -4028,7 +4064,7 @@
     "closeNotified": false
   },
   {
-    "id": "50",
+    "id": "51",
     "name": "Paramount Syntex",
     "symbol": "PARASYNTEX",
     "category": "SME",
@@ -4093,7 +4129,7 @@
     "closeNotified": false
   },
   {
-    "id": "51",
+    "id": "52",
     "name": "Shree TNB Polymers",
     "symbol": "SHREETNB",
     "category": "SME",
@@ -4158,7 +4194,7 @@
     "closeNotified": false
   },
   {
-    "id": "52",
+    "id": "53",
     "name": "EverestIMS Technologies",
     "symbol": "EIMS",
     "category": "SME",
@@ -4223,7 +4259,7 @@
     "closeNotified": false
   },
   {
-    "id": "53",
+    "id": "54",
     "name": "Eventions",
     "symbol": "EVENTIONS",
     "category": "SME",
@@ -4288,7 +4324,7 @@
     "closeNotified": false
   },
   {
-    "id": "54",
+    "id": "55",
     "name": "Dove Soft",
     "symbol": "DSL",
     "category": "SME",
@@ -4353,7 +4389,7 @@
     "closeNotified": false
   },
   {
-    "id": "55",
+    "id": "56",
     "name": "SJP Ultrasonic",
     "symbol": "SJP",
     "category": "SME",
@@ -4418,7 +4454,7 @@
     "closeNotified": false
   },
   {
-    "id": "56",
+    "id": "57",
     "name": "Omara Ventures India",
     "symbol": "OMARA",
     "category": "SME",
@@ -4483,7 +4519,7 @@
     "closeNotified": false
   },
   {
-    "id": "57",
+    "id": "58",
     "name": "Sollfege Smart Electronics",
     "symbol": "SOLLFEGE",
     "category": "SME",
@@ -4548,7 +4584,7 @@
     "closeNotified": false
   },
   {
-    "id": "58",
+    "id": "59",
     "name": "Nityas Gems & Jewellery",
     "symbol": "NITYAS",
     "category": "Mainboard",
@@ -4609,7 +4645,7 @@
     "closeNotified": false
   },
   {
-    "id": "59",
+    "id": "60",
     "name": "Vishal Nirmiti",
     "symbol": "VNL",
     "category": "Mainboard",
@@ -4670,7 +4706,7 @@
     "closeNotified": false
   },
   {
-    "id": "60",
+    "id": "61",
     "name": "Green Asia Impex",
     "symbol": "GREENASIA",
     "category": "SME",
@@ -4731,7 +4767,7 @@
     "closeNotified": false
   },
   {
-    "id": "61",
+    "id": "62",
     "name": "Black Opal Consultants",
     "symbol": "BLACKOPAL",
     "category": "SME",
@@ -4792,7 +4828,7 @@
     "closeNotified": false
   },
   {
-    "id": "62",
+    "id": "63",
     "name": "Papadmalji Agro Foods",
     "symbol": "PAPADMALJI",
     "category": "SME",
@@ -4853,7 +4889,7 @@
     "closeNotified": false
   },
   {
-    "id": "63",
+    "id": "64",
     "name": "Vans Electroengineerings",
     "symbol": "VANS",
     "category": "SME",
@@ -4914,7 +4950,7 @@
     "closeNotified": false
   },
   {
-    "id": "64",
+    "id": "65",
     "name": "Pind Hospitality",
     "symbol": "PIND",
     "category": "SME",
@@ -4975,7 +5011,7 @@
     "closeNotified": false
   },
   {
-    "id": "65",
+    "id": "66",
     "name": "Shah Investor’s Home",
     "symbol": "SHAHINVEST",
     "category": "Mainboard",
@@ -5007,7 +5043,7 @@
     "closeNotified": false
   },
   {
-    "id": "66",
+    "id": "67",
     "name": "Shivchem Agro",
     "symbol": "SHIVCHEM",
     "category": "SME",
@@ -5068,7 +5104,7 @@
     "closeNotified": false
   },
   {
-    "id": "67",
+    "id": "68",
     "name": "SRIT India",
     "symbol": "SRIT",
     "category": "Mainboard",
@@ -5129,7 +5165,7 @@
     ]
   },
   {
-    "id": "68",
+    "id": "69",
     "name": "Acme Universal Safezone 9",
     "symbol": "ACMEUNIV",
     "category": "SME",
@@ -5188,7 +5224,7 @@
     ]
   },
   {
-    "id": "69",
+    "id": "70",
     "name": "Sai Urja Indo Ventures",
     "symbol": "SAIURJA",
     "category": "SME",
@@ -5247,7 +5283,7 @@
     ]
   },
   {
-    "id": "70",
+    "id": "71",
     "name": "Runwal Enterprises",
     "symbol": "RUNWALENTR",
     "category": "Mainboard",
@@ -5306,7 +5342,7 @@
     ]
   },
   {
-    "id": "71",
+    "id": "72",
     "name": "German Green Steel & Power",
     "symbol": "GERMAN",
     "category": "Mainboard",
@@ -5365,7 +5401,7 @@
     ]
   },
   {
-    "id": "72",
+    "id": "73",
     "name": "Orient Cables (India)",
     "symbol": "ORIENTCABL",
     "category": "Mainboard",
@@ -5424,7 +5460,7 @@
     ]
   },
   {
-    "id": "73",
+    "id": "74",
     "name": "Acevector (Snapdeal)",
     "symbol": "ACEVECTOR",
     "category": "Mainboard",
@@ -5483,7 +5519,7 @@
     ]
   },
   {
-    "id": "74",
+    "id": "75",
     "name": "Himalayan Solar",
     "symbol": "HIMALAYAN",
     "category": "SME",
@@ -5542,7 +5578,7 @@
     ]
   },
   {
-    "id": "75",
+    "id": "76",
     "name": "Dudani Retail",
     "symbol": "DUDANI",
     "category": "SME",
@@ -5601,7 +5637,7 @@
     ]
   },
   {
-    "id": "76",
+    "id": "77",
     "name": "Bench Mark Infotech Services",
     "symbol": "BMISL",
     "category": "SME",
@@ -5660,7 +5696,7 @@
     ]
   },
   {
-    "id": "77",
+    "id": "78",
     "name": "A-One Steels India",
     "symbol": "AONESTEELS",
     "category": "Mainboard",
@@ -5719,7 +5755,7 @@
     ]
   },
   {
-    "id": "78",
+    "id": "79",
     "name": "Moneyview",
     "symbol": "MONEYVIEW",
     "category": "Mainboard",
@@ -5778,7 +5814,7 @@
     ]
   },
   {
-    "id": "79",
+    "id": "80",
     "name": "Peshwa Wheat",
     "symbol": "PESHWA",
     "category": "SME",
@@ -5837,7 +5873,7 @@
     ]
   },
   {
-    "id": "80",
+    "id": "81",
     "name": "Roopa Screen",
     "symbol": "ROOPA",
     "category": "SME",
@@ -5896,7 +5932,7 @@
     ]
   },
   {
-    "id": "81",
+    "id": "82",
     "name": "ArMee Infotech",
     "symbol": "ARMEE",
     "category": "Mainboard",
@@ -5955,7 +5991,7 @@
     ]
   },
   {
-    "id": "82",
+    "id": "83",
     "name": "S.K.Offset",
     "symbol": "SKOFFSET",
     "category": "SME",
@@ -6014,7 +6050,7 @@
     ]
   },
   {
-    "id": "83",
+    "id": "84",
     "name": "Unitec Fibres",
     "symbol": "UNITEC",
     "category": "SME",
@@ -6073,7 +6109,7 @@
     ]
   },
   {
-    "id": "84",
+    "id": "85",
     "name": "Adroit Industries (India)",
     "symbol": "ADROITIND",
     "category": "Mainboard",
@@ -6130,7 +6166,7 @@
     ]
   },
   {
-    "id": "85",
+    "id": "86",
     "name": "Swastika Infra",
     "symbol": "SWASTIKAIN",
     "category": "Mainboard",
@@ -6187,7 +6223,7 @@
     ]
   },
   {
-    "id": "86",
+    "id": "87",
     "name": "Liqvd Digital India",
     "symbol": "LIQVD",
     "category": "SME",
@@ -6244,7 +6280,7 @@
     ]
   },
   {
-    "id": "87",
+    "id": "88",
     "name": "Pooja Logistics",
     "symbol": "POOJALOGIS",
     "category": "SME",
@@ -6301,7 +6337,7 @@
     ]
   },
   {
-    "id": "88",
+    "id": "89",
     "name": "Coreintegra Consulting Services",
     "symbol": "COREIN",
     "category": "SME",
