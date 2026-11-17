@@ -1,7 +1,7 @@
 {
   "mahanadicoalfieldsu": {
     "name": "Mahanadi Coalfields IPO U",
-    "gmp": 4.6,
+    "gmp": 4.0,
     "last_updated": "17 Nov"
   },
   "watranarentalsu": {
@@ -124,14 +124,14 @@
     "gmp": 452.0,
     "last_updated": "17 Nov"
   },
+  "watranarentals": {
+    "name": "Watrana Rentals",
+    "gmp": 0.0,
+    "last_updated": "17 Nov"
+  },
   "crystalcropprotection": {
     "name": "Crystal Crop Protection",
     "gmp": 13.0,
-    "last_updated": "17 Nov"
-  },
-  "mahanadicoalfields": {
-    "name": "Mahanadi Coalfields",
-    "gmp": 0.0,
     "last_updated": "17 Nov"
   },
   "parleproducts": {
@@ -227,6 +227,11 @@
   "boat": {
     "name": "BoAt",
     "gmp": 0.0,
+    "last_updated": "17 Nov"
+  },
+  "navitechnologies": {
+    "name": "Navi Technologies",
+    "gmp": 15.5,
     "last_updated": "17 Nov"
   },
   "antala": {
@@ -329,9 +334,9 @@
     "gmp": 7.0,
     "last_updated": "17 Nov"
   },
-  "navitechnologies": {
-    "name": "Navi Technologies",
-    "gmp": 15.5,
+  "mahanadicoalfields": {
+    "name": "Mahanadi Coalfields",
+    "gmp": 0.0,
     "last_updated": "17 Nov"
   },
   "zetwerkmanufacturing": {
