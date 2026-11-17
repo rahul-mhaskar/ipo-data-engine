@@ -2,18 +2,18 @@
   {
     "id": "1",
     "name": "Crystal Crop Protection",
-    "symbol": "CRYSTAL",
+    "symbol": "CRYSTALCP",
     "category": "Mainboard",
     "status": "UPCOMING",
     "logoUrl": null,
-    "issueSizeCr": 455.49,
+    "issueSizeCr": 455.0,
     "issuePriceMin": 259.0,
     "issuePriceMax": 272.0,
     "lotSize": 55,
     "openDate": "2026-11-18",
     "closeDate": "2026-11-20",
     "allotmentDate": "2026-11-23",
-    "listingDate": "2026-11-26",
+    "listingDate": "2026-11-25",
     "gmpAmount": 13.0,
     "gmpPercent": 4.78,
     "gmpHistory": [
@@ -74,6 +74,42 @@
   },
   {
     "id": "2",
+    "name": "Mahanadi Coalfields",
+    "symbol": "MAHANAD",
+    "category": "Mainboard",
+    "status": "UPCOMING",
+    "logoUrl": null,
+    "issueSizeCr": 8981.12,
+    "issuePriceMin": 129.0,
+    "issuePriceMax": 136.0,
+    "lotSize": 110,
+    "openDate": "2026-11-19",
+    "closeDate": "2026-11-23",
+    "allotmentDate": "2026-11-25",
+    "listingDate": "2026-11-27",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "financials": [],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KFin Technologies Limited",
+    "registrarUrl": "https://www.kfintech.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Mahanadi Coalfields Ltd -Red Herring Prospectus-1794636910_compressed.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "3",
     "name": "Parle Products",
     "symbol": "PARLEPR",
     "category": "Mainboard",
@@ -143,7 +179,7 @@
     "closeNotified": false
   },
   {
-    "id": "3",
+    "id": "4",
     "name": "Twinkle Papers",
     "symbol": "TWINKLE",
     "category": "SME",
@@ -236,7 +272,7 @@
     "closeNotified": false
   },
   {
-    "id": "4",
+    "id": "5",
     "name": "Sri Priyanka Geo Commex",
     "symbol": "SPGCL",
     "category": "SME",
@@ -328,7 +364,7 @@
     "closeNotified": false
   },
   {
-    "id": "5",
+    "id": "6",
     "name": "Flipkart",
     "symbol": "FLIPKAR",
     "category": "Mainboard",
@@ -398,7 +434,7 @@
     "closeNotified": false
   },
   {
-    "id": "6",
+    "id": "7",
     "name": "Prestige Hospitality Ventures",
     "symbol": "PRESTIG",
     "category": "Mainboard",
@@ -492,7 +528,7 @@
     "closeNotified": false
   },
   {
-    "id": "7",
+    "id": "8",
     "name": "Credila Financial Services",
     "symbol": "CREDILA",
     "category": "Mainboard",
@@ -587,7 +623,7 @@
     "closeNotified": false
   },
   {
-    "id": "8",
+    "id": "9",
     "name": "PhonePe",
     "symbol": "PHONEPE",
     "category": "Mainboard",
@@ -685,7 +721,7 @@
     "closeNotified": false
   },
   {
-    "id": "9",
+    "id": "10",
     "name": "Zepto",
     "symbol": "ZEPTO",
     "category": "Mainboard",
@@ -782,7 +818,7 @@
     "closeNotified": false
   },
   {
-    "id": "10",
+    "id": "11",
     "name": "Solar91 Cleantech",
     "symbol": "SOLAR91",
     "category": "SME",
@@ -852,7 +888,7 @@
     "closeNotified": false
   },
   {
-    "id": "11",
+    "id": "12",
     "name": "Hero FinCorp",
     "symbol": "HEROFIN",
     "category": "Mainboard",
@@ -950,7 +986,7 @@
     "closeNotified": false
   },
   {
-    "id": "12",
+    "id": "13",
     "name": "Deltatech Gaming",
     "symbol": "DELTATE",
     "category": "Mainboard",
@@ -1020,7 +1056,7 @@
     "closeNotified": false
   },
   {
-    "id": "13",
+    "id": "14",
     "name": "Biba Fashions",
     "symbol": "BIBAFAS",
     "category": "Mainboard",
@@ -1090,7 +1126,7 @@
     "closeNotified": false
   },
   {
-    "id": "14",
+    "id": "15",
     "name": "Droom Technology",
     "symbol": "DROOMTE",
     "category": "Mainboard",
@@ -1160,7 +1196,7 @@
     "closeNotified": false
   },
   {
-    "id": "15",
+    "id": "16",
     "name": "Puranik Builders",
     "symbol": "PURANIK",
     "category": "Mainboard",
@@ -1230,7 +1266,7 @@
     "closeNotified": false
   },
   {
-    "id": "16",
+    "id": "17",
     "name": "Bharat FIH",
     "symbol": "BHARATF",
     "category": "Mainboard",
@@ -1300,7 +1336,7 @@
     "closeNotified": false
   },
   {
-    "id": "17",
+    "id": "18",
     "name": "FabIndia",
     "symbol": "FABINDI",
     "category": "Mainboard",
@@ -1370,7 +1406,7 @@
     "closeNotified": false
   },
   {
-    "id": "18",
+    "id": "19",
     "name": "OYO",
     "symbol": "OYO",
     "category": "Mainboard",
@@ -1468,7 +1504,7 @@
     "closeNotified": false
   },
   {
-    "id": "19",
+    "id": "20",
     "name": "EBIXCASH",
     "symbol": "EBIXCAS",
     "category": "Mainboard",
@@ -1538,7 +1574,7 @@
     "closeNotified": false
   },
   {
-    "id": "20",
+    "id": "21",
     "name": "BoAt",
     "symbol": "BOAT",
     "category": "Mainboard",
@@ -1632,7 +1668,7 @@
     "closeNotified": false
   },
   {
-    "id": "21",
+    "id": "22",
     "name": "Antala Industries",
     "symbol": "ANTALA",
     "category": "SME",
@@ -1724,7 +1760,7 @@
     "closeNotified": false
   },
   {
-    "id": "22",
+    "id": "23",
     "name": "Vedant Poly Fabs",
     "symbol": "VPFL",
     "category": "SME",
@@ -1816,7 +1852,7 @@
     "closeNotified": false
   },
   {
-    "id": "23",
+    "id": "24",
     "name": "Maxwell Engineering Solutions",
     "symbol": "MAXENGS",
     "category": "SME",
@@ -1908,7 +1944,7 @@
     "closeNotified": false
   },
   {
-    "id": "24",
+    "id": "25",
     "name": "HGS (India)",
     "symbol": "HGSINDIALT",
     "category": "SME",
@@ -2000,7 +2036,7 @@
     "closeNotified": false
   },
   {
-    "id": "25",
+    "id": "26",
     "name": "Johnsoncab Electricals",
     "symbol": "JOHNSONCAB",
     "category": "SME",
@@ -2093,7 +2129,7 @@
     "closeNotified": false
   },
   {
-    "id": "26",
+    "id": "27",
     "name": "Vectras Enprocon",
     "symbol": "VECTRAS",
     "category": "SME",
@@ -2185,7 +2221,7 @@
     "closeNotified": false
   },
   {
-    "id": "27",
+    "id": "28",
     "name": "Bombay Coated & Special Steels",
     "symbol": "BCSSL",
     "category": "Mainboard",
@@ -2255,7 +2291,7 @@
     "closeNotified": false
   },
   {
-    "id": "28",
+    "id": "29",
     "name": "M.K.Sons Fine Jewels",
     "symbol": "MKSONS",
     "category": "Mainboard",
@@ -2346,7 +2382,7 @@
     "closeNotified": false
   },
   {
-    "id": "29",
+    "id": "30",
     "name": "Carver Roboweld",
     "symbol": "CRL",
     "category": "SME",
@@ -2438,7 +2474,7 @@
     "closeNotified": false
   },
   {
-    "id": "30",
+    "id": "31",
     "name": "Ajwa Projects",
     "symbol": "AJWA",
     "category": "SME",
@@ -2530,7 +2566,7 @@
     "closeNotified": false
   },
   {
-    "id": "31",
+    "id": "32",
     "name": "BLS Polymers",
     "symbol": "BLSPOLY",
     "category": "Mainboard",
@@ -2621,7 +2657,7 @@
     "closeNotified": false
   },
   {
-    "id": "32",
+    "id": "33",
     "name": "SFC Environmental Technologies",
     "symbol": "SFCTECH",
     "category": "Mainboard",
@@ -2714,7 +2750,7 @@
     "closeNotified": false
   },
   {
-    "id": "33",
+    "id": "34",
     "name": "Wiscon Industries",
     "symbol": "WISCON",
     "category": "SME",
@@ -2794,7 +2830,7 @@
     "closeNotified": false
   },
   {
-    "id": "34",
+    "id": "35",
     "name": "EAAA India Alternatives",
     "symbol": "EDELALTS",
     "category": "Mainboard",
@@ -2888,7 +2924,7 @@
     "closeNotified": false
   },
   {
-    "id": "35",
+    "id": "36",
     "name": "Core4 Engineers",
     "symbol": "CORE4",
     "category": "SME",
@@ -2974,7 +3010,7 @@
     "closeNotified": false
   },
   {
-    "id": "36",
+    "id": "37",
     "name": "Reliance Jio",
     "symbol": "JPL",
     "category": "Mainboard",
@@ -3063,7 +3099,7 @@
     "closeNotified": true
   },
   {
-    "id": "37",
+    "id": "38",
     "name": "Paras Healthcare",
     "symbol": "PARASHLTH",
     "category": "Mainboard",
@@ -3156,7 +3192,7 @@
     "closeNotified": true
   },
   {
-    "id": "38",
+    "id": "39",
     "name": "Sahajanand Medical Technologies",
     "symbol": "SMT",
     "category": "Mainboard",
@@ -3221,7 +3257,7 @@
     "closeNotified": true
   },
   {
-    "id": "39",
+    "id": "40",
     "name": "Tonbo Imaging India",
     "symbol": "TONBO",
     "category": "Mainboard",
@@ -3305,7 +3341,7 @@
     "closeNotified": true
   },
   {
-    "id": "40",
+    "id": "41",
     "name": "Shellz India",
     "symbol": "SHELLZ",
     "category": "SME",
@@ -3389,7 +3425,7 @@
     "closeNotified": true
   },
   {
-    "id": "41",
+    "id": "42",
     "name": "Navi Technologies",
     "symbol": "NAVITEC",
     "category": "Mainboard",
@@ -3459,7 +3495,7 @@
     "closeNotified": false
   },
   {
-    "id": "42",
+    "id": "43",
     "name": "Zetwerk Manufacturing",
     "symbol": "ZETWERK",
     "category": "Mainboard",
@@ -3524,7 +3560,7 @@
     "closeNotified": true
   },
   {
-    "id": "43",
+    "id": "44",
     "name": "Bonfiglioli Transmissions",
     "symbol": "BONFIG",
     "category": "Mainboard",
@@ -3608,7 +3644,7 @@
     "closeNotified": true
   },
   {
-    "id": "44",
+    "id": "45",
     "name": "Ravita Engineering Services",
     "symbol": "RAVITA",
     "category": "SME",
@@ -3692,7 +3728,7 @@
     "closeNotified": true
   },
   {
-    "id": "45",
+    "id": "46",
     "name": "Fusion CX",
     "symbol": "FUSIONCX",
     "category": "Mainboard",
@@ -3776,7 +3812,7 @@
     "closeNotified": true
   },
   {
-    "id": "46",
+    "id": "47",
     "name": "HD Fire Protect",
     "symbol": "HDFIRE",
     "category": "Mainboard",
@@ -3841,7 +3877,7 @@
     "closeNotified": true
   },
   {
-    "id": "47",
+    "id": "48",
     "name": "Vaibhav Vyapaar",
     "symbol": "LOANFRONT",
     "category": "SME",
@@ -3906,7 +3942,7 @@
     "closeNotified": true
   },
   {
-    "id": "48",
+    "id": "49",
     "name": "R.K.Fashion Accessories",
     "symbol": "RKFAL",
     "category": "SME",
@@ -3971,7 +4007,7 @@
     "closeNotified": false
   },
   {
-    "id": "49",
+    "id": "50",
     "name": "TNA Solutions",
     "symbol": "TNA",
     "category": "SME",
@@ -4036,7 +4072,7 @@
     "closeNotified": false
   },
   {
-    "id": "50",
+    "id": "51",
     "name": "Acme India Industries",
     "symbol": "ACMERAIL",
     "category": "SME",
@@ -4101,7 +4137,7 @@
     "closeNotified": false
   },
   {
-    "id": "51",
+    "id": "52",
     "name": "Paramount Syntex",
     "symbol": "PARASYNTEX",
     "category": "SME",
@@ -4166,7 +4202,7 @@
     "closeNotified": false
   },
   {
-    "id": "52",
+    "id": "53",
     "name": "Shree TNB Polymers",
     "symbol": "SHREETNB",
     "category": "SME",
@@ -4231,7 +4267,7 @@
     "closeNotified": false
   },
   {
-    "id": "53",
+    "id": "54",
     "name": "EverestIMS Technologies",
     "symbol": "EIMS",
     "category": "SME",
@@ -4296,7 +4332,7 @@
     "closeNotified": false
   },
   {
-    "id": "54",
+    "id": "55",
     "name": "Eventions",
     "symbol": "EVENTIONS",
     "category": "SME",
@@ -4361,7 +4397,7 @@
     "closeNotified": false
   },
   {
-    "id": "55",
+    "id": "56",
     "name": "Dove Soft",
     "symbol": "DSL",
     "category": "SME",
@@ -4426,7 +4462,7 @@
     "closeNotified": false
   },
   {
-    "id": "56",
+    "id": "57",
     "name": "SJP Ultrasonic",
     "symbol": "SJP",
     "category": "SME",
@@ -4491,7 +4527,7 @@
     "closeNotified": false
   },
   {
-    "id": "57",
+    "id": "58",
     "name": "Omara Ventures India",
     "symbol": "OMARA",
     "category": "SME",
@@ -4556,7 +4592,7 @@
     "closeNotified": false
   },
   {
-    "id": "58",
+    "id": "59",
     "name": "Sollfege Smart Electronics",
     "symbol": "SOLLFEGE",
     "category": "SME",
@@ -4621,7 +4657,7 @@
     "closeNotified": false
   },
   {
-    "id": "59",
+    "id": "60",
     "name": "Nityas Gems & Jewellery",
     "symbol": "NITYAS",
     "category": "Mainboard",
@@ -4682,7 +4718,7 @@
     "closeNotified": false
   },
   {
-    "id": "60",
+    "id": "61",
     "name": "Vishal Nirmiti",
     "symbol": "VNL",
     "category": "Mainboard",
@@ -4743,7 +4779,7 @@
     "closeNotified": false
   },
   {
-    "id": "61",
+    "id": "62",
     "name": "Green Asia Impex",
     "symbol": "GREENASIA",
     "category": "SME",
@@ -4804,7 +4840,7 @@
     "closeNotified": false
   },
   {
-    "id": "62",
+    "id": "63",
     "name": "Black Opal Consultants",
     "symbol": "BLACKOPAL",
     "category": "SME",
@@ -4865,7 +4901,7 @@
     "closeNotified": false
   },
   {
-    "id": "63",
+    "id": "64",
     "name": "Papadmalji Agro Foods",
     "symbol": "PAPADMALJI",
     "category": "SME",
@@ -4926,7 +4962,7 @@
     "closeNotified": false
   },
   {
-    "id": "64",
+    "id": "65",
     "name": "Vans Electroengineerings",
     "symbol": "VANS",
     "category": "SME",
@@ -4987,7 +5023,7 @@
     "closeNotified": false
   },
   {
-    "id": "65",
+    "id": "66",
     "name": "Pind Hospitality",
     "symbol": "PIND",
     "category": "SME",
@@ -5048,7 +5084,7 @@
     "closeNotified": false
   },
   {
-    "id": "66",
+    "id": "67",
     "name": "Shah Investor’s Home",
     "symbol": "SHAHINVEST",
     "category": "Mainboard",
@@ -5080,7 +5116,7 @@
     "closeNotified": false
   },
   {
-    "id": "67",
+    "id": "68",
     "name": "Shivchem Agro",
     "symbol": "SHIVCHEM",
     "category": "SME",
@@ -5141,7 +5177,7 @@
     "closeNotified": false
   },
   {
-    "id": "68",
+    "id": "69",
     "name": "SRIT India",
     "symbol": "SRIT",
     "category": "Mainboard",
@@ -5202,7 +5238,7 @@
     ]
   },
   {
-    "id": "69",
+    "id": "70",
     "name": "Acme Universal Safezone 9",
     "symbol": "ACMEUNIV",
     "category": "SME",
@@ -5261,7 +5297,7 @@
     ]
   },
   {
-    "id": "70",
+    "id": "71",
     "name": "Sai Urja Indo Ventures",
     "symbol": "SAIURJA",
     "category": "SME",
@@ -5320,7 +5356,7 @@
     ]
   },
   {
-    "id": "71",
+    "id": "72",
     "name": "Runwal Enterprises",
     "symbol": "RUNWALENTR",
     "category": "Mainboard",
@@ -5379,7 +5415,7 @@
     ]
   },
   {
-    "id": "72",
+    "id": "73",
     "name": "German Green Steel & Power",
     "symbol": "GERMAN",
     "category": "Mainboard",
@@ -5438,7 +5474,7 @@
     ]
   },
   {
-    "id": "73",
+    "id": "74",
     "name": "Orient Cables (India)",
     "symbol": "ORIENTCABL",
     "category": "Mainboard",
@@ -5497,7 +5533,7 @@
     ]
   },
   {
-    "id": "74",
+    "id": "75",
     "name": "Acevector (Snapdeal)",
     "symbol": "ACEVECTOR",
     "category": "Mainboard",
@@ -5556,7 +5592,7 @@
     ]
   },
   {
-    "id": "75",
+    "id": "76",
     "name": "Himalayan Solar",
     "symbol": "HIMALAYAN",
     "category": "SME",
@@ -5615,7 +5651,7 @@
     ]
   },
   {
-    "id": "76",
+    "id": "77",
     "name": "Dudani Retail",
     "symbol": "DUDANI",
     "category": "SME",
@@ -5674,7 +5710,7 @@
     ]
   },
   {
-    "id": "77",
+    "id": "78",
     "name": "Bench Mark Infotech Services",
     "symbol": "BMISL",
     "category": "SME",
@@ -5733,7 +5769,7 @@
     ]
   },
   {
-    "id": "78",
+    "id": "79",
     "name": "A-One Steels India",
     "symbol": "AONESTEELS",
     "category": "Mainboard",
@@ -5792,7 +5828,7 @@
     ]
   },
   {
-    "id": "79",
+    "id": "80",
     "name": "Moneyview",
     "symbol": "MONEYVIEW",
     "category": "Mainboard",
@@ -5851,7 +5887,7 @@
     ]
   },
   {
-    "id": "80",
+    "id": "81",
     "name": "Peshwa Wheat",
     "symbol": "PESHWA",
     "category": "SME",
@@ -5910,7 +5946,7 @@
     ]
   },
   {
-    "id": "81",
+    "id": "82",
     "name": "Roopa Screen",
     "symbol": "ROOPA",
     "category": "SME",
@@ -5969,7 +6005,7 @@
     ]
   },
   {
-    "id": "82",
+    "id": "83",
     "name": "ArMee Infotech",
     "symbol": "ARMEE",
     "category": "Mainboard",
@@ -6028,7 +6064,7 @@
     ]
   },
   {
-    "id": "83",
+    "id": "84",
     "name": "S.K.Offset",
     "symbol": "SKOFFSET",
     "category": "SME",
@@ -6087,7 +6123,7 @@
     ]
   },
   {
-    "id": "84",
+    "id": "85",
     "name": "Unitec Fibres",
     "symbol": "UNITEC",
     "category": "SME",
@@ -6146,7 +6182,7 @@
     ]
   },
   {
-    "id": "85",
+    "id": "86",
     "name": "Adroit Industries (India)",
     "symbol": "ADROITIND",
     "category": "Mainboard",
@@ -6203,7 +6239,7 @@
     ]
   },
   {
-    "id": "86",
+    "id": "87",
     "name": "Swastika Infra",
     "symbol": "SWASTIKAIN",
     "category": "Mainboard",
@@ -6260,7 +6296,7 @@
     ]
   },
   {
-    "id": "87",
+    "id": "88",
     "name": "Liqvd Digital India",
     "symbol": "LIQVD",
     "category": "SME",
@@ -6317,7 +6353,7 @@
     ]
   },
   {
-    "id": "88",
+    "id": "89",
     "name": "Pooja Logistics",
     "symbol": "POOJALOGIS",
     "category": "SME",
@@ -6374,7 +6410,7 @@
     ]
   },
   {
-    "id": "89",
+    "id": "90",
     "name": "Coreintegra Consulting Services",
     "symbol": "COREIN",
     "category": "SME",
