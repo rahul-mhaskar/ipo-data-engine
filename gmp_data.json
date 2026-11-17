@@ -11,7 +11,7 @@
   },
   "crystalcropprotectionu": {
     "name": "Crystal Crop Protection IPO U",
-    "gmp": 13.0,
+    "gmp": 14.0,
     "last_updated": "17 Nov"
   },
   "antalaemailprotected20": {
@@ -122,6 +122,11 @@
   "tonboimagingindiaemailprotected6571": {
     "name": "Tonbo Imaging India IPO [email protected] (65.71%)",
     "gmp": 452.0,
+    "last_updated": "17 Nov"
+  },
+  "mahanadicoalfields": {
+    "name": "Mahanadi Coalfields",
+    "gmp": 0.0,
     "last_updated": "17 Nov"
   },
   "watranarentals": {
@@ -332,11 +337,6 @@
   "shellzindia": {
     "name": "Shellz India",
     "gmp": 7.0,
-    "last_updated": "17 Nov"
-  },
-  "mahanadicoalfields": {
-    "name": "Mahanadi Coalfields",
-    "gmp": 0.0,
     "last_updated": "17 Nov"
   },
   "zetwerkmanufacturing": {
