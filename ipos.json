@@ -64,7 +64,7 @@
         "netWorth": 22399.8
       }
     ],
-    "subscriptionTotal": 0.0,
+    "subscriptionTotal": 0.04,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -85,7 +85,7 @@
     "category": "SME",
     "status": "OPEN",
     "logoUrl": null,
-    "issueSizeCr": 120.1,
+    "issueSizeCr": 120.0,
     "issuePriceMin": 232.0,
     "issuePriceMax": 245.0,
     "lotSize": 600,
@@ -137,7 +137,7 @@
         "netWorth": 93.2
       }
     ],
-    "subscriptionTotal": 0.0,
+    "subscriptionTotal": 2.06,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -218,7 +218,7 @@
         "netWorth": 0.0
       }
     ],
-    "subscriptionTotal": 1.41,
+    "subscriptionTotal": 1.25,
     "subscriptionRetail": 1.38,
     "subscriptionHNI": 0.79,
     "subscriptionQIB": 2.11,
