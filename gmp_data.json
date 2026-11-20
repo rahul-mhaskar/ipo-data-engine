@@ -16,12 +16,12 @@
   },
   "mahanadicoalfieldso": {
     "name": "Mahanadi Coalfields IPO O",
-    "gmp": 1.5,
+    "gmp": 1.3,
     "last_updated": "20 Nov"
   },
   "crystalcropprotectionct": {
     "name": "Crystal Crop Protection IPO CT",
-    "gmp": 15.0,
+    "gmp": 14.5,
     "last_updated": "20 Nov"
   },
   "antalaemailprotected20": {
@@ -39,11 +39,6 @@
     "gmp": 8.0,
     "last_updated": "20 Nov"
   },
-  "vectrasenproconemailprotected095": {
-    "name": "Vectras Enprocon BSE SME [email protected] (0.95%)",
-    "gmp": 53.05,
-    "last_updated": "20 Nov"
-  },
   "hgsindiaemailprotected3333": {
     "name": "HGS (India) NSE SME [email protected] (33.33%)",
     "gmp": 27.0,
@@ -54,14 +49,14 @@
     "gmp": 105.0,
     "last_updated": "20 Nov"
   },
+  "vectrasenproconemailprotected095": {
+    "name": "Vectras Enprocon BSE SME [email protected] (0.95%)",
+    "gmp": 53.05,
+    "last_updated": "20 Nov"
+  },
   "bombaycoatedandspecialsteelsemailprotected1098": {
     "name": "Bombay Coated and Special Steels IPO [email protected] (10.98%)",
     "gmp": 8.0,
-    "last_updated": "20 Nov"
-  },
-  "ajwaprojectsemailprotected0": {
-    "name": "Ajwa Projects BSE SME [email protected] (0%)",
-    "gmp": 1.0,
     "last_updated": "20 Nov"
   },
   "mksonsfinejewelsemailprotected556": {
@@ -74,14 +69,19 @@
     "gmp": 4.0,
     "last_updated": "20 Nov"
   },
-  "sfcenvironmentaltechnologiesemailprotected761": {
-    "name": "SFC Environmental Technologies IPO [email protected] (7.61%)",
-    "gmp": 15.5,
+  "ajwaprojectsemailprotected0": {
+    "name": "Ajwa Projects BSE SME [email protected] (0%)",
+    "gmp": 1.0,
     "last_updated": "20 Nov"
   },
   "wisconemailprotected0": {
     "name": "Wiscon Industries BSE SME [email protected] (0%)",
     "gmp": 110.0,
+    "last_updated": "20 Nov"
+  },
+  "sfcenvironmentaltechnologiesemailprotected761": {
+    "name": "SFC Environmental Technologies IPO [email protected] (7.61%)",
+    "gmp": 15.5,
     "last_updated": "20 Nov"
   },
   "blspolymersemailprotected6533": {
@@ -109,14 +109,9 @@
     "gmp": 13.0,
     "last_updated": "20 Nov"
   },
-  "sahajanandmedicaltechnologiesemailprotected789": {
-    "name": "Sahajanand Medical Technologies IPO [email protected] (7.89%)",
-    "gmp": 17.0,
-    "last_updated": "20 Nov"
-  },
-  "shellzindiaemailprotected0": {
-    "name": "Shellz India BSE SME [email protected] (0%)",
-    "gmp": 7.0,
+  "bonfigliolitransmissionsemailprotected0": {
+    "name": "Bonfiglioli Transmissions IPO [email protected] (0%)",
+    "gmp": 66.0,
     "last_updated": "20 Nov"
   },
   "mahanadicoalfields": {
