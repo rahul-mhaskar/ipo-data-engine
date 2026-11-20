@@ -16,12 +16,12 @@
   },
   "mahanadicoalfieldso": {
     "name": "Mahanadi Coalfields IPO O",
-    "gmp": 1.8,
+    "gmp": 1.5,
     "last_updated": "20 Nov"
   },
   "crystalcropprotectionct": {
     "name": "Crystal Crop Protection IPO CT",
-    "gmp": 17.0,
+    "gmp": 15.0,
     "last_updated": "20 Nov"
   },
   "antalaemailprotected20": {
@@ -119,11 +119,6 @@
     "gmp": 7.0,
     "last_updated": "20 Nov"
   },
-  "zetwerkemailprotected546": {
-    "name": "Zetwerk IPO [email protected] (5.46%)",
-    "gmp": 1.2,
-    "last_updated": "20 Nov"
-  },
   "mahanadicoalfields": {
     "name": "Mahanadi Coalfields",
     "gmp": 1.9,
@@ -134,9 +129,19 @@
     "gmp": 67.0,
     "last_updated": "20 Nov"
   },
-  "crystalcropprotection": {
-    "name": "Crystal Crop Protection",
-    "gmp": 17.0,
+  "integrismedtech": {
+    "name": "Integris Medtech",
+    "gmp": 0.0,
+    "last_updated": "20 Nov"
+  },
+  "foodlinkfbholdingsindia": {
+    "name": "Foodlink F&B Holdings (India)",
+    "gmp": 0.0,
+    "last_updated": "20 Nov"
+  },
+  "shreesiddhivinayakgreentech": {
+    "name": "Shree Siddhivinayak Greentech Industries",
+    "gmp": 0.0,
     "last_updated": "20 Nov"
   },
   "parleproducts": {
@@ -224,19 +229,9 @@
     "gmp": 0.0,
     "last_updated": "20 Nov"
   },
-  "ebixcash": {
-    "name": "EBIXCASH",
-    "gmp": 0.0,
-    "last_updated": "20 Nov"
-  },
-  "boat": {
-    "name": "BoAt",
-    "gmp": 0.0,
-    "last_updated": "20 Nov"
-  },
-  "navitechnologies": {
-    "name": "Navi Technologies",
-    "gmp": 15.5,
+  "crystalcropprotection": {
+    "name": "Crystal Crop Protection",
+    "gmp": 17.0,
     "last_updated": "20 Nov"
   },
   "antala": {
@@ -337,6 +332,21 @@
   "shellzindia": {
     "name": "Shellz India",
     "gmp": 7.0,
+    "last_updated": "20 Nov"
+  },
+  "ebixcash": {
+    "name": "EBIXCASH",
+    "gmp": 0.0,
+    "last_updated": "20 Nov"
+  },
+  "boat": {
+    "name": "BoAt",
+    "gmp": 0.0,
+    "last_updated": "20 Nov"
+  },
+  "navitechnologies": {
+    "name": "Navi Technologies",
+    "gmp": 15.5,
     "last_updated": "20 Nov"
   },
   "zetwerkmanufacturing": {
