@@ -68,7 +68,7 @@
         "netWorth": 22399.8
       }
     ],
-    "subscriptionTotal": 0.38,
+    "subscriptionTotal": 0.09,
     "subscriptionRetail": 0.14,
     "subscriptionHNI": 0.08,
     "subscriptionQIB": 1.26,
@@ -84,7 +84,7 @@
   },
   {
     "id": "2",
-    "name": "Watrana Rentals",
+    "name": "Watrana Rentals",
     "symbol": "WATRANA",
     "category": "SME",
     "status": "OPEN",
@@ -145,7 +145,7 @@
         "netWorth": 93.2
       }
     ],
-    "subscriptionTotal": 3.76,
+    "subscriptionTotal": 8.22,
     "subscriptionRetail": 5.14,
     "subscriptionHNI": 5.67,
     "subscriptionQIB": 0.0,
@@ -230,7 +230,7 @@
         "netWorth": 0.0
       }
     ],
-    "subscriptionTotal": 2.95,
+    "subscriptionTotal": 6.77,
     "subscriptionRetail": 3.31,
     "subscriptionHNI": 3.58,
     "subscriptionQIB": 2.23,
