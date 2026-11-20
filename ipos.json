@@ -14,8 +14,8 @@
     "closeDate": "2026-11-23",
     "allotmentDate": "2026-11-25",
     "listingDate": "2026-11-27",
-    "gmpAmount": 1.9,
-    "gmpPercent": 1.4,
+    "gmpAmount": 1.3,
+    "gmpPercent": 0.96,
     "gmpHistory": [
       {
         "dateLabel": "17 Nov",
@@ -31,7 +31,7 @@
       },
       {
         "dateLabel": "20 Nov",
-        "amount": 1.9
+        "amount": 1.3
       }
     ],
     "issueStructure": {
@@ -68,10 +68,10 @@
         "netWorth": 22399.8
       }
     ],
-    "subscriptionTotal": 0.11,
-    "subscriptionRetail": 0.14,
-    "subscriptionHNI": 0.08,
-    "subscriptionQIB": 1.26,
+    "subscriptionTotal": 0.492,
+    "subscriptionRetail": 0.25,
+    "subscriptionHNI": 0.18,
+    "subscriptionQIB": 1.37,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
     "registrarName": "KFin Technologies Limited",
@@ -118,12 +118,14 @@
       }
     ],
     "issueStructure": {
-      "freshIssueCr": 0.0,
+      "freshIssueCr": 113.93,
       "ofsCr": 0.0,
       "promoterHoldingPre": null,
       "promoterHoldingPost": null
     },
-    "leadManagers": [],
+    "leadManagers": [
+      "Basan Equity Broking Ltd."
+    ],
     "anchorPortionCr": 0.0,
     "financials": [
       {
@@ -145,9 +147,9 @@
         "netWorth": 93.2
       }
     ],
-    "subscriptionTotal": 12.01,
-    "subscriptionRetail": 5.14,
-    "subscriptionHNI": 5.67,
+    "subscriptionTotal": 11.982,
+    "subscriptionRetail": 15.42,
+    "subscriptionHNI": 20.0,
     "subscriptionQIB": 0.0,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
@@ -176,11 +178,45 @@
     "listingDate": "2026-12-04",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "gmpHistory": [],
-    "issueStructure": null,
-    "leadManagers": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "20 Nov",
+        "amount": 0.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 600.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "ICICI Securities Ltd.",
+      "Axial Capital Pvt.Ltd.",
+      "Citigroup Global Markets India Pvt.Ltd.",
+      "IIFL Capital Services Ltd."
+    ],
     "anchorPortionCr": 0.0,
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY23",
+        "revenue": 1369.7,
+        "pat": -40.5,
+        "netWorth": 2629.5
+      },
+      {
+        "year": "FY24",
+        "revenue": 1582.3,
+        "pat": -4.9,
+        "netWorth": 2681.0
+      },
+      {
+        "year": "FY25",
+        "revenue": 508.9,
+        "pat": 267.6,
+        "netWorth": 3890.0
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -210,10 +246,20 @@
     "closeDate": "2026-11-30",
     "allotmentDate": "2026-12-01",
     "listingDate": "2026-12-03",
-    "gmpAmount": 0.0,
+    "gmpAmount": 12.0,
     "gmpPercent": 0.0,
-    "gmpHistory": [],
-    "issueStructure": null,
+    "gmpHistory": [
+      {
+        "dateLabel": "20 Nov",
+        "amount": 12.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
@@ -248,11 +294,44 @@
     "listingDate": "2026-12-02",
     "gmpAmount": 0.0,
     "gmpPercent": 0.0,
-    "gmpHistory": [],
-    "issueStructure": null,
-    "leadManagers": [],
+    "gmpHistory": [
+      {
+        "dateLabel": "20 Nov",
+        "amount": 0.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 88.98,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "ERUDORE CAPITAL Pvt.Ltd.",
+      "MAS Services Ltd.",
+      "Basan Equity Broking Ltd."
+    ],
     "anchorPortionCr": 0.0,
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 36.9,
+        "pat": 3.1,
+        "netWorth": 13.0
+      },
+      {
+        "year": "FY25",
+        "revenue": 61.1,
+        "pat": 5.5,
+        "netWorth": 18.5
+      },
+      {
+        "year": "FY26",
+        "revenue": 37.4,
+        "pat": 3.5,
+        "netWorth": 28.5
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -1677,8 +1756,8 @@
     "closeDate": "2026-11-20",
     "allotmentDate": "2026-11-23",
     "listingDate": "2026-11-25",
-    "gmpAmount": 17.0,
-    "gmpPercent": 6.25,
+    "gmpAmount": 14.5,
+    "gmpPercent": 5.33,
     "gmpHistory": [
       {
         "dateLabel": "16 Nov",
@@ -1698,7 +1777,7 @@
       },
       {
         "dateLabel": "20 Nov",
-        "amount": 17.0
+        "amount": 14.5
       }
     ],
     "issueStructure": {
@@ -1733,10 +1812,10 @@
         "netWorth": 0.0
       }
     ],
-    "subscriptionTotal": 16.8,
-    "subscriptionRetail": 3.31,
-    "subscriptionHNI": 3.58,
-    "subscriptionQIB": 2.23,
+    "subscriptionTotal": 17.682,
+    "subscriptionRetail": 9.71,
+    "subscriptionHNI": 39.16,
+    "subscriptionQIB": 15.81,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
     "registrarName": "MUFG Intime India Private Limited",
@@ -1825,7 +1904,7 @@
         "netWorth": 22.2
       }
     ],
-    "subscriptionTotal": 12.72,
+    "subscriptionTotal": 12.795,
     "subscriptionRetail": 5.22,
     "subscriptionHNI": 49.94,
     "subscriptionQIB": 66.72,
@@ -2009,7 +2088,7 @@
         "netWorth": 27.9
       }
     ],
-    "subscriptionTotal": 534.65,
+    "subscriptionTotal": 536.83,
     "subscriptionRetail": 556.09,
     "subscriptionHNI": 857.65,
     "subscriptionQIB": 259.45,
@@ -2101,7 +2180,7 @@
         "netWorth": 90.4
       }
     ],
-    "subscriptionTotal": 173.78,
+    "subscriptionTotal": 248.583,
     "subscriptionRetail": 235.72,
     "subscriptionHNI": 424.67,
     "subscriptionQIB": 137.92,
@@ -2194,7 +2273,7 @@
         "netWorth": 40.1
       }
     ],
-    "subscriptionTotal": 23.61,
+    "subscriptionTotal": 23.823,
     "subscriptionRetail": 17.98,
     "subscriptionHNI": 42.27,
     "subscriptionQIB": 20.19,
@@ -2286,7 +2365,7 @@
         "netWorth": 46.9
       }
     ],
-    "subscriptionTotal": 4.22,
+    "subscriptionTotal": 4.23,
     "subscriptionRetail": 4.45,
     "subscriptionHNI": 6.69,
     "subscriptionQIB": 1.88,
@@ -2356,7 +2435,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 32.01,
+    "subscriptionTotal": 63.892,
     "subscriptionRetail": 35.46,
     "subscriptionHNI": 166.44,
     "subscriptionQIB": 37.32,
@@ -2447,7 +2526,7 @@
         "netWorth": 183.0
       }
     ],
-    "subscriptionTotal": 5.03,
+    "subscriptionTotal": 5.093,
     "subscriptionRetail": 3.08,
     "subscriptionHNI": 14.12,
     "subscriptionQIB": 1.84,
@@ -2539,7 +2618,7 @@
         "netWorth": 17.6
       }
     ],
-    "subscriptionTotal": 25.18,
+    "subscriptionTotal": 25.83,
     "subscriptionRetail": 19.17,
     "subscriptionHNI": 40.39,
     "subscriptionQIB": 26.33,
@@ -2631,7 +2710,7 @@
         "netWorth": 19.3
       }
     ],
-    "subscriptionTotal": 1.18,
+    "subscriptionTotal": 1.123,
     "subscriptionRetail": 1.93,
     "subscriptionHNI": 0.32,
     "subscriptionQIB": 0.0,
@@ -2722,7 +2801,7 @@
         "netWorth": 105.2
       }
     ],
-    "subscriptionTotal": 239.02,
+    "subscriptionTotal": 241.2229,
     "subscriptionRetail": 128.36,
     "subscriptionHNI": 559.2,
     "subscriptionQIB": 200.25,
@@ -2815,7 +2894,7 @@
         "netWorth": 805.5
       }
     ],
-    "subscriptionTotal": 9.17,
+    "subscriptionTotal": 9.4729,
     "subscriptionRetail": 2.71,
     "subscriptionHNI": 12.81,
     "subscriptionQIB": 18.81,
@@ -2895,7 +2974,7 @@
         "netWorth": 38.5
       }
     ],
-    "subscriptionTotal": 1.26,
+    "subscriptionTotal": 1.1729,
     "subscriptionRetail": 0.66,
     "subscriptionHNI": 0.62,
     "subscriptionQIB": 2.24,
@@ -2989,7 +3068,7 @@
         "netWorth": 1160.4
       }
     ],
-    "subscriptionTotal": 5.15,
+    "subscriptionTotal": 5.5128,
     "subscriptionRetail": 1.08,
     "subscriptionHNI": 4.81,
     "subscriptionQIB": 13.8,
@@ -3075,7 +3154,7 @@
         "netWorth": 24.8
       }
     ],
-    "subscriptionTotal": 5.54,
+    "subscriptionTotal": 5.4427,
     "subscriptionRetail": 2.72,
     "subscriptionHNI": 12.26,
     "subscriptionQIB": 5.06,
@@ -3164,7 +3243,7 @@
         "netWorth": 341778.5
       }
     ],
-    "subscriptionTotal": 19.67,
+    "subscriptionTotal": 21.3623,
     "subscriptionRetail": 2.76,
     "subscriptionHNI": 13.99,
     "subscriptionQIB": 67.15,
@@ -3257,7 +3336,7 @@
         "netWorth": 445.0
       }
     ],
-    "subscriptionTotal": 2.21,
+    "subscriptionTotal": 2.3423,
     "subscriptionRetail": 2.1,
     "subscriptionHNI": 0.69,
     "subscriptionQIB": 3.25,
@@ -3684,7 +3763,7 @@
     "allotmentDate": "To Be Updated",
     "listingDate": "To Be Updated",
     "gmpAmount": 15.5,
-    "gmpPercent": 0.0,
+    "gmpPercent": 4.7,
     "gmpHistory": [
       {
         "dateLabel": "13 Nov",
