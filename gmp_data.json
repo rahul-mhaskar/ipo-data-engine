@@ -21,7 +21,7 @@
   },
   "foodlinkfbholdingsu": {
     "name": "Foodlink F&B Holdings IPO U",
-    "gmp": 16.0,
+    "gmp": 17.0,
     "last_updated": "24 Nov"
   },
   "shreesiddhivinayakgreentechu": {
@@ -41,7 +41,7 @@
   },
   "crystalcropprotectioncallotted": {
     "name": "Crystal Crop Protection IPO C Allotted",
-    "gmp": 15.5,
+    "gmp": 18.0,
     "last_updated": "24 Nov"
   },
   "antalaemailprotected20": {
@@ -119,6 +119,11 @@
     "gmp": 54.82,
     "last_updated": "24 Nov"
   },
+  "foodlinkfbholdingsindia": {
+    "name": "Foodlink F&B Holdings (India)",
+    "gmp": 0.0,
+    "last_updated": "24 Nov"
+  },
   "shreesiddhivinayakgreentech": {
     "name": "Shree Siddhivinayak Greentech Industries",
     "gmp": 10.0,
@@ -131,11 +136,6 @@
   },
   "integrismedtech": {
     "name": "Integris Medtech",
-    "gmp": 0.0,
-    "last_updated": "24 Nov"
-  },
-  "foodlinkfbholdingsindia": {
-    "name": "Foodlink F&B Holdings (India)",
     "gmp": 0.0,
     "last_updated": "24 Nov"
   },
@@ -221,6 +221,11 @@
   },
   "oyo": {
     "name": "OYO",
+    "gmp": 0.0,
+    "last_updated": "24 Nov"
+  },
+  "ebixcash": {
+    "name": "EBIXCASH",
     "gmp": 0.0,
     "last_updated": "24 Nov"
   },
@@ -337,11 +342,6 @@
   "shellzindia": {
     "name": "Shellz India",
     "gmp": 7.0,
-    "last_updated": "24 Nov"
-  },
-  "ebixcash": {
-    "name": "EBIXCASH",
-    "gmp": 0.0,
     "last_updated": "24 Nov"
   },
   "boat": {
