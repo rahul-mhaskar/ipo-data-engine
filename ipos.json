@@ -14,8 +14,8 @@
     "closeDate": "2026-11-30",
     "allotmentDate": "2026-12-01",
     "listingDate": "2026-12-03",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
+    "gmpAmount": 18.0,
+    "gmpPercent": 9.42,
     "gmpHistory": [
       {
         "dateLabel": "20 Nov",
@@ -31,7 +31,7 @@
       },
       {
         "dateLabel": "25 Nov",
-        "amount": 21.0
+        "amount": 18.0
       }
     ],
     "issueStructure": {
@@ -124,10 +124,10 @@
         "netWorth": 28.5
       }
     ],
-    "subscriptionTotal": 0.41,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
+    "subscriptionTotal": 0.4125,
+    "subscriptionRetail": 0.23,
+    "subscriptionHNI": 0.51,
+    "subscriptionQIB": 4.27,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
     "registrarName": "MAS SERVICES LIMITED",
@@ -153,13 +153,42 @@
     "closeDate": "2026-12-04",
     "allotmentDate": "2026-12-07",
     "listingDate": "2026-12-09",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "gmpHistory": [],
-    "issueStructure": null,
+    "gmpAmount": 21.0,
+    "gmpPercent": 32.31,
+    "gmpHistory": [
+      {
+        "dateLabel": "25 Nov",
+        "amount": 21.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
     "leadManagers": [],
     "anchorPortionCr": 0.0,
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 392.1,
+        "pat": 14.8,
+        "netWorth": 60.1
+      },
+      {
+        "year": "FY25",
+        "revenue": 477.3,
+        "pat": 18.2,
+        "netWorth": 73.3
+      },
+      {
+        "year": "FY26",
+        "revenue": 142.8,
+        "pat": 3.0,
+        "netWorth": 119.3
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -189,13 +218,45 @@
     "closeDate": "2026-12-03",
     "allotmentDate": "2026-12-04",
     "listingDate": "2026-12-08",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "gmpHistory": [],
-    "issueStructure": null,
-    "leadManagers": [],
+    "gmpAmount": 24.0,
+    "gmpPercent": 13.33,
+    "gmpHistory": [
+      {
+        "dateLabel": "25 Nov",
+        "amount": 24.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 46.79,
+      "ofsCr": 4.5,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "D&A Financial Services Pvt.Ltd.",
+      "R.K.Stock Holding Pvt.Ltd."
+    ],
     "anchorPortionCr": 0.0,
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 210.4,
+        "pat": 3.8,
+        "netWorth": 26.7
+      },
+      {
+        "year": "FY25",
+        "revenue": 193.9,
+        "pat": 5.1,
+        "netWorth": 37.3
+      },
+      {
+        "year": "FY26",
+        "revenue": 79.2,
+        "pat": 3.5,
+        "netWorth": 48.0
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -225,8 +286,8 @@
     "closeDate": "2026-12-03",
     "allotmentDate": "2026-12-04",
     "listingDate": "2026-12-08",
-    "gmpAmount": 21.5,
-    "gmpPercent": 12.5,
+    "gmpAmount": 27.0,
+    "gmpPercent": 15.7,
     "gmpHistory": [
       {
         "dateLabel": "24 Nov",
@@ -234,7 +295,7 @@
       },
       {
         "dateLabel": "25 Nov",
-        "amount": 21.5
+        "amount": 27.0
       }
     ],
     "issueStructure": {
@@ -296,13 +357,42 @@
     "closeDate": "2026-12-01",
     "allotmentDate": "2026-12-02",
     "listingDate": "2026-12-04",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "gmpHistory": [],
-    "issueStructure": null,
+    "gmpAmount": 4.0,
+    "gmpPercent": 4.04,
+    "gmpHistory": [
+      {
+        "dateLabel": "25 Nov",
+        "amount": 4.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
     "leadManagers": [],
     "anchorPortionCr": 0.0,
-    "financials": [],
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 22.1,
+        "pat": 1.1,
+        "netWorth": 4.3
+      },
+      {
+        "year": "FY25",
+        "revenue": 28.2,
+        "pat": 2.3,
+        "netWorth": 6.6
+      },
+      {
+        "year": "FY26",
+        "revenue": 19.4,
+        "pat": 3.2,
+        "netWorth": 16.1
+      }
+    ],
     "subscriptionTotal": 0.0,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
@@ -359,6 +449,9 @@
       "promoterHoldingPost": null
     },
     "leadManagers": [
+      "book-built issue",
+      "fresh issue",
+      "offer for sale",
       "ICICI Securities Ltd.",
       "Axial Capital Pvt.Ltd.",
       "Citigroup Global Markets India Pvt.Ltd.",
@@ -1708,7 +1801,7 @@
         "netWorth": 22399.8
       }
     ],
-    "subscriptionTotal": 1.51,
+    "subscriptionTotal": 1.5223,
     "subscriptionRetail": 0.48,
     "subscriptionHNI": 0.66,
     "subscriptionQIB": 4.95,
@@ -1737,8 +1830,8 @@
     "closeDate": "2026-11-23",
     "allotmentDate": "2026-11-25",
     "listingDate": "2026-11-27",
-    "gmpAmount": 40.0,
-    "gmpPercent": 16.33,
+    "gmpAmount": 23.0,
+    "gmpPercent": 9.39,
     "gmpHistory": [
       {
         "dateLabel": "18 Nov",
@@ -1766,7 +1859,7 @@
       },
       {
         "dateLabel": "25 Nov",
-        "amount": 40.0
+        "amount": 23.0
       }
     ],
     "issueStructure": {
@@ -1799,7 +1892,7 @@
         "netWorth": 93.2
       }
     ],
-    "subscriptionTotal": 149.76,
+    "subscriptionTotal": 150.4823,
     "subscriptionRetail": 108.71,
     "subscriptionHNI": 233.67,
     "subscriptionQIB": 161.11,
@@ -1828,8 +1921,8 @@
     "closeDate": "2026-11-20",
     "allotmentDate": "2026-11-23",
     "listingDate": "2026-11-26",
-    "gmpAmount": 19.0,
-    "gmpPercent": 6.99,
+    "gmpAmount": 17.0,
+    "gmpPercent": 6.25,
     "gmpHistory": [
       {
         "dateLabel": "18 Nov",
@@ -1857,7 +1950,7 @@
       },
       {
         "dateLabel": "25 Nov",
-        "amount": 19.0
+        "amount": 17.0
       }
     ],
     "issueStructure": {
@@ -1892,7 +1985,7 @@
         "netWorth": 0.0
       }
     ],
-    "subscriptionTotal": 16.8,
+    "subscriptionTotal": 17.682,
     "subscriptionRetail": 9.71,
     "subscriptionHNI": 39.16,
     "subscriptionQIB": 15.81,
@@ -1984,7 +2077,7 @@
         "netWorth": 22.2
       }
     ],
-    "subscriptionTotal": 12.72,
+    "subscriptionTotal": 12.795,
     "subscriptionRetail": 5.22,
     "subscriptionHNI": 49.94,
     "subscriptionQIB": 66.72,
@@ -2168,7 +2261,7 @@
         "netWorth": 27.9
       }
     ],
-    "subscriptionTotal": 534.65,
+    "subscriptionTotal": 536.83,
     "subscriptionRetail": 556.09,
     "subscriptionHNI": 857.65,
     "subscriptionQIB": 259.45,
@@ -2260,7 +2353,7 @@
         "netWorth": 90.4
       }
     ],
-    "subscriptionTotal": 173.78,
+    "subscriptionTotal": 248.583,
     "subscriptionRetail": 235.72,
     "subscriptionHNI": 424.67,
     "subscriptionQIB": 137.92,
@@ -2353,7 +2446,7 @@
         "netWorth": 40.1
       }
     ],
-    "subscriptionTotal": 23.61,
+    "subscriptionTotal": 23.823,
     "subscriptionRetail": 17.98,
     "subscriptionHNI": 42.27,
     "subscriptionQIB": 20.19,
@@ -2445,7 +2538,7 @@
         "netWorth": 46.9
       }
     ],
-    "subscriptionTotal": 4.22,
+    "subscriptionTotal": 4.23,
     "subscriptionRetail": 4.45,
     "subscriptionHNI": 6.69,
     "subscriptionQIB": 1.88,
@@ -2515,7 +2608,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 32.01,
+    "subscriptionTotal": 63.892,
     "subscriptionRetail": 35.46,
     "subscriptionHNI": 166.44,
     "subscriptionQIB": 37.32,
@@ -2606,7 +2699,7 @@
         "netWorth": 183.0
       }
     ],
-    "subscriptionTotal": 5.03,
+    "subscriptionTotal": 5.093,
     "subscriptionRetail": 3.08,
     "subscriptionHNI": 14.12,
     "subscriptionQIB": 1.84,
@@ -2698,7 +2791,7 @@
         "netWorth": 17.6
       }
     ],
-    "subscriptionTotal": 25.18,
+    "subscriptionTotal": 25.83,
     "subscriptionRetail": 19.17,
     "subscriptionHNI": 40.39,
     "subscriptionQIB": 26.33,
@@ -2790,7 +2883,7 @@
         "netWorth": 19.3
       }
     ],
-    "subscriptionTotal": 1.18,
+    "subscriptionTotal": 1.123,
     "subscriptionRetail": 1.93,
     "subscriptionHNI": 0.32,
     "subscriptionQIB": 0.0,
@@ -2881,7 +2974,7 @@
         "netWorth": 105.2
       }
     ],
-    "subscriptionTotal": 239.02,
+    "subscriptionTotal": 241.2229,
     "subscriptionRetail": 128.36,
     "subscriptionHNI": 559.2,
     "subscriptionQIB": 200.25,
@@ -2974,7 +3067,7 @@
         "netWorth": 805.5
       }
     ],
-    "subscriptionTotal": 9.17,
+    "subscriptionTotal": 9.4729,
     "subscriptionRetail": 2.71,
     "subscriptionHNI": 12.81,
     "subscriptionQIB": 18.81,
@@ -3054,7 +3147,7 @@
         "netWorth": 38.5
       }
     ],
-    "subscriptionTotal": 1.26,
+    "subscriptionTotal": 1.1729,
     "subscriptionRetail": 0.66,
     "subscriptionHNI": 0.62,
     "subscriptionQIB": 2.24,
@@ -3148,7 +3241,7 @@
         "netWorth": 1160.4
       }
     ],
-    "subscriptionTotal": 5.15,
+    "subscriptionTotal": 5.5128,
     "subscriptionRetail": 1.08,
     "subscriptionHNI": 4.81,
     "subscriptionQIB": 13.8,
@@ -3234,7 +3327,7 @@
         "netWorth": 24.8
       }
     ],
-    "subscriptionTotal": 5.54,
+    "subscriptionTotal": 5.4427,
     "subscriptionRetail": 2.72,
     "subscriptionHNI": 12.26,
     "subscriptionQIB": 5.06,
@@ -4011,7 +4104,7 @@
     "allotmentDate": "To Be Updated",
     "listingDate": "To Be Updated",
     "gmpAmount": 15.5,
-    "gmpPercent": 0.0,
+    "gmpPercent": 4.7,
     "gmpHistory": [
       {
         "dateLabel": "18 Nov",
