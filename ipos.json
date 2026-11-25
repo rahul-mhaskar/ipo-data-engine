@@ -70,8 +70,8 @@
     "lotSize": 1000,
     "openDate": "2026-11-25",
     "closeDate": "2026-11-27",
-    "allotmentDate": "2026-11-25",
-    "listingDate": "2026-11-27",
+    "allotmentDate": "2026-11-30",
+    "listingDate": "2026-12-02",
     "gmpAmount": 20.0,
     "gmpPercent": 14.08,
     "gmpHistory": [
@@ -124,7 +124,7 @@
         "netWorth": 28.5
       }
     ],
-    "subscriptionTotal": 0.0,
+    "subscriptionTotal": 0.38,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -140,6 +140,78 @@
   },
   {
     "id": "3",
+    "name": "Monomark Engineering (India)",
+    "symbol": "MONOMAR",
+    "category": "Mainboard",
+    "status": "UPCOMING",
+    "logoUrl": null,
+    "issueSizeCr": 175.0,
+    "issuePriceMin": 60.0,
+    "issuePriceMax": 65.0,
+    "lotSize": 225,
+    "openDate": "2026-12-02",
+    "closeDate": "2026-12-04",
+    "allotmentDate": "2026-12-07",
+    "listingDate": "2026-12-09",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "financials": [],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Bigshare Services Private Limited",
+    "registrarUrl": "https://www.bigshareonline.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.holaniconsultants.co.in/download/ipo/RHP%20Monomark.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "4",
+    "name": "A J Packaging",
+    "symbol": "AJPACKA",
+    "category": "SME",
+    "status": "UPCOMING",
+    "logoUrl": null,
+    "issueSizeCr": 54.0,
+    "issuePriceMin": 175.0,
+    "issuePriceMax": 180.0,
+    "lotSize": 800,
+    "openDate": "2026-12-01",
+    "closeDate": "2026-12-03",
+    "allotmentDate": "2026-12-04",
+    "listingDate": "2026-12-08",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "financials": [],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "MUFG Intime Private Limited",
+    "registrarUrl": "https://in.mpms.mufg.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://dnafinserv.com/wp-content/uploads/2026/11/Red-Herring-Prospectus.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "5",
     "name": "Matangi Rubber",
     "symbol": "MATANGI",
     "category": "Mainboard",
@@ -210,7 +282,43 @@
     "closeNotified": false
   },
   {
-    "id": "4",
+    "id": "6",
+    "name": "Airpro Technology India",
+    "symbol": "AIRPROT",
+    "category": "SME",
+    "status": "UPCOMING",
+    "logoUrl": null,
+    "issueSizeCr": 35.0,
+    "issuePriceMin": 99.0,
+    "issuePriceMax": 99.0,
+    "lotSize": 1200,
+    "openDate": "2026-11-27",
+    "closeDate": "2026-12-01",
+    "allotmentDate": "2026-12-02",
+    "listingDate": "2026-12-04",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "financials": [],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "MUFG INTIME INDIA PRIVATE LIMITED",
+    "registrarUrl": "https://in.mpms.mufg.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "7",
     "name": "Integris Medtech",
     "symbol": "INTEGRI",
     "category": "Mainboard",
@@ -292,7 +400,7 @@
     "closeNotified": false
   },
   {
-    "id": "5",
+    "id": "8",
     "name": "Parle Products",
     "symbol": "PARLEPR",
     "category": "Mainboard",
@@ -362,7 +470,7 @@
     "closeNotified": false
   },
   {
-    "id": "6",
+    "id": "9",
     "name": "Twinkle Papers",
     "symbol": "TWINKLE",
     "category": "SME",
@@ -455,7 +563,7 @@
     "closeNotified": false
   },
   {
-    "id": "7",
+    "id": "10",
     "name": "Sri Priyanka Geo Commex",
     "symbol": "SPGCL",
     "category": "SME",
@@ -548,7 +656,7 @@
     "closeNotified": false
   },
   {
-    "id": "8",
+    "id": "11",
     "name": "Flipkart",
     "symbol": "FLIPKAR",
     "category": "Mainboard",
@@ -618,7 +726,7 @@
     "closeNotified": false
   },
   {
-    "id": "9",
+    "id": "12",
     "name": "Prestige Hospitality Ventures",
     "symbol": "PRESTIG",
     "category": "Mainboard",
@@ -712,7 +820,7 @@
     "closeNotified": false
   },
   {
-    "id": "10",
+    "id": "13",
     "name": "Credila Financial Services",
     "symbol": "CREDILA",
     "category": "Mainboard",
@@ -807,7 +915,7 @@
     "closeNotified": false
   },
   {
-    "id": "11",
+    "id": "14",
     "name": "PhonePe",
     "symbol": "PHONEPE",
     "category": "Mainboard",
@@ -905,7 +1013,7 @@
     "closeNotified": false
   },
   {
-    "id": "12",
+    "id": "15",
     "name": "Zepto",
     "symbol": "ZEPTO",
     "category": "Mainboard",
@@ -1002,7 +1110,7 @@
     "closeNotified": false
   },
   {
-    "id": "13",
+    "id": "16",
     "name": "Solar91 Cleantech",
     "symbol": "SOLAR91",
     "category": "SME",
@@ -1072,7 +1180,7 @@
     "closeNotified": false
   },
   {
-    "id": "14",
+    "id": "17",
     "name": "Hero FinCorp",
     "symbol": "HEROFIN",
     "category": "Mainboard",
@@ -1170,7 +1278,7 @@
     "closeNotified": false
   },
   {
-    "id": "15",
+    "id": "18",
     "name": "Deltatech Gaming",
     "symbol": "DELTATE",
     "category": "Mainboard",
@@ -1240,7 +1348,7 @@
     "closeNotified": false
   },
   {
-    "id": "16",
+    "id": "19",
     "name": "Biba Fashions",
     "symbol": "BIBAFAS",
     "category": "Mainboard",
@@ -1310,7 +1418,7 @@
     "closeNotified": false
   },
   {
-    "id": "17",
+    "id": "20",
     "name": "Droom Technology",
     "symbol": "DROOMTE",
     "category": "Mainboard",
@@ -1380,7 +1488,7 @@
     "closeNotified": false
   },
   {
-    "id": "18",
+    "id": "21",
     "name": "Puranik Builders",
     "symbol": "PURANIK",
     "category": "Mainboard",
@@ -1450,7 +1558,7 @@
     "closeNotified": false
   },
   {
-    "id": "19",
+    "id": "22",
     "name": "Bharat FIH",
     "symbol": "BHARATF",
     "category": "Mainboard",
@@ -1516,244 +1624,6 @@
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://www.google.com/search?q=Bharat+FIH+IPO+RHP+file+SEBI",
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/jun-2022/1655876827634.pdf#page=1&zoom=page-width,-16,610",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "20",
-    "name": "FabIndia",
-    "symbol": "FABINDI",
-    "category": "Mainboard",
-    "status": "UPCOMING",
-    "logoUrl": null,
-    "issueSizeCr": 0.0,
-    "issuePriceMin": 0.0,
-    "issuePriceMax": 0.0,
-    "lotSize": 0,
-    "openDate": "To Be Updated",
-    "closeDate": "To Be Updated",
-    "allotmentDate": "To Be Updated",
-    "listingDate": "To Be Updated",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "17 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "18 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "19 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 0.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 0.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [],
-    "anchorPortionCr": 0.0,
-    "financials": [],
-    "subscriptionTotal": 0.0,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Link Intime India Private Limited",
-    "registrarUrl": "www.linkintime.co.in",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "",
-    "drhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/nov-2022/fabindia-limited-corrigendum-to-drhp_64776.html",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "21",
-    "name": "OYO",
-    "symbol": "OYO",
-    "category": "Mainboard",
-    "status": "UPCOMING",
-    "logoUrl": null,
-    "issueSizeCr": 0.0,
-    "issuePriceMin": 0.0,
-    "issuePriceMax": 0.0,
-    "lotSize": 0,
-    "openDate": "To Be Updated",
-    "closeDate": "To Be Updated",
-    "allotmentDate": "To Be Updated",
-    "listingDate": "To Be Updated",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "17 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "18 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "19 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 0.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 3350.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Axis Capital Ltd.",
-      "Citigroup Global Markets India Pvt.Ltd.",
-      "Goldman Sachs (India) Securities Pvt.Ltd.",
-      "ICICI Securities Ltd.",
-      "InCred Capital Wealth Portfolio Managers Pvt.Ltd.",
-      "Intensive Fiscal Services Pvt.Ltd.",
-      "JM Financial Ltd.",
-      "SBI Capital Markets Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY23",
-        "revenue": 5601.7,
-        "pat": -1286.5,
-        "netWorth": 1587.9
-      },
-      {
-        "year": "FY24",
-        "revenue": 5541.6,
-        "pat": 229.6,
-        "netWorth": 1856.5
-      },
-      {
-        "year": "FY25",
-        "revenue": 7166.3,
-        "pat": 748.3,
-        "netWorth": 6146.6
-      }
-    ],
-    "subscriptionTotal": 0.0,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Link Intime India Private Limited",
-    "registrarUrl": "www.linkintime.co.in",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "",
-    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/nov-2022/1669613102669.pdf#page=1&zoom=page-width,-15,842",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "22",
-    "name": "EBIXCASH",
-    "symbol": "EBIXCAS",
-    "category": "Mainboard",
-    "status": "UPCOMING",
-    "logoUrl": null,
-    "issueSizeCr": 0.0,
-    "issuePriceMin": 0.0,
-    "issuePriceMax": 0.0,
-    "lotSize": 0,
-    "openDate": "To Be Updated",
-    "closeDate": "To Be Updated",
-    "allotmentDate": "To Be Updated",
-    "listingDate": "To Be Updated",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "17 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "18 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "19 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 0.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 0.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [],
-    "anchorPortionCr": 0.0,
-    "financials": [],
-    "subscriptionTotal": 0.0,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Link Intime India Private Limited",
-    "registrarUrl": "www.linkintime.co.in",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "",
-    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/oct-2021/1633066313151.pdf#page=1&zoom=page-width,-16,379",
     "openNotified": false,
     "closeNotified": false
   },
@@ -3795,6 +3665,244 @@
   },
   {
     "id": "46",
+    "name": "FabIndia",
+    "symbol": "FABINDI",
+    "category": "Mainboard",
+    "status": "UPCOMING",
+    "logoUrl": null,
+    "issueSizeCr": 0.0,
+    "issuePriceMin": 0.0,
+    "issuePriceMax": 0.0,
+    "lotSize": 0,
+    "openDate": "To Be Updated",
+    "closeDate": "To Be Updated",
+    "allotmentDate": "To Be Updated",
+    "listingDate": "To Be Updated",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "17 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "18 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "19 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 0.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "financials": [],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Link Intime India Private Limited",
+    "registrarUrl": "www.linkintime.co.in",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "",
+    "drhpPdfUrl": "https://www.sebi.gov.in/filings/public-issues/nov-2022/fabindia-limited-corrigendum-to-drhp_64776.html",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "47",
+    "name": "OYO",
+    "symbol": "OYO",
+    "category": "Mainboard",
+    "status": "UPCOMING",
+    "logoUrl": null,
+    "issueSizeCr": 0.0,
+    "issuePriceMin": 0.0,
+    "issuePriceMax": 0.0,
+    "lotSize": 0,
+    "openDate": "To Be Updated",
+    "closeDate": "To Be Updated",
+    "allotmentDate": "To Be Updated",
+    "listingDate": "To Be Updated",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "17 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "18 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "19 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 0.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 3350.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Axis Capital Ltd.",
+      "Citigroup Global Markets India Pvt.Ltd.",
+      "Goldman Sachs (India) Securities Pvt.Ltd.",
+      "ICICI Securities Ltd.",
+      "InCred Capital Wealth Portfolio Managers Pvt.Ltd.",
+      "Intensive Fiscal Services Pvt.Ltd.",
+      "JM Financial Ltd.",
+      "SBI Capital Markets Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY23",
+        "revenue": 5601.7,
+        "pat": -1286.5,
+        "netWorth": 1587.9
+      },
+      {
+        "year": "FY24",
+        "revenue": 5541.6,
+        "pat": 229.6,
+        "netWorth": 1856.5
+      },
+      {
+        "year": "FY25",
+        "revenue": 7166.3,
+        "pat": 748.3,
+        "netWorth": 6146.6
+      }
+    ],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Link Intime India Private Limited",
+    "registrarUrl": "www.linkintime.co.in",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "",
+    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/nov-2022/1669613102669.pdf#page=1&zoom=page-width,-15,842",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "48",
+    "name": "EBIXCASH",
+    "symbol": "EBIXCAS",
+    "category": "Mainboard",
+    "status": "UPCOMING",
+    "logoUrl": null,
+    "issueSizeCr": 0.0,
+    "issuePriceMin": 0.0,
+    "issuePriceMax": 0.0,
+    "lotSize": 0,
+    "openDate": "To Be Updated",
+    "closeDate": "To Be Updated",
+    "allotmentDate": "To Be Updated",
+    "listingDate": "To Be Updated",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "17 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "18 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "19 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 0.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "financials": [],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Link Intime India Private Limited",
+    "registrarUrl": "www.linkintime.co.in",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "",
+    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=https://www.sebi.gov.in/sebi_data/attachdocs/oct-2021/1633066313151.pdf#page=1&zoom=page-width,-16,379",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "49",
     "name": "BoAt",
     "symbol": "BOAT",
     "category": "Mainboard",
@@ -3888,7 +3996,7 @@
     "closeNotified": false
   },
   {
-    "id": "47",
+    "id": "50",
     "name": "Navi Technologies",
     "symbol": "NAVITEC",
     "category": "Mainboard",
@@ -3958,7 +4066,7 @@
     "closeNotified": false
   },
   {
-    "id": "48",
+    "id": "51",
     "name": "Zetwerk Manufacturing",
     "symbol": "ZETWERK",
     "category": "Mainboard",
@@ -4023,7 +4131,7 @@
     "closeNotified": true
   },
   {
-    "id": "49",
+    "id": "52",
     "name": "Bonfiglioli Transmissions",
     "symbol": "BONFIG",
     "category": "Mainboard",
@@ -4107,7 +4215,7 @@
     "closeNotified": true
   },
   {
-    "id": "50",
+    "id": "53",
     "name": "Ravita Engineering Services",
     "symbol": "RAVITA",
     "category": "SME",
@@ -4191,7 +4299,7 @@
     "closeNotified": true
   },
   {
-    "id": "51",
+    "id": "54",
     "name": "Fusion CX",
     "symbol": "FUSIONCX",
     "category": "Mainboard",
@@ -4275,7 +4383,7 @@
     "closeNotified": true
   },
   {
-    "id": "52",
+    "id": "55",
     "name": "HD Fire Protect",
     "symbol": "HDFIRE",
     "category": "Mainboard",
@@ -4340,7 +4448,7 @@
     "closeNotified": true
   },
   {
-    "id": "53",
+    "id": "56",
     "name": "Vaibhav Vyapaar",
     "symbol": "LOANFRONT",
     "category": "SME",
@@ -4405,7 +4513,7 @@
     "closeNotified": true
   },
   {
-    "id": "54",
+    "id": "57",
     "name": "R.K.Fashion Accessories",
     "symbol": "RKFAL",
     "category": "SME",
@@ -4470,7 +4578,7 @@
     "closeNotified": false
   },
   {
-    "id": "55",
+    "id": "58",
     "name": "TNA Solutions",
     "symbol": "TNA",
     "category": "SME",
@@ -4535,7 +4643,7 @@
     "closeNotified": false
   },
   {
-    "id": "56",
+    "id": "59",
     "name": "Acme India Industries",
     "symbol": "ACMERAIL",
     "category": "SME",
@@ -4600,7 +4708,7 @@
     "closeNotified": false
   },
   {
-    "id": "57",
+    "id": "60",
     "name": "Paramount Syntex",
     "symbol": "PARASYNTEX",
     "category": "SME",
@@ -4665,7 +4773,7 @@
     "closeNotified": false
   },
   {
-    "id": "58",
+    "id": "61",
     "name": "Shree TNB Polymers",
     "symbol": "SHREETNB",
     "category": "SME",
@@ -4730,7 +4838,7 @@
     "closeNotified": false
   },
   {
-    "id": "59",
+    "id": "62",
     "name": "EverestIMS Technologies",
     "symbol": "EIMS",
     "category": "SME",
@@ -4795,7 +4903,7 @@
     "closeNotified": false
   },
   {
-    "id": "60",
+    "id": "63",
     "name": "Eventions",
     "symbol": "EVENTIONS",
     "category": "SME",
@@ -4860,7 +4968,7 @@
     "closeNotified": false
   },
   {
-    "id": "61",
+    "id": "64",
     "name": "Dove Soft",
     "symbol": "DSL",
     "category": "SME",
@@ -4925,7 +5033,7 @@
     "closeNotified": false
   },
   {
-    "id": "62",
+    "id": "65",
     "name": "SJP Ultrasonic",
     "symbol": "SJP",
     "category": "SME",
@@ -4990,7 +5098,7 @@
     "closeNotified": false
   },
   {
-    "id": "63",
+    "id": "66",
     "name": "Omara Ventures India",
     "symbol": "OMARA",
     "category": "SME",
@@ -5055,7 +5163,7 @@
     "closeNotified": false
   },
   {
-    "id": "64",
+    "id": "67",
     "name": "Sollfege Smart Electronics",
     "symbol": "SOLLFEGE",
     "category": "SME",
@@ -5120,7 +5228,7 @@
     "closeNotified": false
   },
   {
-    "id": "65",
+    "id": "68",
     "name": "Nityas Gems & Jewellery",
     "symbol": "NITYAS",
     "category": "Mainboard",
@@ -5181,7 +5289,7 @@
     "closeNotified": false
   },
   {
-    "id": "66",
+    "id": "69",
     "name": "Vishal Nirmiti",
     "symbol": "VNL",
     "category": "Mainboard",
@@ -5242,7 +5350,7 @@
     "closeNotified": false
   },
   {
-    "id": "67",
+    "id": "70",
     "name": "Green Asia Impex",
     "symbol": "GREENASIA",
     "category": "SME",
@@ -5303,7 +5411,7 @@
     "closeNotified": false
   },
   {
-    "id": "68",
+    "id": "71",
     "name": "Black Opal Consultants",
     "symbol": "BLACKOPAL",
     "category": "SME",
@@ -5364,7 +5472,7 @@
     "closeNotified": false
   },
   {
-    "id": "69",
+    "id": "72",
     "name": "Papadmalji Agro Foods",
     "symbol": "PAPADMALJI",
     "category": "SME",
@@ -5425,7 +5533,7 @@
     "closeNotified": false
   },
   {
-    "id": "70",
+    "id": "73",
     "name": "Vans Electroengineerings",
     "symbol": "VANS",
     "category": "SME",
@@ -5486,7 +5594,7 @@
     "closeNotified": false
   },
   {
-    "id": "71",
+    "id": "74",
     "name": "Pind Hospitality",
     "symbol": "PIND",
     "category": "SME",
@@ -5547,7 +5655,7 @@
     "closeNotified": false
   },
   {
-    "id": "72",
+    "id": "75",
     "name": "Shah Investor’s Home",
     "symbol": "SHAHINVEST",
     "category": "Mainboard",
@@ -5579,7 +5687,7 @@
     "closeNotified": false
   },
   {
-    "id": "73",
+    "id": "76",
     "name": "Shivchem Agro",
     "symbol": "SHIVCHEM",
     "category": "SME",
@@ -5640,7 +5748,7 @@
     "closeNotified": false
   },
   {
-    "id": "74",
+    "id": "77",
     "name": "SRIT India",
     "symbol": "SRIT",
     "category": "Mainboard",
@@ -5701,7 +5809,7 @@
     ]
   },
   {
-    "id": "75",
+    "id": "78",
     "name": "Acme Universal Safezone 9",
     "symbol": "ACMEUNIV",
     "category": "SME",
@@ -5760,7 +5868,7 @@
     ]
   },
   {
-    "id": "76",
+    "id": "79",
     "name": "Sai Urja Indo Ventures",
     "symbol": "SAIURJA",
     "category": "SME",
@@ -5819,7 +5927,7 @@
     ]
   },
   {
-    "id": "77",
+    "id": "80",
     "name": "Runwal Enterprises",
     "symbol": "RUNWALENTR",
     "category": "Mainboard",
@@ -5878,7 +5986,7 @@
     ]
   },
   {
-    "id": "78",
+    "id": "81",
     "name": "German Green Steel & Power",
     "symbol": "GERMAN",
     "category": "Mainboard",
@@ -5937,7 +6045,7 @@
     ]
   },
   {
-    "id": "79",
+    "id": "82",
     "name": "Orient Cables (India)",
     "symbol": "ORIENTCABL",
     "category": "Mainboard",
@@ -5996,7 +6104,7 @@
     ]
   },
   {
-    "id": "80",
+    "id": "83",
     "name": "Acevector (Snapdeal)",
     "symbol": "ACEVECTOR",
     "category": "Mainboard",
@@ -6055,7 +6163,7 @@
     ]
   },
   {
-    "id": "81",
+    "id": "84",
     "name": "Himalayan Solar",
     "symbol": "HIMALAYAN",
     "category": "SME",
@@ -6114,7 +6222,7 @@
     ]
   },
   {
-    "id": "82",
+    "id": "85",
     "name": "Dudani Retail",
     "symbol": "DUDANI",
     "category": "SME",
@@ -6173,7 +6281,7 @@
     ]
   },
   {
-    "id": "83",
+    "id": "86",
     "name": "Bench Mark Infotech Services",
     "symbol": "BMISL",
     "category": "SME",
@@ -6232,7 +6340,7 @@
     ]
   },
   {
-    "id": "84",
+    "id": "87",
     "name": "A-One Steels India",
     "symbol": "AONESTEELS",
     "category": "Mainboard",
@@ -6291,7 +6399,7 @@
     ]
   },
   {
-    "id": "85",
+    "id": "88",
     "name": "Moneyview",
     "symbol": "MONEYVIEW",
     "category": "Mainboard",
@@ -6350,7 +6458,7 @@
     ]
   },
   {
-    "id": "86",
+    "id": "89",
     "name": "Peshwa Wheat",
     "symbol": "PESHWA",
     "category": "SME",
@@ -6409,7 +6517,7 @@
     ]
   },
   {
-    "id": "87",
+    "id": "90",
     "name": "Roopa Screen",
     "symbol": "ROOPA",
     "category": "SME",
@@ -6468,7 +6576,7 @@
     ]
   },
   {
-    "id": "88",
+    "id": "91",
     "name": "ArMee Infotech",
     "symbol": "ARMEE",
     "category": "Mainboard",
@@ -6527,7 +6635,7 @@
     ]
   },
   {
-    "id": "89",
+    "id": "92",
     "name": "S.K.Offset",
     "symbol": "SKOFFSET",
     "category": "SME",
@@ -6586,7 +6694,7 @@
     ]
   },
   {
-    "id": "90",
+    "id": "93",
     "name": "Unitec Fibres",
     "symbol": "UNITEC",
     "category": "SME",
@@ -6645,7 +6753,7 @@
     ]
   },
   {
-    "id": "91",
+    "id": "94",
     "name": "Adroit Industries (India)",
     "symbol": "ADROITIND",
     "category": "Mainboard",
@@ -6702,7 +6810,7 @@
     ]
   },
   {
-    "id": "92",
+    "id": "95",
     "name": "Swastika Infra",
     "symbol": "SWASTIKAIN",
     "category": "Mainboard",
@@ -6759,7 +6867,7 @@
     ]
   },
   {
-    "id": "93",
+    "id": "96",
     "name": "Liqvd Digital India",
     "symbol": "LIQVD",
     "category": "SME",
@@ -6816,7 +6924,7 @@
     ]
   },
   {
-    "id": "94",
+    "id": "97",
     "name": "Pooja Logistics",
     "symbol": "POOJALOGIS",
     "category": "SME",
@@ -6873,7 +6981,7 @@
     ]
   },
   {
-    "id": "95",
+    "id": "98",
     "name": "Coreintegra Consulting Services",
     "symbol": "COREIN",
     "category": "SME",
