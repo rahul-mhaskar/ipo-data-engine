@@ -1,7 +1,12 @@
 {
+  "swarababyproductsu": {
+    "name": "Swara Baby Products IPO U",
+    "gmp": 1000.0,
+    "last_updated": "26 Nov"
+  },
   "monomarkengineeringu": {
     "name": "Monomark Engineering IPO U",
-    "gmp": 21.0,
+    "gmp": 24.0,
     "last_updated": "26 Nov"
   },
   "ajpackagingu": {
@@ -16,27 +21,27 @@
   },
   "airprotechnologyu": {
     "name": "Airpro Technology NSE SME U",
-    "gmp": 4.0,
+    "gmp": 3.0,
     "last_updated": "26 Nov"
   },
   "foodlinkfbholdingso": {
     "name": "Foodlink F&B Holdings IPO O",
-    "gmp": 16.0,
+    "gmp": 12.0,
     "last_updated": "26 Nov"
   },
   "shreesiddhivinayakgreentecho": {
     "name": "Shree Siddhivinayak Greentech Industries NSE SME O",
-    "gmp": 25.0,
+    "gmp": 6.0,
     "last_updated": "26 Nov"
   },
   "watranarentalscallotted": {
     "name": "Watrana Rentals NSE SME C Allotted",
-    "gmp": 22.0,
+    "gmp": 19.0,
     "last_updated": "26 Nov"
   },
   "mahanadicoalfieldsc": {
     "name": "Mahanadi Coalfields IPO C",
-    "gmp": 1.35,
+    "gmp": 0.5,
     "last_updated": "26 Nov"
   },
   "crystalcropprotectionemailprotected221": {
@@ -112,11 +117,6 @@
   "eaaaindiaalternativesemailprotected063": {
     "name": "EAAA India Alternatives IPO [email protected] (0.63%)",
     "gmp": 54.0,
-    "last_updated": "26 Nov"
-  },
-  "core4engineersemailprotected20": {
-    "name": "Core4 Engineers BSE SME [email protected] (-20%)",
-    "gmp": 54.82,
     "last_updated": "26 Nov"
   },
   "airprotechnologyindia": {
