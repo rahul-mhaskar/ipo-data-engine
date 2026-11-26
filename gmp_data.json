@@ -19,9 +19,9 @@
     "gmp": 4.0,
     "last_updated": "26 Nov"
   },
-  "foodlinkfbholdingsu": {
-    "name": "Foodlink F&B Holdings IPO U",
-    "gmp": 18.0,
+  "foodlinkfbholdingso": {
+    "name": "Foodlink F&B Holdings IPO O",
+    "gmp": 16.0,
     "last_updated": "26 Nov"
   },
   "shreesiddhivinayakgreentecho": {
@@ -36,11 +36,11 @@
   },
   "mahanadicoalfieldsc": {
     "name": "Mahanadi Coalfields IPO C",
-    "gmp": 8981.12,
+    "gmp": 1.35,
     "last_updated": "26 Nov"
   },
-  "crystalcropprotectioncallotted": {
-    "name": "Crystal Crop Protection IPO C Allotted",
+  "crystalcropprotectionemailprotected221": {
+    "name": "Crystal Crop Protection IPO [email protected] (2.21%)",
     "gmp": 17.0,
     "last_updated": "26 Nov"
   },
@@ -119,6 +119,11 @@
     "gmp": 54.82,
     "last_updated": "26 Nov"
   },
+  "airprotechnologyindia": {
+    "name": "Airpro Technology India",
+    "gmp": 4.0,
+    "last_updated": "26 Nov"
+  },
   "foodlinkfbholdingsindia": {
     "name": "Foodlink F&B Holdings (India)",
     "gmp": 0.0,
@@ -142,11 +147,6 @@
   "matangirubber": {
     "name": "Matangi Rubber",
     "gmp": 27.0,
-    "last_updated": "26 Nov"
-  },
-  "airprotechnologyindia": {
-    "name": "Airpro Technology India",
-    "gmp": 4.0,
     "last_updated": "26 Nov"
   },
   "integrismedtech": {
@@ -226,6 +226,11 @@
   },
   "bharatfih": {
     "name": "Bharat FIH",
+    "gmp": 0.0,
+    "last_updated": "26 Nov"
+  },
+  "fabindia": {
+    "name": "FabIndia",
     "gmp": 0.0,
     "last_updated": "26 Nov"
   },
@@ -342,11 +347,6 @@
   "shellzindia": {
     "name": "Shellz India",
     "gmp": 7.0,
-    "last_updated": "26 Nov"
-  },
-  "fabindia": {
-    "name": "FabIndia",
-    "gmp": 0.0,
     "last_updated": "26 Nov"
   },
   "oyo": {
