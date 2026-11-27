@@ -21,7 +21,7 @@
   },
   "matangirubberu": {
     "name": "Matangi Rubber IPO U",
-    "gmp": 25.5,
+    "gmp": 31.0,
     "last_updated": "27 Nov"
   },
   "airprotechnologyo": {
@@ -144,9 +144,9 @@
     "gmp": 0.0,
     "last_updated": "27 Nov"
   },
-  "shreesiddhivinayakgreentech": {
-    "name": "Shree Siddhivinayak Greentech Industries",
-    "gmp": 2.0,
+  "swarababyproducts": {
+    "name": "Swara Baby Products",
+    "gmp": 0.0,
     "last_updated": "27 Nov"
   },
   "integrismedtech": {
@@ -244,9 +244,9 @@
     "gmp": 0.0,
     "last_updated": "27 Nov"
   },
-  "boat": {
-    "name": "BoAt",
-    "gmp": 0.0,
+  "shreesiddhivinayakgreentech": {
+    "name": "Shree Siddhivinayak Greentech Industries",
+    "gmp": 2.0,
     "last_updated": "27 Nov"
   },
   "mahanadicoalfields": {
@@ -347,6 +347,11 @@
   "parashealthcare": {
     "name": "Paras Healthcare",
     "gmp": 13.0,
+    "last_updated": "27 Nov"
+  },
+  "boat": {
+    "name": "BoAt",
+    "gmp": 0.0,
     "last_updated": "27 Nov"
   },
   "sahajanandmedicaltechnologies": {

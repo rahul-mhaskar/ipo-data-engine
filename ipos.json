@@ -286,7 +286,7 @@
         "netWorth": 16.1
       }
     ],
-    "subscriptionTotal": 0.56,
+    "subscriptionTotal": 0.79,
     "subscriptionRetail": 0.0,
     "subscriptionHNI": 0.0,
     "subscriptionQIB": 0.0,
@@ -352,7 +352,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 1.4,
+    "subscriptionTotal": 1.48,
     "subscriptionRetail": 2.44,
     "subscriptionHNI": 0.41,
     "subscriptionQIB": 1.0,
@@ -368,89 +368,36 @@
   },
   {
     "id": "6",
-    "name": "Shree Siddhivinayak Greentech Industries",
-    "symbol": "SHREESIDHI",
-    "category": "SME",
-    "status": "OPEN",
+    "name": "Swara Baby Products",
+    "symbol": "SWARABA",
+    "category": "Mainboard",
+    "status": "UPCOMING",
     "logoUrl": null,
-    "issueSizeCr": 93.0,
-    "issuePriceMin": 130.0,
-    "issuePriceMax": 142.0,
-    "lotSize": 1000,
-    "openDate": "2026-11-25",
-    "closeDate": "2026-11-27",
-    "allotmentDate": "2026-11-30",
-    "listingDate": "2026-12-02",
-    "gmpAmount": 2.0,
-    "gmpPercent": 1.41,
-    "gmpHistory": [
-      {
-        "dateLabel": "20 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 10.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 20.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 4.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 2.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 88.98,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "ERUDORE CAPITAL Pvt.Ltd.",
-      "MAS Services Ltd.",
-      "Basan Equity Broking Ltd."
-    ],
+    "issueSizeCr": 800.0,
+    "issuePriceMin": 105.0,
+    "issuePriceMax": 111.0,
+    "lotSize": 135,
+    "openDate": "2026-12-02",
+    "closeDate": "2026-12-04",
+    "allotmentDate": "2026-12-07",
+    "listingDate": "2026-12-09",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [],
+    "issueStructure": null,
+    "leadManagers": [],
     "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 36.9,
-        "pat": 3.1,
-        "netWorth": 13.0
-      },
-      {
-        "year": "FY25",
-        "revenue": 61.1,
-        "pat": 5.5,
-        "netWorth": 18.5
-      },
-      {
-        "year": "FY26",
-        "revenue": 37.4,
-        "pat": 3.5,
-        "netWorth": 28.5
-      }
-    ],
-    "subscriptionTotal": 1.67,
-    "subscriptionRetail": 1.64,
-    "subscriptionHNI": 0.83,
-    "subscriptionQIB": 4.27,
+    "financials": [],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
-    "registrarName": "MAS SERVICES LIMITED",
-    "registrarUrl": "https://www.masserv.com/",
+    "registrarName": "MUFG Intime India Private Limited",
+    "registrarUrl": "https://in.mpms.mufg.com/",
     "isAllotmentDone": false,
-    "rhpPdfUrl": "https://nsearchives.nseindia.com/emerge/corporates/content/Registration_15072026182020_DRHPSiddhivinayak.pdf",
+    "rhpPdfUrl": "",
     "drhpPdfUrl": "",
     "openNotified": false,
     "closeNotified": false
@@ -2016,26 +1963,22 @@
   },
   {
     "id": "26",
-    "name": "BoAt",
-    "symbol": "BOAT",
-    "category": "Mainboard",
-    "status": "UPCOMING",
+    "name": "Shree Siddhivinayak Greentech Industries",
+    "symbol": "SHREESIDHI",
+    "category": "SME",
+    "status": "CLOSED",
     "logoUrl": null,
-    "issueSizeCr": 0.0,
-    "issuePriceMin": 0.0,
-    "issuePriceMax": 0.0,
-    "lotSize": 0,
-    "openDate": "To Be Updated",
-    "closeDate": "To Be Updated",
-    "allotmentDate": "To Be Updated",
-    "listingDate": "To Be Updated",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
+    "issueSizeCr": 93.0,
+    "issuePriceMin": 130.0,
+    "issuePriceMax": 142.0,
+    "lotSize": 1000,
+    "openDate": "2026-11-25",
+    "closeDate": "2026-11-27",
+    "allotmentDate": "2026-11-30",
+    "listingDate": "2026-12-02",
+    "gmpAmount": 2.0,
+    "gmpPercent": 1.41,
     "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 0.0
-      },
       {
         "dateLabel": "20 Nov",
         "amount": 0.0
@@ -2046,65 +1989,64 @@
       },
       {
         "dateLabel": "24 Nov",
-        "amount": 0.0
+        "amount": 10.0
       },
       {
         "dateLabel": "25 Nov",
-        "amount": 0.0
+        "amount": 20.0
       },
       {
         "dateLabel": "26 Nov",
-        "amount": 0.0
+        "amount": 4.0
       },
       {
         "dateLabel": "27 Nov",
-        "amount": 0.0
+        "amount": 2.0
       }
     ],
     "issueStructure": {
-      "freshIssueCr": 500.0,
-      "ofsCr": 1000.0,
+      "freshIssueCr": 88.98,
+      "ofsCr": 0.0,
       "promoterHoldingPre": null,
       "promoterHoldingPost": null
     },
     "leadManagers": [
-      "ICICI Securities Ltd.",
-      "Goldman Sachs (India) Securities Pvt.Ltd.",
-      "JM Financial Ltd.",
-      "Nomura Financial Advisory & Securities (India) Pvt.Ltd."
+      "ERUDORE CAPITAL Pvt.Ltd.",
+      "MAS Services Ltd.",
+      "Basan Equity Broking Ltd."
     ],
     "anchorPortionCr": 0.0,
     "financials": [
       {
-        "year": "FY23",
-        "revenue": 3403.2,
-        "pat": -129.4,
-        "netWorth": 454.6
-      },
-      {
         "year": "FY24",
-        "revenue": 572.4,
-        "pat": -31.1,
-        "netWorth": 345.1
+        "revenue": 36.9,
+        "pat": 3.1,
+        "netWorth": 13.0
       },
       {
         "year": "FY25",
-        "revenue": 638.4,
-        "pat": 21.4,
-        "netWorth": 452.8
+        "revenue": 61.1,
+        "pat": 5.5,
+        "netWorth": 18.5
+      },
+      {
+        "year": "FY26",
+        "revenue": 37.4,
+        "pat": 3.5,
+        "netWorth": 28.5
       }
     ],
-    "subscriptionTotal": 0.0,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
+    "subscriptionTotal": 1.74,
+    "subscriptionRetail": 1.64,
+    "subscriptionHNI": 0.83,
+    "subscriptionQIB": 4.27,
     "listingPrice": 0.0,
     "listingGainPercent": 0.0,
-    "registrarName": "Link Intime India Private Limited",
-    "registrarUrl": "https://www.linkintime.co.in",
+    "registrarName": "MAS SERVICES LIMITED",
+    "registrarUrl": "https://www.masserv.com/",
     "isAllotmentDone": false,
-    "rhpPdfUrl": "",
-    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=/sebi_data/attachdocs/jan-2022/1643353844101.PDF#page=2&zoom=page-width,-15,379",
+    "rhpPdfUrl": "https://nsearchives.nseindia.com/emerge/corporates/content/Registration_15072026182020_DRHPSiddhivinayak.pdf",
+    "drhpPdfUrl": "",
     "openNotified": false,
     "closeNotified": false
   },
@@ -3913,6 +3855,100 @@
   },
   {
     "id": "47",
+    "name": "BoAt",
+    "symbol": "BOAT",
+    "category": "Mainboard",
+    "status": "UPCOMING",
+    "logoUrl": null,
+    "issueSizeCr": 0.0,
+    "issuePriceMin": 0.0,
+    "issuePriceMax": 0.0,
+    "lotSize": 0,
+    "openDate": "To Be Updated",
+    "closeDate": "To Be Updated",
+    "allotmentDate": "To Be Updated",
+    "listingDate": "To Be Updated",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 0.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 500.0,
+      "ofsCr": 1000.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "ICICI Securities Ltd.",
+      "Goldman Sachs (India) Securities Pvt.Ltd.",
+      "JM Financial Ltd.",
+      "Nomura Financial Advisory & Securities (India) Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY23",
+        "revenue": 3403.2,
+        "pat": -129.4,
+        "netWorth": 454.6
+      },
+      {
+        "year": "FY24",
+        "revenue": 572.4,
+        "pat": -31.1,
+        "netWorth": 345.1
+      },
+      {
+        "year": "FY25",
+        "revenue": 638.4,
+        "pat": 21.4,
+        "netWorth": 452.8
+      }
+    ],
+    "subscriptionTotal": 0.0,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Link Intime India Private Limited",
+    "registrarUrl": "https://www.linkintime.co.in",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "",
+    "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=/sebi_data/attachdocs/jan-2022/1643353844101.PDF#page=2&zoom=page-width,-15,379",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "48",
     "name": "Sahajanand Medical Technologies",
     "symbol": "SMT",
     "category": "Mainboard",
@@ -3977,7 +4013,7 @@
     "closeNotified": true
   },
   {
-    "id": "48",
+    "id": "49",
     "name": "Tonbo Imaging India",
     "symbol": "TONBO",
     "category": "Mainboard",
@@ -4061,7 +4097,7 @@
     "closeNotified": true
   },
   {
-    "id": "49",
+    "id": "50",
     "name": "Shellz India",
     "symbol": "SHELLZ",
     "category": "SME",
@@ -4145,7 +4181,7 @@
     "closeNotified": true
   },
   {
-    "id": "50",
+    "id": "51",
     "name": "Navi Technologies",
     "symbol": "NAVITEC",
     "category": "Mainboard",
@@ -4215,7 +4251,7 @@
     "closeNotified": false
   },
   {
-    "id": "51",
+    "id": "52",
     "name": "Zetwerk Manufacturing",
     "symbol": "ZETWERK",
     "category": "Mainboard",
@@ -4280,7 +4316,7 @@
     "closeNotified": true
   },
   {
-    "id": "52",
+    "id": "53",
     "name": "Bonfiglioli Transmissions",
     "symbol": "BONFIG",
     "category": "Mainboard",
@@ -4364,7 +4400,7 @@
     "closeNotified": true
   },
   {
-    "id": "53",
+    "id": "54",
     "name": "Ravita Engineering Services",
     "symbol": "RAVITA",
     "category": "SME",
@@ -4448,7 +4484,7 @@
     "closeNotified": true
   },
   {
-    "id": "54",
+    "id": "55",
     "name": "Fusion CX",
     "symbol": "FUSIONCX",
     "category": "Mainboard",
@@ -4532,7 +4568,7 @@
     "closeNotified": true
   },
   {
-    "id": "55",
+    "id": "56",
     "name": "HD Fire Protect",
     "symbol": "HDFIRE",
     "category": "Mainboard",
@@ -4597,7 +4633,7 @@
     "closeNotified": true
   },
   {
-    "id": "56",
+    "id": "57",
     "name": "Vaibhav Vyapaar",
     "symbol": "LOANFRONT",
     "category": "SME",
@@ -4662,7 +4698,7 @@
     "closeNotified": true
   },
   {
-    "id": "57",
+    "id": "58",
     "name": "R.K.Fashion Accessories",
     "symbol": "RKFAL",
     "category": "SME",
@@ -4727,7 +4763,7 @@
     "closeNotified": false
   },
   {
-    "id": "58",
+    "id": "59",
     "name": "TNA Solutions",
     "symbol": "TNA",
     "category": "SME",
@@ -4792,7 +4828,7 @@
     "closeNotified": false
   },
   {
-    "id": "59",
+    "id": "60",
     "name": "Acme India Industries",
     "symbol": "ACMERAIL",
     "category": "SME",
@@ -4857,7 +4893,7 @@
     "closeNotified": false
   },
   {
-    "id": "60",
+    "id": "61",
     "name": "Paramount Syntex",
     "symbol": "PARASYNTEX",
     "category": "SME",
@@ -4922,7 +4958,7 @@
     "closeNotified": false
   },
   {
-    "id": "61",
+    "id": "62",
     "name": "Shree TNB Polymers",
     "symbol": "SHREETNB",
     "category": "SME",
@@ -4987,7 +5023,7 @@
     "closeNotified": false
   },
   {
-    "id": "62",
+    "id": "63",
     "name": "EverestIMS Technologies",
     "symbol": "EIMS",
     "category": "SME",
@@ -5052,7 +5088,7 @@
     "closeNotified": false
   },
   {
-    "id": "63",
+    "id": "64",
     "name": "Eventions",
     "symbol": "EVENTIONS",
     "category": "SME",
@@ -5117,7 +5153,7 @@
     "closeNotified": false
   },
   {
-    "id": "64",
+    "id": "65",
     "name": "Dove Soft",
     "symbol": "DSL",
     "category": "SME",
@@ -5182,7 +5218,7 @@
     "closeNotified": false
   },
   {
-    "id": "65",
+    "id": "66",
     "name": "SJP Ultrasonic",
     "symbol": "SJP",
     "category": "SME",
@@ -5247,7 +5283,7 @@
     "closeNotified": false
   },
   {
-    "id": "66",
+    "id": "67",
     "name": "Omara Ventures India",
     "symbol": "OMARA",
     "category": "SME",
@@ -5312,7 +5348,7 @@
     "closeNotified": false
   },
   {
-    "id": "67",
+    "id": "68",
     "name": "Sollfege Smart Electronics",
     "symbol": "SOLLFEGE",
     "category": "SME",
@@ -5377,7 +5413,7 @@
     "closeNotified": false
   },
   {
-    "id": "68",
+    "id": "69",
     "name": "Nityas Gems & Jewellery",
     "symbol": "NITYAS",
     "category": "Mainboard",
@@ -5438,7 +5474,7 @@
     "closeNotified": false
   },
   {
-    "id": "69",
+    "id": "70",
     "name": "Vishal Nirmiti",
     "symbol": "VNL",
     "category": "Mainboard",
@@ -5499,7 +5535,7 @@
     "closeNotified": false
   },
   {
-    "id": "70",
+    "id": "71",
     "name": "Green Asia Impex",
     "symbol": "GREENASIA",
     "category": "SME",
@@ -5560,7 +5596,7 @@
     "closeNotified": false
   },
   {
-    "id": "71",
+    "id": "72",
     "name": "Black Opal Consultants",
     "symbol": "BLACKOPAL",
     "category": "SME",
@@ -5621,7 +5657,7 @@
     "closeNotified": false
   },
   {
-    "id": "72",
+    "id": "73",
     "name": "Papadmalji Agro Foods",
     "symbol": "PAPADMALJI",
     "category": "SME",
@@ -5682,7 +5718,7 @@
     "closeNotified": false
   },
   {
-    "id": "73",
+    "id": "74",
     "name": "Vans Electroengineerings",
     "symbol": "VANS",
     "category": "SME",
@@ -5743,7 +5779,7 @@
     "closeNotified": false
   },
   {
-    "id": "74",
+    "id": "75",
     "name": "Pind Hospitality",
     "symbol": "PIND",
     "category": "SME",
@@ -5804,7 +5840,7 @@
     "closeNotified": false
   },
   {
-    "id": "75",
+    "id": "76",
     "name": "Shah Investor’s Home",
     "symbol": "SHAHINVEST",
     "category": "Mainboard",
@@ -5836,7 +5872,7 @@
     "closeNotified": false
   },
   {
-    "id": "76",
+    "id": "77",
     "name": "Shivchem Agro",
     "symbol": "SHIVCHEM",
     "category": "SME",
@@ -5897,7 +5933,7 @@
     "closeNotified": false
   },
   {
-    "id": "77",
+    "id": "78",
     "name": "SRIT India",
     "symbol": "SRIT",
     "category": "Mainboard",
@@ -5958,7 +5994,7 @@
     ]
   },
   {
-    "id": "78",
+    "id": "79",
     "name": "Acme Universal Safezone 9",
     "symbol": "ACMEUNIV",
     "category": "SME",
@@ -6017,7 +6053,7 @@
     ]
   },
   {
-    "id": "79",
+    "id": "80",
     "name": "Sai Urja Indo Ventures",
     "symbol": "SAIURJA",
     "category": "SME",
@@ -6076,7 +6112,7 @@
     ]
   },
   {
-    "id": "80",
+    "id": "81",
     "name": "Runwal Enterprises",
     "symbol": "RUNWALENTR",
     "category": "Mainboard",
@@ -6135,7 +6171,7 @@
     ]
   },
   {
-    "id": "81",
+    "id": "82",
     "name": "German Green Steel & Power",
     "symbol": "GERMAN",
     "category": "Mainboard",
@@ -6194,7 +6230,7 @@
     ]
   },
   {
-    "id": "82",
+    "id": "83",
     "name": "Orient Cables (India)",
     "symbol": "ORIENTCABL",
     "category": "Mainboard",
@@ -6253,7 +6289,7 @@
     ]
   },
   {
-    "id": "83",
+    "id": "84",
     "name": "Acevector (Snapdeal)",
     "symbol": "ACEVECTOR",
     "category": "Mainboard",
@@ -6312,7 +6348,7 @@
     ]
   },
   {
-    "id": "84",
+    "id": "85",
     "name": "Himalayan Solar",
     "symbol": "HIMALAYAN",
     "category": "SME",
@@ -6371,7 +6407,7 @@
     ]
   },
   {
-    "id": "85",
+    "id": "86",
     "name": "Dudani Retail",
     "symbol": "DUDANI",
     "category": "SME",
@@ -6430,7 +6466,7 @@
     ]
   },
   {
-    "id": "86",
+    "id": "87",
     "name": "Bench Mark Infotech Services",
     "symbol": "BMISL",
     "category": "SME",
@@ -6489,7 +6525,7 @@
     ]
   },
   {
-    "id": "87",
+    "id": "88",
     "name": "A-One Steels India",
     "symbol": "AONESTEELS",
     "category": "Mainboard",
@@ -6548,7 +6584,7 @@
     ]
   },
   {
-    "id": "88",
+    "id": "89",
     "name": "Moneyview",
     "symbol": "MONEYVIEW",
     "category": "Mainboard",
@@ -6607,7 +6643,7 @@
     ]
   },
   {
-    "id": "89",
+    "id": "90",
     "name": "Peshwa Wheat",
     "symbol": "PESHWA",
     "category": "SME",
@@ -6666,7 +6702,7 @@
     ]
   },
   {
-    "id": "90",
+    "id": "91",
     "name": "Roopa Screen",
     "symbol": "ROOPA",
     "category": "SME",
@@ -6725,7 +6761,7 @@
     ]
   },
   {
-    "id": "91",
+    "id": "92",
     "name": "ArMee Infotech",
     "symbol": "ARMEE",
     "category": "Mainboard",
@@ -6784,7 +6820,7 @@
     ]
   },
   {
-    "id": "92",
+    "id": "93",
     "name": "S.K.Offset",
     "symbol": "SKOFFSET",
     "category": "SME",
@@ -6843,7 +6879,7 @@
     ]
   },
   {
-    "id": "93",
+    "id": "94",
     "name": "Unitec Fibres",
     "symbol": "UNITEC",
     "category": "SME",
@@ -6902,7 +6938,7 @@
     ]
   },
   {
-    "id": "94",
+    "id": "95",
     "name": "Adroit Industries (India)",
     "symbol": "ADROITIND",
     "category": "Mainboard",
@@ -6959,7 +6995,7 @@
     ]
   },
   {
-    "id": "95",
+    "id": "96",
     "name": "Swastika Infra",
     "symbol": "SWASTIKAIN",
     "category": "Mainboard",
@@ -7016,7 +7052,7 @@
     ]
   },
   {
-    "id": "96",
+    "id": "97",
     "name": "Liqvd Digital India",
     "symbol": "LIQVD",
     "category": "SME",
@@ -7073,7 +7109,7 @@
     ]
   },
   {
-    "id": "97",
+    "id": "98",
     "name": "Pooja Logistics",
     "symbol": "POOJALOGIS",
     "category": "SME",
@@ -7130,7 +7166,7 @@
     ]
   },
   {
-    "id": "98",
+    "id": "99",
     "name": "Coreintegra Consulting Services",
     "symbol": "COREIN",
     "category": "SME",
