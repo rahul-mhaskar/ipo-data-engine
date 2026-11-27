@@ -87,8 +87,8 @@
     "closeDate": "2026-11-30",
     "allotmentDate": "2026-12-01",
     "listingDate": "2026-12-03",
-    "gmpAmount": 7.0,
-    "gmpPercent": 3.66,
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
     "gmpHistory": [
       {
         "dateLabel": "20 Nov",
@@ -124,7 +124,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 1.126,
+    "subscriptionTotal": 1.09,
     "subscriptionRetail": 2.44,
     "subscriptionHNI": 0.41,
     "subscriptionQIB": 1.0,
@@ -213,7 +213,7 @@
         "netWorth": 28.5
       }
     ],
-    "subscriptionTotal": 1.2726,
+    "subscriptionTotal": 1.32,
     "subscriptionRetail": 1.64,
     "subscriptionHNI": 0.83,
     "subscriptionQIB": 4.27,
@@ -1927,7 +1927,7 @@
         "netWorth": 22399.8
       }
     ],
-    "subscriptionTotal": 1.5223,
+    "subscriptionTotal": 1.51,
     "subscriptionRetail": 0.48,
     "subscriptionHNI": 0.66,
     "subscriptionQIB": 4.95,
@@ -2018,7 +2018,7 @@
         "netWorth": 93.2
       }
     ],
-    "subscriptionTotal": 150.4823,
+    "subscriptionTotal": 149.76,
     "subscriptionRetail": 108.71,
     "subscriptionHNI": 233.67,
     "subscriptionQIB": 161.11,
@@ -2111,7 +2111,7 @@
         "netWorth": 0.0
       }
     ],
-    "subscriptionTotal": 17.682,
+    "subscriptionTotal": 16.8,
     "subscriptionRetail": 9.71,
     "subscriptionHNI": 39.16,
     "subscriptionQIB": 15.81,
@@ -2203,7 +2203,7 @@
         "netWorth": 22.2
       }
     ],
-    "subscriptionTotal": 12.795,
+    "subscriptionTotal": 12.72,
     "subscriptionRetail": 5.22,
     "subscriptionHNI": 49.94,
     "subscriptionQIB": 66.72,
@@ -2387,7 +2387,7 @@
         "netWorth": 27.9
       }
     ],
-    "subscriptionTotal": 536.83,
+    "subscriptionTotal": 534.65,
     "subscriptionRetail": 556.09,
     "subscriptionHNI": 857.65,
     "subscriptionQIB": 259.45,
@@ -2479,7 +2479,7 @@
         "netWorth": 90.4
       }
     ],
-    "subscriptionTotal": 248.583,
+    "subscriptionTotal": 173.78,
     "subscriptionRetail": 235.72,
     "subscriptionHNI": 424.67,
     "subscriptionQIB": 137.92,
@@ -2572,7 +2572,7 @@
         "netWorth": 40.1
       }
     ],
-    "subscriptionTotal": 23.823,
+    "subscriptionTotal": 23.61,
     "subscriptionRetail": 17.98,
     "subscriptionHNI": 42.27,
     "subscriptionQIB": 20.19,
@@ -2664,7 +2664,7 @@
         "netWorth": 46.9
       }
     ],
-    "subscriptionTotal": 4.23,
+    "subscriptionTotal": 4.22,
     "subscriptionRetail": 4.45,
     "subscriptionHNI": 6.69,
     "subscriptionQIB": 1.88,
@@ -2734,7 +2734,7 @@
     "leadManagers": [],
     "anchorPortionCr": 0.0,
     "financials": [],
-    "subscriptionTotal": 63.892,
+    "subscriptionTotal": 32.01,
     "subscriptionRetail": 35.46,
     "subscriptionHNI": 166.44,
     "subscriptionQIB": 37.32,
@@ -2825,7 +2825,7 @@
         "netWorth": 183.0
       }
     ],
-    "subscriptionTotal": 5.093,
+    "subscriptionTotal": 5.03,
     "subscriptionRetail": 3.08,
     "subscriptionHNI": 14.12,
     "subscriptionQIB": 1.84,
@@ -2917,7 +2917,7 @@
         "netWorth": 17.6
       }
     ],
-    "subscriptionTotal": 25.83,
+    "subscriptionTotal": 25.18,
     "subscriptionRetail": 19.17,
     "subscriptionHNI": 40.39,
     "subscriptionQIB": 26.33,
@@ -3009,7 +3009,7 @@
         "netWorth": 19.3
       }
     ],
-    "subscriptionTotal": 1.123,
+    "subscriptionTotal": 1.18,
     "subscriptionRetail": 1.93,
     "subscriptionHNI": 0.32,
     "subscriptionQIB": 0.0,
@@ -3100,7 +3100,7 @@
         "netWorth": 105.2
       }
     ],
-    "subscriptionTotal": 241.2229,
+    "subscriptionTotal": 239.02,
     "subscriptionRetail": 128.36,
     "subscriptionHNI": 559.2,
     "subscriptionQIB": 200.25,
@@ -3193,7 +3193,7 @@
         "netWorth": 805.5
       }
     ],
-    "subscriptionTotal": 9.4729,
+    "subscriptionTotal": 9.17,
     "subscriptionRetail": 2.71,
     "subscriptionHNI": 12.81,
     "subscriptionQIB": 18.81,
@@ -3273,7 +3273,7 @@
         "netWorth": 38.5
       }
     ],
-    "subscriptionTotal": 1.1729,
+    "subscriptionTotal": 1.26,
     "subscriptionRetail": 0.66,
     "subscriptionHNI": 0.62,
     "subscriptionQIB": 2.24,
@@ -3367,7 +3367,7 @@
         "netWorth": 1160.4
       }
     ],
-    "subscriptionTotal": 5.5128,
+    "subscriptionTotal": 5.15,
     "subscriptionRetail": 1.08,
     "subscriptionHNI": 4.81,
     "subscriptionQIB": 13.8,
@@ -4160,7 +4160,7 @@
     "allotmentDate": "To Be Updated",
     "listingDate": "To Be Updated",
     "gmpAmount": 15.5,
-    "gmpPercent": 4.7,
+    "gmpPercent": 0.0,
     "gmpHistory": [
       {
         "dateLabel": "20 Nov",
