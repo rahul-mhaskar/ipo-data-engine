@@ -1,236 +1,8 @@
 [
   {
     "id": "1",
-    "name": "Airpro Technology India",
-    "symbol": "AIRPRO",
-    "category": "SME",
-    "status": "OPEN",
-    "logoUrl": null,
-    "issueSizeCr": 35.0,
-    "issuePriceMin": 99.0,
-    "issuePriceMax": 99.0,
-    "lotSize": 1200,
-    "openDate": "2026-11-27",
-    "closeDate": "2026-12-01",
-    "allotmentDate": "2026-12-02",
-    "listingDate": "2026-12-04",
-    "gmpAmount": 3.0,
-    "gmpPercent": 3.03,
-    "gmpHistory": [
-      {
-        "dateLabel": "25 Nov",
-        "amount": 4.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 3.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 3.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 0.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 22.1,
-        "pat": 1.1,
-        "netWorth": 4.3
-      },
-      {
-        "year": "FY25",
-        "revenue": 28.2,
-        "pat": 2.3,
-        "netWorth": 6.6
-      },
-      {
-        "year": "FY26",
-        "revenue": 19.4,
-        "pat": 3.2,
-        "netWorth": 16.1
-      }
-    ],
-    "subscriptionTotal": 0.0,
-    "subscriptionRetail": 0.0,
-    "subscriptionHNI": 0.0,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "MUFG INTIME INDIA PRIVATE LIMITED",
-    "registrarUrl": "https://in.mpms.mufg.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "",
-    "drhpPdfUrl": "https://nsearchives.nseindia.com/emerge/corporates/content/Registration_29062026214422_AirproDraftProspectus.pdf",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "2",
-    "name": "Foodlink F&B Holdings (India)",
-    "symbol": "FOODLINK",
-    "category": "Mainboard",
-    "status": "OPEN",
-    "logoUrl": null,
-    "issueSizeCr": 360.0,
-    "issuePriceMin": 181.0,
-    "issuePriceMax": 191.0,
-    "lotSize": 78,
-    "openDate": "2026-11-26",
-    "closeDate": "2026-11-30",
-    "allotmentDate": "2026-12-01",
-    "listingDate": "2026-12-03",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "20 Nov",
-        "amount": 12.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 12.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 15.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 18.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 9.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 7.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 0.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [],
-    "anchorPortionCr": 0.0,
-    "financials": [],
-    "subscriptionTotal": 1.09,
-    "subscriptionRetail": 2.44,
-    "subscriptionHNI": 0.41,
-    "subscriptionQIB": 1.0,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "MUFG Intime India Private Limited",
-    "registrarUrl": "https://in.mpms.mufg.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://s3.ap-south-1.amazonaws.com/cms.equirus.tech/Foodlink_F_and_B_Holdings_India_Limited_Red_Herring_Prospectus_95e7e3e3b7.pdf",
-    "drhpPdfUrl": "",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "3",
-    "name": "Shree Siddhivinayak Greentech Industries",
-    "symbol": "SHREESIDHI",
-    "category": "SME",
-    "status": "OPEN",
-    "logoUrl": null,
-    "issueSizeCr": 93.0,
-    "issuePriceMin": 130.0,
-    "issuePriceMax": 142.0,
-    "lotSize": 1000,
-    "openDate": "2026-11-25",
-    "closeDate": "2026-11-27",
-    "allotmentDate": "2026-11-30",
-    "listingDate": "2026-12-02",
-    "gmpAmount": 2.0,
-    "gmpPercent": 1.41,
-    "gmpHistory": [
-      {
-        "dateLabel": "20 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 10.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 20.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 4.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 2.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 88.98,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "ERUDORE CAPITAL Pvt.Ltd.",
-      "MAS Services Ltd.",
-      "Basan Equity Broking Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 36.9,
-        "pat": 3.1,
-        "netWorth": 13.0
-      },
-      {
-        "year": "FY25",
-        "revenue": 61.1,
-        "pat": 5.5,
-        "netWorth": 18.5
-      },
-      {
-        "year": "FY26",
-        "revenue": 37.4,
-        "pat": 3.5,
-        "netWorth": 28.5
-      }
-    ],
-    "subscriptionTotal": 1.32,
-    "subscriptionRetail": 1.64,
-    "subscriptionHNI": 0.83,
-    "subscriptionQIB": 4.27,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "MAS SERVICES LIMITED",
-    "registrarUrl": "https://www.masserv.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://nsearchives.nseindia.com/emerge/corporates/content/Registration_15072026182020_DRHPSiddhivinayak.pdf",
-    "drhpPdfUrl": "",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "4",
     "name": "Monomark Engineering (India)",
-    "symbol": "MONOMAR",
+    "symbol": "MONOMARK",
     "category": "Mainboard",
     "status": "UPCOMING",
     "logoUrl": null,
@@ -301,9 +73,9 @@
     "closeNotified": false
   },
   {
-    "id": "5",
+    "id": "2",
     "name": "A J Packaging",
-    "symbol": "AJPACKA",
+    "symbol": "AJPACK",
     "category": "SME",
     "status": "UPCOMING",
     "logoUrl": null,
@@ -377,7 +149,7 @@
     "closeNotified": false
   },
   {
-    "id": "6",
+    "id": "3",
     "name": "Matangi Rubber",
     "symbol": "MATANGI",
     "category": "Mainboard",
@@ -451,6 +223,234 @@
     "registrarUrl": "https://www.bigshareonline.com/",
     "isAllotmentDone": false,
     "rhpPdfUrl": "https://matangirubber.com/wp-content/uploads/2026/11/Matangi_Red-Herring-Prospectus.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "4",
+    "name": "Airpro Technology India",
+    "symbol": "AIRPRO",
+    "category": "SME",
+    "status": "OPEN",
+    "logoUrl": null,
+    "issueSizeCr": 35.0,
+    "issuePriceMin": 99.0,
+    "issuePriceMax": 99.0,
+    "lotSize": 1200,
+    "openDate": "2026-11-27",
+    "closeDate": "2026-12-01",
+    "allotmentDate": "2026-12-02",
+    "listingDate": "2026-12-04",
+    "gmpAmount": 3.0,
+    "gmpPercent": 3.03,
+    "gmpHistory": [
+      {
+        "dateLabel": "25 Nov",
+        "amount": 4.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 3.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 3.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 22.1,
+        "pat": 1.1,
+        "netWorth": 4.3
+      },
+      {
+        "year": "FY25",
+        "revenue": 28.2,
+        "pat": 2.3,
+        "netWorth": 6.6
+      },
+      {
+        "year": "FY26",
+        "revenue": 19.4,
+        "pat": 3.2,
+        "netWorth": 16.1
+      }
+    ],
+    "subscriptionTotal": 0.56,
+    "subscriptionRetail": 0.0,
+    "subscriptionHNI": 0.0,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "MUFG INTIME INDIA PRIVATE LIMITED",
+    "registrarUrl": "https://in.mpms.mufg.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "",
+    "drhpPdfUrl": "https://nsearchives.nseindia.com/emerge/corporates/content/Registration_29062026214422_AirproDraftProspectus.pdf",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "5",
+    "name": "Foodlink F&B Holdings (India)",
+    "symbol": "FOODLINK",
+    "category": "Mainboard",
+    "status": "OPEN",
+    "logoUrl": null,
+    "issueSizeCr": 360.0,
+    "issuePriceMin": 181.0,
+    "issuePriceMax": 191.0,
+    "lotSize": 78,
+    "openDate": "2026-11-26",
+    "closeDate": "2026-11-30",
+    "allotmentDate": "2026-12-01",
+    "listingDate": "2026-12-03",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "20 Nov",
+        "amount": 12.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 12.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 15.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 18.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 9.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 7.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "financials": [],
+    "subscriptionTotal": 1.4,
+    "subscriptionRetail": 2.44,
+    "subscriptionHNI": 0.41,
+    "subscriptionQIB": 1.0,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "MUFG Intime India Private Limited",
+    "registrarUrl": "https://in.mpms.mufg.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://s3.ap-south-1.amazonaws.com/cms.equirus.tech/Foodlink_F_and_B_Holdings_India_Limited_Red_Herring_Prospectus_95e7e3e3b7.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "6",
+    "name": "Shree Siddhivinayak Greentech Industries",
+    "symbol": "SHREESIDHI",
+    "category": "SME",
+    "status": "OPEN",
+    "logoUrl": null,
+    "issueSizeCr": 93.0,
+    "issuePriceMin": 130.0,
+    "issuePriceMax": 142.0,
+    "lotSize": 1000,
+    "openDate": "2026-11-25",
+    "closeDate": "2026-11-27",
+    "allotmentDate": "2026-11-30",
+    "listingDate": "2026-12-02",
+    "gmpAmount": 2.0,
+    "gmpPercent": 1.41,
+    "gmpHistory": [
+      {
+        "dateLabel": "20 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 10.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 20.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 4.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 2.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 88.98,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "ERUDORE CAPITAL Pvt.Ltd.",
+      "MAS Services Ltd.",
+      "Basan Equity Broking Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 36.9,
+        "pat": 3.1,
+        "netWorth": 13.0
+      },
+      {
+        "year": "FY25",
+        "revenue": 61.1,
+        "pat": 5.5,
+        "netWorth": 18.5
+      },
+      {
+        "year": "FY26",
+        "revenue": 37.4,
+        "pat": 3.5,
+        "netWorth": 28.5
+      }
+    ],
+    "subscriptionTotal": 1.67,
+    "subscriptionRetail": 1.64,
+    "subscriptionHNI": 0.83,
+    "subscriptionQIB": 4.27,
+    "listingPrice": 0.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "MAS SERVICES LIMITED",
+    "registrarUrl": "https://www.masserv.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://nsearchives.nseindia.com/emerge/corporates/content/Registration_15072026182020_DRHPSiddhivinayak.pdf",
     "drhpPdfUrl": "",
     "openNotified": false,
     "closeNotified": false
@@ -1848,2042 +1848,6 @@
   },
   {
     "id": "24",
-    "name": "Mahanadi Coalfields",
-    "symbol": "MAHACOAL",
-    "category": "Mainboard",
-    "status": "CLOSED",
-    "logoUrl": null,
-    "issueSizeCr": 8981.0,
-    "issuePriceMin": 129.0,
-    "issuePriceMax": 136.0,
-    "lotSize": 110,
-    "openDate": "2026-11-19",
-    "closeDate": "2026-11-23",
-    "allotmentDate": "2026-11-25",
-    "listingDate": "2026-11-27",
-    "gmpAmount": 0.7,
-    "gmpPercent": 0.51,
-    "gmpHistory": [
-      {
-        "dateLabel": "20 Nov",
-        "amount": 1.3
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 0.75
-      },
-      {
-        "dateLabel": "23 Nov",
-        "amount": 0.75
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 0.75
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 0.7
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 0.0,
-      "ofsCr": 8981.12,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "SBI Capital Markets Ltd.",
-      "Axis Capital Ltd.",
-      "BOB Capital Markets Ltd.",
-      "IDBI Capital Markets & Securities Ltd.",
-      "IIFL Capital Services Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 33590.3,
-        "pat": 11841.5,
-        "netWorth": 16119.9
-      },
-      {
-        "year": "FY25",
-        "revenue": 33028.7,
-        "pat": 10825.1,
-        "netWorth": 18343.5
-      },
-      {
-        "year": "FY26",
-        "revenue": 17107.8,
-        "pat": 4880.7,
-        "netWorth": 22399.8
-      }
-    ],
-    "subscriptionTotal": 1.51,
-    "subscriptionRetail": 0.48,
-    "subscriptionHNI": 0.66,
-    "subscriptionQIB": 4.95,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "KFin Technologies Limited",
-    "registrarUrl": "https://www.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Mahanadi Coalfields Ltd -Red Herring Prospectus-1794636910_compressed.pdf",
-    "drhpPdfUrl": "",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "25",
-    "name": "Watrana Rentals",
-    "symbol": "WATRANA",
-    "category": "SME",
-    "status": "CLOSED",
-    "logoUrl": null,
-    "issueSizeCr": 120.0,
-    "issuePriceMin": 232.0,
-    "issuePriceMax": 245.0,
-    "lotSize": 600,
-    "openDate": "2026-11-19",
-    "closeDate": "2026-11-23",
-    "allotmentDate": "2026-11-25",
-    "listingDate": "2026-11-27",
-    "gmpAmount": 23.0,
-    "gmpPercent": 9.39,
-    "gmpHistory": [
-      {
-        "dateLabel": "20 Nov",
-        "amount": 67.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 67.0
-      },
-      {
-        "dateLabel": "23 Nov",
-        "amount": 67.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 40.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 23.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 21.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 23.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 113.93,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Basan Equity Broking Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 130.2,
-        "pat": 18.1,
-        "netWorth": 32.0
-      },
-      {
-        "year": "FY25",
-        "revenue": 179.7,
-        "pat": 24.4,
-        "netWorth": 56.4
-      },
-      {
-        "year": "FY26",
-        "revenue": 53.6,
-        "pat": 7.7,
-        "netWorth": 93.2
-      }
-    ],
-    "subscriptionTotal": 149.76,
-    "subscriptionRetail": 108.71,
-    "subscriptionHNI": 233.67,
-    "subscriptionQIB": 161.11,
-    "listingPrice": 0.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "MAASHITLA SECURITIES PRIVATE LIMITED ",
-    "registrarUrl": "https://maashitla.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/RHP.pdf",
-    "drhpPdfUrl": "",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "26",
-    "name": "Crystal Crop Protection",
-    "symbol": "CRYSTALCP",
-    "category": "Mainboard",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 455.0,
-    "issuePriceMin": 259.0,
-    "issuePriceMax": 272.0,
-    "lotSize": 55,
-    "openDate": "2026-11-18",
-    "closeDate": "2026-11-20",
-    "allotmentDate": "2026-11-23",
-    "listingDate": "2026-11-26",
-    "gmpAmount": 17.0,
-    "gmpPercent": 6.25,
-    "gmpHistory": [
-      {
-        "dateLabel": "20 Nov",
-        "amount": 14.5
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 14.5
-      },
-      {
-        "dateLabel": "23 Nov",
-        "amount": 14.5
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 14.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 17.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 17.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 17.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 355.06,
-      "ofsCr": 100.66,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "IIFL Capital Services Ltd.",
-      "Dam Capital Advisors Ltd.",
-      "Motilal Oswal Investment Advisors Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 2271.7,
-        "pat": 87.2,
-        "netWorth": 1488.4
-      },
-      {
-        "year": "FY25",
-        "revenue": 2731.9,
-        "pat": 118.4,
-        "netWorth": 1600.1
-      },
-      {
-        "year": "FY26",
-        "revenue": 1209.2,
-        "pat": 135.8,
-        "netWorth": 0.0
-      }
-    ],
-    "subscriptionTotal": 16.8,
-    "subscriptionRetail": 9.71,
-    "subscriptionHNI": 39.16,
-    "subscriptionQIB": 15.81,
-    "listingPrice": 278.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "MUFG Intime India Private Limited",
-    "registrarUrl": "https://in.mpms.mufg.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/crystal_crop_protection_limited_-_red_herring_prospectus_compressed.pdf",
-    "drhpPdfUrl": "",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "27",
-    "name": "Antala Industries",
-    "symbol": "ANTALA",
-    "category": "SME",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 23.0,
-    "issuePriceMin": 62.0,
-    "issuePriceMax": 66.0,
-    "lotSize": 2000,
-    "openDate": "2026-10-29",
-    "closeDate": "2026-11-05",
-    "allotmentDate": "2026-11-06",
-    "listingDate": "2026-11-11",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 0.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 21.82,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Vatsa Capital Venture Pvt.ltd.",
-      "Asnani Stock Broker Pvt.Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 12.6,
-        "pat": 0.9,
-        "netWorth": 3.5
-      },
-      {
-        "year": "FY25",
-        "revenue": 32.0,
-        "pat": 1.8,
-        "netWorth": 12.2
-      },
-      {
-        "year": "FY26",
-        "revenue": 30.2,
-        "pat": 4.2,
-        "netWorth": 22.2
-      }
-    ],
-    "subscriptionTotal": 12.72,
-    "subscriptionRetail": 5.22,
-    "subscriptionHNI": 49.94,
-    "subscriptionQIB": 66.72,
-    "listingPrice": 52.8,
-    "listingGainPercent": 0.0,
-    "registrarName": "BIGSHARE SERVICES PRIVATE LIMITED",
-    "registrarUrl": "https://www.bigshareonline.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/antala-rhp-clean-v3_final-1.pdf",
-    "drhpPdfUrl": "",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "28",
-    "name": "Vedant Poly Fabs",
-    "symbol": "VPFL",
-    "category": "SME",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 57.0,
-    "issuePriceMin": 88.0,
-    "issuePriceMax": 94.0,
-    "lotSize": 1200,
-    "openDate": "2026-11-02",
-    "closeDate": "2026-11-04",
-    "allotmentDate": "2026-11-05",
-    "listingDate": "2026-11-09",
-    "gmpAmount": 1.0,
-    "gmpPercent": 1.06,
-    "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 1.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 1.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 1.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 1.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 1.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 1.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 1.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 48.14,
-      "ofsCr": 5.67,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Affinity Global Capital Market Pvt.Ltd.",
-      "Giriraj Stock Broking Pvt.Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 49.7,
-        "pat": 0.6,
-        "netWorth": 3.9
-      },
-      {
-        "year": "FY25",
-        "revenue": 81.6,
-        "pat": 4.6,
-        "netWorth": 15.4
-      },
-      {
-        "year": "FY26",
-        "revenue": 115.3,
-        "pat": 11.0,
-        "netWorth": 42.3
-      }
-    ],
-    "subscriptionTotal": 1.94,
-    "subscriptionRetail": 2.26,
-    "subscriptionHNI": 1.38,
-    "subscriptionQIB": 327.27,
-    "listingPrice": 94.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Cameo Corporate Services Limited",
-    "registrarUrl": "https://cameoindia.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Draft_Abridged_Prospectus.pdf",
-    "drhpPdfUrl": "",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "29",
-    "name": "Maxwell Engineering Solutions",
-    "symbol": "MAXENGS",
-    "category": "SME",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 58.0,
-    "issuePriceMin": 150.0,
-    "issuePriceMax": 158.0,
-    "lotSize": 800,
-    "openDate": "2026-10-30",
-    "closeDate": "2026-11-03",
-    "allotmentDate": "2026-11-04",
-    "listingDate": "2026-11-06",
-    "gmpAmount": 105.0,
-    "gmpPercent": 66.46,
-    "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 105.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 105.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 105.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 105.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 105.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 105.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 105.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 54.12,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "JDA Capital Services Ltd.",
-      "Jda Capital Services Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 10.9,
-        "pat": 3.2,
-        "netWorth": 3.3
-      },
-      {
-        "year": "FY25",
-        "revenue": 22.6,
-        "pat": 9.2,
-        "netWorth": 13.0
-      },
-      {
-        "year": "FY26",
-        "revenue": 12.2,
-        "pat": 3.0,
-        "netWorth": 27.9
-      }
-    ],
-    "subscriptionTotal": 534.65,
-    "subscriptionRetail": 556.09,
-    "subscriptionHNI": 857.65,
-    "subscriptionQIB": 259.45,
-    "listingPrice": 300.2,
-    "listingGainPercent": 0.0,
-    "registrarName": "KFIN TECHNOLOGIES LIMITED",
-    "registrarUrl": "https://www.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://maxwells.in/wp-content/uploads/2026/10/RHP_Maxwell_V5_Combined.pdf",
-    "drhpPdfUrl": "",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "30",
-    "name": "HGS (India)",
-    "symbol": "HGSINDIALT",
-    "category": "SME",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 35.0,
-    "issuePriceMin": 114.0,
-    "issuePriceMax": 120.0,
-    "lotSize": 1200,
-    "openDate": "2026-10-30",
-    "closeDate": "2026-11-03",
-    "allotmentDate": "2026-11-04",
-    "listingDate": "2026-11-06",
-    "gmpAmount": 27.0,
-    "gmpPercent": 22.5,
-    "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 27.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 27.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 27.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 27.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 27.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 27.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 27.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 26.17,
-      "ofsCr": 6.65,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Hem Securities Ltd.",
-      "Hem Finlease Pvt.Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 37.9,
-        "pat": 4.0,
-        "netWorth": 95.0
-      },
-      {
-        "year": "FY25",
-        "revenue": 53.5,
-        "pat": 10.5,
-        "netWorth": 85.2
-      },
-      {
-        "year": "FY26",
-        "revenue": 3.8,
-        "pat": 1.1,
-        "netWorth": 90.4
-      }
-    ],
-    "subscriptionTotal": 173.78,
-    "subscriptionRetail": 235.72,
-    "subscriptionHNI": 424.67,
-    "subscriptionQIB": 137.92,
-    "listingPrice": 160.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "KFin Technologies Limited",
-    "registrarUrl": "https://www.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.hgsindia.com/uploads/pdfs/ipomeetings/RHP.pdf",
-    "drhpPdfUrl": "",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "31",
-    "name": "Johnsoncab Electricals",
-    "symbol": "JOHNSONCAB",
-    "category": "SME",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 56.0,
-    "issuePriceMin": 190.0,
-    "issuePriceMax": 200.0,
-    "lotSize": 600,
-    "openDate": "2026-10-30",
-    "closeDate": "2026-11-03",
-    "allotmentDate": "2026-11-04",
-    "listingDate": "2026-11-06",
-    "gmpAmount": 8.0,
-    "gmpPercent": 4.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 8.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 8.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 8.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 8.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 8.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 8.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 8.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 53.18,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "ISK Advisors Pvt.Ltd.",
-      "Isk Equities Private Ltd.",
-      "Sunflower Broking Pvt.Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 89.0,
-        "pat": 2.5,
-        "netWorth": 8.9
-      },
-      {
-        "year": "FY25",
-        "revenue": 140.0,
-        "pat": 5.5,
-        "netWorth": 14.2
-      },
-      {
-        "year": "FY26",
-        "revenue": 113.3,
-        "pat": 8.6,
-        "netWorth": 40.1
-      }
-    ],
-    "subscriptionTotal": 23.61,
-    "subscriptionRetail": 17.98,
-    "subscriptionHNI": 42.27,
-    "subscriptionQIB": 20.19,
-    "listingPrice": 238.5,
-    "listingGainPercent": 0.0,
-    "registrarName": "Maashitla Securities Pvt. Limited",
-    "registrarUrl": "https://maashitla.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://iskadvisors.com/wp-content/uploads/2026/10/RHP-final.pdf",
-    "drhpPdfUrl": "",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "32",
-    "name": "Vectras Enprocon",
-    "symbol": "VECTRAS",
-    "category": "SME",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 53.0,
-    "issuePriceMin": 99.0,
-    "issuePriceMax": 105.0,
-    "lotSize": 1200,
-    "openDate": "2026-10-30",
-    "closeDate": "2026-11-03",
-    "allotmentDate": "2026-11-04",
-    "listingDate": "2026-11-06",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 0.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 39.93,
-      "ofsCr": 10.46,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Beeline Capital Advisors Pvt.ltd.",
-      "Spread X Securities Pvt.Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 54.4,
-        "pat": 5.8,
-        "netWorth": 12.2
-      },
-      {
-        "year": "FY25",
-        "revenue": 80.5,
-        "pat": 10.2,
-        "netWorth": 22.3
-      },
-      {
-        "year": "FY26",
-        "revenue": 72.2,
-        "pat": 9.1,
-        "netWorth": 46.9
-      }
-    ],
-    "subscriptionTotal": 4.22,
-    "subscriptionRetail": 4.45,
-    "subscriptionHNI": 6.69,
-    "subscriptionQIB": 1.88,
-    "listingPrice": 106.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "MUFG Intime India PrivateLimited",
-    "registrarUrl": "https://in.mpms.mufg.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/rhp_vel_26102026_clean.pdf",
-    "drhpPdfUrl": "",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "33",
-    "name": "Bombay Coated & Special Steels",
-    "symbol": "BCSSL",
-    "category": "Mainboard",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 183.0,
-    "issuePriceMin": 78.0,
-    "issuePriceMax": 82.0,
-    "lotSize": 182,
-    "openDate": "2026-10-29",
-    "closeDate": "2026-11-02",
-    "allotmentDate": "2026-11-03",
-    "listingDate": "2026-11-05",
-    "gmpAmount": 8.0,
-    "gmpPercent": 9.76,
-    "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 8.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 8.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 8.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 8.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 8.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 8.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 8.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 0.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [],
-    "anchorPortionCr": 0.0,
-    "financials": [],
-    "subscriptionTotal": 32.01,
-    "subscriptionRetail": 35.46,
-    "subscriptionHNI": 166.44,
-    "subscriptionQIB": 37.32,
-    "listingPrice": 91.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "KFin Technologies Limited",
-    "registrarUrl": "https://www.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/bombay-coated-special-steels-ltd-rhp.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Bombay+Coated+&+Special+Steels+IPO+DRHP+file+SEBI",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "34",
-    "name": "M.K.Sons Fine Jewels",
-    "symbol": "MKSONS",
-    "category": "Mainboard",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 275.0,
-    "issuePriceMin": 153.0,
-    "issuePriceMax": 162.0,
-    "lotSize": 91,
-    "openDate": "2026-10-28",
-    "closeDate": "2026-10-30",
-    "allotmentDate": "2026-11-02",
-    "listingDate": "2026-11-04",
-    "gmpAmount": 11.0,
-    "gmpPercent": 6.79,
-    "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 11.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 11.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 11.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 11.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 11.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 11.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 11.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 220.32,
-      "ofsCr": 55.08,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Aryaman Financial Services Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 217.4,
-        "pat": 8.2,
-        "netWorth": 22.3
-      },
-      {
-        "year": "FY25",
-        "revenue": 351.3,
-        "pat": 23.3,
-        "netWorth": 116.2
-      },
-      {
-        "year": "FY26",
-        "revenue": 101.5,
-        "pat": 15.0,
-        "netWorth": 183.0
-      }
-    ],
-    "subscriptionTotal": 5.03,
-    "subscriptionRetail": 3.08,
-    "subscriptionHNI": 14.12,
-    "subscriptionQIB": 1.84,
-    "listingPrice": 171.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Bigshare Services Private Limited",
-    "registrarUrl": "https://www.bigshareonline.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.afsl.co.in/pdfnew/Red%20Herring%20Prospectus.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=M.K.Sons+Fine+Jewels+IPO+DRHP+file+SEBI",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "35",
-    "name": "Carver Roboweld",
-    "symbol": "CRL",
-    "category": "SME",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 28.0,
-    "issuePriceMin": 76.0,
-    "issuePriceMax": 80.0,
-    "lotSize": 1600,
-    "openDate": "2026-10-28",
-    "closeDate": "2026-10-30",
-    "allotmentDate": "2026-11-02",
-    "listingDate": "2026-11-04",
-    "gmpAmount": 4.0,
-    "gmpPercent": 5.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 4.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 4.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 4.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 4.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 4.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 4.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 4.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 26.87,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Smart Horizon Capital Advisors Pvt.Ltd.",
-      "Shreni Shares Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 21.7,
-        "pat": 1.0,
-        "netWorth": 3.1
-      },
-      {
-        "year": "FY25",
-        "revenue": 25.0,
-        "pat": 1.4,
-        "netWorth": 4.6
-      },
-      {
-        "year": "FY26",
-        "revenue": 7.7,
-        "pat": 1.5,
-        "netWorth": 17.6
-      }
-    ],
-    "subscriptionTotal": 25.18,
-    "subscriptionRetail": 19.17,
-    "subscriptionHNI": 40.39,
-    "subscriptionQIB": 26.33,
-    "listingPrice": 90.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Bigshare Services Private Limited",
-    "registrarUrl": "https://www.bigshareonline.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.google.com/search?q=Carver+Roboweld+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.google.com/search?q=Carver+Roboweld+IPO+DRHP+file+SEBI",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "36",
-    "name": "Ajwa Projects",
-    "symbol": "AJWA",
-    "category": "SME",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 38.0,
-    "issuePriceMin": 203.0,
-    "issuePriceMax": 203.0,
-    "lotSize": 600,
-    "openDate": "2026-10-28",
-    "closeDate": "2026-10-30",
-    "allotmentDate": "2026-11-02",
-    "listingDate": "2026-11-04",
-    "gmpAmount": 1.0,
-    "gmpPercent": 0.49,
-    "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 1.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 1.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 1.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 1.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 1.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 1.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 1.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 28.54,
-      "ofsCr": 7.6,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Wealth Mine Networks Ltd.",
-      "Prabhat Financial Services Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 34.4,
-        "pat": 3.0,
-        "netWorth": 8.9
-      },
-      {
-        "year": "FY25",
-        "revenue": 36.9,
-        "pat": 3.3,
-        "netWorth": 12.3
-      },
-      {
-        "year": "FY26",
-        "revenue": 12.4,
-        "pat": 1.6,
-        "netWorth": 19.3
-      }
-    ],
-    "subscriptionTotal": 1.18,
-    "subscriptionRetail": 1.93,
-    "subscriptionHNI": 0.32,
-    "subscriptionQIB": 0.0,
-    "listingPrice": 203.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "KFIN TECHNOLOGIES LIMITED",
-    "registrarUrl": "https://www.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "",
-    "drhpPdfUrl": "",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "37",
-    "name": "BLS Polymers",
-    "symbol": "BLSPOLY",
-    "category": "Mainboard",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 255.0,
-    "issuePriceMin": 142.0,
-    "issuePriceMax": 150.0,
-    "lotSize": 100,
-    "openDate": "2026-10-27",
-    "closeDate": "2026-10-29",
-    "allotmentDate": "2026-10-30",
-    "listingDate": "2026-11-03",
-    "gmpAmount": 69.0,
-    "gmpPercent": 46.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 69.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 69.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 69.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 69.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 69.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 69.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 69.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 255.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Unistone Capital Pvt.Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 301.5,
-        "pat": 7.5,
-        "netWorth": 46.8
-      },
-      {
-        "year": "FY25",
-        "revenue": 336.7,
-        "pat": 21.1,
-        "netWorth": 67.9
-      },
-      {
-        "year": "FY26",
-        "revenue": 107.8,
-        "pat": 10.2,
-        "netWorth": 105.2
-      }
-    ],
-    "subscriptionTotal": 239.02,
-    "subscriptionRetail": 128.36,
-    "subscriptionHNI": 559.2,
-    "subscriptionQIB": 200.25,
-    "listingPrice": 248.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "KFin Technologies Limited",
-    "registrarUrl": "https://www.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/1792388466880.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=BLS+Polymers+IPO+DRHP+file+SEBI",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "38",
-    "name": "SFC Environmental Technologies",
-    "symbol": "SFCTECH",
-    "category": "Mainboard",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 668.0,
-    "issuePriceMin": 313.0,
-    "issuePriceMax": 330.0,
-    "lotSize": 45,
-    "openDate": "2026-10-27",
-    "closeDate": "2026-10-29",
-    "allotmentDate": "2026-10-30",
-    "listingDate": "2026-11-03",
-    "gmpAmount": 15.5,
-    "gmpPercent": 4.7,
-    "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 15.5
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 15.5
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 15.5
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 15.5
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 15.5
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 15.5
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 15.5
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 150.0,
-      "ofsCr": 517.53,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "IIFL Capital Services Ltd.",
-      "JM Financial Ltd.",
-      "Nuvama Wealth Management Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 676.7,
-        "pat": 144.2,
-        "netWorth": 534.3
-      },
-      {
-        "year": "FY25",
-        "revenue": 727.0,
-        "pat": 152.0,
-        "netWorth": 648.7
-      },
-      {
-        "year": "FY26",
-        "revenue": 137.9,
-        "pat": 1.5,
-        "netWorth": 805.5
-      }
-    ],
-    "subscriptionTotal": 9.17,
-    "subscriptionRetail": 2.71,
-    "subscriptionHNI": 12.81,
-    "subscriptionQIB": 18.81,
-    "listingPrice": 355.1,
-    "listingGainPercent": 0.0,
-    "registrarName": "MUFG Intime India Private Limited",
-    "registrarUrl": "https://in.mpms.mufg.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://sfcenvironment.com/wp-content/uploads/2026/10/SFC-Environmental-Technologies-Ltd_RHP-1.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=SFC+Environmental+Technologies+IPO+DRHP+file+SEBI",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "39",
-    "name": "Wiscon Industries",
-    "symbol": "WISCON",
-    "category": "SME",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 110.0,
-    "issuePriceMin": 194.0,
-    "issuePriceMax": 204.0,
-    "lotSize": 600,
-    "openDate": "2026-10-27",
-    "closeDate": "2026-10-29",
-    "allotmentDate": "2026-10-30",
-    "listingDate": "2026-11-03",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 0.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 80.05,
-      "ofsCr": 22.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Smart Horizon Capital Advisors Pvt.Ltd.",
-      "Shreni Shares Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY26",
-        "revenue": 69.8,
-        "pat": 7.9,
-        "netWorth": 38.5
-      }
-    ],
-    "subscriptionTotal": 1.26,
-    "subscriptionRetail": 0.66,
-    "subscriptionHNI": 0.62,
-    "subscriptionQIB": 2.24,
-    "listingPrice": 204.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "MAASHITLA SECURITIES PRIVATE LIMITED",
-    "registrarUrl": "https://maashitla.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.google.com/search?q=Wiscon+Industries+IPO+RHP+file+SEBI",
-    "drhpPdfUrl": "https://www.google.com/search?q=Wiscon+Industries+IPO+DRHP+file+SEBI",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "40",
-    "name": "EAAA India Alternatives",
-    "symbol": "EDELALTS",
-    "category": "Mainboard",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 1200.0,
-    "issuePriceMin": 1585.0,
-    "issuePriceMax": 1665.0,
-    "lotSize": 9,
-    "openDate": "2026-10-26",
-    "closeDate": "2026-10-28",
-    "allotmentDate": "2026-10-29",
-    "listingDate": "2026-11-02",
-    "gmpAmount": 54.0,
-    "gmpPercent": 3.24,
-    "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 54.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 54.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 54.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 54.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 54.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 54.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 54.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 0.0,
-      "ofsCr": 1200.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Axis Capital Ltd.",
-      "Jefferies India Pvt.Ltd.",
-      "Motilal Oswal Investment Advisors Ltd.",
-      "Nuvama Wealth Management Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 584.2,
-        "pat": 175.2,
-        "netWorth": 729.5
-      },
-      {
-        "year": "FY25",
-        "revenue": 786.5,
-        "pat": 229.8,
-        "netWorth": 966.5
-      },
-      {
-        "year": "FY26",
-        "revenue": 336.1,
-        "pat": 80.7,
-        "netWorth": 1160.4
-      }
-    ],
-    "subscriptionTotal": 5.15,
-    "subscriptionRetail": 1.08,
-    "subscriptionHNI": 4.81,
-    "subscriptionQIB": 13.8,
-    "listingPrice": 1675.5,
-    "listingGainPercent": 0.0,
-    "registrarName": "MUFG Intime India Private Limited ",
-    "registrarUrl": "https://in.mpms.mufg.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.eaaa.in/wp-content/uploads/2026/09/Red-Herring-Prospectus.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=EAAA+India+Alternatives+IPO+DRHP+file+SEBI",
-    "openNotified": false,
-    "closeNotified": false
-  },
-  {
-    "id": "41",
-    "name": "Core4 Engineers",
-    "symbol": "CORE4",
-    "category": "SME",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 55.0,
-    "issuePriceMin": 88.0,
-    "issuePriceMax": 93.0,
-    "lotSize": 1200,
-    "openDate": "2026-10-23",
-    "closeDate": "2026-10-27",
-    "allotmentDate": "2026-10-28",
-    "listingDate": "2026-10-30",
-    "gmpAmount": 0.0,
-    "gmpPercent": 0.0,
-    "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 0.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 0.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 48.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "Socradamus Capital Pvt.ltd.",
-      "Mansi Share & Stock Broking Pvt.Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 33.6,
-        "pat": 2.9,
-        "netWorth": 6.4
-      },
-      {
-        "year": "FY25",
-        "revenue": 47.3,
-        "pat": 6.0,
-        "netWorth": 24.8
-      }
-    ],
-    "subscriptionTotal": 5.54,
-    "subscriptionRetail": 2.72,
-    "subscriptionHNI": 12.26,
-    "subscriptionQIB": 5.06,
-    "listingPrice": 74.4,
-    "listingGainPercent": 0.0,
-    "registrarName": "Purva Sharegistry (India) Private Limited ",
-    "registrarUrl": "https://www.purvashare.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://core4engineers.com/pdf/ipo/RedHerringProspectus.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Core4+Engineers+IPO+DRHP+file+SEBI",
-    "openNotified": true,
-    "closeNotified": false
-  },
-  {
-    "id": "42",
-    "name": "Reliance Jio",
-    "symbol": "JPL",
-    "category": "Mainboard",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 30188.0,
-    "issuePriceMin": 1065.0,
-    "issuePriceMax": 1119.0,
-    "lotSize": 12,
-    "openDate": "2026-10-21",
-    "closeDate": "2026-10-23",
-    "allotmentDate": "2026-10-26",
-    "listingDate": "2026-10-28",
-    "gmpAmount": 250.0,
-    "gmpPercent": 22.34,
-    "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 250.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 250.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 250.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 250.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 250.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 250.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 250.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 0.0,
-      "ofsCr": 0.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 110175.4,
-        "pat": 21434.0,
-        "netWorth": 277866.1
-      },
-      {
-        "year": "FY25",
-        "revenue": 129333.0,
-        "pat": 26120.3,
-        "netWorth": 304022.4
-      },
-      {
-        "year": "FY26",
-        "revenue": 40197.9,
-        "pat": 7764.1,
-        "netWorth": 341778.5
-      }
-    ],
-    "subscriptionTotal": 19.67,
-    "subscriptionRetail": 2.76,
-    "subscriptionHNI": 13.99,
-    "subscriptionQIB": 67.15,
-    "listingPrice": 1358.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "KFin Technologies Limited ",
-    "registrarUrl": "https://www.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://myjiostatic.cdn.jio.com/cms/assets/iv3/Red%20Herring%20Prospectus.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Reliance+Jio+IPO+DRHP+file+SEBI",
-    "openNotified": true,
-    "closeNotified": true
-  },
-  {
-    "id": "43",
-    "name": "Paras Healthcare",
-    "symbol": "PARASHLTH",
-    "category": "Mainboard",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 1450.0,
-    "issuePriceMin": 660.0,
-    "issuePriceMax": 693.0,
-    "lotSize": 21,
-    "openDate": "2026-10-21",
-    "closeDate": "2026-10-23",
-    "allotmentDate": "2026-10-26",
-    "listingDate": "2026-10-28",
-    "gmpAmount": 13.0,
-    "gmpPercent": 1.88,
-    "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 13.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 13.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 13.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 13.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 13.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 13.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 13.0
-      }
-    ],
-    "issueStructure": {
-      "freshIssueCr": 500.0,
-      "ofsCr": 950.0,
-      "promoterHoldingPre": null,
-      "promoterHoldingPost": null
-    },
-    "leadManagers": [
-      "JM Financial Ltd.",
-      "BOFA Securities India Ltd.",
-      "Nuvama Wealth Management Ltd."
-    ],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 1151.0,
-        "pat": -15.3,
-        "netWorth": 338.5
-      },
-      {
-        "year": "FY25",
-        "revenue": 1314.2,
-        "pat": -58.0,
-        "netWorth": 280.5
-      },
-      {
-        "year": "FY26",
-        "revenue": 478.8,
-        "pat": 49.7,
-        "netWorth": 445.0
-      }
-    ],
-    "subscriptionTotal": 2.21,
-    "subscriptionRetail": 2.1,
-    "subscriptionHNI": 0.69,
-    "subscriptionQIB": 3.25,
-    "listingPrice": 720.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "MUFG Intime India Private Limited",
-    "registrarUrl": "https://in.mpms.mufg.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.jmfl.com/Common/getFile/6104",
-    "drhpPdfUrl": "https://www.google.com/search?q=Paras+Healthcare+IPO+DRHP+file+SEBI",
-    "openNotified": true,
-    "closeNotified": true
-  },
-  {
-    "id": "44",
-    "name": "Sahajanand Medical Technologies",
-    "symbol": "SMT",
-    "category": "Mainboard",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 475.0,
-    "issuePriceMin": 327.0,
-    "issuePriceMax": 344.0,
-    "lotSize": 43,
-    "openDate": "2026-10-15",
-    "closeDate": "2026-10-19",
-    "allotmentDate": "2026-10-21",
-    "listingDate": "2026-10-23",
-    "gmpAmount": 17.0,
-    "gmpPercent": 4.94,
-    "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 17.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 17.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 17.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 17.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 17.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 17.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 17.0
-      }
-    ],
-    "issueStructure": null,
-    "leadManagers": [],
-    "anchorPortionCr": 0.0,
-    "financials": [],
-    "subscriptionTotal": 14.08,
-    "subscriptionRetail": 3.04,
-    "subscriptionHNI": 14.64,
-    "subscriptionQIB": 34.7,
-    "listingPrice": 371.15,
-    "listingGainPercent": 7.89,
-    "registrarName": "MUFG Intime India Private Limited",
-    "registrarUrl": "https://in.mpms.mufg.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://assets.ipopremium.in/images/ipo/sahajanand_medical_technologies_ltd_mainboard_rhp_1791630001.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Sahajanand+Medical+Technologies+IPO+DRHP+file+SEBI",
-    "openNotified": true,
-    "closeNotified": true
-  },
-  {
-    "id": "45",
-    "name": "Tonbo Imaging India",
-    "symbol": "TONBO",
-    "category": "Mainboard",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 852.0,
-    "issuePriceMin": 665.0,
-    "issuePriceMax": 700.0,
-    "lotSize": 21,
-    "openDate": "2026-10-15",
-    "closeDate": "2026-10-19",
-    "allotmentDate": "2026-10-21",
-    "listingDate": "2026-10-23",
-    "gmpAmount": 452.0,
-    "gmpPercent": 64.57,
-    "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 452.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 452.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 452.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 452.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 452.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 452.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 452.0
-      }
-    ],
-    "issueStructure": null,
-    "leadManagers": [],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 144.37,
-        "pat": 68.54,
-        "netWorth": 127.83
-      },
-      {
-        "year": "FY25",
-        "revenue": 469.08,
-        "pat": 72.76,
-        "netWorth": 236.22
-      },
-      {
-        "year": "FY26",
-        "revenue": 362.65,
-        "pat": 50.88,
-        "netWorth": 511.55
-      }
-    ],
-    "subscriptionTotal": 96.63,
-    "subscriptionRetail": 31.11,
-    "subscriptionHNI": 156.36,
-    "subscriptionQIB": 293.56,
-    "listingPrice": 1160.0,
-    "listingGainPercent": 65.71,
-    "registrarName": "KFin Technologies Limited",
-    "registrarUrl": "https://www.kfintech.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://live.jmfl.com/od/UploadedFiles/CA86AB52-0D43-437A-8D1C-6E475C6CEF01.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Tonbo+Imaging+India+IPO+DRHP+file+SEBI",
-    "openNotified": true,
-    "closeNotified": true
-  },
-  {
-    "id": "46",
-    "name": "Shellz India",
-    "symbol": "SHELLZ",
-    "category": "SME",
-    "status": "LISTED",
-    "logoUrl": null,
-    "issueSizeCr": 60.0,
-    "issuePriceMin": 170.0,
-    "issuePriceMax": 179.0,
-    "lotSize": 800,
-    "openDate": "2026-10-15",
-    "closeDate": "2026-10-19",
-    "allotmentDate": "2026-10-21",
-    "listingDate": "2026-10-23",
-    "gmpAmount": 7.0,
-    "gmpPercent": 3.91,
-    "gmpHistory": [
-      {
-        "dateLabel": "19 Nov",
-        "amount": 7.0
-      },
-      {
-        "dateLabel": "20 Nov",
-        "amount": 7.0
-      },
-      {
-        "dateLabel": "21 Nov",
-        "amount": 7.0
-      },
-      {
-        "dateLabel": "24 Nov",
-        "amount": 7.0
-      },
-      {
-        "dateLabel": "25 Nov",
-        "amount": 7.0
-      },
-      {
-        "dateLabel": "26 Nov",
-        "amount": 7.0
-      },
-      {
-        "dateLabel": "27 Nov",
-        "amount": 7.0
-      }
-    ],
-    "issueStructure": null,
-    "leadManagers": [],
-    "anchorPortionCr": 0.0,
-    "financials": [
-      {
-        "year": "FY24",
-        "revenue": 162.8,
-        "pat": 5.2,
-        "netWorth": 27.0
-      },
-      {
-        "year": "FY25",
-        "revenue": 187.4,
-        "pat": 8.3,
-        "netWorth": 40.6
-      },
-      {
-        "year": "FY26",
-        "revenue": 47.4,
-        "pat": 4.1,
-        "netWorth": 63.0
-      }
-    ],
-    "subscriptionTotal": 58.01,
-    "subscriptionRetail": 56.09,
-    "subscriptionHNI": 86.41,
-    "subscriptionQIB": 41.92,
-    "listingPrice": 179.0,
-    "listingGainPercent": 0.0,
-    "registrarName": "Bigshare Services Private Limited",
-    "registrarUrl": "https://www.bigshareonline.com/",
-    "isAllotmentDone": false,
-    "rhpPdfUrl": "https://www.socradamus.in/downloads/sme-ipo/shellz-india-limited/RHP-Shellz-final.pdf",
-    "drhpPdfUrl": "https://www.google.com/search?q=Shellz+India+IPO+DRHP+file+SEBI",
-    "openNotified": true,
-    "closeNotified": true
-  },
-  {
-    "id": "47",
     "name": "OYO",
     "symbol": "OYO",
     "category": "Mainboard",
@@ -3981,7 +1945,7 @@
     "closeNotified": false
   },
   {
-    "id": "48",
+    "id": "25",
     "name": "EBIXCASH",
     "symbol": "EBIXCAS",
     "category": "Mainboard",
@@ -4051,7 +2015,7 @@
     "closeNotified": false
   },
   {
-    "id": "49",
+    "id": "26",
     "name": "BoAt",
     "symbol": "BOAT",
     "category": "Mainboard",
@@ -4143,6 +2107,2042 @@
     "drhpPdfUrl": "https://www.sebi.gov.in/web/?file=/sebi_data/attachdocs/jan-2022/1643353844101.PDF#page=2&zoom=page-width,-15,379",
     "openNotified": false,
     "closeNotified": false
+  },
+  {
+    "id": "27",
+    "name": "Mahanadi Coalfields",
+    "symbol": "MAHACOAL",
+    "category": "Mainboard",
+    "status": "CLOSED",
+    "logoUrl": null,
+    "issueSizeCr": 8981.0,
+    "issuePriceMin": 129.0,
+    "issuePriceMax": 136.0,
+    "lotSize": 110,
+    "openDate": "2026-11-19",
+    "closeDate": "2026-11-23",
+    "allotmentDate": "2026-11-25",
+    "listingDate": "2026-11-27",
+    "gmpAmount": 0.7,
+    "gmpPercent": 0.51,
+    "gmpHistory": [
+      {
+        "dateLabel": "20 Nov",
+        "amount": 1.3
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 0.75
+      },
+      {
+        "dateLabel": "23 Nov",
+        "amount": 0.75
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 0.75
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 0.7
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 8981.12,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "SBI Capital Markets Ltd.",
+      "Axis Capital Ltd.",
+      "BOB Capital Markets Ltd.",
+      "IDBI Capital Markets & Securities Ltd.",
+      "IIFL Capital Services Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 33590.3,
+        "pat": 11841.5,
+        "netWorth": 16119.9
+      },
+      {
+        "year": "FY25",
+        "revenue": 33028.7,
+        "pat": 10825.1,
+        "netWorth": 18343.5
+      },
+      {
+        "year": "FY26",
+        "revenue": 17107.8,
+        "pat": 4880.7,
+        "netWorth": 22399.8
+      }
+    ],
+    "subscriptionTotal": 1.51,
+    "subscriptionRetail": 0.48,
+    "subscriptionHNI": 0.66,
+    "subscriptionQIB": 4.95,
+    "listingPrice": 134.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KFin Technologies Limited",
+    "registrarUrl": "https://www.kfintech.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Mahanadi Coalfields Ltd -Red Herring Prospectus-1794636910_compressed.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "28",
+    "name": "Watrana Rentals",
+    "symbol": "WATRANA",
+    "category": "SME",
+    "status": "CLOSED",
+    "logoUrl": null,
+    "issueSizeCr": 120.0,
+    "issuePriceMin": 232.0,
+    "issuePriceMax": 245.0,
+    "lotSize": 600,
+    "openDate": "2026-11-19",
+    "closeDate": "2026-11-23",
+    "allotmentDate": "2026-11-25",
+    "listingDate": "2026-11-27",
+    "gmpAmount": 23.0,
+    "gmpPercent": 9.39,
+    "gmpHistory": [
+      {
+        "dateLabel": "20 Nov",
+        "amount": 67.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 67.0
+      },
+      {
+        "dateLabel": "23 Nov",
+        "amount": 67.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 40.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 23.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 21.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 23.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 113.93,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Basan Equity Broking Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 130.2,
+        "pat": 18.1,
+        "netWorth": 32.0
+      },
+      {
+        "year": "FY25",
+        "revenue": 179.7,
+        "pat": 24.4,
+        "netWorth": 56.4
+      },
+      {
+        "year": "FY26",
+        "revenue": 53.6,
+        "pat": 7.7,
+        "netWorth": 93.2
+      }
+    ],
+    "subscriptionTotal": 149.76,
+    "subscriptionRetail": 108.71,
+    "subscriptionHNI": 233.67,
+    "subscriptionQIB": 161.11,
+    "listingPrice": 243.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "MAASHITLA SECURITIES PRIVATE LIMITED ",
+    "registrarUrl": "https://maashitla.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/RHP.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "29",
+    "name": "Crystal Crop Protection",
+    "symbol": "CRYSTALCP",
+    "category": "Mainboard",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 455.0,
+    "issuePriceMin": 259.0,
+    "issuePriceMax": 272.0,
+    "lotSize": 55,
+    "openDate": "2026-11-18",
+    "closeDate": "2026-11-20",
+    "allotmentDate": "2026-11-23",
+    "listingDate": "2026-11-26",
+    "gmpAmount": 17.0,
+    "gmpPercent": 6.25,
+    "gmpHistory": [
+      {
+        "dateLabel": "20 Nov",
+        "amount": 14.5
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 14.5
+      },
+      {
+        "dateLabel": "23 Nov",
+        "amount": 14.5
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 14.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 17.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 17.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 17.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 355.06,
+      "ofsCr": 100.66,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "IIFL Capital Services Ltd.",
+      "Dam Capital Advisors Ltd.",
+      "Motilal Oswal Investment Advisors Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 2271.7,
+        "pat": 87.2,
+        "netWorth": 1488.4
+      },
+      {
+        "year": "FY25",
+        "revenue": 2731.9,
+        "pat": 118.4,
+        "netWorth": 1600.1
+      },
+      {
+        "year": "FY26",
+        "revenue": 1209.2,
+        "pat": 135.8,
+        "netWorth": 0.0
+      }
+    ],
+    "subscriptionTotal": 16.8,
+    "subscriptionRetail": 9.71,
+    "subscriptionHNI": 39.16,
+    "subscriptionQIB": 15.81,
+    "listingPrice": 278.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "MUFG Intime India Private Limited",
+    "registrarUrl": "https://in.mpms.mufg.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/crystal_crop_protection_limited_-_red_herring_prospectus_compressed.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "30",
+    "name": "Antala Industries",
+    "symbol": "ANTALA",
+    "category": "SME",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 23.0,
+    "issuePriceMin": 62.0,
+    "issuePriceMax": 66.0,
+    "lotSize": 2000,
+    "openDate": "2026-10-29",
+    "closeDate": "2026-11-05",
+    "allotmentDate": "2026-11-06",
+    "listingDate": "2026-11-11",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 0.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 21.82,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Vatsa Capital Venture Pvt.ltd.",
+      "Asnani Stock Broker Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 12.6,
+        "pat": 0.9,
+        "netWorth": 3.5
+      },
+      {
+        "year": "FY25",
+        "revenue": 32.0,
+        "pat": 1.8,
+        "netWorth": 12.2
+      },
+      {
+        "year": "FY26",
+        "revenue": 30.2,
+        "pat": 4.2,
+        "netWorth": 22.2
+      }
+    ],
+    "subscriptionTotal": 12.72,
+    "subscriptionRetail": 5.22,
+    "subscriptionHNI": 49.94,
+    "subscriptionQIB": 66.72,
+    "listingPrice": 52.8,
+    "listingGainPercent": 0.0,
+    "registrarName": "BIGSHARE SERVICES PRIVATE LIMITED",
+    "registrarUrl": "https://www.bigshareonline.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/antala-rhp-clean-v3_final-1.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "31",
+    "name": "Vedant Poly Fabs",
+    "symbol": "VPFL",
+    "category": "SME",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 57.0,
+    "issuePriceMin": 88.0,
+    "issuePriceMax": 94.0,
+    "lotSize": 1200,
+    "openDate": "2026-11-02",
+    "closeDate": "2026-11-04",
+    "allotmentDate": "2026-11-05",
+    "listingDate": "2026-11-09",
+    "gmpAmount": 1.0,
+    "gmpPercent": 1.06,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 1.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 1.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 1.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 1.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 1.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 1.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 1.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 48.14,
+      "ofsCr": 5.67,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Affinity Global Capital Market Pvt.Ltd.",
+      "Giriraj Stock Broking Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 49.7,
+        "pat": 0.6,
+        "netWorth": 3.9
+      },
+      {
+        "year": "FY25",
+        "revenue": 81.6,
+        "pat": 4.6,
+        "netWorth": 15.4
+      },
+      {
+        "year": "FY26",
+        "revenue": 115.3,
+        "pat": 11.0,
+        "netWorth": 42.3
+      }
+    ],
+    "subscriptionTotal": 1.94,
+    "subscriptionRetail": 2.26,
+    "subscriptionHNI": 1.38,
+    "subscriptionQIB": 327.27,
+    "listingPrice": 94.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Cameo Corporate Services Limited",
+    "registrarUrl": "https://cameoindia.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/Draft_Abridged_Prospectus.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "32",
+    "name": "Maxwell Engineering Solutions",
+    "symbol": "MAXENGS",
+    "category": "SME",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 58.0,
+    "issuePriceMin": 150.0,
+    "issuePriceMax": 158.0,
+    "lotSize": 800,
+    "openDate": "2026-10-30",
+    "closeDate": "2026-11-03",
+    "allotmentDate": "2026-11-04",
+    "listingDate": "2026-11-06",
+    "gmpAmount": 105.0,
+    "gmpPercent": 66.46,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 105.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 105.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 105.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 105.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 105.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 105.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 105.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 54.12,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "JDA Capital Services Ltd.",
+      "Jda Capital Services Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 10.9,
+        "pat": 3.2,
+        "netWorth": 3.3
+      },
+      {
+        "year": "FY25",
+        "revenue": 22.6,
+        "pat": 9.2,
+        "netWorth": 13.0
+      },
+      {
+        "year": "FY26",
+        "revenue": 12.2,
+        "pat": 3.0,
+        "netWorth": 27.9
+      }
+    ],
+    "subscriptionTotal": 534.65,
+    "subscriptionRetail": 556.09,
+    "subscriptionHNI": 857.65,
+    "subscriptionQIB": 259.45,
+    "listingPrice": 300.2,
+    "listingGainPercent": 0.0,
+    "registrarName": "KFIN TECHNOLOGIES LIMITED",
+    "registrarUrl": "https://www.kfintech.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://maxwells.in/wp-content/uploads/2026/10/RHP_Maxwell_V5_Combined.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "33",
+    "name": "HGS (India)",
+    "symbol": "HGSINDIALT",
+    "category": "SME",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 35.0,
+    "issuePriceMin": 114.0,
+    "issuePriceMax": 120.0,
+    "lotSize": 1200,
+    "openDate": "2026-10-30",
+    "closeDate": "2026-11-03",
+    "allotmentDate": "2026-11-04",
+    "listingDate": "2026-11-06",
+    "gmpAmount": 27.0,
+    "gmpPercent": 22.5,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 27.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 27.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 27.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 27.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 27.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 27.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 27.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 26.17,
+      "ofsCr": 6.65,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Hem Securities Ltd.",
+      "Hem Finlease Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 37.9,
+        "pat": 4.0,
+        "netWorth": 95.0
+      },
+      {
+        "year": "FY25",
+        "revenue": 53.5,
+        "pat": 10.5,
+        "netWorth": 85.2
+      },
+      {
+        "year": "FY26",
+        "revenue": 3.8,
+        "pat": 1.1,
+        "netWorth": 90.4
+      }
+    ],
+    "subscriptionTotal": 173.78,
+    "subscriptionRetail": 235.72,
+    "subscriptionHNI": 424.67,
+    "subscriptionQIB": 137.92,
+    "listingPrice": 160.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KFin Technologies Limited",
+    "registrarUrl": "https://www.kfintech.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.hgsindia.com/uploads/pdfs/ipomeetings/RHP.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "34",
+    "name": "Johnsoncab Electricals",
+    "symbol": "JOHNSONCAB",
+    "category": "SME",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 56.0,
+    "issuePriceMin": 190.0,
+    "issuePriceMax": 200.0,
+    "lotSize": 600,
+    "openDate": "2026-10-30",
+    "closeDate": "2026-11-03",
+    "allotmentDate": "2026-11-04",
+    "listingDate": "2026-11-06",
+    "gmpAmount": 8.0,
+    "gmpPercent": 4.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 8.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 8.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 8.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 8.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 8.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 8.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 8.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 53.18,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "ISK Advisors Pvt.Ltd.",
+      "Isk Equities Private Ltd.",
+      "Sunflower Broking Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 89.0,
+        "pat": 2.5,
+        "netWorth": 8.9
+      },
+      {
+        "year": "FY25",
+        "revenue": 140.0,
+        "pat": 5.5,
+        "netWorth": 14.2
+      },
+      {
+        "year": "FY26",
+        "revenue": 113.3,
+        "pat": 8.6,
+        "netWorth": 40.1
+      }
+    ],
+    "subscriptionTotal": 23.61,
+    "subscriptionRetail": 17.98,
+    "subscriptionHNI": 42.27,
+    "subscriptionQIB": 20.19,
+    "listingPrice": 238.5,
+    "listingGainPercent": 0.0,
+    "registrarName": "Maashitla Securities Pvt. Limited",
+    "registrarUrl": "https://maashitla.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://iskadvisors.com/wp-content/uploads/2026/10/RHP-final.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "35",
+    "name": "Vectras Enprocon",
+    "symbol": "VECTRAS",
+    "category": "SME",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 53.0,
+    "issuePriceMin": 99.0,
+    "issuePriceMax": 105.0,
+    "lotSize": 1200,
+    "openDate": "2026-10-30",
+    "closeDate": "2026-11-03",
+    "allotmentDate": "2026-11-04",
+    "listingDate": "2026-11-06",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 0.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 39.93,
+      "ofsCr": 10.46,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Beeline Capital Advisors Pvt.ltd.",
+      "Spread X Securities Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 54.4,
+        "pat": 5.8,
+        "netWorth": 12.2
+      },
+      {
+        "year": "FY25",
+        "revenue": 80.5,
+        "pat": 10.2,
+        "netWorth": 22.3
+      },
+      {
+        "year": "FY26",
+        "revenue": 72.2,
+        "pat": 9.1,
+        "netWorth": 46.9
+      }
+    ],
+    "subscriptionTotal": 4.22,
+    "subscriptionRetail": 4.45,
+    "subscriptionHNI": 6.69,
+    "subscriptionQIB": 1.88,
+    "listingPrice": 106.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "MUFG Intime India PrivateLimited",
+    "registrarUrl": "https://in.mpms.mufg.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/rhp_vel_26102026_clean.pdf",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "36",
+    "name": "Bombay Coated & Special Steels",
+    "symbol": "BCSSL",
+    "category": "Mainboard",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 183.0,
+    "issuePriceMin": 78.0,
+    "issuePriceMax": 82.0,
+    "lotSize": 182,
+    "openDate": "2026-10-29",
+    "closeDate": "2026-11-02",
+    "allotmentDate": "2026-11-03",
+    "listingDate": "2026-11-05",
+    "gmpAmount": 8.0,
+    "gmpPercent": 9.76,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 8.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 8.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 8.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 8.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 8.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 8.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 8.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "financials": [],
+    "subscriptionTotal": 32.01,
+    "subscriptionRetail": 35.46,
+    "subscriptionHNI": 166.44,
+    "subscriptionQIB": 37.32,
+    "listingPrice": 91.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KFin Technologies Limited",
+    "registrarUrl": "https://www.kfintech.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/bombay-coated-special-steels-ltd-rhp.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=Bombay+Coated+&+Special+Steels+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "37",
+    "name": "M.K.Sons Fine Jewels",
+    "symbol": "MKSONS",
+    "category": "Mainboard",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 275.0,
+    "issuePriceMin": 153.0,
+    "issuePriceMax": 162.0,
+    "lotSize": 91,
+    "openDate": "2026-10-28",
+    "closeDate": "2026-10-30",
+    "allotmentDate": "2026-11-02",
+    "listingDate": "2026-11-04",
+    "gmpAmount": 11.0,
+    "gmpPercent": 6.79,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 11.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 11.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 11.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 11.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 11.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 11.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 11.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 220.32,
+      "ofsCr": 55.08,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Aryaman Financial Services Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 217.4,
+        "pat": 8.2,
+        "netWorth": 22.3
+      },
+      {
+        "year": "FY25",
+        "revenue": 351.3,
+        "pat": 23.3,
+        "netWorth": 116.2
+      },
+      {
+        "year": "FY26",
+        "revenue": 101.5,
+        "pat": 15.0,
+        "netWorth": 183.0
+      }
+    ],
+    "subscriptionTotal": 5.03,
+    "subscriptionRetail": 3.08,
+    "subscriptionHNI": 14.12,
+    "subscriptionQIB": 1.84,
+    "listingPrice": 171.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Bigshare Services Private Limited",
+    "registrarUrl": "https://www.bigshareonline.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.afsl.co.in/pdfnew/Red%20Herring%20Prospectus.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=M.K.Sons+Fine+Jewels+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "38",
+    "name": "Carver Roboweld",
+    "symbol": "CRL",
+    "category": "SME",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 28.0,
+    "issuePriceMin": 76.0,
+    "issuePriceMax": 80.0,
+    "lotSize": 1600,
+    "openDate": "2026-10-28",
+    "closeDate": "2026-10-30",
+    "allotmentDate": "2026-11-02",
+    "listingDate": "2026-11-04",
+    "gmpAmount": 4.0,
+    "gmpPercent": 5.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 4.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 4.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 4.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 4.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 4.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 4.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 4.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 26.87,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Smart Horizon Capital Advisors Pvt.Ltd.",
+      "Shreni Shares Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 21.7,
+        "pat": 1.0,
+        "netWorth": 3.1
+      },
+      {
+        "year": "FY25",
+        "revenue": 25.0,
+        "pat": 1.4,
+        "netWorth": 4.6
+      },
+      {
+        "year": "FY26",
+        "revenue": 7.7,
+        "pat": 1.5,
+        "netWorth": 17.6
+      }
+    ],
+    "subscriptionTotal": 25.18,
+    "subscriptionRetail": 19.17,
+    "subscriptionHNI": 40.39,
+    "subscriptionQIB": 26.33,
+    "listingPrice": 90.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Bigshare Services Private Limited",
+    "registrarUrl": "https://www.bigshareonline.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.google.com/search?q=Carver+Roboweld+IPO+RHP+file+SEBI",
+    "drhpPdfUrl": "https://www.google.com/search?q=Carver+Roboweld+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "39",
+    "name": "Ajwa Projects",
+    "symbol": "AJWA",
+    "category": "SME",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 38.0,
+    "issuePriceMin": 203.0,
+    "issuePriceMax": 203.0,
+    "lotSize": 600,
+    "openDate": "2026-10-28",
+    "closeDate": "2026-10-30",
+    "allotmentDate": "2026-11-02",
+    "listingDate": "2026-11-04",
+    "gmpAmount": 1.0,
+    "gmpPercent": 0.49,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 1.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 1.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 1.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 1.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 1.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 1.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 1.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 28.54,
+      "ofsCr": 7.6,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Wealth Mine Networks Ltd.",
+      "Prabhat Financial Services Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 34.4,
+        "pat": 3.0,
+        "netWorth": 8.9
+      },
+      {
+        "year": "FY25",
+        "revenue": 36.9,
+        "pat": 3.3,
+        "netWorth": 12.3
+      },
+      {
+        "year": "FY26",
+        "revenue": 12.4,
+        "pat": 1.6,
+        "netWorth": 19.3
+      }
+    ],
+    "subscriptionTotal": 1.18,
+    "subscriptionRetail": 1.93,
+    "subscriptionHNI": 0.32,
+    "subscriptionQIB": 0.0,
+    "listingPrice": 203.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KFIN TECHNOLOGIES LIMITED",
+    "registrarUrl": "https://www.kfintech.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "",
+    "drhpPdfUrl": "",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "40",
+    "name": "BLS Polymers",
+    "symbol": "BLSPOLY",
+    "category": "Mainboard",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 255.0,
+    "issuePriceMin": 142.0,
+    "issuePriceMax": 150.0,
+    "lotSize": 100,
+    "openDate": "2026-10-27",
+    "closeDate": "2026-10-29",
+    "allotmentDate": "2026-10-30",
+    "listingDate": "2026-11-03",
+    "gmpAmount": 69.0,
+    "gmpPercent": 46.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 69.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 69.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 69.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 69.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 69.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 69.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 69.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 255.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Unistone Capital Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 301.5,
+        "pat": 7.5,
+        "netWorth": 46.8
+      },
+      {
+        "year": "FY25",
+        "revenue": 336.7,
+        "pat": 21.1,
+        "netWorth": 67.9
+      },
+      {
+        "year": "FY26",
+        "revenue": 107.8,
+        "pat": 10.2,
+        "netWorth": 105.2
+      }
+    ],
+    "subscriptionTotal": 239.02,
+    "subscriptionRetail": 128.36,
+    "subscriptionHNI": 559.2,
+    "subscriptionQIB": 200.25,
+    "listingPrice": 248.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KFin Technologies Limited",
+    "registrarUrl": "https://www.kfintech.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.upstox.com/ipo/documents/rhp/1792388466880.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=BLS+Polymers+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "41",
+    "name": "SFC Environmental Technologies",
+    "symbol": "SFCTECH",
+    "category": "Mainboard",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 668.0,
+    "issuePriceMin": 313.0,
+    "issuePriceMax": 330.0,
+    "lotSize": 45,
+    "openDate": "2026-10-27",
+    "closeDate": "2026-10-29",
+    "allotmentDate": "2026-10-30",
+    "listingDate": "2026-11-03",
+    "gmpAmount": 15.5,
+    "gmpPercent": 4.7,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 15.5
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 15.5
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 15.5
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 15.5
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 15.5
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 15.5
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 15.5
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 150.0,
+      "ofsCr": 517.53,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "IIFL Capital Services Ltd.",
+      "JM Financial Ltd.",
+      "Nuvama Wealth Management Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 676.7,
+        "pat": 144.2,
+        "netWorth": 534.3
+      },
+      {
+        "year": "FY25",
+        "revenue": 727.0,
+        "pat": 152.0,
+        "netWorth": 648.7
+      },
+      {
+        "year": "FY26",
+        "revenue": 137.9,
+        "pat": 1.5,
+        "netWorth": 805.5
+      }
+    ],
+    "subscriptionTotal": 9.17,
+    "subscriptionRetail": 2.71,
+    "subscriptionHNI": 12.81,
+    "subscriptionQIB": 18.81,
+    "listingPrice": 355.1,
+    "listingGainPercent": 0.0,
+    "registrarName": "MUFG Intime India Private Limited",
+    "registrarUrl": "https://in.mpms.mufg.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://sfcenvironment.com/wp-content/uploads/2026/10/SFC-Environmental-Technologies-Ltd_RHP-1.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=SFC+Environmental+Technologies+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "42",
+    "name": "Wiscon Industries",
+    "symbol": "WISCON",
+    "category": "SME",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 110.0,
+    "issuePriceMin": 194.0,
+    "issuePriceMax": 204.0,
+    "lotSize": 600,
+    "openDate": "2026-10-27",
+    "closeDate": "2026-10-29",
+    "allotmentDate": "2026-10-30",
+    "listingDate": "2026-11-03",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 0.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 80.05,
+      "ofsCr": 22.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Smart Horizon Capital Advisors Pvt.Ltd.",
+      "Shreni Shares Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY26",
+        "revenue": 69.8,
+        "pat": 7.9,
+        "netWorth": 38.5
+      }
+    ],
+    "subscriptionTotal": 1.26,
+    "subscriptionRetail": 0.66,
+    "subscriptionHNI": 0.62,
+    "subscriptionQIB": 2.24,
+    "listingPrice": 204.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "MAASHITLA SECURITIES PRIVATE LIMITED",
+    "registrarUrl": "https://maashitla.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.google.com/search?q=Wiscon+Industries+IPO+RHP+file+SEBI",
+    "drhpPdfUrl": "https://www.google.com/search?q=Wiscon+Industries+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "43",
+    "name": "EAAA India Alternatives",
+    "symbol": "EDELALTS",
+    "category": "Mainboard",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 1200.0,
+    "issuePriceMin": 1585.0,
+    "issuePriceMax": 1665.0,
+    "lotSize": 9,
+    "openDate": "2026-10-26",
+    "closeDate": "2026-10-28",
+    "allotmentDate": "2026-10-29",
+    "listingDate": "2026-11-02",
+    "gmpAmount": 54.0,
+    "gmpPercent": 3.24,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 54.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 54.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 54.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 54.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 54.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 54.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 54.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 1200.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Axis Capital Ltd.",
+      "Jefferies India Pvt.Ltd.",
+      "Motilal Oswal Investment Advisors Ltd.",
+      "Nuvama Wealth Management Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 584.2,
+        "pat": 175.2,
+        "netWorth": 729.5
+      },
+      {
+        "year": "FY25",
+        "revenue": 786.5,
+        "pat": 229.8,
+        "netWorth": 966.5
+      },
+      {
+        "year": "FY26",
+        "revenue": 336.1,
+        "pat": 80.7,
+        "netWorth": 1160.4
+      }
+    ],
+    "subscriptionTotal": 5.15,
+    "subscriptionRetail": 1.08,
+    "subscriptionHNI": 4.81,
+    "subscriptionQIB": 13.8,
+    "listingPrice": 1675.5,
+    "listingGainPercent": 0.0,
+    "registrarName": "MUFG Intime India Private Limited ",
+    "registrarUrl": "https://in.mpms.mufg.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.eaaa.in/wp-content/uploads/2026/09/Red-Herring-Prospectus.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=EAAA+India+Alternatives+IPO+DRHP+file+SEBI",
+    "openNotified": false,
+    "closeNotified": false
+  },
+  {
+    "id": "44",
+    "name": "Core4 Engineers",
+    "symbol": "CORE4",
+    "category": "SME",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 55.0,
+    "issuePriceMin": 88.0,
+    "issuePriceMax": 93.0,
+    "lotSize": 1200,
+    "openDate": "2026-10-23",
+    "closeDate": "2026-10-27",
+    "allotmentDate": "2026-10-28",
+    "listingDate": "2026-10-30",
+    "gmpAmount": 0.0,
+    "gmpPercent": 0.0,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 0.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 0.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 48.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "Socradamus Capital Pvt.ltd.",
+      "Mansi Share & Stock Broking Pvt.Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 33.6,
+        "pat": 2.9,
+        "netWorth": 6.4
+      },
+      {
+        "year": "FY25",
+        "revenue": 47.3,
+        "pat": 6.0,
+        "netWorth": 24.8
+      }
+    ],
+    "subscriptionTotal": 5.54,
+    "subscriptionRetail": 2.72,
+    "subscriptionHNI": 12.26,
+    "subscriptionQIB": 5.06,
+    "listingPrice": 74.4,
+    "listingGainPercent": 0.0,
+    "registrarName": "Purva Sharegistry (India) Private Limited ",
+    "registrarUrl": "https://www.purvashare.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://core4engineers.com/pdf/ipo/RedHerringProspectus.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=Core4+Engineers+IPO+DRHP+file+SEBI",
+    "openNotified": true,
+    "closeNotified": false
+  },
+  {
+    "id": "45",
+    "name": "Reliance Jio",
+    "symbol": "JPL",
+    "category": "Mainboard",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 30188.0,
+    "issuePriceMin": 1065.0,
+    "issuePriceMax": 1119.0,
+    "lotSize": 12,
+    "openDate": "2026-10-21",
+    "closeDate": "2026-10-23",
+    "allotmentDate": "2026-10-26",
+    "listingDate": "2026-10-28",
+    "gmpAmount": 250.0,
+    "gmpPercent": 22.34,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 250.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 250.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 250.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 250.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 250.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 250.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 250.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 0.0,
+      "ofsCr": 0.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 110175.4,
+        "pat": 21434.0,
+        "netWorth": 277866.1
+      },
+      {
+        "year": "FY25",
+        "revenue": 129333.0,
+        "pat": 26120.3,
+        "netWorth": 304022.4
+      },
+      {
+        "year": "FY26",
+        "revenue": 40197.9,
+        "pat": 7764.1,
+        "netWorth": 341778.5
+      }
+    ],
+    "subscriptionTotal": 19.67,
+    "subscriptionRetail": 2.76,
+    "subscriptionHNI": 13.99,
+    "subscriptionQIB": 67.15,
+    "listingPrice": 1358.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "KFin Technologies Limited ",
+    "registrarUrl": "https://www.kfintech.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://myjiostatic.cdn.jio.com/cms/assets/iv3/Red%20Herring%20Prospectus.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=Reliance+Jio+IPO+DRHP+file+SEBI",
+    "openNotified": true,
+    "closeNotified": true
+  },
+  {
+    "id": "46",
+    "name": "Paras Healthcare",
+    "symbol": "PARASHLTH",
+    "category": "Mainboard",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 1450.0,
+    "issuePriceMin": 660.0,
+    "issuePriceMax": 693.0,
+    "lotSize": 21,
+    "openDate": "2026-10-21",
+    "closeDate": "2026-10-23",
+    "allotmentDate": "2026-10-26",
+    "listingDate": "2026-10-28",
+    "gmpAmount": 13.0,
+    "gmpPercent": 1.88,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 13.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 13.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 13.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 13.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 13.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 13.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 13.0
+      }
+    ],
+    "issueStructure": {
+      "freshIssueCr": 500.0,
+      "ofsCr": 950.0,
+      "promoterHoldingPre": null,
+      "promoterHoldingPost": null
+    },
+    "leadManagers": [
+      "JM Financial Ltd.",
+      "BOFA Securities India Ltd.",
+      "Nuvama Wealth Management Ltd."
+    ],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 1151.0,
+        "pat": -15.3,
+        "netWorth": 338.5
+      },
+      {
+        "year": "FY25",
+        "revenue": 1314.2,
+        "pat": -58.0,
+        "netWorth": 280.5
+      },
+      {
+        "year": "FY26",
+        "revenue": 478.8,
+        "pat": 49.7,
+        "netWorth": 445.0
+      }
+    ],
+    "subscriptionTotal": 2.21,
+    "subscriptionRetail": 2.1,
+    "subscriptionHNI": 0.69,
+    "subscriptionQIB": 3.25,
+    "listingPrice": 720.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "MUFG Intime India Private Limited",
+    "registrarUrl": "https://in.mpms.mufg.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.jmfl.com/Common/getFile/6104",
+    "drhpPdfUrl": "https://www.google.com/search?q=Paras+Healthcare+IPO+DRHP+file+SEBI",
+    "openNotified": true,
+    "closeNotified": true
+  },
+  {
+    "id": "47",
+    "name": "Sahajanand Medical Technologies",
+    "symbol": "SMT",
+    "category": "Mainboard",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 475.0,
+    "issuePriceMin": 327.0,
+    "issuePriceMax": 344.0,
+    "lotSize": 43,
+    "openDate": "2026-10-15",
+    "closeDate": "2026-10-19",
+    "allotmentDate": "2026-10-21",
+    "listingDate": "2026-10-23",
+    "gmpAmount": 17.0,
+    "gmpPercent": 4.94,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 17.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 17.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 17.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 17.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 17.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 17.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 17.0
+      }
+    ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "financials": [],
+    "subscriptionTotal": 14.08,
+    "subscriptionRetail": 3.04,
+    "subscriptionHNI": 14.64,
+    "subscriptionQIB": 34.7,
+    "listingPrice": 371.15,
+    "listingGainPercent": 7.89,
+    "registrarName": "MUFG Intime India Private Limited",
+    "registrarUrl": "https://in.mpms.mufg.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://assets.ipopremium.in/images/ipo/sahajanand_medical_technologies_ltd_mainboard_rhp_1791630001.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=Sahajanand+Medical+Technologies+IPO+DRHP+file+SEBI",
+    "openNotified": true,
+    "closeNotified": true
+  },
+  {
+    "id": "48",
+    "name": "Tonbo Imaging India",
+    "symbol": "TONBO",
+    "category": "Mainboard",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 852.0,
+    "issuePriceMin": 665.0,
+    "issuePriceMax": 700.0,
+    "lotSize": 21,
+    "openDate": "2026-10-15",
+    "closeDate": "2026-10-19",
+    "allotmentDate": "2026-10-21",
+    "listingDate": "2026-10-23",
+    "gmpAmount": 452.0,
+    "gmpPercent": 64.57,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 452.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 452.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 452.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 452.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 452.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 452.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 452.0
+      }
+    ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 144.37,
+        "pat": 68.54,
+        "netWorth": 127.83
+      },
+      {
+        "year": "FY25",
+        "revenue": 469.08,
+        "pat": 72.76,
+        "netWorth": 236.22
+      },
+      {
+        "year": "FY26",
+        "revenue": 362.65,
+        "pat": 50.88,
+        "netWorth": 511.55
+      }
+    ],
+    "subscriptionTotal": 96.63,
+    "subscriptionRetail": 31.11,
+    "subscriptionHNI": 156.36,
+    "subscriptionQIB": 293.56,
+    "listingPrice": 1160.0,
+    "listingGainPercent": 65.71,
+    "registrarName": "KFin Technologies Limited",
+    "registrarUrl": "https://www.kfintech.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://live.jmfl.com/od/UploadedFiles/CA86AB52-0D43-437A-8D1C-6E475C6CEF01.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=Tonbo+Imaging+India+IPO+DRHP+file+SEBI",
+    "openNotified": true,
+    "closeNotified": true
+  },
+  {
+    "id": "49",
+    "name": "Shellz India",
+    "symbol": "SHELLZ",
+    "category": "SME",
+    "status": "LISTED",
+    "logoUrl": null,
+    "issueSizeCr": 60.0,
+    "issuePriceMin": 170.0,
+    "issuePriceMax": 179.0,
+    "lotSize": 800,
+    "openDate": "2026-10-15",
+    "closeDate": "2026-10-19",
+    "allotmentDate": "2026-10-21",
+    "listingDate": "2026-10-23",
+    "gmpAmount": 7.0,
+    "gmpPercent": 3.91,
+    "gmpHistory": [
+      {
+        "dateLabel": "19 Nov",
+        "amount": 7.0
+      },
+      {
+        "dateLabel": "20 Nov",
+        "amount": 7.0
+      },
+      {
+        "dateLabel": "21 Nov",
+        "amount": 7.0
+      },
+      {
+        "dateLabel": "24 Nov",
+        "amount": 7.0
+      },
+      {
+        "dateLabel": "25 Nov",
+        "amount": 7.0
+      },
+      {
+        "dateLabel": "26 Nov",
+        "amount": 7.0
+      },
+      {
+        "dateLabel": "27 Nov",
+        "amount": 7.0
+      }
+    ],
+    "issueStructure": null,
+    "leadManagers": [],
+    "anchorPortionCr": 0.0,
+    "financials": [
+      {
+        "year": "FY24",
+        "revenue": 162.8,
+        "pat": 5.2,
+        "netWorth": 27.0
+      },
+      {
+        "year": "FY25",
+        "revenue": 187.4,
+        "pat": 8.3,
+        "netWorth": 40.6
+      },
+      {
+        "year": "FY26",
+        "revenue": 47.4,
+        "pat": 4.1,
+        "netWorth": 63.0
+      }
+    ],
+    "subscriptionTotal": 58.01,
+    "subscriptionRetail": 56.09,
+    "subscriptionHNI": 86.41,
+    "subscriptionQIB": 41.92,
+    "listingPrice": 179.0,
+    "listingGainPercent": 0.0,
+    "registrarName": "Bigshare Services Private Limited",
+    "registrarUrl": "https://www.bigshareonline.com/",
+    "isAllotmentDone": false,
+    "rhpPdfUrl": "https://www.socradamus.in/downloads/sme-ipo/shellz-india-limited/RHP-Shellz-final.pdf",
+    "drhpPdfUrl": "https://www.google.com/search?q=Shellz+India+IPO+DRHP+file+SEBI",
+    "openNotified": true,
+    "closeNotified": true
   },
   {
     "id": "50",
